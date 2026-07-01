@@ -71,14 +71,24 @@
     .cream { background: #f5f1e8; }
     .soft-green { background: #d7dfcf; }
 
-    .hero h1 {
-      margin-bottom: 28px;
-      font-size: clamp(48px, 8vw, 120px);
-      line-height: 1;
-      letter-spacing: -0.065em;
-      max-width: 1200px;
-      white-space: nowrap;
-    }
+  .hero h1 {
+    margin-bottom: 28px;
+    font-size: clamp(48px, 8vw, 120px);
+    line-height: 1;
+    letter-spacing: -0.065em;
+    max-width: 1200px;
+    white-space: nowrap;
+}
+
+#name-rotator{
+    display:inline-block;
+    min-width:4.5ch;
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        filter .35s ease;
+    will-change:transform,opacity;
+}
 
     .hero-text {
       max-width: 760px;
@@ -424,7 +434,9 @@
   <main>
 
     <section id="hero" class="section hero">
-      <h1 class="reveal">Basile Suliman</h1>
+      <h1 class="reveal">
+  <span id="name-rotator">Basile</span> Suliman
+      </h1>
       <p class="hero-text reveal">
         Communication, international affairs, sustainability and storytelling.
       </p>
@@ -540,6 +552,39 @@
     );
 
     revealElements.forEach(element => observer.observe(element));
+
+  const nameRotator = document.getElementById("name-rotator");
+
+const names = [
+    "Basile",
+    "بازيل",
+    "バジル",
+    "بازیل",
+    "Basile"
+];
+
+let current = 0;
+
+setInterval(() => {
+
+    nameRotator.style.opacity = "0";
+    nameRotator.style.transform = "translateY(-12px)";
+    nameRotator.style.filter = "blur(4px)";
+
+    setTimeout(() => {
+
+        current = (current + 1) % names.length;
+
+        nameRotator.textContent = names[current];
+
+        nameRotator.style.opacity = "1";
+        nameRotator.style.transform = "translateY(0)";
+        nameRotator.style.filter = "blur(0px)";
+
+    }, 350);
+
+}, 2200);
+    
   </script>
 
 </body>
