@@ -47,7 +47,7 @@
 
     .nav-links {
       display: flex;
-      gap: 22px;
+      gap: 20px;
       font-size: 13px;
     }
 
@@ -57,12 +57,10 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background: #f5f1e8;
-      color: #0d3026;
     }
 
     .hero {
-      min-height: 110vh;
+      min-height: 100vh;
       background:
         radial-gradient(circle at 80% 20%, rgba(245, 241, 232, 0.12), transparent 28%),
         radial-gradient(circle at 15% 75%, rgba(245, 241, 232, 0.08), transparent 30%),
@@ -104,6 +102,84 @@
       letter-spacing: -0.025em;
     }
 
+    .gallery {
+      background: #0d3026;
+      color: #f5f1e8;
+      padding: 70px 0;
+      overflow: hidden;
+    }
+
+    .gallery h2 {
+      padding: 0 8vw;
+      margin-bottom: 34px;
+    }
+
+    .gallery-row {
+      display: flex;
+      gap: 18px;
+      width: max-content;
+      margin-bottom: 18px;
+      animation: scroll-left 38s linear infinite;
+    }
+
+    .gallery-row:nth-child(3) {
+      animation: scroll-right 42s linear infinite;
+    }
+
+    .gallery-row:nth-child(4) {
+      animation: scroll-left 46s linear infinite;
+    }
+
+    .gallery-photo {
+      position: relative;
+      width: 360px;
+      height: 230px;
+      flex: 0 0 auto;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #f5f1e8;
+    }
+
+    .gallery-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.95) contrast(0.95);
+      transition: 0.5s ease;
+    }
+
+    .gallery-photo span {
+      position: absolute;
+      left: 20px;
+      bottom: 18px;
+      z-index: 2;
+      color: #f5f1e8;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .gallery-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,48,38,.75), transparent 55%);
+    }
+
+    .gallery-photo:hover img {
+      transform: scale(1.07);
+    }
+
+    @keyframes scroll-left {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @keyframes scroll-right {
+      from { transform: translateX(-50%); }
+      to { transform: translateX(0); }
+    }
+
     .split {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -120,6 +196,7 @@
     .stat,
     .experience-card,
     .work-card,
+    .activity-card,
     .skill {
       background: #fffaf0;
       border: 1px solid #b8c2ae;
@@ -185,14 +262,16 @@
       max-width: 760px;
     }
 
-    .work-grid {
+    .work-grid,
+    .activities-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
       max-width: 1050px;
     }
 
-    .work-card {
+    .work-card,
+    .activity-card {
       min-height: 240px;
       border-radius: 22px;
       padding: 28px;
@@ -202,83 +281,37 @@
       transition: 0.35s ease;
     }
 
-    .work-card:hover {
+    .activity-card {
+      min-height: 210px;
+    }
+
+    .work-card:hover,
+    .activity-card:hover {
       background: #0d3026;
       color: #f5f1e8;
       transform: translateY(-8px);
     }
 
-    .work-card span {
+    .work-card span,
+    .activity-card span {
       font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       opacity: 0.65;
     }
 
-    .work-card h3 {
+    .work-card h3,
+    .activity-card h3 {
       font-size: clamp(22px, 3vw, 40px);
       line-height: 1.08;
       letter-spacing: -0.045em;
     }
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      max-width: 1150px;
-    }
-
-    .gallery-photo {
-      position: relative;
-      height: 330px;
-      border-radius: 24px;
-      overflow: hidden;
-      background: #fffaf0;
-      border: 1px solid #b8c2ae;
-      transition: 0.35s ease;
-    }
-
-    .gallery-photo.large {
-      grid-column: span 2;
-    }
-
-    .gallery-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: saturate(0.92) contrast(0.95);
-      transition: 0.5s ease;
-    }
-
-    .gallery-photo::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(13, 48, 38, 0.72), transparent 55%);
+    .activity-card p {
+      margin-top: 14px;
+      font-size: 15px;
+      line-height: 1.6;
       opacity: 0.75;
-      transition: 0.35s ease;
-    }
-
-    .gallery-photo span {
-      position: absolute;
-      left: 22px;
-      bottom: 20px;
-      z-index: 2;
-      color: #f5f1e8;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-
-    .gallery-photo:hover {
-      transform: translateY(-8px);
-      border-color: #0d3026;
-    }
-
-    .gallery-photo:hover img {
-      transform: scale(1.06);
-      filter: saturate(1) contrast(1);
     }
 
     .journey {
@@ -367,24 +400,18 @@
       .split,
       .experience-card,
       .work-grid,
-      .gallery-grid {
+      .activities-grid {
         grid-template-columns: 1fr;
-      }
-
-      .gallery-photo.large {
-        grid-column: span 1;
       }
 
       .stats {
         grid-template-columns: 1fr 1fr;
       }
 
-      .stat {
-        padding: 20px;
-        min-height: 120px;
+      .gallery-photo {
+        width: 280px;
+        height: 190px;
       }
-
-      .stat strong { font-size: 30px; }
     }
   </style>
 </head>
@@ -394,10 +421,11 @@
   <nav class="nav">
     <a href="#hero" class="nav-logo">Basile Suliman</a>
     <div class="nav-links">
+      <a href="#gallery">Gallery</a>
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#work">Work</a>
-      <a href="#gallery">Gallery</a>
+      <a href="#activities">Activities</a>
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
@@ -411,6 +439,37 @@
       <p class="hero-text reveal">
         Communication, international affairs, sustainability and storytelling.
       </p>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <h2 class="reveal">Gallery</h2>
+
+      <div class="gallery-row">
+        <div class="gallery-photo"><img src="assets/images/tunisia.jpg"><span>Tunisia</span></div>
+        <div class="gallery-photo"><img src="assets/images/japan.jpg"><span>Japan</span></div>
+        <div class="gallery-photo"><img src="assets/images/georgia.jpg"><span>Georgia</span></div>
+        <div class="gallery-photo"><img src="assets/images/italy.jpg"><span>Italy</span></div>
+        <div class="gallery-photo"><img src="assets/images/tunisia.jpg"><span>Tunisia</span></div>
+        <div class="gallery-photo"><img src="assets/images/japan.jpg"><span>Japan</span></div>
+      </div>
+
+      <div class="gallery-row">
+        <div class="gallery-photo"><img src="assets/images/france.jpg"><span>France</span></div>
+        <div class="gallery-photo"><img src="assets/images/germany.jpg"><span>Germany</span></div>
+        <div class="gallery-photo"><img src="assets/images/turkey.jpg"><span>Turkey</span></div>
+        <div class="gallery-photo"><img src="assets/images/spain.jpg"><span>Spain</span></div>
+        <div class="gallery-photo"><img src="assets/images/france.jpg"><span>France</span></div>
+        <div class="gallery-photo"><img src="assets/images/germany.jpg"><span>Germany</span></div>
+      </div>
+
+      <div class="gallery-row">
+        <div class="gallery-photo"><img src="assets/images/rome.jpg"><span>Rome</span></div>
+        <div class="gallery-photo"><img src="assets/images/tokyo.jpg"><span>Tokyo</span></div>
+        <div class="gallery-photo"><img src="assets/images/berlin.jpg"><span>Berlin</span></div>
+        <div class="gallery-photo"><img src="assets/images/paris.jpg"><span>Paris</span></div>
+        <div class="gallery-photo"><img src="assets/images/rome.jpg"><span>Rome</span></div>
+        <div class="gallery-photo"><img src="assets/images/tokyo.jpg"><span>Tokyo</span></div>
+      </div>
     </section>
 
     <section id="about" class="section cream">
@@ -434,45 +493,16 @@
 
     <section id="experience" class="section soft-green">
       <h2 class="reveal">Experience</h2>
-
       <div class="experience-list">
-        <article class="experience-card reveal">
-          <div class="year">2026</div>
-          <div>
-            <h3>BNP Paribas</h3>
-            <p>Group Communication — Content Strategy & People Engagement. Communication around sustainability, engagement and corporate initiatives.</p>
-          </div>
-        </article>
-
-        <article class="experience-card reveal">
-          <div class="year">2025</div>
-          <div>
-            <h3>Organisation Internationale de la Francophonie</h3>
-            <p>Project monitoring, country briefs, data analysis and strategic reporting across international cooperation projects.</p>
-          </div>
-        </article>
-
-        <article class="experience-card reveal">
-          <div class="year">2025</div>
-          <div>
-            <h3>AQLITY</h3>
-            <p>Humanitarian data analysis, research support and visualisation for field-based projects.</p>
-          </div>
-        </article>
-
-        <article class="experience-card reveal">
-          <div class="year">2024</div>
-          <div>
-            <h3>ARDHIS</h3>
-            <p>Support for asylum seekers through casework, research and documentation.</p>
-          </div>
-        </article>
+        <article class="experience-card reveal"><div class="year">2026</div><div><h3>BNP Paribas</h3><p>Group Communication — Content Strategy & People Engagement. Communication around sustainability, engagement and corporate initiatives.</p></div></article>
+        <article class="experience-card reveal"><div class="year">2025</div><div><h3>Organisation Internationale de la Francophonie</h3><p>Project monitoring, country briefs, data analysis and strategic reporting across international cooperation projects.</p></div></article>
+        <article class="experience-card reveal"><div class="year">2025</div><div><h3>AQLITY</h3><p>Humanitarian data analysis, research support and visualisation for field-based projects.</p></div></article>
+        <article class="experience-card reveal"><div class="year">2024</div><div><h3>ARDHIS</h3><p>Support for asylum seekers through casework, research and documentation.</p></div></article>
       </div>
     </section>
 
     <section id="work" class="section cream">
       <h2 class="reveal">Work</h2>
-
       <div class="work-grid">
         <div class="work-card reveal"><span>Corporate</span><h3>Sustainability Communication</h3></div>
         <div class="work-card reveal"><span>Research</span><h3>Policy & Conflict Analysis</h3></div>
@@ -481,88 +511,35 @@
       </div>
     </section>
 
-    <section id="gallery" class="section soft-green">
-      <h2 class="reveal">Gallery</h2>
-
-      <div class="gallery-grid">
-        <div class="gallery-photo large reveal">
-          <img src="assets/images/tunisia.jpg" alt="Tunisia trip">
-          <span>Tunisia</span>
-        </div>
-
-        <div class="gallery-photo reveal">
-          <img src="assets/images/japan.jpg" alt="Japan trip">
-          <span>Japan</span>
-        </div>
-
-        <div class="gallery-photo reveal">
-          <img src="assets/images/georgia.jpg" alt="Georgia trip">
-          <span>Georgia</span>
-        </div>
-
-        <div class="gallery-photo large reveal">
-          <img src="assets/images/italy.jpg" alt="Italy trip">
-          <span>Italy</span>
-        </div>
-
-        <div class="gallery-photo reveal">
-          <img src="assets/images/france.jpg" alt="France trip">
-          <span>France</span>
-        </div>
-
-        <div class="gallery-photo reveal">
-          <img src="assets/images/germany.jpg" alt="Germany trip">
-          <span>Germany</span>
-        </div>
+    <section id="activities" class="section soft-green">
+      <h2 class="reveal">Activities</h2>
+      <div class="activities-grid">
+        <div class="activity-card reveal"><span>Volunteering</span><div><h3>Tarjimly</h3><p>Arabic, French and English interpretation for people in need of language support.</p></div></div>
+        <div class="activity-card reveal"><span>Events</span><div><h3>Paris Peace Forum</h3><p>Support and liaison work in international forums and public diplomacy settings.</p></div></div>
+        <div class="activity-card reveal"><span>Student life</span><div><h3>Sciences Po Arab World</h3><p>Communication and project coordination for cultural and academic initiatives.</p></div></div>
+        <div class="activity-card reveal"><span>Conferences</span><div><h3>MEDMUN</h3><p>Participation in debate, international affairs simulations and youth-led diplomacy.</p></div></div>
       </div>
     </section>
 
     <section id="education" class="section cream">
       <h2 class="reveal">Education Journey</h2>
-
       <div class="journey">
-        <div class="journey-item reveal">
-          <h3>Sciences Po Paris</h3>
-          <p>International Security, Middle Eastern Studies and Migration.</p>
-        </div>
-
-        <div class="journey-item reveal">
-          <h3>Tokyo University of Foreign Studies</h3>
-          <p>Japanese language and international exchange year.</p>
-        </div>
-
-        <div class="journey-item reveal">
-          <h3>Freie Universität Berlin</h3>
-          <p>International Relations and European Affairs.</p>
-        </div>
+        <div class="journey-item reveal"><h3>Sciences Po Paris</h3><p>International Security, Middle Eastern Studies and Migration.</p></div>
+        <div class="journey-item reveal"><h3>Tokyo University of Foreign Studies</h3><p>Japanese language and international exchange year.</p></div>
+        <div class="journey-item reveal"><h3>Freie Universität Berlin</h3><p>International Relations and European Affairs.</p></div>
       </div>
     </section>
 
     <section id="skills" class="section soft-green">
       <h2 class="reveal">Skills & Tools</h2>
-
       <div class="skills">
-        <div class="skill reveal">French</div>
-        <div class="skill reveal">Arabic</div>
-        <div class="skill reveal">English</div>
-        <div class="skill reveal">German</div>
-        <div class="skill reveal">Japanese</div>
-        <div class="skill reveal">Persian</div>
-        <div class="skill reveal">Excel</div>
-        <div class="skill reveal">Power BI</div>
-        <div class="skill reveal">Canva</div>
-        <div class="skill reveal">Communication</div>
-        <div class="skill reveal">Research</div>
-        <div class="skill reveal">Data visualisation</div>
+        <div class="skill reveal">French</div><div class="skill reveal">Arabic</div><div class="skill reveal">English</div><div class="skill reveal">German</div><div class="skill reveal">Japanese</div><div class="skill reveal">Persian</div><div class="skill reveal">Excel</div><div class="skill reveal">Power BI</div><div class="skill reveal">Canva</div><div class="skill reveal">Communication</div><div class="skill reveal">Research</div><div class="skill reveal">Data visualisation</div>
       </div>
     </section>
 
     <section id="contact" class="section contact">
       <h2 class="reveal">Let’s connect.</h2>
-      <p class="big-text reveal">
-        Open to conversations around communication, international affairs,
-        sustainability and storytelling.
-      </p>
+      <p class="big-text reveal">Open to conversations around communication, international affairs, sustainability and storytelling.</p>
       <a class="reveal" href="mailto:your-email@example.com">Email me</a>
     </section>
 
