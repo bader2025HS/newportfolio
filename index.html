@@ -81,15 +81,21 @@
 }
 
 #name-rotator{
-    display:inline-block;
-    min-width:16ch;
-    transition:
-        opacity .35s ease,
-        transform .35s ease,
-        filter .35s ease;
-    will-change:transform,opacity;
+  display:inline-block;
+  min-width:14ch;
+  transition: opacity .35s ease, transform .35s ease, filter .35s ease;
 }
 
+#name-rotator.arabic{
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.18em;
+  letter-spacing: 0.02em;
+}
+
+#name-rotator.japanese{
+  font-family: "Yu Gothic", "Hiragino Sans", Verdana, sans-serif;
+  font-size: 0.95em;
+}
     .hero-text {
       max-width: 760px;
       font-size: clamp(19px, 2.4vw, 34px);
@@ -557,35 +563,28 @@
   const nameRotator = document.getElementById("name-rotator");
 
 const names = [
-    "Basile Suliman",
-  '<span class="arabic-name">باسيل سليمان</span>',
-    "バジル・スリマン",
+  { text: "Basile Suliman", lang: "" },
+  { text: "بازيل سليمان", lang: "arabic" },
+  { text: "バジル・スリマン", lang: "japanese" },
 ];
-.arabic-name{
-    font-family: "Noto Naskh Arabic", serif;
-    font-size: 1.12em;
-    letter-spacing: 0;
-}
+
 let current = 0;
 
 setInterval(() => {
+  nameRotator.style.opacity = "0";
+  nameRotator.style.transform = "translateY(-12px)";
+  nameRotator.style.filter = "blur(4px)";
 
-    nameRotator.style.opacity = "0";
-    nameRotator.style.transform = "translateY(-12px)";
-    nameRotator.style.filter = "blur(4px)";
+  setTimeout(() => {
+    current = (current + 1) % names.length;
 
-    setTimeout(() => {
+    nameRotator.textContent = names[current].text;
+    nameRotator.className = names[current].lang;
 
-        current = (current + 1) % names.length;
-
-        nameRotator.textContent = names[current];
-
-        nameRotator.style.opacity = "1";
-        nameRotator.style.transform = "translateY(0)";
-        nameRotator.style.filter = "blur(0px)";
-
-    }, 350);
-
+    nameRotator.style.opacity = "1";
+    nameRotator.style.transform = "translateY(0)";
+    nameRotator.style.filter = "blur(0px)";
+  }, 350);
 }, 2200);
     
   </script>
