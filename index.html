@@ -53,13 +53,12 @@
     .section {
       min-height: 100vh;
       padding: 110px 8vw 90px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
 
     .hero {
-      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       background:
         radial-gradient(circle at 80% 20%, rgba(245, 241, 232, 0.12), transparent 28%),
         radial-gradient(circle at 15% 75%, rgba(245, 241, 232, 0.08), transparent 30%),
@@ -67,21 +66,20 @@
       color: #f5f1e8;
     }
 
-    .gallery { background: #c8d7c1; color: #0d3026; padding: 100px 0; }
-    .about-bg { background: #f5f1e8; color: #0d3026; }
-    .experience-bg { background: #d8c7af; color: #16352b; }
+    .gallery { background: #d4e0ce; padding: 80px 0; }
+    .about-bg { background: #f5f1e8; }
+    .experience-bg { background: #fbf7ed; }
     .work-bg { background: #14382f; color: #f5f1e8; }
-    .activities-bg { background: #efe3c9; color: #0d3026; }
-    .education-bg { background: #c3d0da; color: #102f36; }
-    .skills-bg { background: #ded8c7; color: #0d3026; }
-    .contact { background: #0d3026; color: #f5f1e8; border-radius: 44px 44px 0 0; min-height: 80vh; }
+    .activities-bg { background: #e9e3d2; }
+    .education-bg { background: #b9ccbc; }
+    .skills-bg { background: #f5f1e8; }
+    .contact { background: #0d3026; color: #f5f1e8; border-radius: 44px 44px 0 0; }
 
     .hero h1 {
       margin-bottom: 28px;
       font-size: clamp(48px, 8vw, 120px);
       line-height: 1;
       letter-spacing: -0.065em;
-      max-width: 1200px;
       white-space: nowrap;
     }
 
@@ -94,7 +92,6 @@
     #name-rotator.arabic {
       font-family: Georgia, "Times New Roman", serif;
       font-size: 1.18em;
-      letter-spacing: 0.02em;
     }
 
     #name-rotator.japanese {
@@ -106,7 +103,6 @@
       max-width: 760px;
       font-size: clamp(19px, 2.4vw, 34px);
       line-height: 1.35;
-      letter-spacing: -0.03em;
       color: rgba(245, 241, 232, 0.86);
     }
 
@@ -121,42 +117,29 @@
       max-width: 820px;
       font-size: clamp(18px, 2vw, 28px);
       line-height: 1.6;
-      letter-spacing: -0.025em;
     }
 
     .gallery h2 {
       padding: 0 8vw;
-      margin-bottom: 40px;
     }
 
     .gallery-row {
       display: flex;
       gap: 18px;
-      margin-bottom: 18px;
       overflow-x: auto;
-      overflow-y: hidden;
       padding: 0 8vw;
-      scroll-behavior: smooth;
+      margin-bottom: 18px;
       scrollbar-width: none;
-      -ms-overflow-style: none;
     }
 
     .gallery-row::-webkit-scrollbar { display: none; }
 
     .gallery-placeholder {
-      position: relative;
       flex: 0 0 420px;
       height: 270px;
       border-radius: 24px;
-      border: 1px dashed rgba(13, 48, 38, 0.35);
-      background:
-        linear-gradient(135deg, rgba(245,241,232,.6), rgba(255,250,240,.25)),
-        rgba(255,250,240,.45);
-      display: flex;
-      align-items: flex-end;
-      padding: 22px;
-      color: rgba(13, 48, 38, 0.65);
-      font-size: 15px;
+      border: 2px dashed rgba(13, 48, 38, 0.18);
+      background: rgba(255, 255, 255, 0.18);
     }
 
     .split {
@@ -172,21 +155,9 @@
       gap: 18px;
     }
 
-    .stat,
-    .experience-card,
-    .work-card,
-    .activity-card,
-    .skill {
-      background: rgba(255, 250, 240, 0.82);
-      border: 1px solid rgba(13, 48, 38, 0.22);
-    }
-
-    .work-bg .work-card {
-      background: rgba(245, 241, 232, 0.08);
-      border-color: rgba(245, 241, 232, 0.28);
-    }
-
     .stat {
+      background: rgba(255, 250, 240, 0.85);
+      border: 1px solid rgba(13, 48, 38, 0.22);
       border-radius: 22px;
       padding: 28px;
       min-height: 145px;
@@ -195,7 +166,6 @@
     .stat strong {
       display: block;
       font-size: 36px;
-      letter-spacing: -0.06em;
       color: #0d3026;
     }
 
@@ -207,30 +177,29 @@
     }
 
     .experience-list {
-      max-width: 1050px;
+      max-width: 1100px;
+      border-top: 1px solid rgba(13, 48, 38, 0.35);
+    }
+
+    .experience-item {
       display: grid;
-      gap: 18px;
+      grid-template-columns: 160px 1fr;
+      gap: 40px;
+      padding: 34px 0;
+      border-bottom: 1px solid rgba(13, 48, 38, 0.28);
     }
 
-    .experience-card {
-      border-radius: 18px;
-      padding: 28px;
-      display: grid;
-      grid-template-columns: 0.28fr 1fr;
-      gap: 28px;
-      transition: 0.3s ease;
+    .experience-item h3 {
+      font-size: clamp(24px, 3vw, 42px);
+      margin-bottom: 14px;
+      letter-spacing: -0.04em;
     }
 
-    .experience-card:hover,
-    .work-card:hover,
-    .activity-card:hover {
-      transform: translateY(-8px);
-      border-color: #0d3026;
-    }
-
-    .work-bg .work-card:hover {
-      background: #f5f1e8;
-      color: #0d3026;
+    .experience-item p {
+      max-width: 760px;
+      font-size: 16px;
+      line-height: 1.7;
+      opacity: 0.75;
     }
 
     .year {
@@ -239,42 +208,78 @@
       letter-spacing: 0.08em;
     }
 
-    .experience-card h3 {
-      font-size: clamp(22px, 2.6vw, 36px);
-      line-height: 1.1;
-      letter-spacing: -0.04em;
-      margin-bottom: 10px;
-    }
-
-    .experience-card p,
-    .activity-card p,
-    .journey-item p {
-      font-size: 15px;
-      line-height: 1.7;
-      opacity: 0.75;
-      max-width: 760px;
-    }
-
-    .work-grid,
-    .activities-grid {
+    .work-list {
+      max-width: 1150px;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-      max-width: 1050px;
+      gap: 0;
+      border-top: 1px solid rgba(245, 241, 232, 0.3);
     }
 
-    .work-card,
+    .work-strip {
+      display: grid;
+      grid-template-columns: 90px 1fr 80px;
+      align-items: center;
+      gap: 30px;
+      padding: 34px 0;
+      border-bottom: 1px solid rgba(245, 241, 232, 0.3);
+      transition: 0.3s ease;
+    }
+
+    .work-strip:hover {
+      padding-left: 24px;
+      background: rgba(245, 241, 232, 0.08);
+    }
+
+    .work-number {
+      font-size: 14px;
+      opacity: 0.6;
+    }
+
+    .work-strip h3 {
+      font-size: clamp(28px, 5vw, 64px);
+      letter-spacing: -0.06em;
+      line-height: 1;
+    }
+
+    .work-arrow {
+      font-size: 40px;
+      transition: 0.3s ease;
+    }
+
+    .work-strip:hover .work-arrow {
+      transform: translateX(10px);
+    }
+
+    .activities-board {
+      max-width: 1100px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+
     .activity-card {
+      background: rgba(255, 250, 240, 0.86);
+      border: 1px solid rgba(13, 48, 38, 0.22);
+      border-radius: 26px;
+      padding: 30px;
       min-height: 230px;
-      border-radius: 22px;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
       transition: 0.35s ease;
     }
 
-    .work-card span,
+    .activity-card.large {
+      grid-row: span 2;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-8px);
+      background: #0d3026;
+      color: #f5f1e8;
+    }
+
     .activity-card span {
       font-size: 11px;
       letter-spacing: 0.18em;
@@ -282,22 +287,28 @@
       opacity: 0.65;
     }
 
-    .work-card h3,
     .activity-card h3 {
-      font-size: clamp(22px, 3vw, 40px);
-      line-height: 1.08;
-      letter-spacing: -0.045em;
+      font-size: clamp(28px, 4vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      margin: 28px 0;
+    }
+
+    .activity-card p {
+      font-size: 15px;
+      line-height: 1.7;
+      opacity: 0.75;
     }
 
     .journey {
-      max-width: 850px;
+      max-width: 900px;
       border-left: 1px solid currentColor;
       margin-left: 18px;
     }
 
     .journey-item {
       position: relative;
-      padding: 0 0 48px 40px;
+      padding: 0 0 58px 44px;
     }
 
     .journey-item::before {
@@ -312,28 +323,42 @@
     }
 
     .journey-item h3 {
-      font-size: clamp(22px, 2.8vw, 38px);
-      letter-spacing: -0.04em;
+      font-size: clamp(26px, 3.4vw, 48px);
+      letter-spacing: -0.045em;
+      margin-bottom: 12px;
     }
 
-    .skills {
+    .journey-item p {
+      font-size: 16px;
+      line-height: 1.7;
+      opacity: 0.75;
+    }
+
+    .skills-cloud {
+      max-width: 1100px;
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      max-width: 950px;
+      gap: 16px;
+      align-items: center;
     }
 
     .skill {
+      border: 1px solid rgba(13, 48, 38, 0.22);
       border-radius: 999px;
-      padding: 13px 20px;
+      padding: 13px 22px;
       font-size: 14px;
+      background: rgba(255, 250, 240, 0.8);
+    }
+
+    .skill.big {
+      font-size: 22px;
+      padding: 18px 30px;
     }
 
     .contact a {
       margin-top: 34px;
       width: fit-content;
       font-size: clamp(28px, 5vw, 62px);
-      letter-spacing: -0.05em;
       border-bottom: 2px solid #f5f1e8;
     }
 
@@ -358,17 +383,27 @@
       }
 
       .split,
-      .experience-card,
-      .work-grid,
-      .activities-grid {
+      .experience-item,
+      .activities-board {
         grid-template-columns: 1fr;
       }
 
-      .stats { grid-template-columns: 1fr 1fr; }
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
 
       .gallery-placeholder {
         flex-basis: 280px;
         height: 190px;
+      }
+
+      .work-strip {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .activity-card.large {
+        min-height: 260px;
       }
     }
   </style>
@@ -394,28 +429,22 @@
 
     <section id="hero" class="section hero">
       <h1 class="reveal"><span id="name-rotator">Basile Suliman</span></h1>
-      <p class="hero-text reveal">
-        Communication, international affairs, sustainability and storytelling.
-      </p>
+      <p class="hero-text reveal">Communication, international affairs, sustainability and storytelling.</p>
     </section>
 
     <section id="gallery" class="gallery">
       <h2 class="reveal">Gallery</h2>
-
       <div class="gallery-row">
-        <div class="gallery-placeholder">Travel photo</div>
-        <div class="gallery-placeholder">Travel photo</div>
-        <div class="gallery-placeholder">Travel photo</div>
-        <div class="gallery-placeholder">Travel photo</div>
-        <div class="gallery-placeholder">Travel photo</div>
+        <div class="gallery-placeholder"></div>
+        <div class="gallery-placeholder"></div>
+        <div class="gallery-placeholder"></div>
+        <div class="gallery-placeholder"></div>
       </div>
-
       <div class="gallery-row">
-        <div class="gallery-placeholder">Travel photo</div>
-        <div class="gallery-placeholder">Travel photo</div>
-        <div class="gallery-placeholder">Travel photo</div>
-        <div class="gallery-placeholder">Travel photo</div>
-        <div class="gallery-placeholder">Travel photo</div>
+        <div class="gallery-placeholder"></div>
+        <div class="gallery-placeholder"></div>
+        <div class="gallery-placeholder"></div>
+        <div class="gallery-placeholder"></div>
       </div>
     </section>
 
@@ -428,7 +457,6 @@
             engaging and accessible stories.
           </p>
         </div>
-
         <div class="stats">
           <div class="stat reveal"><strong>30+</strong><span>Countries explored</span></div>
           <div class="stat reveal"><strong>6</strong><span>Languages</span></div>
@@ -441,30 +469,30 @@
     <section id="experience" class="section experience-bg">
       <h2 class="reveal">Experience</h2>
       <div class="experience-list">
-        <article class="experience-card reveal"><div class="year">2026</div><div><h3>BNP Paribas</h3><p>Group Communication — Content Strategy & People Engagement. Communication around sustainability, engagement and corporate initiatives.</p></div></article>
-        <article class="experience-card reveal"><div class="year">2025</div><div><h3>Organisation Internationale de la Francophonie</h3><p>Project monitoring, country briefs, data analysis and strategic reporting across international cooperation projects.</p></div></article>
-        <article class="experience-card reveal"><div class="year">2025</div><div><h3>AQLITY</h3><p>Humanitarian data analysis, research support and visualisation for field-based projects.</p></div></article>
-        <article class="experience-card reveal"><div class="year">2024</div><div><h3>ARDHIS</h3><p>Support for asylum seekers through casework, research and documentation.</p></div></article>
+        <div class="experience-item reveal"><div class="year">2026</div><div><h3>BNP Paribas</h3><p>Group Communication — Content Strategy & People Engagement. Communication around sustainability, engagement and corporate initiatives.</p></div></div>
+        <div class="experience-item reveal"><div class="year">2025</div><div><h3>Organisation Internationale de la Francophonie</h3><p>Project monitoring, country briefs, data analysis and strategic reporting across international cooperation projects.</p></div></div>
+        <div class="experience-item reveal"><div class="year">2025</div><div><h3>AQLITY</h3><p>Humanitarian data analysis, research support and visualisation for field-based projects.</p></div></div>
+        <div class="experience-item reveal"><div class="year">2024</div><div><h3>ARDHIS</h3><p>Support for asylum seekers through casework, research and documentation.</p></div></div>
       </div>
     </section>
 
     <section id="work" class="section work-bg">
       <h2 class="reveal">Work</h2>
-      <div class="work-grid">
-        <div class="work-card reveal"><span>Corporate</span><h3>Sustainability Communication</h3></div>
-        <div class="work-card reveal"><span>Research</span><h3>Policy & Conflict Analysis</h3></div>
-        <div class="work-card reveal"><span>Data</span><h3>Visualisation & Dashboards</h3></div>
-        <div class="work-card reveal"><span>Content</span><h3>Editorial Storytelling</h3></div>
+      <div class="work-list">
+        <div class="work-strip reveal"><div class="work-number">01</div><h3>Sustainability Communication</h3><div class="work-arrow">→</div></div>
+        <div class="work-strip reveal"><div class="work-number">02</div><h3>Policy & Conflict Analysis</h3><div class="work-arrow">→</div></div>
+        <div class="work-strip reveal"><div class="work-number">03</div><h3>Visualisation & Dashboards</h3><div class="work-arrow">→</div></div>
+        <div class="work-strip reveal"><div class="work-number">04</div><h3>Editorial Storytelling</h3><div class="work-arrow">→</div></div>
       </div>
     </section>
 
     <section id="activities" class="section activities-bg">
       <h2 class="reveal">Activities</h2>
-      <div class="activities-grid">
-        <div class="activity-card reveal"><span>Volunteering</span><div><h3>Tarjimly</h3><p>Arabic, French and English interpretation for people in need of language support.</p></div></div>
-        <div class="activity-card reveal"><span>Events</span><div><h3>Paris Peace Forum</h3><p>Support and liaison work in international forums and public diplomacy settings.</p></div></div>
-        <div class="activity-card reveal"><span>Student life</span><div><h3>Sciences Po Arab World</h3><p>Communication and project coordination for cultural and academic initiatives.</p></div></div>
-        <div class="activity-card reveal"><span>Conferences</span><div><h3>MEDMUN</h3><p>Participation in debate, international affairs simulations and youth-led diplomacy.</p></div></div>
+      <div class="activities-board">
+        <div class="activity-card large reveal"><span>Volunteering</span><h3>Tarjimly</h3><p>Arabic, French and English interpretation for people in need of language support.</p></div>
+        <div class="activity-card reveal"><span>Events</span><h3>Paris Peace Forum</h3><p>Support and liaison work in international forums and public diplomacy settings.</p></div>
+        <div class="activity-card reveal"><span>Student life</span><h3>Sciences Po Arab World</h3><p>Communication and project coordination for cultural and academic initiatives.</p></div>
+        <div class="activity-card reveal"><span>Conferences</span><h3>MEDMUN</h3><p>Participation in debate, international affairs simulations and youth-led diplomacy.</p></div>
       </div>
     </section>
 
@@ -479,8 +507,19 @@
 
     <section id="skills" class="section skills-bg">
       <h2 class="reveal">Skills & Tools</h2>
-      <div class="skills">
-        <div class="skill reveal">French</div><div class="skill reveal">Arabic</div><div class="skill reveal">English</div><div class="skill reveal">German</div><div class="skill reveal">Japanese</div><div class="skill reveal">Persian</div><div class="skill reveal">Excel</div><div class="skill reveal">Power BI</div><div class="skill reveal">Canva</div><div class="skill reveal">Communication</div><div class="skill reveal">Research</div><div class="skill reveal">Data visualisation</div>
+      <div class="skills-cloud">
+        <div class="skill big reveal">French</div>
+        <div class="skill big reveal">Arabic</div>
+        <div class="skill reveal">English</div>
+        <div class="skill reveal">German</div>
+        <div class="skill reveal">Japanese</div>
+        <div class="skill reveal">Persian</div>
+        <div class="skill big reveal">Communication</div>
+        <div class="skill reveal">Research</div>
+        <div class="skill reveal">Excel</div>
+        <div class="skill reveal">Power BI</div>
+        <div class="skill reveal">Canva</div>
+        <div class="skill reveal">Data visualisation</div>
       </div>
     </section>
 
