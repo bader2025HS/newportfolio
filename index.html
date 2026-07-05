@@ -689,26 +689,33 @@ section {
 }
 
 .section-heading{
+    width:min(1400px,95%);
+    margin:0 auto 70px;
     display:flex;
     align-items:flex-end;
-    justify-content:center;
+    justify-content:flex-start;
     gap:18px;
-    margin-bottom:90px;
 }
 
 .big-letter{
-    font-size:8rem;
-    line-height:0.8;
+    font-size:9rem;
+    line-height:.8;
     font-weight:900;
     color:#143f35;
 }
 
 .section-heading h2{
-    font-size:3rem;
+    font-size:4rem;
+    line-height:1;
     font-weight:700;
     color:#143f35;
+    margin-bottom:10px;
 }
-
+    
+    .edu-country:hover .country-map{
+    transform:translateY(-10px) scale(1.08);
+}
+    
 .education-maps{
     width:100%;
     max-width:1200px;
@@ -739,7 +746,7 @@ section {
 }
 
 .country-map{
-    width:220px;
+    width:280px;      /* was 220px */
     max-width:100%;
     height:auto;
     display:block;
@@ -763,10 +770,8 @@ section {
 .france:hover h3,
 .france:hover path,
 .france:hover polygon{
-
-    color:#2f8f5b;
-    fill:#2f8f5b;
-
+    color:#2f6dff;
+    fill:#2f6dff;
 }
 
 .japan:hover h3,
