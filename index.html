@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Portfolioo</title>
+  <title>BS Portfolioo</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1192,7 +1192,222 @@ section {
   );
 }
 
-    
+
+
+
+
+/* ===============================
+   WORK SECTION — MASONRY GRID
+================================ */
+
+.work-section {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 110px 7vw;
+  background: #f3f7f4;
+  color: #111827;
+}
+
+.work-head {
+  max-width: 760px;
+  margin-bottom: 56px;
+}
+
+.section-kicker {
+  margin-bottom: 14px;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #0f766e;
+}
+
+.work-head h2 {
+  font-size: clamp(2.6rem, 6vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  margin-bottom: 22px;
+}
+
+.work-head p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+.work-masonry {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 145px;
+  gap: 22px;
+}
+
+.work-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.45s ease, border-color 0.45s ease, background 0.45s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-8px);
+  border-color: #0f766e;
+}
+
+.work-card.tall {
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+.work-card.medium {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.work-card.small {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.work-card.wide {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.work-tag {
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.1);
+  color: #0f766e;
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.work-card h3 {
+  margin-top: auto;
+  margin-bottom: 14px;
+  font-size: clamp(1.45rem, 2vw, 2.15rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.work-card p {
+  max-width: 520px;
+  margin-bottom: 18px;
+  color: #4b5563;
+  line-height: 1.55;
+}
+
+.work-meta {
+  margin-bottom: 18px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.work-link {
+  width: fit-content;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 900;
+  border-bottom: 2px solid currentColor;
+}
+
+.work-link:hover {
+  opacity: 0.65;
+}
+
+/* Card colour variations */
+
+.work-card.blue {
+  background: #e8f0ff;
+}
+
+.work-card.green {
+  background: #e7f6ef;
+}
+
+.work-card.dark {
+  background: #111827;
+  color: white;
+}
+
+.work-card.dark p,
+.work-card.dark .work-meta {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.work-card.dark .work-tag {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+.image-card {
+  background: #f7efe2;
+}
+
+.work-visual {
+  height: 120px;
+  border-radius: 20px;
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.2), rgba(55, 112, 232, 0.2)),
+    #ffffff;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  color: #0f766e;
+}
+
+/* Responsive */
+
+@media (max-width: 1050px) {
+  .work-masonry {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .work-card,
+  .work-card.tall,
+  .work-card.medium,
+  .work-card.small,
+  .work-card.wide {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+}
+
+@media (max-width: 650px) {
+  .work-section {
+    padding: 80px 12px;
+  }
+
+  .work-masonry {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .work-card,
+  .work-card.tall,
+  .work-card.medium,
+  .work-card.small,
+  .work-card.wide {
+    min-height: 280px;
+    grid-column: span 1;
+    grid-row: auto;
+    border-radius: 22px;
+  }
+}
     
   </style>
 </head>
@@ -1477,13 +1692,6 @@ section {
 
 
 
-
-
-
-
-
-
-
 <section id="education">
   <div class="education-container">
 
@@ -1609,11 +1817,80 @@ section {
       </div>
     </section>
 
-    <section id="work">
-      <div class="section-inner">
-        <h2>Work</h2>
-      </div>
-    </section>
+<section id="work" class="work-section">
+  <div class="work-head">
+    <p class="section-kicker">Selected work</p>
+    <h2>Samples & previous projects</h2>
+    <p>
+      A curated selection of research, communication, data and visual work.
+    </p>
+  </div>
+
+  <div class="work-masonry">
+
+    <article class="work-card tall">
+      <span class="work-tag">Research</span>
+      <h3>Cox’s Bazar Study</h3>
+      <p>
+        Qualitative research on camp urbanisation, governance and everyday
+        socio-spatial dynamics.
+      </p>
+      <div class="work-meta">Humanitarian research · Bangladesh</div>
+      <a href="#" class="work-link">Open sample</a>
+    </article>
+
+    <article class="work-card small blue">
+      <span class="work-tag">Data</span>
+      <h3>OIF Country Briefs</h3>
+      <p>
+        Power BI country briefs and strategic notes across member states.
+      </p>
+      <div class="work-meta">Data analysis · OIF</div>
+      <a href="#" class="work-link">View example</a>
+    </article>
+
+    <article class="work-card medium image-card">
+      <div class="work-visual">MAP</div>
+      <span class="work-tag">Visuals</span>
+      <h3>Maps & infographics</h3>
+      <p>
+        Visual summaries, maps and communication assets for institutional topics.
+      </p>
+      <a href="#" class="work-link">See visuals</a>
+    </article>
+
+    <article class="work-card wide dark">
+      <span class="work-tag">Communication</span>
+      <h3>ESG & transition articles</h3>
+      <p>
+        Editorial content on sustainability, circular economy, climate strategy
+        and transition finance.
+      </p>
+      <div class="work-meta">BNP Paribas · Group Communication</div>
+      <a href="#" class="work-link">Read sample</a>
+    </article>
+
+    <article class="work-card medium green">
+      <span class="work-tag">Advocacy</span>
+      <h3>Asylum case notes</h3>
+      <p>
+        Research and documentation supporting asylum-related legal and social work.
+      </p>
+      <div class="work-meta">ARDHIS · Paris</div>
+      <a href="#" class="work-link">Open sample</a>
+    </article>
+
+    <article class="work-card small">
+      <span class="work-tag">Social media</span>
+      <h3>Campaign posts</h3>
+      <p>
+        Short-form content, captions and visual posts for institutional audiences.
+      </p>
+      <a href="#" class="work-link">View posts</a>
+    </article>
+
+  </div>
+</section>
 
     <section id="gallery">
       <div class="section-inner">
