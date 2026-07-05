@@ -781,13 +781,19 @@ async function initVisitedMap() {
     }
   }).addTo(map);
 
-  setTimeout(() => {
+setTimeout(() => {
     map.invalidateSize();
-    map.flyTo([32, 25], 2.3, {
-      duration: 1.4,
-      easeLinearity: 0.25
+
+    map.fitBounds([
+        [8, -15],    // Southwest (Morocco)
+        [58, 150]    // Northeast (Japan)
+    ], {
+        padding: [30, 30],
+        animate: true,
+        duration: 1.4
     });
-  }, 400);
+
+}, 400);
 
   window.addEventListener("resize", () => {
     map.invalidateSize();
