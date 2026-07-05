@@ -17,416 +17,139 @@
     }
 
     body {
+      min-height: 100vh;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f4f8f1;
+      background: #f7fbf8;
       color: #14382c;
       overflow-x: hidden;
     }
 
-    a {
-      color: inherit;
+    .header {
+      position: fixed;
+      top: 22px;
+      left: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      pointer-events: none;
+    }
+
+    .logo {
+      pointer-events: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 28px;
+      border-radius: 20px;
+      background: #dcefe7;
+      color: #14382c;
       text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .navbar {
+      pointer-events: auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 6px;
+      border-radius: 20px;
+      background: #dcefe7;
+      overflow: hidden;
+    }
+
+    .slider {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 0;
+      height: calc(100% - 12px);
+      border-radius: 15px;
+      background: #95d4bd;
+      z-index: 1;
+      transition: transform 0.35s ease, width 0.35s ease;
+    }
+
+    .nav-link {
+      position: relative;
+      z-index: 2;
+      padding: 14px 18px;
+      border-radius: 15px;
+      color: #14382c;
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
 
     section {
       min-height: 100vh;
-      padding: 140px 7vw 90px;
+      padding: 140px 7vw 80px;
+      display: flex;
+      align-items: center;
+    }
+
+    section:nth-child(odd) {
+      background: #f7fbf8;
+    }
+
+    section:nth-child(even) {
+      background: #e8f4ee;
     }
 
     h1 {
-      font-size: clamp(4rem, 12vw, 11rem);
+      font-size: clamp(4rem, 12vw, 10rem);
       line-height: 0.85;
       letter-spacing: -0.08em;
     }
 
     h2 {
       font-size: clamp(3rem, 8vw, 7rem);
-      line-height: 0.9;
       letter-spacing: -0.06em;
-      margin-bottom: 48px;
     }
 
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-    }
-
-    p {
-      font-size: 1.08rem;
-      line-height: 1.6;
-    }
-
-    /* NAVBAR */
-
-    .header {
-      position: fixed;
-      top: 24px;
-      left: 0;
-      right: 0;
-      z-index: 9999;
-      pointer-events: none;
-    }
-
-    .name-pill {
-      position: fixed;
-      top: 24px;
-      left: 28px;
-      padding: 22px 34px;
-      border-radius: 24px;
-      background: #dfeee7;
-      color: #12382b;
-      font-weight: 900;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      pointer-events: auto;
-    }
-
-    .name-pill:hover {
-      background: #9ed6c3;
-    }
-
-    .menu {
-      position: fixed;
-      top: 24px;
-      right: 28px;
-      display: flex;
-      overflow: hidden;
-      border-radius: 24px;
-      background: #dfeee7;
-      pointer-events: auto;
-    }
-
-    .menu a {
-      padding: 22px 28px;
-      font-size: 0.9rem;
-      font-weight: 900;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      transition: background 0.25s ease;
-      white-space: nowrap;
-    }
-
-    .menu a:hover,
-    .menu a.active {
-      background: #9ed6c3;
-    }
-
-    /* HOME */
-
-    #home {
-      background: #f4f8f1;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero {
-      max-width: 1000px;
-    }
-
-    .hero p {
-      margin-top: 32px;
-      max-width: 700px;
-      font-size: 1.35rem;
-    }
-
-    /* GALLERY */
-
-    #gallery {
-      background: #dfeee7;
-    }
-
-    .gallery-empty {
-      height: 55vh;
-      border-radius: 34px;
-      background: rgba(255,255,255,0.35);
-      border: 2px dashed rgba(20,56,44,0.25);
-    }
-
-    /* ABOUT */
-
-    #about {
-      background: #edf6e8;
-    }
-
-    .about-layout {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 28px;
-    }
-
-    .about-text {
-      background: white;
-      border-radius: 32px;
-      padding: 40px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .stat {
-      background: #dfeee7;
-      border-radius: 28px;
-      padding: 28px;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 2.6rem;
-      margin-bottom: 8px;
-    }
-
-    .map-placeholder {
-      margin-top: 28px;
-      height: 420px;
-      border-radius: 34px;
-      background: #bddfcd;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    /* EXPERIENCE */
-
-    #experience {
-      background: #f4f8f1;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .experience-card {
-      min-height: 310px;
-      border-radius: 32px;
-      padding: 32px;
-      background: #dfeee7;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: background 0.25s ease, transform 0.25s ease;
-    }
-
-    .experience-card:hover {
-      background: #9ed6c3;
-      transform: translateY(-6px);
-    }
-
-    .year {
-      font-weight: 900;
-      opacity: 0.65;
-    }
-
-    /* WORK */
-
-    #work {
-      background: #dfeee7;
-    }
-
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .work-item {
-      min-height: 430px;
-      border-radius: 34px;
-      background: #f4f8f1;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: background 0.25s ease, transform 0.25s ease;
-    }
-
-    .work-item:hover {
-      background: #9ed6c3;
-      transform: translateY(-6px);
-    }
-
-    .number {
-      font-weight: 900;
-      opacity: 0.55;
-    }
-
-    /* SKILLS */
-
-    #skills {
-      background: #edf6e8;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .skill {
-      background: white;
-      border-radius: 24px;
-      padding: 28px;
-      text-align: center;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    /* EDUCATION */
-
-    #education {
-      background: #f4f8f1;
-    }
-
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .education-card {
-      min-height: 300px;
-      background: #dfeee7;
-      border-radius: 32px;
-      padding: 34px;
-    }
-
-    /* ACTIVITIES */
-
-    #activities {
-      background: #dfeee7;
-    }
-
-    .activities-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .activity-card {
-      min-height: 280px;
-      background: #f4f8f1;
-      border-radius: 32px;
-      padding: 34px;
-    }
-
-    .tag {
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #9ed6c3;
-      font-size: 0.75rem;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    /* CONTACT */
-
-    #contact {
-      background: #edf6e8;
-      min-height: 85vh;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 40px;
-    }
-
-    .contact-card {
-      background: white;
-      border-radius: 28px;
-      padding: 34px;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      transition: background 0.25s ease;
-    }
-
-    .contact-card:hover {
-      background: #9ed6c3;
-    }
-
-    footer {
-      padding: 30px 7vw;
-      background: #dfeee7;
-      font-weight: 800;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 1150px) {
-      .menu a {
-        padding: 20px 18px;
-        font-size: 0.72rem;
-      }
-
-      .name-pill {
-        padding: 20px 24px;
-        font-size: 0.8rem;
-      }
-
-      .experience-grid,
-      .work-grid,
-      .skills-grid,
-      .activities-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 850px) {
-      section {
-        padding: 150px 16px 70px;
-      }
-
-      .name-pill {
+    @media (max-width: 1050px) {
+      .header {
         top: 12px;
         left: 12px;
+        right: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .logo {
         padding: 14px 18px;
         border-radius: 16px;
         font-size: 0.72rem;
       }
 
-      .menu {
-        top: 68px;
-        left: 12px;
-        right: 12px;
+      .navbar {
+        width: 100%;
         overflow-x: auto;
-        border-radius: 16px;
         scrollbar-width: none;
+        border-radius: 16px;
       }
 
-      .menu::-webkit-scrollbar {
+      .navbar::-webkit-scrollbar {
         display: none;
       }
 
-      .menu a {
-        padding: 16px 20px;
-        font-size: 0.72rem;
+      .nav-link {
+        padding: 13px 16px;
+        font-size: 0.7rem;
       }
 
-      .about-layout,
-      .experience-grid,
-      .work-grid,
-      .skills-grid,
-      .education-grid,
-      .activities-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats {
-        grid-template-columns: 1fr 1fr;
+      section {
+        padding: 150px 20px 80px;
       }
     }
   </style>
@@ -435,224 +158,73 @@
 <body>
 
   <header class="header">
-    <a href="#home" class="name-pill">Basile Suliman</a>
+    <a href="#home" class="logo">Basile Suliman</a>
 
-    <nav class="menu">
-      <a href="#home" class="active">Home</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#work">Work</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#activities">Activities</a>
-      <a href="#contact">Contact</a>
+    <nav class="navbar" id="navbar">
+      <span class="slider"></span>
+
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#activities" class="nav-link">Activities</a>
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </nav>
   </header>
 
-  <section id="home">
-    <div class="hero">
-      <h1>Basile<br>Suliman</h1>
-      <p>Communication, international affairs, sustainability and storytelling.</p>
-    </div>
-  </section>
-
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-empty"></div>
-  </section>
-
-  <section id="about">
-    <h2>About</h2>
-
-    <div class="about-layout">
-      <div class="about-text">
-        <p>
-          I turn complex international, sustainability and policy topics into clear,
-          accessible and engaging stories.
-        </p>
-        <br />
-        <p>
-          My work connects communication, research, international affairs,
-          migration, development and sustainability.
-        </p>
-      </div>
-
-      <div class="stats">
-        <div class="stat"><strong>30+</strong>Countries</div>
-        <div class="stat"><strong>100+</strong>Translations</div>
-        <div class="stat"><strong>200+</strong>People supported</div>
-        <div class="stat"><strong>8</strong>Cities lived</div>
-      </div>
-    </div>
-
-    <div class="map-placeholder">Visited countries map</div>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-
-    <div class="experience-grid">
-      <div class="experience-card">
-        <span class="year">2026</span>
-        <div>
-          <h3>BNP Paribas</h3>
-          <p>Group Communication — Content Strategy & People Engagement.</p>
-        </div>
-      </div>
-
-      <div class="experience-card">
-        <span class="year">2025</span>
-        <div>
-          <h3>OIF</h3>
-          <p>Project monitoring, country briefs and strategic reporting.</p>
-        </div>
-      </div>
-
-      <div class="experience-card">
-        <span class="year">2025</span>
-        <div>
-          <h3>AQLITY</h3>
-          <p>Humanitarian data, research support and visualisation.</p>
-        </div>
-      </div>
-
-      <div class="experience-card">
-        <span class="year">2024</span>
-        <div>
-          <h3>ARDHIS</h3>
-          <p>Asylum casework, research and documentation support.</p>
-        </div>
-      </div>
-
-      <div class="experience-card">
-        <span class="year">2024</span>
-        <div>
-          <h3>Sciences Po Arab World</h3>
-          <p>Communication and project coordination.</p>
-        </div>
-      </div>
-
-      <div class="experience-card">
-        <span class="year">2023</span>
-        <div>
-          <h3>Tarjimly</h3>
-          <p>Volunteer interpretation in Arabic, French and English.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="work">
-    <h2>Work</h2>
-
-    <div class="work-grid">
-      <div class="work-item">
-        <span class="number">01</span>
-        <h3>Research Papers</h3>
-      </div>
-
-      <div class="work-item">
-        <span class="number">02</span>
-        <h3>Cooperation Notes</h3>
-      </div>
-
-      <div class="work-item">
-        <span class="number">03</span>
-        <h3>Social Media</h3>
-      </div>
-
-      <div class="work-item">
-        <span class="number">04</span>
-        <h3>Visuals & Infographics</h3>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-
-    <div class="skills-grid">
-      <div class="skill">Arabic</div>
-      <div class="skill">French</div>
-      <div class="skill">English</div>
-      <div class="skill">German</div>
-      <div class="skill">Persian</div>
-      <div class="skill">Japanese</div>
-      <div class="skill">Power BI</div>
-      <div class="skill">Excel</div>
-      <div class="skill">Canva</div>
-      <div class="skill">Research</div>
-      <div class="skill">Writing</div>
-      <div class="skill">Communication</div>
-    </div>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-
-    <div class="education-grid">
-      <div class="education-card">
-        <h3>Sciences Po Paris</h3>
-        <p>International Security, Migration and Middle Eastern Studies.</p>
-      </div>
-
-      <div class="education-card">
-        <h3>Tokyo University of Foreign Studies</h3>
-        <p>Japanese language and exchange programme.</p>
-      </div>
-
-      <div class="education-card">
-        <h3>Freie Universität Berlin</h3>
-        <p>International Relations and European Affairs.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="activities">
-    <h2>Activities</h2>
-
-    <div class="activities-grid">
-      <div class="activity-card">
-        <span class="tag">Volunteering</span>
-        <h3>Tarjimly</h3>
-        <p>Interpretation and translation support.</p>
-      </div>
-
-      <div class="activity-card">
-        <span class="tag">Events</span>
-        <h3>Paris Peace Forum</h3>
-        <p>International event and liaison support.</p>
-      </div>
-
-      <div class="activity-card">
-        <span class="tag">Student life</span>
-        <h3>Sciences Po Arab World</h3>
-        <p>Communication and cultural programming.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Open to conversations around communication, international affairs and sustainability.</p>
-
-    <div class="contact-grid">
-      <a href="mailto:your.email@example.com" class="contact-card">Email</a>
-      <a href="#" class="contact-card">LinkedIn</a>
-      <a href="#" class="contact-card">CV</a>
-    </div>
-  </section>
-
-  <footer>
-    © 2026 Basile Suliman. All rights reserved.
-  </footer>
+  <main>
+    <section id="home"><h1>Basile<br>Suliman</h1></section>
+    <section id="about"><h2>About</h2></section>
+    <section id="experience"><h2>Experience</h2></section>
+    <section id="education"><h2>Education</h2></section>
+    <section id="skills"><h2>Skills</h2></section>
+    <section id="activities"><h2>Activities</h2></section>
+    <section id="work"><h2>Work</h2></section>
+    <section id="gallery"><h2>Gallery</h2></section>
+    <section id="contact"><h2>Contact</h2></section>
+  </main>
 
   <script>
-    const links = document.querySelectorAll(".menu a");
+    const navbar = document.querySelector("#navbar");
+    const slider = document.querySelector(".slider");
+    const links = document.querySelectorAll(".nav-link");
     const sections = document.querySelectorAll("section[id]");
 
-    function updateMenu() {
+    function moveSlider(link) {
+      if (!link) return;
+
+      const navRect = navbar.getBoundingClientRect();
+      const linkRect = link.getBoundingClientRect();
+
+      slider.style.width = linkRect.width + "px";
+      slider.style.transform = `translateX(${linkRect.left - navRect.left}px)`;
+    }
+
+    function setActive(id) {
+      links.forEach(link => {
+        link.classList.toggle("active", link.getAttribute("href") === "#" + id);
+      });
+
+      moveSlider(document.querySelector(".nav-link.active"));
+    }
+
+    links.forEach(link => {
+      link.addEventListener("mouseenter", () => moveSlider(link));
+
+      link.addEventListener("click", () => {
+        const id = link.getAttribute("href").replace("#", "");
+        setActive(id);
+      });
+    });
+
+    navbar.addEventListener("mouseleave", () => {
+      moveSlider(document.querySelector(".nav-link.active"));
+    });
+
+    window.addEventListener("scroll", () => {
       let current = "home";
 
       sections.forEach(section => {
@@ -661,13 +233,16 @@
         }
       });
 
-      links.forEach(link => {
-        link.classList.toggle("active", link.getAttribute("href") === "#" + current);
-      });
-    }
+      setActive(current);
+    });
 
-    window.addEventListener("scroll", updateMenu);
-    window.addEventListener("load", updateMenu);
+    window.addEventListener("resize", () => {
+      moveSlider(document.querySelector(".nav-link.active"));
+    });
+
+    window.addEventListener("load", () => {
+      moveSlider(document.querySelector(".nav-link.active"));
+    });
   </script>
 
 </body>
