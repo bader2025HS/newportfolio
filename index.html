@@ -7,9 +7,9 @@
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -17,43 +17,48 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #f7fbf7;
-      color: #062f24;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f8f1;
+      color: #14382c;
       overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     section {
       min-height: 100vh;
-      padding: 140px 8vw 80px;
+      padding: 140px 7vw 90px;
     }
 
     h1 {
-      font-size: clamp(3rem, 9vw, 8rem);
-      letter-spacing: -0.07em;
-      line-height: 0.9;
+      font-size: clamp(4rem, 12vw, 11rem);
+      line-height: 0.85;
+      letter-spacing: -0.08em;
     }
 
     h2 {
-      font-size: clamp(2.4rem, 6vw, 5.5rem);
-      letter-spacing: -0.05em;
-      margin-bottom: 40px;
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      margin-bottom: 48px;
     }
 
     h3 {
       font-size: 1.5rem;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     p {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       line-height: 1.6;
-      max-width: 720px;
     }
 
-    /* HEADER */
+    /* NAVBAR */
 
-    .portfolio-header {
+    .header {
       position: fixed;
       top: 24px;
       left: 0;
@@ -62,97 +67,97 @@
       pointer-events: none;
     }
 
-    .portfolio-name {
+    .name-pill {
       position: fixed;
       top: 24px;
       left: 28px;
-      padding: 22px 32px;
+      padding: 22px 34px;
       border-radius: 24px;
-      background: #dfeeed;
-      color: #062f24;
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 800;
+      background: #dfeee7;
+      color: #12382b;
+      font-weight: 900;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       pointer-events: auto;
     }
 
-    .portfolio-name:hover {
-      background: #9ed8cf;
+    .name-pill:hover {
+      background: #9ed6c3;
     }
 
-    .portfolio-menu {
+    .menu {
       position: fixed;
       top: 24px;
       right: 28px;
       display: flex;
       overflow: hidden;
       border-radius: 24px;
-      background: #dfeeed;
+      background: #dfeee7;
       pointer-events: auto;
     }
 
-    .menu-item {
-      padding: 22px 26px;
-      color: #062f24;
-      text-decoration: none;
+    .menu a {
+      padding: 22px 28px;
       font-size: 0.9rem;
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      white-space: nowrap;
       transition: background 0.25s ease;
+      white-space: nowrap;
     }
 
-    .menu-item:hover,
-    .menu-item.active {
-      background: #9ed8cf;
+    .menu a:hover,
+    .menu a.active {
+      background: #9ed6c3;
     }
 
-    /* SECTIONS */
+    /* HOME */
 
     #home {
-      background: #f7fbf7;
+      background: #f4f8f1;
       display: flex;
       align-items: center;
     }
 
-    .hero-text p {
-      margin-top: 28px;
+    .hero {
+      max-width: 1000px;
+    }
+
+    .hero p {
+      margin-top: 32px;
+      max-width: 700px;
       font-size: 1.35rem;
     }
 
+    /* GALLERY */
+
     #gallery {
-      background: #dfeeed;
+      background: #dfeee7;
     }
 
-    .gallery-blank {
+    .gallery-empty {
       height: 55vh;
-      border: 2px dashed rgba(6, 47, 36, 0.25);
-      border-radius: 32px;
+      border-radius: 34px;
+      background: rgba(255,255,255,0.35);
+      border: 2px dashed rgba(20,56,44,0.25);
     }
+
+    /* ABOUT */
 
     #about {
-      background: #f0f7ef;
+      background: #edf6e8;
     }
 
-    .about-grid {
+    .about-layout {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1.1fr 1fr;
       gap: 28px;
     }
 
-    .about-card,
-    .stat,
-    .experience-card,
-    .skill-card,
-    .education-card,
-    .activity-card,
-    .contact-card {
-      border-radius: 28px;
-      padding: 32px;
+    .about-text {
       background: white;
+      border-radius: 32px;
+      padding: 40px;
     }
 
     .stats {
@@ -161,49 +166,81 @@
       gap: 18px;
     }
 
+    .stat {
+      background: #dfeee7;
+      border-radius: 28px;
+      padding: 28px;
+    }
+
     .stat strong {
       display: block;
-      font-size: 2.2rem;
+      font-size: 2.6rem;
       margin-bottom: 8px;
     }
 
+    .map-placeholder {
+      margin-top: 28px;
+      height: 420px;
+      border-radius: 34px;
+      background: #bddfcd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    /* EXPERIENCE */
+
     #experience {
-      background: #e5f2df;
+      background: #f4f8f1;
     }
 
     .experience-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
     .experience-card {
-      min-height: 260px;
+      min-height: 310px;
+      border-radius: 32px;
+      padding: 32px;
+      background: #dfeee7;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .experience-card:hover {
+      background: #9ed6c3;
+      transform: translateY(-6px);
     }
 
     .year {
-      font-weight: 800;
-      opacity: 0.6;
+      font-weight: 900;
+      opacity: 0.65;
     }
 
+    /* WORK */
+
     #work {
-      background: #f7fbf7;
+      background: #dfeee7;
     }
 
     .work-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      gap: 18px;
     }
 
     .work-item {
-      min-height: 360px;
-      border-radius: 32px;
-      padding: 28px;
-      background: #dfeeed;
+      min-height: 430px;
+      border-radius: 34px;
+      background: #f4f8f1;
+      padding: 30px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -211,18 +248,19 @@
     }
 
     .work-item:hover {
-      background: #9ed8cf;
+      background: #9ed6c3;
       transform: translateY(-6px);
     }
 
-    .work-number {
-      font-size: 0.9rem;
-      font-weight: 800;
-      opacity: 0.6;
+    .number {
+      font-weight: 900;
+      opacity: 0.55;
     }
 
+    /* SKILLS */
+
     #skills {
-      background: #dfeeed;
+      background: #edf6e8;
     }
 
     .skills-grid {
@@ -231,105 +269,118 @@
       gap: 16px;
     }
 
-    .skill-card {
+    .skill {
+      background: white;
+      border-radius: 24px;
+      padding: 28px;
       text-align: center;
-      font-weight: 800;
-      text-transform: uppercase;
+      font-weight: 900;
       letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
+    /* EDUCATION */
+
     #education {
-      background: #edf7e9;
+      background: #f4f8f1;
     }
 
     .education-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
 
     .education-card {
-      min-height: 260px;
+      min-height: 300px;
+      background: #dfeee7;
+      border-radius: 32px;
+      padding: 34px;
     }
 
+    /* ACTIVITIES */
+
     #activities {
-      background: #f7fbf7;
+      background: #dfeee7;
     }
 
     .activities-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
     .activity-card {
-      min-height: 240px;
+      min-height: 280px;
+      background: #f4f8f1;
+      border-radius: 32px;
+      padding: 34px;
     }
 
     .tag {
       display: inline-block;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
       padding: 8px 14px;
       border-radius: 999px;
-      background: #dfeeed;
-      font-size: 0.8rem;
-      font-weight: 800;
+      background: #9ed6c3;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
     }
+
+    /* CONTACT */
 
     #contact {
-      background: #dfeeed;
-      min-height: 80vh;
+      background: #edf6e8;
+      min-height: 85vh;
     }
 
-    .contact-row {
-      display: flex;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
-      flex-wrap: wrap;
       margin-top: 40px;
     }
 
     .contact-card {
-      color: #062f24;
-      text-decoration: none;
-      font-weight: 800;
-      min-width: 180px;
+      background: white;
+      border-radius: 28px;
+      padding: 34px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       transition: background 0.25s ease;
     }
 
     .contact-card:hover {
-      background: #9ed8cf;
+      background: #9ed6c3;
     }
 
     footer {
-      padding: 30px 8vw;
-      background: #dfeeed;
-      font-size: 0.9rem;
-      font-weight: 700;
+      padding: 30px 7vw;
+      background: #dfeee7;
+      font-weight: 800;
     }
 
     /* RESPONSIVE */
 
     @media (max-width: 1150px) {
-      .portfolio-name {
-        padding: 18px 22px;
-        font-size: 0.75rem;
+      .menu a {
+        padding: 20px 18px;
+        font-size: 0.72rem;
       }
 
-      .menu-item {
-        padding: 18px 18px;
-        font-size: 0.72rem;
+      .name-pill {
+        padding: 20px 24px;
+        font-size: 0.8rem;
       }
 
       .experience-grid,
       .work-grid,
+      .skills-grid,
       .activities-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
       }
     }
 
@@ -338,7 +389,7 @@
         padding: 150px 16px 70px;
       }
 
-      .portfolio-name {
+      .name-pill {
         top: 12px;
         left: 12px;
         padding: 14px 18px;
@@ -346,33 +397,31 @@
         font-size: 0.72rem;
       }
 
-      .portfolio-menu {
+      .menu {
         top: 68px;
         left: 12px;
         right: 12px;
-        border-radius: 16px;
         overflow-x: auto;
+        border-radius: 16px;
         scrollbar-width: none;
       }
 
-      .portfolio-menu::-webkit-scrollbar {
+      .menu::-webkit-scrollbar {
         display: none;
       }
 
-      .menu-item {
+      .menu a {
         padding: 16px 20px;
         font-size: 0.72rem;
       }
 
-      .about-grid,
-      .education-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .about-layout,
       .experience-grid,
       .work-grid,
       .skills-grid,
-      .activities-grid {
+      .education-grid,
+      .activities-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
@@ -385,24 +434,24 @@
 
 <body>
 
-  <header class="portfolio-header">
-    <a href="#home" class="portfolio-name">Basile Suliman</a>
+  <header class="header">
+    <a href="#home" class="name-pill">Basile Suliman</a>
 
-    <nav class="portfolio-menu">
-      <a href="#home" class="menu-item active">Home</a>
-      <a href="#gallery" class="menu-item">Gallery</a>
-      <a href="#about" class="menu-item">About</a>
-      <a href="#experience" class="menu-item">Experience</a>
-      <a href="#work" class="menu-item">Work</a>
-      <a href="#skills" class="menu-item">Skills</a>
-      <a href="#education" class="menu-item">Education</a>
-      <a href="#activities" class="menu-item">Activities</a>
-      <a href="#contact" class="menu-item">Contact</a>
+    <nav class="menu">
+      <a href="#home" class="active">Home</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#activities">Activities</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section id="home">
-    <div class="hero-text">
+    <div class="hero">
       <h1>Basile<br>Suliman</h1>
       <p>Communication, international affairs, sustainability and storytelling.</p>
     </div>
@@ -410,29 +459,39 @@
 
   <section id="gallery">
     <h2>Gallery</h2>
-    <div class="gallery-blank"></div>
+    <div class="gallery-empty"></div>
   </section>
 
   <section id="about">
-    <h2>Hi.</h2>
-    <div class="about-grid">
-      <div class="about-card">
-        <p>I make sense first, then make it simple. I turn complex international, sustainability and policy topics into clear, engaging and accessible stories.</p>
-        <br>
-        <p>Displacement · Sustainability · Energy transitions · MENA & Africa · Development · Peacebuilding</p>
+    <h2>About</h2>
+
+    <div class="about-layout">
+      <div class="about-text">
+        <p>
+          I turn complex international, sustainability and policy topics into clear,
+          accessible and engaging stories.
+        </p>
+        <br />
+        <p>
+          My work connects communication, research, international affairs,
+          migration, development and sustainability.
+        </p>
       </div>
 
       <div class="stats">
-        <div class="stat"><strong>30+</strong>Countries visited</div>
+        <div class="stat"><strong>30+</strong>Countries</div>
         <div class="stat"><strong>100+</strong>Translations</div>
         <div class="stat"><strong>200+</strong>People supported</div>
         <div class="stat"><strong>8</strong>Cities lived</div>
       </div>
     </div>
+
+    <div class="map-placeholder">Visited countries map</div>
   </section>
 
   <section id="experience">
     <h2>Experience</h2>
+
     <div class="experience-grid">
       <div class="experience-card">
         <span class="year">2026</span>
@@ -446,7 +505,7 @@
         <span class="year">2025</span>
         <div>
           <h3>OIF</h3>
-          <p>Project monitoring, country briefs, data analysis and strategic reporting.</p>
+          <p>Project monitoring, country briefs and strategic reporting.</p>
         </div>
       </div>
 
@@ -454,7 +513,7 @@
         <span class="year">2025</span>
         <div>
           <h3>AQLITY</h3>
-          <p>Humanitarian data analysis, research support and visualisation.</p>
+          <p>Humanitarian data, research support and visualisation.</p>
         </div>
       </div>
 
@@ -462,7 +521,23 @@
         <span class="year">2024</span>
         <div>
           <h3>ARDHIS</h3>
-          <p>Support for asylum seekers through casework, research and documentation.</p>
+          <p>Asylum casework, research and documentation support.</p>
+        </div>
+      </div>
+
+      <div class="experience-card">
+        <span class="year">2024</span>
+        <div>
+          <h3>Sciences Po Arab World</h3>
+          <p>Communication and project coordination.</p>
+        </div>
+      </div>
+
+      <div class="experience-card">
+        <span class="year">2023</span>
+        <div>
+          <h3>Tarjimly</h3>
+          <p>Volunteer interpretation in Arabic, French and English.</p>
         </div>
       </div>
     </div>
@@ -470,64 +545,61 @@
 
   <section id="work">
     <h2>Work</h2>
+
     <div class="work-grid">
       <div class="work-item">
-        <span class="work-number">01</span>
+        <span class="number">01</span>
         <h3>Research Papers</h3>
-        <span>→</span>
       </div>
 
       <div class="work-item">
-        <span class="work-number">02</span>
+        <span class="number">02</span>
         <h3>Cooperation Notes</h3>
-        <span>→</span>
       </div>
 
       <div class="work-item">
-        <span class="work-number">03</span>
+        <span class="number">03</span>
         <h3>Social Media</h3>
-        <span>→</span>
       </div>
 
       <div class="work-item">
-        <span class="work-number">04</span>
+        <span class="number">04</span>
         <h3>Visuals & Infographics</h3>
-        <span>→</span>
       </div>
     </div>
   </section>
 
   <section id="skills">
-    <h2>Skills & Tools</h2>
-    <p>Languages, research, communication and visual tools for international work.</p>
-    <br><br>
+    <h2>Skills</h2>
+
     <div class="skills-grid">
-      <div class="skill-card">Arabic</div>
-      <div class="skill-card">French</div>
-      <div class="skill-card">English</div>
-      <div class="skill-card">German</div>
-      <div class="skill-card">Japanese</div>
-      <div class="skill-card">Persian</div>
-      <div class="skill-card">Communication</div>
-      <div class="skill-card">Research</div>
-      <div class="skill-card">Excel</div>
-      <div class="skill-card">Power BI</div>
-      <div class="skill-card">Canva</div>
-      <div class="skill-card">Data visualisation</div>
+      <div class="skill">Arabic</div>
+      <div class="skill">French</div>
+      <div class="skill">English</div>
+      <div class="skill">German</div>
+      <div class="skill">Persian</div>
+      <div class="skill">Japanese</div>
+      <div class="skill">Power BI</div>
+      <div class="skill">Excel</div>
+      <div class="skill">Canva</div>
+      <div class="skill">Research</div>
+      <div class="skill">Writing</div>
+      <div class="skill">Communication</div>
     </div>
   </section>
 
   <section id="education">
-    <h2>Education Journey</h2>
+    <h2>Education</h2>
+
     <div class="education-grid">
       <div class="education-card">
         <h3>Sciences Po Paris</h3>
-        <p>International Security, Middle Eastern Studies and Migration.</p>
+        <p>International Security, Migration and Middle Eastern Studies.</p>
       </div>
 
       <div class="education-card">
         <h3>Tokyo University of Foreign Studies</h3>
-        <p>Japanese language and international exchange year.</p>
+        <p>Japanese language and exchange programme.</p>
       </div>
 
       <div class="education-card">
@@ -539,41 +611,36 @@
 
   <section id="activities">
     <h2>Activities</h2>
+
     <div class="activities-grid">
       <div class="activity-card">
         <span class="tag">Volunteering</span>
         <h3>Tarjimly</h3>
-        <p>Arabic, French and English interpretation for people in need of language support.</p>
+        <p>Interpretation and translation support.</p>
       </div>
 
       <div class="activity-card">
         <span class="tag">Events</span>
         <h3>Paris Peace Forum</h3>
-        <p>Support and liaison work in international forums and public diplomacy settings.</p>
+        <p>International event and liaison support.</p>
       </div>
 
       <div class="activity-card">
         <span class="tag">Student life</span>
         <h3>Sciences Po Arab World</h3>
-        <p>Communication and project coordination for cultural and academic initiatives.</p>
-      </div>
-
-      <div class="activity-card">
-        <span class="tag">Conferences</span>
-        <h3>MEDMUN</h3>
-        <p>Participation in debate, international affairs simulations and youth-led diplomacy.</p>
+        <p>Communication and cultural programming.</p>
       </div>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Let’s connect.</h2>
-    <p>Open to conversations around communication, international affairs, sustainability and storytelling.</p>
+    <h2>Contact</h2>
+    <p>Open to conversations around communication, international affairs and sustainability.</p>
 
-    <div class="contact-row">
-      <a class="contact-card" href="mailto:your.email@example.com">Email me</a>
-      <a class="contact-card" href="#">LinkedIn</a>
-      <a class="contact-card" href="#">Download CV</a>
+    <div class="contact-grid">
+      <a href="mailto:your.email@example.com" class="contact-card">Email</a>
+      <a href="#" class="contact-card">LinkedIn</a>
+      <a href="#" class="contact-card">CV</a>
     </div>
   </section>
 
@@ -582,30 +649,25 @@
   </footer>
 
   <script>
-    const menuItems = document.querySelectorAll(".menu-item");
-    const pageSections = document.querySelectorAll("section[id]");
+    const links = document.querySelectorAll(".menu a");
+    const sections = document.querySelectorAll("section[id]");
 
-    function updateActiveMenuItem() {
-      let currentSection = "home";
+    function updateMenu() {
+      let current = "home";
 
-      pageSections.forEach(section => {
-        const sectionTop = section.offsetTop - 180;
-
-        if (window.scrollY >= sectionTop) {
-          currentSection = section.getAttribute("id");
+      sections.forEach(section => {
+        if (window.scrollY >= section.offsetTop - 180) {
+          current = section.id;
         }
       });
 
-      menuItems.forEach(item => {
-        item.classList.toggle(
-          "active",
-          item.getAttribute("href") === `#${currentSection}`
-        );
+      links.forEach(link => {
+        link.classList.toggle("active", link.getAttribute("href") === "#" + current);
       });
     }
 
-    window.addEventListener("scroll", updateActiveMenuItem);
-    window.addEventListener("load", updateActiveMenuItem);
+    window.addEventListener("scroll", updateMenu);
+    window.addEventListener("load", updateMenu);
   </script>
 
 </body>
