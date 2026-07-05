@@ -469,7 +469,7 @@ section {
 .experience-track {
   margin-top: 80px;
   display: flex;
-  gap: 20px;
+  gap: 22px;
   overflow-x: auto;
   padding-bottom: 26px;
   scroll-snap-type: x mandatory;
@@ -485,30 +485,64 @@ section {
   min-height: 470px;
   padding: 36px;
   border-radius: 34px;
-  background: #1d4738;
   color: #f6fbf8;
   scroll-snap-align: start;
 
   display: flex;
   flex-direction: column;
 
-  transition: transform 0.25s ease, background 0.25s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.experience-pill:hover {
-  transform: translateY(-6px);
-  background: #12382b;
+/* subtle background texture */
+.experience-pill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(246, 251, 248, 0.14), transparent 28%),
+    radial-gradient(circle at 15% 85%, rgba(246, 251, 248, 0.08), transparent 32%);
+  pointer-events: none;
+}
+
+.experience-pill > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* different card colours */
+.experience-pill:nth-child(1) {
+  background: linear-gradient(145deg, #1d4738, #12382b);
+}
+
+.experience-pill:nth-child(2) {
+  background: linear-gradient(145deg, #285243, #183d32);
+}
+
+.experience-pill:nth-child(3) {
+  background: linear-gradient(145deg, #35604d, #1f493b);
+}
+
+.experience-pill:nth-child(4) {
+  background: linear-gradient(145deg, #416c58, #285243);
+}
+
+.experience-pill:nth-child(5) {
+  background: linear-gradient(145deg, #234c3f, #14382c);
+}
+
+.experience-pill:nth-child(6) {
+  background: linear-gradient(145deg, #507764, #315744);
 }
 
 .exp-sector {
   align-self: flex-start;
-
   margin-bottom: 28px;
   padding: 8px 14px;
 
   border-radius: 999px;
-  background: rgba(246, 251, 248, 0.12);
-
+  background: rgba(246, 251, 248, 0.13);
   color: #f6fbf8;
 
   font-size: 0.68rem;
@@ -527,7 +561,7 @@ section {
 .exp-role {
   font-size: 1rem;
   line-height: 1.5;
-  color: rgba(246, 251, 248, 0.76);
+  color: rgba(246, 251, 248, 0.78);
   margin-bottom: 24px;
 }
 
@@ -535,7 +569,7 @@ section {
   max-width: 390px;
   font-size: 0.96rem;
   line-height: 1.75;
-  color: rgba(246, 251, 248, 0.84);
+  color: rgba(246, 251, 248, 0.86);
 }
 
 .exp-meta {
@@ -549,7 +583,7 @@ section {
 .exp-meta span {
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(246, 251, 248, 0.11);
+  background: rgba(246, 251, 248, 0.12);
   font-size: 0.75rem;
   line-height: 1;
 }
@@ -583,7 +617,6 @@ section {
     max-width: 100%;
   }
 }
-
     
   </style>
 </head>
