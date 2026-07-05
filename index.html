@@ -450,6 +450,10 @@ section {
 }
 
 
+
+
+    
+
 #experience {
   padding: 140px 8vw;
 }
@@ -495,21 +499,7 @@ section {
   overflow: hidden;
 }
 
-/* subtle background texture */
-.experience-pill::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 85% 15%, rgba(246, 251, 248, 0.14), transparent 28%),
-    radial-gradient(circle at 15% 85%, rgba(246, 251, 248, 0.08), transparent 32%);
-  pointer-events: none;
-}
 
-.experience-pill > * {
-  position: relative;
-  z-index: 1;
-}
 
 /* different card colours */
 .experience-pill:nth-child(1) {
@@ -588,7 +578,33 @@ section {
   line-height: 1;
 }
 
+
+.experience-pill:nth-child(1) {
+  background: #1d4738;
+}
+
+.experience-pill:nth-child(2) {
+  background: #224f40;
+}
+
+.experience-pill:nth-child(3) {
+  background: #2a5a49;
+}
+
+.experience-pill:nth-child(4) {
+  background: #356653;
+}
+
+.experience-pill:nth-child(5) {
+  background: #173d31;
+}
+
+.experience-pill:nth-child(6) {
+  background: #456f5b;
+}
+    
 @media (max-width: 850px) {
+
   #experience {
     padding: 120px 20px 80px;
   }
@@ -599,23 +615,34 @@ section {
 
   .experience-track {
     margin-top: 60px;
-    gap: 16px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: visible;
+    gap: 20px;
+
+    scroll-snap-type: none;
   }
 
   .experience-pill {
-    flex: 0 0 82vw;
-    min-height: 440px;
-    padding: 30px;
-    border-radius: 28px;
+    flex: none;
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 28px;
+    border-radius: 26px;
   }
 
   .experience-pill h3 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .exp-description {
     max-width: 100%;
   }
+
 }
     
   </style>
