@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>BSS Portfolio</title>
+  <title>Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -672,157 +672,179 @@ section {
 
 
 
+
 /* ===========================
    EDUCATION
 =========================== */
 
-#education{
-  min-height:100vh;
-  padding:140px 8vw;
-  background:#f5faf7;
+.education{
+    min-height:100vh;
+    padding:100px 5vw;
+    background:#f5faf7;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
-.education-container{
-  max-width:1450px;
-  margin:auto;
+/* Title like other sections */
+
+.education .section-heading{
+    position:relative;
+    width:100%;
+    max-width:1400px;
+    height:120px;
+    margin:0 auto 70px;
 }
 
-.education-header{
-  position:relative;
-  height:130px;
-  margin-bottom:70px;
+.education .section-letter{
+    position:absolute;
+    left:0;
+    top:-25px;
+    font-family:inherit;
+    font-size:10rem;
+    font-weight:900;
+    line-height:1;
+    color:#cfe8df;
+    user-select:none;
+    pointer-events:none;
 }
 
-.education-letter{
-  position:absolute;
-  left:0;
-  top:-28px;
-  font-family:inherit;
-  font-size:10rem;
-  font-weight:900;
-  line-height:1;
-  color:#cfe8df;
-  pointer-events:none;
-  user-select:none;
+.education .section-title{
+    position:absolute;
+    left:18px;
+    bottom:12px;
+    font-family:inherit;
+    font-size:2rem;
+    font-weight:400;
+    letter-spacing:8px;
+    text-transform:uppercase;
+    color:#2d7b67;
 }
 
-.education-title{
-  position:absolute;
-  left:18px;
-  bottom:18px;
-  font-family:inherit;
-  font-size:1.7rem;
-  font-weight:400;
-  letter-spacing:0.18em;
-  color:#2d7b67;
-}
-
-/* MAPS */
+/* Maps */
 
 .education-maps{
-  width:100%;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  align-items:start;
-  justify-items:center;
-  gap:40px;
+    width:100%;
+    max-width:1250px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    align-items:start;      /* instead of center */
+    justify-items:center;
+    gap:40px;
 }
 
 .edu-country{
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
 }
 
 .edu-country h3{
-  height:42px;
-  margin:0 0 30px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:inherit;
-  font-size:1.45rem;
-  font-weight:600;
-  letter-spacing:10px;
-  color:#0f172a;
-  transition:color .3s ease;
+    height:42px;              /* identical height for every title */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 0 30px;
+    font-family:inherit;
+    font-size:1.45rem;
+    font-weight:600;
+    letter-spacing:10px;
+    color:#0f172a;
+    transition:color .3s ease;
 }
 
 .country-map{
-  height:auto;
-  max-width:100%;
-  display:block;
+    height:auto;
+    max-width:100%;
+    display:block;
+    margin:0 auto;
 }
 
 .edu-country-shape,
 .country-map path,
 .country-map polygon{
-  fill:#000;
-  transition:fill .3s ease;
+    fill:#000;
+    transition:fill .3s ease;
 }
 
-.france .country-map{ width:340px; }
-.japan .country-map{ width:360px; }
-.germany .country-map{ width:280px; }
+/* Individual visual sizing */
 
-/* color only */
+.france .country-map{
+    width:340px;
+}
+
+.japan .country-map{
+    width:360px;
+}
+
+.germany .country-map{
+    width:280px;
+}
+
+/* Color only on hover — no movement, no zoom */
+
 .france:hover h3,
 .france:hover .edu-country-shape,
 .france:hover path,
 .france:hover polygon{
-  color:#1D4ED8;
-  fill:#1D4ED8;
+    color:#1D4ED8;
+    fill:#1D4ED8;
 }
 
 .japan:hover h3,
 .japan:hover .edu-country-shape,
 .japan:hover path,
 .japan:hover polygon{
-  color:#d62828;
-  fill:#d62828;
+    color:#d62828;
+    fill:#d62828;
 }
 
 .germany:hover h3,
 .germany:hover .edu-country-shape,
 .germany:hover path,
 .germany:hover polygon{
-  color:#d4a017;
-  fill:#d4a017;
+    color:#d4a017;
+    fill:#d4a017;
 }
 
-@media(max-width:850px){
-  #education{
-    padding:120px 20px 80px;
-  }
+/* Responsive */
 
-  .education-header{
-    height:130px;
-    margin-bottom:55px;
-  }
+@media(max-width:900px){
+    .education{
+        padding:90px 24px;
+    }
 
-  .education-header .section-letter{
-    font-size:8rem;
-    top:-18px;
-  }
+    .education .section-heading{
+        height:100px;
+        margin-bottom:60px;
+    }
 
-  .education-header .section-title{
-    font-size:1.15rem;
-    letter-spacing:0.32em;
-    bottom:22px;
-  }
+    .education .section-letter{
+        font-size:7rem;
+        top:-10px;
+    }
 
-  .education-maps{
-    grid-template-columns:1fr;
-    gap:70px;
-  }
+    .education .section-title{
+        font-size:1.35rem;
+        letter-spacing:5px;
+        left:12px;
+    }
 
-  .france .country-map,
-  .japan .country-map,
-  .germany .country-map{
-    width:260px;
-  }
+    .education-maps{
+        grid-template-columns:1fr;
+        gap:70px;
+    }
+
+    .france .country-map,
+    .japan .country-map,
+    .germany .country-map{
+        width:260px;
+    }
 }
+
 
 
     
@@ -1110,21 +1132,22 @@ section {
 
 
 
-
-
-
-
 <section id="education" class="education section">
-  <div class="education-container">
 
-    <div class="education-header">
-      <div class="education-letter">W</div>
-      <div class="education-title">Where I've Studied</div>
+<div class="section-heading">
+
+    <div class="section-letter">W</div>
+
+    <div class="section-title">
+        WHERE I'VE STUDIED
     </div>
+
+</div>
 
     <div class="education-maps">
 
-        <h3>FRANCE</h3>
+        <div class="edu-country france">
+            <h3>FRANCE</h3>
 <svg class="country-map" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 viewBox="0 0 512 512" xml:space="preserve">
 <g>
@@ -1180,7 +1203,8 @@ l6.546-11.224c0.291-0.505,0.462-1.088,0.48-1.67l1.217-33.825C502.893,463.135,502
 
         <div class="edu-country japan">
             <h3>JAPAN</h3>
-      <svg class="country-map" viewBox="0 0 238 260" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 238 260" enable-background="new 0 0 238 260" xml:space="preserve">
+      <svg  class="country-map" viewBox="0 0 238 260" xmlns="http://www.w3.org/2000/svg"
+   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 238 260" enable-background="new 0 0 238 260" xml:space="preserve">
 <path class="edu-country-shape" d="M77.972,205.527l3.567,4.927l-6.62,7.338l-10.572-0.462l-5.414,2.72l-4.773,8.442l-5.517-1.155l-2.078-1.719l-1.129-8.827
 l4.927-4.208l1.822-5.029l5.671,1.642l6.928-1.18l0.975-2.899l8.031-3.13L77.972,205.527z M231.618,32.893l1.257-8.365l-4.644,5.055
 h-5.979l-2.284-2.746l-7.082-1.052l-9.391-7.133L189.948,2l-4.773,6.363l2.617,7.287l-1.745,15.164l-4.003,4.131l1.411,6.415
@@ -1216,13 +1240,9 @@ l1.834-8.327l-23.218-18.005L134.374,160.3l10.173,0.075l35.777-24.884l9.22,1.762l
         </div>
 
     </div>
-    
-    
-    
-    </div>
 
-  </div>
 </section>
+
 
 
 
