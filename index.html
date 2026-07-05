@@ -466,184 +466,100 @@ section {
   max-width: 900px;
 }
 
-.experience-layout {
+.experience-track {
   margin-top: 90px;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 80px;
-  align-items: center;
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  padding-bottom: 28px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
 }
 
-.experience-network {
-  position: relative;
-  height: 620px;
-  border-radius: 36px;
-  background: rgba(246, 251, 248, 0.45);
-  overflow: hidden;
+.experience-track::-webkit-scrollbar {
+  display: none;
 }
 
-.network-lines {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.network-lines line {
-  stroke: rgba(18, 56, 43, 0.22);
-  stroke-width: 0.35;
-}
-
-.center-node {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 3;
-  transform: translate(-50%, -50%);
-
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-
+.experience-pill {
+  flex: 0 0 min(620px, 82vw);
+  min-height: 560px;
+  padding: 48px;
+  border-radius: 42px;
   background: #1d4738;
   color: #f6fbf8;
-
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-
-  text-align: center;
+  transition: transform 0.25s ease, background 0.25s ease;
 }
 
-.center-node strong {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 2.4rem;
-}
-
-.center-node span {
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.exp-node {
-  position: absolute;
-  left: var(--x);
-  top: var(--y);
-  z-index: 4;
-  transform: translate(-50%, -50%);
-
-  width: 112px;
-  height: 112px;
-  border-radius: 50%;
-  border: 1px solid rgba(18, 56, 43, 0.16);
-
-  background: #dcefe7;
-  color: #12382b;
-
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-
-  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
-}
-
-.exp-node:hover,
-.exp-node.active {
-  transform: translate(-50%, -50%) scale(1.12);
-  background: #8ed4bf;
-}
-
-.experience-card {
-  min-height: 520px;
-  border-radius: 36px;
-  padding: 42px;
-  background: #1d4738;
-  color: #f6fbf8;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.experience-card.fade {
-  opacity: 0;
-  transform: translateY(10px);
+.experience-pill:hover {
+  transform: translateY(-8px);
+  background: #12382b;
 }
 
 .exp-sector {
-  display: inline-block;
-  margin-bottom: 32px;
-  padding: 9px 14px;
+  align-self: flex-start;
+  margin-bottom: 42px;
+  padding: 10px 18px;
   border-radius: 999px;
   background: rgba(246, 251, 248, 0.12);
+  color: #f6fbf8;
   font-size: 0.75rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
-.experience-card h3 {
+.experience-pill h3 {
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2.2rem, 4vw, 4rem);
-  line-height: 0.95;
-  margin-bottom: 20px;
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+  line-height: 0.9;
+  margin-bottom: 22px;
 }
 
 .exp-role {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: rgba(246, 251, 248, 0.76);
-  margin-bottom: 28px;
+  margin-bottom: 34px;
 }
 
 .exp-description {
-  font-size: 1rem;
+  max-width: 460px;
+  font-size: 1.05rem;
   line-height: 1.8;
-  color: rgba(246, 251, 248, 0.82);
+  color: rgba(246, 251, 248, 0.84);
 }
 
 .exp-meta {
-  margin-top: 38px;
+  margin-top: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  padding-top: 40px;
 }
 
 .exp-meta span {
-  padding: 9px 13px;
+  padding: 10px 15px;
   border-radius: 999px;
-  background: rgba(246, 251, 248, 0.1);
-  font-size: 0.78rem;
+  background: rgba(246, 251, 248, 0.11);
+  font-size: 0.85rem;
 }
 
-@media (max-width: 900px) {
-  .experience-layout {
-    grid-template-columns: 1fr;
+@media (max-width: 850px) {
+  #experience {
+    padding: 120px 20px 80px;
   }
 
-  .experience-network {
-    height: 520px;
+  .experience-track {
+    margin-top: 60px;
   }
 
-  .exp-node {
-    width: 92px;
-    height: 92px;
-    font-size: 0.68rem;
-  }
-
-  .center-node {
-    width: 120px;
-    height: 120px;
+  .experience-pill {
+    min-height: 520px;
+    padding: 34px;
+    border-radius: 30px;
   }
 }
-
 
 
 
@@ -769,53 +685,103 @@ section {
       <h2>Across sectors,<br>not inside one box.</h2>
     </div>
 
-    <div class="experience-layout">
+    <div class="experience-track">
 
-      <div class="experience-network">
-
-        <div class="center-node">
-          <strong>BS</strong>
-          <span>Basile Suliman</span>
+      <article class="experience-pill">
+        <span class="exp-sector">Private Sector</span>
+        <h3>BNP Paribas</h3>
+        <p class="exp-role">CSR & Sustainability Communications</p>
+        <p class="exp-description">
+          Working on RSE and sustainability communications, turning complex transition,
+          engagement and corporate responsibility topics into clear content for internal
+          and external audiences.
+        </p>
+        <div class="exp-meta">
+          <span>Communication</span>
+          <span>CSR</span>
+          <span>Sustainability</span>
+          <span>Private sector</span>
         </div>
+      </article>
 
-        <button class="exp-node active" style="--x: 50%; --y: 8%;" data-exp="bnp">
-          <span>BNP</span>
-        </button>
+      <article class="experience-pill">
+        <span class="exp-sector">International Organisation</span>
+        <h3>OIF</h3>
+        <p class="exp-role">Project Monitoring & Strategic Reporting</p>
+        <p class="exp-description">
+          Contributed to project follow-up, country briefs, data organisation and
+          strategic reporting across international cooperation priorities.
+        </p>
+        <div class="exp-meta">
+          <span>Cooperation</span>
+          <span>Country briefs</span>
+          <span>Data</span>
+        </div>
+      </article>
 
-        <button class="exp-node" style="--x: 83%; --y: 34%;" data-exp="oif">
-          <span>OIF</span>
-        </button>
+      <article class="experience-pill">
+        <span class="exp-sector">NGO</span>
+        <h3>ARDHIS</h3>
+        <p class="exp-role">Asylum Casework & Research</p>
+        <p class="exp-description">
+          Supported asylum seekers through research, documentation and casework, with a
+          focus on migration, protection and legal-administrative procedures.
+        </p>
+        <div class="exp-meta">
+          <span>Migration</span>
+          <span>Asylum</span>
+          <span>Research</span>
+        </div>
+      </article>
 
-        <button class="exp-node" style="--x: 76%; --y: 78%;" data-exp="aqlity">
-          <span>AQLITY</span>
-        </button>
+      <article class="experience-pill">
+        <span class="exp-sector">Research / Humanitarian Data</span>
+        <h3>AQLITY</h3>
+        <p class="exp-role">Humanitarian Data Analyst</p>
+        <p class="exp-description">
+          Worked on humanitarian data, research support and visualisation, connecting
+          field information with clear analytical outputs.
+        </p>
+        <div class="exp-meta">
+          <span>Research</span>
+          <span>Data</span>
+          <span>Visualisation</span>
+        </div>
+      </article>
 
-        <button class="exp-node" style="--x: 24%; --y: 78%;" data-exp="tarjimly">
-          <span>Tarjimly</span>
-        </button>
+      <article class="experience-pill">
+        <span class="exp-sector">Humanitarian Volunteering</span>
+        <h3>Tarjimly</h3>
+        <p class="exp-role">Interpreter & Translator</p>
+        <p class="exp-description">
+          Provided Arabic, French and English translation support for people needing
+          language assistance in humanitarian and migration-related contexts.
+        </p>
+        <div class="exp-meta">
+          <span>Translation</span>
+          <span>Arabic</span>
+          <span>French</span>
+          <span>English</span>
+        </div>
+      </article>
 
-        <button class="exp-node" style="--x: 17%; --y: 34%;" data-exp="ardhis">
-          <span>ARDHIS</span>
-        </button>
-
-        <button class="exp-node" style="--x: 50%; --y: 92%;" data-exp="student">
-          <span>Student</span>
-        </button>
-
-        <svg class="network-lines" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <line x1="50" y1="50" x2="50" y2="8" />
-          <line x1="50" y1="50" x2="83" y2="34" />
-          <line x1="50" y1="50" x2="76" y2="78" />
-          <line x1="50" y1="50" x2="24" y2="78" />
-          <line x1="50" y1="50" x2="17" y2="34" />
-          <line x1="50" y1="50" x2="50" y2="92" />
-        </svg>
-
-      </div>
-
-      <div class="experience-card" id="experienceCard"></div>
+      <article class="experience-pill">
+        <span class="exp-sector">Student Leadership</span>
+        <h3>Sciences Po Arab World</h3>
+        <p class="exp-role">Communications & Project Coordination</p>
+        <p class="exp-description">
+          Led communication and supported cultural, academic and student-led initiatives
+          around the Arab world and international affairs.
+        </p>
+        <div class="exp-meta">
+          <span>Events</span>
+          <span>Communication</span>
+          <span>Culture</span>
+        </div>
+      </article>
 
     </div>
+
   </div>
 </section>
 
@@ -1048,86 +1014,6 @@ setTimeout(() => {
 }
 
 window.addEventListener("load", initVisitedMap);
-
-const experiences = {
-  bnp: {
-    sector: "Private Sector",
-    title: "BNP Paribas",
-    role: "CSR & Sustainability Communications",
-    description: "Working on RSE and sustainability communications, turning complex transition, engagement and corporate responsibility topics into clear content for internal and external audiences.",
-    meta: ["Communication", "CSR", "Sustainability", "Private sector"]
-  },
-  oif: {
-    sector: "International Organisation",
-    title: "Organisation Internationale de la Francophonie",
-    role: "Project Monitoring & Strategic Reporting",
-    description: "Contributed to project follow-up, country briefs, data organisation and strategic reporting across international cooperation priorities.",
-    meta: ["Public institutions", "Cooperation", "Country briefs", "Data"]
-  },
-  ardhis: {
-    sector: "NGO",
-    title: "ARDHIS",
-    role: "Asylum Casework & Research",
-    description: "Supported asylum seekers through research, documentation and casework, with a focus on migration, protection and legal-administrative procedures.",
-    meta: ["NGO", "Migration", "Asylum", "Research"]
-  },
-  aqlity: {
-    sector: "Research / Humanitarian Data",
-    title: "AQLITY",
-    role: "Humanitarian Data Analyst",
-    description: "Worked on humanitarian data, research support and visualisation, connecting field information with clear analytical outputs.",
-    meta: ["Research", "Humanitarian data", "Visualisation", "Analysis"]
-  },
-  tarjimly: {
-    sector: "Humanitarian Volunteering",
-    title: "Tarjimly",
-    role: "Interpreter & Translator",
-    description: "Provided Arabic, French and English translation support for people needing language assistance in humanitarian and migration-related contexts.",
-    meta: ["Volunteering", "Translation", "Arabic", "French", "English"]
-  },
-  student: {
-    sector: "Student Leadership",
-    title: "Sciences Po Arab World",
-    role: "Communications & Project Coordination",
-    description: "Led communication and supported cultural, academic and student-led initiatives around the Arab world and international affairs.",
-    meta: ["Student leadership", "Events", "Communication", "Culture"]
-  }
-};
-
-const expNodes = document.querySelectorAll(".exp-node");
-const experienceCard = document.querySelector("#experienceCard");
-
-function renderExperience(id) {
-  const exp = experiences[id];
-
-  experienceCard.classList.add("fade");
-
-  setTimeout(() => {
-    experienceCard.innerHTML = `
-      <div class="exp-sector">${exp.sector}</div>
-      <h3>${exp.title}</h3>
-      <p class="exp-role">${exp.role}</p>
-      <p class="exp-description">${exp.description}</p>
-      <div class="exp-meta">
-        ${exp.meta.map(item => `<span>${item}</span>`).join("")}
-      </div>
-    `;
-
-    experienceCard.classList.remove("fade");
-  }, 180);
-
-  expNodes.forEach(node => {
-    node.classList.toggle("active", node.dataset.exp === id);
-  });
-}
-
-expNodes.forEach(node => {
-  node.addEventListener("mouseenter", () => renderExperience(node.dataset.exp));
-  node.addEventListener("click", () => renderExperience(node.dataset.exp));
-});
-
-renderExperience("bnp");
-
 
     
   </script>
