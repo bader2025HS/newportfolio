@@ -762,16 +762,14 @@ section {
 }
 
 .edu-country:hover .country-map{
-
-    transform:translateY(-10px) scale(1.05);
-
+    transform:none;
 }
 
 .france:hover h3,
 .france:hover path,
 .france:hover polygon{
-    color:#2f6dff;
-    fill:#2f6dff;
+     fill:#1D4ED8;
+    color:#1D4ED8;
 }
 
 .japan:hover h3,
@@ -804,6 +802,36 @@ section {
     transform:scale(.92);
 }
 
+
+.section-title{
+    position:absolute;
+    left:20px;
+    bottom:10px;
+
+    font-family:inherit;      /* same as rest of portfolio */
+    font-size:2.1rem;
+    font-weight:300;
+    letter-spacing:7px;
+    text-transform:uppercase;
+
+    color:#2d7b67;
+}
+
+  .section-letter{
+    position:absolute;
+    left:0;
+    top:-18px;
+
+    font-family:inherit;
+    font-size:9rem;
+    font-weight:700;
+
+    line-height:1;
+
+    color:#d7ebe4;
+}
+
+    
 @media(max-width:900px){
 
     .education-maps{
