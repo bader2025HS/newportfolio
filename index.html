@@ -1315,17 +1315,35 @@ section {
 
 
 
-.activity-cards {
+#activities {
+  padding: 140px 8vw;
+  background: #e8f4ee;
+  color: #12382b;
+}
+
+.activities-container {
+  max-width: 1450px;
+  margin: auto;
+}
+
+.activities-header h2 {
+  margin-top: 18px;
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: 0.95;
+  max-width: 950px;
+}
+
+.activity-grid {
   margin-top: 90px;
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1.05fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(2, 250px);
   gap: 22px;
 }
 
 .activity-card {
-  min-height: 320px;
-  padding: 34px;
-  border-radius: 34px;
+  padding: 28px;
+  border-radius: 30px;
   background: #f6fbf8;
   border: 1px solid rgba(18, 56, 43, 0.12);
 
@@ -1333,61 +1351,75 @@ section {
   flex-direction: column;
   justify-content: space-between;
 
+  overflow: hidden;
   transition: transform 0.35s ease, background 0.35s ease;
 }
 
-.activity-card.large {
-  grid-row: span 2;
-  min-height: 670px;
-}
-
-.activity-card.dark {
+.activity-tarjimly {
+  grid-column: 1;
+  grid-row: 1 / span 2;
   background: #1f5644;
   color: #f6fbf8;
 }
 
-.activity-tag {
+.activity-events {
+  grid-column: 2 / span 2;
+  grid-row: 1;
+}
+
+.activity-medmun {
+  grid-column: 4;
+  grid-row: 1;
+}
+
+.activity-card span {
   width: fit-content;
   padding: 8px 13px;
   border-radius: 999px;
+
   background: #dcefe7;
   color: #2d7b61;
 
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 800;
-  letter-spacing: 0.13em;
+  line-height: 1;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-.activity-card.dark .activity-tag {
+.activity-tarjimly span {
   background: rgba(255, 255, 255, 0.12);
   color: #b8ead8;
 }
 
 .activity-card h3 {
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(3rem, 6vw, 6.5rem);
-  line-height: 0.85;
+  font-size: clamp(2rem, 3.5vw, 4.8rem);
+  line-height: 0.88;
   letter-spacing: -0.07em;
+}
+
+.activity-tarjimly h3 {
+  font-size: clamp(3rem, 5vw, 6rem);
 }
 
 .activity-card p {
   max-width: 520px;
-  font-size: 1.08rem;
-  line-height: 1.75;
+  font-size: 0.98rem;
+  line-height: 1.65;
   color: #4b6158;
 }
 
-.activity-card.dark p {
-  color: rgba(246, 251, 248, 0.72);
+.activity-tarjimly p {
+  color: rgba(246, 251, 248, 0.76);
 }
 
 .activity-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-7px);
   background: #dcefe7;
 }
 
-.activity-card.dark:hover {
+.activity-tarjimly:hover {
   background: #12382b;
 }
 
@@ -1419,15 +1451,47 @@ section {
   filter: grayscale(0%);
 }
 
-@media (max-width: 850px) {
-  .activity-cards {
+@media (max-width: 950px) {
+  .activity-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+  }
+
+  .activity-tarjimly,
+  .activity-events,
+  .activity-medmun {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .activity-tarjimly {
+    grid-column: 1 / -1;
+    min-height: 300px;
+  }
+
+  .activity-events {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 650px) {
+  #activities {
+    padding: 120px 20px 80px;
+  }
+
+  .activity-grid {
     margin-top: 65px;
     grid-template-columns: 1fr;
   }
 
-  .activity-card,
-  .activity-card.large {
-    min-height: 340px;
+  .activity-card {
+    min-height: 230px;
+    border-radius: 26px;
+  }
+
+  .activity-tarjimly,
+  .activity-events {
+    grid-column: auto;
   }
 
   .activities-photos {
@@ -1848,7 +1912,9 @@ section {
       </div>
     </section>
 
-<section id="activities">
+
+    
+ <section id="activities">
   <div class="activities-container">
 
     <div class="activities-header">
@@ -1859,10 +1925,10 @@ section {
       <h2>Community,<br>events and engagement.</h2>
     </div>
 
-    <div class="activity-cards">
+    <div class="activity-grid">
 
-      <article class="activity-card large">
-        <span class="activity-tag">Humanitarian translation</span>
+      <article class="activity-card activity-tarjimly">
+        <span>Humanitarian translation</span>
         <h3>Tarjimly</h3>
         <p>
           Volunteer Translator & Interpreter supporting refugees in
@@ -1870,20 +1936,43 @@ section {
         </p>
       </article>
 
-      <article class="activity-card">
-        <span class="activity-tag">Diplomatic events</span>
+      <article class="activity-card activity-events">
+        <span>Diplomatic engagement</span>
         <h3>Events</h3>
         <p>
-          Mediterranean of the Future. Paris Peace Forum.
-          Diplomatic engagement.
+          Mediterranean of the Future, institutional conferences and high-level events.
         </p>
       </article>
 
-      <article class="activity-card dark">
-        <span class="activity-tag">Model United Nations</span>
+      <article class="activity-card activity-medmun">
+        <span>Model United Nations</span>
         <h3>MEDMUN</h3>
         <p>
           Arabic Committee Director (UNHCR) and institutional events coordinator.
+        </p>
+      </article>
+
+      <article class="activity-card">
+        <span>International forum</span>
+        <h3>Paris Peace Forum</h3>
+        <p>
+          Liaison Officer supporting international delegations, speakers and logistics.
+        </p>
+      </article>
+
+      <article class="activity-card">
+        <span>Student association</span>
+        <h3>Sciences Po Arab World</h3>
+        <p>
+          Head of Communications and Project Coordinator leading events and outreach.
+        </p>
+      </article>
+
+      <article class="activity-card">
+        <span>Public engagement</span>
+        <h3>Institutional events</h3>
+        <p>
+          Coordination support for conferences, panels and public-facing initiatives.
         </p>
       </article>
 
@@ -1898,6 +1987,9 @@ section {
 
   </div>
 </section>
+
+
+    
 
 <section id="work">
   <div class="work-container">
