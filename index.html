@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Portfoliooo</title>
+  <title>Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1192,7 +1192,152 @@ section {
   );
 }
 
-    
+.edu-pass {
+  width: min(760px, 100%);
+  height: 360px;
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  border-radius: 34px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.18);
+}
+
+.pass-date-side {
+  background: #3770e8;
+  color: white;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+.date-block {
+  text-align: center;
+  line-height: 1;
+}
+
+.date-month {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+}
+
+.date-year {
+  display: block;
+  margin-top: 10px;
+  font-size: 3.8rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.date-arrow {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.pass-content {
+  position: relative;
+  padding: 38px 44px 34px;
+  overflow-y: auto;
+}
+
+.pass-close {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  border: 0;
+  background: none;
+  font-size: 2.2rem;
+  color: #c5cbd6;
+  cursor: pointer;
+}
+
+.pass-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 34px;
+}
+
+.pass-header span,
+.pass-row span {
+  color: #6b7280;
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 0.35em;
+}
+
+.pass-header strong {
+  color: #3770e8;
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 0.35em;
+}
+
+.pass-row {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.pass-row strong {
+  font-size: 1.25rem;
+  line-height: 1.18;
+  color: #111827;
+  text-align: right;
+}
+
+.pass-details {
+  margin: 18px 0 0;
+  padding-left: 20px;
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.pass-details li {
+  margin-bottom: 8px;
+}
+
+    @media (max-width: 760px) {
+  .edu-pass {
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .pass-date-side {
+    padding: 24px;
+    flex-direction: row;
+  }
+
+  .date-year {
+    font-size: 2.5rem;
+  }
+
+  .date-arrow {
+    transform: rotate(-90deg);
+    font-size: 2.4rem;
+  }
+
+  .pass-content {
+    padding: 30px 24px;
+  }
+
+  .pass-row {
+    grid-template-columns: 1fr;
+  }
+
+  .pass-row strong {
+    text-align: left;
+  }
+}
     
   </style>
 </head>
@@ -1526,66 +1671,45 @@ section {
         </div>
       </div>
 
-      <div class="education-pass" id="educationPass">
-        <button class="pass-close" id="passClose">×</button>
+<div class="edu-pass">
+  <div class="pass-date-side">
+    <div class="date-block">
+      <span class="date-month">SEP</span>
+      <span class="date-year">2021</span>
+    </div>
 
-        <div class="pass-left">
-          <div class="pass-years">
-            <div>
-              <p>FROM</p>
-              <h4 id="passFromYear">2021</h4>
-              <span id="passFromMonth">SEPTEMBER</span>
-            </div>
+    <div class="date-arrow">↓</div>
 
-            <div class="pass-plane">
-              ✈
-              <div class="pass-line"></div>
-            </div>
+    <div class="date-block">
+      <span class="date-month">JUN</span>
+      <span class="date-year">2026</span>
+    </div>
+  </div>
 
-            <div>
-              <p>TO</p>
-              <h4 id="passToYear">2026</h4>
-              <span id="passToMonth">JUNE</span>
-            </div>
-          </div>
+  <div class="pass-content">
+    <button class="pass-close">×</button>
 
-          <div class="pass-bottom">
-            <div>
-              <p>STUDENT</p>
-              <strong>BADER SULIMAN</strong>
-            </div>
-            <div>
-              <p>DEGREE</p>
-              <strong id="passDegree">B.A. & M.A.</strong>
-            </div>
-            <div>
-              <p>TRACK</p>
-              <strong id="passTrack">PSIA</strong>
-            </div>
-          </div>
-        </div>
+    <div class="pass-header">
+      <span>EDUCATION PASS</span>
+      <strong>FRANCE</strong>
+    </div>
 
-        <div class="pass-right">
-          <div class="pass-heading">
-            <h4>EDUCATION PASS</h4>
-            <span id="passCountry">FRANCE</span>
-          </div>
+    <div class="pass-row">
+      <span>UNIVERSITY</span>
+      <strong>Sciences<br>Po Paris</strong>
+    </div>
 
-          <div class="pass-row">
-            <span>UNIVERSITY</span>
-            <strong id="passUniversity">Sciences Po Paris</strong>
-          </div>
+    <div class="pass-row">
+      <span>PROGRAMME</span>
+      <strong>B.A. Politics<br>M.A. Int. Security</strong>
+    </div>
 
-          <div class="pass-row">
-            <span>PROGRAMME</span>
-            <strong id="passProgramme">B.A. Politics. M.A. Int. Security</strong>
-          </div>
-
-          <ul id="passDetails"></ul>
-
-          <div class="barcode"></div>
-        </div>
-      </div>
+    <ul class="pass-details">
+      <li>Undergraduate years at Sciences Po with a focus on Middle East & EU politics.</li>
+      <li>Graduate studies at PSIA in International Security with a migration / humanitarian focus.</li>
+    </ul>
+  </div>
+</div>
 
     </div>
   </div>
