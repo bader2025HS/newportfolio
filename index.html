@@ -1346,11 +1346,9 @@ section {
   border-radius: 30px;
   background: #f6fbf8;
   border: 1px solid rgba(18, 56, 43, 0.12);
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   overflow: hidden;
   transition: transform 0.35s ease, background 0.35s ease;
 }
@@ -1372,14 +1370,17 @@ section {
   grid-row: 1;
 }
 
+.activity-spaw {
+  grid-column: 2 / span 3;
+  grid-row: 2;
+}
+
 .activity-card span {
   width: fit-content;
   padding: 8px 13px;
   border-radius: 999px;
-
   background: #dcefe7;
   color: #2d7b61;
-
   font-size: 0.68rem;
   font-weight: 800;
   line-height: 1;
@@ -1394,7 +1395,7 @@ section {
 
 .activity-card h3 {
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2rem, 3.5vw, 4.8rem);
+  font-size: clamp(2rem, 3.4vw, 4.6rem);
   line-height: 0.88;
   letter-spacing: -0.07em;
 }
@@ -1404,7 +1405,7 @@ section {
 }
 
 .activity-card p {
-  max-width: 520px;
+  max-width: 600px;
   font-size: 0.98rem;
   line-height: 1.65;
   color: #4b6158;
@@ -1459,18 +1460,20 @@ section {
 
   .activity-tarjimly,
   .activity-events,
-  .activity-medmun {
+  .activity-medmun,
+  .activity-spaw {
     grid-column: auto;
     grid-row: auto;
   }
 
-  .activity-tarjimly {
+  .activity-tarjimly,
+  .activity-events,
+  .activity-spaw {
     grid-column: 1 / -1;
-    min-height: 300px;
   }
 
-  .activity-events {
-    grid-column: 1 / -1;
+  .activity-card {
+    min-height: 230px;
   }
 }
 
@@ -1484,13 +1487,9 @@ section {
     grid-template-columns: 1fr;
   }
 
-  .activity-card {
-    min-height: 230px;
-    border-radius: 26px;
-  }
-
   .activity-tarjimly,
-  .activity-events {
+  .activity-events,
+  .activity-spaw {
     grid-column: auto;
   }
 
@@ -1913,8 +1912,7 @@ section {
     </section>
 
 
-    
- <section id="activities">
+<section id="activities">
   <div class="activities-container">
 
     <div class="activities-header">
@@ -1931,8 +1929,7 @@ section {
         <span>Humanitarian translation</span>
         <h3>Tarjimly</h3>
         <p>
-          Volunteer Translator & Interpreter supporting refugees in
-          Arabic–English–French.
+          Volunteer Translator & Interpreter supporting refugees in Arabic–English–French.
         </p>
       </article>
 
@@ -1940,7 +1937,7 @@ section {
         <span>Diplomatic engagement</span>
         <h3>Events</h3>
         <p>
-          Mediterranean of the Future, institutional conferences and high-level events.
+          Mediterranean of the Future, Paris Peace Forum and institutional conferences.
         </p>
       </article>
 
@@ -1952,27 +1949,11 @@ section {
         </p>
       </article>
 
-      <article class="activity-card">
-        <span>International forum</span>
-        <h3>Paris Peace Forum</h3>
-        <p>
-          Liaison Officer supporting international delegations, speakers and logistics.
-        </p>
-      </article>
-
-      <article class="activity-card">
+      <article class="activity-card activity-spaw">
         <span>Student association</span>
         <h3>Sciences Po Arab World</h3>
         <p>
-          Head of Communications and Project Coordinator leading events and outreach.
-        </p>
-      </article>
-
-      <article class="activity-card">
-        <span>Public engagement</span>
-        <h3>Institutional events</h3>
-        <p>
-          Coordination support for conferences, panels and public-facing initiatives.
+          Communications and project coordination for cultural, academic and student-led initiatives.
         </p>
       </article>
 
@@ -1987,7 +1968,6 @@ section {
 
   </div>
 </section>
-
 
     
 
