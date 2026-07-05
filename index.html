@@ -54,26 +54,34 @@ h2,
       pointer-events: none;
     }
 
-    .logo {
-      pointer-events: auto;
+.logo {
+    pointer-events: auto;
 
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-      padding: 15px 24px;
-      border-radius: 16px;
+    flex-shrink: 0;          /* Prevent shrinking */
 
-      background: #dcefe7;
-      color: #12382b;
+    min-width: 220px;        /* Keeps "Basile Suliman" on one line */
 
-      text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
+    padding: 15px 26px;
+
+    border-radius: 16px;
+
+    background: #dcefe7;
+    color: #12382b;
+
+    text-decoration: none;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    white-space: nowrap;     /* Never wrap */
+}
 
     .navbar {
       pointer-events: auto;
