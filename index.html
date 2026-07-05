@@ -670,8 +670,6 @@ section {
 
 
 
-
-
 /* ===========================
    EDUCATION
 =========================== */
@@ -684,49 +682,28 @@ section {
 
 .education-container{
   max-width:1450px;
-  margin:0 auto;
+  margin:auto;
 }
 
-/* Header aligned like other sections */
-
-.education-header{
-  position:relative;
-  height:130px;
-  margin-bottom:80px;
-}
-
-.education-letter{
-  position:absolute;
-  left:-6px;
-  top:-35px;
-
-  font-family:inherit;
-  font-size:10rem;
-  font-weight:900;
-  line-height:1;
-
-  color:#cfe8df;
-  user-select:none;
-  pointer-events:none;
-}
-
-.education-title{
-  position:absolute;
-  left:0;
-  bottom:18px;
-
-  font-family:inherit;
-  font-size:1.05rem;
+.education-header p{
+  font-size:0.85rem;
   font-weight:700;
-  letter-spacing:.38em;
+  letter-spacing:0.16em;
   text-transform:uppercase;
-
-  color:#2d7b67;
+  color:#2d7b61;
 }
 
-/* Maps */
+.education-header h2{
+  margin-top:18px;
+  font-family:"Space Grotesk", sans-serif;
+  font-size:clamp(3rem, 6vw, 5.8rem);
+  line-height:0.95;
+  max-width:900px;
+  color:#12382b;
+}
 
 .education-maps{
+  margin-top:80px;
   width:100%;
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -746,16 +723,13 @@ section {
 .edu-country h3{
   height:42px;
   margin:0 0 30px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
-  font-family:inherit;
+  font-family:"Space Grotesk", sans-serif;
   font-size:1.45rem;
   font-weight:600;
   letter-spacing:10px;
-
   color:#0f172a;
   transition:color .3s ease;
 }
@@ -773,21 +747,9 @@ section {
   transition:fill .3s ease;
 }
 
-/* Individual optical sizing */
-
-.france .country-map{
-  width:340px;
-}
-
-.japan .country-map{
-  width:360px;
-}
-
-.germany .country-map{
-  width:280px;
-}
-
-/* Hover: colour only, no zoom */
+.france .country-map{ width:340px; }
+.japan .country-map{ width:360px; }
+.germany .country-map{ width:280px; }
 
 .france:hover h3,
 .france:hover .edu-country-shape,
@@ -813,30 +775,17 @@ section {
   fill:#d4a017;
 }
 
-/* Mobile */
-
 @media(max-width:850px){
   #education{
     padding:120px 20px 80px;
   }
 
-  .education-header{
-    height:110px;
-    margin-bottom:60px;
-  }
-
-  .education-letter{
-    font-size:8rem;
-    top:-25px;
-  }
-
-  .education-title{
-    font-size:.95rem;
-    letter-spacing:.28em;
-    bottom:18px;
+  .education-header h2{
+    font-size:clamp(2.7rem, 11vw, 4.4rem);
   }
 
   .education-maps{
+    margin-top:60px;
     grid-template-columns:1fr;
     gap:70px;
   }
@@ -1132,14 +1081,12 @@ section {
 
 
 
-
-
-<section id="education" class="education section">
+<section id="education">
   <div class="education-container">
 
     <div class="education-header">
-      <div class="education-letter">W</div>
-      <div class="education-title">WHERE I'VE STUDIED</div>
+      <p>Where I've studied</p>
+      <h2>Across countries,<br>through different systems.</h2>
     </div>
 
     <div class="education-maps">
@@ -1175,6 +1122,7 @@ section {
       </div>
 
     </div>
+
   </div>
 </section>
 
