@@ -586,24 +586,132 @@
       .activity-card.large { min-height: 260px; }
       .world-map { min-height: 330px; }
     }
+
+.top-nav {
+  position: fixed;
+  top: 18px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.nav-name {
+  position: fixed;
+  top: 18px;
+  left: 24px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(20, 83, 45, 0.14);
+  color: #14532d;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: -0.03em;
+  pointer-events: auto;
+}
+
+.nav-menu {
+  position: fixed;
+  top: 18px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(20, 83, 45, 0.14);
+  pointer-events: auto;
+  overflow: hidden;
+}
+
+.nav-link {
+  position: relative;
+  z-index: 2;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: #14532d;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: white;
+}
+
+.nav-slider {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  height: calc(100% - 12px);
+  width: 0;
+  border-radius: 999px;
+  background: #14532d;
+  z-index: 1;
+  transition: transform 0.35s ease, width 0.35s ease;
+}
+
+/* Mobile */
+@media (max-width: 850px) {
+  .top-nav {
+    top: 12px;
+  }
+
+  .nav-name {
+    top: 12px;
+    left: 12px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+  }
+
+  .nav-menu {
+    top: 64px;
+    left: 12px;
+    right: 12px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scrollbar-width: none;
+  }
+
+  .nav-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-link {
+    font-size: 0.82rem;
+    padding: 9px 12px;
+  }
+}
+
+    
   </style>
 </head>
 
 <body>
 
-  <nav class="nav">
-    <a href="#hero" class="nav-logo">Basile Suliman</a>
-    <div class="nav-links">
-      <a href="#gallery">Gallery</a>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#work">Work</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#activities">Activities</a>
-      <a href="#contact">Contact</a>
-    </div>
+<header class="top-nav">
+  <a href="#home" class="nav-name">Basile Suliman</a>
+
+  <nav class="nav-menu" id="navMenu">
+    <span class="nav-slider"></span>
+
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#education" class="nav-link">Education</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#work" class="nav-link">Work</a>
+    <a href="#activities" class="nav-link">Activities</a>
+    <a href="#contact" class="nav-link">Contact</a>
   </nav>
+</header>
 
   <main>
 
@@ -786,7 +894,71 @@
         nameRotator.style.filter = "blur(0px)";
       }, 350);
     }, 2200);
+
+    const navMenu = document.querySelector("#navMenu");
+const navLinks = document.querySelectorAll(".nav-link");
+const navSlider = document.querySelector(".nav-slider");
+const sections = document.querySelectorAll("section[id]");
+
+function moveSlider(link) {
+  if (!link || !navMenu || !navSlider) return;
+
+  const menuRect = navMenu.getBoundingClientRect();
+  const linkRect = link.getBoundingClientRect();
+
+  navSlider.style.width = `${linkRect.width}px`;
+  navSlider.style.transform = `translateX(${linkRect.left - menuRect.left}px)`;
+}
+
+function setActiveLink(id) {
+  navLinks.forEach(link => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+  });
+
+  const activeLink = document.querySelector(".nav-link.active");
+  moveSlider(activeLink);
+}
+
+navLinks.forEach(link => {
+  link.addEventListener("mouseenter", () => moveSlider(link));
+
+  link.addEventListener("click", () => {
+    navLinks.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+    moveSlider(link);
+  });
+});
+
+navMenu.addEventListener("mouseleave", () => {
+  const activeLink = document.querySelector(".nav-link.active");
+  moveSlider(activeLink);
+});
+
+window.addEventListener("scroll", () => {
+  let current = "home";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 160;
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  setActiveLink(current);
+});
+
+window.addEventListener("resize", () => {
+  const activeLink = document.querySelector(".nav-link.active");
+  moveSlider(activeLink);
+});
+
+window.addEventListener("load", () => {
+  const activeLink = document.querySelector(".nav-link.active");
+  moveSlider(activeLink);
+});
+    
   </script>
 
+  
 </body>
 </html>
