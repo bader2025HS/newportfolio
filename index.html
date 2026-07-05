@@ -673,7 +673,6 @@ section {
 
 
 
-
 /* ===========================
    EDUCATION
 =========================== */
@@ -682,43 +681,51 @@ section {
     min-height:100vh;
     padding:100px 5vw;
     background:#f5faf7;
-
     display:flex;
     flex-direction:column;
     justify-content:center;
 }
 
-.section-heading{
-    width:min(1400px,95%);
+/* Title like other sections */
+
+.education .section-heading{
+    position:relative;
+    width:100%;
+    max-width:1400px;
+    height:120px;
     margin:0 auto 70px;
-    display:flex;
-    align-items:flex-end;
-    justify-content:flex-start;
-    gap:18px;
 }
 
-.big-letter{
-    font-size:9rem;
-    line-height:.8;
+.education .section-letter{
+    position:absolute;
+    left:0;
+    top:-25px;
+    font-family:inherit;
+    font-size:10rem;
     font-weight:900;
-    color:#143f35;
+    line-height:1;
+    color:#cfe8df;
+    user-select:none;
+    pointer-events:none;
 }
 
-.section-heading h2{
-    font-size:4rem;
-    line-height:1;
-    font-weight:700;
-    color:#143f35;
-    margin-bottom:10px;
+.education .section-title{
+    position:absolute;
+    left:18px;
+    bottom:12px;
+    font-family:inherit;
+    font-size:2rem;
+    font-weight:400;
+    letter-spacing:8px;
+    text-transform:uppercase;
+    color:#2d7b67;
 }
-    
-    .edu-country:hover .country-map{
-    transform:translateY(-10px) scale(1.08);
-}
-    
+
+/* Maps */
+
 .education-maps{
     width:100%;
-    max-width:1200px;
+    max-width:1250px;
     margin:0 auto;
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -728,182 +735,112 @@ section {
 }
 
 .edu-country{
-
     width:100%;
     text-align:center;
 }
 
 .edu-country h3{
-
     margin-bottom:28px;
-
+    font-family:inherit;
     letter-spacing:10px;
     font-size:1.5rem;
-
+    font-weight:600;
     color:#0f172a;
-
-    transition:.3s;
+    transition:color .3s ease;
 }
 
 .country-map{
-    width:280px;      /* was 220px */
-    max-width:100%;
     height:auto;
+    max-width:100%;
     display:block;
     margin:0 auto;
-    transition:transform .35s ease;
 }
 
+.edu-country-shape,
 .country-map path,
 .country-map polygon{
-
     fill:#000;
-    transition:.35s ease;
+    transition:fill .3s ease;
 }
 
-.edu-country:hover .country-map{
-    transform:none;
-}
-
-.france:hover h3,
-.france:hover path,
-.france:hover polygon{
-     fill:#1D4ED8;
-    color:#1D4ED8;
-}
-
-.japan:hover h3,
-.japan:hover path,
-.japan:hover polygon{
-
-    color:#d62828;
-    fill:#d62828;
-
-}
-
-.germany:hover h3,
-.germany:hover path,
-.germany:hover polygon{
-
-    color:#d4a017;
-    fill:#d4a017;
-
-}
+/* Individual visual sizing */
 
 .france .country-map{
-    transform:scale(1.12);
+    width:340px;
 }
 
 .japan .country-map{
-    transform:scale(1.15);
+    width:360px;
 }
 
 .germany .country-map{
-    transform:scale(.92);
+    width:280px;
 }
 
+/* Color only on hover — no movement, no zoom */
 
-.section-title{
-    position:absolute;
-    left:20px;
-    bottom:10px;
-
-    font-family:inherit;      /* same as rest of portfolio */
-    font-size:2.1rem;
-    font-weight:300;
-    letter-spacing:7px;
-    text-transform:uppercase;
-
-    color:#2d7b67;
+.france:hover h3,
+.france:hover .edu-country-shape,
+.france:hover path,
+.france:hover polygon{
+    color:#1D4ED8;
+    fill:#1D4ED8;
 }
 
-  .section-letter{
-    position:absolute;
-    left:0;
-    top:-18px;
-
-    font-family:inherit;
-    font-size:9rem;
-    font-weight:700;
-
-    line-height:1;
-
-    color:#d7ebe4;
+.japan:hover h3,
+.japan:hover .edu-country-shape,
+.japan:hover path,
+.japan:hover polygon{
+    color:#d62828;
+    fill:#d62828;
 }
 
-    
+.germany:hover h3,
+.germany:hover .edu-country-shape,
+.germany:hover path,
+.germany:hover polygon{
+    color:#d4a017;
+    fill:#d4a017;
+}
+
+/* Responsive */
+
 @media(max-width:900px){
+    .education{
+        padding:90px 24px;
+    }
+
+    .education .section-heading{
+        height:100px;
+        margin-bottom:60px;
+    }
+
+    .education .section-letter{
+        font-size:7rem;
+        top:-10px;
+    }
+
+    .education .section-title{
+        font-size:1.35rem;
+        letter-spacing:5px;
+        left:12px;
+    }
 
     .education-maps{
-
         grid-template-columns:1fr;
         gap:70px;
-
     }
 
-    .country-map{
-
-        width:65%;
-        max-width:220px;
-
+    .france .country-map,
+    .japan .country-map,
+    .germany .country-map{
+        width:260px;
     }
-
-    .section-heading{
-
-        flex-direction:column;
-        align-items:center;
-        gap:0;
-
-    }
-
-    .big-letter{
-
-        font-size:5rem;
-
-    }
-
-    .section-heading h2{
-
-        font-size:2.3rem;
-
-    }
-
 }
 
-.section-heading{
-    position:relative;
-    width:100%;
-    max-width:1400px;
-    margin:0 auto 70px;
-    height:120px;
-}
 
-.section-letter{
-    position:absolute;
-    left:0;
-    top:-25px;
 
-    font-size:10rem;
-    font-weight:900;
-    line-height:1;
-
-    color:#cfe8df;
-    user-select:none;
-    pointer-events:none;
-}
-
-.section-title{
-    position:absolute;
-    left:18px;
-    bottom:12px;
-
-    font-size:2rem;
-    font-weight:500;
-    letter-spacing:8px;
-    text-transform:uppercase;
-
-    color:#2d7b67;
-}
+    
     
   </style>
 </head>
