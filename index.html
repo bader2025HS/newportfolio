@@ -484,51 +484,25 @@ section {
 }
 
 .experience-pill {
-  --accent: #2d7b61;
-
   flex: 0 0 500px;
-  min-height: 420px;
+  min-height: 470px;
   padding: 34px;
-  border-radius: 32px;
-
-  background: #f6fbf8;
-  color: #12382b;
-
-  border: 1px solid rgba(18, 56, 43, 0.1);
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.55);
-
+  border-radius: 34px;
+  color: white;
   scroll-snap-align: start;
 
   display: flex;
   flex-direction: column;
-
-  position: relative;
-  overflow: hidden;
-}
-
-.experience-pill::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 10px;
-  background: var(--accent);
-}
-
-.exp-top {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  margin-bottom: 34px;
 }
 
 .exp-logo {
-  width: 82px;
-  height: 82px;
-  flex-shrink: 0;
+  width: 86px;
+  height: 86px;
+  margin-bottom: 26px;
 
   border-radius: 22px;
-  background: color-mix(in srgb, var(--accent) 14%, white);
-  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.22);
 
   display: flex;
   align-items: center;
@@ -537,36 +511,37 @@ section {
 }
 
 .exp-logo img {
-  width: 74%;
-  height: 74%;
+  width: 76%;
+  height: 76%;
   object-fit: contain;
+}
+
+.exp-sector {
+  align-self: flex-start;
+
+  margin-bottom: 24px;
+  padding: 8px 15px;
+
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .experience-pill h3 {
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
-  line-height: 1;
-  margin-bottom: 10px;
-}
-
-.exp-sector {
-  display: inline-flex;
-  padding: 7px 12px;
-  border-radius: 999px;
-
-  background: var(--accent);
-  color: white;
-
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  line-height: 0.95;
+  margin-bottom: 14px;
 }
 
 .exp-role {
   font-size: 1rem;
   line-height: 1.5;
-  color: #37594d;
+  opacity: 0.82;
   margin-bottom: 22px;
 }
 
@@ -574,7 +549,7 @@ section {
   max-width: 390px;
   font-size: 0.95rem;
   line-height: 1.75;
-  color: #4b6158;
+  opacity: 0.88;
 }
 
 .exp-meta {
@@ -588,37 +563,48 @@ section {
 .exp-meta span {
   padding: 8px 12px;
   border-radius: 999px;
-
-  background: color-mix(in srgb, var(--accent) 12%, white);
-  color: #12382b;
-
+  background: rgba(255, 255, 255, 0.16);
   font-size: 0.75rem;
   line-height: 1;
 }
 
-/* Accents */
+/* Card colours */
 .experience-pill.bnp {
-  --accent: #00a859;
+  background: #00a859;
 }
 
 .experience-pill.oif {
-  --accent: #087dcc;
+  background: #087dcc;
 }
 
 .experience-pill.aqlity {
-  --accent: #f2b705;
+  background: #f2b705;
+  color: #173126;
 }
 
 .experience-pill.ardhis {
-  --accent: #e42528;
+  background: #e42528;
 }
 
 .experience-pill.tarjimly {
-  --accent: #7b3fe4;
+  background: #7b3fe4;
 }
 
 .experience-pill.student {
-  --accent: #9f1d20;
+  background: #9f1d20;
+}
+
+/* Yellow card readability */
+.experience-pill.aqlity .exp-logo,
+.experience-pill.aqlity .exp-sector,
+.experience-pill.aqlity .exp-meta span {
+  background: rgba(0, 0, 0, 0.10);
+  border-color: rgba(0, 0, 0, 0.10);
+}
+
+.experience-pill.aqlity .exp-role,
+.experience-pill.aqlity .exp-description {
+  opacity: 0.78;
 }
 
 @media (max-width: 850px) {
@@ -643,23 +629,19 @@ section {
     flex: none;
     width: 100%;
     min-height: auto;
-    padding: 26px;
-    border-radius: 26px;
-  }
-
-  .exp-top {
-    gap: 16px;
-    margin-bottom: 28px;
+    padding: 28px;
+    border-radius: 28px;
   }
 
   .exp-logo {
-    width: 66px;
-    height: 66px;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 22px;
     border-radius: 18px;
   }
 
   .experience-pill h3 {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 
   .exp-description {
