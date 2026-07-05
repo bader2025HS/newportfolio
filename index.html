@@ -1192,7 +1192,125 @@ section {
   );
 }
 
-    
+    #work {
+  padding: 140px 8vw;
+  background: #1f5644;
+  color: #f6fbf8;
+}
+
+.work-container {
+  max-width: 1450px;
+  margin: auto;
+}
+
+.work-header h2 {
+  margin-top: 18px;
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: 0.95;
+  max-width: 900px;
+}
+
+#work .oversized-label::before {
+  color: rgba(255, 255, 255, 0.10);
+}
+
+#work .oversized-label span {
+  color: #b8ead8;
+}
+
+.work-intro {
+  margin-top: 34px;
+  max-width: 650px;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: rgba(246, 251, 248, 0.72);
+}
+
+.work-list {
+  margin-top: 90px;
+  border-top: 1px solid rgba(246, 251, 248, 0.22);
+}
+
+.work-item {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: 34px;
+  align-items: center;
+
+  padding: 34px 0;
+  border-bottom: 1px solid rgba(246, 251, 248, 0.22);
+
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.work-number {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  color: rgba(246, 251, 248, 0.48);
+}
+
+.work-item h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.7rem, 3vw, 3rem);
+  line-height: 1;
+  margin-bottom: 12px;
+  transition: 0.3s ease;
+}
+
+.work-item p {
+  max-width: 620px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(246, 251, 248, 0.68);
+}
+
+.work-link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b8ead8;
+  transition: 0.3s ease;
+}
+
+.work-item:hover {
+  padding-left: 22px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.work-item:hover h3 {
+  color: #b8ead8;
+}
+
+.work-item:hover .work-link {
+  transform: translateX(8px);
+}
+
+@media (max-width: 850px) {
+  #work {
+    padding: 120px 20px 80px;
+  }
+
+  .work-list {
+    margin-top: 65px;
+  }
+
+  .work-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 30px 0;
+  }
+
+  .work-link {
+    margin-top: 4px;
+  }
+
+  .work-item:hover {
+    padding-left: 0;
+  }
+}
     
   </style>
 </head>
@@ -1609,11 +1727,62 @@ section {
       </div>
     </section>
 
-    <section id="work">
-      <div class="section-inner">
-        <h2>Work</h2>
+<section id="work">
+  <div class="work-container">
+
+    <div class="work-header">
+      <div class="oversized-label" data-letter="WORK">
+        <span>Selected samples</span>
       </div>
-    </section>
+
+      <h2>Clear outputs,<br>not messy projects.</h2>
+
+      <p class="work-intro">
+        A selection of research, articles, briefs and visual communication projects.
+      </p>
+    </div>
+
+    <div class="work-list">
+
+      <a href="#" class="work-item">
+        <span class="work-number">01</span>
+        <div>
+          <h3>Cox's Bazar Study</h3>
+          <p>Qualitative humanitarian research on camp urbanisation.</p>
+        </div>
+        <span class="work-link">View →</span>
+      </a>
+
+      <a href="#" class="work-item">
+        <span class="work-number">02</span>
+        <div>
+          <h3>OIF Country Briefs</h3>
+          <p>Strategic political and socio-economic country notes.</p>
+        </div>
+        <span class="work-link">View →</span>
+      </a>
+
+      <a href="#" class="work-item">
+        <span class="work-number">03</span>
+        <div>
+          <h3>BNP Paribas Articles</h3>
+          <p>Editorial content on sustainability, CSR and transition topics.</p>
+        </div>
+        <span class="work-link">View →</span>
+      </a>
+
+      <a href="#" class="work-item">
+        <span class="work-number">04</span>
+        <div>
+          <h3>Infographics & Maps</h3>
+          <p>Visual communication assets, maps and data-based layouts.</p>
+        </div>
+        <span class="work-link">View →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
 
     <section id="gallery">
       <div class="section-inner">
