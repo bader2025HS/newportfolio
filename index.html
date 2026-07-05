@@ -11,12 +11,25 @@
 
     body {
       font-family: Verdana, Geneva, sans-serif;
-      background: #f5f1e8;
+      background: #f6f1e6;
       color: #0d3026;
       overflow-x: hidden;
     }
 
     a { color: inherit; text-decoration: none; }
+
+    :root {
+      --forest: #0d3026;
+      --forest-2: #143f33;
+      --moss: #6f8b5f;
+      --sage: #c8d8bd;
+      --pale-sage: #dfe8d6;
+      --cream: #f6f1e6;
+      --sand: #e8d8b9;
+      --clay: #b8845b;
+      --olive: #384a2f;
+      --line: rgba(13, 48, 38, 0.22);
+    }
 
     .nav {
       position: fixed;
@@ -30,10 +43,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border: 1px solid rgba(245, 241, 232, 0.25);
+      border: 1px solid rgba(246, 241, 230, 0.28);
       border-radius: 999px;
       background: rgba(13, 48, 38, 0.78);
-      color: #f5f1e8;
+      color: var(--cream);
       backdrop-filter: blur(16px);
     }
 
@@ -46,7 +59,7 @@
 
     .nav-links {
       display: flex;
-      gap: 20px;
+      gap: 18px;
       font-size: 13px;
     }
 
@@ -56,48 +69,16 @@
     }
 
     .hero {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       background:
-        radial-gradient(circle at 80% 20%, rgba(245, 241, 232, 0.12), transparent 28%),
-        radial-gradient(circle at 15% 75%, rgba(245, 241, 232, 0.08), transparent 30%),
-        #0d3026;
-      color: #f5f1e8;
+        radial-gradient(circle at 80% 15%, rgba(200, 216, 189, 0.16), transparent 28%),
+        radial-gradient(circle at 10% 80%, rgba(232, 216, 185, 0.12), transparent 30%),
+        linear-gradient(135deg, #0d3026, #123b30 55%, #071d17);
+      color: var(--cream);
     }
-
-   .gallery { background: #adc4a6; padding: 80px 0; }
-.about-bg { background: #fff7e8; color: #12382e; }
-.experience-bg { background: #21493b; color: #f5f1e8; }
-.work-bg { background: #e0b86f; color: #12382e; }
-.activities-bg { background: #f5f1e8; color: #0d3026; }
-.education-bg { background: #5f7f5f; color: #f5f1e8; }
-.skills-bg { background: #d8e0c7; color: #0d3026; }
-.contact { 
-  background: #0d3026; 
-  color: #f5f1e8; 
-  border-radius: 44px 44px 0 0; 
-}
-
-    .experience-bg .experience-list {
-  border-color: rgba(245, 241, 232, 0.35);
-}
-
-.experience-bg .experience-item {
-  border-color: rgba(245, 241, 232, 0.28);
-}
-
-.education-bg .journey {
-  border-color: rgba(245, 241, 232, 0.65);
-}
-
-.work-bg .work-list {
-  border-color: rgba(13, 48, 38, 0.25);
-}
-
-.work-bg .work-strip {
-  border-color: rgba(13, 48, 38, 0.25);
-}
 
     .hero h1 {
       margin-bottom: 28px;
@@ -127,11 +108,11 @@
       max-width: 760px;
       font-size: clamp(19px, 2.4vw, 34px);
       line-height: 1.35;
-      color: rgba(245, 241, 232, 0.86);
+      color: rgba(246, 241, 230, 0.86);
     }
 
     h2 {
-      font-size: clamp(40px, 5.8vw, 82px);
+      font-size: clamp(42px, 6vw, 86px);
       line-height: 1;
       letter-spacing: -0.055em;
       margin-bottom: 42px;
@@ -143,8 +124,15 @@
       line-height: 1.6;
     }
 
+    .gallery {
+      background: var(--sage);
+      padding: 90px 0;
+      color: var(--forest);
+    }
+
     .gallery h2 {
       padding: 0 8vw;
+      margin-bottom: 34px;
     }
 
     .gallery-row {
@@ -158,19 +146,41 @@
 
     .gallery-row::-webkit-scrollbar { display: none; }
 
-    .gallery-placeholder {
+    .gallery-slot {
       flex: 0 0 420px;
       height: 270px;
-      border-radius: 24px;
+      border-radius: 26px;
       border: 2px dashed rgba(13, 48, 38, 0.18);
-      background: rgba(255, 255, 255, 0.18);
+      background:
+        linear-gradient(135deg, rgba(246,241,230,.45), rgba(255,255,255,.1)),
+        rgba(255,255,255,.18);
     }
 
-    .split {
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 70px;
       align-items: center;
+    }
+
+    .focus-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 34px;
+      max-width: 760px;
+    }
+
+    .focus-tags span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: 13px;
+      background: rgba(255, 250, 240, 0.6);
     }
 
     .stats {
@@ -180,37 +190,125 @@
     }
 
     .stat {
-      background: rgba(255, 250, 240, 0.85);
-      border: 1px solid rgba(13, 48, 38, 0.22);
+      background: #fffaf0;
+      border: 1px solid var(--line);
       border-radius: 22px;
       padding: 28px;
-      min-height: 145px;
+      min-height: 150px;
     }
 
     .stat strong {
       display: block;
-      font-size: 36px;
-      color: #0d3026;
+      font-size: 38px;
+      letter-spacing: -0.06em;
+      color: var(--forest);
     }
 
     .stat span {
       display: block;
       margin-top: 10px;
       font-size: 14px;
-      opacity: 0.75;
+      opacity: .75;
+      line-height: 1.5;
+    }
+
+    .map-section {
+      background: linear-gradient(135deg, #183f34, #49623f);
+      color: var(--cream);
+    }
+
+    .map-wrap {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .map-copy p {
+      max-width: 560px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: rgba(246, 241, 230, .78);
+    }
+
+    .world-map {
+      width: 100%;
+      min-height: 430px;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 15% 25%, rgba(246,241,230,.16), transparent 18%),
+        radial-gradient(circle at 72% 60%, rgba(246,241,230,.14), transparent 18%),
+        rgba(246, 241, 230, 0.08);
+      border: 1px solid rgba(246, 241, 230, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .continent {
+      position: absolute;
+      background: rgba(246, 241, 230, 0.22);
+      border: 1px solid rgba(246, 241, 230, 0.08);
+      filter: blur(.1px);
+    }
+
+    .north-america { left: 8%; top: 22%; width: 24%; height: 22%; border-radius: 60% 40% 45% 55%; }
+    .south-america { left: 26%; top: 50%; width: 13%; height: 31%; border-radius: 50% 45% 60% 40%; transform: rotate(18deg); }
+    .europe { left: 47%; top: 28%; width: 13%; height: 12%; border-radius: 50%; }
+    .africa { left: 48%; top: 42%; width: 17%; height: 31%; border-radius: 45% 55% 60% 40%; }
+    .asia { left: 58%; top: 25%; width: 30%; height: 28%; border-radius: 45% 55% 48% 52%; }
+    .australia { left: 78%; top: 66%; width: 13%; height: 11%; border-radius: 50%; }
+
+    .pin {
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      background: #f0c36a;
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(240,195,106,.16);
+      transform: translate(-50%, -50%);
+    }
+
+    .pin::after {
+      content: attr(data-city);
+      position: absolute;
+      left: 16px;
+      top: -5px;
+      white-space: nowrap;
+      font-size: 11px;
+      color: var(--cream);
+      opacity: .85;
+    }
+
+    .france { left: 51%; top: 36%; }
+    .germany { left: 54%; top: 34%; }
+    .japan { left: 84%; top: 41%; }
+    .tunisia { left: 52%; top: 44%; }
+    .jordan { left: 59%; top: 45%; }
+    .uae { left: 63%; top: 49%; }
+    .georgia { left: 61%; top: 37%; }
+
+    .experience {
+      background: #fffaf0;
+      color: var(--forest);
     }
 
     .experience-list {
-      max-width: 1100px;
-      border-top: 1px solid rgba(13, 48, 38, 0.35);
+      max-width: 1120px;
+      border-top: 1px solid rgba(13,48,38,.28);
     }
 
     .experience-item {
       display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 40px;
+      grid-template-columns: 150px 1fr;
+      gap: 42px;
       padding: 34px 0;
-      border-bottom: 1px solid rgba(13, 48, 38, 0.28);
+      border-bottom: 1px solid rgba(13,48,38,.24);
+    }
+
+    .year {
+      font-size: 13px;
+      opacity: .65;
+      letter-spacing: .08em;
     }
 
     .experience-item h3 {
@@ -223,20 +321,17 @@
       max-width: 760px;
       font-size: 16px;
       line-height: 1.7;
-      opacity: 0.75;
+      opacity: .76;
     }
 
-    .year {
-      font-size: 13px;
-      opacity: 0.65;
-      letter-spacing: 0.08em;
+    .work {
+      background: var(--forest-2);
+      color: var(--cream);
     }
 
     .work-list {
       max-width: 1150px;
-      display: grid;
-      gap: 0;
-      border-top: 1px solid rgba(245, 241, 232, 0.3);
+      border-top: 1px solid rgba(246,241,230,.28);
     }
 
     .work-strip {
@@ -244,84 +339,65 @@
       grid-template-columns: 90px 1fr 80px;
       align-items: center;
       gap: 30px;
-      padding: 34px 0;
-      border-bottom: 1px solid rgba(245, 241, 232, 0.3);
-      transition: 0.3s ease;
+      padding: 36px 0;
+      border-bottom: 1px solid rgba(246,241,230,.28);
+      transition: .3s ease;
     }
 
     .work-strip:hover {
       padding-left: 24px;
-      background: rgba(245, 241, 232, 0.08);
+      background: rgba(246,241,230,.08);
     }
 
-    .work-number {
-      font-size: 14px;
-      opacity: 0.6;
-    }
+    .work-number { font-size: 14px; opacity: .6; }
 
     .work-strip h3 {
       font-size: clamp(28px, 5vw, 64px);
-      letter-spacing: -0.06em;
       line-height: 1;
+      letter-spacing: -0.06em;
     }
 
     .work-arrow {
       font-size: 40px;
-      transition: 0.3s ease;
+      transition: .3s ease;
     }
 
-    .work-strip:hover .work-arrow {
-      transform: translateX(10px);
+    .work-strip:hover .work-arrow { transform: translateX(10px); }
+
+    .skills {
+      background: var(--pale-sage);
+      color: var(--forest);
     }
 
-    .activities-board {
-      max-width: 1100px;
+    .skills-layout {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 18px;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 60px;
+      align-items: start;
     }
 
-    .activity-card {
-      background: rgba(255, 250, 240, 0.86);
-      border: 1px solid rgba(13, 48, 38, 0.22);
-      border-radius: 26px;
-      padding: 30px;
-      min-height: 230px;
-      transition: 0.35s ease;
-    }
-
-    .activity-card.large {
-      grid-row: span 2;
-      min-height: 480px;
+    .skills-cloud {
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
-    .activity-card:hover {
-      transform: translateY(-8px);
-      background: #0d3026;
-      color: #f5f1e8;
+    .skill {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 13px 22px;
+      font-size: 14px;
+      background: rgba(255,250,240,.62);
     }
 
-    .activity-card span {
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      opacity: 0.65;
+    .skill.big {
+      font-size: 22px;
+      padding: 18px 30px;
     }
 
-    .activity-card h3 {
-      font-size: clamp(28px, 4vw, 56px);
-      line-height: 1.05;
-      letter-spacing: -0.05em;
-      margin: 28px 0;
-    }
-
-    .activity-card p {
-      font-size: 15px;
-      line-height: 1.7;
-      opacity: 0.75;
+    .education {
+      background: linear-gradient(135deg, #d9c6a3, #efe1c4);
+      color: var(--forest);
     }
 
     .journey {
@@ -355,35 +431,85 @@
     .journey-item p {
       font-size: 16px;
       line-height: 1.7;
-      opacity: 0.75;
+      opacity: .76;
     }
 
-    .skills-cloud {
+    .activities {
+      background: #263f2b;
+      color: var(--cream);
+    }
+
+    .activities-board {
       max-width: 1100px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+    }
+
+    .activity-card {
+      background: rgba(246,241,230,.09);
+      border: 1px solid rgba(246,241,230,.22);
+      border-radius: 26px;
+      padding: 30px;
+      min-height: 230px;
+      transition: .35s ease;
+    }
+
+    .activity-card.large {
+      grid-row: span 2;
+      min-height: 480px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      align-items: center;
+      flex-direction: column;
+      justify-content: flex-end;
     }
 
-    .skill {
-      border: 1px solid rgba(13, 48, 38, 0.22);
-      border-radius: 999px;
-      padding: 13px 22px;
-      font-size: 14px;
-      background: rgba(255, 250, 240, 0.8);
+    .activity-card:hover {
+      transform: translateY(-8px);
+      background: var(--cream);
+      color: var(--forest);
     }
 
-    .skill.big {
-      font-size: 22px;
-      padding: 18px 30px;
+    .activity-card span {
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      opacity: .65;
+    }
+
+    .activity-card h3 {
+      font-size: clamp(28px, 4vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      margin: 28px 0;
+    }
+
+    .activity-card p {
+      font-size: 15px;
+      line-height: 1.7;
+      opacity: .75;
+    }
+
+    .contact {
+      background: #071d17;
+      color: var(--cream);
+      min-height: 80vh;
+      border-radius: 44px 44px 0 0;
     }
 
     .contact a {
       margin-top: 34px;
       width: fit-content;
+      display: block;
       font-size: clamp(28px, 5vw, 62px);
-      border-bottom: 2px solid #f5f1e8;
+      border-bottom: 2px solid var(--cream);
+    }
+
+    .footer {
+      background: #071d17;
+      color: rgba(246,241,230,.62);
+      padding: 26px 8vw 34px;
+      font-size: 13px;
+      letter-spacing: .04em;
     }
 
     .reveal {
@@ -397,15 +523,6 @@
       transform: translateY(0);
     }
 
-
-  .footer {
-  background: #0d3026;
-  color: rgba(245, 241, 232, 0.65);
-  padding: 26px 8vw 34px;
-  font-size: 13px;
-  letter-spacing: 0.04em;
-}
-    
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .section { padding: 110px 24px 70px; }
@@ -415,17 +532,17 @@
         font-size: clamp(42px, 12vw, 70px);
       }
 
-      .split,
+      .about-grid,
+      .map-wrap,
+      .skills-layout,
       .experience-item,
       .activities-board {
         grid-template-columns: 1fr;
       }
 
-      .stats {
-        grid-template-columns: 1fr 1fr;
-      }
+      .stats { grid-template-columns: 1fr 1fr; }
 
-      .gallery-placeholder {
+      .gallery-slot {
         flex-basis: 280px;
         height: 190px;
       }
@@ -435,9 +552,8 @@
         gap: 14px;
       }
 
-      .activity-card.large {
-        min-height: 260px;
-      }
+      .activity-card.large { min-height: 260px; }
+      .world-map { min-height: 330px; }
     }
   </style>
 </head>
@@ -449,11 +565,12 @@
     <div class="nav-links">
       <a href="#gallery">Gallery</a>
       <a href="#about">About</a>
+      <a href="#map">Map</a>
       <a href="#experience">Experience</a>
       <a href="#work">Work</a>
-      <a href="#activities">Activities</a>
-      <a href="#education">Education</a>
       <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#activities">Activities</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -468,38 +585,76 @@
     <section id="gallery" class="gallery">
       <h2 class="reveal">Gallery</h2>
       <div class="gallery-row">
-        <div class="gallery-placeholder"></div>
-        <div class="gallery-placeholder"></div>
-        <div class="gallery-placeholder"></div>
-        <div class="gallery-placeholder"></div>
+        <div class="gallery-slot"></div>
+        <div class="gallery-slot"></div>
+        <div class="gallery-slot"></div>
+        <div class="gallery-slot"></div>
       </div>
       <div class="gallery-row">
-        <div class="gallery-placeholder"></div>
-        <div class="gallery-placeholder"></div>
-        <div class="gallery-placeholder"></div>
-        <div class="gallery-placeholder"></div>
+        <div class="gallery-slot"></div>
+        <div class="gallery-slot"></div>
+        <div class="gallery-slot"></div>
+        <div class="gallery-slot"></div>
       </div>
     </section>
 
-    <section id="about" class="section about-bg">
-      <div class="split">
+    <section id="about" class="section about">
+      <div class="about-grid">
         <div>
           <h2 class="reveal">Hi.</h2>
           <p class="big-text reveal">
-            I turn complex international, sustainability and policy topics into clear,
-            engaging and accessible stories.
+            I make sense first, then make it simple. I turn complex international,
+            sustainability and policy topics into clear, engaging and accessible stories.
           </p>
+          <div class="focus-tags reveal">
+            <span>Displacement</span>
+            <span>Sustainability</span>
+            <span>Energy transitions</span>
+            <span>MENA & Africa</span>
+            <span>Development</span>
+            <span>Peacebuilding</span>
+          </div>
         </div>
+
         <div class="stats">
-          <div class="stat reveal"><strong>30+</strong><span>Countries explored</span></div>
-          <div class="stat reveal"><strong>6</strong><span>Languages</span></div>
-          <div class="stat reveal"><strong>200+</strong><span>People supported</span></div>
-          <div class="stat reveal"><strong>100+</strong><span>Translations</span></div>
+          <div class="stat reveal"><strong>30+</strong><span>Countries visited, lived, studied and explored.</span></div>
+          <div class="stat reveal"><strong>100+</strong><span>Translations for people in need of language support.</span></div>
+          <div class="stat reveal"><strong>200+</strong><span>People supported through asylum and casework.</span></div>
+          <div class="stat reveal"><strong>8</strong><span>Cities lived across Europe, the Middle East and Asia.</span></div>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section experience-bg">
+    <section id="map" class="section map-section">
+      <div class="map-wrap">
+        <div class="map-copy">
+          <h2 class="reveal">Visited Countries</h2>
+          <p class="reveal">
+            A personal geography of places lived, studied, visited and explored —
+            from France and Germany to Japan, Tunisia, Jordan, the UAE and beyond.
+          </p>
+        </div>
+
+        <div class="world-map reveal">
+          <div class="continent north-america"></div>
+          <div class="continent south-america"></div>
+          <div class="continent europe"></div>
+          <div class="continent africa"></div>
+          <div class="continent asia"></div>
+          <div class="continent australia"></div>
+
+          <div class="pin france" data-city="France"></div>
+          <div class="pin germany" data-city="Germany"></div>
+          <div class="pin japan" data-city="Japan"></div>
+          <div class="pin tunisia" data-city="Tunisia"></div>
+          <div class="pin jordan" data-city="Jordan"></div>
+          <div class="pin uae" data-city="UAE"></div>
+          <div class="pin georgia" data-city="Georgia"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section experience">
       <h2 class="reveal">Experience</h2>
       <div class="experience-list">
         <div class="experience-item reveal"><div class="year">2026</div><div><h3>BNP Paribas</h3><p>Group Communication — Content Strategy & People Engagement. Communication around sustainability, engagement and corporate initiatives.</p></div></div>
@@ -509,17 +664,50 @@
       </div>
     </section>
 
-    <section id="work" class="section work-bg">
+    <section id="work" class="section work">
       <h2 class="reveal">Work</h2>
       <div class="work-list">
-        <div class="work-strip reveal"><div class="work-number">01</div><h3>Sustainability Communication</h3><div class="work-arrow">→</div></div>
-        <div class="work-strip reveal"><div class="work-number">02</div><h3>Policy & Conflict Analysis</h3><div class="work-arrow">→</div></div>
-        <div class="work-strip reveal"><div class="work-number">03</div><h3>Visualisation & Dashboards</h3><div class="work-arrow">→</div></div>
-        <div class="work-strip reveal"><div class="work-number">04</div><h3>Editorial Storytelling</h3><div class="work-arrow">→</div></div>
+        <div class="work-strip reveal"><div class="work-number">01</div><h3>Research Papers</h3><div class="work-arrow">→</div></div>
+        <div class="work-strip reveal"><div class="work-number">02</div><h3>Cooperation Notes</h3><div class="work-arrow">→</div></div>
+        <div class="work-strip reveal"><div class="work-number">03</div><h3>Social Media</h3><div class="work-arrow">→</div></div>
+        <div class="work-strip reveal"><div class="work-number">04</div><h3>Visuals & Infographics</h3><div class="work-arrow">→</div></div>
       </div>
     </section>
 
-    <section id="activities" class="section activities-bg">
+    <section id="skills" class="section skills">
+      <div class="skills-layout">
+        <div>
+          <h2 class="reveal">Skills & Tools</h2>
+          <p class="big-text reveal">Languages, research, communication and visual tools for international work.</p>
+        </div>
+
+        <div class="skills-cloud">
+          <div class="skill big reveal">Arabic</div>
+          <div class="skill big reveal">French</div>
+          <div class="skill big reveal">English</div>
+          <div class="skill reveal">German</div>
+          <div class="skill reveal">Japanese</div>
+          <div class="skill reveal">Persian</div>
+          <div class="skill big reveal">Communication</div>
+          <div class="skill reveal">Research</div>
+          <div class="skill reveal">Excel</div>
+          <div class="skill reveal">Power BI</div>
+          <div class="skill reveal">Canva</div>
+          <div class="skill reveal">Data visualisation</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section education">
+      <h2 class="reveal">Education Journey</h2>
+      <div class="journey">
+        <div class="journey-item reveal"><h3>Sciences Po Paris</h3><p>International Security, Middle Eastern Studies and Migration.</p></div>
+        <div class="journey-item reveal"><h3>Tokyo University of Foreign Studies</h3><p>Japanese language and international exchange year.</p></div>
+        <div class="journey-item reveal"><h3>Freie Universität Berlin</h3><p>International Relations and European Affairs.</p></div>
+      </div>
+    </section>
+
+    <section id="activities" class="section activities">
       <h2 class="reveal">Activities</h2>
       <div class="activities-board">
         <div class="activity-card large reveal"><span>Volunteering</span><h3>Tarjimly</h3><p>Arabic, French and English interpretation for people in need of language support.</p></div>
@@ -529,43 +717,16 @@
       </div>
     </section>
 
-    <section id="education" class="section education-bg">
-      <h2 class="reveal">Education Journey</h2>
-      <div class="journey">
-        <div class="journey-item reveal"><h3>Sciences Po Paris</h3><p>International Security, Middle Eastern Studies and Migration.</p></div>
-        <div class="journey-item reveal"><h3>Tokyo University of Foreign Studies</h3><p>Japanese language and international exchange year.</p></div>
-        <div class="journey-item reveal"><h3>Freie Universität Berlin</h3><p>International Relations and European Affairs.</p></div>
-      </div>
-    </section>
-
-    <section id="skills" class="section skills-bg">
-      <h2 class="reveal">Skills & Tools</h2>
-      <div class="skills-cloud">
-        <div class="skill big reveal">French</div>
-        <div class="skill big reveal">Arabic</div>
-        <div class="skill reveal">English</div>
-        <div class="skill reveal">German</div>
-        <div class="skill reveal">Japanese</div>
-        <div class="skill reveal">Persian</div>
-        <div class="skill big reveal">Communication</div>
-        <div class="skill reveal">Research</div>
-        <div class="skill reveal">Excel</div>
-        <div class="skill reveal">Power BI</div>
-        <div class="skill reveal">Canva</div>
-        <div class="skill reveal">Data visualisation</div>
-      </div>
-    </section>
-
     <section id="contact" class="section contact">
       <h2 class="reveal">Let’s connect.</h2>
       <p class="big-text reveal">Open to conversations around communication, international affairs, sustainability and storytelling.</p>
       <a class="reveal" href="mailto:your-email@example.com">Email me</a>
     </section>
 
-  <footer class="footer">
-  © 2026 Basile Suliman. All rights reserved.
-</footer>
-    
+    <footer class="footer">
+      © 2026 Basile Suliman. All rights reserved.
+    </footer>
+
   </main>
 
   <script>
