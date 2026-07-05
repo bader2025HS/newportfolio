@@ -7,7 +7,6 @@
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -68,34 +67,41 @@
       color: #f5f1e8;
     }
 
-    .cream { background: #f5f1e8; }
-    .soft-green { background: #d7dfcf; }
+    .gallery { background: #c8d7c1; color: #0d3026; padding: 100px 0; }
+    .about-bg { background: #f5f1e8; color: #0d3026; }
+    .experience-bg { background: #d8c7af; color: #16352b; }
+    .work-bg { background: #14382f; color: #f5f1e8; }
+    .activities-bg { background: #efe3c9; color: #0d3026; }
+    .education-bg { background: #c3d0da; color: #102f36; }
+    .skills-bg { background: #ded8c7; color: #0d3026; }
+    .contact { background: #0d3026; color: #f5f1e8; border-radius: 44px 44px 0 0; min-height: 80vh; }
 
-  .hero h1 {
-    margin-bottom: 28px;
-    font-size: clamp(48px, 8vw, 120px);
-    line-height: 1;
-    letter-spacing: -0.065em;
-    max-width: 1200px;
-    white-space: nowrap;
-}
+    .hero h1 {
+      margin-bottom: 28px;
+      font-size: clamp(48px, 8vw, 120px);
+      line-height: 1;
+      letter-spacing: -0.065em;
+      max-width: 1200px;
+      white-space: nowrap;
+    }
 
-#name-rotator{
-  display:inline-block;
-  min-width:14ch;
-  transition: opacity .35s ease, transform .35s ease, filter .35s ease;
-}
+    #name-rotator {
+      display: inline-block;
+      min-width: 14ch;
+      transition: opacity .35s ease, transform .35s ease, filter .35s ease;
+    }
 
-#name-rotator.arabic{
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.18em;
-  letter-spacing: 0.02em;
-}
+    #name-rotator.arabic {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.18em;
+      letter-spacing: 0.02em;
+    }
 
-#name-rotator.japanese{
-  font-family: "Yu Gothic", "Hiragino Sans", Verdana, sans-serif;
-  font-size: 0.95em;
-}
+    #name-rotator.japanese {
+      font-family: "Yu Gothic", "Hiragino Sans", Verdana, sans-serif;
+      font-size: 0.95em;
+    }
+
     .hero-text {
       max-width: 760px;
       font-size: clamp(19px, 2.4vw, 34px);
@@ -118,72 +124,40 @@
       letter-spacing: -0.025em;
     }
 
-.gallery {
-  background: #c7d5c1;
-  color: #0d3026;
-  padding: 80px 0;
-  overflow: hidden;
-}
+    .gallery h2 {
+      padding: 0 8vw;
+      margin-bottom: 40px;
+    }
 
-.gallery h2 {
-  padding: 0 8vw;
-  margin-bottom: 40px;
-}
+    .gallery-row {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 18px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0 8vw;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
 
-.gallery-row {
-  display: flex;
-  gap: 18px;
-  margin-bottom: 18px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 0 8vw;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
+    .gallery-row::-webkit-scrollbar { display: none; }
 
-.gallery-row::-webkit-scrollbar {
-  display: none;
-}
-
-.gallery-photo {
-  position: relative;
-  flex: 0 0 420px;
-  height: 270px;
-  border-radius: 24px;
-  overflow: hidden;
-  background: #f5f1e8;
-}
-
-.gallery-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  filter: saturate(0.95) contrast(0.95);
-  transition: 0.5s ease;
-}
-
-.gallery-photo span {
-  position: absolute;
-  left: 20px;
-  bottom: 18px;
-  z-index: 2;
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.gallery-photo::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(13,48,38,.75), transparent 55%);
-}
-
-.gallery-photo:hover img {
-  transform: scale(1.07);
-}
+    .gallery-placeholder {
+      position: relative;
+      flex: 0 0 420px;
+      height: 270px;
+      border-radius: 24px;
+      border: 1px dashed rgba(13, 48, 38, 0.35);
+      background:
+        linear-gradient(135deg, rgba(245,241,232,.6), rgba(255,250,240,.25)),
+        rgba(255,250,240,.45);
+      display: flex;
+      align-items: flex-end;
+      padding: 22px;
+      color: rgba(13, 48, 38, 0.65);
+      font-size: 15px;
+    }
 
     .split {
       display: grid;
@@ -203,8 +177,13 @@
     .work-card,
     .activity-card,
     .skill {
-      background: #fffaf0;
-      border: 1px solid #b8c2ae;
+      background: rgba(255, 250, 240, 0.82);
+      border: 1px solid rgba(13, 48, 38, 0.22);
+    }
+
+    .work-bg .work-card {
+      background: rgba(245, 241, 232, 0.08);
+      border-color: rgba(245, 241, 232, 0.28);
     }
 
     .stat {
@@ -242,9 +221,16 @@
       transition: 0.3s ease;
     }
 
-    .experience-card:hover {
-      transform: translateY(-6px);
+    .experience-card:hover,
+    .work-card:hover,
+    .activity-card:hover {
+      transform: translateY(-8px);
       border-color: #0d3026;
+    }
+
+    .work-bg .work-card:hover {
+      background: #f5f1e8;
+      color: #0d3026;
     }
 
     .year {
@@ -260,7 +246,9 @@
       margin-bottom: 10px;
     }
 
-    .experience-card p {
+    .experience-card p,
+    .activity-card p,
+    .journey-item p {
       font-size: 15px;
       line-height: 1.7;
       opacity: 0.75;
@@ -277,24 +265,13 @@
 
     .work-card,
     .activity-card {
-      min-height: 240px;
+      min-height: 230px;
       border-radius: 22px;
       padding: 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: 0.35s ease;
-    }
-
-    .activity-card {
-      min-height: 210px;
-    }
-
-    .work-card:hover,
-    .activity-card:hover {
-      background: #0d3026;
-      color: #f5f1e8;
-      transform: translateY(-8px);
     }
 
     .work-card span,
@@ -312,16 +289,9 @@
       letter-spacing: -0.045em;
     }
 
-    .activity-card p {
-      margin-top: 14px;
-      font-size: 15px;
-      line-height: 1.6;
-      opacity: 0.75;
-    }
-
     .journey {
       max-width: 850px;
-      border-left: 1px solid #0d3026;
+      border-left: 1px solid currentColor;
       margin-left: 18px;
     }
 
@@ -337,20 +307,13 @@
       top: 6px;
       width: 15px;
       height: 15px;
-      background: #0d3026;
+      background: currentColor;
       border-radius: 50%;
     }
 
     .journey-item h3 {
       font-size: clamp(22px, 2.8vw, 38px);
       letter-spacing: -0.04em;
-    }
-
-    .journey-item p {
-      margin-top: 8px;
-      font-size: 15px;
-      line-height: 1.6;
-      opacity: 0.75;
     }
 
     .skills {
@@ -364,13 +327,6 @@
       border-radius: 999px;
       padding: 13px 20px;
       font-size: 14px;
-    }
-
-    .contact {
-      min-height: 80vh;
-      background: #0d3026;
-      color: #f5f1e8;
-      border-radius: 44px 44px 0 0;
     }
 
     .contact a {
@@ -394,7 +350,6 @@
 
     @media (max-width: 900px) {
       .nav-links { display: none; }
-
       .section { padding: 110px 24px 70px; }
 
       .hero h1 {
@@ -409,12 +364,10 @@
         grid-template-columns: 1fr;
       }
 
-      .stats {
-        grid-template-columns: 1fr 1fr;
-      }
+      .stats { grid-template-columns: 1fr 1fr; }
 
-      .gallery-photo {
-        width: 280px;
+      .gallery-placeholder {
+        flex-basis: 280px;
         height: 190px;
       }
     }
@@ -440,38 +393,33 @@
   <main>
 
     <section id="hero" class="section hero">
-      <h1 class="reveal">
-    <span id="name-rotator">Basile Suliman</span>
-</h1>
+      <h1 class="reveal"><span id="name-rotator">Basile Suliman</span></h1>
       <p class="hero-text reveal">
         Communication, international affairs, sustainability and storytelling.
       </p>
-      <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@700&display=swap" rel="stylesheet">
     </section>
 
-   <section id="gallery" class="gallery">
-  <h2 class="reveal">Gallery</h2>
+    <section id="gallery" class="gallery">
+      <h2 class="reveal">Gallery</h2>
 
-  <div class="gallery-row">
-    <div class="gallery-photo"><img src="assets/images/tunisia.jpg"><span>Tunisia</span></div>
-    <div class="gallery-photo"><img src="assets/images/japan.jpg"><span>Japan</span></div>
-    <div class="gallery-photo"><img src="assets/images/georgia.jpg"><span>Georgia</span></div>
-    <div class="gallery-photo"><img src="assets/images/italy.jpg"><span>Italy</span></div>
-    <div class="gallery-photo"><img src="assets/images/france.jpg"><span>France</span></div>
-    <div class="gallery-photo"><img src="assets/images/germany.jpg"><span>Germany</span></div>
-  </div>
+      <div class="gallery-row">
+        <div class="gallery-placeholder">Travel photo</div>
+        <div class="gallery-placeholder">Travel photo</div>
+        <div class="gallery-placeholder">Travel photo</div>
+        <div class="gallery-placeholder">Travel photo</div>
+        <div class="gallery-placeholder">Travel photo</div>
+      </div>
 
-  <div class="gallery-row">
-    <div class="gallery-photo"><img src="assets/images/rome.jpg"><span>Rome</span></div>
-    <div class="gallery-photo"><img src="assets/images/tokyo.jpg"><span>Tokyo</span></div>
-    <div class="gallery-photo"><img src="assets/images/berlin.jpg"><span>Berlin</span></div>
-    <div class="gallery-photo"><img src="assets/images/paris.jpg"><span>Paris</span></div>
-    <div class="gallery-photo"><img src="assets/images/spain.jpg"><span>Spain</span></div>
-    <div class="gallery-photo"><img src="assets/images/turkey.jpg"><span>Turkey</span></div>
-  </div>
-</section>
+      <div class="gallery-row">
+        <div class="gallery-placeholder">Travel photo</div>
+        <div class="gallery-placeholder">Travel photo</div>
+        <div class="gallery-placeholder">Travel photo</div>
+        <div class="gallery-placeholder">Travel photo</div>
+        <div class="gallery-placeholder">Travel photo</div>
+      </div>
+    </section>
 
-    <section id="about" class="section cream">
+    <section id="about" class="section about-bg">
       <div class="split">
         <div>
           <h2 class="reveal">Hi.</h2>
@@ -490,7 +438,7 @@
       </div>
     </section>
 
-    <section id="experience" class="section soft-green">
+    <section id="experience" class="section experience-bg">
       <h2 class="reveal">Experience</h2>
       <div class="experience-list">
         <article class="experience-card reveal"><div class="year">2026</div><div><h3>BNP Paribas</h3><p>Group Communication — Content Strategy & People Engagement. Communication around sustainability, engagement and corporate initiatives.</p></div></article>
@@ -500,7 +448,7 @@
       </div>
     </section>
 
-    <section id="work" class="section cream">
+    <section id="work" class="section work-bg">
       <h2 class="reveal">Work</h2>
       <div class="work-grid">
         <div class="work-card reveal"><span>Corporate</span><h3>Sustainability Communication</h3></div>
@@ -510,7 +458,7 @@
       </div>
     </section>
 
-    <section id="activities" class="section soft-green">
+    <section id="activities" class="section activities-bg">
       <h2 class="reveal">Activities</h2>
       <div class="activities-grid">
         <div class="activity-card reveal"><span>Volunteering</span><div><h3>Tarjimly</h3><p>Arabic, French and English interpretation for people in need of language support.</p></div></div>
@@ -520,7 +468,7 @@
       </div>
     </section>
 
-    <section id="education" class="section cream">
+    <section id="education" class="section education-bg">
       <h2 class="reveal">Education Journey</h2>
       <div class="journey">
         <div class="journey-item reveal"><h3>Sciences Po Paris</h3><p>International Security, Middle Eastern Studies and Migration.</p></div>
@@ -529,7 +477,7 @@
       </div>
     </section>
 
-    <section id="skills" class="section soft-green">
+    <section id="skills" class="section skills-bg">
       <h2 class="reveal">Skills & Tools</h2>
       <div class="skills">
         <div class="skill reveal">French</div><div class="skill reveal">Arabic</div><div class="skill reveal">English</div><div class="skill reveal">German</div><div class="skill reveal">Japanese</div><div class="skill reveal">Persian</div><div class="skill reveal">Excel</div><div class="skill reveal">Power BI</div><div class="skill reveal">Canva</div><div class="skill reveal">Communication</div><div class="skill reveal">Research</div><div class="skill reveal">Data visualisation</div>
@@ -547,46 +495,38 @@
   <script>
     const revealElements = document.querySelectorAll(".reveal");
 
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.15 });
 
     revealElements.forEach(element => observer.observe(element));
 
-  const nameRotator = document.getElementById("name-rotator");
+    const nameRotator = document.getElementById("name-rotator");
 
-const names = [
-  { text: "Basile Suliman", lang: "" },
-  { text: "بازيل سليمان", lang: "arabic" },
-  { text: "バジル・スリマン", lang: "japanese" },
-];
+    const names = [
+      { text: "Basile Suliman", lang: "" },
+      { text: "بازيل سليمان", lang: "arabic" },
+      { text: "バジル・スリマン", lang: "japanese" }
+    ];
 
-let current = 0;
+    let current = 0;
 
-setInterval(() => {
-  nameRotator.style.opacity = "0";
-  nameRotator.style.transform = "translateY(-12px)";
-  nameRotator.style.filter = "blur(4px)";
+    setInterval(() => {
+      nameRotator.style.opacity = "0";
+      nameRotator.style.transform = "translateY(-12px)";
+      nameRotator.style.filter = "blur(4px)";
 
-  setTimeout(() => {
-    current = (current + 1) % names.length;
-
-    nameRotator.textContent = names[current].text;
-    nameRotator.className = names[current].lang;
-
-    nameRotator.style.opacity = "1";
-    nameRotator.style.transform = "translateY(0)";
-    nameRotator.style.filter = "blur(0px)";
-  }, 350);
-}, 2200);
-    
+      setTimeout(() => {
+        current = (current + 1) % names.length;
+        nameRotator.textContent = names[current].text;
+        nameRotator.className = names[current].lang;
+        nameRotator.style.opacity = "1";
+        nameRotator.style.transform = "translateY(0)";
+        nameRotator.style.filter = "blur(0px)";
+      }, 350);
+    }, 2200);
   </script>
 
 </body>
