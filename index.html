@@ -1820,6 +1820,182 @@ setTimeout(() => {
 }
 
 window.addEventListener("load", initVisitedMap);
+
+
+
+
+
+/* ==========================================
+   EDUCATION
+========================================== */
+
+const educationData = {
+
+  france: {
+    fromYear: "2021",
+    fromMonth: "SEPTEMBER",
+    toYear: "2026",
+    toMonth: "JUNE",
+
+    passenger: "BASILE SULIMAN",
+    gate: "B.A. & M.A.",
+    terminal: "PSIA",
+
+    country: "FRANCE",
+    university: "Sciences Po Paris",
+    programme: "B.A. Politics · M.A. International Security",
+
+    details: [
+      "Undergraduate studies at the Nancy and Menton campuses.",
+      "Graduate studies at PSIA with a focus on migration and humanitarian affairs.",
+      "Coursework in international security, regional politics and data for development."
+    ]
+  },
+
+  japan: {
+    fromYear: "2023",
+    fromMonth: "SEPTEMBER",
+    toYear: "2024",
+    toMonth: "JULY",
+
+    passenger: "BASILE SULIMAN",
+    gate: "Exchange",
+    terminal: "Asia-Pacific",
+
+    country: "JAPAN",
+    university: "Tokyo University of Foreign Studies",
+    programme: "Exchange Programme",
+
+    details: [
+      "Intensive Japanese language programme.",
+      "Asia-Pacific politics and regional security.",
+      "Academic and cultural immersion in Tokyo."
+    ]
+  },
+
+  germany: {
+    fromYear: "2026",
+    fromMonth: "OCTOBER",
+    toYear: "2027",
+    toMonth: "SEPTEMBER",
+
+    passenger: "BASILE SULIMAN",
+    gate: "M.A.",
+    terminal: "OSI",
+
+    country: "GERMANY",
+    university: "Freie Universität Berlin",
+    programme: "M.A. International Relations",
+
+    details: [
+      "Second year of the dual Master's degree.",
+      "Focus on European affairs and international relations.",
+      "Otto Suhr Institute."
+    ]
+  }
+
+};
+
+
+/* ---------- elements ---------- */
+
+const layout = document.getElementById("educationLayout");
+const pass = document.getElementById("educationPass");
+
+const leftTicket = document.querySelector(".edu-ticket-left");
+
+const maps = document.querySelectorAll(".country-map");
+
+const eduFromYear = document.getElementById("eduFromYear");
+const eduFromMonth = document.getElementById("eduFromMonth");
+const eduToYear = document.getElementById("eduToYear");
+const eduToMonth = document.getElementById("eduToMonth");
+
+const eduPassenger = document.getElementById("eduPassenger");
+const eduGate = document.getElementById("eduGate");
+const eduTerminal = document.getElementById("eduTerminal");
+
+const eduCountry = document.getElementById("eduCountry");
+const eduUniversity = document.getElementById("eduUniversity");
+const eduProgramme = document.getElementById("eduProgramme");
+const eduDetails = document.getElementById("eduDetailsList");
+
+
+/* ---------- update ---------- */
+
+function loadEducation(country){
+
+    const data = educationData[country];
+    if(!data) return;
+
+    pass.classList.add("is-changing");
+
+    setTimeout(()=>{
+
+        eduFromYear.textContent = data.fromYear;
+        eduFromMonth.textContent = data.fromMonth;
+
+        eduToYear.textContent = data.toYear;
+        eduToMonth.textContent = data.toMonth;
+
+        eduPassenger.textContent = data.passenger;
+        eduGate.textContent = data.gate;
+        eduTerminal.textContent = data.terminal;
+
+        eduCountry.textContent = data.country;
+        eduUniversity.textContent = data.university;
+        eduProgramme.textContent = data.programme;
+
+        eduDetails.innerHTML = "";
+
+        data.details.forEach(item=>{
+
+            const li=document.createElement("li");
+            li.textContent=item;
+            eduDetails.appendChild(li);
+
+        });
+
+        leftTicket.classList.remove(
+            "edu-ticket-left--france",
+            "edu-ticket-left--japan",
+            "edu-ticket-left--germany"
+        );
+
+        leftTicket.classList.add("edu-ticket-left--"+country);
+
+        pass.classList.remove("is-changing");
+
+    },180);
+
+}
+
+
+/* ---------- interactions ---------- */
+
+maps.forEach(map=>{
+
+    map.addEventListener("click",()=>{
+
+        maps.forEach(m=>m.classList.remove("is-locked"));
+
+        map.classList.add("is-locked");
+
+        layout.classList.add("is-active");
+
+        loadEducation(map.dataset.country);
+
+    });
+
+});
+
+
+/* ---------- default ---------- */
+
+loadEducation("france");
+document.getElementById("map-france").classList.add("is-locked");
+layout.classList.add("is-active");
+
     
   </script>
 
