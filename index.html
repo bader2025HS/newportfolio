@@ -310,30 +310,45 @@ section {
   align-items: start;
 }
 
-  .section-pill {
+
+  .oversized-label {
+  position: relative;
   display: inline-flex;
-  align-items: center;
-  gap: 10px;
+  align-items: flex-end;
 
-  margin-bottom: 32px;
-  padding: 10px 18px;
-
-  border: 1.5px solid rgba(45, 123, 97, 0.22);
-  border-radius: 999px;
-
-  background: rgba(220, 239, 231, 0.55);
-  color: #2d7b61;
+  min-height: 82px;
+  margin-bottom: 28px;
 
   font-family: "Space Grotesk", sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
 }
 
-.section-pill::before {
-  content: "✦";
-  font-size: 0.75rem;
+.oversized-label::before {
+  content: attr(data-letter);
+
+  position: absolute;
+  left: -8px;
+  bottom: -18px;
+
+  font-size: 6.5rem;
+  line-height: 1;
+  font-weight: 700;
+
+  color: rgba(45, 123, 97, 0.12);
+
+  z-index: 0;
+  pointer-events: none;
+}
+
+.oversized-label span {
+  position: relative;
+  z-index: 1;
+
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  color: #2d7b61;
 }
 
 .about-focus ul {
@@ -475,7 +490,9 @@ section {
   <div class="about-container">
 
     <div class="about-header">
-<div class="section-pill">Who am I?</div>
+<div class="oversized-label" data-letter="W">
+  <span>Who am I?</span>
+</div>
       <h2>
         I make sense first,<br>
         then make it simple.
@@ -491,7 +508,9 @@ section {
 
     <div class="about-grid">
       <div class="about-focus">
-<div class="section-pill">Focus Areas</div>
+<div class="oversized-label" data-letter="F">
+  <span>Focus Areas</span>
+</div>
         <ul>
           <li>Displacement</li>
           <li>Sustainability</li>
@@ -503,8 +522,9 @@ section {
       </div>
 
       <div class="about-stats">
-<div class="section-pill">Impact</div>
-        <div class="about-stats-grid">
+<div class="oversized-label" data-letter="I">
+  <span>Impact</span>
+</div>        <div class="about-stats-grid">
           <div class="about-stat">
             <span>30</span>
             <p>Countries</p>
