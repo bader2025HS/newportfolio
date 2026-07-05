@@ -287,6 +287,37 @@
     .uae { left: 63%; top: 49%; }
     .georgia { left: 61%; top: 37%; }
 
+    .about {
+  background: var(--cream);
+}
+
+.about-grid {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.about-map {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.world-map {
+  width: 100%;
+  min-height: 70vh;
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(13,48,38,.12), transparent 18%),
+    radial-gradient(circle at 72% 60%, rgba(13,48,38,.10), transparent 18%),
+    #dfe8d6;
+  border: 1px solid rgba(13,48,38,.16);
+  position: relative;
+  overflow: hidden;
+}
     .experience {
       background: #fffaf0;
       color: var(--forest);
@@ -565,7 +596,6 @@
     <div class="nav-links">
       <a href="#gallery">Gallery</a>
       <a href="#about">About</a>
-      <a href="#map">Map</a>
       <a href="#experience">Experience</a>
       <a href="#work">Work</a>
       <a href="#skills">Skills</a>
@@ -598,61 +628,53 @@
       </div>
     </section>
 
-    <section id="about" class="section about">
-      <div class="about-grid">
-        <div>
-          <h2 class="reveal">Hi.</h2>
-          <p class="big-text reveal">
-            I make sense first, then make it simple. I turn complex international,
-            sustainability and policy topics into clear, engaging and accessible stories.
-          </p>
-          <div class="focus-tags reveal">
-            <span>Displacement</span>
-            <span>Sustainability</span>
-            <span>Energy transitions</span>
-            <span>MENA & Africa</span>
-            <span>Development</span>
-            <span>Peacebuilding</span>
-          </div>
-        </div>
+<section id="about" class="section about">
+  <div class="about-grid">
+    <div>
+      <h2 class="reveal">Hi.</h2>
+      <p class="big-text reveal">
+        I make sense first, then make it simple. I turn complex international,
+        sustainability and policy topics into clear, engaging and accessible stories.
+      </p>
 
-        <div class="stats">
-          <div class="stat reveal"><strong>30+</strong><span>Countries visited, lived, studied and explored.</span></div>
-          <div class="stat reveal"><strong>100+</strong><span>Translations for people in need of language support.</span></div>
-          <div class="stat reveal"><strong>200+</strong><span>People supported through asylum and casework.</span></div>
-          <div class="stat reveal"><strong>8</strong><span>Cities lived across Europe, the Middle East and Asia.</span></div>
-        </div>
+      <div class="focus-tags reveal">
+        <span>Displacement</span>
+        <span>Sustainability</span>
+        <span>Energy transitions</span>
+        <span>MENA & Africa</span>
+        <span>Development</span>
+        <span>Peacebuilding</span>
       </div>
-    </section>
+    </div>
 
-    <section id="map" class="section map-section">
-      <div class="map-wrap">
-        <div class="map-copy">
-          <h2 class="reveal">Visited Countries</h2>
-          <p class="reveal">
-            A personal geography of places lived, studied, visited and explored —
-            from France and Germany to Japan, Tunisia, Jordan, the UAE and beyond.
-          </p>
-        </div>
+    <div class="stats">
+      <div class="stat reveal"><strong>30+</strong><span>Countries visited, lived, studied and explored.</span></div>
+      <div class="stat reveal"><strong>100+</strong><span>Translations for people in need of language support.</span></div>
+      <div class="stat reveal"><strong>200+</strong><span>People supported through asylum and casework.</span></div>
+      <div class="stat reveal"><strong>8</strong><span>Cities lived across Europe, the Middle East and Asia.</span></div>
+    </div>
+  </div>
 
-        <div class="world-map reveal">
-          <div class="continent north-america"></div>
-          <div class="continent south-america"></div>
-          <div class="continent europe"></div>
-          <div class="continent africa"></div>
-          <div class="continent asia"></div>
-          <div class="continent australia"></div>
+  <div class="about-map reveal">
+    <div class="world-map">
+      <div class="continent north-america"></div>
+      <div class="continent south-america"></div>
+      <div class="continent europe"></div>
+      <div class="continent africa"></div>
+      <div class="continent asia"></div>
+      <div class="continent australia"></div>
 
-          <div class="pin france" data-city="France"></div>
-          <div class="pin germany" data-city="Germany"></div>
-          <div class="pin japan" data-city="Japan"></div>
-          <div class="pin tunisia" data-city="Tunisia"></div>
-          <div class="pin jordan" data-city="Jordan"></div>
-          <div class="pin uae" data-city="UAE"></div>
-          <div class="pin georgia" data-city="Georgia"></div>
-        </div>
-      </div>
-    </section>
+      <div class="pin france" data-city="France"></div>
+      <div class="pin germany" data-city="Germany"></div>
+      <div class="pin japan" data-city="Japan"></div>
+      <div class="pin tunisia" data-city="Tunisia"></div>
+      <div class="pin jordan" data-city="Jordan"></div>
+      <div class="pin uae" data-city="UAE"></div>
+      <div class="pin georgia" data-city="Georgia"></div>
+    </div>
+  </div>
+</section>
+  
 
     <section id="experience" class="section experience">
       <h2 class="reveal">Experience</h2>
