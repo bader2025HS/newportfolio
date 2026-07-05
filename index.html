@@ -66,14 +66,38 @@
       color: #f5f1e8;
     }
 
-    .gallery { background: #d4e0ce; padding: 80px 0; }
-    .about-bg { background: #f5f1e8; }
-    .experience-bg { background: #fbf7ed; }
-    .work-bg { background: #14382f; color: #f5f1e8; }
-    .activities-bg { background: #e9e3d2; }
-    .education-bg { background: #b9ccbc; }
-    .skills-bg { background: #f5f1e8; }
-    .contact { background: #0d3026; color: #f5f1e8; border-radius: 44px 44px 0 0; }
+   .gallery { background: #adc4a6; padding: 80px 0; }
+.about-bg { background: #fff7e8; color: #12382e; }
+.experience-bg { background: #21493b; color: #f5f1e8; }
+.work-bg { background: #e0b86f; color: #12382e; }
+.activities-bg { background: #f5f1e8; color: #0d3026; }
+.education-bg { background: #5f7f5f; color: #f5f1e8; }
+.skills-bg { background: #d8e0c7; color: #0d3026; }
+.contact { 
+  background: #0d3026; 
+  color: #f5f1e8; 
+  border-radius: 44px 44px 0 0; 
+}
+
+    .experience-bg .experience-list {
+  border-color: rgba(245, 241, 232, 0.35);
+}
+
+.experience-bg .experience-item {
+  border-color: rgba(245, 241, 232, 0.28);
+}
+
+.education-bg .journey {
+  border-color: rgba(245, 241, 232, 0.65);
+}
+
+.work-bg .work-list {
+  border-color: rgba(13, 48, 38, 0.25);
+}
+
+.work-bg .work-strip {
+  border-color: rgba(13, 48, 38, 0.25);
+}
 
     .hero h1 {
       margin-bottom: 28px;
@@ -373,6 +397,15 @@
       transform: translateY(0);
     }
 
+
+  .footer {
+  background: #0d3026;
+  color: rgba(245, 241, 232, 0.65);
+  padding: 26px 8vw 34px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+    
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .section { padding: 110px 24px 70px; }
@@ -529,6 +562,10 @@
       <a class="reveal" href="mailto:your-email@example.com">Email me</a>
     </section>
 
+  <footer class="footer">
+  © 2026 Basile Suliman. All rights reserved.
+</footer>
+    
   </main>
 
   <script>
