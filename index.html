@@ -1315,53 +1315,80 @@ section {
 
 
 
-#activities {
-  padding: 140px 8vw;
-  background: #e8f4ee;
-  color: #12382b;
-}
-
-.activities-container {
-  max-width: 1450px;
-  margin: auto;
-}
-
-.activities-header h2 {
-  margin-top: 18px;
-  font-size: clamp(3rem, 6vw, 5.8rem);
-  line-height: 0.95;
-  max-width: 950px;
-}
-
-.activities-list {
+.activity-cards {
   margin-top: 90px;
-  border-top: 1px solid rgba(18, 56, 43, 0.14);
-}
-
-.activity-row {
   display: grid;
-  grid-template-columns: 0.45fr 1fr;
-  gap: 60px;
-  padding: 38px 0;
-  border-bottom: 1px solid rgba(18, 56, 43, 0.14);
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 22px;
 }
 
-.activity-row h3 {
+.activity-card {
+  min-height: 320px;
+  padding: 34px;
+  border-radius: 34px;
+  background: #f6fbf8;
+  border: 1px solid rgba(18, 56, 43, 0.12);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: transform 0.35s ease, background 0.35s ease;
+}
+
+.activity-card.large {
+  grid-row: span 2;
+  min-height: 670px;
+}
+
+.activity-card.dark {
+  background: #1f5644;
+  color: #f6fbf8;
+}
+
+.activity-tag {
+  width: fit-content;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: #dcefe7;
+  color: #2d7b61;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.activity-card.dark .activity-tag {
+  background: rgba(255, 255, 255, 0.12);
+  color: #b8ead8;
+}
+
+.activity-card h3 {
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2rem, 4vw, 4.2rem);
-  line-height: 0.9;
-  letter-spacing: -0.05em;
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  line-height: 0.85;
+  letter-spacing: -0.07em;
 }
 
-.activity-row p {
-  max-width: 650px;
+.activity-card p {
+  max-width: 520px;
   font-size: 1.08rem;
-  line-height: 1.8;
+  line-height: 1.75;
   color: #4b6158;
 }
 
-.activity-row:hover h3 {
-  color: #2d7b61;
+.activity-card.dark p {
+  color: rgba(246, 251, 248, 0.72);
+}
+
+.activity-card:hover {
+  transform: translateY(-8px);
+  background: #dcefe7;
+}
+
+.activity-card.dark:hover {
+  background: #12382b;
 }
 
 .activities-photos {
@@ -1393,18 +1420,14 @@ section {
 }
 
 @media (max-width: 850px) {
-  #activities {
-    padding: 120px 20px 80px;
-  }
-
-  .activities-list {
+  .activity-cards {
     margin-top: 65px;
+    grid-template-columns: 1fr;
   }
 
-  .activity-row {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 32px 0;
+  .activity-card,
+  .activity-card.large {
+    min-height: 340px;
   }
 
   .activities-photos {
@@ -1413,14 +1436,11 @@ section {
     height: auto;
   }
 
-  .activities-photos img {
-    height: 220px;
-  }
-
+  .activities-photos img,
   .activities-photos img:nth-child(2),
   .activities-photos img:nth-child(4) {
-    margin-top: 0;
     height: 220px;
+    margin-top: 0;
   }
 }
     
@@ -1839,9 +1859,10 @@ section {
       <h2>Community,<br>events and engagement.</h2>
     </div>
 
-    <div class="activities-list">
+    <div class="activity-cards">
 
-      <article class="activity-row">
+      <article class="activity-card large">
+        <span class="activity-tag">Humanitarian translation</span>
         <h3>Tarjimly</h3>
         <p>
           Volunteer Translator & Interpreter supporting refugees in
@@ -1849,7 +1870,8 @@ section {
         </p>
       </article>
 
-      <article class="activity-row">
+      <article class="activity-card">
+        <span class="activity-tag">Diplomatic events</span>
         <h3>Events</h3>
         <p>
           Mediterranean of the Future. Paris Peace Forum.
@@ -1857,7 +1879,8 @@ section {
         </p>
       </article>
 
-      <article class="activity-row">
+      <article class="activity-card dark">
+        <span class="activity-tag">Model United Nations</span>
         <h3>MEDMUN</h3>
         <p>
           Arabic Committee Director (UNHCR) and institutional events coordinator.
