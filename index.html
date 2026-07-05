@@ -253,26 +253,32 @@ section {
 }
 
 .hero-description {
-
     font-family: "Manrope", sans-serif;
-
     font-size: 1.2rem;
-
     line-height: 1.9;
-
     max-width: 760px;
-
     color: rgba(255,255,255,.82);
 
 }
-
 .hero-description strong{
-
     color:white;
-
     font-weight:700;
-
 }
+
+.hero-title span {
+  display: inline-block;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.hero-title span.changing {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+
+
+
+    
   </style>
 </head>
 
@@ -301,7 +307,8 @@ section {
     <div class="section-inner hero">
         <div class="hero-content">
 <h1 class="hero-title">
-    Basile Suliman
+  <span id="first-name">Basile</span>
+  <span id="last-name">Suliman</span>
 </h1>            <p class="hero-description">
                 I currently work at <strong>BNP Paribas</strong> on CSR and sustainability communications, building on experience across public institutions, the private sector, government environments and NGOs.
             </p>
@@ -417,6 +424,37 @@ section {
     window.addEventListener("load", () => {
       moveSlider(document.querySelector(".nav-link.active"));
     });
+
+    const firstName = document.querySelector("#first-name");
+const lastName = document.querySelector("#last-name");
+
+const nameVersions = [
+  ["Basile", "Suliman"],
+  ["باسيل", "سليمان"],
+  ["バジル", "スリマン"],
+  ["Basile", "Suliman"]
+];
+
+let nameIndex = 0;
+
+function rotateName() {
+  firstName.classList.add("changing");
+  lastName.classList.add("changing");
+
+  setTimeout(() => {
+    nameIndex = (nameIndex + 1) % nameVersions.length;
+
+    firstName.textContent = nameVersions[nameIndex][0];
+    lastName.textContent = nameVersions[nameIndex][1];
+
+    firstName.classList.remove("changing");
+    lastName.classList.remove("changing");
+  }, 250);
+}
+
+setInterval(rotateName, 1800);
+
+    
   </script>
 
 </body>
