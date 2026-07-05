@@ -792,6 +792,18 @@ section {
 
 }
 
+.france .country-map{
+    transform:scale(1.12);
+}
+
+.japan .country-map{
+    transform:scale(1.15);
+}
+
+.germany .country-map{
+    transform:scale(.92);
+}
+
 @media(max-width:900px){
 
     .education-maps{
@@ -830,7 +842,40 @@ section {
 
 }
 
-    
+.section-heading{
+    position:relative;
+    width:100%;
+    max-width:1400px;
+    margin:0 auto 70px;
+    height:120px;
+}
+
+.section-letter{
+    position:absolute;
+    left:0;
+    top:-25px;
+
+    font-size:10rem;
+    font-weight:900;
+    line-height:1;
+
+    color:#cfe8df;
+    user-select:none;
+    pointer-events:none;
+}
+
+.section-title{
+    position:absolute;
+    left:18px;
+    bottom:12px;
+
+    font-size:2rem;
+    font-weight:500;
+    letter-spacing:8px;
+    text-transform:uppercase;
+
+    color:#2d7b67;
+}
     
   </style>
 </head>
@@ -1117,12 +1162,15 @@ section {
 
 <section id="education" class="education section">
 
-    <div class="section-heading">
-        <span class="big-letter">W</span>
-        <div>
-            <h2>Where I Have Studied</h2>
-        </div>
+<div class="section-heading">
+
+    <div class="section-letter">W</div>
+
+    <div class="section-title">
+        WHERE I'VE STUDIED
     </div>
+
+</div>
 
     <div class="education-maps">
 
