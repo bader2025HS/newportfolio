@@ -1581,7 +1581,63 @@ section {
     height: 190px;
   }
 }
-    
+
+
+
+    /* ===============================
+   UNIVERSAL SECTION HEADER
+=============================== */
+
+.section-header{
+    position:relative;
+    margin-bottom:90px;
+}
+
+.section-bg{
+    position:absolute;
+    top:-40px;
+    left:0;
+    font-size:clamp(7rem,16vw,14rem);
+    font-weight:900;
+    line-height:.8;
+    letter-spacing:-.06em;
+    color:rgba(15,118,110,.06);
+    pointer-events:none;
+    user-select:none;
+    white-space:nowrap;
+}
+
+.section-label{
+    position:relative;
+    display:inline-block;
+    margin-top:65px;
+    margin-bottom:22px;
+    font-size:.82rem;
+    font-weight:800;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:#147560;
+}
+
+.section-label::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    width:100%;
+    height:2px;
+    background:#147560;
+}
+
+.section-title{
+    position:relative;
+    max-width:950px;
+    font-size:clamp(3rem,7vw,6rem);
+    font-weight:900;
+    line-height:.92;
+    letter-spacing:-.06em;
+    color:#10231d;
+}
   </style>
 </head>
 
@@ -1993,14 +2049,22 @@ section {
 <section id="work" class="work-section">
   <div class="work-bg-text">WORK</div>
 
-  <div class="work-intro">
-    <p class="work-kicker">Selected work</p>
-    <h2>Samples & previous projects</h2>
-    <p>
-      A curated selection of reports, articles, research, visuals and
-      communication projects.
-    </p>
-  </div>
+<div class="section-header">
+
+    <div class="section-bg">
+        WORK
+    </div>
+
+    <div class="section-label">
+        WHAT HAVE I BUILT?
+    </div>
+
+    <h2 class="section-title">
+        Selected projects,<br>
+        real-world impact.
+    </h2>
+
+</div>
 
   <div class="work-list">
 
