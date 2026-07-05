@@ -451,7 +451,224 @@ section {
 
 
 
+#experience {
+  padding: 140px 8vw;
+}
 
+.experience-container {
+  max-width: 1450px;
+  margin: auto;
+}
+
+.experience-header h2 {
+  margin-top: 18px;
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: 0.95;
+  max-width: 900px;
+}
+
+.experience-track {
+  margin-top: 80px;
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  padding-bottom: 28px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.experience-track::-webkit-scrollbar {
+  display: none;
+}
+
+.experience-pill {
+  --accent: #2d7b61;
+
+  flex: 0 0 510px;
+  min-height: 420px;
+  padding: 32px;
+  border-radius: 32px;
+
+  background: #f6fbf8;
+  color: #12382b;
+
+  border: 1px solid rgba(18, 56, 43, 0.12);
+  scroll-snap-align: start;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-pill::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 9px;
+  background: var(--accent);
+}
+
+.exp-top {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 32px;
+}
+
+.exp-logo {
+  width: 82px;
+  height: 82px;
+  flex-shrink: 0;
+
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--accent) 16%, white);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.exp-logo img {
+  width: 76%;
+  height: 76%;
+  object-fit: contain;
+}
+
+.exp-heading {
+  min-width: 0;
+}
+
+.experience-pill h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.8rem, 2.4vw, 2.8rem);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.exp-sector {
+  display: inline-flex;
+  padding: 7px 12px;
+  border-radius: 999px;
+
+  background: var(--accent);
+  color: white;
+
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.exp-role {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #37594d;
+  margin-bottom: 22px;
+}
+
+.exp-description {
+  max-width: 390px;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #4b6158;
+}
+
+.exp-meta {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 32px;
+}
+
+.exp-meta span {
+  padding: 8px 12px;
+  border-radius: 999px;
+
+  background: color-mix(in srgb, var(--accent) 13%, white);
+  color: #12382b;
+
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+/* Organisation accent colours */
+.experience-pill.bnp {
+  --accent: #00a859;
+}
+
+.experience-pill.oif {
+  --accent: #087dcc;
+}
+
+.experience-pill.aqlity {
+  --accent: #f2b705;
+}
+
+.experience-pill.ardhis {
+  --accent: #e42528;
+}
+
+.experience-pill.tarjimly {
+  --accent: #7b3fe4;
+}
+
+.experience-pill.student {
+  --accent: #9f1d20;
+}
+
+@media (max-width: 850px) {
+  #experience {
+    padding: 120px 20px 80px;
+  }
+
+  .experience-header h2 {
+    font-size: clamp(2.7rem, 11vw, 4.4rem);
+  }
+
+  .experience-track {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    gap: 20px;
+    scroll-snap-type: none;
+  }
+
+  .experience-pill {
+    flex: none;
+    width: 100%;
+    min-height: auto;
+    padding: 26px;
+    border-radius: 26px;
+  }
+
+  .experience-pill::before {
+    width: 7px;
+  }
+
+  .exp-top {
+    gap: 16px;
+    margin-bottom: 26px;
+  }
+
+  .exp-logo {
+    width: 68px;
+    height: 68px;
+    border-radius: 18px;
+  }
+
+  .experience-pill h3 {
+    font-size: 1.8rem;
+  }
+
+  .exp-description {
+    max-width: 100%;
+  }
+}
 
 
 
@@ -566,11 +783,173 @@ section {
   </div>
 </section>
 
-    <section id="experience">
-      <div class="section-inner">
-        <h2>Experience</h2>
+<section id="experience">
+  <div class="experience-container">
+
+    <div class="experience-header">
+      <div class="oversized-label" data-letter="E">
+        <span>Who have I worked with?</span>
       </div>
-    </section>
+
+      <h2>Across sectors,<br>not inside one box.</h2>
+    </div>
+
+    <div class="experience-track">
+
+      <article class="experience-pill bnp">
+        <div class="exp-top">
+          <div class="exp-logo">
+            <!-- <img src="images/bnp.png" alt="BNP Paribas logo"> -->
+          </div>
+
+          <div class="exp-heading">
+            <h3>BNP Paribas</h3>
+            <span class="exp-sector">Private sector</span>
+          </div>
+        </div>
+
+        <p class="exp-role">CSR & Sustainability Communications</p>
+        <p class="exp-description">
+          Working on RSE and sustainability communications, turning complex transition,
+          engagement and corporate responsibility topics into clear content.
+        </p>
+
+        <div class="exp-meta">
+          <span>Communication</span>
+          <span>CSR</span>
+          <span>Sustainability</span>
+        </div>
+      </article>
+
+      <article class="experience-pill oif">
+        <div class="exp-top">
+          <div class="exp-logo">
+            <!-- <img src="images/oif.png" alt="OIF logo"> -->
+          </div>
+
+          <div class="exp-heading">
+            <h3>OIF</h3>
+            <span class="exp-sector">International organisation</span>
+          </div>
+        </div>
+
+        <p class="exp-role">Project Monitoring & Strategic Reporting</p>
+        <p class="exp-description">
+          Contributed to project follow-up, country briefs, data organisation and strategic
+          reporting across cooperation priorities.
+        </p>
+
+        <div class="exp-meta">
+          <span>Cooperation</span>
+          <span>Country briefs</span>
+          <span>Data</span>
+        </div>
+      </article>
+
+      <article class="experience-pill aqlity">
+        <div class="exp-top">
+          <div class="exp-logo">
+            <!-- <img src="images/aqlity.png" alt="AQLITY logo"> -->
+          </div>
+
+          <div class="exp-heading">
+            <h3>AQLITY</h3>
+            <span class="exp-sector">Research Institute</span>
+          </div>
+        </div>
+
+        <p class="exp-role">Humanitarian Data Analyst</p>
+        <p class="exp-description">
+          Worked on humanitarian data, research support and visualisation, connecting field
+          information with clear analytical outputs.
+        </p>
+
+        <div class="exp-meta">
+          <span>Research</span>
+          <span>Data</span>
+          <span>Visualisation</span>
+        </div>
+      </article>
+
+      <article class="experience-pill ardhis">
+        <div class="exp-top">
+          <div class="exp-logo">
+            <!-- <img src="images/ardhis.png" alt="ARDHIS logo"> -->
+          </div>
+
+          <div class="exp-heading">
+            <h3>ARDHIS</h3>
+            <span class="exp-sector">Asylum NGO</span>
+          </div>
+        </div>
+
+        <p class="exp-role">Asylum Casework & Research</p>
+        <p class="exp-description">
+          Supported asylum seekers through research, documentation and casework, with a focus
+          on migration, protection and procedures.
+        </p>
+
+        <div class="exp-meta">
+          <span>Migration</span>
+          <span>Asylum</span>
+          <span>Research</span>
+        </div>
+      </article>
+
+      <article class="experience-pill tarjimly">
+        <div class="exp-top">
+          <div class="exp-logo">
+            <!-- <img src="images/tarjimly.png" alt="Tarjimly logo"> -->
+          </div>
+
+          <div class="exp-heading">
+            <h3>Tarjimly</h3>
+            <span class="exp-sector">Humanitarian NGO</span>
+          </div>
+        </div>
+
+        <p class="exp-role">Interpreter & Translator</p>
+        <p class="exp-description">
+          Provided Arabic, French and English translation support for people needing language
+          assistance in humanitarian contexts.
+        </p>
+
+        <div class="exp-meta">
+          <span>Translation</span>
+          <span>Arabic</span>
+          <span>French</span>
+          <span>English</span>
+        </div>
+      </article>
+
+      <article class="experience-pill student">
+        <div class="exp-top">
+          <div class="exp-logo">
+            <!-- <img src="images/student.png" alt="Student association logo"> -->
+          </div>
+
+          <div class="exp-heading">
+            <h3>Sciences Po Arab World</h3>
+            <span class="exp-sector">Student-led association</span>
+          </div>
+        </div>
+
+        <p class="exp-role">Communications & Project Coordination</p>
+        <p class="exp-description">
+          Led communication and supported cultural, academic and student-led initiatives around
+          the Arab world.
+        </p>
+
+        <div class="exp-meta">
+          <span>Events</span>
+          <span>Communication</span>
+          <span>Culture</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
 
     <section id="education">
       <div class="section-inner">
