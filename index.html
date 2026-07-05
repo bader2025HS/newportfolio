@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>BS Portfolio</title>
+  <title>Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
+  
   <style>
     * {
       margin: 0;
@@ -451,203 +452,9 @@ section {
 
 
 
-    
 
-#experience {
-  padding: 140px 8vw;
-}
 
-.experience-container {
-  max-width: 1450px;
-  margin: auto;
-}
 
-.experience-header h2 {
-  margin-top: 18px;
-  font-size: clamp(3rem, 6vw, 5.8rem);
-  line-height: 0.95;
-  max-width: 900px;
-}
-
-.experience-track {
-  margin-top: 80px;
-  display: flex;
-  gap: 22px;
-  overflow-x: auto;
-  padding-bottom: 26px;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-}
-
-.experience-track::-webkit-scrollbar {
-  display: none;
-}
-
-.experience-pill {
-  flex: 0 0 500px;
-  min-height: 470px;
-  padding: 34px;
-  border-radius: 34px;
-  color: white;
-  scroll-snap-align: start;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.exp-logo {
-  width: 86px;
-  height: 86px;
-  margin-bottom: 26px;
-
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.exp-logo img {
-  width: 76%;
-  height: 76%;
-  object-fit: contain;
-}
-
-.exp-sector {
-  align-self: flex-start;
-
-  margin-bottom: 24px;
-  padding: 8px 15px;
-
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.18);
-
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.experience-pill h3 {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2rem, 3vw, 3.1rem);
-  line-height: 0.95;
-  margin-bottom: 14px;
-}
-
-.exp-role {
-  font-size: 1rem;
-  line-height: 1.5;
-  opacity: 0.82;
-  margin-bottom: 22px;
-}
-
-.exp-description {
-  max-width: 390px;
-  font-size: 0.95rem;
-  line-height: 1.75;
-  opacity: 0.88;
-}
-
-.exp-meta {
-  margin-top: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-top: 32px;
-}
-
-.exp-meta span {
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.16);
-  font-size: 0.75rem;
-  line-height: 1;
-}
-
-/* Card colours */
-.experience-pill.bnp {
-  background: #00a859;
-}
-
-.experience-pill.oif {
-  background: #087dcc;
-}
-
-.experience-pill.aqlity {
-  background: #f2b705;
-  color: #173126;
-}
-
-.experience-pill.ardhis {
-  background: #e42528;
-}
-
-.experience-pill.tarjimly {
-  background: #7b3fe4;
-}
-
-.experience-pill.student {
-  background: #9f1d20;
-}
-
-/* Yellow card readability */
-.experience-pill.aqlity .exp-logo,
-.experience-pill.aqlity .exp-sector,
-.experience-pill.aqlity .exp-meta span {
-  background: rgba(0, 0, 0, 0.10);
-  border-color: rgba(0, 0, 0, 0.10);
-}
-
-.experience-pill.aqlity .exp-role,
-.experience-pill.aqlity .exp-description {
-  opacity: 0.78;
-}
-
-@media (max-width: 850px) {
-  #experience {
-    padding: 120px 20px 80px;
-  }
-
-  .experience-header h2 {
-    font-size: clamp(2.7rem, 11vw, 4.4rem);
-  }
-
-  .experience-track {
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    overflow: visible;
-    gap: 20px;
-    scroll-snap-type: none;
-  }
-
-  .experience-pill {
-    flex: none;
-    width: 100%;
-    min-height: auto;
-    padding: 28px;
-    border-radius: 28px;
-  }
-
-  .exp-logo {
-    width: 72px;
-    height: 72px;
-    margin-bottom: 22px;
-    border-radius: 18px;
-  }
-
-  .experience-pill h3 {
-    font-size: 2rem;
-  }
-
-  .exp-description {
-    max-width: 100%;
-  }
-}
     
   </style>
 </head>
@@ -757,147 +564,13 @@ section {
 </div>
 
   </div>
-
-
-
-<section id="experience">
-  <div class="experience-container">
-
-    <div class="experience-header">
-      <div class="oversized-label" data-letter="E">
-        <span>Who have I worked with?</span>
-      </div>
-
-      <h2>Across sectors,<br>not inside one box.</h2>
-    </div>
-
-    <div class="experience-track">
-
-      <article class="experience-pill bnp">
-        <div class="exp-logo">
-          <!-- <img src="images/bnp.png" alt="BNP Paribas logo"> -->
-        </div>
-
-        <span class="exp-sector">Private sector</span>
-        <h3>BNP Paribas</h3>
-        <p class="exp-role">CSR & Sustainability Communications</p>
-        <p class="exp-description">
-          Working on RSE and sustainability communications, turning complex transition,
-          engagement and corporate responsibility topics into clear content.
-        </p>
-
-        <div class="exp-meta">
-          <span>Communication</span>
-          <span>CSR</span>
-          <span>Sustainability</span>
-        </div>
-      </article>
-
-      <article class="experience-pill oif">
-        <div class="exp-logo">
-          <!-- <img src="images/oif.png" alt="OIF logo"> -->
-        </div>
-
-        <span class="exp-sector">International organisation</span>
-        <h3>OIF</h3>
-        <p class="exp-role">Project Monitoring & Strategic Reporting</p>
-        <p class="exp-description">
-          Contributed to project follow-up, country briefs, data organisation and
-          strategic reporting across cooperation priorities.
-        </p>
-
-        <div class="exp-meta">
-          <span>Cooperation</span>
-          <span>Country briefs</span>
-          <span>Data</span>
-        </div>
-      </article>
-
-      <article class="experience-pill aqlity">
-        <div class="exp-logo">
-          <!-- <img src="images/aqlity.png" alt="AQLITY logo"> -->
-        </div>
-
-        <span class="exp-sector">Research Institute</span>
-        <h3>AQLITY</h3>
-        <p class="exp-role">Humanitarian Data Analyst</p>
-        <p class="exp-description">
-          Worked on humanitarian data, research support and visualisation, connecting
-          field information with clear analytical outputs.
-        </p>
-
-        <div class="exp-meta">
-          <span>Research</span>
-          <span>Data</span>
-          <span>Visualisation</span>
-        </div>
-      </article>
-
-      <article class="experience-pill ardhis">
-        <div class="exp-logo">
-          <!-- <img src="images/ardhis.png" alt="ARDHIS logo"> -->
-        </div>
-
-        <span class="exp-sector">Asylum NGO</span>
-        <h3>ARDHIS</h3>
-        <p class="exp-role">Asylum Casework & Research</p>
-        <p class="exp-description">
-          Supported asylum seekers through research, documentation and casework,
-          with a focus on migration, protection and procedures.
-        </p>
-
-        <div class="exp-meta">
-          <span>Migration</span>
-          <span>Asylum</span>
-          <span>Research</span>
-        </div>
-      </article>
-
-      <article class="experience-pill tarjimly">
-        <div class="exp-logo">
-          <!-- <img src="images/tarjimly.png" alt="Tarjimly logo"> -->
-        </div>
-
-        <span class="exp-sector">Humanitarian volunteering</span>
-        <h3>Tarjimly</h3>
-        <p class="exp-role">Interpreter & Translator</p>
-        <p class="exp-description">
-          Provided Arabic, French and English translation support for people needing
-          language assistance in humanitarian contexts.
-        </p>
-
-        <div class="exp-meta">
-          <span>Translation</span>
-          <span>Arabic</span>
-          <span>French</span>
-          <span>English</span>
-        </div>
-      </article>
-
-      <article class="experience-pill student">
-        <div class="exp-logo">
-          <!-- <img src="images/student.png" alt="Student association logo"> -->
-        </div>
-
-        <span class="exp-sector">Student-led association</span>
-        <h3>Sciences Po Arab World</h3>
-        <p class="exp-role">Communications & Project Coordination</p>
-        <p class="exp-description">
-          Led communication and supported cultural, academic and student-led
-          initiatives around the Arab world.
-        </p>
-
-        <div class="exp-meta">
-          <span>Events</span>
-          <span>Communication</span>
-          <span>Culture</span>
-        </div>
-      </article>
-
-    </div>
-  </div>
 </section>
-    
+
+    <section id="experience">
+      <div class="section-inner">
+        <h2>Experience</h2>
+      </div>
+    </section>
 
     <section id="education">
       <div class="section-inner">
@@ -1128,7 +801,6 @@ setTimeout(() => {
 }
 
 window.addEventListener("load", initVisitedMap);
-
     
   </script>
 
