@@ -484,25 +484,51 @@ section {
 }
 
 .experience-pill {
+  --accent: #2d7b61;
+
   flex: 0 0 500px;
-  min-height: 470px;
+  min-height: 420px;
   padding: 34px;
-  border-radius: 34px;
-  color: white;
+  border-radius: 32px;
+
+  background: #f6fbf8;
+  color: #12382b;
+
+  border: 1px solid rgba(18, 56, 43, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.55);
+
   scroll-snap-align: start;
 
   display: flex;
   flex-direction: column;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-pill::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 10px;
+  background: var(--accent);
+}
+
+.exp-top {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 34px;
 }
 
 .exp-logo {
-  width: 86px;
-  height: 86px;
-  margin-bottom: 26px;
+  width: 82px;
+  height: 82px;
+  flex-shrink: 0;
 
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: color-mix(in srgb, var(--accent) 14%, white);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
 
   display: flex;
   align-items: center;
@@ -511,37 +537,36 @@ section {
 }
 
 .exp-logo img {
-  width: 76%;
-  height: 76%;
+  width: 74%;
+  height: 74%;
   object-fit: contain;
-}
-
-.exp-sector {
-  align-self: flex-start;
-
-  margin-bottom: 24px;
-  padding: 8px 15px;
-
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.18);
-
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
 }
 
 .experience-pill h3 {
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2rem, 3vw, 3.1rem);
-  line-height: 0.95;
-  margin-bottom: 14px;
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.exp-sector {
+  display: inline-flex;
+  padding: 7px 12px;
+  border-radius: 999px;
+
+  background: var(--accent);
+  color: white;
+
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .exp-role {
   font-size: 1rem;
   line-height: 1.5;
-  opacity: 0.82;
+  color: #37594d;
   margin-bottom: 22px;
 }
 
@@ -549,7 +574,7 @@ section {
   max-width: 390px;
   font-size: 0.95rem;
   line-height: 1.75;
-  opacity: 0.88;
+  color: #4b6158;
 }
 
 .exp-meta {
@@ -563,48 +588,37 @@ section {
 .exp-meta span {
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.16);
+
+  background: color-mix(in srgb, var(--accent) 12%, white);
+  color: #12382b;
+
   font-size: 0.75rem;
   line-height: 1;
 }
 
-/* Card colours */
+/* Accents */
 .experience-pill.bnp {
-  background: #00a859;
+  --accent: #00a859;
 }
 
 .experience-pill.oif {
-  background: #087dcc;
+  --accent: #087dcc;
 }
 
 .experience-pill.aqlity {
-  background: #f2b705;
-  color: #173126;
+  --accent: #f2b705;
 }
 
 .experience-pill.ardhis {
-  background: #e42528;
+  --accent: #e42528;
 }
 
 .experience-pill.tarjimly {
-  background: #7b3fe4;
+  --accent: #7b3fe4;
 }
 
 .experience-pill.student {
-  background: #9f1d20;
-}
-
-/* Yellow card readability */
-.experience-pill.aqlity .exp-logo,
-.experience-pill.aqlity .exp-sector,
-.experience-pill.aqlity .exp-meta span {
-  background: rgba(0, 0, 0, 0.10);
-  border-color: rgba(0, 0, 0, 0.10);
-}
-
-.experience-pill.aqlity .exp-role,
-.experience-pill.aqlity .exp-description {
-  opacity: 0.78;
+  --accent: #9f1d20;
 }
 
 @media (max-width: 850px) {
@@ -629,19 +643,23 @@ section {
     flex: none;
     width: 100%;
     min-height: auto;
-    padding: 28px;
-    border-radius: 28px;
+    padding: 26px;
+    border-radius: 26px;
+  }
+
+  .exp-top {
+    gap: 16px;
+    margin-bottom: 28px;
   }
 
   .exp-logo {
-    width: 72px;
-    height: 72px;
-    margin-bottom: 22px;
+    width: 66px;
+    height: 66px;
     border-radius: 18px;
   }
 
   .experience-pill h3 {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 
   .exp-description {
@@ -759,143 +777,188 @@ section {
   </div>
 </section>
 
-<section id="experience">
-  <div class="experience-container">
-
-    <div class="experience-header">
-      <div class="oversized-label" data-letter="E">
-        <span>Who have I worked with?</span>
-      </div>
-
-      <h2>Across sectors,<br>not inside one box.</h2>
+<article class="experience-pill bnp">
+  <div class="exp-top">
+    <div class="exp-logo">
+      <!-- <img src="images/bnp.png" alt="BNP Paribas logo"> -->
     </div>
 
-    <div class="experience-track">
-
-      <article class="experience-pill bnp">
-        <div class="exp-logo">
-          <!-- <img src="images/bnp.png" alt="BNP Paribas logo"> -->
-        </div>
-
-        <span class="exp-sector">Private sector</span>
-        <h3>BNP Paribas</h3>
-        <p class="exp-role">CSR & Sustainability Communications</p>
-        <p class="exp-description">
-          Working on RSE and sustainability communications, turning complex transition,
-          engagement and corporate responsibility topics into clear content.
-        </p>
-
-        <div class="exp-meta">
-          <span>Communication</span>
-          <span>CSR</span>
-          <span>Sustainability</span>
-        </div>
-      </article>
-
-      <article class="experience-pill oif">
-        <div class="exp-logo">
-          <!-- <img src="images/oif.png" alt="OIF logo"> -->
-        </div>
-
-        <span class="exp-sector">International organisation</span>
-        <h3>OIF</h3>
-        <p class="exp-role">Project Monitoring & Strategic Reporting</p>
-        <p class="exp-description">
-          Contributed to project follow-up, country briefs, data organisation and
-          strategic reporting across cooperation priorities.
-        </p>
-
-        <div class="exp-meta">
-          <span>Cooperation</span>
-          <span>Country briefs</span>
-          <span>Data</span>
-        </div>
-      </article>
-
-      <article class="experience-pill aqlity">
-        <div class="exp-logo">
-          <!-- <img src="images/aqlity.png" alt="AQLITY logo"> -->
-        </div>
-
-        <span class="exp-sector">Research Institute</span>
-        <h3>AQLITY</h3>
-        <p class="exp-role">Humanitarian Data Analyst</p>
-        <p class="exp-description">
-          Worked on humanitarian data, research support and visualisation, connecting
-          field information with clear analytical outputs.
-        </p>
-
-        <div class="exp-meta">
-          <span>Research</span>
-          <span>Data</span>
-          <span>Visualisation</span>
-        </div>
-      </article>
-
-      <article class="experience-pill ardhis">
-        <div class="exp-logo">
-          <!-- <img src="images/ardhis.png" alt="ARDHIS logo"> -->
-        </div>
-
-        <span class="exp-sector">Asylum NGO</span>
-        <h3>ARDHIS</h3>
-        <p class="exp-role">Asylum Casework & Research</p>
-        <p class="exp-description">
-          Supported asylum seekers through research, documentation and casework,
-          with a focus on migration, protection and procedures.
-        </p>
-
-        <div class="exp-meta">
-          <span>Migration</span>
-          <span>Asylum</span>
-          <span>Research</span>
-        </div>
-      </article>
-
-      <article class="experience-pill tarjimly">
-        <div class="exp-logo">
-          <!-- <img src="images/tarjimly.png" alt="Tarjimly logo"> -->
-        </div>
-
-        <span class="exp-sector">Humanitarian volunteering</span>
-        <h3>Tarjimly</h3>
-        <p class="exp-role">Interpreter & Translator</p>
-        <p class="exp-description">
-          Provided Arabic, French and English translation support for people needing
-          language assistance in humanitarian contexts.
-        </p>
-
-        <div class="exp-meta">
-          <span>Translation</span>
-          <span>Arabic</span>
-          <span>French</span>
-          <span>English</span>
-        </div>
-      </article>
-
-      <article class="experience-pill student">
-        <div class="exp-logo">
-          <!-- <img src="images/student.png" alt="Student association logo"> -->
-        </div>
-
-        <span class="exp-sector">Student-led association</span>
-        <h3>Sciences Po Arab World</h3>
-        <p class="exp-role">Communications & Project Coordination</p>
-        <p class="exp-description">
-          Led communication and supported cultural, academic and student-led
-          initiatives around the Arab world.
-        </p>
-
-        <div class="exp-meta">
-          <span>Events</span>
-          <span>Communication</span>
-          <span>Culture</span>
-        </div>
-      </article>
-
+    <div>
+      <h3>BNP Paribas</h3>
+      <span class="exp-sector">Private sector</span>
     </div>
   </div>
-</section>
+
+  <p class="exp-role">CSR & Sustainability Communications</p>
+
+  <p class="exp-description">
+    Working on RSE and sustainability communications, turning complex transition,
+    engagement and corporate responsibility topics into clear content.
+  </p>
+
+  <div class="exp-meta">
+    <span>Communication</span>
+    <span>CSR</span>
+    <span>Sustainability</span>
+  </div>
+</article>
+
+    <article class="experience-pill bnp">
+  <div class="exp-top">
+    <div class="exp-logo">
+      <!-- <img src="images/bnp.png" alt="BNP Paribas logo"> -->
+    </div>
+
+    <div>
+      <h3>BNP Paribas</h3>
+      <span class="exp-sector">Private sector</span>
+    </div>
+  </div>
+
+  <p class="exp-role">CSR & Sustainability Communications</p>
+
+  <p class="exp-description">
+    Working on RSE and sustainability communications, turning complex transition,
+    engagement and corporate responsibility topics into clear content.
+  </p>
+
+  <div class="exp-meta">
+    <span>Communication</span>
+    <span>CSR</span>
+    <span>Sustainability</span>
+  </div>
+</article>
+
+    <article class="experience-pill bnp">
+  <div class="exp-top">
+    <div class="exp-logo">
+      <!-- <img src="images/bnp.png" alt="BNP Paribas logo"> -->
+    </div>
+
+    <div>
+      <h3>BNP Paribas</h3>
+      <span class="exp-sector">Private sector</span>
+    </div>
+  </div>
+
+  <p class="exp-role">CSR & Sustainability Communications</p>
+
+  <p class="exp-description">
+    Working on RSE and sustainability communications, turning complex transition,
+    engagement and corporate responsibility topics into clear content.
+  </p>
+
+  <div class="exp-meta">
+    <span>Communication</span>
+    <span>CSR</span>
+    <span>Sustainability</span>
+  </div>
+</article>
+
+    <article class="experience-pill bnp">
+  <div class="exp-top">
+    <div class="exp-logo">
+      <!-- <img src="images/bnp.png" alt="BNP Paribas logo"> -->
+    </div>
+
+    <div>
+      <h3>BNP Paribas</h3>
+      <span class="exp-sector">Private sector</span>
+    </div>
+  </div>
+
+  <p class="exp-role">CSR & Sustainability Communications</p>
+
+  <p class="exp-description">
+    Working on RSE and sustainability communications, turning complex transition,
+    engagement and corporate responsibility topics into clear content.
+  </p>
+
+  <div class="exp-meta">
+    <span>Communication</span>
+    <span>CSR</span>
+    <span>Sustainability</span>
+  </div>
+</article>
+
+    <article class="experience-pill bnp">
+  <div class="exp-top">
+    <div class="exp-logo">
+      <!-- <img src="images/bnp.png" alt="BNP Paribas logo"> -->
+    </div>
+
+    <div>
+      <h3>BNP Paribas</h3>
+      <span class="exp-sector">Private sector</span>
+    </div>
+  </div>
+
+  <p class="exp-role">CSR & Sustainability Communications</p>
+
+  <p class="exp-description">
+    Working on RSE and sustainability communications, turning complex transition,
+    engagement and corporate responsibility topics into clear content.
+  </p>
+
+  <div class="exp-meta">
+    <span>Communication</span>
+    <span>CSR</span>
+    <span>Sustainability</span>
+  </div>
+</article>
+
+    <article class="experience-pill bnp">
+  <div class="exp-top">
+    <div class="exp-logo">
+      <!-- <img src="images/bnp.png" alt="BNP Paribas logo"> -->
+    </div>
+
+    <div>
+      <h3>BNP Paribas</h3>
+      <span class="exp-sector">Private sector</span>
+    </div>
+  </div>
+
+  <p class="exp-role">CSR & Sustainability Communications</p>
+
+  <p class="exp-description">
+    Working on RSE and sustainability communications, turning complex transition,
+    engagement and corporate responsibility topics into clear content.
+  </p>
+
+  <div class="exp-meta">
+    <span>Communication</span>
+    <span>CSR</span>
+    <span>Sustainability</span>
+  </div>
+</article>
+
+    <article class="experience-pill bnp">
+  <div class="exp-top">
+    <div class="exp-logo">
+      <!-- <img src="images/bnp.png" alt="BNP Paribas logo"> -->
+    </div>
+
+    <div>
+      <h3>BNP Paribas</h3>
+      <span class="exp-sector">Private sector</span>
+    </div>
+  </div>
+
+  <p class="exp-role">CSR & Sustainability Communications</p>
+
+  <p class="exp-description">
+    Working on RSE and sustainability communications, turning complex transition,
+    engagement and corporate responsibility topics into clear content.
+  </p>
+
+  <div class="exp-meta">
+    <span>Communication</span>
+    <span>CSR</span>
+    <span>Sustainability</span>
+  </div>
+</article>
+    
 
     <section id="education">
       <div class="section-inner">
