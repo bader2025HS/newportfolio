@@ -1213,7 +1213,7 @@ EDUCATION — HORIZONTAL TIMELINE
   position: relative;
   width: 100vw;
   margin-top: 120px;
-  padding: 55px 8vw 80px;
+  padding: 55px 8vw 82px;
 
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -1255,7 +1255,39 @@ EDUCATION — HORIZONTAL TIMELINE
   background: #f5faf7;
   border: 3px solid #12382b;
 
-  transition: 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.edu-dot::after {
+  content: "";
+  position: absolute;
+  top: 45px;
+  left: 50%;
+
+  width: 2px;
+  height: 0;
+
+  background: #12382b;
+
+  transform: translateX(-50%);
+  opacity: 0;
+
+  transition:
+    height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease;
+}
+
+.edu-dot.active::before,
+.edu-dot:hover::before {
+  background: #12382b;
+  transform: scale(1.35);
+}
+
+.edu-dot.active::after {
+  height: 76px;
+  opacity: 1;
 }
 
 .edu-dot span {
@@ -1264,13 +1296,7 @@ EDUCATION — HORIZONTAL TIMELINE
   letter-spacing: 0.12em;
   text-transform: uppercase;
   white-space: nowrap;
-  color: rgba(18, 56, 43, 0.65);
-}
-
-.edu-dot.active::before,
-.edu-dot:hover::before {
-  background: #12382b;
-  transform: scale(1.35);
+  color: rgba(18, 56, 43, 0.62);
 }
 
 .edu-dot.active span {
@@ -1280,53 +1306,64 @@ EDUCATION — HORIZONTAL TIMELINE
 /* CONTENT */
 
 .edu-content {
-  margin-top: 20px;
-  max-width: 900px;
-  padding-left: 8vw;
-
   position: relative;
 
-  animation: eduFade 0.35s ease both;
+  margin-top: 25px;
+  max-width: 1050px;
+
+  padding: 55px 0 20px;
+
+  overflow: hidden;
 }
 
-.edu-content::before {
+.edu-content::after {
   content: "";
   position: absolute;
-  left: 8vw;
-  top: -90px;
-  width: 2px;
-  height: 70px;
-  background: #12382b;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: rgba(18, 56, 43, 0.22);
+
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.edu-content.is-changing::after {
+  animation: eduLineReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .edu-content h3 {
   margin: 0;
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2.4rem, 5vw, 5rem);
-  line-height: 0.95;
-  letter-spacing: -0.055em;
+  font-size: clamp(2.8rem, 6vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
 }
 
-.edu-content .edu-place {
-  margin-top: 16px;
+.edu-place {
+  margin-top: 22px;
   font-size: 0.82rem;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #2d7b61;
 }
 
-.edu-content .edu-programme {
-  margin-top: 24px;
-  max-width: 760px;
-  font-size: 1.35rem;
+.edu-programme {
+  margin-top: 28px;
+  max-width: 900px;
+  font-size: clamp(1.45rem, 2.3vw, 2.4rem);
   font-weight: 700;
-  line-height: 1.45;
+  line-height: 1.35;
   color: #36594d;
 }
 
 .edu-content ul {
-  margin: 28px 0 0;
+  margin: 34px 0 0;
   padding: 0;
   list-style: none;
 
@@ -1336,22 +1373,74 @@ EDUCATION — HORIZONTAL TIMELINE
 }
 
 .edu-content li {
-  padding: 9px 14px;
-  border: 1px solid rgba(18, 56, 43, 0.18);
+  padding: 10px 15px;
+
+  border: 1px solid rgba(18, 56, 43, 0.22);
+
   color: #12382b;
-  font-size: 0.76rem;
+
+  font-size: 0.78rem;
   font-weight: 800;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
-@keyframes eduFade {
+.edu-content li:hover {
+  background: #12382b;
+  color: #f5faf7;
+  transform: translateY(-4px);
+}
+
+/* CONTENT ANIMATION */
+
+.edu-content h3,
+.edu-content .edu-place,
+.edu-content .edu-programme,
+.edu-content ul {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.edu-content.is-changing h3 {
+  animation: eduContentReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.08s forwards;
+}
+
+.edu-content.is-changing .edu-place {
+  animation: eduContentReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.16s forwards;
+}
+
+.edu-content.is-changing .edu-programme {
+  animation: eduContentReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.24s forwards;
+}
+
+.edu-content.is-changing ul {
+  animation: eduContentReveal 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.32s forwards;
+}
+
+/* ANIMATIONS */
+
+@keyframes eduContentReveal {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(28px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes eduLineReveal {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
   }
 }
 
@@ -1369,22 +1458,38 @@ EDUCATION — HORIZONTAL TIMELINE
   .education-timeline {
     overflow-x: auto;
     grid-template-columns: repeat(6, 145px);
-    padding: 50px 20px 70px;
+    padding: 50px 20px 76px;
   }
 
   .edu-line {
     top: 67px;
   }
 
-  .edu-content {
-    padding-left: 0;
+  .edu-dot::after {
+    top: 42px;
   }
 
-  .edu-content::before {
-    left: 0;
+  .edu-dot.active::after {
+    height: 66px;
+  }
+
+  .edu-dot span {
+    font-size: 0.68rem;
+  }
+
+  .edu-content {
+    margin-top: 15px;
+    padding: 45px 0 20px;
+  }
+
+  .edu-content h3 {
+    font-size: clamp(2.4rem, 13vw, 4rem);
+  }
+
+  .edu-programme {
+    font-size: 1.25rem;
   }
 }
-
 
 
 
@@ -4440,6 +4545,8 @@ function renderEducation(year) {
 
   const item = educationTimelineData[year];
 
+  eduContent.classList.remove("is-changing");
+
   eduContent.innerHTML = `
     <h3>${item.title}</h3>
     <p class="edu-place">${item.place}</p>
@@ -4449,8 +4556,8 @@ function renderEducation(year) {
     </ul>
   `;
 
-  eduContent.classList.remove("is-changing");
   void eduContent.offsetWidth;
+
   eduContent.classList.add("is-changing");
 }
 
@@ -4462,7 +4569,7 @@ eduDots.forEach(dot => {
   });
 });
 
-renderEducation("2021");
+renderEducation("2024");
     
   </script>
 
