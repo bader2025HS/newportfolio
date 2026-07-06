@@ -2414,6 +2414,164 @@ MOBILE
     font-size: 0.92rem;
   }
 }
+
+
+
+.experience-stack {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.experience-row {
+  --accent: #2d7b61;
+
+  min-height: 135px;
+  padding: 24px 28px;
+  border-radius: 30px;
+  background: #f6fbf8;
+  border: 1px solid rgba(18, 56, 43, 0.12);
+
+  display: grid;
+  grid-template-columns: 110px 1fr 40px;
+  gap: 28px;
+  align-items: center;
+
+  overflow: hidden;
+  color: #12382b;
+
+  transition: 0.38s ease;
+}
+
+.experience-row:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  background: #ffffff;
+}
+
+.exp-logo-box {
+  width: 86px;
+  height: 86px;
+  border-radius: 24px;
+  background: color-mix(in srgb, var(--accent) 14%, white);
+  color: var(--accent);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 800;
+}
+
+.experience-row:hover .exp-logo-box {
+  background: var(--accent);
+  color: white;
+}
+
+.exp-line {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.exp-main h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.7rem, 2.6vw, 3rem);
+  line-height: 1;
+}
+
+.exp-sector {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.exp-role {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #37594d;
+}
+
+.exp-description,
+.exp-meta {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(12px);
+  transition: 0.35s ease;
+}
+
+.exp-description {
+  max-width: 720px;
+  margin-top: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4b6158;
+}
+
+.exp-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.exp-meta span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 13%, white);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.experience-row:hover .exp-description {
+  max-height: 120px;
+  opacity: 1;
+  margin-top: 18px;
+  transform: translateY(0);
+}
+
+.experience-row:hover .exp-meta {
+  max-height: 80px;
+  opacity: 1;
+  margin-top: 18px;
+  transform: translateY(0);
+}
+
+.exp-arrow {
+  font-size: 1.6rem;
+  color: var(--accent);
+  transition: 0.35s ease;
+}
+
+.experience-row:hover .exp-arrow {
+  transform: translate(6px, -6px);
+}
+
+.experience-row.bnp { --accent: #00a859; }
+.experience-row.oif { --accent: #087dcc; }
+.experience-row.aqlity { --accent: #f2b705; }
+.experience-row.ardhis { --accent: #e42528; }
+.experience-row.tarjimly { --accent: #7b3fe4; }
+.experience-row.student { --accent: #9f1d20; }
+
+@media (max-width: 750px) {
+  .experience-row {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-arrow {
+    display: none;
+  }
+}
+
     
   </style>
 </head>
@@ -2523,6 +2681,16 @@ MOBILE
 </div>
 
   </div>
+
+
+
+
+
+
+
+
+
+  
 </section>
 
 <section id="experience">
@@ -2536,160 +2704,171 @@ MOBILE
       <h2>Across sectors,<br>not inside one box.</h2>
     </div>
 
-    <div class="experience-track">
+<div class="experience-stack">
 
-      <article class="experience-pill bnp">
-        <div class="exp-top">
-          <div class="exp-logo">
-            <!-- <img src="images/bnp.png" alt="BNP Paribas logo"> -->
-          </div>
+  <article class="experience-row bnp">
+    <div class="exp-logo-box"><span>BNP</span></div>
 
-          <div class="exp-heading">
-            <h3>BNP Paribas</h3>
-            <span class="exp-sector">Private sector</span>
-          </div>
-        </div>
+    <div class="exp-main">
+      <div class="exp-line">
+        <h3>BNP Paribas</h3>
+        <span class="exp-sector">Private sector</span>
+      </div>
 
-        <p class="exp-role">CSR & Sustainability Communications</p>
-        <p class="exp-description">
-          Working on RSE and sustainability communications, turning complex transition,
-          engagement and corporate responsibility topics into clear content.
-        </p>
+      <p class="exp-role">CSR & Sustainability Communications</p>
 
-        <div class="exp-meta">
-          <span>Communication</span>
-          <span>CSR</span>
-          <span>Sustainability</span>
-        </div>
-      </article>
+      <p class="exp-description">
+        Working on RSE and sustainability communications, turning complex transition,
+        engagement and corporate responsibility topics into clear content.
+      </p>
 
-      <article class="experience-pill oif">
-        <div class="exp-top">
-          <div class="exp-logo">
-            <!-- <img src="images/oif.png" alt="OIF logo"> -->
-          </div>
-
-          <div class="exp-heading">
-            <h3>OIF</h3>
-            <span class="exp-sector">International organisation</span>
-          </div>
-        </div>
-
-        <p class="exp-role">Project Monitoring & Strategic Reporting</p>
-        <p class="exp-description">
-          Contributed to project follow-up, country briefs, data organisation and strategic
-          reporting across cooperation priorities.
-        </p>
-
-        <div class="exp-meta">
-          <span>Cooperation</span>
-          <span>Country briefs</span>
-          <span>Data</span>
-        </div>
-      </article>
-
-      <article class="experience-pill aqlity">
-        <div class="exp-top">
-          <div class="exp-logo">
-            <!-- <img src="images/aqlity.png" alt="AQLITY logo"> -->
-          </div>
-
-          <div class="exp-heading">
-            <h3>AQLITY</h3>
-            <span class="exp-sector">Research Institute</span>
-          </div>
-        </div>
-
-        <p class="exp-role">Humanitarian Data Analyst</p>
-        <p class="exp-description">
-          Worked on humanitarian data, research support and visualisation, connecting field
-          information with clear analytical outputs.
-        </p>
-
-        <div class="exp-meta">
-          <span>Research</span>
-          <span>Data</span>
-          <span>Visualisation</span>
-        </div>
-      </article>
-
-      <article class="experience-pill ardhis">
-        <div class="exp-top">
-          <div class="exp-logo">
-            <!-- <img src="images/ardhis.png" alt="ARDHIS logo"> -->
-          </div>
-
-          <div class="exp-heading">
-            <h3>ARDHIS</h3>
-            <span class="exp-sector">Asylum NGO</span>
-          </div>
-        </div>
-
-        <p class="exp-role">Asylum Casework & Research</p>
-        <p class="exp-description">
-          Supported asylum seekers through research, documentation and casework, with a focus
-          on migration, protection and procedures.
-        </p>
-
-        <div class="exp-meta">
-          <span>Migration</span>
-          <span>Asylum</span>
-          <span>Research</span>
-        </div>
-      </article>
-
-      <article class="experience-pill tarjimly">
-        <div class="exp-top">
-          <div class="exp-logo">
-            <!-- <img src="images/tarjimly.png" alt="Tarjimly logo"> -->
-          </div>
-
-          <div class="exp-heading">
-            <h3>Tarjimly</h3>
-            <span class="exp-sector">Humanitarian NGO</span>
-          </div>
-        </div>
-
-        <p class="exp-role">Interpreter & Translator</p>
-        <p class="exp-description">
-          Provided Arabic, French and English translation support for people needing language
-          assistance in humanitarian contexts.
-        </p>
-
-        <div class="exp-meta">
-          <span>Translation</span>
-          <span>Arabic</span>
-          <span>French</span>
-          <span>English</span>
-        </div>
-      </article>
-
-      <article class="experience-pill student">
-        <div class="exp-top">
-          <div class="exp-logo">
-            <!-- <img src="images/student.png" alt="Student association logo"> -->
-          </div>
-
-          <div class="exp-heading">
-            <h3>Sciences Po Arab World</h3>
-            <span class="exp-sector">Student-led association</span>
-          </div>
-        </div>
-
-        <p class="exp-role">Communications & Project Coordination</p>
-        <p class="exp-description">
-          Led communication and supported cultural, academic and student-led initiatives around
-          the Arab world.
-        </p>
-
-        <div class="exp-meta">
-          <span>Events</span>
-          <span>Communication</span>
-          <span>Culture</span>
-        </div>
-      </article>
-
+      <div class="exp-meta">
+        <span>Communication</span>
+        <span>CSR</span>
+        <span>Sustainability</span>
+      </div>
     </div>
+
+    <div class="exp-arrow">↗</div>
+  </article>
+
+
+  <article class="experience-row oif">
+    <div class="exp-logo-box"><span>OIF</span></div>
+
+    <div class="exp-main">
+      <div class="exp-line">
+        <h3>OIF</h3>
+        <span class="exp-sector">International organisation</span>
+      </div>
+
+      <p class="exp-role">Project Monitoring & Strategic Reporting</p>
+
+      <p class="exp-description">
+        Contributed to project follow-up, country briefs, data organisation and strategic
+        reporting across cooperation priorities.
+      </p>
+
+      <div class="exp-meta">
+        <span>Cooperation</span>
+        <span>Country briefs</span>
+        <span>Data</span>
+      </div>
+    </div>
+
+    <div class="exp-arrow">↗</div>
+  </article>
+
+
+  <article class="experience-row aqlity">
+    <div class="exp-logo-box"><span>AQ</span></div>
+
+    <div class="exp-main">
+      <div class="exp-line">
+        <h3>AQLITY</h3>
+        <span class="exp-sector">Research Institute</span>
+      </div>
+
+      <p class="exp-role">Humanitarian Data Analyst</p>
+
+      <p class="exp-description">
+        Worked on humanitarian data, research support and visualisation, connecting field
+        information with clear analytical outputs.
+      </p>
+
+      <div class="exp-meta">
+        <span>Research</span>
+        <span>Data</span>
+        <span>Visualisation</span>
+      </div>
+    </div>
+
+    <div class="exp-arrow">↗</div>
+  </article>
+
+
+  <article class="experience-row ardhis">
+    <div class="exp-logo-box"><span>AR</span></div>
+
+    <div class="exp-main">
+      <div class="exp-line">
+        <h3>ARDHIS</h3>
+        <span class="exp-sector">Asylum NGO</span>
+      </div>
+
+      <p class="exp-role">Asylum Casework & Research</p>
+
+      <p class="exp-description">
+        Supported asylum seekers through research, documentation and casework, with a focus
+        on migration, protection and procedures.
+      </p>
+
+      <div class="exp-meta">
+        <span>Migration</span>
+        <span>Asylum</span>
+        <span>Research</span>
+      </div>
+    </div>
+
+    <div class="exp-arrow">↗</div>
+  </article>
+
+
+  <article class="experience-row tarjimly">
+    <div class="exp-logo-box"><span>TJ</span></div>
+
+    <div class="exp-main">
+      <div class="exp-line">
+        <h3>Tarjimly</h3>
+        <span class="exp-sector">Humanitarian NGO</span>
+      </div>
+
+      <p class="exp-role">Interpreter & Translator</p>
+
+      <p class="exp-description">
+        Provided Arabic, French and English translation support for people needing language
+        assistance in humanitarian contexts.
+      </p>
+
+      <div class="exp-meta">
+        <span>Translation</span>
+        <span>Arabic</span>
+        <span>French</span>
+        <span>English</span>
+      </div>
+    </div>
+
+    <div class="exp-arrow">↗</div>
+  </article>
+
+
+  <article class="experience-row student">
+    <div class="exp-logo-box"><span>SP</span></div>
+
+    <div class="exp-main">
+      <div class="exp-line">
+        <h3>Sciences Po Arab World</h3>
+        <span class="exp-sector">Student-led association</span>
+      </div>
+
+      <p class="exp-role">Communications & Project Coordination</p>
+
+      <p class="exp-description">
+        Led communication and supported cultural, academic and student-led initiatives around
+        the Arab world.
+      </p>
+
+      <div class="exp-meta">
+        <span>Events</span>
+        <span>Communication</span>
+        <span>Culture</span>
+      </div>
+    </div>
+
+    <div class="exp-arrow">↗</div>
+  </article>
+
+</div>
   </div>
 </section>
 
@@ -2813,6 +2992,20 @@ MOBILE
 </section>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 <section id="skills">
   <div class="skills-container">
 
