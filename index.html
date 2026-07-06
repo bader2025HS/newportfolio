@@ -241,26 +241,6 @@ section {
     }
 
 
-/* HOME — CONTENT HEIGHT ONLY */
-
-#home {
-  min-height: 0;          /* overrides section { min-height: 100vh } */
-  height: auto;
-  padding-top: 30px;
-  padding-bottom: 70px;
-}
-
-.hero {
-  display: flex;
-  align-items: flex-start;
-  min-height: 0;
-  height: auto;
-}
-
-.hero-content {
-  max-width: 850px;
-}
-
 .hero h1 {
     margin-bottom: 40px;
 }
@@ -289,7 +269,55 @@ section {
 }
 
 
+/* ===============================
+HOME HERO
+=============================== */
 
+#home {
+  background: #1d4738;
+  color: #f6fbf8;
+
+  /* override global section height */
+  min-height: 0;
+  height: auto;
+
+  /* enough room for fixed navbar */
+  padding: 135px 7vw 65px;
+}
+
+.hero {
+  display: block;
+  min-height: 0;
+  height: auto;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: none;
+}
+
+.hero-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(4rem, 9vw, 8rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+  white-space: nowrap;
+  margin-bottom: 36px;
+}
+
+.hero-description {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.9;
+  max-width: 1250px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.hero-description strong {
+  color: white;
+  font-weight: 700;
+}
 
 
 
