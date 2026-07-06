@@ -1921,7 +1921,90 @@ MOBILE
 }
 
 
+#education .education-timeline {
+  position: relative;
 
+  width: 520px;
+  height: 700px;
+
+  margin-top: 90px;
+
+  /* pulls the curve so it comes out of the screen edge */
+  margin-left: calc(-8vw - 235px);
+
+  overflow: visible;
+}
+
+#education .education-timeline + .education-container {
+  position: relative;
+
+  min-height: 700px;
+  margin-top: -700px;
+
+  /* brings content closer to the curved timeline */
+  padding-left: 360px;
+
+  pointer-events: none;
+}
+
+    #education .edu-selected-year {
+  margin-bottom: 20px;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(4rem, 7vw, 7.5rem);
+  font-weight: 700;
+
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+
+  color: rgba(18, 56, 43, 0.09);
+
+  white-space: nowrap;
+}
+
+    #education .edu-dot:nth-child(4) {
+  left: 455px;
+  top: 50px;
+}
+
+#education .edu-dot:nth-child(5) {
+  left: 520px;
+  top: 185px;
+}
+
+#education .edu-dot:nth-child(6) {
+  left: 550px;
+  top: 330px;
+}
+
+#education .edu-dot:nth-child(7) {
+  left: 545px;
+  top: 470px;
+}
+
+#education .edu-dot:nth-child(8) {
+  left: 495px;
+  top: 590px;
+}
+
+#education .edu-dot:nth-child(9) {
+  left: 400px;
+  top: 685px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
@@ -5013,27 +5096,27 @@ curveSVG.setAttribute("preserveAspectRatio", "none");
 /* Must match the CSS dot positions */
 
 const curvePath = `
-  M 250 50
+  M 455 50
 
-  C 315 115,
-    340 185,
-    330 185
+  C 505 120,
+    542 178,
+    520 185
 
-  C 360 250,
-    370 300,
-    360 330
+  C 545 250,
+    553 300,
+    550 330
 
-  C 370 395,
-    365 440,
-    355 470
+  C 555 395,
+    548 438,
+    545 470
 
-  C 350 525,
-    330 565,
-    315 590
+  C 530 530,
+    500 565,
+    495 590
 
-  C 290 635,
-    260 665,
-    235 685
+  C 465 640,
+    430 668,
+    400 685
 `;
 
 
