@@ -2372,7 +2372,39 @@ LARGE YEAR — SLIGHTLY HIGHER
   justify-content: flex-start;
 }
 
+/* HARD FIX — EDUCATION DOTS SHOULD NEVER BECOME BOXES */
 
+#education .edu-dot,
+#education .edu-dot.active,
+#education .edu-dot.completed {
+  background: transparent !important;
+  border: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  box-shadow: none !important;
+}
+
+#education .edu-dot::before {
+  display: block !important;
+  content: "" !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  border: 5px solid #b8ead8 !important;
+  background: #163f33 !important;
+}
+
+#education .edu-dot.completed::before,
+#education .edu-dot.active::before {
+  background: #f2f8f5 !important;
+  border-color: #f2f8f5 !important;
+}
+
+#education .edu-dot.active::before {
+  width: 54px !important;
+  height: 54px !important;
+  box-shadow: 0 0 0 13px rgba(184, 234, 216, 0.14) !important;
+}
 
 
 
