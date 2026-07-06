@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>bs Portfolio</title>
+  <title>Portfolio</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -241,16 +241,24 @@ section {
     }
 
 
-    .hero {
-    display: flex;
-    align-items: flex-start;
-    min-height: 72vh;
-    padding-top: 30px;
-    padding-bottom: 60px;
+/* HOME — CONTENT HEIGHT ONLY */
+
+#home {
+  min-height: 0;          /* overrides section { min-height: 100vh } */
+  height: auto;
+  padding-top: 30px;
+  padding-bottom: 70px;
+}
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  min-height: 0;
+  height: auto;
 }
 
 .hero-content {
-    max-width: 850px;
+  max-width: 850px;
 }
 
 .hero h1 {
@@ -280,17 +288,23 @@ section {
   transform: translateY(10px);
 }
 
-/* MAKE HOME / GREEN HERO SHORTER */
 
-#home {
-  min-height: 72vh;
-  padding-bottom: 60px;
-}
 
-.hero {
-  min-height: 72vh;
-}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 #about {
   padding: 140px 8vw;
 }
