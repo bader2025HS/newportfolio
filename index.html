@@ -1901,7 +1901,69 @@ REDUCED MOTION
   }
 }
 
+/* ==========================================
+EDUCATION PLANE
+========================================== */
 
+.edu-plane {
+  position: absolute;
+
+  z-index: 5;
+
+  /*
+  Must be exactly the same vertical position
+  as .edu-line
+  */
+
+  top: 20px;
+  left: 0;
+
+  font-size: 1.65rem;
+  line-height: 1;
+
+  color: #12382b;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  /*
+  Prevent opacity from animating.
+  Only horizontal movement should animate.
+  */
+
+  will-change: transform;
+}
+
+
+@media (max-width: 1000px) {
+
+  .edu-plane {
+    top: 16px;
+  }
+
+}
+
+
+@media (max-width: 750px) {
+
+  .edu-plane {
+    top: 15px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
@@ -4894,10 +4956,8 @@ window.addEventListener("load", initVisitedMap);
 
 
 
-
-
 /* ==========================================
-EDUCATION — HORIZONTAL TIMELINE + PLANE
+EDUCATION — TIMELINE WITH PLANE TRAVEL
 ========================================== */
 
 const educationTimelineData = {
@@ -4905,175 +4965,433 @@ const educationTimelineData = {
     yearLabel: "2021–2022",
     title: "Sciences Po",
     place: "Menton, France",
-    programme: "Bachelor — Politics and Government, Middle East and Mediterranean Campus.",
-    details: ["Political Science", "Middle East", "Mediterranean"]
+    programme:
+      "Bachelor — Politics and Government, Middle East and Mediterranean Campus.",
+    details: [
+      "Political Science",
+      "Middle East",
+      "Mediterranean"
+    ]
   },
 
   2022: {
     yearLabel: "2022–2023",
     title: "Sciences Po",
     place: "Menton, France",
-    programme: "Bachelor — Politics and Government, with a focus on international affairs and regional studies.",
-    details: ["International Affairs", "Regional Studies", "Languages"]
+    programme:
+      "Bachelor — Politics and Government, with a focus on international affairs and regional studies.",
+    details: [
+      "International Affairs",
+      "Regional Studies",
+      "Languages"
+    ]
   },
 
   2023: {
     yearLabel: "2023–2024",
     title: "Tokyo University of Foreign Studies",
     place: "Tokyo, Japan",
-    programme: "Exchange year — Japanese language studies and academic coursework in an international environment.",
-    details: ["Japanese", "Exchange Year", "Regional Studies"]
+    programme:
+      "Exchange year — Japanese language studies and academic coursework in an international environment.",
+    details: [
+      "Japanese",
+      "Exchange Year",
+      "Regional Studies"
+    ]
   },
 
   2024: {
     yearLabel: "2024–2025",
     title: "Sciences Po Paris",
     place: "Paris, France",
-    programme: "Master — International Security, Migration and Middle East Studies.",
-    details: ["PSIA", "Security", "Migration"]
+    programme:
+      "Master — International Security, Migration and Middle East Studies.",
+    details: [
+      "PSIA",
+      "Security",
+      "Migration"
+    ]
   },
 
   2025: {
     yearLabel: "2025–2026",
     title: "Sciences Po Paris",
     place: "Paris, France",
-    programme: "Professional gap year — internships and professional experience in international affairs, research and communication.",
-    details: ["Professional Experience", "Research", "Communication"]
+    programme:
+      "Professional gap year — internships and professional experience in international affairs, research and communication.",
+    details: [
+      "Professional Experience",
+      "Research",
+      "Communication"
+    ]
   },
 
   2026: {
     yearLabel: "2026–2027",
     title: "Freie Universität Berlin",
     place: "Berlin, Germany",
-    programme: "Master — International Relations and European Affairs at the Otto-Suhr-Institut.",
-    details: ["International Relations", "European Affairs", "Double Degree"]
+    programme:
+      "Master — International Relations and European Affairs at the Otto-Suhr-Institut.",
+    details: [
+      "International Relations",
+      "European Affairs",
+      "Double Degree"
+    ]
   }
 };
 
-const eduDots = document.querySelectorAll("#education .edu-dot");
-const eduContent = document.getElementById("eduContent");
-const eduPlane = document.getElementById("eduPlane");
-const educationTimeline = document.querySelector("#education .education-timeline");
+
+/* ==========================================
+ELEMENTS
+========================================== */
+
+const eduDots =
+  document.querySelectorAll("#education .edu-dot");
+
+const eduContent =
+  document.getElementById("eduContent");
+
+const eduPlane =
+  document.getElementById("eduPlane");
+
+const educationTimeline =
+  document.querySelector("#education .education-timeline");
+
+
+/* ==========================================
+STATE
+========================================== */
+
+let currentEducationDot =
+  document.querySelector("#education .edu-dot.active") ||
+  document.querySelector(
+    '#education .edu-dot[data-year="2024"]'
+  ) ||
+  eduDots[0];
+
+let educationPlaneFlying = false;
+
+
+/* ==========================================
+RENDER CONTENT
+========================================== */
 
 function renderEducation(year) {
+
   const item = educationTimelineData[year];
 
   if (!eduContent || !item) return;
 
+
   eduContent.classList.remove("is-changing");
 
+
   eduContent.innerHTML = `
-    <div class="edu-selected-year">${item.yearLabel}</div>
 
-    <h3>${item.title}</h3>
+    <div class="edu-selected-year">
+      ${item.yearLabel}
+    </div>
 
-    <p class="edu-place">${item.place}</p>
+    <h3>
+      ${item.title}
+    </h3>
 
-    <p class="edu-programme">${item.programme}</p>
+    <p class="edu-place">
+      ${item.place}
+    </p>
+
+    <p class="edu-programme">
+      ${item.programme}
+    </p>
 
     <ul>
-      ${item.details.map(detail => `<li>${detail}</li>`).join("")}
+      ${item.details
+        .map(detail => `<li>${detail}</li>`)
+        .join("")}
     </ul>
+
   `;
+
 
   void eduContent.offsetWidth;
 
+
   eduContent.classList.add("is-changing");
+
 }
 
-function moveEduPlaneTo(dot) {
-  if (!eduPlane || !educationTimeline || !dot) return;
 
-  const timelineRect = educationTimeline.getBoundingClientRect();
-  const dotRect = dot.getBoundingClientRect();
+/* ==========================================
+GET DOT POSITION ON TIMELINE
+========================================== */
 
-  const dotCenter =
+function getEducationDotX(dot) {
+
+  const timelineRect =
+    educationTimeline.getBoundingClientRect();
+
+  const dotCircle =
+    window.getComputedStyle(dot, "::before");
+
+
+  const dotRect =
+    dot.getBoundingClientRect();
+
+
+  return (
     dotRect.left -
     timelineRect.left +
     educationTimeline.scrollLeft +
-    dotRect.width / 2;
+    dotRect.width / 2
+  );
 
-  const direction =
-    eduPlane.dataset.currentX &&
-    dotCenter < Number(eduPlane.dataset.currentX)
-      ? -90
-      : 90;
-
-  eduPlane.dataset.currentX = dotCenter;
-
-  eduPlane.style.transform =
-    `translateX(${dotCenter - 11}px) translateY(-50%) rotate(${direction}deg)`;
-
-  eduPlane.classList.remove("is-flying");
-  void eduPlane.offsetWidth;
-  eduPlane.classList.add("is-flying");
 }
 
-function selectEducation(dot) {
-  if (!dot) return;
 
-  eduDots.forEach(item => {
-    item.classList.remove("active");
-  });
+/* ==========================================
+FLY PLANE
+========================================== */
 
-  dot.classList.add("active");
+function flyEducationPlane(targetDot) {
 
-  moveEduPlaneTo(dot);
-
-  renderEducation(dot.dataset.year);
-
-  if (window.innerWidth <= 750) {
-    dot.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center"
-    });
+  if (
+    !targetDot ||
+    !currentEducationDot ||
+    !eduPlane ||
+    !educationTimeline ||
+    educationPlaneFlying ||
+    targetDot === currentEducationDot
+  ) {
+    return;
   }
-}
 
-eduDots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    selectEducation(dot);
+
+  educationPlaneFlying = true;
+
+
+  const startX =
+    getEducationDotX(currentEducationDot);
+
+  const endX =
+    getEducationDotX(targetDot);
+
+
+  const movingRight =
+    endX > startX;
+
+
+  /* ------------------------------------------
+  PLACE PLANE EXACTLY ON CURRENT DOT
+  ------------------------------------------ */
+
+  eduPlane.style.transition = "none";
+
+  eduPlane.style.opacity = "0";
+
+  eduPlane.style.left = "0";
+
+  eduPlane.style.transform = `
+    translateX(${startX}px)
+    translate(-50%, -50%)
+    rotate(${movingRight ? "90deg" : "-90deg"})
+  `;
+
+
+  /*
+  Force browser layout so the plane really starts
+  from the current dot before animation begins.
+  */
+
+  void eduPlane.offsetWidth;
+
+
+  /* ------------------------------------------
+  SHOW PLANE
+  ------------------------------------------ */
+
+  eduPlane.style.opacity = "1";
+
+
+  /* ------------------------------------------
+  START FLIGHT
+  ------------------------------------------ */
+
+  requestAnimationFrame(() => {
+
+    requestAnimationFrame(() => {
+
+      eduPlane.style.transition =
+        "transform 850ms cubic-bezier(0.65, 0, 0.35, 1)";
+
+
+      eduPlane.style.transform = `
+        translateX(${endX}px)
+        translate(-50%, -50%)
+        rotate(${movingRight ? "90deg" : "-90deg"})
+      `;
+
+    });
+
   });
 
-  dot.addEventListener("keydown", event => {
-    let targetIndex = index;
 
-    if (event.key === "ArrowRight") {
-      targetIndex = Math.min(index + 1, eduDots.length - 1);
-    } else if (event.key === "ArrowLeft") {
-      targetIndex = Math.max(index - 1, 0);
-    } else {
+  /* ==========================================
+  WHEN PLANE ARRIVES
+  ========================================== */
+
+  const finishFlight = event => {
+
+    if (
+      event.propertyName !== "transform"
+    ) {
       return;
     }
 
-    event.preventDefault();
 
-    const targetDot = eduDots[targetIndex];
+    eduPlane.removeEventListener(
+      "transitionend",
+      finishFlight
+    );
 
-    targetDot.focus();
-    selectEducation(targetDot);
-  });
-});
 
-const initialEducationDot =
-  document.querySelector("#education .edu-dot.active") ||
-  document.querySelector('#education .edu-dot[data-year="2024"]') ||
-  eduDots[0];
+    /* HIDE PLANE */
 
-if (initialEducationDot) {
-  selectEducation(initialEducationDot);
+    eduPlane.style.opacity = "0";
+
+
+    /* CHANGE ACTIVE DOT */
+
+    eduDots.forEach(dot => {
+      dot.classList.remove("active");
+    });
+
+
+    targetDot.classList.add("active");
+
+
+    currentEducationDot = targetDot;
+
+
+    /* CHANGE CONTENT */
+
+    renderEducation(
+      targetDot.dataset.year
+    );
+
+
+    educationPlaneFlying = false;
+
+  };
+
+
+  eduPlane.addEventListener(
+    "transitionend",
+    finishFlight
+  );
+
 }
 
-window.addEventListener("load", () => {
-  const activeDot = document.querySelector("#education .edu-dot.active");
-  moveEduPlaneTo(activeDot);
+
+/* ==========================================
+CLICK EVENTS
+========================================== */
+
+eduDots.forEach(dot => {
+
+  dot.addEventListener("click", () => {
+
+    flyEducationPlane(dot);
+
+  });
+
 });
 
-window.addEventListener("resize", () => {
-  const activeDot = document.querySelector("#education .edu-dot.active");
-  moveEduPlaneTo(activeDot);
+
+/* ==========================================
+KEYBOARD NAVIGATION
+========================================== */
+
+eduDots.forEach((dot, index) => {
+
+  dot.addEventListener("keydown", event => {
+
+    let targetIndex = index;
+
+
+    if (event.key === "ArrowRight") {
+
+      targetIndex = Math.min(
+        index + 1,
+        eduDots.length - 1
+      );
+
+    }
+
+
+    else if (event.key === "ArrowLeft") {
+
+      targetIndex = Math.max(
+        index - 1,
+        0
+      );
+
+    }
+
+
+    else {
+
+      return;
+
+    }
+
+
+    event.preventDefault();
+
+
+    const targetDot =
+      eduDots[targetIndex];
+
+
+    targetDot.focus();
+
+
+    flyEducationPlane(targetDot);
+
+  });
+
 });
+
+
+/* ==========================================
+INITIAL STATE
+========================================== */
+
+if (currentEducationDot) {
+
+  eduDots.forEach(dot => {
+    dot.classList.remove("active");
+  });
+
+
+  currentEducationDot.classList.add("active");
+
+
+  renderEducation(
+    currentEducationDot.dataset.year
+  );
+
+}
+
+
+/* ==========================================
+KEEP PLANE HIDDEN WHEN IDLE
+========================================== */
+
+if (eduPlane) {
+
+  eduPlane.style.opacity = "0";
+
+}
     
   </script>
 
