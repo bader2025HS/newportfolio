@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>BS Portfolio</title>
+  <title>Portfolio</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2254,7 +2254,136 @@ LARGE YEAR — SLIGHTLY HIGHER
 
 
 
+/* FIX EDUCATION TIMELINE — CLEAN DARK VERSION */
 
+#education .education-timeline {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  margin: 90px 0 0 calc(-8vw);
+  padding: 0 8vw 90px;
+
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: start;
+
+  transform: none;
+  overflow: visible;
+}
+
+#education .edu-curve-svg {
+  display: none !important;
+}
+
+#education .edu-line {
+  display: block;
+}
+
+#education .edu-line-dashed {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20px;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(184, 234, 216, 0.35) 0,
+    rgba(184, 234, 216, 0.35) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+#education .edu-line-progress {
+  position: absolute;
+  left: 0;
+  top: 18px;
+  height: 6px;
+  width: 0;
+  border-radius: 999px;
+  background: #b8ead8;
+  transition: width 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#education .edu-dot {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+
+  width: auto;
+  height: auto;
+
+  border: 0;
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+
+  transform: none !important;
+}
+
+#education .edu-dot::before {
+  display: block !important;
+  content: "";
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+  border: 5px solid #b8ead8;
+  background: #163f33;
+
+  transition: 0.3s ease;
+}
+
+#education .edu-dot.completed::before,
+#education .edu-dot.active::before {
+  background: #f2f8f5;
+  border-color: #f2f8f5;
+}
+
+#education .edu-dot.active::before {
+  width: 54px;
+  height: 54px;
+  box-shadow: 0 0 0 13px rgba(184, 234, 216, 0.14);
+}
+
+#education .edu-dot span {
+  position: static;
+  transform: none !important;
+
+  color: #b8ead8;
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.16em;
+}
+
+#education .education-timeline + .education-container {
+  min-height: auto;
+  margin-top: 0;
+  padding-left: 8vw;
+}
+
+#education .edu-content {
+  min-height: auto;
+  max-width: 1150px;
+  justify-content: flex-start;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
@@ -4116,7 +4245,58 @@ LANGUAGE LEVEL — MORE VISIBLE
 
 }
 
+/* ===============================
+SKILLS — LIGHT OVERRIDE
+=============================== */
 
+#skills {
+  background: #d8eee4;
+  color: #12382b;
+}
+
+#skills .skills-header h2 {
+  color: #12382b;
+}
+
+#skills .oversized-label::before {
+  color: rgba(18, 56, 43, 0.08);
+}
+
+#skills .oversized-label span,
+#skills .skills-column h3 {
+  color: #2d7b61;
+}
+
+#skills .language-row,
+#skills .tool-entry {
+  border-bottom-color: rgba(18, 56, 43, 0.16);
+}
+
+#skills .language-row strong,
+#skills .tool-entry {
+  color: #12382b;
+}
+
+#skills .language-row:hover,
+#skills .tool-entry:hover {
+  background: rgba(18, 56, 43, 0.045);
+}
+
+#skills .tool-entry:hover {
+  color: #2d7b61;
+}
+
+#skills .language-row small {
+  background: #2d7b61;
+  border-color: #2d7b61;
+  color: #f6fbf8;
+}
+
+#skills .language-row:hover small {
+  background: transparent;
+  color: #2d7b61;
+  border-color: #2d7b61;
+}
 
 
     
