@@ -280,15 +280,40 @@ section {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 #about {
   padding: 140px 8vw;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(142, 212, 191, 0.35), transparent 26%),
+    radial-gradient(circle at 88% 82%, rgba(45, 123, 97, 0.16), transparent 30%),
+    #f6fbf8;
+  color: #12382b;
 }
 
 .about-container {
   max-width: 1450px;
   margin: auto;
 }
-
 
 .about-header h2 {
   margin-top: 18px;
@@ -298,46 +323,45 @@ section {
 }
 
 .about-description {
-  margin-top: 40px;
-  max-width: 820px;
-  font-size: 1.2rem;
+  margin-top: 44px;
+  max-width: 860px;
+  padding-left: 28px;
+
+  border-left: 5px solid #2d7b61;
+
+  font-size: 1.25rem;
   line-height: 1.9;
-  color: #4b6158;
+  color: #405c51;
 }
 
 .about-grid {
-  margin-top: 90px;
+  margin-top: 95px;
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 100px;
   align-items: start;
 }
 
+/* LABEL */
 
-  .oversized-label {
+.oversized-label {
   position: relative;
   display: inline-flex;
   align-items: flex-end;
-
   min-height: 82px;
   margin-bottom: 28px;
-
   font-family: "Space Grotesk", sans-serif;
 }
 
 .oversized-label::before {
   content: attr(data-letter);
-
   position: absolute;
   left: -8px;
   bottom: -18px;
-
   font-size: 6.5rem;
   line-height: 1;
   font-weight: 700;
-
   color: rgba(45, 123, 97, 0.12);
-
   z-index: 0;
   pointer-events: none;
 }
@@ -345,24 +369,65 @@ section {
 .oversized-label span {
   position: relative;
   z-index: 1;
-
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-
   color: #2d7b61;
 }
+
+/* FOCUS LIST */
 
 .about-focus ul {
   list-style: none;
 }
 
 .about-focus li {
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(18, 56, 43, 0.12);
+  position: relative;
+  padding: 18px 0 18px 34px;
+
+  border-bottom: 1px solid rgba(18, 56, 43, 0.14);
+
   font-size: 1.25rem;
+  font-weight: 650;
+
+  transition:
+    padding-left 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
+
+.about-focus li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+
+  width: 12px;
+  height: 12px;
+
+  border: 2px solid #2d7b61;
+  background: #f6fbf8;
+
+  transform: translateY(-50%) rotate(45deg);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.about-focus li:hover {
+  padding-left: 44px;
+  color: #2d7b61;
+  border-color: rgba(45, 123, 97, 0.35);
+}
+
+.about-focus li:hover::before {
+  background: #2d7b61;
+  transform: translateY(-50%) rotate(45deg) scale(1.15);
+}
+
+/* STATS — SAME 2x2 LAYOUT */
 
 .about-stats-grid {
   display: grid;
@@ -371,44 +436,99 @@ section {
 }
 
 .about-stat {
-  padding-bottom: 30px;
-  border-bottom: 1px solid rgba(18,56,43,.12);
+  position: relative;
+
+  min-height: 210px;
+  padding: 28px 28px 30px;
+
+  border: 1px solid rgba(18, 56, 43, 0.16);
+  background: rgba(255, 255, 255, 0.42);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.about-stat::after {
+  content: "";
+  position: absolute;
+  right: -34px;
+  bottom: -34px;
+
+  width: 100px;
+  height: 100px;
+
+  border-radius: 50%;
+  background: rgba(45, 123, 97, 0.12);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+.about-stat:hover {
+  transform: translateY(-8px);
+  background: #dcefe7;
+  border-color: #2d7b61;
+}
+
+.about-stat:hover::after {
+  transform: scale(1.5);
+  background: rgba(45, 123, 97, 0.22);
 }
 
 .about-stat span {
+  position: relative;
+  z-index: 1;
+
   display: block;
+
   font-family: "Space Grotesk", sans-serif;
   font-size: clamp(3rem, 6vw, 4.8rem);
   line-height: 0.9;
   font-weight: 700;
+
   color: #2d7b61;
 }
 
 .about-stat p {
-  margin-top: 12px;
+  position: relative;
+  z-index: 1;
+
+  margin-top: 14px;
+
   font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .about-stat small {
+  position: relative;
+  z-index: 1;
+
   display: block;
   max-width: 270px;
   margin-top: 14px;
+
   font-size: 0.95rem;
   line-height: 1.55;
+
   color: #4d625a;
-  opacity: 1;
-  transform: none;
 }
 
+/* MAP */
+
 .about-map {
-  margin-top: 90px;
+  margin-top: 95px;
   height: 500px;
   border-radius: 30px;
   background: #dcefe7;
   overflow: hidden;
+  border: 1px solid rgba(18, 56, 43, 0.16);
 }
 
 #visitedMap {
@@ -426,6 +546,11 @@ section {
     padding: 120px 20px 80px;
   }
 
+  .about-description {
+    padding-left: 18px;
+    font-size: 1.08rem;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
     gap: 60px;
@@ -436,13 +561,14 @@ section {
     grid-template-columns: 1fr;
   }
 
+  .about-stat {
+    min-height: auto;
+  }
+
   .about-map {
     height: 360px;
   }
 }
-
-
-
 
 
 
