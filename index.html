@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfolio</title>
+  <title>bs Portfolio</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1171,35 +1171,21 @@ MOBILE
 
 
 
-
-
-
-
-
-
 /* ==========================================
-EDUCATION — HORIZONTAL TIMELINE
+EDUCATION — CURVED LEFT TIMELINE
 ========================================== */
 
 #education {
   min-height: 100vh;
-  padding: 140px 0 120px;
-
+  padding: 140px 8vw;
   background: #f5faf7;
   color: #12382b;
-
   overflow: hidden;
 }
 
-
-/* ==========================================
-CONTAINER
-========================================== */
-
-.education-container {
+#education .education-container {
   max-width: 1450px;
   margin: 0 auto;
-  padding: 0 8vw;
 }
 
 
@@ -1207,7 +1193,7 @@ CONTAINER
 HEADER
 ========================================== */
 
-.education-header h2 {
+#education .education-header h2 {
   margin-top: 18px;
 
   max-width: 1000px;
@@ -1216,153 +1202,260 @@ HEADER
 
   font-size: clamp(3rem, 6vw, 5.8rem);
   line-height: 0.95;
-  letter-spacing: -0.055em;
 
   color: #12382b;
 }
 
 
 /* ==========================================
-TIMELINE
+MAIN EDUCATION LAYOUT
+
+TIMELINE LEFT
+CONTENT RIGHT
 ========================================== */
 
-.education-timeline {
+#education .education-timeline {
   position: relative;
 
-  width: 100vw;
+  width: min(430px, 32vw);
+  height: 650px;
 
-  margin-top: 120px;
+  margin-top: 100px;
+  margin-left: max(8vw, calc((100vw - 1450px) / 2));
 
-  padding: 0 8vw 75px;
-
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-
-  align-items: start;
+  overflow: visible;
 }
 
 
-/* ==========================================
-FULL-WIDTH TIMELINE LINE
-========================================== */
+/*
+The second education-container contains
+the dynamic content.
 
-.edu-line {
-  position: absolute;
+Move it beside the timeline.
+*/
 
-  left: 0;
-  right: 0;
+#education .education-timeline + .education-container {
+  position: relative;
 
-  top: 20px;
+  min-height: 650px;
 
-  width: 100%;
-  height: 2px;
+  margin-top: -650px;
 
-  background: rgba(18, 56, 43, 0.22);
+  padding-left: 500px;
 
   pointer-events: none;
 }
 
 
-/* ==========================================
-TIMELINE DOT
-========================================== */
-
-.edu-dot {
-  position: relative;
-  z-index: 2;
-
-  padding: 0;
-
-  border: 0;
-  background: transparent;
+#education .edu-content {
+  min-height: 650px;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
 
-  gap: 25px;
-
-  color: #12382b;
-
-  font-family: "Space Grotesk", sans-serif;
-
-  cursor: pointer;
-}
-
-
-/* REMOVE ANY OLD CONNECTOR */
-
-.edu-dot::after {
-  display: none !important;
+  pointer-events: auto;
 }
 
 
 /* ==========================================
-DOT CIRCLE
+REMOVE OLD HORIZONTAL LINES
 ========================================== */
 
-.edu-dot::before {
-  content: "";
+#education .edu-line {
+  display: none;
+}
 
-  width: 36px;
-  height: 36px;
 
-  box-sizing: border-box;
+/* ==========================================
+INJECTED SVG
+========================================== */
 
+#education .edu-curve-svg {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  pointer-events: none;
+}
+
+
+/* FUTURE / UNREACHED PATH */
+
+#education .edu-curve-base {
+  fill: none;
+
+  stroke: rgba(18, 56, 43, 0.34);
+  stroke-width: 3;
+
+  stroke-dasharray: 10 12;
+
+  stroke-linecap: round;
+}
+
+
+/* COMPLETED PATH */
+
+#education .edu-curve-progress {
+  fill: none;
+
+  stroke: #12382b;
+  stroke-width: 7;
+
+  stroke-linecap: round;
+
+  transition:
+    stroke-dashoffset 0.85s
+    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ==========================================
+DOTS
+========================================== */
+
+#education .edu-dot {
+  position: absolute;
+
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  border: 4px solid #12382b;
   border-radius: 50%;
 
   background: #f5faf7;
 
-  border: 4px solid #12382b;
+  cursor: pointer;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 5;
 
   transition:
-    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-    background 0.3s ease,
-    border-color 0.3s ease;
+    width 0.35s ease,
+    height 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* REMOVE OLD DOT PSEUDO ELEMENTS */
+
+#education .edu-dot::before,
+#education .edu-dot::after {
+  display: none;
 }
 
 
 /* ==========================================
-YEAR LABEL UNDER DOT
+DOT POSITIONS
+
+These follow the curved path.
 ========================================== */
 
-.edu-dot span {
-  display: block;
+#education .edu-dot:nth-of-type(1) {
+  left: 15%;
+  top: 7%;
+}
 
-  font-size: 0.8rem;
-  font-weight: 800;
+#education .edu-dot:nth-of-type(2) {
+  left: 30%;
+  top: 24%;
+}
 
-  line-height: 1;
+#education .edu-dot:nth-of-type(3) {
+  left: 39%;
+  top: 41%;
+}
 
-  letter-spacing: 0.13em;
+#education .edu-dot:nth-of-type(4) {
+  left: 39%;
+  top: 59%;
+}
 
-  text-transform: uppercase;
+#education .edu-dot:nth-of-type(5) {
+  left: 30%;
+  top: 76%;
+}
+
+#education .edu-dot:nth-of-type(6) {
+  left: 15%;
+  top: 93%;
+}
+
+
+/* ==========================================
+DATE LABELS
+========================================== */
+
+#education .edu-dot span {
+  position: absolute;
+
+  left: 48px;
+  top: 50%;
+
+  width: max-content;
+
+  transform: translateY(-50%);
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 0.82rem;
+  font-weight: 750;
+
+  letter-spacing: 0.1em;
+
+  color: #728b81;
 
   white-space: nowrap;
 
-  color: rgba(18, 56, 43, 0.58);
-
   transition:
-    color 0.3s ease,
-    transform 0.35s ease;
+    color 0.35s ease,
+    transform 0.35s ease,
+    font-size 0.35s ease;
 }
 
 
 /* ==========================================
-DOT HOVER
+HOVER
 ========================================== */
 
-.edu-dot:hover::before {
-  transform: scale(1.16);
-
-  background: #b8d9ca;
+#education .edu-dot:hover {
+  transform:
+    translate(-50%, -50%)
+    scale(1.14);
 }
 
 
-.edu-dot:hover span {
+#education .edu-dot:hover span {
   color: #12382b;
 
-  transform: translateY(3px);
+  transform:
+    translateY(-50%)
+    translateX(5px);
+}
+
+
+/* ==========================================
+COMPLETED DOTS
+========================================== */
+
+#education .edu-dot.completed {
+  background: #12382b;
+}
+
+
+#education .edu-dot.completed span {
+  color: #36594d;
 }
 
 
@@ -1370,105 +1463,71 @@ DOT HOVER
 ACTIVE DOT
 ========================================== */
 
-.edu-dot.active::before {
+#education .edu-dot.active {
+  width: 48px;
+  height: 48px;
+
   background: #12382b;
 
-  border-color: #12382b;
-
-  transform: scale(1.38);
+  box-shadow:
+    0 0 0 9px rgba(18, 56, 43, 0.1);
 }
 
 
-.edu-dot.active span {
+#education .edu-dot.active span {
   color: #12382b;
 
-  transform: translateY(3px);
+  font-size: 0.95rem;
+  font-weight: 850;
+
+  transform:
+    translateY(-50%)
+    translateX(10px);
 }
 
 
 /* ==========================================
-EDUCATION CONTENT
+CONTENT
 ========================================== */
 
-.edu-content {
-  position: relative;
-
-  width: 100%;
-  max-width: 1150px;
-
-  margin-top: 25px;
-
-  padding: 0 0 20px;
-
-  overflow: hidden;
-}
-
-
-/* REMOVE OLD CONTENT LINE */
-
-.edu-content::before,
-.edu-content::after {
-  display: none !important;
-}
-
-
-/* ==========================================
-SELECTED YEAR
-========================================== */
-
-.edu-selected-year {
-  margin: 0 0 32px;
+#education .edu-selected-year {
+  margin-bottom: 16px;
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(4.5rem, 10vw, 9rem);
-
-  font-weight: 800;
-
-  line-height: 0.78;
-
-  letter-spacing: -0.085em;
-
-  color: rgba(18, 56, 43, 0.15);
-
-  white-space: nowrap;
-}
-
-
-/* ==========================================
-UNIVERSITY NAME
-========================================== */
-
-.edu-content h3 {
-  margin: 0;
-
-  max-width: 1100px;
-
-  font-family: "Space Grotesk", sans-serif;
-
-  font-size: clamp(3rem, 6vw, 6.3rem);
-
+  font-size: clamp(5rem, 10vw, 10rem);
   font-weight: 700;
 
-  line-height: 0.9;
+  line-height: 0.75;
 
-  letter-spacing: -0.065em;
+  letter-spacing: -0.08em;
+
+  color: rgba(18, 56, 43, 0.1);
+}
+
+
+#education .edu-content h3 {
+  margin: 0;
+
+  max-width: 850px;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(3rem, 5vw, 5.5rem);
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
 
   color: #12382b;
 }
 
 
-/* ==========================================
-LOCATION
-========================================== */
+#education .edu-place {
+  margin: 25px 0 0;
 
-.edu-content .edu-place {
-  margin: 26px 0 0;
-
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 800;
-
-  line-height: 1;
 
   letter-spacing: 0.2em;
 
@@ -1478,178 +1537,131 @@ LOCATION
 }
 
 
-/* ==========================================
-PROGRAMME
-========================================== */
+#education .edu-programme {
+  max-width: 900px;
 
-.edu-content .edu-programme {
-  margin: 34px 0 0;
+  margin: 42px 0 0;
 
-  max-width: 1000px;
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  font-weight: 650;
 
-  font-size: clamp(1.35rem, 2.2vw, 2.25rem);
-
-  font-weight: 700;
-
-  line-height: 1.4;
-
-  letter-spacing: -0.025em;
+  line-height: 1.45;
 
   color: #36594d;
 }
 
 
 /* ==========================================
-DETAILS
+TAGS
 ========================================== */
 
-.edu-content ul {
-  margin: 38px 0 0;
-
-  padding: 0;
-
-  list-style: none;
-
+#education .edu-content ul {
   display: flex;
   flex-wrap: wrap;
 
-  gap: 10px;
+  gap: 12px;
+
+  margin: 32px 0 0;
+  padding: 0;
+
+  list-style: none;
 }
 
 
-.edu-content li {
-  padding: 10px 15px;
+#education .edu-content li {
+  padding: 12px 20px;
 
-  border: 1px solid rgba(18, 56, 43, 0.22);
+  border: 1px solid rgba(18, 56, 43, 0.28);
 
-  background: transparent;
+  font-size: 0.9rem;
+  font-weight: 700;
 
   color: #12382b;
-
-  font-size: 0.78rem;
-  font-weight: 800;
-
-  line-height: 1;
 
   transition:
     background 0.3s ease,
     color 0.3s ease,
-    border-color 0.3s ease,
     transform 0.3s ease;
 }
 
 
-.edu-content li:hover {
+#education .edu-content li:hover {
   background: #12382b;
-
-  border-color: #12382b;
-
   color: #f5faf7;
 
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 }
 
 
 /* ==========================================
-CONTENT INITIAL ANIMATION STATE
+CONTENT CHANGE ANIMATION
 ========================================== */
 
-.edu-content .edu-selected-year,
-.edu-content h3,
-.edu-content .edu-place,
-.edu-content .edu-programme,
-.edu-content ul {
-  opacity: 0;
-
-  transform: translateY(35px);
-}
-
-
-/* ==========================================
-SELECTED YEAR ANIMATION
-========================================== */
-
-.edu-content.is-changing .edu-selected-year {
+#education .edu-content.is-changing
+.edu-selected-year {
   animation:
-    eduReveal
-    0.7s
+    eduYearReveal 0.65s
     cubic-bezier(0.22, 1, 0.36, 1)
-    0s
-    forwards;
+    both;
 }
 
 
-/* ==========================================
-UNIVERSITY ANIMATION
-========================================== */
-
-.edu-content.is-changing h3 {
+#education .edu-content.is-changing h3 {
   animation:
-    eduReveal
-    0.7s
+    eduReveal 0.65s 0.07s
     cubic-bezier(0.22, 1, 0.36, 1)
-    0.08s
-    forwards;
+    both;
 }
 
 
-/* ==========================================
-LOCATION ANIMATION
-========================================== */
-
-.edu-content.is-changing .edu-place {
+#education .edu-content.is-changing .edu-place {
   animation:
-    eduReveal
-    0.7s
+    eduReveal 0.65s 0.13s
     cubic-bezier(0.22, 1, 0.36, 1)
-    0.16s
-    forwards;
+    both;
 }
 
 
-/* ==========================================
-PROGRAMME ANIMATION
-========================================== */
-
-.edu-content.is-changing .edu-programme {
+#education .edu-content.is-changing .edu-programme {
   animation:
-    eduReveal
-    0.7s
+    eduReveal 0.65s 0.19s
     cubic-bezier(0.22, 1, 0.36, 1)
-    0.24s
-    forwards;
+    both;
 }
 
 
-/* ==========================================
-DETAILS ANIMATION
-========================================== */
-
-.edu-content.is-changing ul {
+#education .edu-content.is-changing ul {
   animation:
-    eduReveal
-    0.7s
+    eduReveal 0.65s 0.25s
     cubic-bezier(0.22, 1, 0.36, 1)
-    0.32s
-    forwards;
+    both;
 }
 
 
-/* ==========================================
-ANIMATION
-========================================== */
+@keyframes eduYearReveal {
+
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
 
 @keyframes eduReveal {
 
   from {
     opacity: 0;
-
-    transform: translateY(35px);
+    transform: translateY(28px);
   }
 
   to {
     opacity: 1;
-
     transform: translateY(0);
   }
 
@@ -1660,38 +1672,23 @@ ANIMATION
 TABLET
 ========================================== */
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
 
-  .education-timeline {
-    margin-top: 100px;
-
-    padding-left: 5vw;
-    padding-right: 5vw;
+  #education .education-timeline {
+    width: 340px;
   }
 
 
-  .edu-dot::before {
-    width: 31px;
-    height: 31px;
-
-    border-width: 3px;
+  #education .education-timeline
+  + .education-container {
+    padding-left: 390px;
   }
 
 
-  .edu-dot span {
-    font-size: 0.68rem;
+  #education .edu-dot span {
+    left: 40px;
 
-    letter-spacing: 0.08em;
-  }
-
-
-  .edu-line {
-    top: 16px;
-  }
-
-
-  .edu-selected-year {
-    font-size: clamp(4rem, 11vw, 7rem);
+    font-size: 0.72rem;
   }
 
 }
@@ -1704,395 +1701,93 @@ MOBILE
 @media (max-width: 750px) {
 
   #education {
-    padding: 120px 0 80px;
+    padding: 120px 20px 80px;
   }
 
 
-  .education-container {
-    padding: 0 20px;
+  #education .education-timeline {
+    width: 150px;
+    height: 560px;
+
+    margin-top: 70px;
+    margin-left: 0;
   }
 
 
-  /* HORIZONTAL SCROLL */
+  #education .education-timeline
+  + .education-container {
+    min-height: 560px;
 
-  .education-timeline {
-    width: 100%;
+    margin-top: -560px;
 
-    margin-top: 80px;
-
-    padding:
-      0
-      20px
-      55px;
-
-    grid-template-columns: repeat(6, 145px);
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    scrollbar-width: none;
-
-    overscroll-behavior-inline: contain;
+    padding-left: 175px;
   }
 
 
-  .education-timeline::-webkit-scrollbar {
-    display: none;
+  #education .edu-content {
+    min-height: 560px;
   }
 
 
-  /* LINE EXTENDS THROUGH SCROLLABLE TIMELINE */
-
-  .edu-line {
-    left: 0;
-
-    width: 870px;
-
-    top: 15px;
-  }
-
-
-  .edu-dot {
-    gap: 20px;
-  }
-
-
-  .edu-dot::before {
-    width: 30px;
-    height: 30px;
+  #education .edu-dot {
+    width: 25px;
+    height: 25px;
 
     border-width: 3px;
   }
 
 
-  .edu-dot span {
-    font-size: 0.66rem;
+  #education .edu-dot.active {
+    width: 34px;
+    height: 34px;
 
-    letter-spacing: 0.07em;
+    box-shadow:
+      0 0 0 6px rgba(18, 56, 43, 0.1);
   }
 
 
-  .edu-dot.active::before {
-    transform: scale(1.25);
+  #education .edu-dot span {
+    left: 31px;
+
+    font-size: 0.56rem;
+
+    letter-spacing: 0.04em;
   }
 
 
-  /* CONTENT */
+  #education .edu-dot.active span {
+    font-size: 0.62rem;
 
-  .edu-content {
-    margin-top: 20px;
-
-    padding-bottom: 10px;
+    transform:
+      translateY(-50%)
+      translateX(4px);
   }
 
 
-  .edu-selected-year {
-    margin-bottom: 24px;
-
-    font-size: clamp(3.6rem, 18vw, 6rem);
-
-    line-height: 0.82;
+  #education .edu-selected-year {
+    font-size: clamp(3.5rem, 14vw, 6rem);
   }
 
 
-  .edu-content h3 {
-    font-size: clamp(2.5rem, 13vw, 4.4rem);
-
-    line-height: 0.92;
+  #education .edu-content h3 {
+    font-size: clamp(2rem, 8vw, 3.4rem);
   }
 
 
-  .edu-content .edu-place {
-    margin-top: 20px;
+  #education .edu-programme {
+    margin-top: 25px;
 
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 
 
-  .edu-content .edu-programme {
-    margin-top: 26px;
+  #education .edu-content li {
+    padding: 8px 11px;
 
-    font-size: 1.25rem;
-
-    line-height: 1.45;
-  }
-
-
-  .edu-content ul {
-    margin-top: 28px;
-  }
-
-
-  .edu-content li {
-    padding: 9px 12px;
-
-    font-size: 0.7rem;
+    font-size: 0.68rem;
   }
 
 }
-
-
-/* ==========================================
-REDUCED MOTION
-========================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .edu-dot,
-  .edu-dot::before,
-  .edu-dot span,
-  .edu-content li {
-    transition: none;
-  }
-
-
-  .edu-content .edu-selected-year,
-  .edu-content h3,
-  .edu-content .edu-place,
-  .edu-content .edu-programme,
-  .edu-content ul {
-    opacity: 1;
-
-    transform: none;
-
-    animation: none !important;
-  }
-
-}
-
-
-/* EDUCATION PLANE */
-
-.edu-plane {
-  position: absolute;
-  z-index: 4;
-
-  top: 1px;
-  left: 0;
-
-  font-size: 1.45rem;
-  line-height: 1;
-
-  color: #12382b;
-
-  transform: translateX(0) translateY(-50%) rotate(90deg);
-
-  pointer-events: none;
-
-  transition:
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.edu-plane.is-flying {
-  animation: eduPlaneBounce 0.7s ease;
-}
-
-@keyframes eduPlaneBounce {
-  0% {
-    margin-top: 0;
-  }
-
-  40% {
-    margin-top: -10px;
-  }
-
-  100% {
-    margin-top: 0;
-  }
-}
-
-/* ==========================================
-EDUCATION PLANE
-========================================== */
-
-.edu-plane {
-  position: absolute;
-
-  z-index: 5;
-
-  /*
-  Must be exactly the same vertical position
-  as .edu-line
-  */
-
-  top: 20px;
-  left: 0;
-
-  font-size: 1.65rem;
-  line-height: 1;
-
-  color: #12382b;
-
-  opacity: 0;
-
-  pointer-events: none;
-
-  /*
-  Prevent opacity from animating.
-  Only horizontal movement should animate.
-  */
-
-  will-change: transform;
-}
-
-
-@media (max-width: 1000px) {
-
-  .edu-plane {
-    top: 16px;
-  }
-
-}
-
-
-@media (max-width: 750px) {
-
-  .edu-plane {
-    top: 15px;
-  }
-
-}
-
-
-
-/* ==========================================
-TIMELINE LINES
-========================================== */
-
-.edu-line {
-  position: absolute;
-
-  left: 0;
-  top: 20px;
-
-  width: 100%;
-  height: 2px;
-
-  pointer-events: none;
-}
-
-
-/* DASHED BASE LINE */
-
-.edu-line-dashed {
-  z-index: 0;
-
-  background: repeating-linear-gradient(
-    to right,
-    rgba(18, 56, 43, 0.32) 0,
-    rgba(18, 56, 43, 0.32) 8px,
-    transparent 8px,
-    transparent 16px
-  );
-}
-
-
-/* SOLID PROGRESS LINE */
-
-.edu-line-progress {
-  z-index: 1;
-
-  width: 0;
-
-  background: #12382b;
-
-  transform-origin: left center;
-
-  transition:
-    width 0.75s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-
-/* DOTS STAY ABOVE BOTH LINES */
-
-.edu-dot {
-  z-index: 2;
-}
-
-
-@media (max-width: 1000px) {
-
-  .edu-line {
-    top: 16px;
-  }
-
-}
-
-
-@media (max-width: 750px) {
-
-  .edu-line {
-    top: 15px;
-  }
-
-  .edu-line-dashed {
-    width: 870px;
-  }
-
-  .edu-line-progress {
-    width: 0;
-  }
-
-}
-
-
-
-
-.edu-line-progress {
-  z-index: 1;
-
-  width: 0;
-  height: 5px;
-
-  background: #12382b;
-
-  top: 18.5px;
-
-  border-radius: 999px;
-
-  transform-origin: left center;
-
-  transition:
-    width 0.75s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-    #education .edu-content ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-
-  margin: 32px 0 0;
-  padding: 0;
-
-  list-style: none;
-}
-
-#education .edu-content li {
-  padding: 12px 20px;
-
-  border: 1px solid rgba(18, 56, 43, 0.28);
-
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-
-  color: #12382b;
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
-}
-
-#education .edu-content li:hover {
-  background: #12382b;
-  color: #f5faf7;
-  border-color: #12382b;
-
-  transform: translateY(-3px);
-}
-
 
     
 
@@ -5104,13 +4799,12 @@ window.addEventListener("load", initVisitedMap);
 
 
 
-
-
-    /* ==========================================
-EDUCATION — TIMELINE PROGRESS
+/* ==========================================
+EDUCATION — CURVED TIMELINE
 ========================================== */
 
 const educationTimelineData = {
+
   2021: {
     yearLabel: "2021–2022",
     title: "Sciences Po",
@@ -5188,6 +4882,7 @@ const educationTimelineData = {
       "Double Degree"
     ]
   }
+
 };
 
 
@@ -5195,17 +4890,143 @@ const educationTimelineData = {
 ELEMENTS
 ========================================== */
 
+const educationTimeline =
+  document.querySelector(
+    "#education .education-timeline"
+  );
+
 const eduDots =
-  document.querySelectorAll("#education .edu-dot");
+  Array.from(
+    document.querySelectorAll(
+      "#education .edu-dot"
+    )
+  );
 
 const eduContent =
   document.getElementById("eduContent");
 
-const educationTimeline =
-  document.querySelector("#education .education-timeline");
 
-const eduLineProgress =
-  document.getElementById("eduLineProgress");
+/* ==========================================
+CREATE CURVED SVG
+========================================== */
+
+const svgNamespace =
+  "http://www.w3.org/2000/svg";
+
+
+const curveSVG =
+  document.createElementNS(
+    svgNamespace,
+    "svg"
+  );
+
+
+curveSVG.classList.add("edu-curve-svg");
+
+
+curveSVG.setAttribute(
+  "viewBox",
+  "0 0 430 650"
+);
+
+
+curveSVG.setAttribute(
+  "preserveAspectRatio",
+  "none"
+);
+
+
+/* ==========================================
+CURVE
+
+START TOP LEFT
+BENDS RIGHT
+RETURNS LEFT
+========================================== */
+
+const curvePath =
+  `
+  M 64 45
+
+  C 105 95,
+    155 150,
+    168 255
+
+  C 180 325,
+    180 325,
+    168 395
+
+  C 155 500,
+    105 555,
+    64 605
+  `;
+
+
+/* BASE DASHED PATH */
+
+const basePath =
+  document.createElementNS(
+    svgNamespace,
+    "path"
+  );
+
+
+basePath.setAttribute(
+  "d",
+  curvePath
+);
+
+
+basePath.classList.add(
+  "edu-curve-base"
+);
+
+
+/* SOLID PROGRESS PATH */
+
+const progressPath =
+  document.createElementNS(
+    svgNamespace,
+    "path"
+  );
+
+
+progressPath.setAttribute(
+  "d",
+  curvePath
+);
+
+
+progressPath.classList.add(
+  "edu-curve-progress"
+);
+
+
+curveSVG.append(
+  basePath,
+  progressPath
+);
+
+
+educationTimeline.prepend(
+  curveSVG
+);
+
+
+/* ==========================================
+PATH LENGTH
+========================================== */
+
+const curveLength =
+  progressPath.getTotalLength();
+
+
+progressPath.style.strokeDasharray =
+  curveLength;
+
+
+progressPath.style.strokeDashoffset =
+  curveLength;
 
 
 /* ==========================================
@@ -5214,12 +5035,16 @@ RENDER CONTENT
 
 function renderEducation(year) {
 
-  const item = educationTimelineData[year];
+  const item =
+    educationTimelineData[year];
 
-  if (!eduContent || !item) return;
+
+  if (!item || !eduContent) return;
 
 
-  eduContent.classList.remove("is-changing");
+  eduContent.classList.remove(
+    "is-changing"
+  );
 
 
   eduContent.innerHTML = `
@@ -5241,9 +5066,16 @@ function renderEducation(year) {
     </p>
 
     <ul>
+
       ${item.details
-        .map(detail => `<li>${detail}</li>`)
+
+        .map(
+          detail =>
+          `<li>${detail}</li>`
+        )
+
         .join("")}
+
     </ul>
 
   `;
@@ -5252,47 +5084,37 @@ function renderEducation(year) {
   void eduContent.offsetWidth;
 
 
-  eduContent.classList.add("is-changing");
+  eduContent.classList.add(
+    "is-changing"
+  );
 
 }
 
 
 /* ==========================================
-UPDATE SOLID PROGRESS LINE
+UPDATE CURVED PROGRESS
 ========================================== */
 
-function updateEducationProgress(targetDot) {
+function updateCurveProgress(
+  targetIndex
+) {
 
-  if (
-    !targetDot ||
-    !educationTimeline ||
-    !eduLineProgress
-  ) {
-    return;
-  }
+  const maximumIndex =
+    eduDots.length - 1;
 
 
-  const timelineRect =
-    educationTimeline.getBoundingClientRect();
-
-  const targetRect =
-    targetDot.getBoundingClientRect();
+  const progress =
+    targetIndex /
+    maximumIndex;
 
 
-  /*
-  Position of target dot centre relative
-  to the start of the timeline.
-  */
-
-  const targetCenter =
-    targetRect.left -
-    timelineRect.left +
-    educationTimeline.scrollLeft +
-    targetRect.width / 2;
+  const offset =
+    curveLength *
+    (1 - progress);
 
 
-  eduLineProgress.style.width =
-    `${targetCenter}px`;
+  progressPath.style.strokeDashoffset =
+    offset;
 
 }
 
@@ -5301,134 +5123,136 @@ function updateEducationProgress(targetDot) {
 SELECT EDUCATION
 ========================================== */
 
-function selectEducation(targetDot) {
-
-  if (!targetDot) return;
-
+function selectEducation(
+  targetDot
+) {
 
   const targetIndex =
-    Array.from(eduDots).indexOf(targetDot);
-
-
-  /*
-  ACTIVE = CURRENT SELECTED DOT
-
-  COMPLETED = EVERY DOT BEFORE CURRENT DOT
-  */
-
-  eduDots.forEach((dot, index) => {
-
-    dot.classList.toggle(
-      "active",
-      index === targetIndex
+    eduDots.indexOf(
+      targetDot
     );
 
 
-    dot.classList.toggle(
-      "completed",
-      index < targetIndex
-    );
-
-  });
+  if (targetIndex < 0) return;
 
 
-  updateEducationProgress(targetDot);
+  eduDots.forEach(
+    (dot, index) => {
+
+      dot.classList.toggle(
+        "active",
+        index === targetIndex
+      );
+
+
+      dot.classList.toggle(
+        "completed",
+        index < targetIndex
+      );
+
+    }
+  );
+
+
+  updateCurveProgress(
+    targetIndex
+  );
 
 
   renderEducation(
     targetDot.dataset.year
   );
 
-
-  if (window.innerWidth <= 750) {
-
-    targetDot.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center"
-    });
-
-  }
-
 }
 
 
 /* ==========================================
-CLICK EVENTS
+CLICK
 ========================================== */
 
 eduDots.forEach(dot => {
 
-  dot.addEventListener("click", () => {
+  dot.addEventListener(
+    "click",
+    () => {
 
-    selectEducation(dot);
+      selectEducation(dot);
 
-  });
+    }
+  );
 
 });
 
 
 /* ==========================================
-COMPLETED DOT STYLE SUPPORT
+KEYBOARD
 ========================================== */
 
-eduDots.forEach(dot => {
+eduDots.forEach(
+  (dot, index) => {
 
-  dot.addEventListener("keydown", event => {
+    dot.addEventListener(
+      "keydown",
+      event => {
 
-    const dots =
-      Array.from(eduDots);
-
-    const currentIndex =
-      dots.indexOf(dot);
-
-
-    let targetIndex =
-      currentIndex;
+        let targetIndex =
+          index;
 
 
-    if (event.key === "ArrowRight") {
+        if (
+          event.key ===
+          "ArrowDown"
+        ) {
 
-      targetIndex =
-        Math.min(
-          currentIndex + 1,
-          dots.length - 1
+          targetIndex =
+            Math.min(
+              index + 1,
+              eduDots.length - 1
+            );
+
+        }
+
+
+        else if (
+          event.key ===
+          "ArrowUp"
+        ) {
+
+          targetIndex =
+            Math.max(
+              index - 1,
+              0
+            );
+
+        }
+
+
+        else {
+
+          return;
+
+        }
+
+
+        event.preventDefault();
+
+
+        eduDots[
+          targetIndex
+        ].focus();
+
+
+        selectEducation(
+          eduDots[
+            targetIndex
+          ]
         );
 
-    }
-
-
-    else if (event.key === "ArrowLeft") {
-
-      targetIndex =
-        Math.max(
-          currentIndex - 1,
-          0
-        );
-
-    }
-
-
-    else {
-
-      return;
-
-    }
-
-
-    event.preventDefault();
-
-
-    dots[targetIndex].focus();
-
-
-    selectEducation(
-      dots[targetIndex]
+      }
     );
 
-  });
-
-});
+  }
+);
 
 
 /* ==========================================
@@ -5450,24 +5274,6 @@ if (initialEducationDot) {
 
 }
 
-
-/* ==========================================
-KEEP PROGRESS CORRECT ON RESIZE
-========================================== */
-
-window.addEventListener("resize", () => {
-
-  const activeDot =
-    document.querySelector(
-      "#education .edu-dot.active"
-    );
-
-
-  updateEducationProgress(
-    activeDot
-  );
-
-});
     
   </script>
 
