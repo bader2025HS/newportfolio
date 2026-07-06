@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>bs Portfolio</title>
+  <title>Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1050,7 +1050,87 @@ MOBILE
 
 }
 
+#experience {
+  padding: 150px 8vw;
+  background: #c7d9ca;
+  color: #12382b;
+}
 
+#experience .experience-item::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background: var(--hover-bg);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.4s ease;
+}
+
+  #experience .experience-logo {
+  width: 88px;
+  height: 88px;
+
+  border-radius: 24px;
+
+  background: var(--logo-bg);
+  color: var(--accent);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+
+  flex-shrink: 0;
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    color 0.4s ease;
+}
+
+    #experience .experience-item.bnp {
+  --accent: #007f55;
+  --logo-bg: #b4d8c5;
+  --hover-bg: #b9d9c8;
+}
+
+#experience .experience-item.oif {
+  --accent: #1f6fa8;
+  --logo-bg: #b8cfdf;
+  --hover-bg: #bdd4e4;
+}
+
+#experience .experience-item.aqlity {
+  --accent: #a37400;
+  --logo-bg: #e2cf9a;
+  --hover-bg: #e6d7aa;
+}
+
+#experience .experience-item.ardhis {
+  --accent: #b93d43;
+  --logo-bg: #e0b8ba;
+  --hover-bg: #e4c2c4;
+}
+
+#experience .experience-item.tarjimly {
+  --accent: #6544a8;
+  --logo-bg: #c9bbe2;
+  --hover-bg: #d0c5e6;
+}
+
+#experience .experience-item.student {
+  --accent: #8e3440;
+  --logo-bg: #d9b5bb;
+  --hover-bg: #dfc0c5;
+}
 
 
 
