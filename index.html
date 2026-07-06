@@ -443,15 +443,13 @@ section {
 
 
 
-
-
 /* ==========================================
-EXPERIENCE — 2 COLUMN EDITORIAL ROWS
+EXPERIENCE — LARGE 1 COLUMN EDITORIAL LAYOUT
 SCOPED ONLY TO #experience
 ========================================== */
 
 #experience {
-  padding: 140px 8vw;
+  padding: 150px 8vw;
 
   background:
     radial-gradient(circle at 85% 15%, rgba(45, 123, 97, 0.16), transparent 28%),
@@ -463,32 +461,35 @@ SCOPED ONLY TO #experience
 
 #experience .experience-container {
   max-width: 1450px;
-  margin: auto;
-}
-
-#experience .experience-header h2 {
-  margin-top: 18px;
-  max-width: 950px;
-
-  font-size: clamp(3rem, 6vw, 5.8rem);
-  line-height: 0.95;
+  margin: 0 auto;
 }
 
 
 /* ==========================================
-2 COLUMN LIST
+HEADER
+========================================== */
+
+#experience .experience-header h2 {
+  margin-top: 18px;
+
+  max-width: 1000px;
+
+  font-size: clamp(3.4rem, 6vw, 6rem);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+
+/* ==========================================
+LIST
 ========================================== */
 
 #experience .experience-list {
-  margin-top: 90px;
+  margin-top: 105px;
 
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: block;
 
-  column-gap: 65px;
-  row-gap: 0;
-
-  border-top: 1px solid rgba(18, 56, 43, 0.18);
+  border-top: 1px solid rgba(18, 56, 43, 0.2);
 }
 
 
@@ -501,20 +502,23 @@ EXPERIENCE ITEM
 
   position: relative;
 
-  min-width: 0;
-  min-height: 285px;
+  width: 100%;
+  min-height: 260px;
 
-  padding: 36px 0 34px;
+  padding: 46px 0;
 
   display: grid;
-  grid-template-columns: 78px minmax(0, 1fr);
-  grid-template-rows: 1fr auto;
 
-  column-gap: 26px;
+  grid-template-columns:
+    105px
+    minmax(0, 1fr)
+    175px;
 
-  align-items: start;
+  gap: 38px;
 
-  border-bottom: 1px solid rgba(18, 56, 43, 0.18);
+  align-items: center;
+
+  border-bottom: 1px solid rgba(18, 56, 43, 0.2);
 
   background: transparent;
 
@@ -523,14 +527,13 @@ EXPERIENCE ITEM
   overflow: hidden;
 
   transition:
-    padding-left 0.35s ease,
-    padding-right 0.35s ease,
-    background 0.35s ease;
+    padding-left 0.4s ease,
+    padding-right 0.4s ease;
 }
 
 
 /* ==========================================
-VERTICAL HOVER LINE
+VERTICAL ACCENT LINE
 ========================================== */
 
 #experience .experience-item::before {
@@ -539,17 +542,17 @@ VERTICAL HOVER LINE
   position: absolute;
 
   left: 0;
-  top: 25px;
-  bottom: 25px;
+  top: 30px;
+  bottom: 30px;
 
-  width: 4px;
+  width: 5px;
 
   background: var(--accent);
 
   transform: scaleY(0);
   transform-origin: center;
 
-  transition: transform 0.35s ease;
+  transition: transform 0.4s ease;
 }
 
 
@@ -568,35 +571,37 @@ SOFT HOVER BACKGROUND
   background:
     linear-gradient(
       90deg,
-      color-mix(in srgb, var(--accent) 8%, transparent),
-      transparent 78%
+      color-mix(in srgb, var(--accent) 9%, transparent),
+      transparent 72%
     );
 
   opacity: 0;
 
   pointer-events: none;
 
-  transition: opacity 0.35s ease;
+  transition: opacity 0.4s ease;
 }
 
+
+/* ==========================================
+HOVER
+========================================== */
 
 #experience .experience-item:hover {
-  padding-left: 20px;
-  padding-right: 14px;
+  padding-left: 30px;
+  padding-right: 24px;
 }
-
 
 #experience .experience-item:hover::before {
   transform: scaleY(1);
 }
-
 
 #experience .experience-item:hover::after {
   opacity: 1;
 }
 
 
-/* KEEP CONTENT ABOVE HOVER BACKGROUND */
+/* KEEP CONTENT ABOVE HOVER */
 
 #experience .experience-logo,
 #experience .experience-content,
@@ -611,15 +616,15 @@ LOGO
 ========================================== */
 
 #experience .experience-logo {
-  width: 64px;
-  height: 64px;
+  width: 88px;
+  height: 88px;
 
-  border-radius: 18px;
+  border-radius: 24px;
 
   background:
     color-mix(
       in srgb,
-      var(--accent) 14%,
+      var(--accent) 15%,
       white
     );
 
@@ -631,22 +636,22 @@ LOGO
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 0.82rem;
+  font-size: 1rem;
   font-weight: 800;
 
   flex-shrink: 0;
 
   transition:
-    transform 0.35s ease,
-    background 0.35s ease,
-    color 0.35s ease;
+    transform 0.4s ease,
+    background 0.4s ease,
+    color 0.4s ease;
 }
 
 
 #experience .experience-logo img,
 #experience .experience-logo svg {
-  width: 72%;
-  height: 72%;
+  width: 74%;
+  height: 74%;
 
   display: block;
   object-fit: contain;
@@ -654,9 +659,13 @@ LOGO
 
 
 #experience .experience-item:hover .experience-logo {
-  transform: translateY(-4px) rotate(-3deg);
+  transform:
+    translateY(-6px)
+    rotate(-4deg)
+    scale(1.06);
 
   background: var(--accent);
+
   color: white;
 }
 
@@ -670,51 +679,52 @@ CONTENT
 }
 
 
-/* TITLE + SECTOR */
+/* TITLE ROW */
 
 #experience .experience-title-row {
   display: flex;
-  align-items: flex-start;
+
+  align-items: center;
 
   flex-wrap: wrap;
 
-  gap: 10px 14px;
+  gap: 14px 20px;
 }
 
+
+/* ORGANISATION NAME */
 
 #experience .experience-title-row h3 {
   margin: 0;
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(2rem, 2.6vw, 3.15rem);
+  font-size: clamp(2.5rem, 4vw, 4.8rem);
 
-  line-height: 0.95;
+  line-height: 0.92;
 
-  letter-spacing: -0.055em;
+  letter-spacing: -0.06em;
 
   color: #12382b;
 
-  transition: transform 0.35s ease;
+  transition: transform 0.4s ease;
 }
 
 
 #experience .experience-item:hover .experience-title-row h3 {
-  transform: translateX(4px);
+  transform: translateX(7px);
 }
 
 
 /* SECTOR */
 
 #experience .experience-title-row > span {
-  width: 100%;
-
   color: var(--accent);
 
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   font-weight: 800;
 
-  letter-spacing: 0.15em;
+  letter-spacing: 0.16em;
 
   text-transform: uppercase;
 }
@@ -725,10 +735,10 @@ ROLE
 ========================================== */
 
 #experience .experience-role {
-  margin: 13px 0 0;
+  margin: 18px 0 0;
 
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1.22rem;
+  font-weight: 750;
 
   line-height: 1.35;
 
@@ -737,10 +747,11 @@ ROLE
 
 
 /* ==========================================
-DESCRIPTION — HOVER REVEAL
+DESCRIPTION — HIDDEN BY DEFAULT
 ========================================== */
 
 #experience .experience-text {
+  max-width: 850px;
   max-height: 0;
 
   margin: 0;
@@ -749,26 +760,28 @@ DESCRIPTION — HOVER REVEAL
 
   overflow: hidden;
 
-  font-size: 0.93rem;
+  font-size: 1rem;
 
-  line-height: 1.65;
+  line-height: 1.7;
 
-  color: rgba(18, 56, 43, 0.68);
+  color: rgba(18, 56, 43, 0.7);
 
-  transform: translateY(12px);
+  transform: translateY(14px);
 
   transition:
-    max-height 0.4s ease,
-    margin 0.35s ease,
-    opacity 0.3s ease,
-    transform 0.35s ease;
+    max-height 0.45s ease,
+    margin 0.4s ease,
+    opacity 0.32s ease,
+    transform 0.4s ease;
 }
 
 
-#experience .experience-item:hover .experience-text {
-  max-height: 150px;
+/* DESCRIPTION REVEAL */
 
-  margin-top: 16px;
+#experience .experience-item:hover .experience-text {
+  max-height: 160px;
+
+  margin-top: 20px;
 
   opacity: 1;
 
@@ -781,24 +794,27 @@ TAGS
 ========================================== */
 
 #experience .experience-tags {
-  margin-top: 17px;
+  margin-top: 21px;
 
   display: flex;
+
   flex-wrap: wrap;
 
-  gap: 6px 8px;
+  gap: 8px 10px;
 }
 
 
 #experience .experience-tags small {
   position: relative;
 
-  padding-right: 13px;
+  padding-right: 16px;
 
   color: #47695d;
 
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.78rem;
+  font-weight: 750;
+
+  letter-spacing: 0.02em;
 }
 
 
@@ -810,8 +826,8 @@ TAGS
   right: 2px;
   top: 50%;
 
-  width: 3px;
-  height: 3px;
+  width: 4px;
+  height: 4px;
 
   border-radius: 50%;
 
@@ -826,24 +842,29 @@ YEAR
 ========================================== */
 
 #experience .experience-year {
-  grid-column: 2;
-
-  align-self: end;
   justify-self: end;
-
-  margin-top: 20px;
+  align-self: center;
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(1.55rem, 2vw, 2.3rem);
+  font-size: clamp(2rem, 3vw, 3.5rem);
 
   font-weight: 700;
 
   line-height: 1;
 
-  letter-spacing: -0.055em;
+  letter-spacing: -0.06em;
 
   color: var(--accent);
+
+  white-space: nowrap;
+
+  transition: transform 0.4s ease;
+}
+
+
+#experience .experience-item:hover .experience-year {
+  transform: translateX(-8px);
 }
 
 
@@ -877,20 +898,40 @@ ACCENT COLOURS
 
 
 /* ==========================================
-TABLET — 1 COLUMN
+TABLET
 ========================================== */
 
 @media (max-width: 950px) {
 
-  #experience .experience-list {
-    grid-template-columns: 1fr;
+  #experience .experience-item {
+    min-height: 235px;
 
-    column-gap: 0;
+    grid-template-columns:
+      85px
+      minmax(0, 1fr)
+      120px;
+
+    gap: 28px;
+
+    padding: 40px 0;
   }
 
 
-  #experience .experience-item {
-    min-height: 250px;
+  #experience .experience-logo {
+    width: 72px;
+    height: 72px;
+
+    border-radius: 20px;
+  }
+
+
+  #experience .experience-title-row h3 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+  }
+
+
+  #experience .experience-year {
+    font-size: 2rem;
   }
 
 }
@@ -908,73 +949,106 @@ MOBILE
 
 
   #experience .experience-list {
-    margin-top: 65px;
+    margin-top: 70px;
   }
 
 
   #experience .experience-item {
     min-height: auto;
 
-    grid-template-columns: 54px minmax(0, 1fr);
+    padding: 32px 0;
 
-    column-gap: 16px;
+    grid-template-columns:
+      58px
+      minmax(0, 1fr);
 
-    padding: 28px 0;
+    gap: 18px;
+
+    align-items: start;
   }
 
 
   #experience .experience-item:hover {
-    padding-left: 10px;
+    padding-left: 11px;
     padding-right: 0;
   }
 
 
   #experience .experience-item::before {
-    top: 18px;
-    bottom: 18px;
+    top: 20px;
+    bottom: 20px;
 
-    width: 3px;
+    width: 4px;
   }
 
 
   #experience .experience-logo {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
 
-    border-radius: 14px;
+    border-radius: 15px;
 
-    font-size: 0.68rem;
+    font-size: 0.72rem;
+  }
+
+
+  #experience .experience-title-row {
+    gap: 9px;
   }
 
 
   #experience .experience-title-row h3 {
-    font-size: clamp(1.6rem, 8vw, 2.25rem);
+    width: 100%;
+
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+  }
+
+
+  #experience .experience-title-row > span {
+    font-size: 0.6rem;
   }
 
 
   #experience .experience-role {
-    font-size: 0.9rem;
+    margin-top: 12px;
+
+    font-size: 0.95rem;
   }
 
 
   #experience .experience-text {
-    font-size: 0.83rem;
-    line-height: 1.55;
+    font-size: 0.85rem;
+
+    line-height: 1.6;
+  }
+
+
+  #experience .experience-tags {
+    margin-top: 16px;
   }
 
 
   #experience .experience-tags small {
-    font-size: 0.63rem;
+    font-size: 0.65rem;
   }
 
 
   #experience .experience-year {
-    font-size: 1.3rem;
+    grid-column: 2;
+
+    justify-self: start;
+
+    margin-top: 4px;
+
+    font-size: 1.4rem;
+  }
+
+
+  #experience .experience-item:hover .experience-year {
+    transform: none;
   }
 
 }
-
-
 
 
 
