@@ -2460,6 +2460,13 @@ EXPLORE PROJECT — FULL FILL HOVER
 }
 
 
+
+
+
+
+
+
+
 /* ===============================
 CONTACT
 =============================== */
@@ -2467,7 +2474,10 @@ CONTACT
 #contact {
   min-height: 100vh;
   padding: 140px 8vw;
-  background: #d9ece3;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(45, 123, 97, 0.18), transparent 28%),
+    radial-gradient(circle at 8% 90%, rgba(255, 255, 255, 0.55), transparent 35%),
+    #d9ece3;
   color: #12382b;
 }
 
@@ -2475,9 +2485,6 @@ CONTACT
   max-width: 1450px;
   margin: auto;
 }
-
-
-/* HEADER — SAME ALIGNMENT AS OTHER SECTIONS */
 
 .contact-header h2 {
   margin-top: 18px;
@@ -2489,530 +2496,63 @@ CONTACT
 .contact-intro {
   margin-top: 34px;
   max-width: 650px;
-
   font-size: 1.15rem;
   line-height: 1.8;
-
   color: #4b6158;
 }
 
-
-/* ===============================
-CONTACT GRID
-=============================== */
+/* GRID */
 
 .contact-grid {
   margin-top: 90px;
-
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
-  gap: 18px;
-}
-
-
-/* ===============================
-CONTACT CARD
-=============================== */
-
-.contact-card {
-  position: relative;
-
-  min-height: 230px;
-  padding: 28px;
-
-  border-radius: 30px;
-
-  background: #f6fbf8;
-
-  border: 1px solid rgba(18, 56, 43, 0.12);
-
-  color: #12382b;
-  text-decoration: none;
-
-  display: flex;
-  flex-direction: column;
-
-  overflow: hidden;
-
-  transition:
-    transform 0.35s ease,
-    background 0.35s ease,
-    border-color 0.35s ease;
-}
-
-
-/* ===============================
-ICON
-=============================== */
-
-.contact-icon {
-  width: 58px;
-  height: 58px;
-
-  border-radius: 18px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #dcefe7;
-
-  transition:
-    transform 0.35s ease,
-    background 0.35s ease;
-}
-
-
-.contact-icon svg {
-  width: 29px;
-  height: 29px;
-  display: block;
-  flex-shrink: 0;
-  transition: transform 0.35s ease;
-}
-
-.contact-card:hover .contact-icon svg {
-  transform: scale(1.12);
-}
-
-
-/* ===============================
-TEXT
-=============================== */
-
-.contact-card-content {
-  margin-top: auto;
-}
-
-
-.contact-card-content span {
-  display: block;
-
-  margin-bottom: 9px;
-
-  font-size: 0.7rem;
-  font-weight: 800;
-
-  letter-spacing: 0.14em;
-
-  text-transform: uppercase;
-
-  color: #2d7b61;
-}
-
-
-.contact-card-content h3 {
-  font-family: "Space Grotesk", sans-serif;
-
-  font-size: clamp(1.45rem, 2vw, 2.1rem);
-
-  line-height: 1;
-
-  letter-spacing: -0.04em;
-}
-
-
-/* ===============================
-ARROW
-=============================== */
-
-.contact-arrow {
-  position: absolute;
-
-  top: 28px;
-  right: 28px;
-
-  font-family: "Space Grotesk", sans-serif;
-
-  font-size: 1.5rem;
-
-  transition: transform 0.35s ease;
-}
-
-
-/* ===============================
-HOVER
-=============================== */
-
-.contact-card:hover {
-  transform: translateY(-7px);
-
-  background: #ffffff;
-}
-
-
-.contact-card:hover .contact-icon {
-  transform: scale(1.07);
-}
-
-
-.contact-card:hover .contact-icon img {
-  transform: scale(1.12);
-}
-
-
-.contact-card:hover .contact-arrow {
-  transform: translate(4px, -4px);
-}
-
-
-/* ===============================
-PLATFORM COLOURS
-=============================== */
-
-.contact-email:hover {
-  border-color: #2d7b61;
-}
-
-
-.contact-whatsapp:hover {
-  border-color: #25d366;
-}
-
-
-.contact-cv:hover {
-  border-color: #12382b;
-}
-
-
-.contact-instagram:hover {
-  border-color: #e1306c;
-}
-
-
-.contact-linkedin:hover {
-  border-color: #0a66c2;
-}
-
-
-.contact-facebook:hover {
-  border-color: #1877f2;
-}
-
-
-/* ===============================
-FOOTER
-=============================== */
-
-.site-footer {
-  width: 100%;
-
-  padding: 28px 8vw;
-
-  background: #12382b;
-  color: #f6fbf8;
-}
-
-
-.footer-inner {
-  max-width: 1450px;
-  margin: auto;
-
-  display: grid;
-
-  grid-template-columns:
-    1fr
-    auto
-    1fr;
-
-  align-items: center;
-
-  gap: 30px;
-
-  font-size: 0.82rem;
-}
-
-
-.footer-inner p:nth-child(2) {
-  color: rgba(246, 251, 248, 0.55);
-}
-
-
-.footer-inner a {
-  justify-self: end;
-
-  color: #b8ead8;
-
-  text-decoration: none;
-
-  font-weight: 700;
-
-  transition: transform 0.3s ease;
-}
-
-
-.footer-inner a:hover {
-  transform: translateY(-3px);
-}
-
-
-/* ===============================
-TABLET
-=============================== */
-
-@media (max-width: 950px) {
-
-  .contact-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
-
-/* ===============================
-MOBILE
-=============================== */
-
-@media (max-width: 650px) {
-
-  #contact {
-    padding: 120px 20px 80px;
-  }
-
-
-  .contact-grid {
-    margin-top: 65px;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 12px;
-  }
-
-
-  .contact-card {
-    min-height: 175px;
-
-    padding: 20px;
-
-    border-radius: 22px;
-  }
-
-
-  .contact-icon {
-    width: 48px;
-    height: 48px;
-
-    border-radius: 15px;
-  }
-
-
-  .contact-icon img {
-    width: 24px;
-    height: 24px;
-  }
-
-
-  .contact-arrow {
-    top: 20px;
-    right: 20px;
-
-    font-size: 1.2rem;
-  }
-
-
-  .contact-card-content h3 {
-    font-size: 1.25rem;
-  }
-
-
-  .contact-card-content span {
-    font-size: 0.6rem;
-  }
-
-
-  .site-footer {
-    padding: 25px 20px;
-  }
-
-
-  .footer-inner {
-    grid-template-columns: 1fr auto;
-    gap: 12px;
-  }
-
-
-  .footer-inner p:nth-child(2) {
-    display: none;
-  }
-
-}
-/* ==========================================
-CONTACT — COMPACT CARDS + STRONGER ICONS
-========================================== */
-
-.contact-grid {
-  gap: 22px;
-}
-
-/* SHORTER CARDS */
-
-.contact-card {
-  min-height: 245px;
-  padding: 30px 34px 30px;
-
-  display: flex;
-  flex-direction: column;
-}
-
-/* BIGGER ICON CONTAINER */
-
-.contact-icon {
-  width: 72px;
-  height: 72px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 22px;
-
-  background: #dcefe7;
-
-  flex-shrink: 0;
-}
-
-/* MUCH MORE VISIBLE LOGOS */
-
-.contact-icon svg {
-  width: 44px;
-  height: 44px;
-
-  display: block;
-  flex-shrink: 0;
-
-  transition:
-    transform 0.35s ease;
-}
-
-/* CV ICON IS VISUALLY DENSER,
-SO KEEP IT SLIGHTLY SMALLER */
-
-.contact-cv .contact-icon svg {
-  width: 40px;
-  height: 40px;
-}
-
-/* MOVE TEXT UP */
-
-.contact-card-content {
-  margin-top: auto;
-  padding-top: 32px;
-}
-
-.contact-card-content span {
-  font-size: 0.72rem;
-}
-
-.contact-card-content h3 {
-  margin-top: 8px;
-
-  font-size: clamp(1.45rem, 2vw, 2rem);
-  line-height: 1.05;
-}
-
-/* ARROW */
-
-.contact-arrow {
-  top: 30px;
-  right: 32px;
-
-  font-size: 1.8rem;
-}
-
-/* HOVER */
-
-.contact-card:hover .contact-icon svg {
-  transform: scale(1.12);
-}
-
-
-/* ==========================================
-TABLET
-========================================== */
-
-@media (max-width: 900px) {
-
-  .contact-card {
-    min-height: 220px;
-    padding: 26px;
-  }
-
-  .contact-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 19px;
-  }
-
-  .contact-icon svg {
-    width: 39px;
-    height: 39px;
-  }
-
-  .contact-card-content {
-    padding-top: 26px;
-  }
-
-}
-
-
-/* ==========================================
-MOBILE
-========================================== */
-
-@media (max-width: 600px) {
-
-  .contact-grid {
-    gap: 14px;
-  }
-
-  .contact-card {
-    min-height: 185px;
-    padding: 22px;
-  }
-
-  .contact-icon {
-    width: 58px;
-    height: 58px;
-    border-radius: 17px;
-  }
-
-  .contact-icon svg {
-    width: 35px;
-    height: 35px;
-  }
-
-  .contact-card-content {
-    padding-top: 22px;
-  }
-
-  .contact-card-content h3 {
-    font-size: 1.35rem;
-  }
-
-  .contact-arrow {
-    top: 22px;
-    right: 22px;
-    font-size: 1.45rem;
-  }
-
-}
-/* ==========================================
-CONTACT — COMPACT HORIZONTAL CARDS
-========================================== */
-
-.contact-grid {
   gap: 20px;
 }
 
+/* CARD */
+
 .contact-card {
+  --card-accent: #2d7b61;
+  --card-bg: rgba(246, 251, 248, 0.82);
+
   min-height: 155px;
   padding: 28px 30px;
+  border-radius: 30px;
 
   display: grid;
   grid-template-columns: 74px 1fr auto;
   align-items: center;
   column-gap: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--card-accent) 12%, white),
+      var(--card-bg) 58%
+    );
+
+  border: 1.5px solid color-mix(in srgb, var(--card-accent) 28%, transparent);
+
+  color: #12382b;
+  text-decoration: none;
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--card-accent);
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--card-accent) 23%, white),
+      rgba(255, 255, 255, 0.9) 62%
+    );
 }
 
 /* ICON */
@@ -3020,22 +2560,28 @@ CONTACT — COMPACT HORIZONTAL CARDS
 .contact-icon {
   width: 74px;
   height: 74px;
+  border-radius: 22px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border-radius: 22px;
-  background: #dcefe7;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid color-mix(in srgb, var(--card-accent) 18%, transparent);
 
   flex-shrink: 0;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .contact-icon svg {
   width: 45px;
   height: 45px;
   display: block;
-
+  flex-shrink: 0;
   transition: transform 0.35s ease;
 }
 
@@ -3044,54 +2590,58 @@ CONTACT — COMPACT HORIZONTAL CARDS
   height: 41px;
 }
 
+.contact-card:hover .contact-icon {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: color-mix(in srgb, var(--card-accent) 38%, transparent);
+  transform: scale(1.04);
+}
+
+.contact-card:hover .contact-icon svg {
+  transform: scale(1.12);
+}
+
 /* TEXT */
 
 .contact-card-content {
   margin: 0;
   padding: 0;
-
   align-self: center;
 }
 
 .contact-card-content span {
   display: block;
-
   margin: 0 0 8px;
 
   font-size: 0.7rem;
   font-weight: 800;
-
   letter-spacing: 0.16em;
   text-transform: uppercase;
+
+  color: color-mix(in srgb, var(--card-accent) 78%, #12382b);
 }
 
 .contact-card-content h3 {
   margin: 0;
-
+  font-family: "Space Grotesk", sans-serif;
   font-size: clamp(1.35rem, 1.8vw, 1.85rem);
   line-height: 1.05;
   letter-spacing: -0.04em;
 }
 
-/* ARROW
-IMPORTANT: reset absolute positioning from old CSS */
+/* ARROW */
 
 .contact-arrow {
   position: static;
-
   align-self: center;
   justify-self: end;
 
+  font-family: "Space Grotesk", sans-serif;
   font-size: 1.65rem;
   line-height: 1;
 
+  color: var(--card-accent);
+
   transition: transform 0.3s ease;
-}
-
-/* HOVER */
-
-.contact-card:hover .contact-icon svg {
-  transform: scale(1.12);
 }
 
 .contact-card:hover .contact-arrow {
@@ -3102,22 +2652,77 @@ IMPORTANT: reset absolute positioning from old CSS */
   transform: translateY(5px);
 }
 
+/* PLATFORM COLORS */
 
-/* ==========================================
-TABLET
-========================================== */
+.contact-email {
+  --card-accent: #2d7b61;
+}
+
+.contact-whatsapp {
+  --card-accent: #25d366;
+}
+
+.contact-cv {
+  --card-accent: #12382b;
+}
+
+.contact-instagram {
+  --card-accent: #e1306c;
+}
+
+.contact-linkedin {
+  --card-accent: #0a66c2;
+}
+
+.contact-facebook {
+  --card-accent: #1877f2;
+}
+
+/* FOOTER */
+
+.site-footer {
+  width: 100%;
+  padding: 28px 8vw;
+  background: #12382b;
+  color: #f6fbf8;
+}
+
+.footer-inner {
+  max-width: 1450px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 30px;
+  font-size: 0.82rem;
+}
+
+.footer-inner p:nth-child(2) {
+  color: rgba(246, 251, 248, 0.55);
+}
+
+.footer-inner a {
+  justify-self: end;
+  color: #b8ead8;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+.footer-inner a:hover {
+  transform: translateY(-3px);
+}
+
+/* RESPONSIVE */
 
 @media (max-width: 1000px) {
-
   .contact-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .contact-card {
     min-height: 145px;
-
     grid-template-columns: 64px 1fr auto;
-
     padding: 24px;
     column-gap: 18px;
   }
@@ -3125,7 +2730,6 @@ TABLET
   .contact-icon {
     width: 64px;
     height: 64px;
-
     border-radius: 19px;
   }
 
@@ -3133,35 +2737,30 @@ TABLET
     width: 39px;
     height: 39px;
   }
-
 }
 
-
-/* ==========================================
-MOBILE
-========================================== */
-
 @media (max-width: 650px) {
+  #contact {
+    padding: 120px 20px 80px;
+  }
 
   .contact-grid {
+    margin-top: 65px;
     grid-template-columns: 1fr;
     gap: 12px;
   }
 
   .contact-card {
     min-height: 120px;
-
     grid-template-columns: 56px 1fr auto;
-
     padding: 20px;
-
     column-gap: 16px;
+    border-radius: 24px;
   }
 
   .contact-icon {
     width: 56px;
     height: 56px;
-
     border-radius: 17px;
   }
 
@@ -3183,8 +2782,19 @@ MOBILE
     font-size: 1.4rem;
   }
 
-}
+  .site-footer {
+    padding: 25px 20px;
+  }
 
+  .footer-inner {
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+  }
+
+  .footer-inner p:nth-child(2) {
+    display: none;
+  }
+}
     
     
  /* ===============================
