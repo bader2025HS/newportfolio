@@ -2232,7 +2232,10 @@ MOBILE
   }
 
 }
-/* ===============================
+
+    
+    
+ /* ===============================
 SKILLS
 =============================== */
 
@@ -2255,153 +2258,99 @@ SKILLS
   max-width: 950px;
 }
 
-.skills-group {
+/* DIRECTORY LAYOUT */
+
+.skills-directory {
   margin-top: 90px;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  align-items: start;
 }
 
-.tools-group {
-  margin-top: 80px;
-}
-
-.skills-group h3 {
-  margin-bottom: 28px;
+.skills-column h3 {
+  margin-bottom: 32px;
   font-family: "Space Grotesk", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: #2d7b61;
 }
 
 /* LANGUAGES */
 
-.languages-line {
+.language-row {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  border-top: 1px solid rgba(18, 56, 43, 0.18);
-  border-bottom: 1px solid rgba(18, 56, 43, 0.18);
-}
-
-.language-item {
-  min-height: 170px;
-  padding: 26px 20px;
-  border-right: 1px solid rgba(18, 56, 43, 0.16);
-
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: 54px 1fr auto;
   align-items: center;
-  justify-content: center;
-
-  text-align: center;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(18, 56, 43, 0.16);
+  transition: padding 0.3s ease;
 }
 
-.language-item:first-child {
-  border-left: 1px solid rgba(18, 56, 43, 0.16);
-}
-
-.language-item .flag {
-  font-size: 2.9rem;
+.language-row span {
+  font-size: 2rem;
   line-height: 1;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
 }
 
-.language-item strong {
+.language-row strong {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 1.15rem;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
+  font-size: 1.6rem;
+  line-height: 1;
+  letter-spacing: -0.04em;
 }
 
-.language-item small {
-  margin-top: 8px;
-  font-size: 0.68rem;
+.language-row small {
+  font-size: 0.7rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #2d7b61;
 }
 
-.language-item:hover .flag {
-  transform: translateY(-6px) scale(1.08);
+.language-row:hover {
+  padding-left: 14px;
 }
 
 /* TOOLS */
 
-.tools-lines {
-  display: flex;
-  flex-direction: column;
-  gap: 34px;
-}
-
-.tools-row {
-  position: relative;
+.tools-directory {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 28px;
-  padding-bottom: 26px;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 34px;
+  row-gap: 0;
 }
 
-.tools-row::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  height: 1px;
-  background: rgba(18, 56, 43, 0.18);
+.tool-entry {
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(18, 56, 43, 0.16);
+  transition: padding 0.3s ease;
 }
 
-.tools-row-offset {
-  width: 92%;
-  margin-left: auto;
+.tool-entry span {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.4rem, 2vw, 2.3rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
 }
 
-.tool-logo {
-  min-height: 95px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-
-  text-align: center;
-}
-
-.tool-logo img {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  margin-bottom: 18px;
-  transition: transform 0.3s ease;
-}
-
-.tool-logo span {
-  font-size: 0.78rem;
-  font-weight: 800;
-}
-
-.tool-logo:hover img {
-  transform: translateY(-7px) rotate(-3deg) scale(1.12);
+.tool-entry:hover {
+  padding-left: 12px;
+  color: #2d7b61;
 }
 
 /* RESPONSIVE */
 
-@media (max-width: 950px) {
-  .languages-line {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 900px) {
+  .skills-directory {
+    grid-template-columns: 1fr;
+    gap: 70px;
   }
 
-  .language-item:nth-child(3) {
-    border-right: 1px solid rgba(18, 56, 43, 0.16);
-  }
-
-  .tools-row,
-  .tools-row-offset {
-    width: 100%;
-    margin-left: 0;
-    grid-template-columns: repeat(4, 1fr);
+  .tools-directory {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -2410,36 +2359,30 @@ SKILLS
     padding: 120px 20px 80px;
   }
 
-  .skills-group {
+  .skills-directory {
     margin-top: 65px;
+    gap: 55px;
   }
 
-  .tools-group {
-    margin-top: 60px;
+  .language-row {
+    grid-template-columns: 44px 1fr auto;
+    gap: 12px;
   }
 
-  .languages-line {
-    grid-template-columns: repeat(2, 1fr);
+  .language-row span {
+    font-size: 1.7rem;
   }
 
-  .language-item {
-    min-height: 145px;
-    padding: 22px 14px;
+  .language-row strong {
+    font-size: 1.25rem;
   }
 
-  .language-item .flag {
-    font-size: 2.4rem;
+  .tools-directory {
+    grid-template-columns: 1fr;
   }
 
-  .tools-row,
-  .tools-row-offset {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-  }
-
-  .tool-logo img {
-    width: 35px;
-    height: 35px;
+  .tool-entry span {
+    font-size: 1.55rem;
   }
 }
     
@@ -2852,74 +2795,69 @@ SKILLS
       <h2>Languages,<br>tools and platforms.</h2>
     </div>
 
-    <div class="skills-group">
-      <h3>Languages</h3>
+    <div class="skills-directory">
 
-      <div class="languages-line">
-        <div class="language-item">
-          <span class="flag">🇸🇦</span>
+      <div class="skills-column skills-languages">
+        <h3>Languages</h3>
+
+        <div class="language-row">
+          <span>🇸🇦</span>
           <strong>Arabic</strong>
           <small>Native</small>
         </div>
 
-        <div class="language-item">
-          <span class="flag">🇫🇷</span>
+        <div class="language-row">
+          <span>🇫🇷</span>
           <strong>French</strong>
           <small>Native</small>
         </div>
 
-        <div class="language-item">
-          <span class="flag">🇬🇧</span>
+        <div class="language-row">
+          <span>🇬🇧</span>
           <strong>English</strong>
           <small>C2</small>
         </div>
 
-        <div class="language-item">
-          <span class="flag">🇩🇪</span>
+        <div class="language-row">
+          <span>🇩🇪</span>
           <strong>German</strong>
           <small>C1</small>
         </div>
 
-        <div class="language-item">
-          <span class="flag">🇮🇷</span>
+        <div class="language-row">
+          <span>🇮🇷</span>
           <strong>Persian</strong>
           <small>A2</small>
         </div>
 
-        <div class="language-item">
-          <span class="flag">🇯🇵</span>
+        <div class="language-row">
+          <span>🇯🇵</span>
           <strong>Japanese</strong>
           <small>A2</small>
         </div>
       </div>
-    </div>
 
-    <div class="skills-group tools-group">
-      <h3>Tools</h3>
+      <div class="skills-column skills-tools">
+        <h3>Tools</h3>
 
-      <div class="tools-lines">
-
-        <div class="tools-row">
-          <div class="tool-logo"><img src="images/word.svg" alt=""><span>Word</span></div>
-          <div class="tool-logo"><img src="images/powerpoint.svg" alt=""><span>PowerPoint</span></div>
-          <div class="tool-logo"><img src="images/excel.svg" alt=""><span>Excel</span></div>
-          <div class="tool-logo"><img src="images/powerbi.svg" alt=""><span>Power BI</span></div>
-          <div class="tool-logo"><img src="images/teams.svg" alt=""><span>Teams</span></div>
-          <div class="tool-logo"><img src="images/sharepoint.svg" alt=""><span>SharePoint</span></div>
-          <div class="tool-logo"><img src="images/github.svg" alt=""><span>GitHub</span></div>
+        <div class="tools-directory">
+          <div class="tool-entry"><span>Word</span></div>
+          <div class="tool-entry"><span>PowerPoint</span></div>
+          <div class="tool-entry"><span>Excel</span></div>
+          <div class="tool-entry"><span>Power BI</span></div>
+          <div class="tool-entry"><span>Teams</span></div>
+          <div class="tool-entry"><span>SharePoint</span></div>
+          <div class="tool-entry"><span>GitHub</span></div>
+          <div class="tool-entry"><span>Illustrator</span></div>
+          <div class="tool-entry"><span>Google Suite</span></div>
+          <div class="tool-entry"><span>Drive</span></div>
+          <div class="tool-entry"><span>Meet</span></div>
+          <div class="tool-entry"><span>Instagram</span></div>
+          <div class="tool-entry"><span>LinkedIn</span></div>
+          <div class="tool-entry"><span>TikTok</span></div>
         </div>
-
-        <div class="tools-row tools-row-offset">
-          <div class="tool-logo"><img src="images/illustrator.svg" alt=""><span>Illustrator</span></div>
-          <div class="tool-logo"><img src="images/google.svg" alt=""><span>Google Suite</span></div>
-          <div class="tool-logo"><img src="images/drive.svg" alt=""><span>Drive</span></div>
-          <div class="tool-logo"><img src="images/meet.svg" alt=""><span>Meet</span></div>
-          <div class="tool-logo"><img src="images/instagram.svg" alt=""><span>Instagram</span></div>
-          <div class="tool-logo"><img src="images/linkedin.svg" alt=""><span>LinkedIn</span></div>
-          <div class="tool-logo"><img src="images/tiktok.svg" alt=""><span>TikTok</span></div>
-        </div>
-
       </div>
+
     </div>
 
   </div>
