@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfolio</title>
+  <title>bs Portfolio</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1955,7 +1955,85 @@ EDUCATION PLANE
 
 
 
+/* ==========================================
+TIMELINE LINES
+========================================== */
 
+.edu-line {
+  position: absolute;
+
+  left: 0;
+  top: 20px;
+
+  width: 100%;
+  height: 2px;
+
+  pointer-events: none;
+}
+
+
+/* DASHED BASE LINE */
+
+.edu-line-dashed {
+  z-index: 0;
+
+  background: repeating-linear-gradient(
+    to right,
+    rgba(18, 56, 43, 0.32) 0,
+    rgba(18, 56, 43, 0.32) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+
+/* SOLID PROGRESS LINE */
+
+.edu-line-progress {
+  z-index: 1;
+
+  width: 0;
+
+  background: #12382b;
+
+  transform-origin: left center;
+
+  transition:
+    width 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* DOTS STAY ABOVE BOTH LINES */
+
+.edu-dot {
+  z-index: 2;
+}
+
+
+@media (max-width: 1000px) {
+
+  .edu-line {
+    top: 16px;
+  }
+
+}
+
+
+@media (max-width: 750px) {
+
+  .edu-line {
+    top: 15px;
+  }
+
+  .edu-line-dashed {
+    width: 870px;
+  }
+
+  .edu-line-progress {
+    width: 0;
+  }
+
+}
 
 
 
