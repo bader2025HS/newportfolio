@@ -1580,9 +1580,70 @@ MOBILE
 
 
 
+/* ==========================================
+WORK SECTION
+2 COLUMNS — EDITORIAL LAYOUT
+========================================== */
 
- /* ==========================================
-WORK — 2 COLUMN VERSION
+#work {
+  padding: 140px 8vw;
+  background: #1f5644;
+  color: #f6fbf8;
+}
+
+
+/* ==========================================
+CONTAINER
+========================================== */
+
+.work-container {
+  max-width: 1450px;
+  margin: auto;
+}
+
+
+/* ==========================================
+HEADER
+========================================== */
+
+.work-header h2 {
+  margin-top: 18px;
+
+  max-width: 900px;
+
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: 0.95;
+}
+
+
+#work .oversized-label::before {
+  color: rgba(255, 255, 255, 0.10);
+}
+
+
+#work .oversized-label span {
+  color: #b8ead8;
+}
+
+
+/* ==========================================
+INTRO
+========================================== */
+
+.work-intro {
+  margin-top: 34px;
+
+  max-width: 650px;
+
+  font-size: 1.15rem;
+  line-height: 1.8;
+
+  color: rgba(246, 251, 248, 0.72);
+}
+
+
+/* ==========================================
+WORK LIST — 2 COLUMNS
 ========================================== */
 
 .work-list {
@@ -1598,121 +1659,264 @@ WORK — 2 COLUMN VERSION
 }
 
 
-/* KEEP THE SAME ITEM STYLE */
+/* ==========================================
+WORK ITEM
+========================================== */
 
 .work-item {
+  position: relative;
+
   display: grid;
 
-  /* slightly narrower number column because
-     each project now has half the screen */
-
-  grid-template-columns: 65px minmax(0, 1fr);
-  grid-template-rows: 1fr auto;
+  grid-template-columns:
+    65px
+    minmax(0, 1fr);
 
   column-gap: 24px;
 
   align-items: start;
 
-  min-height: 250px;
-
-  padding: 34px 0;
+  padding: 42px 0;
 
   border-bottom: 1px solid rgba(246, 251, 248, 0.22);
 
   color: inherit;
   text-decoration: none;
 
-  transition: 0.3s ease;
+  overflow: hidden;
+
+  transition:
+    padding-left 0.35s ease,
+    padding-right 0.35s ease,
+    background 0.35s ease;
 }
 
 
-/* NUMBER */
+/* ==========================================
+SOFT HOVER BACKGROUND
+========================================== */
+
+.work-item::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.055),
+      transparent 75%
+    );
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 0.35s ease;
+}
+
+
+.work-item:hover::before {
+  opacity: 1;
+}
+
+
+/* ==========================================
+NUMBER
+========================================== */
 
 .work-number {
-  grid-row: 1 / span 2;
+  position: relative;
+  z-index: 1;
+
+  padding-top: 5px;
 
   font-family: "Space Grotesk", sans-serif;
 
   font-size: 1rem;
 
   color: rgba(246, 251, 248, 0.48);
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 
-/* CONTENT */
+/* ==========================================
+CONTENT
+========================================== */
 
 .work-item > div:not(.work-number) {
+  position: relative;
+  z-index: 1;
+
   min-width: 0;
+
+  padding-right: 90px;
 }
 
 
+/* ==========================================
+TITLE
+========================================== */
+
 .work-item h3 {
+  margin: 0 0 14px;
+
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(1.7rem, 2.5vw, 3rem);
+  font-size: clamp(1.8rem, 2.7vw, 3.2rem);
 
   line-height: 1;
 
-  margin-bottom: 12px;
+  letter-spacing: -0.045em;
 
-  transition: 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 
+/* ==========================================
+DESCRIPTION
+========================================== */
+
 .work-item p {
-  max-width: 520px;
+  max-width: 540px;
+
+  margin: 0;
 
   font-size: 1rem;
-
-  line-height: 1.6;
+  line-height: 1.65;
 
   color: rgba(246, 251, 248, 0.68);
 }
 
 
-/* LINK */
+/* ==========================================
+OPEN CONTROL
+========================================== */
 
 .work-link {
-  grid-column: 2;
+  position: absolute;
 
-  align-self: end;
+  right: 0;
+  top: 2px;
 
-  margin-top: 25px;
+  min-width: 62px;
+  height: 34px;
 
-  font-size: 0.85rem;
+  padding: 0 13px;
+
+  border: 1px solid rgba(184, 234, 216, 0.48);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0;
+
+  color: #b8ead8;
+
+  overflow: hidden;
+
+  transition:
+    min-width 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* REPLACE ORIGINAL VIEW TEXT */
+
+.work-link::before {
+  content: "OPEN";
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 0.67rem;
   font-weight: 700;
 
   letter-spacing: 0.14em;
 
-  text-transform: uppercase;
-
-  color: #b8ead8;
-
-  transition: 0.3s ease;
+  line-height: 1;
 }
 
 
-/* SAME HOVER */
+/* ==========================================
+HOVER
+========================================== */
 
 .work-item:hover {
-  padding-left: 22px;
+  padding-left: 20px;
+  padding-right: 14px;
+}
 
-  background: rgba(255, 255, 255, 0.045);
+
+.work-item:hover .work-number {
+  color: #b8ead8;
+
+  transform: translateX(3px);
 }
 
 
 .work-item:hover h3 {
   color: #b8ead8;
+
+  transform: translateX(4px);
 }
 
 
 .work-item:hover .work-link {
-  transform: translateX(8px);
+  min-width: 74px;
+
+  background: #b8ead8;
+  border-color: #b8ead8;
+
+  color: #1f5644;
+
+  transform: translateY(-2px);
 }
 
 
 /* ==========================================
-TABLET / MOBILE — BACK TO 1 COLUMN
+TABLET
+========================================== */
+
+@media (max-width: 1050px) {
+
+  .work-list {
+    column-gap: 38px;
+  }
+
+
+  .work-item {
+    grid-template-columns:
+      52px
+      minmax(0, 1fr);
+
+    column-gap: 18px;
+  }
+
+
+  .work-item > div:not(.work-number) {
+    padding-right: 78px;
+  }
+
+
+  .work-item h3 {
+    font-size: clamp(1.7rem, 3.4vw, 2.7rem);
+  }
+
+}
+
+
+/* ==========================================
+MOBILE — 1 COLUMN
 ========================================== */
 
 @media (max-width: 850px) {
@@ -1732,27 +1936,119 @@ TABLET / MOBILE — BACK TO 1 COLUMN
 
 
   .work-item {
-    min-height: auto;
+    grid-template-columns:
+      48px
+      minmax(0, 1fr);
 
-    grid-template-columns: 55px minmax(0, 1fr);
+    column-gap: 16px;
 
-    padding: 30px 0;
+    padding: 32px 0;
   }
 
 
-  .work-link {
-    grid-column: 2;
-
-    margin-top: 20px;
+  .work-item > div:not(.work-number) {
+    padding-right: 75px;
   }
 
 
   .work-item:hover {
     padding-left: 0;
+    padding-right: 0;
+  }
+
+
+  .work-item:hover .work-number,
+  .work-item:hover h3 {
+    transform: none;
+  }
+
+
+  .work-link {
+    min-width: 58px;
+    height: 32px;
+
+    padding: 0 10px;
+  }
+
+
+  .work-link::before {
+    font-size: 0.62rem;
   }
 
 }
 
+
+/* ==========================================
+SMALL MOBILE
+========================================== */
+
+@media (max-width: 500px) {
+
+  .work-item {
+    grid-template-columns:
+      38px
+      minmax(0, 1fr);
+
+    column-gap: 12px;
+
+    padding: 28px 0;
+  }
+
+
+  .work-number {
+    font-size: 0.82rem;
+  }
+
+
+  .work-item > div:not(.work-number) {
+    padding-right: 0;
+  }
+
+
+  .work-item h3 {
+    padding-right: 66px;
+
+    font-size: clamp(1.65rem, 8vw, 2.25rem);
+  }
+
+
+  .work-item p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+
+  .work-link {
+    right: 0;
+    top: 0;
+
+    min-width: 54px;
+    height: 30px;
+  }
+
+
+  .work-link::before {
+    font-size: 0.58rem;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 #activities {
   padding: 140px 8vw;
