@@ -2096,7 +2096,145 @@ TIMELINE LINES
 
     
 
+/* ==========================================
+EDUCATION — DARK GREEN COLOUR OVERRIDE
+========================================== */
 
+#education {
+  background: #163f33;
+  color: #f2f8f5;
+}
+
+/* SECTION TITLE */
+
+#education .education-header h2 {
+  color: #f2f8f5;
+}
+
+#education .oversized-label::before {
+  color: rgba(255, 255, 255, 0.07);
+}
+
+#education .oversized-label span {
+  color: #9fd8c3;
+}
+
+
+/* ==========================================
+CURVED TIMELINE
+========================================== */
+
+/* FUTURE / DASHED LINE */
+
+#education .edu-curve-base {
+  stroke: rgba(184, 234, 216, 0.32);
+}
+
+/* COMPLETED / SOLID LINE */
+
+#education .edu-curve-progress {
+  stroke: #b8ead8;
+}
+
+
+/* ==========================================
+DOTS
+========================================== */
+
+/* DEFAULT DOT */
+
+#education .edu-dot {
+  background: #163f33;
+  border-color: #b8ead8;
+  color: #a8c9bd;
+}
+
+/* DEFAULT CITY NAME */
+
+#education .edu-dot span {
+  color: #a8c9bd;
+}
+
+/* COMPLETED DOTS */
+
+#education .edu-dot.completed {
+  background: #b8ead8;
+  border-color: #b8ead8;
+}
+
+#education .edu-dot.completed span {
+  color: #d9eee6;
+}
+
+
+/* ACTIVE DOT */
+
+#education .edu-dot.active {
+  background: #f2f8f5;
+  border-color: #f2f8f5;
+  box-shadow:
+    0 0 0 13px rgba(184, 234, 216, 0.14);
+}
+
+#education .edu-dot.active span {
+  color: #ffffff;
+}
+
+
+/* ==========================================
+CONTENT
+========================================== */
+
+/* LARGE TRANSPARENT YEAR */
+
+#education .edu-selected-year {
+  color: rgba(242, 248, 245, 0.09);
+}
+
+/* UNIVERSITY */
+
+#education .edu-content h3 {
+  color: #f2f8f5;
+}
+
+/* PROGRAMME */
+
+#education .edu-programme {
+  color: rgba(242, 248, 245, 0.72);
+}
+
+
+/* ==========================================
+TAGS
+========================================== */
+
+#education .edu-content ul li {
+  color: #d5eee5;
+
+  border-color: rgba(184, 234, 216, 0.32);
+
+  background: rgba(184, 234, 216, 0.07);
+}
+
+
+/* ==========================================
+HOVER
+========================================== */
+
+#education .edu-dot:not(.active):hover {
+  background: #2d7b61;
+  border-color: #b8ead8;
+}
+
+#education .edu-dot:not(.active):hover span {
+  color: #ffffff;
+}
+
+    /* MOVE LARGE TRANSPARENT YEAR SLIGHTLY HIGHER */
+
+#education .edu-selected-year {
+  transform: translateY(-18px);
+}
 
 
 
