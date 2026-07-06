@@ -2045,7 +2045,193 @@ MOBILE
   }
 
 }
+/* ==========================================
+CONTACT — COMPACT HORIZONTAL CARDS
+========================================== */
 
+.contact-grid {
+  gap: 20px;
+}
+
+.contact-card {
+  min-height: 155px;
+  padding: 28px 30px;
+
+  display: grid;
+  grid-template-columns: 74px 1fr auto;
+  align-items: center;
+  column-gap: 24px;
+}
+
+/* ICON */
+
+.contact-icon {
+  width: 74px;
+  height: 74px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 22px;
+  background: #dcefe7;
+
+  flex-shrink: 0;
+}
+
+.contact-icon svg {
+  width: 45px;
+  height: 45px;
+  display: block;
+
+  transition: transform 0.35s ease;
+}
+
+.contact-cv .contact-icon svg {
+  width: 41px;
+  height: 41px;
+}
+
+/* TEXT */
+
+.contact-card-content {
+  margin: 0;
+  padding: 0;
+
+  align-self: center;
+}
+
+.contact-card-content span {
+  display: block;
+
+  margin: 0 0 8px;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.contact-card-content h3 {
+  margin: 0;
+
+  font-size: clamp(1.35rem, 1.8vw, 1.85rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+/* ARROW
+IMPORTANT: reset absolute positioning from old CSS */
+
+.contact-arrow {
+  position: static;
+
+  align-self: center;
+  justify-self: end;
+
+  font-size: 1.65rem;
+  line-height: 1;
+
+  transition: transform 0.3s ease;
+}
+
+/* HOVER */
+
+.contact-card:hover .contact-icon svg {
+  transform: scale(1.12);
+}
+
+.contact-card:hover .contact-arrow {
+  transform: translate(4px, -4px);
+}
+
+.contact-cv:hover .contact-arrow {
+  transform: translateY(5px);
+}
+
+
+/* ==========================================
+TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-card {
+    min-height: 145px;
+
+    grid-template-columns: 64px 1fr auto;
+
+    padding: 24px;
+    column-gap: 18px;
+  }
+
+  .contact-icon {
+    width: 64px;
+    height: 64px;
+
+    border-radius: 19px;
+  }
+
+  .contact-icon svg {
+    width: 39px;
+    height: 39px;
+  }
+
+}
+
+
+/* ==========================================
+MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .contact-card {
+    min-height: 120px;
+
+    grid-template-columns: 56px 1fr auto;
+
+    padding: 20px;
+
+    column-gap: 16px;
+  }
+
+  .contact-icon {
+    width: 56px;
+    height: 56px;
+
+    border-radius: 17px;
+  }
+
+  .contact-icon svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .contact-card-content span {
+    margin-bottom: 6px;
+    font-size: 0.62rem;
+  }
+
+  .contact-card-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .contact-arrow {
+    font-size: 1.4rem;
+  }
+
+}
 /* ===============================
 SKILLS
 =============================== */
