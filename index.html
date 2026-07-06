@@ -4382,196 +4382,13 @@ window.addEventListener("load", initVisitedMap);
 
 
 
-const educationLayout = document.getElementById("educationLayout");
-const eduMaps = document.querySelectorAll(".edu-map");
-
-const fromYear = document.getElementById("fromYear");
-const fromMonth = document.getElementById("fromMonth");
-const toYear = document.getElementById("toYear");
-const toMonth = document.getElementById("toMonth");
-
-const passStudent = document.getElementById("passStudent");
-const passDegree = document.getElementById("passDegree");
-const passTrack = document.getElementById("passTrack");
-const passDetails = document.getElementById("passDetails");
-
-const educationData = {
-  france: {
-    fromYear: "2021",
-    fromMonth: "SEPTEMBER",
-    toYear: "2026",
-    toMonth: "JUNE",
-    student: "Bader Suliman",
-    degree: "Bachelor / Master",
-    track: "Politics & International Security",
-    details: [
-      "Sciences Po Paris",
-      "Campus Menton & PSIA",
-      "Middle East, migration and security studies"
-    ]
-  },
-
-  japan: {
-    fromYear: "2023",
-    fromMonth: "SEPTEMBER",
-    toYear: "2024",
-    toMonth: "JUNE",
-    student: "Bader Suliman",
-    degree: "Exchange Year",
-    track: "Japanese Language",
-    details: [
-      "Tokyo University of Foreign Studies",
-      "Japanese language programme",
-      "Academic exchange in Tokyo"
-    ]
-  },
-
-  germany: {
-    fromYear: "2026",
-    fromMonth: "OCTOBER",
-    toYear: "2027",
-    toMonth: "JUNE",
-    student: "Bader Suliman",
-    degree: "Master",
-    track: "International Relations",
-    details: [
-      "Freie Universität Berlin",
-      "Otto-Suhr-Institut",
-      "European affairs and international relations"
-    ]
-  }
-};
-
-eduMaps.forEach(map => {
-  map.addEventListener("click", () => {
-    const country = map.dataset.country;
-    const data = educationData[country];
-
-    educationLayout.classList.add("is-open");
-
-    eduMaps.forEach(item => item.classList.remove("is-active"));
-    map.classList.add("is-active");
-
-    fromYear.textContent = data.fromYear;
-    fromMonth.textContent = data.fromMonth;
-    toYear.textContent = data.toYear;
-    toMonth.textContent = data.toMonth;
-
-    passStudent.textContent = data.student;
-    passDegree.textContent = data.degree;
-    passTrack.textContent = data.track;
-
-    passDetails.innerHTML = "";
-
-    data.details.forEach(detail => {
-      const li = document.createElement("li");
-      li.textContent = detail;
-      passDetails.appendChild(li);
-    });
-  });
-});
 
 
-
-    const educationInteractive = document.getElementById("educationInteractive");
-const eduCountries = document.querySelectorAll(".edu-country");
-const passClose = document.getElementById("passClose");
-
-const passData = {
-  france: {
-    fromYear: "2021",
-    fromMonth: "SEPTEMBER",
-    toYear: "2026",
-    toMonth: "JUNE",
-    country: "FRANCE",
-    degree: "B.A. & M.A.",
-    track: "PSIA",
-    university: "Sciences Po Paris",
-    programme: "B.A. Politics. M.A. Int. Security",
-    details: [
-      "Undergraduate years at Sciences Po (Nancy & Menton campuses) with a focus on Middle East & EU politics.",
-      "Graduate studies at PSIA in International Security with a migration / humanitarian focus.",
-      "Coursework in migration law, border governance, data for development, and regional politics."
-    ]
-  },
-
-  japan: {
-    fromYear: "2023",
-    fromMonth: "SEPTEMBER",
-    toYear: "2024",
-    toMonth: "JUNE",
-    country: "JAPAN",
-    degree: "EXCHANGE",
-    track: "TUFS",
-    university: "Tokyo University of Foreign Studies",
-    programme: "Japanese Language Programme",
-    details: [
-      "Academic exchange year in Tokyo focused on Japanese language and culture.",
-      "Studied in an international environment with students from across the world.",
-      "Strengthened cross-cultural communication and regional knowledge of East Asia."
-    ]
-  },
-
-  germany: {
-    fromYear: "2026",
-    fromMonth: "OCTOBER",
-    toYear: "2027",
-    toMonth: "JUNE",
-    country: "GERMANY",
-    degree: "M.A.",
-    track: "OSI",
-    university: "Freie Universität Berlin",
-    programme: "M.A. International Relations",
-    details: [
-      "Master year at the Otto-Suhr-Institut as part of the Sciences Po / FU Berlin dual degree.",
-      "Focus on international relations, European affairs, and political systems.",
-      "Academic year in Berlin from October 2026 to summer 2027."
-    ]
-  }
-};
-
-eduCountries.forEach(country => {
-  country.addEventListener("click", () => {
-    const key = country.dataset.country;
-    const data = passData[key];
-
-    eduCountries.forEach(item => item.classList.remove("is-active"));
-
-    country.classList.add("is-active");
-    educationInteractive.classList.add("is-open");
-
-    document.getElementById("passFromYear").textContent = data.fromYear;
-    document.getElementById("passFromMonth").textContent = data.fromMonth;
-    document.getElementById("passToYear").textContent = data.toYear;
-    document.getElementById("passToMonth").textContent = data.toMonth;
-    document.getElementById("passCountry").textContent = data.country;
-    document.getElementById("passDegree").textContent = data.degree;
-    document.getElementById("passTrack").textContent = data.track;
-    document.getElementById("passUniversity").textContent = data.university;
-    document.getElementById("passProgramme").textContent = data.programme;
-
-    const details = document.getElementById("passDetails");
-    details.innerHTML = "";
-
-    data.details.forEach(text => {
-      const li = document.createElement("li");
-      li.textContent = text;
-      details.appendChild(li);
-    });
-  });
-});                                                                              
-
-passClose.addEventListener("click", () => {
-  educationInteractive.classList.remove("is-open");
-  eduCountries.forEach(item => item.classList.remove("is-active"));
-});
-
-
-    /* ===============================
+/* ===============================
 EDUCATION TIMELINE
 =============================== */
 
-const educationData = {
+const educationTimelineData = {
   2021: {
     title: "Sciences Po",
     place: "Menton, France",
@@ -4582,7 +4399,7 @@ const educationData = {
   2022: {
     title: "Sciences Po",
     place: "Menton / Nancy, France",
-    programme: "Bachelor — Politics and Government, with continued focus on international affairs.",
+    programme: "Bachelor — Politics and Government, continued focus on international affairs.",
     details: ["Comparative politics", "Regional studies", "Languages"]
   },
 
@@ -4619,7 +4436,9 @@ const eduDots = document.querySelectorAll(".edu-dot");
 const eduContent = document.getElementById("eduContent");
 
 function renderEducation(year) {
-  const item = educationData[year];
+  if (!eduContent || !educationTimelineData[year]) return;
+
+  const item = educationTimelineData[year];
 
   eduContent.innerHTML = `
     <h3>${item.title}</h3>
@@ -4630,9 +4449,9 @@ function renderEducation(year) {
     </ul>
   `;
 
-  eduContent.style.animation = "none";
-  eduContent.offsetHeight;
-  eduContent.style.animation = "";
+  eduContent.classList.remove("is-changing");
+  void eduContent.offsetWidth;
+  eduContent.classList.add("is-changing");
 }
 
 eduDots.forEach(dot => {
