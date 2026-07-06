@@ -1465,7 +1465,42 @@ EXPERIENCE TAGS — RECTANGLES + COLOURS
 }
 
 
+/* ==========================================
+REMOVE LEFT HOVER LINE
+========================================== */
 
+#experience .experience-item::before {
+  display: none;
+}
+
+
+/* ==========================================
+TOP + BOTTOM BORDER
+========================================== */
+
+#experience .experience-item {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid rgba(18, 56, 43, 0.2);
+
+  transition:
+    padding-left 0.4s ease,
+    padding-right 0.4s ease,
+    border-color 0.35s ease,
+    border-width 0.35s ease;
+}
+
+
+/* ==========================================
+HOVER — THICK COLOURED TOP + BOTTOM LINES
+========================================== */
+
+#experience .experience-item:hover {
+  padding-left: 30px;
+  padding-right: 24px;
+
+  border-top: 3px solid var(--accent);
+  border-bottom: 3px solid var(--accent);
+}
 
 
 
