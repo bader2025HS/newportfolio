@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfolio</title>
+  <title>BS Portfolio</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2232,13 +2232,36 @@ HOVER
 
     /* MOVE LARGE TRANSPARENT YEAR SLIGHTLY HIGHER */
 
-#education .edu-selected-year {
-  transform: translateY(-18px);
+/* ==========================================
+LARGE YEAR — SLIGHTLY HIGHER
+========================================== */
+
+#education .edu-content.is-changing .edu-selected-year {
+  animation-name: eduYearReveal;
+}
+
+@keyframes eduYearReveal {
+  from {
+    opacity: 0;
+    transform: translateY(17px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-18px);
+  }
 }
 
 
 
 
+
+
+
+
+
+
+    
 
     
 
