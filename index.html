@@ -1291,7 +1291,141 @@ TAGS — EDITORIAL PILLS
   }
 }
 
+/* ==========================================
+EXPERIENCE TAGS — RECTANGLES + COLOURS
+========================================== */
 
+#experience .experience-tags {
+  margin-top: 21px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+#experience .experience-tags small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 7px 12px;
+
+  /* RECTANGLE */
+  border-radius: 4px;
+
+  /* ORGANISATION COLOUR */
+  border: 1.5px solid var(--accent);
+
+  background: transparent;
+  color: var(--accent);
+
+  font-size: 0.72rem;
+  font-weight: 750;
+  line-height: 1;
+
+  letter-spacing: 0.03em;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.3s ease;
+}
+
+
+/* REMOVE OLD DOTS */
+
+#experience .experience-tags small::before,
+#experience .experience-tags small::after {
+  content: none;
+}
+
+
+/* ROW HOVER → SAME COLOUR AS ROW BACKGROUND */
+
+#experience .experience-item:hover .experience-tags small {
+  background: var(--hover-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+
+/* INDIVIDUAL TAG HOVER */
+
+#experience .experience-tags small:hover {
+  transform: translateY(-2px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  #experience .experience-tags {
+    gap: 6px;
+  }
+
+  #experience .experience-tags small {
+    padding: 6px 9px;
+    border-radius: 3px;
+    font-size: 0.64rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
