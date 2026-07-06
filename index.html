@@ -1907,61 +1907,66 @@ SKILLS
   max-width: 950px;
 }
 
-.skills-subtitle {
+.skills-group {
   margin-top: 90px;
-  margin-bottom: 18px;
-  font-size: 0.78rem;
-  font-weight: 800;
+}
+
+.tools-group {
+  margin-top: 80px;
+}
+
+.skills-group h3 {
+  margin-bottom: 28px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #2d7b61;
 }
 
-.tools-title {
-  margin-top: 55px;
-}
-
 /* LANGUAGES */
 
-.language-squares {
+.languages-line {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   border-top: 1px solid rgba(18, 56, 43, 0.18);
-  border-left: 1px solid rgba(18, 56, 43, 0.18);
+  border-bottom: 1px solid rgba(18, 56, 43, 0.18);
 }
 
-.language-square {
-  aspect-ratio: 1 / 1;
-  border-right: 1px solid rgba(18, 56, 43, 0.18);
-  border-bottom: 1px solid rgba(18, 56, 43, 0.18);
-  background: #f6fbf8;
-  padding: 24px;
-  border-radius: 0;
+.language-item {
+  min-height: 170px;
+  padding: 26px 20px;
+  border-right: 1px solid rgba(18, 56, 43, 0.16);
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
 
-  transition: background 0.3s ease;
+  text-align: center;
 }
 
-.language-flag {
-  font-size: clamp(2rem, 3vw, 3.4rem);
+.language-item:first-child {
+  border-left: 1px solid rgba(18, 56, 43, 0.16);
+}
+
+.language-item .flag {
+  font-size: 2.9rem;
   line-height: 1;
+  margin-bottom: 20px;
   transition: transform 0.3s ease;
 }
 
-.language-square h3 {
-  margin-top: auto;
+.language-item strong {
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(1.1rem, 1.5vw, 1.7rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
+  font-size: 1.15rem;
   text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
-.language-square span {
-  margin-top: 10px;
+.language-item small {
+  margin-top: 8px;
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -1969,66 +1974,85 @@ SKILLS
   color: #2d7b61;
 }
 
-.language-square:hover {
-  background: #dcefe7;
-}
-
-.language-square:hover .language-flag {
-  transform: scale(1.16);
+.language-item:hover .flag {
+  transform: translateY(-6px) scale(1.08);
 }
 
 /* TOOLS */
 
-.tools-table {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  border-top: 1px solid rgba(18, 56, 43, 0.18);
-  border-left: 1px solid rgba(18, 56, 43, 0.18);
-  background: #f6fbf8;
+.tools-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
 }
 
-.tool-item {
-  min-height: 145px;
-  padding: 22px;
-  border-right: 1px solid rgba(18, 56, 43, 0.18);
-  border-bottom: 1px solid rgba(18, 56, 43, 0.18);
+.tools-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 28px;
+  padding-bottom: 26px;
+}
+
+.tools-row::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 1px;
+  background: rgba(18, 56, 43, 0.18);
+}
+
+.tools-row-offset {
+  width: 92%;
+  margin-left: auto;
+}
+
+.tool-logo {
+  min-height: 95px;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-end;
 
-  transition: background 0.3s ease;
+  text-align: center;
 }
 
-.tool-item img {
-  width: 38px;
-  height: 38px;
+.tool-logo img {
+  width: 42px;
+  height: 42px;
   object-fit: contain;
+  margin-bottom: 18px;
   transition: transform 0.3s ease;
 }
 
-.tool-item span {
+.tool-logo span {
   font-size: 0.78rem;
   font-weight: 800;
-  line-height: 1.2;
 }
 
-.tool-item:hover {
-  background: #ffffff;
-}
-
-.tool-item:hover img {
-  transform: scale(1.18);
+.tool-logo:hover img {
+  transform: translateY(-7px) rotate(-3deg) scale(1.12);
 }
 
 /* RESPONSIVE */
 
-@media (max-width: 1050px) {
-  .language-squares {
+@media (max-width: 950px) {
+  .languages-line {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .tools-table {
+  .language-item:nth-child(3) {
+    border-right: 1px solid rgba(18, 56, 43, 0.16);
+  }
+
+  .tools-row,
+  .tools-row-offset {
+    width: 100%;
+    margin-left: 0;
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -2038,30 +2062,36 @@ SKILLS
     padding: 120px 20px 80px;
   }
 
-  .skills-subtitle {
+  .skills-group {
     margin-top: 65px;
   }
 
-  .language-squares {
+  .tools-group {
+    margin-top: 60px;
+  }
+
+  .languages-line {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .language-square {
-    padding: 18px;
+  .language-item {
+    min-height: 145px;
+    padding: 22px 14px;
   }
 
-  .tools-table {
-    grid-template-columns: repeat(2, 1fr);
+  .language-item .flag {
+    font-size: 2.4rem;
   }
 
-  .tool-item {
-    min-height: 115px;
-    padding: 16px;
+  .tools-row,
+  .tools-row-offset {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
   }
 
-  .tool-item img {
-    width: 31px;
-    height: 31px;
+  .tool-logo img {
+    width: 35px;
+    height: 35px;
   }
 }
     
@@ -2468,123 +2498,79 @@ SKILLS
 
     <div class="skills-header">
       <div class="oversized-label" data-letter="SKILLS">
-        <span>What I work with</span>
+        <span>What I use</span>
       </div>
 
       <h2>Languages,<br>tools and platforms.</h2>
     </div>
 
-    <div class="skills-subtitle">Languages</div>
+    <div class="skills-group">
+      <h3>Languages</h3>
 
-    <div class="language-squares">
-      <div class="language-square">
-        <div class="language-flag">🇸🇦</div>
-        <h3>Arabic</h3>
-        <span>Native</span>
-      </div>
+      <div class="languages-line">
+        <div class="language-item">
+          <span class="flag">🇸🇦</span>
+          <strong>Arabic</strong>
+          <small>Native</small>
+        </div>
 
-      <div class="language-square">
-        <div class="language-flag">🇫🇷</div>
-        <h3>French</h3>
-        <span>Native</span>
-      </div>
+        <div class="language-item">
+          <span class="flag">🇫🇷</span>
+          <strong>French</strong>
+          <small>Native</small>
+        </div>
 
-      <div class="language-square">
-        <div class="language-flag">🇬🇧</div>
-        <h3>English</h3>
-        <span>C2</span>
-      </div>
+        <div class="language-item">
+          <span class="flag">🇬🇧</span>
+          <strong>English</strong>
+          <small>C2</small>
+        </div>
 
-      <div class="language-square">
-        <div class="language-flag">🇩🇪</div>
-        <h3>German</h3>
-        <span>C1</span>
-      </div>
+        <div class="language-item">
+          <span class="flag">🇩🇪</span>
+          <strong>German</strong>
+          <small>C1</small>
+        </div>
 
-      <div class="language-square">
-        <div class="language-flag">🇮🇷</div>
-        <h3>Persian</h3>
-        <span>A2</span>
-      </div>
+        <div class="language-item">
+          <span class="flag">🇮🇷</span>
+          <strong>Persian</strong>
+          <small>A2</small>
+        </div>
 
-      <div class="language-square">
-        <div class="language-flag">🇯🇵</div>
-        <h3>Japanese</h3>
-        <span>A2</span>
+        <div class="language-item">
+          <span class="flag">🇯🇵</span>
+          <strong>Japanese</strong>
+          <small>A2</small>
+        </div>
       </div>
     </div>
 
-    <div class="skills-subtitle tools-title">Tools</div>
+    <div class="skills-group tools-group">
+      <h3>Tools</h3>
 
-    <div class="tools-table">
-      <div class="tool-item">
-        <img src="images/word.svg" alt="">
-        <span>Word</span>
-      </div>
+      <div class="tools-lines">
 
-      <div class="tool-item">
-        <img src="images/powerpoint.svg" alt="">
-        <span>PowerPoint</span>
-      </div>
+        <div class="tools-row">
+          <div class="tool-logo"><img src="images/word.svg" alt=""><span>Word</span></div>
+          <div class="tool-logo"><img src="images/powerpoint.svg" alt=""><span>PowerPoint</span></div>
+          <div class="tool-logo"><img src="images/excel.svg" alt=""><span>Excel</span></div>
+          <div class="tool-logo"><img src="images/powerbi.svg" alt=""><span>Power BI</span></div>
+          <div class="tool-logo"><img src="images/teams.svg" alt=""><span>Teams</span></div>
+          <div class="tool-logo"><img src="images/sharepoint.svg" alt=""><span>SharePoint</span></div>
+          <div class="tool-logo"><img src="images/github.svg" alt=""><span>GitHub</span></div>
+        </div>
 
-      <div class="tool-item">
-        <img src="images/excel.svg" alt="">
-        <span>Excel</span>
-      </div>
+        <div class="tools-row tools-row-offset">
+          <div class="tool-logo"><img src="images/illustrator.svg" alt=""><span>Illustrator</span></div>
+          <div class="tool-logo"><img src="images/google.svg" alt=""><span>Google Suite</span></div>
+          <div class="tool-logo"><img src="images/drive.svg" alt=""><span>Drive</span></div>
+          <div class="tool-logo"><img src="images/meet.svg" alt=""><span>Meet</span></div>
+          <div class="tool-logo"><img src="images/instagram.svg" alt=""><span>Instagram</span></div>
+          <div class="tool-logo"><img src="images/linkedin.svg" alt=""><span>LinkedIn</span></div>
+          <div class="tool-logo"><img src="images/tiktok.svg" alt=""><span>TikTok</span></div>
+        </div>
 
-      <div class="tool-item">
-        <img src="images/powerbi.svg" alt="">
-        <span>Power BI</span>
-      </div>
-
-      <div class="tool-item">
-        <img src="images/teams.svg" alt="">
-        <span>Teams</span>
-      </div>
-
-      <div class="tool-item">
-        <img src="images/sharepoint.svg" alt="">
-        <span>SharePoint</span>
-      </div>
-
-      <div class="tool-item">
-        <img src="images/github.svg" alt="">
-        <span>GitHub</span>
-      </div>
-
-      <div class="tool-item">
-        <img src="images/illustrator.svg" alt="">
-        <span>Illustrator</span>
-      </div>
-
-      <div class="tool-item">
-        <img src="images/google.svg" alt="">
-        <span>Google Suite</span>
-      </div>
-
-      <div class="tool-item">
-        <img src="images/drive.svg" alt="">
-        <span>Drive</span>
-      </div>
-
-      <div class="tool-item">
-        <img src="images/meet.svg" alt="">
-        <span>Meet</span>
-      </div>
-
-      <div class="tool-item">
-        <img src="images/instagram.svg" alt="">
-        <span>Instagram</span>
-      </div>
-
-      <div class="tool-item">
-        <img src="images/linkedin.svg" alt="">
-        <span>LinkedIn</span>
-      </div>
-
-      <div class="tool-item">
-        <img src="images/tiktok.svg" alt="">
-        <span>TikTok</span>
       </div>
     </div>
 
