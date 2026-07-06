@@ -2408,7 +2408,40 @@ LARGE YEAR — SLIGHTLY HIGHER
 
 
 
+/* ==========================================
+EDUCATION — FINAL POSITION ADJUSTMENTS
+========================================== */
 
+/* PUSH THE TIMELINE CONTENT SLIGHTLY RIGHT
+   BUT KEEP THE LINE ENDING AT SCREEN EDGE */
+
+#education .education-timeline {
+  padding-left: 10vw;
+  padding-right: 0;
+}
+
+/* KEEP 6 DOTS EVENLY DISTRIBUTED
+   UNTIL THE RIGHT EDGE OF THE SCREEN */
+
+#education .education-timeline {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+/* LINE STILL STARTS FROM LEFT EDGE
+   AND ENDS EXACTLY AT RIGHT SCREEN EDGE */
+
+#education .edu-line-dashed,
+#education .edu-line-progress {
+  left: 0;
+}
+
+/* RESTORE ORIGINAL LARGE TRANSPARENT DATE SIZE */
+
+#education .edu-selected-year {
+  font-size: clamp(4.5rem, 10vw, 9rem);
+  line-height: 0.78;
+  letter-spacing: -0.085em;
+}
 
 
 
