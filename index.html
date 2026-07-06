@@ -1885,7 +1885,166 @@ MOBILE
   }
 
 }
+/* ==========================================
+CONTACT — COMPACT CARDS + STRONGER ICONS
+========================================== */
 
+.contact-grid {
+  gap: 22px;
+}
+
+/* SHORTER CARDS */
+
+.contact-card {
+  min-height: 245px;
+  padding: 30px 34px 30px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* BIGGER ICON CONTAINER */
+
+.contact-icon {
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 22px;
+
+  background: #dcefe7;
+
+  flex-shrink: 0;
+}
+
+/* MUCH MORE VISIBLE LOGOS */
+
+.contact-icon svg {
+  width: 44px;
+  height: 44px;
+
+  display: block;
+  flex-shrink: 0;
+
+  transition:
+    transform 0.35s ease;
+}
+
+/* CV ICON IS VISUALLY DENSER,
+SO KEEP IT SLIGHTLY SMALLER */
+
+.contact-cv .contact-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+/* MOVE TEXT UP */
+
+.contact-card-content {
+  margin-top: auto;
+  padding-top: 32px;
+}
+
+.contact-card-content span {
+  font-size: 0.72rem;
+}
+
+.contact-card-content h3 {
+  margin-top: 8px;
+
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.05;
+}
+
+/* ARROW */
+
+.contact-arrow {
+  top: 30px;
+  right: 32px;
+
+  font-size: 1.8rem;
+}
+
+/* HOVER */
+
+.contact-card:hover .contact-icon svg {
+  transform: scale(1.12);
+}
+
+
+/* ==========================================
+TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+  .contact-card {
+    min-height: 220px;
+    padding: 26px;
+  }
+
+  .contact-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 19px;
+  }
+
+  .contact-icon svg {
+    width: 39px;
+    height: 39px;
+  }
+
+  .contact-card-content {
+    padding-top: 26px;
+  }
+
+}
+
+
+/* ==========================================
+MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+  .contact-grid {
+    gap: 14px;
+  }
+
+  .contact-card {
+    min-height: 185px;
+    padding: 22px;
+  }
+
+  .contact-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 17px;
+  }
+
+  .contact-icon svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .contact-card-content {
+    padding-top: 22px;
+  }
+
+  .contact-card-content h3 {
+    font-size: 1.35rem;
+  }
+
+  .contact-arrow {
+    top: 22px;
+    right: 22px;
+    font-size: 1.45rem;
+  }
+
+}
 
 /* ===============================
 SKILLS
@@ -2712,10 +2871,6 @@ SKILLS
 
       <h2>One message<br>away.</h2>
 
-      <p class="contact-intro">
-        Whether it is about research, communication, international affairs
-        or simply exchanging ideas, feel free to reach out.
-      </p>
     </div>
 
 
