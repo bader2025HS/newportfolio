@@ -3847,6 +3847,9 @@ EXPLORE PROJECT — FULL FILL HOVER
 
 
 
+
+
+
     
 
 #activities {
@@ -4041,6 +4044,103 @@ EXPLORE PROJECT — FULL FILL HOVER
   }
 }
 
+
+    .activities-filmstrip {
+  position: relative;
+  margin-top: 85px;
+  width: 100%;
+  padding: 34px 0;
+  overflow: hidden;
+  background: #050505;
+}
+
+.activities-filmstrip::before,
+.activities-filmstrip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  z-index: 3;
+  background: repeating-linear-gradient(
+    90deg,
+    #f6fbf8 0 18px,
+    transparent 18px 38px
+  );
+}
+
+.activities-filmstrip::before {
+  top: 0;
+}
+
+.activities-filmstrip::after {
+  bottom: 0;
+}
+
+.filmstrip-track {
+  display: flex;
+  gap: 26px;
+  width: max-content;
+  animation: filmScroll 28s linear infinite;
+}
+
+.activities-filmstrip:hover .filmstrip-track {
+  animation-play-state: paused;
+}
+
+.film-frame {
+  width: 420px;
+  height: 270px;
+  border: 12px solid #050505;
+  background: #f6fbf8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #2d7b61;
+}
+
+@keyframes filmScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 650px) {
+  .activities-filmstrip {
+    margin-top: 60px;
+    padding: 28px 0;
+  }
+
+  .filmstrip-track {
+    gap: 18px;
+    animation-duration: 22s;
+  }
+
+  .film-frame {
+    width: 280px;
+    height: 190px;
+    border-width: 9px;
+  }
+}
+
+
+    .activities-filmstrip {
+  width: 100vw;
+
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
 
 
 
@@ -5495,6 +5595,8 @@ TOOLS
 
 
 
+
+    
     
     
 
@@ -5578,6 +5680,9 @@ TOOLS
 </section>
 
 
+
+
+    
 <section id="activities">
   <div class="activities-container">
 
@@ -5625,16 +5730,55 @@ TOOLS
 
     </div>
 
-    <div class="activities-photos">
-      <img src="images/event-1.jpg" alt="Event photo">
-      <img src="images/event-2.jpg" alt="Event photo">
-      <img src="images/event-3.jpg" alt="Event photo">
-      <img src="images/event-4.jpg" alt="Event photo">
+
+    <!-- MOVING FILMSTRIP -->
+
+    <div class="activities-filmstrip">
+      <div class="filmstrip-track">
+
+        <div class="film-frame">
+          <span>Image 01</span>
+        </div>
+
+        <div class="film-frame">
+          <span>Image 02</span>
+        </div>
+
+        <div class="film-frame">
+          <span>Image 03</span>
+        </div>
+
+        <div class="film-frame">
+          <span>Image 04</span>
+        </div>
+
+
+        <!-- DUPLICATED FOR SEAMLESS LOOP -->
+
+        <div class="film-frame">
+          <span>Image 01</span>
+        </div>
+
+        <div class="film-frame">
+          <span>Image 02</span>
+        </div>
+
+        <div class="film-frame">
+          <span>Image 03</span>
+        </div>
+
+        <div class="film-frame">
+          <span>Image 04</span>
+        </div>
+
+      </div>
     </div>
 
   </div>
 </section>
 
+
+    
     
 
 <section id="work">
