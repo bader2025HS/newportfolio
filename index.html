@@ -3887,35 +3887,23 @@ ACTIVITIES
 
 
 /* ==========================================
-ACTIVITY CARDS — 2 × 2 SQUARE GRID
+ACTIVITY CARDS — COMPACT 2 × 2
 ========================================== */
 
 .activity-grid {
-  margin-top: 90px;
+  margin-top: 75px;
 
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.activity-card,
-.activity-tarjimly,
-.activity-events,
-.activity-medmun,
-.activity-spaw {
-  grid-column: auto;
-  grid-row: auto;
+  gap: 20px;
 }
 
 .activity-card {
-  min-height: 360px;
-  padding: 34px;
+  min-height: 260px;
+  padding: 28px;
 
   border-radius: 0;
   border: 1px solid rgba(18, 56, 43, 0.16);
-
-  background: #f6fbf8;
-  color: #12382b;
 
   display: flex;
   flex-direction: column;
@@ -3926,22 +3914,43 @@ ACTIVITY CARDS — 2 × 2 SQUARE GRID
   transition:
     transform 0.35s ease,
     background 0.35s ease,
-    border-color 0.35s ease,
-    color 0.35s ease;
+    border-color 0.35s ease;
 }
+
+/* DIFFERENT COLORS */
 
 .activity-tarjimly {
   background: #1f5644;
   color: #f6fbf8;
 }
 
+.activity-events {
+  background: #f6fbf8;
+  color: #12382b;
+}
+
+.activity-medmun {
+  background: #dcefe7;
+  color: #12382b;
+}
+
+.activity-spaw {
+  background: #cfe7dc;
+  color: #12382b;
+}
+
+
+/* TAG */
+
 .activity-card span {
   width: fit-content;
 
-  padding: 10px 16px;
+  padding: 10px 15px;
 
   border-radius: 0;
-  background: #dcefe7;
+  border: 1px solid currentColor;
+
+  background: transparent;
 
   font-size: 0.68rem;
   font-weight: 800;
@@ -3951,47 +3960,51 @@ ACTIVITY CARDS — 2 × 2 SQUARE GRID
   text-transform: uppercase;
 
   color: #2d7b61;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .activity-tarjimly span {
-  background: rgba(255, 255, 255, 0.14);
   color: #b8ead8;
 }
 
 .activity-card h3 {
-  font-family: "Space Grotesk", sans-serif;
-
-  font-size: clamp(2.6rem, 4vw, 5rem);
+  font-size: clamp(2.3rem, 3.4vw, 4.2rem);
   line-height: 0.9;
-  letter-spacing: -0.07em;
-
-  color: inherit;
 }
 
 .activity-card p {
-  max-width: 620px;
-
-  font-size: 1rem;
-  line-height: 1.65;
-
-  color: #4b6158;
+  max-width: 560px;
+  font-size: 0.96rem;
+  line-height: 1.55;
 }
 
 .activity-tarjimly p {
   color: rgba(246, 251, 248, 0.78);
 }
 
+
+/* HOVER EFFECT */
+
 .activity-card:hover {
-  transform: translateY(-7px);
-
-  background: #dcefe7;
-  border-color: rgba(45, 123, 97, 0.45);
+  transform: translateY(-6px);
+  border-color: #2d7b61;
 }
 
-.activity-tarjimly:hover {
-  background: #12382b;
+.activity-card:hover span {
+  transform: translateX(8px);
+
+  background: #2d7b61;
+  color: #f6fbf8;
 }
 
+.activity-tarjimly:hover span {
+  background: #f6fbf8;
+  color: #12382b;
+}
 
 /* ==========================================
 MOVING FILMSTRIP
@@ -4168,7 +4181,12 @@ MOBILE
   }
 }
 
-
+@media (max-width: 750px) {
+  .activity-card {
+    min-height: 230px;
+    padding: 24px;
+  }
+}
 
 
 
