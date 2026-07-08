@@ -4965,6 +4965,40 @@ TOOLS
 }
 
 
+
+
+.oversized-label {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  min-height: 82px;
+  margin-bottom: 28px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.oversized-label::before {
+  content: attr(data-letter);
+  position: absolute;
+  left: -8px;
+  bottom: -18px;
+  font-size: 6.5rem;
+  line-height: 1;
+  font-weight: 700;
+  color: rgba(45, 123, 97, 0.12);
+  z-index: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.oversized-label span {
+  position: relative;
+  z-index: 1;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #2d7b61;
+}
     
   </style>
 </head>
