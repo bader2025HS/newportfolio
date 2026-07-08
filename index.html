@@ -4143,6 +4143,121 @@ EXPLORE PROJECT — FULL FILL HOVER
 }
 
 
+    .activity-grid {
+  margin-top: 90px;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.activity-card,
+.activity-tarjimly,
+.activity-events,
+.activity-medmun,
+.activity-spaw {
+  grid-column: auto;
+  grid-row: auto;
+}
+
+.activity-card {
+  min-height: 340px;
+  padding: 34px;
+
+  border-radius: 0;
+  background: #f6fbf8;
+  border: 1px solid rgba(18, 56, 43, 0.16);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+.activity-tarjimly {
+  background: #1f5644;
+  color: #f6fbf8;
+}
+
+.activity-card span {
+  width: fit-content;
+
+  padding: 10px 16px;
+
+  border-radius: 0;
+  background: #dcefe7;
+
+  color: #2d7b61;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.activity-tarjimly span {
+  background: rgba(255, 255, 255, 0.14);
+  color: #b8ead8;
+}
+
+.activity-card h3 {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(2.6rem, 4vw, 5rem);
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+
+  color: inherit;
+}
+
+.activity-card p {
+  max-width: 620px;
+
+  font-size: 1rem;
+  line-height: 1.65;
+
+  color: #4b6158;
+}
+
+.activity-tarjimly p {
+  color: rgba(246, 251, 248, 0.78);
+}
+
+.activity-card:hover {
+  transform: translateY(-7px);
+  background: #dcefe7;
+}
+
+.activity-tarjimly:hover {
+  background: #12382b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
