@@ -3850,7 +3850,20 @@ EXPLORE PROJECT — FULL FILL HOVER
 
 
 
+
+
+
+
+
     
+
+
+
+    
+
+/* ==========================================
+ACTIVITIES
+========================================== */
 
 #activities {
   padding: 140px 8vw;
@@ -3860,295 +3873,29 @@ EXPLORE PROJECT — FULL FILL HOVER
 
 .activities-container {
   max-width: 1450px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .activities-header h2 {
   margin-top: 18px;
+  max-width: 950px;
+
   font-size: clamp(3rem, 6vw, 5.8rem);
   line-height: 0.95;
-  max-width: 950px;
+  letter-spacing: -0.055em;
 }
+
+
+/* ==========================================
+ACTIVITY CARDS — 2 × 2 SQUARE GRID
+========================================== */
 
 .activity-grid {
-  margin-top: 90px;
-  display: grid;
-  grid-template-columns: 1.05fr 1fr 1fr 1fr;
-  grid-template-rows: repeat(2, 250px);
-  gap: 22px;
-}
-
-.activity-card {
-  padding: 28px;
-  border-radius: 30px;
-  background: #f6fbf8;
-  border: 1px solid rgba(18, 56, 43, 0.12);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-  transition: transform 0.35s ease, background 0.35s ease;
-}
-
-.activity-tarjimly {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-  background: #1f5644;
-  color: #f6fbf8;
-}
-
-.activity-events {
-  grid-column: 2 / span 2;
-  grid-row: 1;
-}
-
-.activity-medmun {
-  grid-column: 4;
-  grid-row: 1;
-}
-
-.activity-spaw {
-  grid-column: 2 / span 3;
-  grid-row: 2;
-}
-
-.activity-card span {
-  width: fit-content;
-  padding: 8px 13px;
-  border-radius: 999px;
-  background: #dcefe7;
-  color: #2d7b61;
-  font-size: 0.68rem;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.activity-tarjimly span {
-  background: rgba(255, 255, 255, 0.12);
-  color: #b8ead8;
-}
-
-.activity-card h3 {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2rem, 3.4vw, 4.6rem);
-  line-height: 0.88;
-  letter-spacing: -0.07em;
-}
-
-.activity-tarjimly h3 {
-  font-size: clamp(3rem, 5vw, 6rem);
-}
-
-.activity-card p {
-  max-width: 600px;
-  font-size: 0.98rem;
-  line-height: 1.65;
-  color: #4b6158;
-}
-
-.activity-tarjimly p {
-  color: rgba(246, 251, 248, 0.76);
-}
-
-.activity-card:hover {
-  transform: translateY(-7px);
-  background: #dcefe7;
-}
-
-.activity-tarjimly:hover {
-  background: #12382b;
-}
-
-.activities-photos {
-  margin-top: 85px;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr 1fr 0.9fr;
-  gap: 18px;
-  height: 390px;
-}
-
-.activities-photos img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 28px;
-  filter: grayscale(15%);
-  transition: transform 0.45s ease, filter 0.45s ease;
-}
-
-.activities-photos img:nth-child(2),
-.activities-photos img:nth-child(4) {
-  margin-top: 55px;
-  height: calc(100% - 55px);
-}
-
-.activities-photos img:hover {
-  transform: scale(1.035);
-  filter: grayscale(0%);
-}
-
-@media (max-width: 950px) {
-  .activity-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: none;
-  }
-
-  .activity-tarjimly,
-  .activity-events,
-  .activity-medmun,
-  .activity-spaw {
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .activity-tarjimly,
-  .activity-events,
-  .activity-spaw {
-    grid-column: 1 / -1;
-  }
-
-  .activity-card {
-    min-height: 230px;
-  }
-}
-
-@media (max-width: 650px) {
-  #activities {
-    padding: 120px 20px 80px;
-  }
-
-  .activity-grid {
-    margin-top: 65px;
-    grid-template-columns: 1fr;
-  }
-
-  .activity-tarjimly,
-  .activity-events,
-  .activity-spaw {
-    grid-column: auto;
-  }
-
-  .activities-photos {
-    margin-top: 60px;
-    grid-template-columns: 1fr 1fr;
-    height: auto;
-  }
-
-  .activities-photos img,
-  .activities-photos img:nth-child(2),
-  .activities-photos img:nth-child(4) {
-    height: 220px;
-    margin-top: 0;
-  }
-}
-
-
-    .activities-filmstrip {
-  position: relative;
-  margin-top: 85px;
-  width: 100%;
-  padding: 34px 0;
-  overflow: hidden;
-  background: #050505;
-}
-
-.activities-filmstrip::before,
-.activities-filmstrip::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 24px;
-  z-index: 3;
-  background: repeating-linear-gradient(
-    90deg,
-    #f6fbf8 0 18px,
-    transparent 18px 38px
-  );
-}
-
-.activities-filmstrip::before {
-  top: 0;
-}
-
-.activities-filmstrip::after {
-  bottom: 0;
-}
-
-.filmstrip-track {
-  display: flex;
-  gap: 26px;
-  width: max-content;
-  animation: filmScroll 28s linear infinite;
-}
-
-.activities-filmstrip:hover .filmstrip-track {
-  animation-play-state: paused;
-}
-
-.film-frame {
-  width: 420px;
-  height: 270px;
-  border: 12px solid #050505;
-  background: #f6fbf8;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #2d7b61;
-}
-
-@keyframes filmScroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media (max-width: 650px) {
-  .activities-filmstrip {
-    margin-top: 60px;
-    padding: 28px 0;
-  }
-
-  .filmstrip-track {
-    gap: 18px;
-    animation-duration: 22s;
-  }
-
-  .film-frame {
-    width: 280px;
-    height: 190px;
-    border-width: 9px;
-  }
-}
-
-
-    .activities-filmstrip {
-  width: 100vw;
-
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-}
-
-
-    .activity-grid {
   margin-top: 90px;
 
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+  gap: 24px;
 }
 
 .activity-card,
@@ -4161,12 +3908,14 @@ EXPLORE PROJECT — FULL FILL HOVER
 }
 
 .activity-card {
-  min-height: 340px;
+  min-height: 360px;
   padding: 34px;
 
   border-radius: 0;
-  background: #f6fbf8;
   border: 1px solid rgba(18, 56, 43, 0.16);
+
+  background: #f6fbf8;
+  color: #12382b;
 
   display: flex;
   flex-direction: column;
@@ -4177,6 +3926,7 @@ EXPLORE PROJECT — FULL FILL HOVER
   transition:
     transform 0.35s ease,
     background 0.35s ease,
+    border-color 0.35s ease,
     color 0.35s ease;
 }
 
@@ -4193,14 +3943,14 @@ EXPLORE PROJECT — FULL FILL HOVER
   border-radius: 0;
   background: #dcefe7;
 
-  color: #2d7b61;
-
   font-size: 0.68rem;
   font-weight: 800;
   line-height: 1;
 
   letter-spacing: 0.12em;
   text-transform: uppercase;
+
+  color: #2d7b61;
 }
 
 .activity-tarjimly span {
@@ -4233,11 +3983,189 @@ EXPLORE PROJECT — FULL FILL HOVER
 
 .activity-card:hover {
   transform: translateY(-7px);
+
   background: #dcefe7;
+  border-color: rgba(45, 123, 97, 0.45);
 }
 
 .activity-tarjimly:hover {
   background: #12382b;
+}
+
+
+/* ==========================================
+MOVING FILMSTRIP
+========================================== */
+
+.activities-filmstrip {
+  position: relative;
+
+  width: 100vw;
+  margin-top: 95px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  padding: 42px 0;
+
+  overflow: hidden;
+
+  background: #050505;
+}
+
+.activities-filmstrip::before,
+.activities-filmstrip::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+
+  width: 100%;
+  height: 26px;
+
+  z-index: 3;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #e8f4ee 0 18px,
+      transparent 18px 38px
+    );
+}
+
+.activities-filmstrip::before {
+  top: 0;
+}
+
+.activities-filmstrip::after {
+  bottom: 0;
+}
+
+.filmstrip-track {
+  display: flex;
+  gap: 28px;
+
+  width: max-content;
+
+  animation: filmScroll 30s linear infinite;
+}
+
+.activities-filmstrip:hover .filmstrip-track {
+  animation-play-state: paused;
+}
+
+.film-frame {
+  width: 420px;
+  height: 270px;
+
+  border: 12px solid #050505;
+  background: #f6fbf8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: #2d7b61;
+
+  overflow: hidden;
+}
+
+.film-frame img,
+img.film-frame {
+  width: 420px;
+  height: 270px;
+
+  object-fit: cover;
+
+  border: 12px solid #050505;
+  background: #f6fbf8;
+}
+
+@keyframes filmScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ==========================================
+TABLET
+========================================== */
+
+@media (max-width: 950px) {
+  .activity-card {
+    min-height: 320px;
+  }
+
+  .film-frame,
+  .film-frame img,
+  img.film-frame {
+    width: 340px;
+    height: 230px;
+  }
+}
+
+
+/* ==========================================
+MOBILE
+========================================== */
+
+@media (max-width: 750px) {
+  #activities {
+    padding: 120px 20px 80px;
+  }
+
+  .activity-grid {
+    margin-top: 65px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .activity-card {
+    min-height: 270px;
+    padding: 28px;
+  }
+
+  .activities-filmstrip {
+    margin-top: 70px;
+    padding: 32px 0;
+  }
+
+  .filmstrip-track {
+    gap: 18px;
+    animation-duration: 24s;
+  }
+
+  .film-frame,
+  .film-frame img,
+  img.film-frame {
+    width: 280px;
+    height: 190px;
+    border-width: 9px;
+  }
+
+  .activities-filmstrip::before,
+  .activities-filmstrip::after {
+    height: 22px;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        #e8f4ee 0 15px,
+        transparent 15px 32px
+      );
+  }
 }
 
 
