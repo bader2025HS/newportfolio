@@ -819,7 +819,62 @@ SMALL MOBILE
 
 }
 
+/* ==========================================
+LEFT COLUMN — FOCUS TAG BOXES
+========================================== */
 
+.about-focus {
+  min-width: 0;
+}
+
+.about-focus ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-content: flex-start;
+}
+
+.about-focus li {
+  padding: 14px 20px;
+
+  border: 1px solid rgba(45, 123, 97, 0.28);
+  border-radius: 999px;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: #2d7b61;
+  background: rgba(45, 123, 97, 0.06);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.about-focus li::before {
+  display: none;
+}
+
+.about-focus li:hover {
+  transform: translateY(-3px);
+
+  color: #f6fbf8;
+  background: #2d7b61;
+  border-color: #2d7b61;
+}
 
 
 
