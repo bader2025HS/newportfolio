@@ -5467,7 +5467,113 @@ GALLERY
   height: min(720px, 75vh);
   min-height: 520px;
 }
+/* ==========================================
+GALLERY
+========================================== */
 
+#gallery {
+  padding: 140px 0;
+  overflow: hidden;
+}
+
+.gallery-container {
+  width: 100%;
+}
+
+
+/* ==========================================
+HEADER
+========================================== */
+
+.gallery-header {
+  width: min(1450px, 84vw);
+  margin: 0 auto;
+}
+
+.gallery-header h2 {
+  margin-top: 18px;
+
+  max-width: 900px;
+
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: 0.95;
+}
+
+.gallery-description {
+  max-width: 720px;
+
+  margin-top: 30px;
+
+  color: #4b6158;
+
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+
+/* ==========================================
+FULL WIDTH MAP
+========================================== */
+
+.gallery-map {
+  position: relative;
+
+  width: 100vw;
+
+  margin-top: 65px;
+
+  margin-left: calc(50% - 50vw);
+
+  overflow: hidden;
+}
+
+#visitedMap {
+  width: 100vw;
+
+  height: min(780px, 78vh);
+  min-height: 550px;
+
+  border: 0;
+  border-radius: 0;
+}
+
+
+/* ==========================================
+LEAFLET CLEANUP
+========================================== */
+
+#visitedMap .leaflet-container {
+  border-radius: 0;
+}
+
+
+/* ==========================================
+MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+  #gallery {
+    padding: 100px 0;
+  }
+
+  .gallery-header {
+    width: calc(100% - 24px);
+  }
+
+  .gallery-description {
+    margin-top: 24px;
+  }
+
+  .gallery-map {
+    margin-top: 45px;
+  }
+
+  #visitedMap {
+    height: 65vh;
+    min-height: 450px;
+  }
+}
     
   </style>
 </head>
