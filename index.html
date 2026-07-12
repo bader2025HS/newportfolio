@@ -902,7 +902,6 @@ MOBILE
 @media (max-width: 550px) {
 
   .about-focus ul {
-    grid-template-columns: 1fr;
     gap: 12px;
   }
 
@@ -919,10 +918,14 @@ MOBILE
 
 /* ==========================================
 ABOUT — FINAL PHONE OVERRIDE
-PASTE AT THE VERY END
+PASTE AT THE END OF ALL ABOUT CSS
 ========================================== */
 
 @media (max-width: 650px) {
+
+  /* ========================================
+  SECTION
+  ======================================== */
 
   #about {
     width: 100%;
@@ -956,7 +959,7 @@ PASTE AT THE VERY END
 
     margin-top: 14px;
 
-    font-size: clamp(2.65rem, 13vw, 4rem);
+    font-size: clamp(2.6rem, 13vw, 4rem);
     line-height: 0.95;
     letter-spacing: -0.055em;
 
@@ -1027,130 +1030,7 @@ PASTE AT THE VERY END
     display: grid;
     grid-template-columns: 1fr;
 
-    gap: 48px;
-
-    align-items: start;
-  }
-
-  #about .about-focus,
-  #about .about-stats {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-
- /* ==========================================
-ABOUT — FINAL PHONE OVERRIDE
-PASTE AT THE VERY END
-========================================== */
-
-@media (max-width: 650px) {
-
-  #about {
-    width: 100%;
-    max-width: 100%;
-
-    padding: 95px 16px 75px;
-
-    overflow: hidden;
-  }
-
-  #about .about-container {
-    width: 100%;
-    max-width: 100%;
-
-    margin: 0 auto;
-  }
-
-
-  /* ========================================
-  HEADER
-  ======================================== */
-
-  #about .about-header {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  #about .about-header h2 {
-    width: 100%;
-    max-width: 100%;
-
-    margin-top: 14px;
-
-    font-size: clamp(2.65rem, 13vw, 4rem);
-    line-height: 0.95;
-    letter-spacing: -0.055em;
-
-    overflow-wrap: break-word;
-  }
-
-
-  /* ========================================
-  OVERSIZED LABEL
-  ======================================== */
-
-  #about .oversized-label {
-    width: 100%;
-    max-width: 100%;
-
-    min-height: 62px;
-
-    margin-bottom: 20px;
-
-    overflow: hidden;
-  }
-
-  #about .oversized-label::before {
-    left: -3px;
-    bottom: -8px;
-
-    max-width: 100%;
-
-    font-size: clamp(3.6rem, 18vw, 5.2rem);
-    line-height: 0.9;
-
-    white-space: nowrap;
-  }
-
-  #about .oversized-label span {
-    font-size: 0.68rem;
-    letter-spacing: 0.17em;
-  }
-
-
-  /* ========================================
-  DESCRIPTION
-  ======================================== */
-
-  #about .about-description {
-    width: 100%;
-    max-width: 100%;
-
-    margin-top: 24px;
-
-    font-size: 1rem;
-    line-height: 1.7;
-
-    overflow-wrap: break-word;
-  }
-
-
-  /* ========================================
-  MAIN LAYOUT
-  ======================================== */
-
-  #about .about-grid {
-    width: 100%;
-    max-width: 100%;
-
-    margin-top: 38px;
-
-    display: grid;
-    grid-template-columns: 1fr;
-
-    gap: 48px;
+    gap: 52px;
 
     align-items: start;
   }
@@ -1164,16 +1044,21 @@ PASTE AT THE VERY END
 
 
   /* ========================================
-  FOCUS TAGS
+  FOCUS AREAS — 2 COLUMNS × 3 ROWS
   ======================================== */
 
   #about .about-focus ul {
     width: 100%;
 
+    margin: 0;
+    padding: 0;
+
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 10px;
+
+    list-style: none;
   }
 
   #about .about-focus li {
@@ -1181,7 +1066,7 @@ PASTE AT THE VERY END
     min-width: 0;
     min-height: 64px;
 
-    padding: 14px 10px;
+    padding: 12px 8px;
 
     display: flex;
     align-items: center;
@@ -1190,9 +1075,11 @@ PASTE AT THE VERY END
     border: 1px solid rgba(45, 123, 97, 0.55);
     border-radius: 0;
 
-    font-size: 0.78rem;
-    line-height: 1.2;
+    background: transparent;
+    color: #12382b;
 
+    font-size: 0.76rem;
+    line-height: 1.25;
     text-align: center;
 
     overflow-wrap: anywhere;
@@ -1200,15 +1087,24 @@ PASTE AT THE VERY END
     transform: none;
   }
 
+  #about .about-focus li::before {
+    display: none;
+  }
+
   #about .about-focus li:hover {
-    padding-left: 10px;
+    padding-left: 8px;
+
+    background: #2d7b61;
+    border-color: #2d7b61;
+
+    color: #f6fbf8;
 
     transform: none;
   }
 
 
   /* ========================================
-  STATS GRID
+  STATS LIST
   ======================================== */
 
   #about .about-stats-grid {
@@ -1216,59 +1112,119 @@ PASTE AT THE VERY END
     max-width: 100%;
 
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
 
-    column-gap: 16px;
-    row-gap: 28px;
+    gap: 0;
   }
 
 
   /* ========================================
-  STAT
+  STAT ROW
+  LEFT: NUMBER + TITLE
+  RIGHT: DESCRIPTION
   ======================================== */
 
   #about .about-stat {
+    position: relative;
+
     width: 100%;
     min-width: 0;
     min-height: 0;
 
-    padding-bottom: 20px;
+    padding: 24px 0;
+
+    display: grid;
+    grid-template-columns: minmax(92px, 0.72fr) minmax(0, 1.28fr);
+    grid-template-areas:
+      "number description"
+      "title description";
+
+    column-gap: 22px;
+    row-gap: 8px;
+
+    align-items: start;
+
+    border-bottom: 1px solid rgba(18, 56, 43, 0.16);
   }
 
-  #about .about-stat span {
-    font-size: clamp(2.7rem, 14vw, 4rem);
-    line-height: 0.9;
+  #about .about-stat:first-child {
+    border-top: 1px solid rgba(18, 56, 43, 0.16);
   }
 
-  #about .about-stat p {
-    margin-top: 11px;
 
-    font-size: 0.72rem;
-    line-height: 1.25;
+  /* NUMBER */
 
-    letter-spacing: 0.1em;
-  }
+  #about .about-stat > span {
+    grid-area: number;
 
-  #about .about-stat small {
-    width: 100%;
-    max-width: 100%;
+    margin: 0;
 
-    margin-top: 10px;
+    font-size: clamp(2.8rem, 14vw, 4.1rem);
+    line-height: 0.86;
+    letter-spacing: -0.065em;
 
-    font-size: 0.8rem;
-    line-height: 1.5;
+    color: #2d7b61;
 
-    overflow-wrap: anywhere;
-  }
-
-  #about .about-stat:hover span {
     transform: none;
   }
 
 
+  /* TITLE */
+
+  #about .about-stat > p {
+    grid-area: title;
+
+    width: 100%;
+
+    margin: 0;
+
+    font-size: 0.68rem;
+    line-height: 1.3;
+
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+
+    color: #12382b;
+  }
+
+
+  /* DESCRIPTION */
+
+  #about .about-stat > small {
+    grid-area: description;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 1px 0 0;
+
+    align-self: center;
+
+    font-size: 0.82rem;
+    line-height: 1.55;
+
+    color: #4d625a;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* REMOVE DESKTOP HOVER MOVEMENT */
+
+  #about .about-stat:hover > span {
+    transform: none;
+
+    color: #2d7b61;
+  }
+
+  #about .about-stat::before {
+    display: none;
+  }
+
+
   /* ========================================
-  REMOVE OLD MAP STYLES
-  MAP IS NOW IN GALLERY
+  MAP REMOVED FROM ABOUT
   ======================================== */
 
   #about .about-map {
@@ -1279,6 +1235,7 @@ PASTE AT THE VERY END
 
 /* ==========================================
 VERY SMALL PHONES
+STILL KEEP 2 FOCUS COLUMNS
 ========================================== */
 
 @media (max-width: 390px) {
@@ -1289,147 +1246,52 @@ VERY SMALL PHONES
   }
 
   #about .about-header h2 {
-    font-size: clamp(2.4rem, 12vw, 3.5rem);
+    font-size: clamp(2.35rem, 12vw, 3.4rem);
   }
+
+
+  /* KEEP 2 × 3 FOCUS GRID */
 
   #about .about-focus ul {
-    grid-template-columns: 1fr;
-  }
-
-  #about .about-focus li {
-    min-height: 58px;
-
-    font-size: 0.82rem;
-  }
-
-  #about .about-stats-grid {
-    grid-template-columns: 1fr;
-
-    gap: 24px;
-  }
-
-  #about .about-stat {
-    padding-bottom: 18px;
-  }
-
-  #about .about-stat small {
-    font-size: 0.84rem;
-  }
-}
-
-
-  /* ========================================
-  STATS GRID
-  ======================================== */
-
-  #about .about-stats-grid {
-    width: 100%;
-    max-width: 100%;
-
-    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
-    column-gap: 16px;
-    row-gap: 28px;
-  }
-
-
-  /* ========================================
-  STAT
-  ======================================== */
-
-  #about .about-stat {
-    width: 100%;
-    min-width: 0;
-    min-height: 0;
-
-    padding-bottom: 20px;
-  }
-
-  #about .about-stat span {
-    font-size: clamp(2.7rem, 14vw, 4rem);
-    line-height: 0.9;
-  }
-
-  #about .about-stat p {
-    margin-top: 11px;
-
-    font-size: 0.72rem;
-    line-height: 1.25;
-
-    letter-spacing: 0.1em;
-  }
-
-  #about .about-stat small {
-    width: 100%;
-    max-width: 100%;
-
-    margin-top: 10px;
-
-    font-size: 0.8rem;
-    line-height: 1.5;
-
-    overflow-wrap: anywhere;
-  }
-
-  #about .about-stat:hover span {
-    transform: none;
-  }
-
-
-  /* ========================================
-  REMOVE OLD MAP STYLES
-  MAP IS NOW IN GALLERY
-  ======================================== */
-
-  #about .about-map {
-    display: none;
-  }
-}
-
-
-/* ==========================================
-VERY SMALL PHONES
-========================================== */
-
-@media (max-width: 390px) {
-
-  #about {
-    padding-right: 12px;
-    padding-left: 12px;
-  }
-
-  #about .about-header h2 {
-    font-size: clamp(2.4rem, 12vw, 3.5rem);
-  }
-
-  #about .about-focus ul {
-    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   #about .about-focus li {
     min-height: 58px;
 
-    font-size: 0.82rem;
+    padding: 10px 6px;
+
+    font-size: 0.68rem;
   }
 
-  #about .about-stats-grid {
-    grid-template-columns: 1fr;
 
-    gap: 24px;
-  }
+  /* COMPACT STAT ROW */
 
   #about .about-stat {
-    padding-bottom: 18px;
+    grid-template-columns: minmax(80px, 0.68fr) minmax(0, 1.32fr);
+
+    column-gap: 16px;
+
+    padding: 21px 0;
   }
 
-  #about .about-stat small {
-    font-size: 0.84rem;
+  #about .about-stat > span {
+    font-size: clamp(2.5rem, 13vw, 3.5rem);
+  }
+
+  #about .about-stat > p {
+    font-size: 0.61rem;
+
+    letter-spacing: 0.09em;
+  }
+
+  #about .about-stat > small {
+    font-size: 0.77rem;
+    line-height: 1.5;
   }
 }
-
-
-
 
 
 
