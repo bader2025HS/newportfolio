@@ -296,6 +296,307 @@ section {
 
 
 
+
+/* ==========================================
+HOME / INTRODUCTION — FINAL PHONE OVERRIDE
+PASTE AT THE VERY END OF THE CSS
+========================================== */
+
+@media (max-width: 650px) {
+
+  /* ========================================
+  GLOBAL PHONE SAFETY
+  ======================================== */
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: hidden;
+  }
+
+  body {
+    min-height: 100svh;
+  }
+
+
+  /* ========================================
+  HEADER
+  ======================================== */
+
+  .header {
+    position: fixed;
+
+    top: 10px;
+    right: 10px;
+    left: 10px;
+
+    width: auto;
+    max-width: calc(100vw - 20px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 8px;
+
+    pointer-events: none;
+  }
+
+
+  /* LOGO */
+
+  .logo {
+    width: fit-content;
+    max-width: 100%;
+
+    padding: 11px 14px;
+
+    border-radius: 12px;
+
+    font-size: 0.65rem;
+    line-height: 1;
+
+    letter-spacing: 0.11em;
+
+    pointer-events: auto;
+  }
+
+
+  /* NAVBAR */
+
+  .navbar {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    border-radius: 12px;
+
+    scrollbar-width: none;
+
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+
+    pointer-events: auto;
+  }
+
+  .navbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-link {
+    flex: 0 0 auto;
+
+    padding: 12px 13px;
+
+    font-size: 0.62rem;
+    line-height: 1;
+
+    letter-spacing: 0.11em;
+
+    white-space: nowrap;
+  }
+
+  .slider {
+    display: none;
+  }
+
+
+  /* ========================================
+  SECTIONS
+  ======================================== */
+
+  section {
+    width: 100%;
+    max-width: 100%;
+
+    min-height: auto;
+
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+
+  /* ========================================
+  HOME
+  ======================================== */
+
+  #home {
+    min-height: 100svh;
+
+    padding-top: 165px;
+    padding-bottom: 70px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+  }
+
+  #home .section-inner {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* ========================================
+  HERO
+  ======================================== */
+
+  .hero {
+    width: 100%;
+    max-width: 100%;
+
+    min-height: auto;
+
+    padding-top: 0;
+
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* ========================================
+  BASILE / SULIMAN ON TWO LINES
+  ======================================== */
+
+  .hero-title {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 0 30px;
+
+    font-size: clamp(3.8rem, 18vw, 5.7rem);
+    line-height: 0.84;
+    letter-spacing: -0.075em;
+
+    white-space: normal;
+
+    overflow-wrap: normal;
+  }
+
+  .hero-title span {
+    display: block;
+
+    width: fit-content;
+    max-width: 100%;
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  #first-name {
+    margin-left: 0;
+  }
+
+  #last-name {
+    margin-left: 0;
+  }
+
+  .hero-title span.changing {
+    opacity: 0;
+
+    transform: translateY(8px);
+  }
+
+
+  /* ========================================
+  DESCRIPTION
+  ======================================== */
+
+  .hero-description {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+
+    font-size: 0.98rem;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    overflow-wrap: break-word;
+  }
+
+  .hero-description strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
+}
+
+
+/* ==========================================
+VERY SMALL PHONES
+========================================== */
+
+@media (max-width: 390px) {
+
+  .header {
+    right: 8px;
+    left: 8px;
+
+    max-width: calc(100vw - 16px);
+  }
+
+  #home {
+    padding-top: 155px;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .hero-title {
+    margin-bottom: 26px;
+
+    font-size: clamp(3.3rem, 17vw, 4.7rem);
+  }
+
+  .hero-description {
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  .nav-link {
+    padding: 11px 12px;
+
+    font-size: 0.58rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
 /* ==========================================
 ABOUT
 ========================================== */
