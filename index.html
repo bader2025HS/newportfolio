@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfolio</title>
+  <title>Portfollllio</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -7327,99 +7327,61 @@ HEADER — ADAPTIVE COLOURS
 }
 
 
+
+
 /* ==========================================
-HEADER THEMES — STRONGER CONTRAST
+DARK SECTION → LIGHT GREEN HEADER
+HOME + WORK
 ========================================== */
 
-/* HOME — dark green section → light header */
-.header.theme-home {
-  --header-bg: #f6fbf8;
+.header.theme-home,
+.header.theme-work {
+  --header-bg: #dcefe7;
   --header-text: #12382b;
   --header-slider: #8ed4bf;
 }
 
 
-/* ABOUT — light section → dark green header */
-.header.theme-about {
-  --header-bg: #12382b;
-  --header-text: #f6fbf8;
-  --header-slider: #2d7b61;
-}
+/* ==========================================
+LIGHT SECTION → DARK GREEN HEADER
+ABOUT + EXPERIENCE + EDUCATION + SKILLS
+ACTIVITIES + GALLERY + CONTACT
+========================================== */
 
-
-/* EXPERIENCE — pale green section → deep teal */
-.header.theme-experience {
-  --header-bg: #174f3d;
-  --header-text: #f6fbf8;
-  --header-slider: #3f8f72;
-}
-
-
-/* EDUCATION — very light section → saturated green */
-.header.theme-education {
-  --header-bg: #2d7b61;
-  --header-text: #ffffff;
-  --header-slider: #12382b;
-}
-
-
-/* SKILLS — light green section → near-black pine */
-.header.theme-skills {
-  --header-bg: #102f27;
-  --header-text: #f2f7f4;
-  --header-slider: #2d7b61;
-}
-
-
-/* ACTIVITIES — light section → strong green */
-.header.theme-activities {
-  --header-bg: #1f5644;
-  --header-text: #f6fbf8;
-  --header-slider: #3d8a6e;
-}
-
-
-/* WORK — dark green section → warm white */
-.header.theme-work {
-  --header-bg: #f6fbf8;
-  --header-text: #1f5644;
-  --header-slider: #b8ead8;
-}
-
-
-/* GALLERY — neutral/light section → charcoal green */
-.header.theme-gallery {
-  --header-bg: #173b30;
-  --header-text: #f4f6f3;
-  --header-slider: #527d6d;
-}
-
-
-/* CONTACT — muted green section → darkest green */
+.header.theme-about,
+.header.theme-experience,
+.header.theme-education,
+.header.theme-skills,
+.header.theme-activities,
+.header.theme-gallery,
 .header.theme-contact {
-  --header-bg: #0f3329;
-  --header-text: #f6fbf8;
+  --header-bg: #12382b;
+  --header-text: #dcefe7;
   --header-slider: #2d7b61;
 }
 
-    .logo,
-.navbar {
-  border: 1px solid rgba(255, 255, 255, 0.12);
 
+/* ==========================================
+SMOOTH COLOUR CHANGE
+========================================== */
+
+.logo,
+.navbar {
   transition:
     background 0.4s ease,
-    color 0.4s ease,
-    border-color 0.4s ease;
+    color 0.4s ease;
 }
 
-.header.theme-home .logo,
-.header.theme-home .navbar,
-.header.theme-work .logo,
-.header.theme-work .navbar {
-  border-color: rgba(18, 56, 43, 0.14);
+.nav-link {
+  transition: color 0.4s ease;
 }
-    
 
+.slider {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.4s ease;
+}
 
 
 
