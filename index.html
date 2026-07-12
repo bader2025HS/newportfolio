@@ -6009,19 +6009,12 @@ FULL-WIDTH MAP
 
 .gallery-map {
   position: relative;
-
-  width: 100vw;
-
-  margin-left: calc(50% - 50vw);
-
   overflow: hidden;
-
   border-top: 1px solid rgba(28, 65, 53, 0.14);
   border-bottom: 1px solid rgba(28, 65, 53, 0.14);
 }
 
 #visitedMap {
-  width: 100vw;
 
   height: min(760px, 76vh);
   min-height: 540px;
@@ -6655,7 +6648,87 @@ TOUCH DEVICES
 }
 
 
+/* ==========================================
+MAP
+========================================== */
 
+.gallery-map {
+  width: min(1450px, 84vw);
+
+  margin: 65px auto 0;
+
+  overflow: hidden;
+}
+
+#visitedMap {
+  width: 100%;
+
+  height: min(720px, 72vh);
+  min-height: 520px;
+
+  border: 0;
+}
+
+
+/* ==========================================
+LEAFLET
+========================================== */
+
+#visitedMap,
+#visitedMap .leaflet-container {
+  border-radius: 0;
+}
+
+#visitedMap .leaflet-control-zoom {
+  border: 0;
+  box-shadow: none;
+}
+
+#visitedMap .leaflet-control-zoom a {
+  color: #173b30;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(28, 65, 53, 0.16);
+}
+
+
+/* ==========================================
+TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+  .gallery-map {
+    width: calc(100% - 48px);
+
+    margin-top: 50px;
+  }
+
+  #visitedMap {
+    height: 580px;
+    min-height: 0;
+  }
+}
+
+
+/* ==========================================
+MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+  .gallery-map {
+    width: calc(100% - 24px);
+
+    margin-top: 40px;
+  }
+
+  #visitedMap {
+    height: 65vh;
+    min-height: 420px;
+  }
+}
 
 
 
