@@ -917,6 +917,283 @@ MOBILE
 
 
 
+/* ==========================================
+ABOUT — FINAL PHONE OVERRIDE
+PASTE AT THE VERY END
+========================================== */
+
+@media (max-width: 650px) {
+
+  #about {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 95px 16px 75px;
+
+    overflow: hidden;
+  }
+
+  #about .about-container {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 auto;
+  }
+
+
+  /* ========================================
+  HEADER
+  ======================================== */
+
+  #about .about-header {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #about .about-header h2 {
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 14px;
+
+    font-size: clamp(2.65rem, 13vw, 4rem);
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+
+    overflow-wrap: break-word;
+  }
+
+
+  /* ========================================
+  OVERSIZED LABEL
+  ======================================== */
+
+  #about .oversized-label {
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 62px;
+
+    margin-bottom: 20px;
+
+    overflow: hidden;
+  }
+
+  #about .oversized-label::before {
+    left: -3px;
+    bottom: -8px;
+
+    max-width: 100%;
+
+    font-size: clamp(3.6rem, 18vw, 5.2rem);
+    line-height: 0.9;
+
+    white-space: nowrap;
+  }
+
+  #about .oversized-label span {
+    font-size: 0.68rem;
+    letter-spacing: 0.17em;
+  }
+
+
+  /* ========================================
+  DESCRIPTION
+  ======================================== */
+
+  #about .about-description {
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 24px;
+
+    font-size: 1rem;
+    line-height: 1.7;
+
+    overflow-wrap: break-word;
+  }
+
+
+  /* ========================================
+  MAIN LAYOUT
+  ======================================== */
+
+  #about .about-grid {
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 38px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 48px;
+
+    align-items: start;
+  }
+
+  #about .about-focus,
+  #about .about-stats {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+
+  /* ========================================
+  FOCUS TAGS
+  ======================================== */
+
+  #about .about-focus ul {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  #about .about-focus li {
+    width: 100%;
+    min-width: 0;
+    min-height: 64px;
+
+    padding: 14px 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(45, 123, 97, 0.55);
+    border-radius: 0;
+
+    font-size: 0.78rem;
+    line-height: 1.2;
+
+    text-align: center;
+
+    overflow-wrap: anywhere;
+
+    transform: none;
+  }
+
+  #about .about-focus li:hover {
+    padding-left: 10px;
+
+    transform: none;
+  }
+
+
+  /* ========================================
+  STATS GRID
+  ======================================== */
+
+  #about .about-stats-grid {
+    width: 100%;
+    max-width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 16px;
+    row-gap: 28px;
+  }
+
+
+  /* ========================================
+  STAT
+  ======================================== */
+
+  #about .about-stat {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+
+    padding-bottom: 20px;
+  }
+
+  #about .about-stat span {
+    font-size: clamp(2.7rem, 14vw, 4rem);
+    line-height: 0.9;
+  }
+
+  #about .about-stat p {
+    margin-top: 11px;
+
+    font-size: 0.72rem;
+    line-height: 1.25;
+
+    letter-spacing: 0.1em;
+  }
+
+  #about .about-stat small {
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 10px;
+
+    font-size: 0.8rem;
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+  }
+
+  #about .about-stat:hover span {
+    transform: none;
+  }
+
+
+  /* ========================================
+  REMOVE OLD MAP STYLES
+  MAP IS NOW IN GALLERY
+  ======================================== */
+
+  #about .about-map {
+    display: none;
+  }
+}
+
+
+/* ==========================================
+VERY SMALL PHONES
+========================================== */
+
+@media (max-width: 390px) {
+
+  #about {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  #about .about-header h2 {
+    font-size: clamp(2.4rem, 12vw, 3.5rem);
+  }
+
+  #about .about-focus ul {
+    grid-template-columns: 1fr;
+  }
+
+  #about .about-focus li {
+    min-height: 58px;
+
+    font-size: 0.82rem;
+  }
+
+  #about .about-stats-grid {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+
+  #about .about-stat {
+    padding-bottom: 18px;
+  }
+
+  #about .about-stat small {
+    font-size: 0.84rem;
+  }
+}
+
 
 
 
