@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfoliooo</title>
+  <title>Portfolio</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -6709,7 +6709,92 @@ TOUCH DEVICES
 
 
 
+/* ==========================================
+   MOBILE — OVERSIZED SECTION WORDS FIX
+========================================== */
 
+@media (max-width: 768px) {
+
+  /* All oversized section labels */
+  #experience .oversized-label,
+  #education .oversized-label,
+  #skills .oversized-label,
+  #activities .oversized-label,
+  #gallery .oversized-label,
+  #contact .oversized-label {
+
+    width: 100%;
+    max-width: 100%;
+
+    font-size: clamp(2.7rem, 13vw, 4.5rem);
+    line-height: 0.9;
+
+    letter-spacing: -0.055em;
+
+    white-space: normal;
+
+    overflow-wrap: normal;
+    word-break: normal;
+
+    margin-left: 0;
+    margin-right: 0;
+
+    transform: none;
+  }
+
+
+  /* Prevent parent containers from creating overflow */
+  #experience,
+  #education,
+  #skills,
+  #activities,
+  #gallery,
+  #contact {
+
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+}
+
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media (max-width: 430px) {
+
+  #experience .oversized-label,
+  #education .oversized-label,
+  #skills .oversized-label,
+  #activities .oversized-label,
+  #gallery .oversized-label,
+  #contact .oversized-label {
+
+    font-size: clamp(2.5rem, 12.5vw, 3.8rem);
+    letter-spacing: -0.045em;
+  }
+
+}
+
+
+/* ==========================================
+   VERY SMALL PHONES
+========================================== */
+
+@media (max-width: 360px) {
+
+  #experience .oversized-label,
+  #education .oversized-label,
+  #skills .oversized-label,
+  #activities .oversized-label,
+  #gallery .oversized-label,
+  #contact .oversized-label {
+
+    font-size: 2.35rem;
+  }
+
+}
 
 
 
