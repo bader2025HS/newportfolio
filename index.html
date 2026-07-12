@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfolio</title>
+  <title>Portfolioopoo</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -6417,7 +6417,215 @@ TOUCH DEVICES
 
 
 
+/* ==========================================
+   MOBILE HAMBURGER MENU
+========================================== */
 
+/* Hidden on desktop */
+.menu-toggle {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+
+  /* Header only contains logo and menu button initially */
+  .header {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    pointer-events: none;
+  }
+
+
+  /* Logo stays top left */
+  .logo {
+    position: relative;
+    z-index: 10002;
+
+    pointer-events: auto;
+
+    padding: 12px 15px;
+    border-radius: 12px;
+
+    font-size: 0.66rem;
+  }
+
+
+  /* ==========================================
+     HAMBURGER BUTTON
+  ========================================== */
+
+  .menu-toggle {
+    position: relative;
+    z-index: 10002;
+
+    pointer-events: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 12px;
+
+    background: #dcefe7;
+    cursor: pointer;
+  }
+
+
+  .menu-toggle span {
+    display: block;
+
+    width: 21px;
+    height: 2px;
+
+    border-radius: 20px;
+
+    background: #12382b;
+
+    transform-origin: center;
+
+    transition:
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.2s ease;
+  }
+
+
+  /* Hamburger becomes an X */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+
+  /* ==========================================
+     DROPDOWN NAVIGATION
+  ========================================== */
+
+  .navbar {
+    position: absolute;
+    top: 58px;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 8px;
+
+    border-radius: 16px;
+
+    background: #dcefe7;
+
+    overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-12px) scale(0.98);
+    transform-origin: top;
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0.25s ease;
+  }
+
+
+  .navbar.open {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0) scale(1);
+
+    pointer-events: auto;
+  }
+
+
+  /* Disable desktop moving slider on phone */
+  .navbar .slider {
+    display: none;
+  }
+
+
+  .nav-link {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border-radius: 10px;
+
+    font-size: 0.69rem;
+    letter-spacing: 0.13em;
+
+    text-align: left;
+
+    transition:
+      background 0.2s ease,
+      padding-left 0.25s ease;
+  }
+
+
+  .nav-link:hover,
+  .nav-link:focus-visible {
+    background: #8ed4bf;
+    padding-left: 21px;
+  }
+
+
+  /* Keep intro below the closed/open header */
+  #home {
+    padding-top: 155px;
+  }
+
+}
+
+
+@media (max-width: 430px) {
+
+  .navbar {
+    top: 56px;
+  }
+
+  .menu-toggle {
+    width: 46px;
+    height: 46px;
+  }
+
+  #home {
+    padding-top: 150px;
+  }
+
+}
 
 
 
@@ -6441,23 +6649,40 @@ TOUCH DEVICES
 
 <body>
 
-  <header class="header">
-    <a href="#home" class="logo">Basile Suliman</a>
+<header class="header">
 
-    <nav class="navbar" id="navbar">
-      <span class="slider"></span>
+  <a href="#home" class="logo">Basile Suliman</a>
 
-      <a href="#home" class="nav-link active">Home</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#experience" class="nav-link">Experience</a>
-      <a href="#education" class="nav-link">Education</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#activities" class="nav-link">Activities</a>
-      <a href="#work" class="nav-link">Work</a>
-      <a href="#gallery" class="nav-link">Gallery</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </nav>
-  </header>
+  <button
+    class="menu-toggle"
+    type="button"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+    aria-controls="navbar"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+
+  <nav class="navbar" id="navbar">
+
+    <span class="slider"></span>
+
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#experience" class="nav-link">Experience</a>
+    <a href="#education" class="nav-link">Education</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#activities" class="nav-link">Activities</a>
+    <a href="#work" class="nav-link">Work</a>
+    <a href="#gallery" class="nav-link">Gallery</a>
+    <a href="#contact" class="nav-link">Contact</a>
+
+  </nav>
+
+</header>
 
   <main>
 <section id="home">
@@ -8088,6 +8313,70 @@ window.addEventListener("resize", () => {
   );
 
 });
+
+
+
+
+    <script>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mobileNavbar = document.querySelector(".navbar");
+  const mobileNavLinks = document.querySelectorAll(".navbar .nav-link");
+
+  if (menuToggle && mobileNavbar) {
+
+    function closeMobileMenu() {
+      menuToggle.classList.remove("active");
+      mobileNavbar.classList.remove("open");
+
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation menu");
+    }
+
+    menuToggle.addEventListener("click", () => {
+      const menuIsOpen = mobileNavbar.classList.toggle("open");
+
+      menuToggle.classList.toggle("active", menuIsOpen);
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        menuIsOpen ? "true" : "false"
+      );
+
+      menuToggle.setAttribute(
+        "aria-label",
+        menuIsOpen
+          ? "Close navigation menu"
+          : "Open navigation menu"
+      );
+    });
+
+
+    /* Close after clicking a menu item */
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+
+    /* Close when clicking outside */
+    document.addEventListener("click", (event) => {
+      const clickedInsideMenu = mobileNavbar.contains(event.target);
+      const clickedButton = menuToggle.contains(event.target);
+
+      if (!clickedInsideMenu && !clickedButton) {
+        closeMobileMenu();
+      }
+    });
+
+
+    /* Close if switching back to desktop */
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        closeMobileMenu();
+      }
+    });
+
+  }
+</script>
     
   </script>
 
