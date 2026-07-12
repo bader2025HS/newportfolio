@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfolio</title>
+  <title>Portfffolio</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2404,7 +2404,91 @@ EXPERIENCE — BALANCED PHONE SIZE
 
 
 
+/* ==========================================
+EXPERIENCE — PHONE TAP EFFECT
+NO JS / NO HOVER
+========================================== */
 
+@media (max-width: 650px) {
+
+  /* Remove hover effects on phone */
+  #experience .experience-item:hover {
+    padding: 28px 0 !important;
+
+    border-top-color: transparent !important;
+    border-bottom-color: rgba(18, 56, 43, 0.2) !important;
+  }
+
+  #experience .experience-item:hover::after {
+    opacity: 0 !important;
+  }
+
+  #experience .experience-item:hover .experience-logo {
+    background: var(--logo-bg) !important;
+    color: var(--accent) !important;
+
+    transform: none !important;
+  }
+
+  #experience .experience-item:hover .experience-title-row h3,
+  #experience .experience-item:hover .experience-year {
+    transform: none !important;
+  }
+
+  #experience .experience-item:hover .experience-tags small {
+    background: transparent !important;
+    color: var(--accent) !important;
+  }
+
+
+  /* ========================================
+     TAP / PRESS EFFECT
+  ======================================== */
+
+  #experience .experience-item:active {
+    background: var(--hover-bg) !important;
+
+    border-top-color: var(--accent) !important;
+    border-bottom-color: var(--accent) !important;
+
+    transform: scale(0.985) !important;
+  }
+
+
+  /* LOGO */
+
+  #experience .experience-item:active .experience-logo {
+    background: var(--accent) !important;
+    color: #ffffff !important;
+
+    transform: scale(1.08) !important;
+  }
+
+
+  /* TITLE */
+
+  #experience .experience-item:active .experience-title-row h3 {
+    color: var(--accent) !important;
+
+    transform: translateX(5px) !important;
+  }
+
+
+  /* TAGS */
+
+  #experience .experience-item:active .experience-tags small {
+    background: var(--accent) !important;
+    color: #ffffff !important;
+  }
+
+
+  /* YEAR */
+
+  #experience .experience-item:active .experience-year {
+    transform: translateX(3px) !important;
+  }
+
+}
 
 
 
