@@ -5423,6 +5423,51 @@ TOOLS
   text-transform: uppercase;
   color: #2d7b61;
 }
+
+
+
+
+    /* ==========================================
+GALLERY
+========================================== */
+
+#gallery {
+  padding: 140px 8vw;
+}
+
+.gallery-container {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+.gallery-header h2 {
+  margin-top: 18px;
+  max-width: 900px;
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: 0.95;
+}
+
+.gallery-description {
+  max-width: 720px;
+  margin-top: 30px;
+  color: #4b6158;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.gallery-map {
+  width: 100%;
+  margin-top: 65px;
+  overflow: hidden;
+}
+
+#visitedMap {
+  width: 100%;
+  height: min(720px, 75vh);
+  min-height: 520px;
+}
+
     
   </style>
 </head>
@@ -5521,10 +5566,6 @@ TOOLS
         </div>
       </div>
     </div>
-
-<div class="about-map">
-  <div id="visitedMap"></div>
-</div>
 
   </div>
 </section>
@@ -6023,12 +6064,53 @@ TOOLS
   </div>
 </section>
 
-    <section id="gallery">
-      <div class="section-inner">
-        <h2>Gallery</h2>
-      </div>
-    </section>
 
+
+
+
+
+
+
+
+
+
+
+
+<section id="gallery">
+  <div class="gallery-container">
+
+    <div class="gallery-header">
+      <div class="oversized-label" data-letter="GALLERY">
+        <span>Where I've been</span>
+      </div>
+
+      <h2>
+        Places visited,<br>
+        experiences collected.
+      </h2>
+
+      <p class="gallery-description">
+        A map of the countries I have visited, lived in, studied in and explored.
+      </p>
+    </div>
+
+    <div class="gallery-map">
+      <div id="visitedMap"></div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
