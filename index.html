@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfoliooo</title>
+  <title>Portfolio</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -7327,11 +7327,11 @@ HEADER — ADAPTIVE COLOURS
 }
 
 
-    /* ==========================================
-HEADER THEMES BY SECTION
+/* ==========================================
+HEADER THEMES — STRONGER CONTRAST
 ========================================== */
 
-/* HOME — dark green */
+/* HOME — dark green section → light header */
 .header.theme-home {
   --header-bg: #f6fbf8;
   --header-text: #12382b;
@@ -7339,47 +7339,47 @@ HEADER THEMES BY SECTION
 }
 
 
-/* ABOUT — pale green */
+/* ABOUT — light section → dark green header */
 .header.theme-about {
-  --header-bg: #dcefe7;
-  --header-text: #12382b;
-  --header-slider: #8ed4bf;
-}
-
-
-/* EXPERIENCE */
-.header.theme-experience {
-  --header-bg: #c7ded3;
-  --header-text: #12382b;
-  --header-slider: #8fb9a3;
-}
-
-
-/* EDUCATION — dark section */
-.header.theme-education {
-  --header-bg: #f6fbf8;
-  --header-text: #1d4738;
-  --header-slider: #8ed4bf;
-}
-
-
-/* SKILLS */
-.header.theme-skills {
-  --header-bg: #b8d9ca;
-  --header-text: #12382b;
+  --header-bg: #12382b;
+  --header-text: #f6fbf8;
   --header-slider: #2d7b61;
 }
 
 
-/* ACTIVITIES */
-.header.theme-activities {
-  --header-bg: #dcefe7;
-  --header-text: #12382b;
-  --header-slider: #8ed4bf;
+/* EXPERIENCE — pale green section → deep teal */
+.header.theme-experience {
+  --header-bg: #174f3d;
+  --header-text: #f6fbf8;
+  --header-slider: #3f8f72;
 }
 
 
-/* WORK — dark section */
+/* EDUCATION — very light section → saturated green */
+.header.theme-education {
+  --header-bg: #2d7b61;
+  --header-text: #ffffff;
+  --header-slider: #12382b;
+}
+
+
+/* SKILLS — light green section → near-black pine */
+.header.theme-skills {
+  --header-bg: #102f27;
+  --header-text: #f2f7f4;
+  --header-slider: #2d7b61;
+}
+
+
+/* ACTIVITIES — light section → strong green */
+.header.theme-activities {
+  --header-bg: #1f5644;
+  --header-text: #f6fbf8;
+  --header-slider: #3d8a6e;
+}
+
+
+/* WORK — dark green section → warm white */
 .header.theme-work {
   --header-bg: #f6fbf8;
   --header-text: #1f5644;
@@ -7387,23 +7387,37 @@ HEADER THEMES BY SECTION
 }
 
 
-/* GALLERY */
+/* GALLERY — neutral/light section → charcoal green */
 .header.theme-gallery {
-  --header-bg: #dce4df;
-  --header-text: #173b30;
-  --header-slider: #8ed4bf;
+  --header-bg: #173b30;
+  --header-text: #f4f6f3;
+  --header-slider: #527d6d;
 }
 
 
-/* CONTACT */
+/* CONTACT — muted green section → darkest green */
 .header.theme-contact {
-  --header-bg: #c5dfd4;
-  --header-text: #12382b;
+  --header-bg: #0f3329;
+  --header-text: #f6fbf8;
   --header-slider: #2d7b61;
 }
 
+    .logo,
+.navbar {
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
+  transition:
+    background 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
 
+.header.theme-home .logo,
+.header.theme-home .navbar,
+.header.theme-work .logo,
+.header.theme-work .navbar {
+  border-color: rgba(18, 56, 43, 0.14);
+}
     
 
 
