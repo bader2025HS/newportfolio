@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfooolio</title>
+  <title>Portfolio</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2322,48 +2322,35 @@ VERY SMALL PHONES
 
 
 
-
-
-
-
-
 /* ==========================================
-EXPERIENCE — OVERSIZED LABEL PHONE FIX
-MATCHES ABOUT
+EXPERIENCE — SMALLER OVERSIZED WORD ON PHONE
 ========================================== */
 
 @media (max-width: 650px) {
 
-  #experience .oversized-label {
-    width: 100% !important;
-    max-width: 100% !important;
-
-    min-height: 62px !important;
-
-    margin-bottom: 20px !important;
-
-    overflow: hidden !important;
-  }
-
   #experience .oversized-label::before {
-    left: -3px !important;
-    bottom: -8px !important;
+    left: -2px !important;
+    bottom: -6px !important;
 
     max-width: 100% !important;
 
-    font-size: clamp(3.6rem, 18vw, 5.2rem) !important;
+    font-size: clamp(2.8rem, 14vw, 4rem) !important;
     line-height: 0.9 !important;
+
+    letter-spacing: -0.06em !important;
 
     white-space: nowrap !important;
   }
 
-  #experience .oversized-label span {
-    font-size: 0.68rem !important;
-    letter-spacing: 0.17em !important;
+}
+
+    @media (max-width: 390px) {
+
+  #experience .oversized-label::before {
+    font-size: 12.5vw !important;
   }
 
 }
-
 
 
 
