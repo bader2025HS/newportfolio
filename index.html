@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfolio</title>
+  <title>Portfoliooo</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -6709,119 +6709,39 @@ TOUCH DEVICES
 
 
 /* ==========================================
-   MOBILE SECTION HEADERS
-   Question above oversized word
+   PHONE — ONLY MAKE OVERSIZED WORDS SMALLER
 ========================================== */
 
 @media (max-width: 768px) {
 
-  /* Keep header layout vertical */
-  #experience .experience-header,
-  #education .education-header,
-  #skills .skills-header,
-  #activities .activities-header,
-  #gallery .gallery-header,
-  #contact .contact-header {
-    width: 100% !important;
-    max-width: 100% !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-
-    gap: 0 !important;
-
-    overflow: visible !important;
-  }
-
-
-  /* Question / small heading stays above */
-  #experience .experience-header > :not(.oversized-label),
-  #education .education-header > :not(.oversized-label),
-  #skills .skills-header > :not(.oversized-label),
-  #activities .activities-header > :not(.oversized-label),
-  #gallery .gallery-header > :not(.oversized-label),
-  #contact .contact-header > :not(.oversized-label) {
-    width: 100% !important;
-
-    position: relative !important;
-
-    margin: 0 0 12px 0 !important;
-
-    transform: none !important;
-  }
-
-
-  /* Oversized word */
   #experience .oversized-label,
   #education .oversized-label,
   #skills .oversized-label,
   #activities .oversized-label,
   #gallery .oversized-label,
   #contact .oversized-label {
-    position: relative !important;
-
-    display: block !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-
-    margin: 0 !important;
-
-    font-size: clamp(2.5rem, 11.5vw, 4rem) !important;
-    line-height: 0.88 !important;
-    letter-spacing: -0.055em !important;
-
-    white-space: nowrap !important;
-
-    transform: none !important;
-    left: auto !important;
-    right: auto !important;
-
-    overflow: visible !important;
-  }
-
-
-  /* Reset pseudo-elements changed by previous override */
-  #experience .oversized-label::before,
-  #experience .oversized-label::after,
-  #education .oversized-label::before,
-  #education .oversized-label::after,
-  #skills .oversized-label::before,
-  #skills .oversized-label::after,
-  #activities .oversized-label::before,
-  #activities .oversized-label::after,
-  #gallery .oversized-label::before,
-  #gallery .oversized-label::after,
-  #contact .oversized-label::before,
-  #contact .oversized-label::after {
-    position: absolute;
+    font-size: clamp(2.6rem, 11vw, 4rem) !important;
+    line-height: 0.9 !important;
+    letter-spacing: -0.05em !important;
   }
 
 }
-
-
-/* ==========================================
-   LONG WORDS — FIT PHONE WIDTH
-========================================== */
 
 @media (max-width: 430px) {
 
   #experience .oversized-label,
   #education .oversized-label,
   #activities .oversized-label {
-    font-size: 10.5vw !important;
+    font-size: 10vw !important;
   }
-
 
   #skills .oversized-label,
   #gallery .oversized-label,
   #contact .oversized-label {
-    font-size: 12.5vw !important;
+    font-size: 12vw !important;
   }
 
 }
-
 
 
     
