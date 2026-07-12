@@ -3988,6 +3988,31 @@ EXPLORE PROJECT — FULL FILL HOVER
 
 
 /* ==========================================
+ACTIVITIES
+========================================== */
+
+#activities {
+  padding: 140px 8vw;
+  background: #e8f4ee;
+  color: #12382b;
+}
+
+.activities-container {
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+.activities-header h2 {
+  margin-top: 18px;
+  max-width: 950px;
+
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+
+/* ==========================================
 ACTIVITY CARDS — COMPACT 2 × 2
 ========================================== */
 
@@ -3996,23 +4021,15 @@ ACTIVITY CARDS — COMPACT 2 × 2
 
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-
   gap: 20px;
 }
 
-
-/* ==========================================
-CARD
-========================================== */
-
 .activity-card {
   min-height: 260px;
-
   padding: 28px;
 
   border-radius: 0;
-
-  border: 1px solid rgba(184, 234, 216, 0.22);
+  border: 1px solid rgba(18, 56, 43, 0.16);
 
   display: flex;
   flex-direction: column;
@@ -4020,48 +4037,47 @@ CARD
 
   overflow: hidden;
 
-  background: #1f5644;
-  color: #f6fbf8;
-
   transition:
     transform 0.35s ease,
+    background 0.35s ease,
     border-color 0.35s ease;
 }
 
 
-/* ==========================================
-RESET INDIVIDUAL CARD COLORS
-========================================== */
+/* DIFFERENT COLORS */
 
-.activity-tarjimly,
-.activity-events,
-.activity-medmun,
-.activity-spaw {
+.activity-tarjimly {
   background: #1f5644;
-
   color: #f6fbf8;
 }
 
+.activity-events {
+  background: #f6fbf8;
+  color: #12382b;
+}
 
-/* ==========================================
-TAG
-========================================== */
+.activity-medmun {
+  background: #dcefe7;
+  color: #12382b;
+}
 
-.activity-card span,
-.activity-tarjimly span,
-.activity-events span,
-.activity-medmun span,
-.activity-spaw span {
+.activity-spaw {
+  background: #cfe7dc;
+  color: #12382b;
+}
+
+
+/* TAG */
+
+.activity-card span {
   width: fit-content;
 
   padding: 10px 15px;
 
-  border: 1px solid currentColor;
   border-radius: 0;
+  border: 1px solid currentColor;
 
   background: transparent;
-
-  color: #b8ead8;
 
   font-size: 0.68rem;
   font-weight: 800;
@@ -4070,70 +4086,248 @@ TAG
   letter-spacing: 0.12em;
   text-transform: uppercase;
 
+  color: #2d7b61;
+
   transition:
     background 0.3s ease,
     color 0.3s ease,
     transform 0.3s ease;
 }
 
-
-/* ==========================================
-TITLE
-========================================== */
-
-.activity-card h3 {
-  margin: 0;
-
-  font-size: clamp(2.3rem, 3.4vw, 4.2rem);
-  line-height: 0.9;
-
-  color: #f6fbf8;
+.activity-tarjimly span {
+  color: #b8ead8;
 }
 
+.activity-card h3 {
+  font-size: clamp(2.3rem, 3.4vw, 4.2rem);
+  line-height: 0.9;
+}
 
-/* ==========================================
-DESCRIPTION
-========================================== */
-
-.activity-card p,
-.activity-tarjimly p,
-.activity-events p,
-.activity-medmun p,
-.activity-spaw p {
+.activity-card p {
   max-width: 560px;
-
-  margin: 0;
 
   font-size: 0.96rem;
   line-height: 1.55;
+}
 
+.activity-tarjimly p {
   color: rgba(246, 251, 248, 0.78);
 }
 
 
-/* ==========================================
-HOVER
-========================================== */
+/* HOVER EFFECT */
 
 .activity-card:hover {
   transform: translateY(-6px);
-
-  border-color: #b8ead8;
+  border-color: #2d7b61;
 }
 
-.activity-card:hover span,
-.activity-tarjimly:hover span,
-.activity-events:hover span,
-.activity-medmun:hover span,
-.activity-spaw:hover span {
+.activity-card:hover span {
   transform: translateX(8px);
 
+  background: #2d7b61;
+  color: #f6fbf8;
+}
+
+.activity-tarjimly:hover span {
   background: #f6fbf8;
   color: #12382b;
 }
 
 
+/* ==========================================
+MOVING FILMSTRIP
+========================================== */
 
+.activities-filmstrip {
+  position: relative;
+
+  width: 100vw;
+
+  margin-top: 95px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  padding: 42px 0;
+
+  overflow: hidden;
+
+  background: #050505;
+}
+
+.activities-filmstrip::before,
+.activities-filmstrip::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+
+  width: 100%;
+  height: 26px;
+
+  z-index: 3;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #e8f4ee 0 18px,
+      transparent 18px 38px
+    );
+}
+
+.activities-filmstrip::before {
+  top: 0;
+}
+
+.activities-filmstrip::after {
+  bottom: 0;
+}
+
+.filmstrip-track {
+  display: flex;
+
+  gap: 28px;
+
+  width: max-content;
+
+  animation: filmScroll 30s linear infinite;
+}
+
+.activities-filmstrip:hover .filmstrip-track {
+  animation-play-state: paused;
+}
+
+.film-frame {
+  width: 420px;
+  height: 270px;
+
+  border: 12px solid #050505;
+
+  background: #f6fbf8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
+
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: #2d7b61;
+
+  overflow: hidden;
+}
+
+.film-frame img,
+img.film-frame {
+  width: 420px;
+  height: 270px;
+
+  object-fit: cover;
+
+  border: 12px solid #050505;
+
+  background: #f6fbf8;
+}
+
+@keyframes filmScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ==========================================
+TABLET
+========================================== */
+
+@media (max-width: 950px) {
+  .activity-card {
+    min-height: 320px;
+  }
+
+  .film-frame,
+  .film-frame img,
+  img.film-frame {
+    width: 340px;
+    height: 230px;
+  }
+}
+
+
+/* ==========================================
+MOBILE
+========================================== */
+
+@media (max-width: 750px) {
+  #activities {
+    padding: 120px 20px 80px;
+  }
+
+  .activity-grid {
+    margin-top: 65px;
+
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .activity-card {
+    min-height: 270px;
+
+    padding: 28px;
+  }
+
+  .activities-filmstrip {
+    margin-top: 70px;
+
+    padding: 32px 0;
+  }
+
+  .filmstrip-track {
+    gap: 18px;
+
+    animation-duration: 24s;
+  }
+
+  .film-frame,
+  .film-frame img,
+  img.film-frame {
+    width: 280px;
+    height: 190px;
+
+    border-width: 9px;
+  }
+
+  .activities-filmstrip::before,
+  .activities-filmstrip::after {
+    height: 22px;
+
+    background:
+      repeating-linear-gradient(
+        90deg,
+        #e8f4ee 0 15px,
+        transparent 15px 32px
+      );
+  }
+}
+
+@media (max-width: 750px) {
+  .activity-card {
+    min-height: 230px;
+
+    padding: 24px;
+  }
+}
 
 
 
