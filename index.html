@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfolio</title>
+  <title>Portfoliooo</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -916,7 +916,18 @@ MOBILE
 
 
 
-/* ==========================================
+
+
+
+
+
+
+
+
+
+
+
+  /* ==========================================
 ABOUT — FINAL PHONE OVERRIDE
 PASTE AT THE END OF ALL ABOUT CSS
 ========================================== */
@@ -1064,27 +1075,36 @@ PASTE AT THE END OF ALL ABOUT CSS
   #about .about-focus li {
     width: 100%;
     min-width: 0;
-    min-height: 64px;
+    min-height: 72px;
 
-    padding: 12px 8px;
+    padding: 14px 10px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(45, 123, 97, 0.55);
+    border: 1px solid #174f3d;
     border-radius: 0;
 
-    background: transparent;
-    color: #12382b;
+    background: #1f5644;
+    color: #f6fbf8;
 
-    font-size: 0.76rem;
-    line-height: 1.25;
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.2;
+
     text-align: center;
 
     overflow-wrap: anywhere;
 
     transform: none;
+
+    transition:
+      background 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease;
   }
 
   #about .about-focus li::before {
@@ -1092,12 +1112,12 @@ PASTE AT THE END OF ALL ABOUT CSS
   }
 
   #about .about-focus li:hover {
-    padding-left: 8px;
+    padding-left: 10px;
 
-    background: #2d7b61;
-    border-color: #2d7b61;
+    background: #12382b;
+    border-color: #12382b;
 
-    color: #f6fbf8;
+    color: #ffffff;
 
     transform: none;
   }
@@ -1135,7 +1155,7 @@ PASTE AT THE END OF ALL ABOUT CSS
     padding: 24px 0;
 
     display: grid;
-    grid-template-columns: minmax(92px, 0.72fr) minmax(0, 1.28fr);
+    grid-template-columns: minmax(105px, 0.72fr) minmax(0, 1.28fr);
     grid-template-areas:
       "number description"
       "title description";
@@ -1143,7 +1163,7 @@ PASTE AT THE END OF ALL ABOUT CSS
     column-gap: 22px;
     row-gap: 8px;
 
-    align-items: start;
+    align-items: center;
 
     border-bottom: 1px solid rgba(18, 56, 43, 0.16);
   }
@@ -1158,6 +1178,8 @@ PASTE AT THE END OF ALL ABOUT CSS
   #about .about-stat > span {
     grid-area: number;
 
+    width: 100%;
+
     margin: 0;
 
     font-size: clamp(2.8rem, 14vw, 4.1rem);
@@ -1165,6 +1187,8 @@ PASTE AT THE END OF ALL ABOUT CSS
     letter-spacing: -0.065em;
 
     color: #2d7b61;
+
+    text-align: center;
 
     transform: none;
   }
@@ -1180,10 +1204,12 @@ PASTE AT THE END OF ALL ABOUT CSS
     margin: 0;
 
     font-size: 0.68rem;
+    font-weight: 800;
     line-height: 1.3;
 
     letter-spacing: 0.11em;
     text-transform: uppercase;
+    text-align: center;
 
     color: #12382b;
   }
@@ -1197,7 +1223,7 @@ PASTE AT THE END OF ALL ABOUT CSS
     width: 100%;
     max-width: 100%;
 
-    margin: 1px 0 0;
+    margin: 0;
 
     align-self: center;
 
@@ -1250,7 +1276,7 @@ STILL KEEP 2 FOCUS COLUMNS
   }
 
 
-  /* KEEP 2 × 3 FOCUS GRID */
+  /* FOCUS GRID */
 
   #about .about-focus ul {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1259,18 +1285,18 @@ STILL KEEP 2 FOCUS COLUMNS
   }
 
   #about .about-focus li {
-    min-height: 58px;
+    min-height: 64px;
 
-    padding: 10px 6px;
+    padding: 11px 7px;
 
-    font-size: 0.68rem;
+    font-size: 0.8rem;
   }
 
 
   /* COMPACT STAT ROW */
 
   #about .about-stat {
-    grid-template-columns: minmax(80px, 0.68fr) minmax(0, 1.32fr);
+    grid-template-columns: minmax(88px, 0.68fr) minmax(0, 1.32fr);
 
     column-gap: 16px;
 
