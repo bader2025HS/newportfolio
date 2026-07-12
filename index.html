@@ -285,7 +285,149 @@ section {
 
 
 
+/* ==========================================
+   INTRO / HERO — PHONE FIX
+   Paste at the end of your CSS
+========================================== */
 
+@media (max-width: 768px) {
+
+  /* Header stays compact */
+  .header {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    gap: 8px;
+  }
+
+  .logo {
+    padding: 11px 15px;
+    border-radius: 12px;
+    font-size: 0.66rem;
+  }
+
+  .navbar {
+    border-radius: 12px;
+    width: 100%;
+  }
+
+  .slider {
+    border-radius: 12px;
+  }
+
+  .nav-link {
+    padding: 12px 15px;
+    font-size: 0.65rem;
+    letter-spacing: 0.11em;
+  }
+
+  /* Home section */
+  #home {
+    min-height: auto;
+    padding:
+      145px
+      18px
+      50px;
+  }
+
+  .hero {
+    display: flex;
+    align-items: flex-start;
+    min-height: auto;
+    padding-top: 0;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* Allow title to fit the screen */
+  .hero-title,
+  .hero h1 {
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 25px;
+
+    font-size: clamp(3.2rem, 15vw, 5rem);
+    line-height: 0.9;
+    letter-spacing: -0.065em;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-title span {
+    display: inline;
+  }
+
+  .hero-description {
+    width: 100%;
+    max-width: none;
+
+    font-size: 1.08rem;
+    line-height: 1.65;
+
+    color: rgba(255, 255, 255, 0.86);
+  }
+}
+
+
+/* Very small phones */
+@media (max-width: 430px) {
+
+  #home {
+    padding:
+      140px
+      16px
+      42px;
+  }
+
+  .hero-title,
+  .hero h1 {
+    font-size: clamp(2.85rem, 14vw, 4rem);
+    line-height: 0.92;
+    margin-bottom: 22px;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+
+/* Extremely narrow screens */
+@media (max-width: 360px) {
+
+  #home {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .hero-title,
+  .hero h1 {
+    font-size: 2.65rem;
+    letter-spacing: -0.055em;
+  }
+
+  .hero-description {
+    font-size: 0.96rem;
+  }
+
+  .nav-link {
+    padding: 11px 13px;
+    font-size: 0.61rem;
+  }
+}
+
+
+
+
+
+
+    
 
 
 
