@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfolio</title>
+  <title>Portfoliooo</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -297,15 +297,15 @@ section {
 
 
 
-/* ==========================================
-HOME / INTRODUCTION — FINAL PHONE OVERRIDE
-PASTE AT THE VERY END OF THE CSS
+    /* ==========================================
+HEADER + INTRODUCTION
+FINAL PHONE OVERRIDE
 ========================================== */
 
 @media (max-width: 650px) {
 
   /* ========================================
-  GLOBAL PHONE SAFETY
+  GLOBAL
   ======================================== */
 
   html,
@@ -317,12 +317,12 @@ PASTE AT THE VERY END OF THE CSS
   }
 
   body {
-    min-height: 100svh;
+    min-height: 100%;
   }
 
 
   /* ========================================
-  HEADER
+  FIXED HEADER
   ======================================== */
 
   .header {
@@ -331,6 +331,8 @@ PASTE AT THE VERY END OF THE CSS
     top: 10px;
     right: 10px;
     left: 10px;
+
+    z-index: 9999;
 
     width: auto;
     max-width: calc(100vw - 20px);
@@ -345,38 +347,53 @@ PASTE AT THE VERY END OF THE CSS
   }
 
 
-  /* LOGO */
+  /* ========================================
+  LOGO
+  ======================================== */
 
   .logo {
     width: fit-content;
     max-width: 100%;
 
-    padding: 11px 14px;
+    padding: 11px 15px;
 
     border-radius: 12px;
 
+    background: #dcefe7;
+    color: #12382b;
+
     font-size: 0.65rem;
+    font-weight: 700;
     line-height: 1;
 
     letter-spacing: 0.11em;
+
+    white-space: nowrap;
 
     pointer-events: auto;
   }
 
 
-  /* NAVBAR */
+  /* ========================================
+  NAVBAR
+  ======================================== */
 
   .navbar {
+    position: relative;
+
     width: 100%;
     max-width: 100%;
 
     display: flex;
+    align-items: stretch;
     flex-wrap: nowrap;
 
     overflow-x: auto;
     overflow-y: hidden;
 
     border-radius: 12px;
+
+    background: #dcefe7;
 
     scrollbar-width: none;
 
@@ -390,122 +407,138 @@ PASTE AT THE VERY END OF THE CSS
     display: none;
   }
 
+
+  /* ========================================
+  SLIDING MENU EFFECT
+  ======================================== */
+
+  .slider {
+    display: block !important;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+
+    width: 0;
+    height: 100%;
+
+    border-radius: 12px;
+
+    background: #8ed4bf;
+
+    pointer-events: none;
+
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+
+  /* ========================================
+  NAVIGATION LINKS
+  ======================================== */
+
   .nav-link {
+    position: relative;
+
+    z-index: 2;
+
     flex: 0 0 auto;
 
-    padding: 12px 13px;
+    padding: 12px 14px;
+
+    color: #12382b;
 
     font-size: 0.62rem;
+    font-weight: 600;
     line-height: 1;
 
-    letter-spacing: 0.11em;
+    letter-spacing: 0.1em;
 
     white-space: nowrap;
   }
 
-  .slider {
-    display: none;
-  }
-
 
   /* ========================================
-  SECTIONS
-  ======================================== */
-
-  section {
-    width: 100%;
-    max-width: 100%;
-
-    min-height: auto;
-
-    padding-right: 16px;
-    padding-left: 16px;
-  }
-
-
-  /* ========================================
-  HOME
+  HOME SECTION
   ======================================== */
 
   #home {
-    min-height: 100svh;
+    width: 100%;
+    max-width: 100%;
 
-    padding-top: 165px;
-    padding-bottom: 70px;
+    min-height: 0;
+    height: auto;
 
-    display: flex;
-    align-items: center;
+    padding:
+      150px
+      16px
+      62px;
+
+    display: block;
 
     overflow: hidden;
   }
 
-  #home .section-inner {
-    width: 100%;
-    max-width: 100%;
-  }
-
 
   /* ========================================
-  HERO
+  HERO WRAPPER
   ======================================== */
 
-  .hero {
+  #home .section-inner,
+  #home .hero {
     width: 100%;
     max-width: 100%;
 
-    min-height: auto;
+    min-height: 0;
 
     padding-top: 0;
 
-    display: flex;
-    align-items: flex-start;
+    display: block;
   }
 
-  .hero-content {
+  #home .hero-content {
     width: 100%;
     max-width: 100%;
   }
 
 
   /* ========================================
-  BASILE / SULIMAN ON TWO LINES
+  NAME — TWO LINES
   ======================================== */
 
-  .hero-title {
+  #home .hero-title {
     width: 100%;
     max-width: 100%;
 
-    margin: 0 0 30px;
+    margin: 0 0 34px;
 
-    font-size: clamp(3.8rem, 18vw, 5.7rem);
-    line-height: 0.84;
-    letter-spacing: -0.075em;
+    font-size: clamp(4.5rem, 21vw, 6.5rem);
+    font-weight: 700;
+    line-height: 0.82;
+
+    letter-spacing: -0.08em;
 
     white-space: normal;
-
-    overflow-wrap: normal;
   }
 
-  .hero-title span {
+  #home .hero-title span {
     display: block;
 
     width: fit-content;
     max-width: 100%;
+
+    margin-left: 0;
 
     transition:
       opacity 0.25s ease,
       transform 0.25s ease;
   }
 
-  #first-name {
-    margin-left: 0;
-  }
-
-  #last-name {
-    margin-left: 0;
-  }
-
-  .hero-title span.changing {
+  #home .hero-title span.changing {
     opacity: 0;
 
     transform: translateY(8px);
@@ -516,22 +549,23 @@ PASTE AT THE VERY END OF THE CSS
   DESCRIPTION
   ======================================== */
 
-  .hero-description {
+  #home .hero-description {
     width: 100%;
     max-width: 100%;
 
     margin: 0;
 
-    font-size: 0.98rem;
-    line-height: 1.7;
+    font-size: 1.08rem;
+    line-height: 1.65;
 
-    color: rgba(255, 255, 255, 0.82);
+    color: rgba(255, 255, 255, 0.84);
 
     overflow-wrap: break-word;
   }
 
-  .hero-description strong {
+  #home .hero-description strong {
     color: #ffffff;
+
     font-weight: 700;
   }
 }
@@ -550,30 +584,38 @@ VERY SMALL PHONES
     max-width: calc(100vw - 16px);
   }
 
-  #home {
-    padding-top: 155px;
-    padding-right: 12px;
-    padding-left: 12px;
-  }
+  .logo {
+    padding: 10px 13px;
 
-  .hero-title {
-    margin-bottom: 26px;
-
-    font-size: clamp(3.3rem, 17vw, 4.7rem);
-  }
-
-  .hero-description {
-    font-size: 0.92rem;
-    line-height: 1.65;
+    font-size: 0.61rem;
   }
 
   .nav-link {
     padding: 11px 12px;
 
     font-size: 0.58rem;
+
+    letter-spacing: 0.08em;
+  }
+
+  #home {
+    padding:
+      142px
+      12px
+      56px;
+  }
+
+  #home .hero-title {
+    margin-bottom: 30px;
+
+    font-size: clamp(4rem, 20vw, 5.4rem);
+  }
+
+  #home .hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
   }
 }
-
 
 
 
