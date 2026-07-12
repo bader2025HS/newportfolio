@@ -6628,7 +6628,81 @@ TOUCH DEVICES
 }
 
 
+/* ==========================================
+   MOBILE MENU — BIGGER + MORE COMPACT
+========================================== */
 
+@media (max-width: 768px) {
+
+  /* Open menu container */
+  .navbar {
+    top: 58px;
+
+    padding: 5px;
+
+    gap: 0;
+
+    border-radius: 14px;
+  }
+
+
+  /* Bigger menu items */
+  .nav-link {
+    width: 100%;
+
+    padding: 16px 16px;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1;
+
+    letter-spacing: 0.11em;
+
+    border-radius: 9px;
+  }
+
+
+  /* Slightly stronger hover */
+  .nav-link:hover,
+  .nav-link:focus-visible,
+  .nav-link.active {
+    padding-left: 22px;
+
+    background: #8ed4bf;
+  }
+
+
+  /* Make hamburger slightly bigger too */
+  .menu-toggle {
+    width: 50px;
+    height: 50px;
+  }
+
+
+  .menu-toggle span {
+    width: 23px;
+    height: 2.5px;
+  }
+
+}
+
+
+@media (max-width: 430px) {
+
+  .navbar {
+    top: 56px;
+    padding: 4px;
+  }
+
+
+  .nav-link {
+    padding: 15px 14px;
+
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+  }
+
+}
 
 
 
