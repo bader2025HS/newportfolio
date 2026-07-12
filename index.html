@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfffolio</title>
+  <title>Portfolio</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2403,61 +2403,81 @@ EXPERIENCE — BALANCED PHONE SIZE
     
 
 
-
 /* ==========================================
-EXPERIENCE — PHONE TAP EFFECT
-NO JS / NO HOVER
+EXPERIENCE — MOBILE TAP SELECTION
+SAME BEHAVIOUR AS ACTIVITIES CARDS
+NO JAVASCRIPT
 ========================================== */
 
-@media (max-width: 650px) {
+@media (max-width: 650px) and (hover: none) {
 
-  /* Remove hover effects on phone */
+  /* Allow the coloured background layer again */
+  #experience .experience-item,
   #experience .experience-item:hover {
-    padding: 28px 0 !important;
+    position: relative !important;
 
-    border-top-color: transparent !important;
-    border-bottom-color: rgba(18, 56, 43, 0.2) !important;
+    overflow: hidden !important;
+
+    transition:
+      background 0.35s ease,
+      border-color 0.35s ease,
+      transform 0.35s ease !important;
   }
 
-  #experience .experience-item:hover::after {
+
+  /* Mobile selected-card background */
+  #experience .experience-item::after {
+    display: block !important;
+
+    content: "";
+
+    position: absolute !important;
+    inset: 0 !important;
+
+    z-index: 0 !important;
+
+    background: var(--hover-bg) !important;
+
     opacity: 0 !important;
+
+    pointer-events: none !important;
+
+    transition: opacity 0.35s ease !important;
   }
 
-  #experience .experience-item:hover .experience-logo {
-    background: var(--logo-bg) !important;
-    color: var(--accent) !important;
 
-    transform: none !important;
-  }
-
-  #experience .experience-item:hover .experience-title-row h3,
-  #experience .experience-item:hover .experience-year {
-    transform: none !important;
-  }
-
-  #experience .experience-item:hover .experience-tags small {
-    background: transparent !important;
-    color: var(--accent) !important;
+  /* Keep content above background */
+  #experience .experience-logo,
+  #experience .experience-content,
+  #experience .experience-year {
+    position: relative !important;
+    z-index: 1 !important;
   }
 
 
   /* ========================================
-     TAP / PRESS EFFECT
+     CARD SELECTED AFTER TAP
   ======================================== */
 
-  #experience .experience-item:active {
-    background: var(--hover-bg) !important;
+  #experience .experience-item:hover {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 
     border-top-color: var(--accent) !important;
     border-bottom-color: var(--accent) !important;
 
-    transform: scale(0.985) !important;
+    transform: translateY(-3px) !important;
+  }
+
+
+  #experience .experience-item:hover::after {
+    opacity: 1 !important;
   }
 
 
   /* LOGO */
 
-  #experience .experience-item:active .experience-logo {
+  #experience .experience-item:hover .experience-logo {
     background: var(--accent) !important;
     color: #ffffff !important;
 
@@ -2467,7 +2487,8 @@ NO JS / NO HOVER
 
   /* TITLE */
 
-  #experience .experience-item:active .experience-title-row h3 {
+  #experience .experience-item:hover
+  .experience-title-row h3 {
     color: var(--accent) !important;
 
     transform: translateX(5px) !important;
@@ -2476,20 +2497,25 @@ NO JS / NO HOVER
 
   /* TAGS */
 
-  #experience .experience-item:active .experience-tags small {
+  #experience .experience-item:hover
+  .experience-tags small {
     background: var(--accent) !important;
+    border-color: var(--accent) !important;
     color: #ffffff !important;
+
+    transform: none !important;
   }
 
 
   /* YEAR */
 
-  #experience .experience-item:active .experience-year {
+  #experience .experience-item:hover
+  .experience-year {
+    color: var(--accent) !important;
+
     transform: translateX(3px) !important;
   }
-
 }
-
 
 
 
