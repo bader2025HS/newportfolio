@@ -6138,6 +6138,1058 @@ TOUCH DEVICES
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* =========================================================
+FINAL PHONE RESPONSIVE OVERRIDE
+PLACE THIS AT THE VERY END OF YOUR CSS
+========================================================= */
+
+@media (max-width: 700px) {
+
+  /* =====================================================
+  GLOBAL OVERFLOW FIX
+  ===================================================== */
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+  }
+
+  body {
+    position: relative;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  img,
+  svg,
+  video,
+  canvas,
+  iframe {
+    max-width: 100%;
+  }
+
+  main,
+  section,
+  footer {
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: hidden;
+  }
+
+  section {
+    min-height: auto;
+  }
+
+
+  /* =====================================================
+  CONSISTENT PHONE WIDTH
+  ===================================================== */
+
+  .section-inner,
+  .about-container,
+  .experience-container,
+  .education-container,
+  .skills-container,
+  .activities-container,
+  .work-container,
+  .gallery-container,
+  .contact-container {
+    width: 100%;
+    max-width: 100%;
+
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+
+  /* =====================================================
+  SECTION PADDING
+  ===================================================== */
+
+  #home,
+  #about,
+  #experience,
+  #education,
+  #skills,
+  #activities,
+  #work,
+  #gallery,
+  #contact {
+    width: 100%;
+
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  #about,
+  #experience,
+  #education,
+  #skills,
+  #activities,
+  #work,
+  #gallery,
+  #contact {
+    padding-top: 95px;
+    padding-bottom: 80px;
+  }
+
+
+  /* =====================================================
+  HEADER AND NAVIGATION
+  ===================================================== */
+
+  .header {
+    position: fixed;
+
+    top: 8px;
+    right: 8px;
+    left: 8px;
+
+    z-index: 9999;
+
+    width: auto;
+    max-width: calc(100vw - 16px);
+
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 7px;
+  }
+
+  .logo {
+    width: fit-content;
+    max-width: 100%;
+
+    padding: 10px 14px;
+
+    border-radius: 12px;
+
+    font-size: 0.68rem;
+    white-space: nowrap;
+  }
+
+  .navbar {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    flex-wrap: nowrap;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    border-radius: 12px;
+
+    scrollbar-width: none;
+
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  .navbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-link {
+    flex: 0 0 auto;
+
+    padding: 11px 13px;
+
+    font-size: 0.66rem;
+
+    white-space: nowrap;
+  }
+
+  .slider {
+    display: none;
+  }
+
+
+  /* =====================================================
+  TYPOGRAPHY
+  ===================================================== */
+
+  .hero-title,
+  .hero h1 {
+    max-width: 100%;
+
+    font-size: clamp(3.25rem, 18vw, 5.2rem);
+    line-height: 0.88;
+    letter-spacing: -0.065em;
+
+    overflow-wrap: anywhere;
+  }
+
+  .about-header h2,
+  .experience-header h2,
+  .education-header h2,
+  .skills-header h2,
+  .activities-header h2,
+  .work-header h2,
+  .gallery-header h2,
+  .contact-header h2 {
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 14px;
+
+    font-size: clamp(2.7rem, 13vw, 4.1rem);
+    line-height: 0.94;
+    letter-spacing: -0.055em;
+
+    overflow-wrap: break-word;
+  }
+
+  .oversized-label {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .oversized-label::before {
+    max-width: 100%;
+
+    font-size: clamp(3.5rem, 18vw, 5.5rem) !important;
+
+    overflow: hidden;
+  }
+
+  .oversized-label span {
+    font-size: 0.72rem;
+  }
+
+
+  /* =====================================================
+  HOME
+  ===================================================== */
+
+  #home {
+    min-height: 100svh;
+
+    padding-top: 165px;
+    padding-bottom: 65px;
+  }
+
+  .hero {
+    width: 100%;
+    max-width: 100%;
+
+    min-height: auto;
+
+    padding: 0;
+
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    margin: 0 0 28px;
+  }
+
+  .hero-title span {
+    display: block;
+
+    max-width: 100%;
+  }
+
+  .hero-description {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+
+  /* =====================================================
+  ABOUT
+  ===================================================== */
+
+  .about-description {
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 26px;
+
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .about-grid {
+    width: 100%;
+
+    margin-top: 38px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .about-focus,
+  .about-stats {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .about-focus ul {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .about-focus li {
+    width: 100%;
+    min-width: 0;
+    min-height: 58px;
+
+    padding: 14px 18px;
+
+    justify-content: flex-start;
+
+    font-size: 0.92rem;
+  }
+
+  .about-stats-grid {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 26px;
+  }
+
+  .about-stat {
+    width: 100%;
+    min-width: 0;
+    min-height: auto;
+
+    padding-bottom: 22px;
+  }
+
+  .about-stat span {
+    font-size: clamp(2.7rem, 14vw, 4rem);
+  }
+
+  .about-stat small {
+    max-width: 100%;
+
+    font-size: 0.88rem;
+  }
+
+
+  /* =====================================================
+  EXPERIENCE
+  ===================================================== */
+
+  #experience {
+    overflow: hidden;
+  }
+
+  .experience-list {
+    width: 100%;
+
+    margin-top: 55px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .experience-item {
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: auto;
+
+    margin: 0;
+    padding: 22px 18px 20px;
+
+    display: grid;
+    grid-template-columns: 50px minmax(0, 1fr);
+    grid-template-areas:
+      "logo content"
+      "year year";
+
+    align-items: start;
+
+    gap: 17px;
+
+    overflow: hidden;
+  }
+
+  .experience-logo {
+    grid-area: logo;
+
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+
+    align-self: start;
+  }
+
+  .experience-logo span {
+    font-size: 0.72rem;
+  }
+
+  .experience-content {
+    grid-area: content;
+
+    width: 100%;
+    min-width: 0;
+  }
+
+  .experience-title-row {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+
+  .experience-title-row h3 {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+
+    font-size: clamp(1.65rem, 8vw, 2.35rem);
+    line-height: 1;
+
+    overflow-wrap: anywhere;
+  }
+
+  .experience-title-row > span {
+    max-width: 100%;
+
+    padding: 7px 9px;
+
+    font-size: 0.58rem;
+    line-height: 1.2;
+
+    white-space: normal;
+  }
+
+  .experience-role {
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 15px;
+
+    font-size: 0.98rem;
+    line-height: 1.35;
+
+    overflow-wrap: anywhere;
+  }
+
+  .experience-text {
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 14px;
+
+    font-size: 0.88rem;
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+  }
+
+  .experience-tags {
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 18px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px 10px;
+  }
+
+  #experience .experience-tags small {
+    max-width: 100%;
+
+    padding-right: 13px;
+
+    font-size: 0.7rem;
+
+    white-space: normal;
+  }
+
+  .experience-year {
+    position: static;
+
+    grid-area: year;
+
+    width: 100%;
+
+    margin-top: 2px;
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(18, 56, 43, 0.13);
+
+    font-size: 0.75rem;
+
+    text-align: right;
+
+    transform: none;
+  }
+
+
+  /* =====================================================
+  EDUCATION
+  ===================================================== */
+
+  #education {
+    overflow: hidden;
+  }
+
+  .education-timeline {
+    width: calc(100% + 32px);
+    max-width: none;
+
+    margin-top: 55px;
+    margin-left: -16px;
+    padding: 10px 16px 18px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 26px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .education-timeline::-webkit-scrollbar {
+    display: none;
+  }
+
+  .edu-line {
+    display: none;
+  }
+
+  .edu-dot {
+    position: relative;
+    inset: auto;
+
+    flex: 0 0 auto;
+
+    transform: none;
+  }
+
+  .edu-dot span {
+    white-space: nowrap;
+  }
+
+  .edu-content {
+    width: 100%;
+    max-width: 100%;
+
+    margin-top: 30px;
+  }
+
+  .edu-content > * {
+    max-width: 100%;
+  }
+
+
+  /* =====================================================
+  SKILLS
+  ===================================================== */
+
+  .skills-directory {
+    width: 100%;
+
+    margin-top: 55px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .skills-column {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .language-row {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr) auto;
+
+    gap: 12px;
+
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .tools-directory {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+  .tool-entry {
+    width: 100%;
+    min-width: 0;
+
+    padding: 14px 10px;
+
+    text-align: center;
+  }
+
+  .tool-entry span {
+    max-width: 100%;
+
+    font-size: 0.78rem;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* =====================================================
+  ACTIVITIES
+  ===================================================== */
+
+  .activity-grid {
+    width: 100%;
+
+    margin-top: 50px;
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .activity-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 230px;
+
+    padding: 22px 18px;
+  }
+
+  .activity-card h3 {
+    max-width: 100%;
+
+    font-size: clamp(2rem, 11vw, 3.2rem);
+
+    overflow-wrap: anywhere;
+  }
+
+  .activity-card p {
+    max-width: 100%;
+
+    font-size: 0.9rem;
+  }
+
+  .activities-filmstrip {
+    width: 100vw;
+
+    margin-top: 55px;
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+
+    padding: 30px 0;
+  }
+
+  .film-frame,
+  .film-frame img,
+  img.film-frame {
+    flex: 0 0 260px;
+
+    width: 260px;
+    height: 175px;
+
+    max-width: none;
+
+    border-width: 8px;
+  }
+
+
+  /* =====================================================
+  WORK
+  ===================================================== */
+
+  .work-list {
+    width: 100%;
+
+    margin-top: 50px;
+  }
+
+  .work-item {
+    width: 100%;
+    min-width: 0;
+
+    padding: 20px 0;
+
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    grid-template-areas:
+      "number content"
+      "link link";
+
+    align-items: start;
+
+    gap: 12px;
+  }
+
+  .work-number {
+    grid-area: number;
+  }
+
+  .work-item > div {
+    grid-area: content;
+
+    min-width: 0;
+  }
+
+  .work-item h3 {
+    max-width: 100%;
+
+    font-size: clamp(1.55rem, 8vw, 2.25rem);
+
+    overflow-wrap: anywhere;
+  }
+
+  .work-item p {
+    max-width: 100%;
+
+    margin-top: 8px;
+
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .work-link {
+    grid-area: link;
+
+    justify-self: end;
+
+    margin-top: 5px;
+
+    font-size: 0.75rem;
+  }
+
+
+  /* =====================================================
+  GALLERY
+  ===================================================== */
+
+  .gallery-header,
+  .gallery-map,
+  .gallery-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .gallery-description {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .gallery-map {
+    height: 430px;
+    min-height: 0;
+    max-height: 65svh;
+
+    margin-top: 38px;
+
+    border-radius: 14px;
+  }
+
+  .gallery-grid {
+    margin-top: 45px;
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .gallery-grid .gallery-item,
+  .gallery-grid .gallery-item:nth-child(n) {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 1 / 1;
+
+    grid-column: auto;
+    grid-row: auto;
+
+    transform: none;
+  }
+
+  .gallery-item figcaption {
+    right: 9px;
+    bottom: 9px;
+    left: 9px;
+
+    min-height: 56px;
+
+    padding: 0 14px;
+
+    opacity: 1;
+    transform: none;
+  }
+
+
+  /* =====================================================
+  CONTACT
+  ===================================================== */
+
+  .contact-grid {
+    width: 100%;
+
+    margin-top: 50px;
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .contact-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 112px;
+
+    padding: 16px;
+
+    grid-template-columns: 48px minmax(0, 1fr) auto;
+
+    column-gap: 12px;
+
+    border-radius: 0;
+  }
+
+  .contact-icon {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 0;
+  }
+
+  .contact-icon svg,
+  .contact-cv .contact-icon svg {
+    width: 29px;
+    height: 29px;
+  }
+
+  .contact-card-content {
+    min-width: 0;
+  }
+
+  .contact-card-content span {
+    margin-bottom: 5px;
+
+    font-size: 0.57rem;
+    letter-spacing: 0.11em;
+  }
+
+  .contact-card-content h3 {
+    max-width: 100%;
+
+    font-size: 1.08rem;
+
+    overflow-wrap: anywhere;
+  }
+
+  .contact-action {
+    min-width: 50px;
+
+    padding: 7px 6px;
+
+    font-size: 0.54rem;
+    letter-spacing: 0.06em;
+  }
+
+
+  /* =====================================================
+  FOOTER
+  ===================================================== */
+
+  .site-footer {
+    width: 100%;
+
+    padding: 24px 16px;
+  }
+
+  .footer-inner {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+
+  .footer-inner p,
+  .footer-inner a {
+    width: auto;
+
+    justify-self: auto;
+
+    font-size: 0.74rem;
+  }
+
+  .footer-inner p:nth-child(2) {
+    display: block;
+  }
+}
+
+
+/* =========================================================
+VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+
+  #home,
+  #about,
+  #experience,
+  #education,
+  #skills,
+  #activities,
+  #work,
+  #gallery,
+  #contact {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .header {
+    right: 6px;
+    left: 6px;
+
+    max-width: calc(100vw - 12px);
+  }
+
+  .hero-title,
+  .hero h1 {
+    font-size: clamp(2.9rem, 17vw, 4.2rem);
+  }
+
+  .about-header h2,
+  .experience-header h2,
+  .education-header h2,
+  .skills-header h2,
+  .activities-header h2,
+  .work-header h2,
+  .gallery-header h2,
+  .contact-header h2 {
+    font-size: clamp(2.45rem, 12vw, 3.5rem);
+  }
+
+  .experience-item {
+    padding: 18px 14px;
+
+    grid-template-columns: 44px minmax(0, 1fr);
+
+    gap: 13px;
+  }
+
+  .experience-logo {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+  }
+
+  .tools-directory {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    grid-template-columns: 44px minmax(0, 1fr);
+    grid-template-areas:
+      "icon content"
+      "action action";
+  }
+
+  .contact-icon {
+    grid-area: icon;
+
+    width: 44px;
+    height: 44px;
+  }
+
+  .contact-card-content {
+    grid-area: content;
+  }
+
+  .contact-action {
+    grid-area: action;
+
+    width: 100%;
+
+    margin-top: 4px;
+  }
+}
+
+
     
   </style>
 </head>
