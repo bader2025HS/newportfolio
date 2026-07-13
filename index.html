@@ -8534,7 +8534,24 @@ SKILLS — REDUCE GAP AFTER REMOVING TITLES
 }
 
 
+/* ==========================================
+DESKTOP — MOVE LANGUAGE LEVELS LEFT
+========================================== */
 
+@media (min-width: 651px) {
+
+  #skills .skills-languages .language-row small {
+    transform: translateX(-22px) !important;
+  }
+
+  /* KEEP SAME POSITION ON HOVER / ACTIVE */
+
+  #skills .skills-languages .language-row:hover small,
+  #skills .skills-languages .language-row.is-active small {
+    transform: translateX(-22px) !important;
+  }
+
+}
 
 
 
