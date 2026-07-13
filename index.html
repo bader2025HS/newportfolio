@@ -7922,7 +7922,236 @@ PHONE ACTIVE STATE
 }
 
     
+/* ==========================================
+LANGUAGES — CLEAN HOVER / ACTIVE EFFECT
+NO SLIDING BACKGROUND
+========================================== */
 
+#skills .language-row {
+  position: relative;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.35s cubic-bezier(.2,.8,.2,1),
+    padding 0.35s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* REMOVE OLD SLIDING BACKGROUND */
+
+#skills .language-row::before {
+  display: none !important;
+}
+
+
+/* ==========================================
+FLAG
+========================================== */
+
+#skills .language-flag {
+  position: relative;
+
+  transition:
+    transform 0.45s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* ==========================================
+NAME
+========================================== */
+
+#skills .language-row strong {
+  transition:
+    color 0.3s ease,
+    transform 0.4s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* ==========================================
+LEVEL
+========================================== */
+
+#skills .language-row small {
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.4s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* ==========================================
+HOVER + ACTIVE
+========================================== */
+
+#skills .language-row:hover,
+#skills .language-row.is-active {
+  background: rgba(45, 123, 97, 0.09);
+
+  transform: translateY(-5px);
+}
+
+
+/* FLAG ROTATES + GROWS */
+
+#skills .language-row:hover .language-flag,
+#skills .language-row.is-active .language-flag {
+  transform:
+    rotate(-8deg)
+    scale(1.13);
+}
+
+
+/* NAME MOVES SLIGHTLY */
+
+#skills .language-row:hover strong,
+#skills .language-row.is-active strong {
+  color: #2d7b61;
+
+  transform: translateX(8px);
+}
+
+
+/* LEVEL MOVES TOWARD CENTER */
+
+#skills .language-row:hover small,
+#skills .language-row.is-active small {
+  background: #12382b;
+  border-color: #12382b;
+
+  color: #f6fbf8;
+
+  transform: translateX(-8px) !important;
+}
+
+
+/* ==========================================
+BOTTOM LINE
+========================================== */
+
+#skills .language-row::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+  height: 3px;
+
+  background: #2d7b61;
+
+  transform: translateX(-50%);
+
+  transition:
+    width 0.4s cubic-bezier(.2,.8,.2,1);
+}
+
+
+#skills .language-row:hover::after,
+#skills .language-row.is-active::after {
+  width: 100%;
+}
+
+
+/* ==========================================
+PHONE
+========================================== */
+
+@media (max-width: 650px) {
+
+  /* REMOVE STICKY MOBILE HOVER */
+
+  #skills .language-row:hover {
+    background: transparent;
+    transform: none;
+  }
+
+  #skills .language-row:hover .language-flag {
+    transform: none;
+  }
+
+  #skills .language-row:hover strong {
+    color: #12382b;
+    transform: none;
+  }
+
+  #skills .language-row:hover small {
+    background: #2d7b61;
+    border-color: #2d7b61;
+    color: #f6fbf8;
+
+    transform: none !important;
+  }
+
+  #skills .language-row:hover::after {
+    width: 0;
+  }
+
+
+  /* TAP / ACTIVE STATE */
+
+  #skills .language-row.is-active {
+    background: rgba(45, 123, 97, 0.09);
+
+    transform: translateY(-4px);
+  }
+
+  #skills .language-row.is-active .language-flag {
+    transform:
+      rotate(-7deg)
+      scale(1.1);
+  }
+
+  #skills .language-row.is-active strong {
+    color: #2d7b61;
+
+    transform: translateX(4px);
+  }
+
+  #skills .language-row.is-active small {
+    background: #12382b;
+    border-color: #12382b;
+
+    color: #f6fbf8;
+
+    transform: translateX(-4px) !important;
+  }
+
+  #skills .language-row.is-active::after {
+    width: 100%;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
     
