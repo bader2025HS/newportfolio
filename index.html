@@ -7160,7 +7160,235 @@ FIX FLAG SVG FILL
 
 
 
+/* ==========================================
+SKILLS — FINAL FLAG + MOBILE GRID OVERRIDE
+ADD AT THE VERY END
+========================================== */
 
+
+/* ==========================================
+DESKTOP FLAG RESET
+========================================== */
+
+#skills .language-row {
+  grid-template-columns: 58px minmax(0, 1fr) auto;
+  column-gap: 18px;
+}
+
+#skills .language-flag {
+  width: 58px;
+  height: 58px;
+
+  display: block;
+
+  flex: 0 0 58px;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  font-size: 0;
+  line-height: 0;
+
+  background: transparent;
+  border: 0;
+}
+
+#skills .language-flag svg {
+  width: 100% !important;
+  height: 100% !important;
+
+  min-width: 100%;
+  min-height: 100%;
+
+  max-width: none !important;
+  max-height: none !important;
+
+  display: block;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  transform: none !important;
+
+  object-fit: cover;
+}
+
+
+/* Remove any earlier special scaling */
+
+#skills .language-arabic .language-flag svg,
+#skills .language-english .language-flag svg,
+#skills .language-row:nth-of-type(2) .language-flag svg,
+#skills .language-row:nth-of-type(4) .language-flag svg {
+  width: 100% !important;
+  height: 100% !important;
+
+  transform: none !important;
+}
+
+
+/* ==========================================
+PHONE — 2 COLUMNS × 3 ROWS
+========================================== */
+
+@media (max-width: 650px) {
+
+  #skills {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  #skills .skills-languages {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 18px;
+    row-gap: 0;
+  }
+
+  #skills .skills-languages > h3 {
+    grid-column: 1 / -1;
+
+    margin-bottom: 18px;
+  }
+
+  #skills .language-row {
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns: 52px minmax(0, 1fr);
+    grid-template-areas:
+      "flag name"
+      "level level";
+
+    align-items: center;
+
+    column-gap: 10px;
+    row-gap: 12px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid rgba(18, 56, 43, 0.2);
+
+    background: transparent;
+  }
+
+  #skills .language-flag {
+    grid-area: flag;
+
+    width: 52px;
+    height: 52px;
+
+    flex-basis: 52px;
+  }
+
+  #skills .language-row strong {
+    grid-area: name;
+
+    min-width: 0;
+
+    font-size: 1.1rem;
+    line-height: 1.05;
+
+    letter-spacing: -0.04em;
+
+    white-space: nowrap;
+  }
+
+  #skills .language-row small {
+    grid-area: level;
+
+    width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    padding: 8px 7px;
+
+    font-size: 0.64rem;
+    letter-spacing: 0.07em;
+
+    transform: none !important;
+  }
+
+  #skills .language-row:hover {
+    padding-left: 0;
+
+    background: rgba(45, 123, 97, 0.06);
+  }
+
+  #skills .language-row:hover small {
+    transform: none !important;
+  }
+
+}
+
+
+/* ==========================================
+SMALL PHONES
+========================================== */
+
+@media (max-width: 390px) {
+
+  #skills .skills-languages {
+    column-gap: 12px;
+  }
+
+  #skills .language-row {
+    grid-template-columns: 46px minmax(0, 1fr);
+
+    column-gap: 8px;
+  }
+
+  #skills .language-flag {
+    width: 46px;
+    height: 46px;
+
+    flex-basis: 46px;
+  }
+
+  #skills .language-row strong {
+    font-size: 0.98rem;
+  }
+
+  #skills .language-row small {
+    padding: 8px 4px;
+
+    font-size: 0.59rem;
+    letter-spacing: 0.05em;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
@@ -8394,7 +8622,23 @@ GALLERY — SAME OVERSIZED LABEL SIZE
     
 
 
-<section id="skills">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="skills">
   <div class="skills-container">
 
     <div class="skills-header">
@@ -8418,17 +8662,24 @@ GALLERY — SAME OVERSIZED LABEL SIZE
 
         <!-- ARABIC -->
 
-<div class="language-row language-arabic">
-  
+        <div class="language-row language-arabic">
+
           <span class="language-flag">
 
             <svg
               viewBox="0 0 64 64"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
-              preserveAspectRatio="xMidYMid meet">
+              preserveAspectRatio="xMidYMid meet"
+            >
 
-              <circle cx="32" cy="32" r="30" fill="#699635"></circle>
+              <!-- Changed from r="30" to r="32" -->
+              <circle
+                cx="32"
+                cy="32"
+                r="32"
+                fill="#699635"
+              ></circle>
 
               <g fill="#ffffff">
 
@@ -8458,7 +8709,7 @@ GALLERY — SAME OVERSIZED LABEL SIZE
 
         <!-- FRENCH -->
 
-        <div class="language-row">
+        <div class="language-row language-french">
 
           <span class="language-flag">
 
@@ -8466,23 +8717,18 @@ GALLERY — SAME OVERSIZED LABEL SIZE
               viewBox="0 0 64 64"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
-              preserveAspectRatio="xMidYMid meet">
+            >
+              <defs>
+                <clipPath id="france-circle">
+                  <circle cx="32" cy="32" r="32"></circle>
+                </clipPath>
+              </defs>
 
-              <path
-                d="M1.9 32c0 13.1 8.4 24.2 20 28.3V3.7C10.3 7.8 1.9 18.9 1.9 32z"
-                fill="#428bc1">
-              </path>
-
-              <path
-                d="M61.9 32c0-13.1-8.3-24.2-20-28.3v56.6c11.7-4.1 20-15.2 20-28.3"
-                fill="#ed4c5c">
-              </path>
-
-              <path
-                d="M21.9 60.3c3.1 1.1 6.5 1.7 10 1.7s6.9-.6 10-1.7V3.7C38.8 2.6 35.5 2 31.9 2s-6.9.6-10 1.7v56.6"
-                fill="#ffffff">
-              </path>
-
+              <g clip-path="url(#france-circle)">
+                <rect x="0" y="0" width="21.34" height="64" fill="#428bc1"></rect>
+                <rect x="21.33" y="0" width="21.34" height="64" fill="#ffffff"></rect>
+                <rect x="42.66" y="0" width="21.34" height="64" fill="#ed4c5c"></rect>
+              </g>
             </svg>
 
           </span>
@@ -8495,32 +8741,90 @@ GALLERY — SAME OVERSIZED LABEL SIZE
 
         <!-- ENGLISH -->
 
-<div class="language-row language-english">
-  
+        <div class="language-row language-english">
+
           <span class="language-flag">
 
             <svg
               viewBox="0 0 64 64"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
-              preserveAspectRatio="xMidYMid meet">
+              preserveAspectRatio="xMidYMid slice"
+            >
 
-              <g fill="#2a5f9e">
-                <path d="M22 60.3V46.5l-10.3 7.6c2.9 2.7 6.4 4.8 10.3 6.2"></path>
-                <path d="M42 60.3c3.9-1.4 7.4-3.5 10.3-6.2L42 46.4v13.9"></path>
-                <path d="M3.7 42c.3 1 .7 1.9 1.2 2.9L8.8 42H3.7"></path>
-                <path d="M55.2 42l3.9 2.9c.4-.9.8-1.9 1.2-2.9h-5.1"></path>
-              </g>
+              <defs>
+                <clipPath id="uk-circle">
+                  <circle cx="32" cy="32" r="32"></circle>
+                </clipPath>
+              </defs>
 
-              <g fill="#ffffff">
-                <path d="M23.5 38H2.6c.3 1.4.7 2.7 1.1 4h5.1l-3.9 2.9c.8 1.7 1.7 3.2 2.8 4.7L18 42h4v2l-11.7 8.6l1.4 1.4L22 46.5v13.8c1.3.5 2.6.8 4 1.1V38h-2.5"></path>
-                <path d="M61.4 38H38v23.4c1.4-.3 2.7-.7 4-1.1V46.5L52.3 54c1.4-1.3 2.6-2.7 3.8-4.2L45.4 42h6.8l6.1 4.5c.3-.5.6-1.1.8-1.6L55.2 42h5.1c.4-1.3.8-2.6 1.1-4"></path>
-              </g>
+              <g clip-path="url(#uk-circle)">
 
-              <g fill="#ed4c5c">
-                <path d="M7.7 49.6c.8 1.1 1.6 2.1 2.5 3.1L22 44.1v-2h-4L7.7 49.6"></path>
-                <path d="M45.5 42l10.7 7.8c.4-.5.7-1 1.1-1.5c.1-.1.1-.2.2-.2c.3-.5.7-1.1 1-1.6L52.2 42h-6.7"></path>
-                <path d="M61.4 26H38V2.6c-1.9-.4-3.9-.6-6-.6s-4.1.2-6 .6V26H2.6c-.4 1.9-.6 3.9-.6 6s.2 4.1.6 6H26v23.4c1.9.4 3.9.6 6 .6s4.1-.2 6-.6V38h23.4c.4-1.9.6-3.9.6-6s-.2-4.1-.6-6"></path>
+                <!-- Blue background -->
+                <rect
+                  x="0"
+                  y="0"
+                  width="64"
+                  height="64"
+                  fill="#2a5f9e"
+                ></rect>
+
+                <!-- White diagonal cross -->
+                <path
+                  d="M-8 0 L0 -8 L72 64 L64 72 Z"
+                  fill="#ffffff"
+                ></path>
+
+                <path
+                  d="M64 -8 L72 0 L0 72 L-8 64 Z"
+                  fill="#ffffff"
+                ></path>
+
+                <!-- Red diagonal cross -->
+                <path
+                  d="M-4 0 L0 -4 L68 64 L64 68 Z"
+                  fill="#ed4c5c"
+                ></path>
+
+                <path
+                  d="M64 -4 L68 0 L0 68 L-4 64 Z"
+                  fill="#ed4c5c"
+                ></path>
+
+                <!-- White main cross -->
+                <rect
+                  x="0"
+                  y="24"
+                  width="64"
+                  height="16"
+                  fill="#ffffff"
+                ></rect>
+
+                <rect
+                  x="24"
+                  y="0"
+                  width="16"
+                  height="64"
+                  fill="#ffffff"
+                ></rect>
+
+                <!-- Red main cross -->
+                <rect
+                  x="0"
+                  y="28"
+                  width="64"
+                  height="8"
+                  fill="#ed4c5c"
+                ></rect>
+
+                <rect
+                  x="28"
+                  y="0"
+                  width="8"
+                  height="64"
+                  fill="#ed4c5c"
+                ></rect>
+
               </g>
 
             </svg>
@@ -8535,7 +8839,7 @@ GALLERY — SAME OVERSIZED LABEL SIZE
 
         <!-- GERMAN -->
 
-        <div class="language-row">
+        <div class="language-row language-german">
 
           <span class="language-flag">
 
@@ -8543,22 +8847,19 @@ GALLERY — SAME OVERSIZED LABEL SIZE
               viewBox="0 0 64 64"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
-              preserveAspectRatio="xMidYMid meet">
+            >
 
-              <path
-                d="M31.9 2C18.8 2 7.7 10.4 3.6 22h56.6C56.1 10.4 45 2 31.9 2z"
-                fill="#3e4347">
-              </path>
+              <defs>
+                <clipPath id="germany-circle">
+                  <circle cx="32" cy="32" r="32"></circle>
+                </clipPath>
+              </defs>
 
-              <path
-                d="M31.9 62c13.1 0 24.2-8.3 28.3-20H3.6c4.1 11.7 15.2 20 28.3 20z"
-                fill="#ffe62e">
-              </path>
-
-              <path
-                d="M3.6 22c-1.1 3.1-1.7 6.5-1.7 10s.6 6.9 1.7 10h56.6c1.1-3.1 1.7-6.5 1.7-10s-.6-6.9-1.7-10H3.6"
-                fill="#ed4c5c">
-              </path>
+              <g clip-path="url(#germany-circle)">
+                <rect x="0" y="0" width="64" height="21.34" fill="#3e4347"></rect>
+                <rect x="0" y="21.33" width="64" height="21.34" fill="#ed4c5c"></rect>
+                <rect x="0" y="42.66" width="64" height="21.34" fill="#ffe62e"></rect>
+              </g>
 
             </svg>
 
@@ -8572,7 +8873,7 @@ GALLERY — SAME OVERSIZED LABEL SIZE
 
         <!-- PERSIAN -->
 
-        <div class="language-row">
+        <div class="language-row language-persian">
 
           <span class="language-flag">
 
@@ -8580,32 +8881,51 @@ GALLERY — SAME OVERSIZED LABEL SIZE
               viewBox="0 0 64 64"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
-              preserveAspectRatio="xMidYMid meet">
+            >
 
-              <path
-                d="M32 2C18.9 2 7.8 10.3 3.7 22h56.6C56.2 10.3 45.1 2 32 2z"
-                fill="#83bf4f">
-              </path>
+              <defs>
+                <clipPath id="iran-circle">
+                  <circle cx="32" cy="32" r="32"></circle>
+                </clipPath>
+              </defs>
 
-              <path
-                d="M32 62c13.1 0 24.2-8.3 28.3-20H3.7C7.8 53.7 18.9 62 32 62z"
-                fill="#ed4c5c">
-              </path>
+              <g clip-path="url(#iran-circle)">
 
-              <path
-                d="M3.7 22C2.6 25.1 2 28.5 2 32s.6 6.9 1.7 10h56.6c1.1-3.1 1.7-6.5 1.7-10s-.6-6.9-1.7-10H3.7z"
-                fill="#f9f9f9">
-              </path>
+                <rect
+                  x="0"
+                  y="0"
+                  width="64"
+                  height="21.34"
+                  fill="#83bf4f"
+                ></rect>
 
-              <g fill="#ed4c5c">
+                <rect
+                  x="0"
+                  y="21.33"
+                  width="64"
+                  height="21.34"
+                  fill="#f9f9f9"
+                ></rect>
 
-                <path d="M36.5 33.9c.9-2.6 0-5.5-2-7.3c2.3 3.4 1.4 7.9-1.8 10.3l.2-5.6v-4.4c-.4-.2-.7-.4-.9-.7c-.2.3-.5.6-.9.7v4.4l.2 5.6c-3.3-2.4-4.1-6.9-1.8-10.3c-2.1 1.8-2.9 4.7-2 7.3c.6 1.8 1.8 3.1 3.3 3.9c-.9.3-1.9.5-2.9.5c1.2.4 2.4.4 3.5.2v.2l.6.8l.6-.8v-.2c1.1.2 2.3.2 3.5-.2c-1 0-2-.1-2.9-.5c1.5-.8 2.7-2.2 3.3-3.9"></path>
+                <rect
+                  x="0"
+                  y="42.66"
+                  width="64"
+                  height="21.34"
+                  fill="#ed4c5c"
+                ></rect>
 
-                <path d="M38.7 29.1c-.8-1.3-2.1-2.3-3.6-2.7c3.3 2.5 4 7.2 1.5 10.5c2.8-1.5 3.7-5 2.1-7.8"></path>
+                <g fill="#ed4c5c">
 
-                <path d="M28.8 26.4c-1.5.4-2.8 1.3-3.6 2.7c-1.6 2.7-.6 6.2 2.1 7.8c-2.4-3.3-1.8-8 1.5-10.5"></path>
+                  <path d="M36.5 33.9c.9-2.6 0-5.5-2-7.3c2.3 3.4 1.4 7.9-1.8 10.3l.2-5.6v-4.4c-.4-.2-.7-.4-.9-.7c-.2.3-.5.6-.9.7v4.4l.2 5.6c-3.3-2.4-4.1-6.9-1.8-10.3c-2.1 1.8-2.9 4.7-2 7.3c.6 1.8 1.8 3.1 3.3 3.9c-.9.3-1.9.5-2.9.5c1.2.4 2.4.4 3.5.2v.2l.6.8l.6-.8v-.2c1.1.2 2.3.2 3.5-.2c-1 0-2-.1-2.9-.5c1.5-.8 2.7-2.2 3.3-3.9"></path>
 
-                <path d="M30.5 26c.5.3 1.2.2 1.5-.3c.3.5 1 .6 1.5.3c.4-.3.6-.8.4-1.3c-.1.6-.6.9-1.2.8c-.3-.1-.5-.2-.7-.5c-.1.3-.4.4-.7.5c-.6.1-1.1-.3-1.2-.8c-.2.5 0 1 .4 1.3"></path>
+                  <path d="M38.7 29.1c-.8-1.3-2.1-2.3-3.6-2.7c3.3 2.5 4 7.2 1.5 10.5c2.8-1.5 3.7-5 2.1-7.8"></path>
+
+                  <path d="M28.8 26.4c-1.5.4-2.8 1.3-3.6 2.7c-1.6 2.7-.6 6.2 2.1 7.8c-2.4-3.3-1.8-8 1.5-10.5"></path>
+
+                  <path d="M30.5 26c.5.3 1.2.2 1.5-.3c.3.5 1 .6 1.5.3c.4-.3.6-.8.4-1.3c-.1.6-.6.9-1.2.8c-.3-.1-.5-.2-.7-.5c-.1.3-.4.4-.7.5c-.6.1-1.1-.3-1.2-.8c-.2.5 0 1 .4 1.3"></path>
+
+                </g>
 
               </g>
 
@@ -8621,7 +8941,7 @@ GALLERY — SAME OVERSIZED LABEL SIZE
 
         <!-- JAPANESE -->
 
-        <div class="language-row">
+        <div class="language-row language-japanese">
 
           <span class="language-flag">
 
@@ -8629,21 +8949,21 @@ GALLERY — SAME OVERSIZED LABEL SIZE
               viewBox="0 0 512 512"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
-              preserveAspectRatio="xMidYMid meet">
+            >
 
               <circle
-                fill="#F0F0F0"
                 cx="256"
                 cy="256"
-                r="256">
-              </circle>
+                r="256"
+                fill="#f0f0f0"
+              ></circle>
 
               <circle
-                fill="#D80027"
                 cx="256"
                 cy="256"
-                r="111.304">
-              </circle>
+                r="111.304"
+                fill="#d80027"
+              ></circle>
 
             </svg>
 
@@ -8668,31 +8988,18 @@ GALLERY — SAME OVERSIZED LABEL SIZE
         <div class="tools-directory">
 
           <div class="tool-entry"><span>Word</span></div>
-
           <div class="tool-entry"><span>PowerPoint</span></div>
-
           <div class="tool-entry"><span>Excel</span></div>
-
           <div class="tool-entry"><span>Power BI</span></div>
-
           <div class="tool-entry"><span>Teams</span></div>
-
           <div class="tool-entry"><span>SharePoint</span></div>
-
           <div class="tool-entry"><span>GitHub</span></div>
-
           <div class="tool-entry"><span>Illustrator</span></div>
-
           <div class="tool-entry"><span>Google Suite</span></div>
-
           <div class="tool-entry"><span>Drive</span></div>
-
           <div class="tool-entry"><span>Meet</span></div>
-
           <div class="tool-entry"><span>Instagram</span></div>
-
           <div class="tool-entry"><span>LinkedIn</span></div>
-
           <div class="tool-entry"><span>TikTok</span></div>
 
         </div>
@@ -8704,6 +9011,17 @@ GALLERY — SAME OVERSIZED LABEL SIZE
   </div>
 </section>
 
+
+
+
+
+
+
+
+
+
+
+    
 
     
 
