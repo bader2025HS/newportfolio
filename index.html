@@ -8345,7 +8345,53 @@ PHONE — TAP ONLY
 
 
 
+/* ==========================================
+LANGUAGE HOVER — KEEP FLAG RING INSIDE ROW
+========================================== */
 
+#skills .language-row {
+  overflow: hidden;
+}
+
+
+/* Give the flag enough space for the ring */
+
+#skills .language-flag {
+  margin-left: 8px;
+}
+
+
+/* Slightly reduce the ring size */
+
+#skills .language-row:hover .language-flag,
+#skills .language-row.is-active .language-flag {
+  transform: scale(0.9);
+
+  box-shadow:
+    0 0 0 4px #ddefe7,
+    0 0 0 6px #2d7b61;
+}
+
+
+/* Keep the active content inside the row */
+
+#skills .language-row:hover strong,
+#skills .language-row.is-active strong {
+  transform: translateX(2px);
+}
+
+#skills .language-row:hover small,
+#skills .language-row.is-active small {
+  transform: translateX(-2px) !important;
+}
+
+    @media (max-width: 650px) {
+
+  #skills .language-flag {
+    margin-left: 5px;
+  }
+
+}
 
 
 
