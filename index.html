@@ -2527,102 +2527,226 @@ NO JAVASCRIPT
 
 
 
-
 /* ==========================================
-EXPERIENCE — ORGANISATION TYPE
-CLEAN SOLID LABEL
+EXPERIENCE — UPDATED TAG ROW
+ORGANISATION TYPE + REGULAR TAGS
 ========================================== */
 
-#experience .experience-title-row > span {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+#experience .experience-tags {
+  width: 100%;
 
-  width: fit-content !important;
+  margin-top: 23px;
 
-  padding: 8px 12px !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 
-  border: 0 !important;
-  border-radius: 0 !important;
+  gap: 9px;
+}
 
-  background: var(--accent) !important;
-  color: #ffffff !important;
 
-  font-family: "Space Grotesk", sans-serif !important;
+/* ==========================================
+ORGANISATION TYPE
+DISTINCT FROM REGULAR TAGS
+========================================== */
 
-  font-size: 0.67rem !important;
-  font-weight: 800 !important;
-  line-height: 1 !important;
+#experience .experience-type {
+  position: relative;
 
-  letter-spacing: 0.13em !important;
-  text-transform: uppercase !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  margin-right: 7px;
+
+  padding: 9px 14px;
+
+  border: 1.5px solid var(--accent);
+  border-radius: 0;
+
+  background: var(--accent);
+  color: #ffffff;
 
   box-shadow: 5px 5px 0 var(--logo-bg);
 
-  transform: none !important;
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 0.69rem;
+  font-weight: 800;
+  line-height: 1;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
 
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
-    background 0.3s ease !important;
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
 }
 
 
-/* Remove previous marker effects */
+/* Remove any previous marker/stamp pseudo-elements */
 
-#experience .experience-title-row > span::before,
-#experience .experience-title-row > span::after {
+#experience .experience-type::before,
+#experience .experience-type::after {
   display: none !important;
   content: none !important;
 }
 
 
-/* DESKTOP HOVER */
+/* ==========================================
+REGULAR TAGS
+========================================== */
 
-#experience .experience-item:hover
-.experience-title-row > span {
-  background: #12382b !important;
+#experience .experience-tags small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  box-shadow: 0 0 0 var(--logo-bg);
+  padding: 8px 13px;
 
-  transform: translate(5px, 5px) !important;
+  border: 1.5px solid var(--accent);
+  border-radius: 0;
+
+  background: transparent;
+  color: var(--accent);
+
+  font-size: 0.74rem;
+  font-weight: 750;
+  line-height: 1;
+
+  letter-spacing: 0.03em;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 
-/* PHONE */
+/* ==========================================
+DESKTOP HOVER
+TYPE STAYS ALIGNED WITH EXPERIENCE COLOUR
+========================================== */
+
+#experience .experience-item:hover .experience-type {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+
+  box-shadow: 0 0 0 var(--logo-bg);
+
+  transform: translate(5px, 5px);
+}
+
+
+#experience .experience-item:hover .experience-tags small {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+
+#experience .experience-tags small:hover {
+  transform: translateY(-2px);
+}
+
+
+/* ==========================================
+REMOVE OLD TITLE-ROW TYPE STYLING
+========================================== */
+
+#experience .experience-title-row > span {
+  all: unset;
+}
+
+
+/* ==========================================
+PHONE
+========================================== */
 
 @media (max-width: 650px) {
 
-  #experience .experience-title-row > span {
-    padding: 7px 10px !important;
+  #experience .experience-tags {
+    width: 100%;
+    max-width: 100%;
 
-    font-size: 0.57rem !important;
-    letter-spacing: 0.1em !important;
+    margin-top: 16px;
+
+    gap: 7px;
+  }
+
+
+  #experience .experience-type {
+    max-width: 100%;
+
+    margin-right: 4px;
+
+    padding: 7px 10px;
 
     box-shadow: 4px 4px 0 var(--logo-bg);
+
+    font-size: 0.57rem;
+    line-height: 1.15;
+
+    letter-spacing: 0.09em;
+
+    white-space: normal;
+  }
+
+
+  #experience .experience-tags small {
+    max-width: 100%;
+
+    padding: 6px 8px;
+
+    border-width: 1px;
+
+    font-size: 0.6rem;
+    line-height: 1.15;
+
+    white-space: normal;
   }
 
 }
 
 
-/* PHONE TAP / SELECTED STATE */
+/* ==========================================
+PHONE TAP / SELECTED STATE
+MATCHES YOUR EXISTING MOBILE :HOVER SYSTEM
+========================================== */
 
 @media (max-width: 650px) and (hover: none) {
 
-  #experience .experience-item:hover
-  .experience-title-row > span {
-    background: #12382b !important;
+  #experience .experience-item:hover .experience-type {
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: #ffffff !important;
 
-    box-shadow: 0 0 0 var(--logo-bg);
+    box-shadow: 0 0 0 var(--logo-bg) !important;
 
     transform: translate(4px, 4px) !important;
   }
 
+
+  #experience .experience-item:hover .experience-tags small {
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: #ffffff !important;
+
+    transform: none !important;
+  }
+
 }
-
-
-
-
 
 
 
@@ -7411,9 +7535,7 @@ GALLERY — SAME OVERSIZED LABEL SIZE
 
 
 
-
-
-    <section id="experience">
+<section id="experience">
   <div class="experience-container">
 
     <div class="experience-header">
@@ -7421,52 +7543,83 @@ GALLERY — SAME OVERSIZED LABEL SIZE
         <span>Who have I worked with?</span>
       </div>
 
-      <h2>Across sectors,<br>not inside one box.</h2>
+      <h2>
+        Across sectors,<br>
+        not inside one box.
+      </h2>
     </div>
+
 
     <div class="experience-list">
 
+      <!-- =====================================
+      BNP PARIBAS
+      ====================================== -->
+
       <article class="experience-item bnp">
+
         <div class="experience-logo">
           <span>BNPP</span>
         </div>
 
         <div class="experience-content">
+
           <div class="experience-title-row">
             <h3>BNP Paribas</h3>
-            <span>Private sector</span>
           </div>
 
-          <p class="experience-role">CSR &amp; Sustainability Communications</p>
+          <p class="experience-role">
+            CSR &amp; Sustainability Communications
+          </p>
 
           <p class="experience-text">
-            Working on CSR and sustainability communications, turning complex transition,
-            engagement and corporate responsibility topics into clear editorial, digital
-            and visual content.
+            Working on CSR and sustainability communications, turning complex
+            transition, engagement and corporate responsibility topics into
+            clear editorial, digital and visual content.
           </p>
 
           <div class="experience-tags">
+
+            <span class="experience-type">
+              Private sector
+            </span>
+
             <small>Communication</small>
             <small>CSR</small>
             <small>Sustainability</small>
+
           </div>
+
         </div>
 
-        <div class="experience-year">2026</div>
+        <div class="experience-year">
+          2026
+        </div>
+
       </article>
 
+
+      <!-- =====================================
+      OIF
+      ====================================== -->
+
       <article class="experience-item oif">
+
         <div class="experience-logo">
           <span>OIF</span>
         </div>
 
         <div class="experience-content">
+
           <div class="experience-title-row">
-            <h3>Organisation Internationale de la Francophonie</h3>
-            <span>International organisation</span>
+            <h3>
+              Organisation Internationale de la Francophonie
+            </h3>
           </div>
 
-          <p class="experience-role">Project Monitoring &amp; Strategic Reporting</p>
+          <p class="experience-role">
+            Project Monitoring &amp; Strategic Reporting
+          </p>
 
           <p class="experience-text">
             Contributed to project monitoring, country briefs, data organisation
@@ -7474,126 +7627,212 @@ GALLERY — SAME OVERSIZED LABEL SIZE
           </p>
 
           <div class="experience-tags">
+
+            <span class="experience-type">
+              International organisation
+            </span>
+
             <small>Cooperation</small>
             <small>Country briefs</small>
             <small>Data</small>
+
           </div>
+
         </div>
 
-        <div class="experience-year">2025</div>
+        <div class="experience-year">
+          2025
+        </div>
+
       </article>
 
+
+      <!-- =====================================
+      AQLITY
+      ====================================== -->
+
       <article class="experience-item aqlity">
+
         <div class="experience-logo">
           <span>AQ</span>
         </div>
 
         <div class="experience-content">
+
           <div class="experience-title-row">
             <h3>AQLITY</h3>
-            <span>Humanitarian innovation</span>
           </div>
 
-          <p class="experience-role">Humanitarian Data Analyst</p>
+          <p class="experience-role">
+            Humanitarian Data Analyst
+          </p>
 
           <p class="experience-text">
-            Worked on humanitarian data management, research support, visualisation
-            and analytical outputs connecting field information with accessible insights.
+            Worked on humanitarian data management, research support,
+            visualisation and analytical outputs connecting field information
+            with accessible insights.
           </p>
 
           <div class="experience-tags">
+
+            <span class="experience-type">
+              Humanitarian innovation
+            </span>
+
             <small>Research</small>
             <small>Data</small>
             <small>Visualisation</small>
+
           </div>
+
         </div>
 
-        <div class="experience-year">2025</div>
+        <div class="experience-year">
+          2025
+        </div>
+
       </article>
 
+
+      <!-- =====================================
+      ARDHIS
+      ====================================== -->
+
       <article class="experience-item ardhis">
+
         <div class="experience-logo">
           <span>AR</span>
         </div>
 
         <div class="experience-content">
+
           <div class="experience-title-row">
             <h3>ARDHIS</h3>
-            <span>Asylum NGO</span>
           </div>
 
-          <p class="experience-role">Asylum Casework &amp; Research</p>
+          <p class="experience-role">
+            Asylum Casework &amp; Research
+          </p>
 
           <p class="experience-text">
-            Supported asylum seekers through casework, documentation and country research,
-            with a focus on migration, protection and asylum procedures.
+            Supported asylum seekers through casework, documentation and
+            country research, with a focus on migration, protection and
+            asylum procedures.
           </p>
 
           <div class="experience-tags">
+
+            <span class="experience-type">
+              Asylum NGO
+            </span>
+
             <small>Migration</small>
             <small>Asylum</small>
             <small>Research</small>
+
           </div>
+
         </div>
 
-        <div class="experience-year">2024–25</div>
+        <div class="experience-year">
+          2024–25
+        </div>
+
       </article>
 
+
+      <!-- =====================================
+      ROYAL SCIENTIFIC SOCIETY
+      ====================================== -->
+
       <article class="experience-item tarjimly">
+
         <div class="experience-logo">
           <span>RSS</span>
         </div>
 
         <div class="experience-content">
+
           <div class="experience-title-row">
             <h3>Royal Scientific Society</h3>
-            <span>Humanitarian NGO</span>
           </div>
 
-          <p class="experience-role">Interpreter &amp; Translator</p>
+          <p class="experience-role">
+            Interpreter &amp; Translator
+          </p>
 
           <p class="experience-text">
-            Provided Arabic, French and English interpretation and translation support
-            for people requiring language assistance in humanitarian contexts.
+            Provided Arabic, French and English interpretation and translation
+            support for people requiring language assistance in humanitarian
+            contexts.
           </p>
 
           <div class="experience-tags">
+
+            <span class="experience-type">
+              Humanitarian NGO
+            </span>
+
             <small>Translation</small>
             <small>Arabic</small>
             <small>French</small>
             <small>English</small>
+
           </div>
+
         </div>
 
-        <div class="experience-year">2023–</div>
+        <div class="experience-year">
+          2023–
+        </div>
+
       </article>
 
+
+      <!-- =====================================
+      SCIENCES PO ARAB WORLD
+      ====================================== -->
+
       <article class="experience-item student">
+
         <div class="experience-logo">
           <span>SP</span>
         </div>
 
         <div class="experience-content">
+
           <div class="experience-title-row">
             <h3>Sciences Po Arab World</h3>
-            <span>Student-led association</span>
           </div>
 
-          <p class="experience-role">Communications &amp; Project Coordination</p>
+          <p class="experience-role">
+            Communications &amp; Project Coordination
+          </p>
 
           <p class="experience-text">
-            Led communications and supported cultural, academic and student-led initiatives
-            focused on the Arab world, including events and community engagement.
+            Led communications and supported cultural, academic and
+            student-led initiatives focused on the Arab world, including
+            events and community engagement.
           </p>
 
           <div class="experience-tags">
+
+            <span class="experience-type">
+              Student-led association
+            </span>
+
             <small>Events</small>
             <small>Communication</small>
             <small>Culture</small>
+
           </div>
+
         </div>
 
-        <div class="experience-year">2024–25</div>
+        <div class="experience-year">
+          2024–25
+        </div>
+
       </article>
 
     </div>
