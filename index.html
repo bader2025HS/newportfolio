@@ -2528,212 +2528,94 @@ NO JAVASCRIPT
 
 
 
-
-
 /* ==========================================
-EXPERIENCE — REAL HIGHLIGHT MARKER EFFECT
+EXPERIENCE — ORGANISATION TYPE
+CLEAN SOLID LABEL
 ========================================== */
 
 #experience .experience-title-row > span {
-  position: relative !important;
-
-  display: inline-block !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
   width: fit-content !important;
 
-  padding: 4px 8px !important;
+  padding: 8px 12px !important;
 
   border: 0 !important;
-  background: transparent !important;
+  border-radius: 0 !important;
 
-  color: #12382b !important;
+  background: var(--accent) !important;
+  color: #ffffff !important;
 
   font-family: "Space Grotesk", sans-serif !important;
 
-  font-size: 0.72rem !important;
+  font-size: 0.67rem !important;
   font-weight: 800 !important;
-  line-height: 1.1 !important;
+  line-height: 1 !important;
 
-  letter-spacing: 0.12em !important;
+  letter-spacing: 0.13em !important;
   text-transform: uppercase !important;
 
-  isolation: isolate;
+  box-shadow: 5px 5px 0 var(--logo-bg);
 
-  transform: rotate(-0.4deg);
+  transform: none !important;
 
   transition:
-    transform 0.35s ease,
-    color 0.35s ease !important;
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease !important;
 }
 
 
-/* MAIN THICK HIGHLIGHT */
+/* Remove previous marker effects */
 
-#experience .experience-title-row > span::before {
-  content: "" !important;
-
-  position: absolute !important;
-
-  left: -7px !important;
-  right: -9px !important;
-
-  top: 45% !important;
-  bottom: -3px !important;
-
-  z-index: -2 !important;
-
-  background: var(--accent) !important;
-
-  opacity: 0.32 !important;
-
-  clip-path: polygon(
-    1% 18%,
-    7% 7%,
-    18% 13%,
-    29% 4%,
-    43% 11%,
-    57% 3%,
-    70% 10%,
-    83% 5%,
-    96% 14%,
-    100% 36%,
-    98% 76%,
-    90% 91%,
-    75% 84%,
-    61% 95%,
-    46% 87%,
-    31% 96%,
-    16% 86%,
-    5% 93%,
-    0 69%
-  ) !important;
-
-  transform:
-    rotate(-1.2deg)
-    skewX(-4deg) !important;
-
-  pointer-events: none;
-
-  transition:
-    opacity 0.35s ease,
-    transform 0.4s ease,
-    inset 0.4s ease !important;
-}
-
-
-/* SECOND PASS OF THE MARKER */
-
+#experience .experience-title-row > span::before,
 #experience .experience-title-row > span::after {
-  content: "" !important;
-
-  position: absolute !important;
-
-  left: -3px !important;
-  right: -5px !important;
-
-  top: 56% !important;
-  bottom: -1px !important;
-
-  z-index: -1 !important;
-
-  background: var(--accent) !important;
-
-  opacity: 0.18 !important;
-
-  clip-path: polygon(
-    0 22%,
-    12% 10%,
-    25% 18%,
-    39% 7%,
-    54% 15%,
-    69% 6%,
-    84% 16%,
-    100% 9%,
-    98% 78%,
-    86% 91%,
-    70% 83%,
-    54% 94%,
-    37% 86%,
-    19% 95%,
-    4% 83%
-  ) !important;
-
-  transform:
-    rotate(0.8deg)
-    skewX(3deg) !important;
-
-  pointer-events: none;
-
-  transition:
-    opacity 0.35s ease,
-    transform 0.4s ease !important;
+  display: none !important;
+  content: none !important;
 }
 
 
-/* ==========================================
-DESKTOP HOVER
-========================================== */
+/* DESKTOP HOVER */
 
 #experience .experience-item:hover
 .experience-title-row > span {
-  color: #12382b !important;
+  background: #12382b !important;
 
-  transform:
-    translateX(7px)
-    rotate(0deg) !important;
+  box-shadow: 0 0 0 var(--logo-bg);
+
+  transform: translate(5px, 5px) !important;
 }
 
 
-#experience .experience-item:hover
-.experience-title-row > span::before {
-  opacity: 0.5 !important;
-
-  transform:
-    rotate(-0.3deg)
-    skewX(-2deg)
-    scaleX(1.03) !important;
-}
-
-
-#experience .experience-item:hover
-.experience-title-row > span::after {
-  opacity: 0.28 !important;
-
-  transform:
-    rotate(0.2deg)
-    skewX(1deg)
-    scaleX(1.02) !important;
-}
-
-
-/* ==========================================
-PHONE
-========================================== */
+/* PHONE */
 
 @media (max-width: 650px) {
 
   #experience .experience-title-row > span {
-    padding: 3px 6px !important;
+    padding: 7px 10px !important;
 
-    font-size: 0.59rem !important;
-    letter-spacing: 0.09em !important;
+    font-size: 0.57rem !important;
+    letter-spacing: 0.1em !important;
+
+    box-shadow: 4px 4px 0 var(--logo-bg);
   }
 
-
-  #experience .experience-title-row > span::before {
-    left: -5px !important;
-    right: -6px !important;
-
-    top: 43% !important;
-    bottom: -2px !important;
-  }
+}
 
 
-  #experience .experience-title-row > span::after {
-    left: -2px !important;
-    right: -3px !important;
+/* PHONE TAP / SELECTED STATE */
 
-    top: 55% !important;
+@media (max-width: 650px) and (hover: none) {
+
+  #experience .experience-item:hover
+  .experience-title-row > span {
+    background: #12382b !important;
+
+    box-shadow: 0 0 0 var(--logo-bg);
+
+    transform: translate(4px, 4px) !important;
   }
 
 }
