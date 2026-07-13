@@ -8442,7 +8442,73 @@ PHONE — TOOLS 2 COLUMNS
 }
 
 
+/* ==========================================
+PHONE — FIX LEVEL BADGE RIGHT CLIPPING
+========================================== */
 
+@media (max-width: 650px) {
+
+  #skills .language-row small {
+    width: calc(100% - 12px);
+    max-width: calc(100% - 12px);
+
+    margin: 0;
+    padding: 8px 5px;
+
+    justify-self: center;
+
+    box-sizing: border-box;
+
+    transform: none !important;
+  }
+
+  #skills .language-row:hover small,
+  #skills .language-row.is-active small {
+    width: calc(100% - 12px);
+    max-width: calc(100% - 12px);
+
+    margin: 0;
+
+    transform: none !important;
+  }
+
+}
+    /* ==========================================
+PHONE — MORE SPACE BETWEEN FLAG AND NAME
+========================================== */
+
+@media (max-width: 650px) {
+
+  #skills .skills-languages .language-row {
+    column-gap: 15px;
+  }
+
+}
+
+    /* ==========================================
+LANGUAGES — FLAG / NAME SPACING
+========================================== */
+
+/* DESKTOP */
+
+@media (min-width: 651px) {
+
+  #skills .skills-languages .language-row {
+    column-gap: 26px;
+  }
+
+}
+
+
+/* PHONE */
+
+@media (max-width: 650px) {
+
+  #skills .skills-languages .language-row {
+    column-gap: 15px;
+  }
+
+}
 
 
 
