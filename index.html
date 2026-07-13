@@ -7090,10 +7090,72 @@ VERY SMALL PHONES
 
 
 
+/* ==========================================
+FIX SAUDI + UK FLAG CIRCLE FILL
+========================================== */
+
+/* Keep all flags clipped perfectly */
+
+#skills .language-flag {
+  border-radius: 50%;
+  overflow: hidden;
+}
 
 
+/* Saudi flag */
+
+#skills .language-row:nth-of-type(2) .language-flag svg {
+  width: 108%;
+  height: 108%;
+  max-width: none;
+
+  transform: scale(1.08);
+}
 
 
+/* UK flag */
+
+#skills .language-row:nth-of-type(4) .language-flag svg {
+  width: 115%;
+  height: 115%;
+  max-width: none;
+
+  transform: scale(1.15);
+}
+
+
+/* ==========================================
+FIX FLAG SVG FILL
+========================================== */
+
+#skills .language-flag {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+
+/* ARABIC */
+
+#skills .language-arabic .language-flag svg {
+  width: 108%;
+  height: 108%;
+
+  max-width: none;
+
+  transform: scale(1.08);
+}
+
+
+/* ENGLISH */
+
+#skills .language-english .language-flag svg {
+  width: 116%;
+  height: 116%;
+
+  max-width: none;
+
+  transform: scale(1.16);
+}
 
 
 
@@ -8356,8 +8418,8 @@ GALLERY — SAME OVERSIZED LABEL SIZE
 
         <!-- ARABIC -->
 
-        <div class="language-row">
-
+<div class="language-row language-arabic">
+  
           <span class="language-flag">
 
             <svg
@@ -8433,8 +8495,8 @@ GALLERY — SAME OVERSIZED LABEL SIZE
 
         <!-- ENGLISH -->
 
-        <div class="language-row">
-
+<div class="language-row language-english">
+  
           <span class="language-flag">
 
             <svg
