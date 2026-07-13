@@ -2832,6 +2832,7 @@ PHONE TAP / SELECTED STATE
 
 /* ==========================================
 EXPERIENCE — PHONE VERTICAL YEAR
+MORE SPACED NUMBERS
 ========================================== */
 
 @media (max-width: 650px) {
@@ -2843,23 +2844,25 @@ EXPERIENCE — PHONE VERTICAL YEAR
     width: auto !important;
     min-width: 0 !important;
 
-    padding: 0 !important;
     margin: 0 !important;
+    padding: 8px 0 !important;
 
     writing-mode: vertical-rl !important;
     text-orientation: mixed !important;
 
     white-space: nowrap !important;
 
-    font-size: 1.15rem !important;
+    font-size: 1.2rem !important;
     line-height: 1 !important;
-    letter-spacing: 0.08em !important;
+
+    /* MORE SPACE BETWEEN NUMBERS */
+    letter-spacing: 0.3em !important;
 
     transform: rotate(180deg) !important;
   }
 
 
-  /* KEEP THE YEAR VERTICAL WHEN CARD IS SELECTED */
+  /* KEEP VERTICAL YEAR WHEN SELECTED */
 
   #experience .experience-item:hover
   .experience-year {
@@ -2867,7 +2870,6 @@ EXPERIENCE — PHONE VERTICAL YEAR
   }
 
 }
-
 
 
 
