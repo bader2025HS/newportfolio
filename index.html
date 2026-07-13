@@ -8600,7 +8600,66 @@ LANGUAGE HOVER — DARKER BACKGROUND
 
 
 
+/* ==========================================
+LANGUAGE HOVER — DARK GREEN
+========================================== */
 
+#skills .language-row:hover,
+#skills .language-row.is-active {
+  background: #12382b;
+}
+
+/* TEXT MUST TURN LIGHT */
+
+#skills .language-row:hover strong,
+#skills .language-row.is-active strong {
+  color: #f6fbf8;
+}
+
+/* KEEP LEVEL BADGE VISIBLE */
+
+#skills .language-row:hover small,
+#skills .language-row.is-active small {
+  background: #ddefe7;
+  border-color: #ddefe7;
+  color: #12382b;
+}
+
+/* RING AROUND FLAG */
+
+#skills .language-row:hover .language-flag,
+#skills .language-row.is-active .language-flag {
+  box-shadow:
+    0 0 0 4px #12382b,
+    0 0 0 6px #9dd5bf;
+}
+
+/* BOTTOM LINE */
+
+#skills .language-row:hover::after,
+#skills .language-row.is-active::after {
+  background: #9dd5bf;
+}
+
+/* PHONE — TAP ACTIVE STATE */
+
+@media (max-width: 650px) {
+
+  #skills .language-row.is-active {
+    background: #12382b;
+  }
+
+  #skills .language-row.is-active strong {
+    color: #f6fbf8;
+  }
+
+  #skills .language-row.is-active small {
+    background: #ddefe7;
+    border-color: #ddefe7;
+    color: #12382b;
+  }
+
+}
 
 
 
