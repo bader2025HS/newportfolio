@@ -7861,7 +7861,65 @@ PHONE
 
 
 
+/* ==========================================
+LANGUAGE HOVER — LIGHTER GREEN VERSION
+========================================== */
 
+/* SLIDING BACKGROUND */
+
+#skills .language-row::before {
+  background: #2d7b61;
+}
+
+
+/* NAME BECOMES WHITE */
+
+#skills .language-row:hover strong,
+#skills .language-row.is-active strong {
+  color: #f6fbf8;
+}
+
+
+/* LEVEL BADGE BECOMES LIGHT GREEN */
+
+#skills .language-row:hover small,
+#skills .language-row.is-active small {
+  background: #ddefe7;
+  border-color: #ddefe7;
+
+  color: #2d7b61;
+
+  transform: translateX(-10px) !important;
+}
+
+
+/* BOTTOM ACCENT LINE */
+
+#skills .language-row::after {
+  background: #9dd5bf;
+}
+
+
+/* ==========================================
+PHONE ACTIVE STATE
+========================================== */
+
+@media (max-width: 650px) {
+
+  #skills .language-row.is-active strong {
+    color: #f6fbf8;
+  }
+
+  #skills .language-row.is-active small {
+    background: #ddefe7;
+    border-color: #ddefe7;
+
+    color: #2d7b61;
+
+    transform: translateX(-4px) !important;
+  }
+
+}
 
     
 
