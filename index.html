@@ -2752,7 +2752,75 @@ MATCHES YOUR EXISTING MOBILE :HOVER SYSTEM
 
 
 
+/* ==========================================
+EXPERIENCE TYPE — HOVER ALIGNMENT FIX
+========================================== */
 
+#experience .experience-item:hover .experience-type {
+  background: #ffffff !important;
+  color: var(--accent) !important;
+
+  border-color: var(--accent) !important;
+
+  box-shadow: none !important;
+
+  transform: none !important;
+}
+
+
+/* Regular tags stay filled on hover */
+
+#experience .experience-item:hover .experience-tags small {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+
+  color: #ffffff !important;
+
+  transform: none !important;
+}
+
+
+/* Keep type and tags vertically aligned */
+
+#experience .experience-type,
+#experience .experience-tags small {
+  min-height: 36px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* ==========================================
+PHONE TAP / SELECTED STATE
+========================================== */
+
+@media (max-width: 650px) and (hover: none) {
+
+  #experience .experience-item:hover .experience-type {
+    background: #ffffff !important;
+    color: var(--accent) !important;
+
+    border-color: var(--accent) !important;
+
+    box-shadow: none !important;
+
+    transform: none !important;
+  }
+
+  #experience .experience-item:hover .experience-tags small {
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+
+    color: #ffffff !important;
+
+    transform: none !important;
+  }
+
+}
 
 
 
