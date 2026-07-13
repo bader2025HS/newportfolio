@@ -2830,7 +2830,43 @@ PHONE TAP / SELECTED STATE
 
 
 
+/* ==========================================
+EXPERIENCE — PHONE VERTICAL YEAR
+========================================== */
 
+@media (max-width: 650px) {
+
+  #experience .experience-year {
+    align-self: center !important;
+    justify-self: center !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    writing-mode: vertical-rl !important;
+    text-orientation: mixed !important;
+
+    white-space: nowrap !important;
+
+    font-size: 1.15rem !important;
+    line-height: 1 !important;
+    letter-spacing: 0.08em !important;
+
+    transform: rotate(180deg) !important;
+  }
+
+
+  /* KEEP THE YEAR VERTICAL WHEN CARD IS SELECTED */
+
+  #experience .experience-item:hover
+  .experience-year {
+    transform: rotate(180deg) !important;
+  }
+
+}
 
 
 
