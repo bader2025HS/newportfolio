@@ -6773,7 +6773,88 @@ SKILLS — SAME OVERSIZED LABEL SIZE
 
 
 
+/* ==========================================
+SKILLS — MOBILE LANGUAGES 2 COLUMNS × 3 ROWS
+========================================== */
 
+@media (max-width: 650px) {
+
+  /* Languages column becomes 2 columns */
+  #skills .skills-column:first-child {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 16px;
+  }
+
+  /* Heading stays full width */
+  #skills .skills-column:first-child h3 {
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+  }
+
+  /* Each language becomes a compact vertical item */
+  #skills .language-row {
+    min-width: 0;
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "flag name"
+      "level level";
+
+    align-items: center;
+
+    column-gap: 10px;
+    row-gap: 12px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid rgba(18, 56, 43, 0.2);
+  }
+
+  #skills .language-row span {
+    grid-area: flag;
+
+    font-size: 1.6rem;
+  }
+
+  #skills .language-row strong {
+    grid-area: name;
+
+    min-width: 0;
+
+    font-size: 1.15rem;
+    line-height: 1.05;
+
+    overflow-wrap: anywhere;
+  }
+
+  #skills .language-row small {
+    grid-area: level;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 8px 6px;
+
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+
+    transform: none;
+  }
+
+
+  /* REMOVE DESKTOP HORIZONTAL MOVEMENT */
+
+  #skills .language-row:hover {
+    padding-left: 0;
+  }
+
+  #skills .language-row:hover small {
+    transform: none;
+  }
+
+}
 
 
 
