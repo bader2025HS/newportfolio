@@ -8395,7 +8395,51 @@ LANGUAGE HOVER — KEEP FLAG RING INSIDE ROW
 
 
 
+/* ==========================================
+PHONE — KEEP LEVEL BADGE INSIDE LANGUAGE ROW
+========================================== */
 
+@media (max-width: 650px) {
+
+  #skills .language-row small {
+    width: calc(100% - 10px);
+    margin-left: 5px;
+    margin-right: 5px;
+
+    box-sizing: border-box;
+  }
+
+  #skills .language-row:hover small,
+  #skills .language-row.is-active small {
+    transform: none !important;
+  }
+
+}
+
+    /* ==========================================
+PHONE — TOOLS 2 COLUMNS
+========================================== */
+
+@media (max-width: 650px) {
+
+  #skills .tools-directory {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 18px;
+    row-gap: 0;
+  }
+
+  #skills .tool-entry {
+    min-width: 0;
+  }
+
+  #skills .tool-entry span {
+    font-size: 1.35rem;
+    overflow-wrap: anywhere;
+  }
+
+}
 
 
 
