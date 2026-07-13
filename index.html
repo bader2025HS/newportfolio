@@ -7368,7 +7368,221 @@ SMALL PHONES
 
 
 
+/* ==========================================
+SKILLS — DESKTOP 3×2 LANGUAGES
+TOOLS BELOW
+ADD AT THE VERY END
+========================================== */
 
+
+/* MAIN SKILLS LAYOUT BECOMES ONE COLUMN */
+
+#skills .skills-directory {
+  grid-template-columns: 1fr;
+  gap: 70px;
+}
+
+
+/* ==========================================
+DESKTOP LANGUAGES — 3 COLUMNS × 2 ROWS
+========================================== */
+
+#skills .skills-languages {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  column-gap: 42px;
+  row-gap: 0;
+}
+
+
+/* LANGUAGES HEADING FULL WIDTH */
+
+#skills .skills-languages > h3 {
+  grid-column: 1 / -1;
+}
+
+
+/* EACH LANGUAGE CELL */
+
+#skills .skills-languages .language-row {
+  min-width: 0;
+
+  grid-template-columns: 58px minmax(0, 1fr);
+  grid-template-areas:
+    "flag name"
+    "level level";
+
+  column-gap: 16px;
+  row-gap: 14px;
+
+  padding: 24px 0;
+}
+
+
+/* FLAG */
+
+#skills .skills-languages .language-flag {
+  grid-area: flag;
+}
+
+
+/* LANGUAGE NAME */
+
+#skills .skills-languages .language-row strong {
+  grid-area: name;
+
+  min-width: 0;
+
+  font-size: clamp(1.3rem, 1.7vw, 1.7rem);
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+
+/* LEVEL BADGE */
+
+#skills .skills-languages .language-row small {
+  grid-area: level;
+
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* REMOVE SIDE MOVEMENT */
+
+#skills .skills-languages .language-row:hover {
+  padding-left: 0;
+}
+
+#skills .skills-languages .language-row:hover small {
+  transform: none;
+}
+
+
+/* ==========================================
+TOOLS UNDER LANGUAGES
+========================================== */
+
+#skills .skills-tools {
+  width: 100%;
+}
+
+#skills .tools-directory {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  column-gap: 34px;
+}
+
+
+/* ==========================================
+TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+  #skills .skills-languages {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    column-gap: 22px;
+  }
+
+  #skills .skills-languages .language-row {
+    grid-template-columns: 50px minmax(0, 1fr);
+
+    column-gap: 10px;
+  }
+
+  #skills .skills-languages .language-flag {
+    width: 50px;
+    height: 50px;
+
+    flex-basis: 50px;
+  }
+
+  #skills .skills-languages .language-row strong {
+    font-size: 1.15rem;
+  }
+
+  #skills .tools-directory {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ==========================================
+PHONE — KEEP 2 COLUMNS × 3 ROWS
+========================================== */
+
+@media (max-width: 650px) {
+
+  #skills .skills-directory {
+    gap: 55px;
+  }
+
+  #skills .skills-languages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 18px;
+  }
+
+  #skills .skills-languages .language-row {
+    grid-template-columns: 46px minmax(0, 1fr);
+
+    column-gap: 9px;
+  }
+
+  #skills .skills-languages .language-flag {
+    width: 46px;
+    height: 46px;
+
+    flex-basis: 46px;
+  }
+
+  #skills .skills-languages .language-row strong {
+    font-size: 1rem;
+  }
+
+  #skills .tools-directory {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ==========================================
+VERY SMALL PHONES
+========================================== */
+
+@media (max-width: 390px) {
+
+  #skills .skills-languages {
+    column-gap: 12px;
+  }
+
+  #skills .skills-languages .language-row {
+    grid-template-columns: 42px minmax(0, 1fr);
+
+    column-gap: 7px;
+  }
+
+  #skills .skills-languages .language-flag {
+    width: 42px;
+    height: 42px;
+
+    flex-basis: 42px;
+  }
+
+  #skills .skills-languages .language-row strong {
+    font-size: 0.92rem;
+  }
+
+}
 
 
 
