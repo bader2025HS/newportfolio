@@ -2531,83 +2531,105 @@ NO JAVASCRIPT
 
 
 
-
-    /* ==========================================
+/* ==========================================
 EXPERIENCE — ORGANISATION TYPE
-OFFSET STAMP STYLE
+HIGHLIGHT MARKER STYLE
 ========================================== */
 
 #experience .experience-title-row > span {
-  position: relative;
+  position: relative !important;
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block !important;
 
-  width: fit-content;
+  width: fit-content !important;
 
-  padding: 8px 12px;
+  padding: 3px 4px !important;
 
-  border: 1px solid var(--accent);
+  border: 0 !important;
+  background: transparent !important;
 
-  background: transparent;
-  color: var(--accent);
+  color: var(--accent) !important;
 
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Space Grotesk", sans-serif !important;
 
-  font-size: 0.66rem;
-  font-weight: 800;
-  line-height: 1;
+  font-size: 0.72rem !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
 
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+  letter-spacing: 0.13em !important;
+  text-transform: uppercase !important;
 
   isolation: isolate;
 
   transition:
-    transform 0.35s ease,
-    background 0.35s ease,
-    color 0.35s ease;
+    color 0.35s ease,
+    transform 0.35s ease !important;
 }
 
 
-/* OFFSET FRAME */
+/* ==========================================
+MARKER
+========================================== */
 
-#experience .experience-title-row > span::after {
-  content: "";
+#experience .experience-title-row > span::before {
+  content: "" !important;
 
-  position: absolute;
+  position: absolute !important;
 
-  inset: 0;
+  left: -3px !important;
+  bottom: 1px !important;
 
-  border: 1px solid var(--accent);
+  width: 38% !important;
+  height: 7px !important;
 
-  transform: translate(4px, 4px);
+  z-index: -1 !important;
 
-  z-index: -1;
+  background: var(--accent) !important;
+
+  opacity: 0.28 !important;
+
+  transform: rotate(-1.5deg) !important;
+  transform-origin: left center !important;
+
+  pointer-events: none;
 
   transition:
-    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-    background 0.35s ease;
+    width 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.35s ease,
+    opacity 0.35s ease,
+    transform 0.35s ease !important;
 }
 
 
-/* DESKTOP HOVER */
+/* Remove any previous decorative pseudo-element */
+
+#experience .experience-title-row > span::after {
+  display: none !important;
+  content: none !important;
+}
+
+
+/* ==========================================
+DESKTOP HOVER
+========================================== */
 
 #experience .experience-item:hover
 .experience-title-row > span {
-  background: var(--accent);
-  color: #ffffff;
+  color: #12382b !important;
 
-  transform: translate(-2px, -2px);
+  transform: translateX(7px) !important;
 }
 
 
 #experience .experience-item:hover
-.experience-title-row > span::after {
-  transform: translate(0, 0);
+.experience-title-row > span::before {
+  width: calc(100% + 6px) !important;
 
-  background: var(--accent);
+  height: 9px !important;
+
+  opacity: 0.45 !important;
+
+  transform: rotate(-0.5deg) !important;
 }
 
 
@@ -2618,36 +2640,47 @@ PHONE
 @media (max-width: 650px) {
 
   #experience .experience-title-row > span {
-    padding: 7px 10px;
+    padding: 2px 3px !important;
 
-    font-size: 0.57rem;
-    letter-spacing: 0.1em;
+    font-size: 0.59rem !important;
+    letter-spacing: 0.1em !important;
+  }
+
+
+  #experience .experience-title-row > span::before {
+    height: 6px !important;
   }
 
 }
 
 
-/* PHONE TAP SELECTION */
+/* ==========================================
+PHONE TAP / SELECTED STATE
+USES YOUR EXISTING MOBILE :HOVER SYSTEM
+========================================== */
 
 @media (max-width: 650px) and (hover: none) {
 
   #experience .experience-item:hover
   .experience-title-row > span {
-    background: var(--accent) !important;
-    color: #ffffff !important;
+    color: #12382b !important;
 
-    transform: translate(-2px, -2px) !important;
+    transform: translateX(5px) !important;
   }
 
-  #experience .experience-item:hover
-  .experience-title-row > span::after {
-    transform: translate(0, 0) !important;
 
-    background: var(--accent) !important;
+  #experience .experience-item:hover
+  .experience-title-row > span::before {
+    width: calc(100% + 5px) !important;
+
+    height: 8px !important;
+
+    opacity: 0.45 !important;
+
+    transform: rotate(-0.5deg) !important;
   }
 
 }
-
 
 
 
