@@ -8130,7 +8130,218 @@ PHONE
 
 
 
+/* ==========================================
+LANGUAGES — RING + BORDER HOVER EFFECT
+NO HTML CHANGES
+========================================== */
 
+#skills .language-row {
+  position: relative;
+  isolation: isolate;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* REMOVE PREVIOUS EFFECTS */
+
+#skills .language-row::before {
+  display: none !important;
+}
+
+
+/* ==========================================
+FLAG
+========================================== */
+
+#skills .language-flag {
+  position: relative;
+
+  transition:
+    transform 0.4s cubic-bezier(.2,.8,.2,1),
+    box-shadow 0.4s ease;
+}
+
+
+/* ==========================================
+LANGUAGE NAME
+========================================== */
+
+#skills .language-row strong {
+  transition:
+    color 0.3s ease,
+    letter-spacing 0.35s ease,
+    transform 0.35s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* ==========================================
+LEVEL BADGE
+========================================== */
+
+#skills .language-row small {
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.35s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* ==========================================
+ANIMATED BOTTOM BORDER
+========================================== */
+
+#skills .language-row::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: -1px;
+
+  height: 3px;
+
+  background: #2d7b61;
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition:
+    transform 0.4s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* ==========================================
+DESKTOP HOVER + ACTIVE STATE
+========================================== */
+
+#skills .language-row:hover,
+#skills .language-row.is-active {
+  background: rgba(45, 123, 97, 0.055);
+}
+
+
+#skills .language-row:hover::after,
+#skills .language-row.is-active::after {
+  transform: scaleX(1);
+}
+
+
+/* DOUBLE RING AROUND FLAG */
+
+#skills .language-row:hover .language-flag,
+#skills .language-row.is-active .language-flag {
+  transform: scale(0.92);
+
+  box-shadow:
+    0 0 0 5px #ddefe7,
+    0 0 0 7px #2d7b61;
+}
+
+
+/* NAME EMPHASIS */
+
+#skills .language-row:hover strong,
+#skills .language-row.is-active strong {
+  color: #2d7b61;
+
+  letter-spacing: -0.015em;
+
+  transform: translateX(5px);
+}
+
+
+/* BADGE BECOMES OUTLINED */
+
+#skills .language-row:hover small,
+#skills .language-row.is-active small {
+  background: transparent;
+
+  border-color: #2d7b61;
+
+  color: #2d7b61;
+
+  transform: translateX(-5px) !important;
+}
+
+
+/* ==========================================
+PHONE — TAP ONLY
+========================================== */
+
+@media (max-width: 650px) {
+
+  /* Cancel sticky browser hover */
+
+  #skills .language-row:hover {
+    background: transparent;
+  }
+
+  #skills .language-row:hover::after {
+    transform: scaleX(0);
+  }
+
+  #skills .language-row:hover .language-flag {
+    transform: none;
+    box-shadow: none;
+  }
+
+  #skills .language-row:hover strong {
+    color: #12382b;
+    letter-spacing: -0.04em;
+    transform: none;
+  }
+
+  #skills .language-row:hover small {
+    background: #2d7b61;
+    border-color: #2d7b61;
+    color: #f6fbf8;
+
+    transform: none !important;
+  }
+
+
+  /* Tap active state */
+
+  #skills .language-row.is-active {
+    background: rgba(45, 123, 97, 0.055);
+  }
+
+  #skills .language-row.is-active::after {
+    transform: scaleX(1);
+  }
+
+  #skills .language-row.is-active .language-flag {
+    transform: scale(0.92);
+
+    box-shadow:
+      0 0 0 4px #ddefe7,
+      0 0 0 6px #2d7b61;
+  }
+
+  #skills .language-row.is-active strong {
+    color: #2d7b61;
+
+    transform: translateX(3px);
+  }
+
+  #skills .language-row.is-active small {
+    background: transparent;
+
+    border-color: #2d7b61;
+
+    color: #2d7b61;
+
+    transform: translateX(-3px) !important;
+  }
+
+}
 
 
 
