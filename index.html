@@ -2520,9 +2520,21 @@ NO JAVASCRIPT
 
 
 
-/* ==========================================
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ==========================================
 EXPERIENCE — ORGANISATION TYPE
-VERTICAL ACCENT LABEL
+OFFSET STAMP STYLE
 ========================================== */
 
 #experience .experience-title-row > span {
@@ -2530,141 +2542,111 @@ VERTICAL ACCENT LABEL
 
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 
   width: fit-content;
 
-  padding: 8px 13px 8px 17px;
+  padding: 8px 12px;
 
-  border-left: 4px solid var(--accent);
+  border: 1px solid var(--accent);
 
-  background:
-    color-mix(
-      in srgb,
-      var(--accent) 9%,
-      transparent
-    );
-
+  background: transparent;
   color: var(--accent);
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 800;
   line-height: 1;
 
   letter-spacing: 0.13em;
   text-transform: uppercase;
 
+  isolation: isolate;
+
   transition:
-    padding-left 0.35s ease,
+    transform 0.35s ease,
     background 0.35s ease,
-    color 0.35s ease,
-    border-color 0.35s ease,
-    transform 0.35s ease;
+    color 0.35s ease;
 }
 
 
-/* ==========================================
-SMALL DECORATIVE LINE
-========================================== */
+/* OFFSET FRAME */
 
 #experience .experience-title-row > span::after {
   content: "";
 
-  width: 0;
-  height: 1px;
+  position: absolute;
 
-  margin-left: 0;
+  inset: 0;
 
-  background: currentColor;
+  border: 1px solid var(--accent);
+
+  transform: translate(4px, 4px);
+
+  z-index: -1;
 
   transition:
-    width 0.35s ease,
-    margin-left 0.35s ease;
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.35s ease;
 }
 
 
-/* ==========================================
-DESKTOP HOVER
-========================================== */
+/* DESKTOP HOVER */
 
 #experience .experience-item:hover
 .experience-title-row > span {
-  padding-left: 20px;
-
   background: var(--accent);
-  border-left-color: #ffffff;
-
   color: #ffffff;
 
-  transform: translateX(7px);
+  transform: translate(-2px, -2px);
 }
 
 
 #experience .experience-item:hover
 .experience-title-row > span::after {
-  width: 22px;
+  transform: translate(0, 0);
 
-  margin-left: 11px;
+  background: var(--accent);
 }
 
 
 /* ==========================================
 PHONE
-KEEP SAME STYLE + TAP SELECTION EFFECT
 ========================================== */
 
 @media (max-width: 650px) {
 
   #experience .experience-title-row > span {
-    max-width: 100%;
+    padding: 7px 10px;
 
-    padding: 7px 10px 7px 13px;
-
-    border-left-width: 3px;
-
-    font-size: 0.58rem;
-    line-height: 1.25;
-
+    font-size: 0.57rem;
     letter-spacing: 0.1em;
-
-    overflow-wrap: anywhere;
   }
 
 }
 
 
-/* ==========================================
-PHONE SELECTED / TAP STATE
-MATCH YOUR EXISTING MOBILE :HOVER SYSTEM
-========================================== */
+/* PHONE TAP SELECTION */
 
 @media (max-width: 650px) and (hover: none) {
 
   #experience .experience-item:hover
   .experience-title-row > span {
-    padding-left: 16px !important;
-
     background: var(--accent) !important;
-
-    border-left-color: #ffffff !important;
-
     color: #ffffff !important;
 
-    transform: translateX(5px) !important;
+    transform: translate(-2px, -2px) !important;
   }
-
 
   #experience .experience-item:hover
   .experience-title-row > span::after {
-    width: 16px !important;
+    transform: translate(0, 0) !important;
 
-    margin-left: 8px !important;
+    background: var(--accent) !important;
   }
 
 }
-
-
 
 
 
