@@ -7587,7 +7587,61 @@ VERY SMALL PHONES
 
 
 
+/* ==========================================
+LANGUAGE LEVEL — RIGHT SIDE ON DESKTOP
+========================================== */
 
+@media (min-width: 651px) {
+
+  #skills .skills-languages .language-row {
+    display: grid;
+
+    grid-template-columns:
+      58px
+      minmax(0, 1fr)
+      auto;
+
+    grid-template-areas: "flag name level";
+
+    align-items: center;
+
+    column-gap: 18px;
+
+    padding: 24px 0;
+  }
+
+
+  #skills .skills-languages .language-flag {
+    grid-area: flag;
+  }
+
+
+  #skills .skills-languages .language-row strong {
+    grid-area: name;
+
+    min-width: 0;
+  }
+
+
+  #skills .skills-languages .language-row small {
+    grid-area: level;
+
+    width: auto;
+    min-width: 72px;
+
+    padding: 9px 13px;
+
+    box-sizing: border-box;
+
+    transform: none !important;
+  }
+
+
+  #skills .skills-languages .language-row:hover small {
+    transform: none !important;
+  }
+
+}
 
 
 
