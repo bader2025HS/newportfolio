@@ -7647,7 +7647,214 @@ LANGUAGE LEVEL — RIGHT SIDE ON DESKTOP
 
 
 
+/* ==========================================
+LANGUAGES — INTERACTIVE HOVER / ACTIVE EFFECT
+========================================== */
 
+#skills .language-row {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  cursor: pointer;
+
+  transition:
+    background 0.4s cubic-bezier(.2,.8,.2,1),
+    padding 0.4s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* DARK GREEN BACKGROUND SLIDES IN */
+
+#skills .language-row::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: #12382b;
+
+  transform: scaleX(0);
+  transform-origin: left center;
+
+  transition:
+    transform 0.45s cubic-bezier(.2,.8,.2,1);
+
+  z-index: -1;
+}
+
+
+/* ==========================================
+FLAG
+========================================== */
+
+#skills .language-flag {
+  position: relative;
+
+  transition:
+    transform 0.45s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* ==========================================
+LANGUAGE NAME
+========================================== */
+
+#skills .language-row strong {
+  transition:
+    color 0.35s ease,
+    transform 0.45s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* ==========================================
+LEVEL BADGE
+========================================== */
+
+#skills .language-row small {
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.45s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* ==========================================
+DESKTOP HOVER + MOBILE ACTIVE
+========================================== */
+
+#skills .language-row:hover::before,
+#skills .language-row.is-active::before {
+  transform: scaleX(1);
+}
+
+
+#skills .language-row:hover .language-flag,
+#skills .language-row.is-active .language-flag {
+  transform:
+    translateX(10px)
+    rotate(-7deg)
+    scale(1.12);
+}
+
+
+#skills .language-row:hover strong,
+#skills .language-row.is-active strong {
+  color: #f6fbf8;
+
+  transform: translateX(10px);
+}
+
+
+#skills .language-row:hover small,
+#skills .language-row.is-active small {
+  background: #ddefe7;
+  border-color: #ddefe7;
+
+  color: #12382b;
+
+  transform: translateX(-10px) !important;
+}
+
+
+/* ==========================================
+BOTTOM LINE ANIMATION
+========================================== */
+
+#skills .language-row::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 3px;
+
+  background: #2d7b61;
+
+  transform: scaleX(0);
+  transform-origin: right center;
+
+  transition:
+    transform 0.45s cubic-bezier(.2,.8,.2,1);
+}
+
+
+#skills .language-row:hover::after,
+#skills .language-row.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+
+/* ==========================================
+PHONE
+========================================== */
+
+@media (max-width: 650px) {
+
+  #skills .language-row:hover::before {
+    transform: scaleX(0);
+  }
+
+  #skills .language-row:hover::after {
+    transform: scaleX(0);
+  }
+
+  #skills .language-row:hover .language-flag {
+    transform: none;
+  }
+
+  #skills .language-row:hover strong {
+    color: #12382b;
+    transform: none;
+  }
+
+  #skills .language-row:hover small {
+    background: #2d7b61;
+    border-color: #2d7b61;
+    color: #f6fbf8;
+
+    transform: none !important;
+  }
+
+
+  /* ACTIVE EFFECT AFTER TAP */
+
+  #skills .language-row.is-active::before {
+    transform: scaleX(1);
+  }
+
+  #skills .language-row.is-active::after {
+    transform: scaleX(1);
+  }
+
+  #skills .language-row.is-active .language-flag {
+    transform:
+      translateX(5px)
+      rotate(-6deg)
+      scale(1.08);
+  }
+
+  #skills .language-row.is-active strong {
+    color: #f6fbf8;
+
+    transform: translateX(4px);
+  }
+
+  #skills .language-row.is-active small {
+    background: #ddefe7;
+    border-color: #ddefe7;
+
+    color: #12382b;
+
+    transform: translateX(-4px) !important;
+  }
+
+}
 
 
 
@@ -9237,7 +9444,7 @@ GALLERY — SAME OVERSIZED LABEL SIZE
 
           </span>
 
-          <strong>Japanese 日本語</strong>
+          <strong>日本語</strong>
           <small>A2</small>
 
         </div>
@@ -10570,7 +10777,39 @@ window.addEventListener("resize", () => {
   }
 
 
+/* ==========================================
+LANGUAGES — TAP INTERACTION
+========================================== */
 
+const languageRows = document.querySelectorAll(
+  "#skills .language-row"
+);
+
+languageRows.forEach((row) => {
+
+  row.addEventListener("click", () => {
+
+    const alreadyActive =
+      row.classList.contains("is-active");
+
+
+    /* Close every language */
+
+    languageRows.forEach((item) => {
+      item.classList.remove("is-active");
+    });
+
+
+    /* Open clicked language */
+
+    if (!alreadyActive) {
+      row.classList.add("is-active");
+    }
+
+  });
+
+});
+    
     
   </script>
 
