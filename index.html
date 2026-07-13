@@ -6273,1118 +6273,105 @@ CONTACT — SAME OVERSIZED LABEL SIZE
 
 
 
-
-
-
-
-
-
-    
- /* ===============================
-SKILLS — DARK PINE VERSION
-=============================== */
+/* ==========================================
+SKILLS
+========================================== */
 
 #skills {
   min-height: 100vh;
   padding: 140px 8vw;
-  background: #163f35;
-  color: #f2f7f4;
+
+  background: #ddefe7;
+  color: #12382b;
 }
 
-.skills-container {
+#skills .skills-container {
   max-width: 1450px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 
-/* HEADER */
+/* ==========================================
+HEADER
+========================================== */
 
-.skills-header h2 {
+#skills .skills-header h2 {
+  max-width: 950px;
   margin-top: 18px;
+
+  color: #12382b;
+
   font-size: clamp(3rem, 6vw, 5.8rem);
   line-height: 0.95;
-  max-width: 950px;
 }
 
 
-/* OVERSIZED SECTION TITLE */
+/* ==========================================
+OVERSIZED LABEL
+========================================== */
+
+#skills .oversized-label {
+  position: relative;
+
+  min-height: 82px;
+  margin-bottom: 28px;
+
+  display: inline-flex;
+  align-items: flex-end;
+
+  font-family: "Space Grotesk", sans-serif;
+}
 
 #skills .oversized-label::before {
-  color: rgba(255, 255, 255, 0.08);
+  content: attr(data-letter);
+
+  position: absolute;
+  left: -8px;
+  bottom: -18px;
+  z-index: 0;
+
+  color: rgba(18, 56, 43, 0.08);
+
+  font-size: 6.5rem;
+  font-weight: 700;
+  line-height: 1;
+
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 #skills .oversized-label span {
-  color: #9dd5bf;
+  position: relative;
+  z-index: 1;
+
+  color: #2d7b61;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
 
-/* ===============================
-DIRECTORY LAYOUT
-=============================== */
+/* ==========================================
+MAIN DIRECTORY
+========================================== */
 
-.skills-directory {
-  margin-top: 90px;
+#skills .skills-directory {
+  margin-top: 45px;
 
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: 1fr;
 
-  gap: 80px;
+  gap: 70px;
 
   align-items: start;
 }
 
 
-/* COLUMN HEADINGS */
-
-.skills-column h3 {
-  margin-bottom: 32px;
-
-  font-family: "Space Grotesk", sans-serif;
-
-  font-size: 0.85rem;
-  font-weight: 800;
-
-  letter-spacing: 0.24em;
-
-  text-transform: uppercase;
-
-  color: #9dd5bf;
-}
-
-
-/* ===============================
-LANGUAGES
-=============================== */
-
-.language-row {
-  display: grid;
-
-  grid-template-columns: 54px 1fr auto;
-
-  align-items: center;
-
-  gap: 18px;
-
-  padding: 20px 0;
-
-  border-bottom: 1px solid rgba(242, 247, 244, 0.2);
-
-  transition:
-    padding-left 0.3s ease,
-    background 0.3s ease,
-    color 0.3s ease;
-}
-
-
-.language-row span {
-  font-size: 2rem;
-  line-height: 1;
-}
-
-
-.language-row strong {
-  font-family: "Space Grotesk", sans-serif;
-
-  font-size: 1.6rem;
-
-  line-height: 1;
-
-  letter-spacing: -0.04em;
-
-  color: #f2f7f4;
-}
-
-
-.language-row small {
-  font-size: 0.7rem;
-  font-weight: 800;
-
-  letter-spacing: 0.18em;
-
-  text-transform: uppercase;
-
-  color: #9dd5bf;
-}
-
-
-/* LANGUAGE HOVER */
-
-.language-row:hover {
-  padding-left: 14px;
-
-  background: rgba(255, 255, 255, 0.04);
-}
-
-
-/* ===============================
-TOOLS
-=============================== */
-
-.tools-directory {
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  column-gap: 34px;
-
-  row-gap: 0;
-}
-
-
-.tool-entry {
-  padding: 22px 0;
-
-  border-bottom: 1px solid rgba(242, 247, 244, 0.2);
-
-  color: #f2f7f4;
-
-  transition:
-    padding-left 0.3s ease,
-    background 0.3s ease,
-    color 0.3s ease;
-}
-
-
-.tool-entry span {
-  font-family: "Space Grotesk", sans-serif;
-
-  font-size: clamp(1.4rem, 2vw, 2.3rem);
-
-  line-height: 1;
-
-  letter-spacing: -0.05em;
-}
-
-
-/* TOOL HOVER */
-
-.tool-entry:hover {
-  padding-left: 12px;
-
-  color: #9dd5bf;
-
-  background: rgba(255, 255, 255, 0.04);
-}
-
-
-/* ===============================
-RESPONSIVE
-=============================== */
-
-@media (max-width: 900px) {
-
-  .skills-directory {
-    grid-template-columns: 1fr;
-
-    gap: 70px;
-  }
-
-
-  .tools-directory {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
-
-@media (max-width: 650px) {
-
-  #skills {
-    padding: 120px 20px 80px;
-  }
-
-
-  .skills-directory {
-    margin-top: 65px;
-
-    gap: 55px;
-  }
-
-
-  .language-row {
-    grid-template-columns: 44px 1fr auto;
-
-    gap: 12px;
-  }
-
-
-  .language-row span {
-    font-size: 1.7rem;
-  }
-
-
-  .language-row strong {
-    font-size: 1.25rem;
-  }
-
-
-  .tools-directory {
-    grid-template-columns: 1fr;
-  }
-
-
-  .tool-entry span {
-    font-size: 1.55rem;
-  }
-
-}
-
-/* ===============================
-LANGUAGE LEVEL — MORE VISIBLE
-=============================== */
-
-.language-row small {
-  min-width: 92px;
-  padding: 9px 13px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #9dd5bf;
-  border: 1px solid #9dd5bf;
-
-  color: #163f35;
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.78rem;
-  font-weight: 800;
-
-  line-height: 1;
-
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-
-  white-space: nowrap;
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease;
-}
-
-
-/* HOVER */
-
-.language-row:hover small {
-  background: transparent;
-  color: #b8ead8;
-  border-color: #b8ead8;
-
-  transform: translateX(-5px);
-}
-
-
-/* MOBILE */
-
-@media (max-width: 650px) {
-
-  .language-row small {
-    min-width: 76px;
-    padding: 8px 10px;
-
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-  }
-
-}
-
-/* ===============================
-SKILLS — LIGHT GREEN PALETTE OVERRIDE
-=============================== */
-
-#skills {
-  background: #ddefe7;
-  color: #12382b;
-}
-
-
-/* MAIN HEADING */
-
-#skills .skills-header h2 {
-  color: #12382b;
-}
-
-
-/* OVERSIZED SECTION TITLE */
-
-#skills .oversized-label::before {
-  color: rgba(18, 56, 43, 0.08);
-}
-
-#skills .oversized-label span {
-  color: #2d7b61;
-}
-
-
-/* COLUMN HEADINGS */
-
-#skills .skills-column h3 {
-  color: #2d7b61;
-}
-
-
-/* ===============================
-LANGUAGES
-=============================== */
-
-#skills .language-row {
-  border-bottom-color: rgba(18, 56, 43, 0.2);
-}
-
-#skills .language-row strong {
-  color: #12382b;
-}
-
-#skills .language-row small {
-  background: #2d7b61;
-  border-color: #2d7b61;
-  color: #f6fbf8;
-}
-
-
-/* LANGUAGE ROW HOVER */
-
-#skills .language-row:hover {
-  background: rgba(45, 123, 97, 0.08);
-}
-
-
-/* LANGUAGE LEVEL HOVER */
-
-#skills .language-row:hover small {
-  background: #12382b;
-  border-color: #12382b;
-  color: #f6fbf8;
-
-  transform: translateX(-5px);
-}
-
-
-/* ===============================
-TOOLS
-=============================== */
-
-#skills .tool-entry {
-  border-bottom-color: rgba(18, 56, 43, 0.2);
-  color: #12382b;
-}
-
-
-/* TOOL HOVER */
-
-#skills .tool-entry:hover {
-  color: #2d7b61;
-  background: rgba(45, 123, 97, 0.08);
-}
-
-
-
-
-.oversized-label {
-  position: relative;
-  display: inline-flex;
-  align-items: flex-end;
-  min-height: 82px;
-  margin-bottom: 28px;
-  font-family: "Space Grotesk", sans-serif;
-}
-
-.oversized-label::before {
-  content: attr(data-letter);
-  position: absolute;
-  left: -8px;
-  bottom: -18px;
-  font-size: 6.5rem;
-  line-height: 1;
-  font-weight: 700;
-  color: rgba(45, 123, 97, 0.12);
-  z-index: 0;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-.oversized-label span {
-  position: relative;
-  z-index: 1;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #2d7b61;
-}
-
-
-
-
-
-
-    /* ==========================================
-SKILLS — SAME OVERSIZED LABEL SIZE
-========================================== */
-
-@media (max-width: 650px) {
-
-  #skills .oversized-label {
-    width: 100% !important;
-    max-width: 100% !important;
-
-    min-height: 62px !important;
-    margin-bottom: 20px !important;
-
-    overflow: hidden !important;
-  }
-
-  #skills .oversized-label::before {
-    left: -3px !important;
-    bottom: -8px !important;
-
-    max-width: 100% !important;
-
-    font-size: clamp(3.2rem, 16vw, 4.7rem) !important;
-    line-height: 0.9 !important;
-
-    letter-spacing: -0.065em !important;
-
-    white-space: nowrap !important;
-  }
-
-  #skills .oversized-label span {
-    font-size: 0.68rem !important;
-    letter-spacing: 0.17em !important;
-  }
-
-}
-
-
-@media (max-width: 390px) {
-
-  #skills .oversized-label::before {
-    font-size: 15vw !important;
-  }
-
-}
-
-
-
-
-
-
-
-
 /* ==========================================
-SKILLS — MOBILE LANGUAGES 2 COLUMNS × 3 ROWS
-========================================== */
-
-@media (max-width: 650px) {
-
-  /* Languages column becomes 2 columns */
-  #skills .skills-column:first-child {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 16px;
-  }
-
-  /* Heading stays full width */
-  #skills .skills-column:first-child h3 {
-    grid-column: 1 / -1;
-    margin-bottom: 20px;
-  }
-
-  /* Each language becomes a compact vertical item */
-  #skills .language-row {
-    min-width: 0;
-
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-areas:
-      "flag name"
-      "level level";
-
-    align-items: center;
-
-    column-gap: 10px;
-    row-gap: 12px;
-
-    padding: 18px 0;
-
-    border-bottom: 1px solid rgba(18, 56, 43, 0.2);
-  }
-
-  #skills .language-row span {
-    grid-area: flag;
-
-    font-size: 1.6rem;
-  }
-
-  #skills .language-row strong {
-    grid-area: name;
-
-    min-width: 0;
-
-    font-size: 1.15rem;
-    line-height: 1.05;
-
-    overflow-wrap: anywhere;
-  }
-
-  #skills .language-row small {
-    grid-area: level;
-
-    width: 100%;
-    min-width: 0;
-
-    padding: 8px 6px;
-
-    font-size: 0.62rem;
-    letter-spacing: 0.06em;
-
-    transform: none;
-  }
-
-
-  /* REMOVE DESKTOP HORIZONTAL MOVEMENT */
-
-  #skills .language-row:hover {
-    padding-left: 0;
-  }
-
-  #skills .language-row:hover small {
-    transform: none;
-  }
-
-}
-
-
-
-
-
-
-/* ==========================================
-SKILLS — INLINE SVG FLAGS + MOBILE LANGUAGE GRID
-ADD AT THE VERY END OF YOUR CSS
-========================================== */
-
-
-/* ==========================================
-DESKTOP — INLINE SVG FLAGS
-========================================== */
-
-#skills .language-flag {
-  width: 54px;
-  height: 54px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex-shrink: 0;
-
-  border-radius: 50%;
-  overflow: hidden;
-
-  line-height: 0;
-}
-
-
-/* SVG FILLS THE CIRCLE */
-
-#skills .language-flag svg {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  flex-shrink: 0;
-}
-
-
-/* Prevent the old span rule from changing flag size */
-
-#skills .language-row > .language-flag {
-  font-size: 0;
-  line-height: 0;
-}
-
-
-/* ==========================================
-DESKTOP LANGUAGE ROW
-========================================== */
-
-#skills .language-row {
-  grid-template-columns: 54px minmax(0, 1fr) auto;
-}
-
-
-/* ==========================================
-PHONE — 2 COLUMNS × 3 ROWS
-========================================== */
-
-@media (max-width: 650px) {
-
-  /* ------------------------------------------
-  LANGUAGE SECTION GRID
-  ------------------------------------------ */
-
-  #skills .skills-languages {
-    display: grid;
-
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
-    column-gap: 18px;
-    row-gap: 0;
-  }
-
-
-  /* LANGUAGE TITLE TAKES FULL WIDTH */
-
-  #skills .skills-languages > h3 {
-    grid-column: 1 / -1;
-
-    margin-bottom: 18px;
-  }
-
-
-  /* ------------------------------------------
-  INDIVIDUAL LANGUAGE
-  ------------------------------------------ */
-
-  #skills .language-row {
-    min-width: 0;
-
-    display: grid;
-
-    grid-template-columns:
-      46px minmax(0, 1fr);
-
-    grid-template-areas:
-      "flag name"
-      "level level";
-
-    align-items: center;
-
-    column-gap: 10px;
-    row-gap: 12px;
-
-    padding: 18px 0;
-
-    border-bottom:
-      1px solid rgba(18, 56, 43, 0.2);
-  }
-
-
-  /* ------------------------------------------
-  FLAG
-  ------------------------------------------ */
-
-  #skills .language-flag {
-    grid-area: flag;
-
-    width: 46px;
-    height: 46px;
-  }
-
-
-  #skills .language-flag svg {
-    width: 100%;
-    height: 100%;
-  }
-
-
-  /* ------------------------------------------
-  LANGUAGE NAME
-  ------------------------------------------ */
-
-  #skills .language-row strong {
-    grid-area: name;
-
-    min-width: 0;
-
-    font-size: 1.12rem;
-    line-height: 1;
-
-    letter-spacing: -0.035em;
-
-    white-space: nowrap;
-  }
-
-
-  /* ------------------------------------------
-  LANGUAGE LEVEL
-  ------------------------------------------ */
-
-  #skills .language-row small {
-    grid-area: level;
-
-    width: 100%;
-    min-width: 0;
-
-    box-sizing: border-box;
-
-    padding: 8px 6px;
-
-    font-size: 0.64rem;
-    letter-spacing: 0.07em;
-
-    transform: none;
-  }
-
-
-  /* ------------------------------------------
-  REMOVE DESKTOP HORIZONTAL HOVER MOVEMENT
-  ------------------------------------------ */
-
-  #skills .language-row:hover {
-    padding-left: 0;
-  }
-
-
-  #skills .language-row:hover small {
-    transform: none;
-  }
-
-}
-
-
-/* ==========================================
-VERY SMALL PHONES
-========================================== */
-
-@media (max-width: 390px) {
-
-  #skills .skills-languages {
-    column-gap: 12px;
-  }
-
-
-  #skills .language-row {
-    grid-template-columns:
-      42px minmax(0, 1fr);
-
-    column-gap: 8px;
-  }
-
-
-  #skills .language-flag {
-    width: 42px;
-    height: 42px;
-  }
-
-
-  #skills .language-row strong {
-    font-size: 1rem;
-  }
-
-
-  #skills .language-row small {
-    padding: 8px 4px;
-
-    font-size: 0.6rem;
-    letter-spacing: 0.05em;
-  }
-
-}
-
-
-
-
-/* ==========================================
-FIX SAUDI + UK FLAG CIRCLE FILL
-========================================== */
-
-/* Keep all flags clipped perfectly */
-
-#skills .language-flag {
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-
-/* Saudi flag */
-
-#skills .language-row:nth-of-type(2) .language-flag svg {
-  width: 108%;
-  height: 108%;
-  max-width: none;
-
-  transform: scale(1.08);
-}
-
-
-/* UK flag */
-
-#skills .language-row:nth-of-type(4) .language-flag svg {
-  width: 115%;
-  height: 115%;
-  max-width: none;
-
-  transform: scale(1.15);
-}
-
-
-/* ==========================================
-FIX FLAG SVG FILL
-========================================== */
-
-#skills .language-flag {
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-
-/* ARABIC */
-
-#skills .language-arabic .language-flag svg {
-  width: 108%;
-  height: 108%;
-
-  max-width: none;
-
-  transform: scale(1.08);
-}
-
-
-/* ENGLISH */
-
-#skills .language-english .language-flag svg {
-  width: 116%;
-  height: 116%;
-
-  max-width: none;
-
-  transform: scale(1.16);
-}
-
-
-
-
-/* ==========================================
-SKILLS — FINAL FLAG + MOBILE GRID OVERRIDE
-ADD AT THE VERY END
-========================================== */
-
-
-/* ==========================================
-DESKTOP FLAG RESET
-========================================== */
-
-#skills .language-row {
-  grid-template-columns: 58px minmax(0, 1fr) auto;
-  column-gap: 18px;
-}
-
-#skills .language-flag {
-  width: 58px;
-  height: 58px;
-
-  display: block;
-
-  flex: 0 0 58px;
-
-  border-radius: 50%;
-  overflow: hidden;
-
-  font-size: 0;
-  line-height: 0;
-
-  background: transparent;
-  border: 0;
-}
-
-#skills .language-flag svg {
-  width: 100% !important;
-  height: 100% !important;
-
-  min-width: 100%;
-  min-height: 100%;
-
-  max-width: none !important;
-  max-height: none !important;
-
-  display: block;
-
-  border-radius: 50%;
-
-  overflow: hidden;
-
-  transform: none !important;
-
-  object-fit: cover;
-}
-
-
-/* Remove any earlier special scaling */
-
-#skills .language-arabic .language-flag svg,
-#skills .language-english .language-flag svg,
-#skills .language-row:nth-of-type(2) .language-flag svg,
-#skills .language-row:nth-of-type(4) .language-flag svg {
-  width: 100% !important;
-  height: 100% !important;
-
-  transform: none !important;
-}
-
-
-/* ==========================================
-PHONE — 2 COLUMNS × 3 ROWS
-========================================== */
-
-@media (max-width: 650px) {
-
-  #skills {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  #skills .skills-languages {
-    display: grid;
-
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    column-gap: 18px;
-    row-gap: 0;
-  }
-
-  #skills .skills-languages > h3 {
-    grid-column: 1 / -1;
-
-    margin-bottom: 18px;
-  }
-
-  #skills .language-row {
-    min-width: 0;
-
-    display: grid;
-
-    grid-template-columns: 52px minmax(0, 1fr);
-    grid-template-areas:
-      "flag name"
-      "level level";
-
-    align-items: center;
-
-    column-gap: 10px;
-    row-gap: 12px;
-
-    padding: 20px 0;
-
-    border-bottom: 1px solid rgba(18, 56, 43, 0.2);
-
-    background: transparent;
-  }
-
-  #skills .language-flag {
-    grid-area: flag;
-
-    width: 52px;
-    height: 52px;
-
-    flex-basis: 52px;
-  }
-
-  #skills .language-row strong {
-    grid-area: name;
-
-    min-width: 0;
-
-    font-size: 1.1rem;
-    line-height: 1.05;
-
-    letter-spacing: -0.04em;
-
-    white-space: nowrap;
-  }
-
-  #skills .language-row small {
-    grid-area: level;
-
-    width: 100%;
-    min-width: 0;
-
-    box-sizing: border-box;
-
-    padding: 8px 7px;
-
-    font-size: 0.64rem;
-    letter-spacing: 0.07em;
-
-    transform: none !important;
-  }
-
-  #skills .language-row:hover {
-    padding-left: 0;
-
-    background: rgba(45, 123, 97, 0.06);
-  }
-
-  #skills .language-row:hover small {
-    transform: none !important;
-  }
-
-}
-
-
-/* ==========================================
-SMALL PHONES
-========================================== */
-
-@media (max-width: 390px) {
-
-  #skills .skills-languages {
-    column-gap: 12px;
-  }
-
-  #skills .language-row {
-    grid-template-columns: 46px minmax(0, 1fr);
-
-    column-gap: 8px;
-  }
-
-  #skills .language-flag {
-    width: 46px;
-    height: 46px;
-
-    flex-basis: 46px;
-  }
-
-  #skills .language-row strong {
-    font-size: 0.98rem;
-  }
-
-  #skills .language-row small {
-    padding: 8px 4px;
-
-    font-size: 0.59rem;
-    letter-spacing: 0.05em;
-  }
-
-}
-
-
-
-
-
-
-/* ==========================================
-SKILLS — DESKTOP 3×2 LANGUAGES
-TOOLS BELOW
-ADD AT THE VERY END
-========================================== */
-
-
-/* MAIN SKILLS LAYOUT BECOMES ONE COLUMN */
-
-#skills .skills-directory {
-  grid-template-columns: 1fr;
-  gap: 70px;
-}
-
-
-/* ==========================================
-DESKTOP LANGUAGES — 3 COLUMNS × 2 ROWS
+LANGUAGES GRID — DESKTOP
+3 COLUMNS × 2 ROWS
 ========================================== */
 
 #skills .skills-languages {
@@ -7396,748 +6383,30 @@ DESKTOP LANGUAGES — 3 COLUMNS × 2 ROWS
 }
 
 
-/* LANGUAGES HEADING FULL WIDTH */
+/* ==========================================
+LANGUAGE ROW
+========================================== */
 
-#skills .skills-languages > h3 {
-  grid-column: 1 / -1;
-}
+#skills .language-row {
+  position: relative;
+  isolation: isolate;
 
-
-/* EACH LANGUAGE CELL */
-
-#skills .skills-languages .language-row {
   min-width: 0;
-
-  grid-template-columns: 58px minmax(0, 1fr);
-  grid-template-areas:
-    "flag name"
-    "level level";
-
-  column-gap: 16px;
-  row-gap: 14px;
-
   padding: 24px 0;
-}
 
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) auto;
+  grid-template-areas: "flag name level";
 
-/* FLAG */
+  align-items: center;
 
-#skills .skills-languages .language-flag {
-  grid-area: flag;
-}
+  column-gap: 26px;
 
-
-/* LANGUAGE NAME */
-
-#skills .skills-languages .language-row strong {
-  grid-area: name;
-
-  min-width: 0;
-
-  font-size: clamp(1.3rem, 1.7vw, 1.7rem);
-  line-height: 1;
-
-  white-space: nowrap;
-}
-
-
-/* LEVEL BADGE */
-
-#skills .skills-languages .language-row small {
-  grid-area: level;
-
-  width: 100%;
-  min-width: 0;
-
-  box-sizing: border-box;
-}
-
-
-/* REMOVE SIDE MOVEMENT */
-
-#skills .skills-languages .language-row:hover {
-  padding-left: 0;
-}
-
-#skills .skills-languages .language-row:hover small {
-  transform: none;
-}
-
-
-/* ==========================================
-TOOLS UNDER LANGUAGES
-========================================== */
-
-#skills .skills-tools {
-  width: 100%;
-}
-
-#skills .tools-directory {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-
-  column-gap: 34px;
-}
-
-
-/* ==========================================
-TABLET
-========================================== */
-
-@media (max-width: 900px) {
-
-  #skills .skills-languages {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-
-    column-gap: 22px;
-  }
-
-  #skills .skills-languages .language-row {
-    grid-template-columns: 50px minmax(0, 1fr);
-
-    column-gap: 10px;
-  }
-
-  #skills .skills-languages .language-flag {
-    width: 50px;
-    height: 50px;
-
-    flex-basis: 50px;
-  }
-
-  #skills .skills-languages .language-row strong {
-    font-size: 1.15rem;
-  }
-
-  #skills .tools-directory {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-}
-
-
-/* ==========================================
-PHONE — KEEP 2 COLUMNS × 3 ROWS
-========================================== */
-
-@media (max-width: 650px) {
-
-  #skills .skills-directory {
-    gap: 55px;
-  }
-
-  #skills .skills-languages {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
-    column-gap: 18px;
-  }
-
-  #skills .skills-languages .language-row {
-    grid-template-columns: 46px minmax(0, 1fr);
-
-    column-gap: 9px;
-  }
-
-  #skills .skills-languages .language-flag {
-    width: 46px;
-    height: 46px;
-
-    flex-basis: 46px;
-  }
-
-  #skills .skills-languages .language-row strong {
-    font-size: 1rem;
-  }
-
-  #skills .tools-directory {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-
-/* ==========================================
-VERY SMALL PHONES
-========================================== */
-
-@media (max-width: 390px) {
-
-  #skills .skills-languages {
-    column-gap: 12px;
-  }
-
-  #skills .skills-languages .language-row {
-    grid-template-columns: 42px minmax(0, 1fr);
-
-    column-gap: 7px;
-  }
-
-  #skills .skills-languages .language-flag {
-    width: 42px;
-    height: 42px;
-
-    flex-basis: 42px;
-  }
-
-  #skills .skills-languages .language-row strong {
-    font-size: 0.92rem;
-  }
-
-}
-
-
-
-
-/* ==========================================
-LANGUAGE LEVEL — RIGHT SIDE ON DESKTOP
-========================================== */
-
-@media (min-width: 651px) {
-
-  #skills .skills-languages .language-row {
-    display: grid;
-
-    grid-template-columns:
-      58px
-      minmax(0, 1fr)
-      auto;
-
-    grid-template-areas: "flag name level";
-
-    align-items: center;
-
-    column-gap: 18px;
-
-    padding: 24px 0;
-  }
-
-
-  #skills .skills-languages .language-flag {
-    grid-area: flag;
-  }
-
-
-  #skills .skills-languages .language-row strong {
-    grid-area: name;
-
-    min-width: 0;
-  }
-
-
-  #skills .skills-languages .language-row small {
-    grid-area: level;
-
-    width: auto;
-    min-width: 72px;
-
-    padding: 9px 13px;
-
-    box-sizing: border-box;
-
-    transform: none !important;
-  }
-
-
-  #skills .skills-languages .language-row:hover small {
-    transform: none !important;
-  }
-
-}
-
-
-
-
-
-/* ==========================================
-LANGUAGES — INTERACTIVE HOVER / ACTIVE EFFECT
-========================================== */
-
-#skills .language-row {
-  position: relative;
   overflow: hidden;
-  isolation: isolate;
 
-  cursor: pointer;
+  border-bottom: 1px solid rgba(18, 56, 43, 0.2);
 
-  transition:
-    background 0.4s cubic-bezier(.2,.8,.2,1),
-    padding 0.4s cubic-bezier(.2,.8,.2,1);
-}
-
-
-/* DARK GREEN BACKGROUND SLIDES IN */
-
-#skills .language-row::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background: #12382b;
-
-  transform: scaleX(0);
-  transform-origin: left center;
-
-  transition:
-    transform 0.45s cubic-bezier(.2,.8,.2,1);
-
-  z-index: -1;
-}
-
-
-/* ==========================================
-FLAG
-========================================== */
-
-#skills .language-flag {
-  position: relative;
-
-  transition:
-    transform 0.45s cubic-bezier(.2,.8,.2,1);
-}
-
-
-/* ==========================================
-LANGUAGE NAME
-========================================== */
-
-#skills .language-row strong {
-  transition:
-    color 0.35s ease,
-    transform 0.45s cubic-bezier(.2,.8,.2,1);
-}
-
-
-/* ==========================================
-LEVEL BADGE
-========================================== */
-
-#skills .language-row small {
-  transition:
-    background 0.35s ease,
-    border-color 0.35s ease,
-    color 0.35s ease,
-    transform 0.45s cubic-bezier(.2,.8,.2,1);
-}
-
-
-/* ==========================================
-DESKTOP HOVER + MOBILE ACTIVE
-========================================== */
-
-#skills .language-row:hover::before,
-#skills .language-row.is-active::before {
-  transform: scaleX(1);
-}
-
-
-#skills .language-row:hover .language-flag,
-#skills .language-row.is-active .language-flag {
-  transform:
-    translateX(10px)
-    rotate(-7deg)
-    scale(1.12);
-}
-
-
-#skills .language-row:hover strong,
-#skills .language-row.is-active strong {
-  color: #f6fbf8;
-
-  transform: translateX(10px);
-}
-
-
-#skills .language-row:hover small,
-#skills .language-row.is-active small {
-  background: #ddefe7;
-  border-color: #ddefe7;
-
-  color: #12382b;
-
-  transform: translateX(-10px) !important;
-}
-
-
-/* ==========================================
-BOTTOM LINE ANIMATION
-========================================== */
-
-#skills .language-row::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  height: 3px;
-
-  background: #2d7b61;
-
-  transform: scaleX(0);
-  transform-origin: right center;
-
-  transition:
-    transform 0.45s cubic-bezier(.2,.8,.2,1);
-}
-
-
-#skills .language-row:hover::after,
-#skills .language-row.is-active::after {
-  transform: scaleX(1);
-  transform-origin: left center;
-}
-
-
-/* ==========================================
-PHONE
-========================================== */
-
-@media (max-width: 650px) {
-
-  #skills .language-row:hover::before {
-    transform: scaleX(0);
-  }
-
-  #skills .language-row:hover::after {
-    transform: scaleX(0);
-  }
-
-  #skills .language-row:hover .language-flag {
-    transform: none;
-  }
-
-  #skills .language-row:hover strong {
-    color: #12382b;
-    transform: none;
-  }
-
-  #skills .language-row:hover small {
-    background: #2d7b61;
-    border-color: #2d7b61;
-    color: #f6fbf8;
-
-    transform: none !important;
-  }
-
-
-  /* ACTIVE EFFECT AFTER TAP */
-
-  #skills .language-row.is-active::before {
-    transform: scaleX(1);
-  }
-
-  #skills .language-row.is-active::after {
-    transform: scaleX(1);
-  }
-
-  #skills .language-row.is-active .language-flag {
-    transform:
-      translateX(5px)
-      rotate(-6deg)
-      scale(1.08);
-  }
-
-  #skills .language-row.is-active strong {
-    color: #f6fbf8;
-
-    transform: translateX(4px);
-  }
-
-  #skills .language-row.is-active small {
-    background: #ddefe7;
-    border-color: #ddefe7;
-
-    color: #12382b;
-
-    transform: translateX(-4px) !important;
-  }
-
-}
-
-
-
-
-
-
-/* ==========================================
-LANGUAGE HOVER — LIGHTER GREEN VERSION
-========================================== */
-
-/* SLIDING BACKGROUND */
-
-#skills .language-row::before {
-  background: #2d7b61;
-}
-
-
-/* NAME BECOMES WHITE */
-
-#skills .language-row:hover strong,
-#skills .language-row.is-active strong {
-  color: #f6fbf8;
-}
-
-
-/* LEVEL BADGE BECOMES LIGHT GREEN */
-
-#skills .language-row:hover small,
-#skills .language-row.is-active small {
-  background: #ddefe7;
-  border-color: #ddefe7;
-
-  color: #2d7b61;
-
-  transform: translateX(-10px) !important;
-}
-
-
-/* BOTTOM ACCENT LINE */
-
-#skills .language-row::after {
-  background: #9dd5bf;
-}
-
-
-/* ==========================================
-PHONE ACTIVE STATE
-========================================== */
-
-@media (max-width: 650px) {
-
-  #skills .language-row.is-active strong {
-    color: #f6fbf8;
-  }
-
-  #skills .language-row.is-active small {
-    background: #ddefe7;
-    border-color: #ddefe7;
-
-    color: #2d7b61;
-
-    transform: translateX(-4px) !important;
-  }
-
-}
-
-    
-/* ==========================================
-LANGUAGES — CLEAN HOVER / ACTIVE EFFECT
-NO SLIDING BACKGROUND
-========================================== */
-
-#skills .language-row {
-  position: relative;
-
-  cursor: pointer;
-
-  transition:
-    background 0.3s ease,
-    transform 0.35s cubic-bezier(.2,.8,.2,1),
-    padding 0.35s cubic-bezier(.2,.8,.2,1);
-}
-
-
-/* REMOVE OLD SLIDING BACKGROUND */
-
-#skills .language-row::before {
-  display: none !important;
-}
-
-
-/* ==========================================
-FLAG
-========================================== */
-
-#skills .language-flag {
-  position: relative;
-
-  transition:
-    transform 0.45s cubic-bezier(.2,.8,.2,1);
-}
-
-
-/* ==========================================
-NAME
-========================================== */
-
-#skills .language-row strong {
-  transition:
-    color 0.3s ease,
-    transform 0.4s cubic-bezier(.2,.8,.2,1);
-}
-
-
-/* ==========================================
-LEVEL
-========================================== */
-
-#skills .language-row small {
-  transition:
-    background 0.3s ease,
-    border-color 0.3s ease,
-    color 0.3s ease,
-    transform 0.4s cubic-bezier(.2,.8,.2,1);
-}
-
-
-/* ==========================================
-HOVER + ACTIVE
-========================================== */
-
-#skills .language-row:hover,
-#skills .language-row.is-active {
-  background: rgba(45, 123, 97, 0.09);
-
-  transform: translateY(-5px);
-}
-
-
-/* FLAG ROTATES + GROWS */
-
-#skills .language-row:hover .language-flag,
-#skills .language-row.is-active .language-flag {
-  transform:
-    rotate(-8deg)
-    scale(1.13);
-}
-
-
-/* NAME MOVES SLIGHTLY */
-
-#skills .language-row:hover strong,
-#skills .language-row.is-active strong {
-  color: #2d7b61;
-
-  transform: translateX(8px);
-}
-
-
-/* LEVEL MOVES TOWARD CENTER */
-
-#skills .language-row:hover small,
-#skills .language-row.is-active small {
-  background: #12382b;
-  border-color: #12382b;
-
-  color: #f6fbf8;
-
-  transform: translateX(-8px) !important;
-}
-
-
-/* ==========================================
-BOTTOM LINE
-========================================== */
-
-#skills .language-row::after {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  bottom: 0;
-
-  width: 0;
-  height: 3px;
-
-  background: #2d7b61;
-
-  transform: translateX(-50%);
-
-  transition:
-    width 0.4s cubic-bezier(.2,.8,.2,1);
-}
-
-
-#skills .language-row:hover::after,
-#skills .language-row.is-active::after {
-  width: 100%;
-}
-
-
-/* ==========================================
-PHONE
-========================================== */
-
-@media (max-width: 650px) {
-
-  /* REMOVE STICKY MOBILE HOVER */
-
-  #skills .language-row:hover {
-    background: transparent;
-    transform: none;
-  }
-
-  #skills .language-row:hover .language-flag {
-    transform: none;
-  }
-
-  #skills .language-row:hover strong {
-    color: #12382b;
-    transform: none;
-  }
-
-  #skills .language-row:hover small {
-    background: #2d7b61;
-    border-color: #2d7b61;
-    color: #f6fbf8;
-
-    transform: none !important;
-  }
-
-  #skills .language-row:hover::after {
-    width: 0;
-  }
-
-
-  /* TAP / ACTIVE STATE */
-
-  #skills .language-row.is-active {
-    background: rgba(45, 123, 97, 0.09);
-
-    transform: translateY(-4px);
-  }
-
-  #skills .language-row.is-active .language-flag {
-    transform:
-      rotate(-7deg)
-      scale(1.1);
-  }
-
-  #skills .language-row.is-active strong {
-    color: #2d7b61;
-
-    transform: translateX(4px);
-  }
-
-  #skills .language-row.is-active small {
-    background: #12382b;
-    border-color: #12382b;
-
-    color: #f6fbf8;
-
-    transform: translateX(-4px) !important;
-  }
-
-  #skills .language-row.is-active::after {
-    width: 100%;
-  }
-
-}
-
-
-
-
-/* ==========================================
-LANGUAGES — RING + BORDER HOVER EFFECT
-NO HTML CHANGES
-========================================== */
-
-#skills .language-row {
-  position: relative;
-  isolation: isolate;
+  background: transparent;
 
   cursor: pointer;
 
@@ -8147,10 +6416,31 @@ NO HTML CHANGES
 }
 
 
-/* REMOVE PREVIOUS EFFECTS */
+/* Remove any previous pseudo-background effect */
 
 #skills .language-row::before {
-  display: none !important;
+  display: none;
+}
+
+
+/* Animated bottom line */
+
+#skills .language-row::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+
+  height: 3px;
+
+  background: #9dd5bf;
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform 0.4s cubic-bezier(.2, .8, .2, 1);
 }
 
 
@@ -8159,11 +6449,50 @@ FLAG
 ========================================== */
 
 #skills .language-flag {
+  grid-area: flag;
+
   position: relative;
 
+  width: 58px;
+  height: 58px;
+  margin-left: 8px;
+
+  display: block;
+
+  flex: 0 0 58px;
+
+  overflow: hidden;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+
+  font-size: 0;
+  line-height: 0;
+
   transition:
-    transform 0.4s cubic-bezier(.2,.8,.2,1),
+    transform 0.4s cubic-bezier(.2, .8, .2, 1),
     box-shadow 0.4s ease;
+}
+
+#skills .language-flag svg {
+  width: 100%;
+  height: 100%;
+
+  min-width: 100%;
+  min-height: 100%;
+
+  max-width: none;
+  max-height: none;
+
+  display: block;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  transform: none;
 }
 
 
@@ -8172,112 +6501,320 @@ LANGUAGE NAME
 ========================================== */
 
 #skills .language-row strong {
+  grid-area: name;
+
+  min-width: 0;
+
+  color: #12382b;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.3rem, 1.7vw, 1.7rem);
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+
+  white-space: nowrap;
+
   transition:
     color 0.3s ease,
     letter-spacing 0.35s ease,
-    transform 0.35s cubic-bezier(.2,.8,.2,1);
+    transform 0.35s cubic-bezier(.2, .8, .2, 1);
 }
 
 
 /* ==========================================
-LEVEL BADGE
+LANGUAGE LEVEL
 ========================================== */
 
 #skills .language-row small {
+  grid-area: level;
+
+  width: auto;
+  min-width: 72px;
+  padding: 9px 13px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  background: #2d7b61;
+  border: 1px solid #2d7b61;
+
+  color: #f6fbf8;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1;
+
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  transform: translateX(-22px);
+
   transition:
     background 0.3s ease,
     border-color 0.3s ease,
     color 0.3s ease,
-    transform 0.35s cubic-bezier(.2,.8,.2,1);
+    transform 0.35s cubic-bezier(.2, .8, .2, 1);
 }
 
 
 /* ==========================================
-ANIMATED BOTTOM BORDER
-========================================== */
-
-#skills .language-row::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  right: 0;
-  bottom: -1px;
-
-  height: 3px;
-
-  background: #2d7b61;
-
-  transform: scaleX(0);
-  transform-origin: center;
-
-  transition:
-    transform 0.4s cubic-bezier(.2,.8,.2,1);
-}
-
-
-/* ==========================================
-DESKTOP HOVER + ACTIVE STATE
+LANGUAGE HOVER / ACTIVE
 ========================================== */
 
 #skills .language-row:hover,
 #skills .language-row.is-active {
-  background: rgba(45, 123, 97, 0.055);
+  background: #12382b;
 }
-
 
 #skills .language-row:hover::after,
 #skills .language-row.is-active::after {
   transform: scaleX(1);
 }
 
-
-/* DOUBLE RING AROUND FLAG */
-
 #skills .language-row:hover .language-flag,
 #skills .language-row.is-active .language-flag {
-  transform: scale(0.92);
+  transform: scale(0.9);
 
   box-shadow:
-    0 0 0 5px #ddefe7,
-    0 0 0 7px #2d7b61;
+    0 0 0 4px #12382b,
+    0 0 0 6px #9dd5bf;
 }
-
-
-/* NAME EMPHASIS */
 
 #skills .language-row:hover strong,
 #skills .language-row.is-active strong {
-  color: #2d7b61;
+  color: #f6fbf8;
 
   letter-spacing: -0.015em;
 
-  transform: translateX(5px);
+  transform: translateX(2px);
 }
-
-
-/* BADGE BECOMES OUTLINED */
 
 #skills .language-row:hover small,
 #skills .language-row.is-active small {
-  background: transparent;
+  background: #ddefe7;
+  border-color: #ddefe7;
 
-  border-color: #2d7b61;
+  color: #12382b;
 
-  color: #2d7b61;
-
-  transform: translateX(-5px) !important;
+  transform: translateX(-22px);
 }
 
 
 /* ==========================================
-PHONE — TAP ONLY
+TOOLS
+========================================== */
+
+#skills .skills-tools {
+  width: 100%;
+}
+
+#skills .tools-directory {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  column-gap: 34px;
+  row-gap: 0;
+}
+
+#skills .tool-entry {
+  min-width: 0;
+  padding: 22px 0;
+
+  border-bottom: 1px solid rgba(18, 56, 43, 0.2);
+
+  color: #12382b;
+
+  transition:
+    padding-left 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+#skills .tool-entry span {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(1.4rem, 2vw, 2.3rem);
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+}
+
+#skills .tool-entry:hover {
+  padding-left: 12px;
+
+  background: rgba(45, 123, 97, 0.08);
+
+  color: #2d7b61;
+}
+
+
+/* ==========================================
+TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+  #skills .skills-directory {
+    gap: 70px;
+  }
+
+  #skills .skills-languages {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    column-gap: 22px;
+  }
+
+  #skills .language-row {
+    grid-template-columns: 50px minmax(0, 1fr) auto;
+
+    column-gap: 18px;
+  }
+
+  #skills .language-flag {
+    width: 50px;
+    height: 50px;
+
+    flex-basis: 50px;
+  }
+
+  #skills .language-row strong {
+    font-size: 1.15rem;
+  }
+
+  #skills .language-row small {
+    min-width: 68px;
+    padding: 8px 10px;
+
+    transform: translateX(-12px);
+  }
+
+  #skills .language-row:hover small,
+  #skills .language-row.is-active small {
+    transform: translateX(-12px);
+  }
+
+  #skills .tools-directory {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ==========================================
+PHONE
 ========================================== */
 
 @media (max-width: 650px) {
 
-  /* Cancel sticky browser hover */
+  #skills {
+    padding: 120px 20px 80px;
+  }
+
+
+  /* Oversized label */
+
+  #skills .oversized-label {
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 62px;
+    margin-bottom: 20px;
+
+    overflow: hidden;
+  }
+
+  #skills .oversized-label::before {
+    left: -3px;
+    bottom: -8px;
+
+    max-width: 100%;
+
+    font-size: clamp(3.2rem, 16vw, 4.7rem);
+    line-height: 0.9;
+
+    letter-spacing: -0.065em;
+
+    white-space: nowrap;
+  }
+
+  #skills .oversized-label span {
+    font-size: 0.68rem;
+    letter-spacing: 0.17em;
+  }
+
+
+  /* Main spacing */
+
+  #skills .skills-directory {
+    margin-top: 35px;
+
+    gap: 55px;
+  }
+
+
+  /* Languages: 2 columns × 3 rows */
+
+  #skills .skills-languages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    column-gap: 18px;
+  }
+
+  #skills .language-row {
+    min-width: 0;
+    padding: 20px 0;
+
+    grid-template-columns: 46px minmax(0, 1fr);
+    grid-template-areas:
+      "flag name"
+      "level level";
+
+    column-gap: 15px;
+    row-gap: 12px;
+  }
+
+  #skills .language-flag {
+    width: 46px;
+    height: 46px;
+    margin-left: 5px;
+
+    flex-basis: 46px;
+  }
+
+  #skills .language-row strong {
+    font-size: 1rem;
+    line-height: 1.05;
+
+    letter-spacing: -0.04em;
+
+    overflow-wrap: anywhere;
+    white-space: nowrap;
+  }
+
+  #skills .language-row small {
+    width: calc(100% - 12px);
+    max-width: calc(100% - 12px);
+    min-width: 0;
+
+    margin: 0;
+    padding: 8px 5px;
+
+    justify-self: center;
+
+    font-size: 0.64rem;
+    letter-spacing: 0.07em;
+
+    transform: none;
+  }
+
+
+  /* Prevent touch browsers from keeping hover state */
 
   #skills .language-row:hover {
     background: transparent;
@@ -8294,23 +6831,26 @@ PHONE — TAP ONLY
 
   #skills .language-row:hover strong {
     color: #12382b;
+
     letter-spacing: -0.04em;
+
     transform: none;
   }
 
   #skills .language-row:hover small {
     background: #2d7b61;
     border-color: #2d7b61;
+
     color: #f6fbf8;
 
-    transform: none !important;
+    transform: none;
   }
 
 
   /* Tap active state */
 
   #skills .language-row.is-active {
-    background: rgba(45, 123, 97, 0.055);
+    background: #12382b;
   }
 
   #skills .language-row.is-active::after {
@@ -8318,124 +6858,45 @@ PHONE — TAP ONLY
   }
 
   #skills .language-row.is-active .language-flag {
-    transform: scale(0.92);
+    transform: scale(0.9);
 
     box-shadow:
-      0 0 0 4px #ddefe7,
-      0 0 0 6px #2d7b61;
+      0 0 0 4px #12382b,
+      0 0 0 6px #9dd5bf;
   }
 
   #skills .language-row.is-active strong {
-    color: #2d7b61;
+    color: #f6fbf8;
 
-    transform: translateX(3px);
+    letter-spacing: -0.015em;
+
+    transform: translateX(2px);
   }
 
   #skills .language-row.is-active small {
-    background: transparent;
+    width: calc(100% - 12px);
+    max-width: calc(100% - 12px);
 
-    border-color: #2d7b61;
+    background: #ddefe7;
+    border-color: #ddefe7;
 
-    color: #2d7b61;
+    color: #12382b;
 
-    transform: translateX(-3px) !important;
+    transform: none;
   }
 
-}
 
-
-
-/* ==========================================
-LANGUAGE HOVER — KEEP FLAG RING INSIDE ROW
-========================================== */
-
-#skills .language-row {
-  overflow: hidden;
-}
-
-
-/* Give the flag enough space for the ring */
-
-#skills .language-flag {
-  margin-left: 8px;
-}
-
-
-/* Slightly reduce the ring size */
-
-#skills .language-row:hover .language-flag,
-#skills .language-row.is-active .language-flag {
-  transform: scale(0.9);
-
-  box-shadow:
-    0 0 0 4px #ddefe7,
-    0 0 0 6px #2d7b61;
-}
-
-
-/* Keep the active content inside the row */
-
-#skills .language-row:hover strong,
-#skills .language-row.is-active strong {
-  transform: translateX(2px);
-}
-
-#skills .language-row:hover small,
-#skills .language-row.is-active small {
-  transform: translateX(-2px) !important;
-}
-
-    @media (max-width: 650px) {
-
-  #skills .language-flag {
-    margin-left: 5px;
-  }
-
-}
-
-
-
-/* ==========================================
-PHONE — KEEP LEVEL BADGE INSIDE LANGUAGE ROW
-========================================== */
-
-@media (max-width: 650px) {
-
-  #skills .language-row small {
-    width: calc(100% - 10px);
-    margin-left: 5px;
-    margin-right: 5px;
-
-    box-sizing: border-box;
-  }
-
-  #skills .language-row:hover small,
-  #skills .language-row.is-active small {
-    transform: none !important;
-  }
-
-}
-
-    /* ==========================================
-PHONE — TOOLS 2 COLUMNS
-========================================== */
-
-@media (max-width: 650px) {
+  /* Tools: 2 columns */
 
   #skills .tools-directory {
-    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
 
     column-gap: 18px;
-    row-gap: 0;
-  }
-
-  #skills .tool-entry {
-    min-width: 0;
   }
 
   #skills .tool-entry span {
     font-size: 1.35rem;
+
     overflow-wrap: anywhere;
   }
 
@@ -8443,227 +6904,44 @@ PHONE — TOOLS 2 COLUMNS
 
 
 /* ==========================================
-PHONE — FIX LEVEL BADGE RIGHT CLIPPING
+VERY SMALL PHONES
 ========================================== */
 
-@media (max-width: 650px) {
+@media (max-width: 390px) {
+
+  #skills .oversized-label::before {
+    font-size: 15vw;
+  }
+
+  #skills .skills-languages {
+    column-gap: 12px;
+  }
+
+  #skills .language-row {
+    grid-template-columns: 42px minmax(0, 1fr);
+
+    column-gap: 12px;
+  }
+
+  #skills .language-flag {
+    width: 42px;
+    height: 42px;
+
+    flex-basis: 42px;
+  }
+
+  #skills .language-row strong {
+    font-size: 0.92rem;
+  }
 
   #skills .language-row small {
-    width: calc(100% - 12px);
-    max-width: calc(100% - 12px);
+    padding: 8px 4px;
 
-    margin: 0;
-    padding: 8px 5px;
-
-    justify-self: center;
-
-    box-sizing: border-box;
-
-    transform: none !important;
-  }
-
-  #skills .language-row:hover small,
-  #skills .language-row.is-active small {
-    width: calc(100% - 12px);
-    max-width: calc(100% - 12px);
-
-    margin: 0;
-
-    transform: none !important;
+    font-size: 0.59rem;
+    letter-spacing: 0.05em;
   }
 
 }
-    /* ==========================================
-PHONE — MORE SPACE BETWEEN FLAG AND NAME
-========================================== */
-
-@media (max-width: 650px) {
-
-  #skills .skills-languages .language-row {
-    column-gap: 15px;
-  }
-
-}
-
-    /* ==========================================
-LANGUAGES — FLAG / NAME SPACING
-========================================== */
-
-/* DESKTOP */
-
-@media (min-width: 651px) {
-
-  #skills .skills-languages .language-row {
-    column-gap: 26px;
-  }
-
-}
-
-
-/* PHONE */
-
-@media (max-width: 650px) {
-
-  #skills .skills-languages .language-row {
-    column-gap: 15px;
-  }
-
-}
-
-
-
-
-
-/* ==========================================
-SKILLS — REDUCE GAP AFTER REMOVING TITLES
-========================================== */
-
-#skills .skills-directory {
-  margin-top: 45px;
-}
-
-
-/* PHONE */
-
-@media (max-width: 650px) {
-
-  #skills .skills-directory {
-    margin-top: 35px;
-  }
-
-}
-
-
-/* ==========================================
-DESKTOP — MOVE LANGUAGE LEVELS LEFT
-========================================== */
-
-@media (min-width: 651px) {
-
-  #skills .skills-languages .language-row small {
-    transform: translateX(-22px) !important;
-  }
-
-  /* KEEP SAME POSITION ON HOVER / ACTIVE */
-
-  #skills .skills-languages .language-row:hover small,
-  #skills .skills-languages .language-row.is-active small {
-    transform: translateX(-22px) !important;
-  }
-
-}
-
-
-
-/* ==========================================
-LANGUAGE HOVER — SLIGHTLY DARKER BACKGROUND
-========================================== */
-
-#skills .language-row:hover,
-#skills .language-row.is-active {
-  background: rgba(45, 123, 97, 0.11);
-}
-
-
-/* PHONE — ACTIVE TAP STATE */
-
-@media (max-width: 650px) {
-
-  #skills .language-row.is-active {
-    background: rgba(45, 123, 97, 0.11);
-  }
-
-}
-
-
-    
-
-/* ==========================================
-LANGUAGE HOVER — DARKER BACKGROUND
-========================================== */
-
-#skills .language-row:hover,
-#skills .language-row.is-active {
-  background: rgba(45, 123, 97, 0.18);
-}
-
-
-/* PHONE — ACTIVE TAP STATE */
-
-@media (max-width: 650px) {
-
-  #skills .language-row.is-active {
-    background: rgba(45, 123, 97, 0.18);
-  }
-
-}
-
-
-
-/* ==========================================
-LANGUAGE HOVER — DARK GREEN
-========================================== */
-
-#skills .language-row:hover,
-#skills .language-row.is-active {
-  background: #12382b;
-}
-
-/* TEXT MUST TURN LIGHT */
-
-#skills .language-row:hover strong,
-#skills .language-row.is-active strong {
-  color: #f6fbf8;
-}
-
-/* KEEP LEVEL BADGE VISIBLE */
-
-#skills .language-row:hover small,
-#skills .language-row.is-active small {
-  background: #ddefe7;
-  border-color: #ddefe7;
-  color: #12382b;
-}
-
-/* RING AROUND FLAG */
-
-#skills .language-row:hover .language-flag,
-#skills .language-row.is-active .language-flag {
-  box-shadow:
-    0 0 0 4px #12382b,
-    0 0 0 6px #9dd5bf;
-}
-
-/* BOTTOM LINE */
-
-#skills .language-row:hover::after,
-#skills .language-row.is-active::after {
-  background: #9dd5bf;
-}
-
-/* PHONE — TAP ACTIVE STATE */
-
-@media (max-width: 650px) {
-
-  #skills .language-row.is-active {
-    background: #12382b;
-  }
-
-  #skills .language-row.is-active strong {
-    color: #f6fbf8;
-  }
-
-  #skills .language-row.is-active small {
-    background: #ddefe7;
-    border-color: #ddefe7;
-    color: #12382b;
-  }
-
-}
-
-
-
-
 
 
     
