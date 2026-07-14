@@ -477,7 +477,134 @@ section {
 
 
 
+/* ==========================================
+   HERO PHOTO
+========================================== */
 
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:clamp(50px,7vw,120px);
+}
+
+.hero-content{
+    flex:1;
+    max-width:850px;
+}
+
+.hero-photo{
+    flex-shrink:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-photo-frame{
+    position:relative;
+
+    width:clamp(280px,28vw,430px);
+    aspect-ratio:1;
+
+    padding:10px;
+
+    border:3px solid #8ed4bf;
+    border-radius:50%;
+}
+
+.hero-photo-frame::before{
+    content:"";
+
+    position:absolute;
+    inset:-16px;
+
+    border:1px solid rgba(142,212,191,.35);
+    border-radius:50%;
+}
+
+.hero-photo-frame img{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+    object-position:center;
+
+    border-radius:50%;
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width:1100px){
+
+    .hero{
+        gap:50px;
+    }
+
+    .hero-photo-frame{
+        width:300px;
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .hero{
+        flex-direction:column-reverse;
+        align-items:flex-start;
+        gap:36px;
+    }
+
+    .hero-photo{
+        width:100%;
+        justify-content:flex-start;
+    }
+
+    .hero-photo-frame{
+        width:220px;
+        padding:7px;
+    }
+
+    .hero-photo-frame::before{
+        inset:-10px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
@@ -9448,19 +9575,49 @@ GALLERY — SAME OVERSIZED LABEL SIZE
 </header>
 
   <main>
+
+    
 <section id="home">
-    <div class="section-inner hero">
-        <div class="hero-content">
-<h1 class="hero-title">
-  <span id="first-name">Basile</span>
-  <span id="last-name">Suliman</span>
-</h1>            <p class="hero-description">
-                I currently work at <strong>BNP Paribas</strong> on CSR and sustainability communications, building on experience across public institutions, the private sector, government environments and NGOs.
-            </p>
-        </div>
+  <div class="section-inner hero">
+
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span id="first-name">Basile</span>
+        <span id="last-name">Suliman</span>
+      </h1>
+
+      <p class="hero-description">
+        I currently work at <strong>BNP Paribas</strong> on CSR and
+        sustainability communications, building on experience across public
+        institutions, the private sector, government environments and NGOs.
+      </p>
     </div>
+
+    <div class="hero-photo" aria-hidden="true">
+      <div class="hero-photo-frame">
+        <img src="images/profile.jpg" alt="Portrait of Basile Suliman">
+      </div>
+    </div>
+
+  </div>
 </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 <section id="about">
   <div class="about-container">
 
