@@ -851,7 +851,39 @@ section {
 
 
     
+@media (max-width:768px){
 
+    .hero{
+        position:relative;
+        display:block;
+    }
+
+    .hero-content{
+        max-width:100%;
+    }
+
+    .hero-photo{
+        position:absolute;
+
+        right:-70px;      /* pushes circle outside screen */
+        bottom:-20px;
+
+        z-index:1;
+
+        pointer-events:none;
+    }
+
+    .hero-photo-frame{
+        width:210px;
+        height:210px;
+    }
+
+    .hero-content{
+        position:relative;
+        z-index:2;
+    }
+
+}
 
 
 
