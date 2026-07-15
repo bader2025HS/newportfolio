@@ -4276,71 +4276,13 @@ EDUCATION — CITY LABELS
 
 
 
-/* ==========================================
-EDUCATION — WHITE CITY LABELS
-========================================== */
-
-#education .edu-dot span{
-
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-
-    margin-top:16px;
-
-    padding:7px 16px;
-
-    background:#ffffff;
-
-    border:1px solid #ffffff;
-
-    color:#12382b;
-
-    font-size:.72rem;
-    font-weight:700;
-    letter-spacing:.18em;
-    text-transform:uppercase;
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
-
-}
-
-
-/* Active */
-
-#education .edu-dot.active span{
-
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 8px 20px rgba(18,56,43,.12);
-
-}
-
-
-/* Hover */
-
-#education .edu-dot:hover span{
-
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 8px 20px rgba(18,56,43,.12);
-
-}
-
-
-
-
-
 
 /* ==========================================
-EDUCATION — ACTIVE CITY LABEL
+EDUCATION — ACTIVE OVERRIDES HOVER
 ========================================== */
 
-#education .edu-dot.active span{
+#education .edu-dot.active span,
+#education .edu-dot.active:hover span{
 
     background:#ffffff !important;
 
@@ -4349,8 +4291,6 @@ EDUCATION — ACTIVE CITY LABEL
     color:#12382b !important;
 
 }
-
-
 
 
 
