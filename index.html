@@ -9428,7 +9428,49 @@ LANGUAGES — KEEP FLAGS INSIDE THE CARD
 
 
 
+/* ==========================================
+FINAL FIX — FLAG MUST NEVER TOUCH CARD EDGE
+========================================== */
 
+#skills .skills-languages .language-row,
+#skills .skills-languages .language-row:hover,
+#skills .skills-languages .language-row.is-active {
+  padding: 20px 28px !important;
+}
+
+
+/* Keep every element fixed during hover */
+
+#skills .skills-languages .language-row:hover .language-flag,
+#skills .skills-languages .language-row.is-active .language-flag {
+  margin: 0 !important;
+
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+
+/* Prevent old hover movement */
+
+#skills .skills-languages .language-row:hover strong,
+#skills .skills-languages .language-row.is-active strong,
+#skills .skills-languages .language-row:hover small,
+#skills .skills-languages .language-row.is-active small {
+  transform: none !important;
+}
+
+
+/* PHONE */
+
+@media (max-width: 650px) {
+
+  #skills .skills-languages .language-row,
+  #skills .skills-languages .language-row:hover,
+  #skills .skills-languages .language-row.is-active {
+    padding: 14px !important;
+  }
+
+}
 
 
 
