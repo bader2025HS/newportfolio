@@ -7284,7 +7284,36 @@ CONTACT — COLLAPSIBLE GROUPS
 
 
 
+/* ==========================================
+CONTACT — FIX HOVER CLIPPING
+========================================== */
 
+#contact .contact-group-panel,
+#contact .contact-group-panel > .contact-grid {
+  overflow: visible;
+}
+
+
+/* Give cards room to move upward */
+
+#contact .contact-group-panel > .contact-grid {
+  padding-top: 8px;
+  margin-top: 16px;
+}
+
+
+/* Keep collapsed panels hidden */
+
+#contact .contact-group:not(.is-open) .contact-group-panel {
+  overflow: hidden;
+}
+
+
+/* Prevent the top edge from being cut */
+
+#contact .contact-card:hover {
+  transform: translateY(-5px);
+}
 
 
 
