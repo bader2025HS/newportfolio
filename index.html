@@ -7022,7 +7022,50 @@ CONTACT — DESKTOP REVERSED HOVER
 
 
 
+/* ==========================================
+CONTACT GROUPS
+========================================== */
 
+.contact-group + .contact-group{
+    margin-top:48px;
+}
+
+
+.contact-group-title{
+
+    display:flex;
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:22px;
+}
+
+
+.contact-group-title span{
+
+    color:#47695d;
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:.72rem;
+    font-weight:700;
+
+    letter-spacing:.24em;
+    text-transform:uppercase;
+}
+
+
+.contact-group-title::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:rgba(18,56,43,.18);
+}
 
 
 
@@ -9466,7 +9509,9 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
 
 
-<section id="contact">
+
+
+    <section id="contact">
   <div class="contact-container">
 
     <div class="contact-header">
@@ -9475,11 +9520,22 @@ LANGUAGE-SPECIFIC HOVER COLORS
       </div>
 
       <h2>One message<br>away.</h2>
-
     </div>
 
 
-    <div class="contact-grid">
+    <div class="contact-groups">
+
+      <!-- ==========================================
+      PROFESSIONAL
+      ========================================== -->
+
+      <div class="contact-group">
+
+        <div class="contact-group-title">
+          <span>Professional</span>
+        </div>
+
+        <div class="contact-grid contact-grid-professional">
 
       <!-- =========================
       EMAIL
@@ -9656,7 +9712,24 @@ LANGUAGE-SPECIFIC HOVER COLORS
 <span class="contact-action">PDF</span>
       </a>
 
-      
+        </div>
+
+      </div>
+
+
+      <!-- ==========================================
+      SOCIAL
+      ========================================== -->
+
+      <div class="contact-group">
+
+        <div class="contact-group-title">
+          <span>Social</span>
+        </div>
+
+        <div class="contact-grid contact-grid-social">
+
+         
       <!-- =========================
       INSTAGRAM
       ========================== -->
@@ -9808,12 +9881,14 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
 <span class="contact-action">Open</span>
       </a>
+        </div>
+
+      </div>
 
     </div>
 
   </div>
 </section>
-
 
 <footer class="site-footer">
 
