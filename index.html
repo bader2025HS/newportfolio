@@ -11168,33 +11168,10 @@ GALLERY — SAME OVERSIZED LABEL SIZE
       moveSlider(document.querySelector(".nav-link.active"));
     });
 
-    const firstName = document.querySelector("#first-name");
-const lastName = document.querySelector("#last-name");
 
-const nameVersions = [
-  ["Basile","Suliman"],
-  ["سليمان", "بازيل"],
-  ["バジル", "スリマン"],
-];
 
-let nameIndex = 0;
 
-function rotateName() {
-  firstName.classList.add("changing");
-  lastName.classList.add("changing");
-
-  setTimeout(() => {
-    nameIndex = (nameIndex + 1) % nameVersions.length;
-
-    firstName.textContent = nameVersions[nameIndex][0];
-    lastName.textContent = nameVersions[nameIndex][1];
-
-    firstName.classList.remove("changing");
-    lastName.classList.remove("changing");
-  }, 250);
-}
-
-setInterval(rotateName, 1800);
+    
 
 let visitedMapInitialized = false;
 
