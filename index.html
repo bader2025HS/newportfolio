@@ -6543,7 +6543,92 @@ PHONE — SHORTER LABELS
 }
 
 
+/* ==========================================
+CONTACT — PHONE LAYOUT
+========================================== */
 
+@media (max-width:650px){
+
+  .contact-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:12px;
+  }
+
+  .contact-card{
+
+    min-height:110px;
+
+    display:grid;
+    grid-template-columns:48px 1fr;
+    grid-template-rows:auto auto;
+
+    column-gap:12px;
+    row-gap:6px;
+
+    align-items:center;
+    justify-items:stretch;
+
+    padding:16px;
+  }
+
+  .contact-icon{
+    grid-column:1;
+    grid-row:1 / span 2;
+
+    width:48px;
+    height:48px;
+  }
+
+  .contact-icon svg{
+    width:28px;
+    height:28px;
+  }
+
+  .contact-card-content{
+    grid-column:2;
+    grid-row:1;
+
+    text-align:left;
+  }
+
+  .contact-card-content span{
+    margin-bottom:4px;
+    font-size:.58rem;
+  }
+
+  .contact-card-content h3{
+    font-size:.95rem;
+  }
+
+  .contact-action{
+
+    grid-column:2;
+    grid-row:2;
+
+    justify-self:start;
+
+    min-width:54px;
+
+    padding:6px 8px;
+
+    font-size:.54rem;
+  }
+
+}
+
+    /* ==========================================
+CONTACT — DARKER HOVER
+========================================== */
+
+.contact-card:hover{
+
+    background:
+        color-mix(in srgb,
+        var(--card-accent) 22%,
+        white) !important;
+
+    border-color:var(--card-accent);
+}
 
 
 
