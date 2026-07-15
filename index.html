@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfolio</title>
+  <title>Portfoliooo</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9609,7 +9609,128 @@ MUST BE LAST IN THE CSS
 
 
 
+/* ==========================================
+FINAL — LIGHT FLAG-COLORED HOVERS
+PLACE AT THE ABSOLUTE END
+========================================== */
 
+/* Arabic — light green */
+
+#skills .skills-languages .language-row.language-arabic:hover,
+#skills .skills-languages .language-row.language-arabic.is-active {
+  background: #d5e5c4 !important;
+  border-color: #699635 !important;
+}
+
+
+/* French — light blue */
+
+#skills .skills-languages .language-row.language-french:hover,
+#skills .skills-languages .language-row.language-french.is-active {
+  background: #d8e8f3 !important;
+  border-color: #428bc1 !important;
+}
+
+
+/* English — light blue */
+
+#skills .skills-languages .language-row.language-english:hover,
+#skills .skills-languages .language-row.language-english.is-active {
+  background: #d6e2f0 !important;
+  border-color: #2a5f9e !important;
+}
+
+
+/* German — light yellow */
+
+#skills .skills-languages .language-row.language-german:hover,
+#skills .skills-languages .language-row.language-german.is-active {
+  background: #f3edbd !important;
+  border-color: #c59d00 !important;
+}
+
+
+/* Persian — light green */
+
+#skills .skills-languages .language-row.language-persian:hover,
+#skills .skills-languages .language-row.language-persian.is-active {
+  background: #deedcf !important;
+  border-color: #83bf4f !important;
+}
+
+
+/* Japanese — light red */
+
+#skills .skills-languages .language-row.language-japanese:hover,
+#skills .skills-languages .language-row.language-japanese.is-active {
+  background: #f4d9de !important;
+  border-color: #d80027 !important;
+}
+
+
+/* Keep names dark on the light backgrounds */
+
+#skills .skills-languages .language-row:hover strong,
+#skills .skills-languages .language-row.is-active strong {
+  color: #12382b !important;
+}
+
+
+/* Keep level badges dark and readable */
+
+#skills .skills-languages .language-row:hover small,
+#skills .skills-languages .language-row.is-active small {
+  background: #12382b !important;
+  border-color: #12382b !important;
+  color: #ffffff !important;
+
+  transform: none !important;
+}
+
+
+/* ==========================================
+FLAG SEPARATION EFFECT
+========================================== */
+
+#skills .skills-languages .language-row:hover .language-flag,
+#skills .skills-languages .language-row.is-active .language-flag {
+  transform: none !important;
+
+  box-shadow:
+    0 0 0 5px #ffffff,
+    0 0 0 7px rgba(18, 56, 43, 0.16) !important;
+}
+
+
+/* Avoid clipping the ring while keeping the flag inside */
+
+#skills .skills-languages .language-row,
+#skills .skills-languages .language-row:hover,
+#skills .skills-languages .language-row.is-active {
+  padding: 20px 30px !important;
+  overflow: hidden !important;
+}
+
+
+/* PHONE */
+
+@media (max-width: 650px) {
+
+  #skills .skills-languages .language-row,
+  #skills .skills-languages .language-row:hover,
+  #skills .skills-languages .language-row.is-active {
+    padding: 14px 16px !important;
+  }
+
+
+  #skills .skills-languages .language-row:hover .language-flag,
+  #skills .skills-languages .language-row.is-active .language-flag {
+    box-shadow:
+      0 0 0 3px #ffffff,
+      0 0 0 5px rgba(18, 56, 43, 0.16) !important;
+  }
+
+}
 
 
 
