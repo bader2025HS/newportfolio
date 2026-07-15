@@ -7144,7 +7144,158 @@ CONTACT GROUP TITLES
 }
 
 
+/* ==========================================
+CONTACT — COLLAPSIBLE GROUPS
+========================================== */
 
+#contact .contact-group + .contact-group {
+  margin-top: 18px;
+}
+
+
+/* TOGGLE */
+
+#contact .contact-group-toggle {
+  width: 100%;
+
+  padding: 24px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(18, 56, 43, 0.28);
+
+  color: #12382b;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+
+/* PLUS */
+
+#contact .contact-group-icon {
+  width: 40px;
+  height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(18, 56, 43, 0.4);
+
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1;
+
+  transition:
+    transform 0.35s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+#contact .contact-group-toggle:hover .contact-group-icon {
+  background: #12382b;
+  color: #ffffff;
+}
+
+
+/* PANEL */
+
+#contact .contact-group-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+
+  opacity: 0;
+
+  transition:
+    grid-template-rows 0.45s cubic-bezier(.2, .8, .2, 1),
+    opacity 0.3s ease;
+}
+
+
+#contact .contact-group-panel > .contact-grid {
+  min-height: 0;
+  margin-top: 0;
+
+  overflow: hidden;
+}
+
+
+/* OPEN */
+
+#contact .contact-group.is-open .contact-group-panel {
+  grid-template-rows: 1fr;
+
+  opacity: 1;
+}
+
+
+#contact .contact-group.is-open .contact-group-panel > .contact-grid {
+  margin-top: 24px;
+}
+
+
+#contact .contact-group.is-open .contact-group-icon {
+  transform: rotate(45deg);
+
+  background: #12382b;
+  color: #ffffff;
+}
+
+
+/* PHONE */
+
+@media (max-width: 650px) {
+
+  #contact .contact-group-toggle {
+    padding: 19px 0;
+
+    font-size: 1.2rem;
+  }
+
+
+  #contact .contact-group-icon {
+    width: 34px;
+    height: 34px;
+
+    font-size: 1.3rem;
+  }
+
+
+  #contact .contact-group.is-open .contact-group-panel > .contact-grid {
+    margin-top: 16px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     
 /* ==========================================
 SKILLS — CLEAN CONSOLIDATED VERSION
@@ -9573,14 +9724,7 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
 
 
-
-    
-
-
-
-
-
-    <section id="contact">
+<section id="contact">
   <div class="contact-container">
 
     <div class="contact-header">
@@ -9591,22 +9735,20 @@ LANGUAGE-SPECIFIC HOVER COLORS
       <h2>One message<br>away.</h2>
     </div>
 
-
     <div class="contact-groups">
-
-      <!-- ==========================================
-      PROFESSIONAL
-      ========================================== -->
 
       <div class="contact-group">
 
-        <div class="contact-group-title">
+        <button class="contact-group-toggle" type="button" aria-expanded="false">
           <span>Professional</span>
-        </div>
+          <span class="contact-group-icon">+</span>
+        </button>
 
-        <div class="contact-grid contact-grid-professional">
+        <div class="contact-group-panel">
 
-      <!-- =========================
+          <div class="contact-grid contact-grid-professional">
+
+     <!-- =========================
       EMAIL
       ========================== -->
 
@@ -9781,24 +9923,24 @@ LANGUAGE-SPECIFIC HOVER COLORS
 <span class="contact-action">PDF</span>
       </a>
 
+
+          </div>
+
         </div>
 
       </div>
 
-
-      <!-- ==========================================
-      SOCIAL
-      ========================================== -->
-
       <div class="contact-group">
 
-        <div class="contact-group-title">
+        <button class="contact-group-toggle" type="button" aria-expanded="false">
           <span>Social</span>
-        </div>
+          <span class="contact-group-icon">+</span>
+        </button>
 
-        <div class="contact-grid contact-grid-social">
+        <div class="contact-group-panel">
 
-         
+          <div class="contact-grid contact-grid-social">
+
       <!-- =========================
       INSTAGRAM
       ========================== -->
@@ -9950,6 +10092,9 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
 <span class="contact-action">Open</span>
       </a>
+
+          </div>
+
         </div>
 
       </div>
@@ -9958,6 +10103,16 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
   </div>
 </section>
+    
+
+
+
+
+
+
+
+
+
 
 <footer class="site-footer">
 
@@ -10613,6 +10768,26 @@ languageRows.forEach((row) => {
   });
 
 });
+
+
+    /* ==========================================
+CONTACT — COLLAPSIBLE GROUPS
+========================================== */
+
+const contactGroups = document.querySelectorAll("#contact .contact-group");
+
+contactGroups.forEach((group) => {
+  const toggle = group.querySelector(".contact-group-toggle");
+
+  if (!toggle) return;
+
+  toggle.addEventListener("click", () => {
+    const isOpen = group.classList.toggle("is-open");
+
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+});
+
     
     
   </script>
