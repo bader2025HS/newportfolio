@@ -9096,7 +9096,284 @@ LANGUAGES — COMPACT HORIZONTAL LAYOUT
 
 
 
+/* ==========================================
+LANGUAGES — FINAL CLEAN OVERRIDE
+SEPARATED CARDS + SAFE HOVER
+========================================== */
 
+/* SPACE BETWEEN ALL LANGUAGE CARDS */
+
+#skills .skills-languages {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 18px 24px;
+}
+
+
+/* CARD */
+
+#skills .skills-languages .language-row {
+  min-width: 0;
+  min-height: 120px;
+
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) auto;
+  grid-template-areas: "flag name level";
+
+  align-items: center;
+
+  column-gap: 22px;
+  row-gap: 0;
+
+  padding: 20px 22px;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(18, 56, 43, 0.2);
+
+  background: rgba(255, 255, 255, 0.14);
+
+  overflow: hidden;
+
+  transform: none !important;
+  box-shadow: none !important;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* REMOVE ALL OLD PSEUDO EFFECTS */
+
+#skills .skills-languages .language-row::before,
+#skills .skills-languages .language-row::after {
+  display: none !important;
+}
+
+
+/* FLAG */
+
+#skills .skills-languages .language-flag {
+  grid-area: flag;
+
+  width: 58px;
+  height: 58px;
+
+  margin: 0 !important;
+
+  transform: none !important;
+  box-shadow: none !important;
+
+  transition: transform 0.25s ease;
+}
+
+
+/* NAME */
+
+#skills .skills-languages .language-row strong {
+  grid-area: name;
+
+  min-width: 0;
+
+  color: #12382b;
+
+  font-size: clamp(1.2rem, 1.6vw, 1.55rem);
+  line-height: 1;
+
+  white-space: nowrap;
+
+  transform: none !important;
+
+  transition: color 0.25s ease;
+}
+
+
+/* LEVEL */
+
+#skills .skills-languages .language-row small {
+  grid-area: level;
+
+  width: auto !important;
+  min-width: 72px;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 9px 14px;
+
+  justify-self: end;
+
+  box-sizing: border-box;
+
+  background: #2d7b61;
+  border: 1px solid #2d7b61;
+
+  color: #f6fbf8;
+
+  transform: none !important;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+
+/* ==========================================
+SAFE HOVER — NOTHING LEAVES THE CARD
+========================================== */
+
+#skills .skills-languages .language-row:hover,
+#skills .skills-languages .language-row.is-active {
+  background: #12382b;
+  border-color: #12382b;
+
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+
+#skills .skills-languages .language-row:hover .language-flag,
+#skills .skills-languages .language-row.is-active .language-flag {
+  transform: scale(1.05) !important;
+  box-shadow: none !important;
+}
+
+
+#skills .skills-languages .language-row:hover strong,
+#skills .skills-languages .language-row.is-active strong {
+  color: #f6fbf8;
+
+  transform: none !important;
+}
+
+
+#skills .skills-languages .language-row:hover small,
+#skills .skills-languages .language-row.is-active small {
+  background: #ddefe7;
+  border-color: #ddefe7;
+
+  color: #12382b;
+
+  transform: none !important;
+}
+
+
+/* ==========================================
+TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+  #skills .skills-languages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+  }
+
+}
+
+
+/* ==========================================
+PHONE
+========================================== */
+
+@media (max-width: 650px) {
+
+  #skills .skills-languages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+
+  #skills .skills-languages .language-row {
+    min-height: 92px;
+
+    grid-template-columns: 42px minmax(0, 1fr);
+    grid-template-areas:
+      "flag name"
+      "flag level";
+
+    column-gap: 10px;
+    row-gap: 8px;
+
+    padding: 13px 11px;
+  }
+
+
+  #skills .skills-languages .language-flag {
+    width: 42px;
+    height: 42px;
+  }
+
+
+  #skills .skills-languages .language-row strong {
+    font-size: 0.98rem;
+
+    white-space: normal;
+  }
+
+
+  #skills .skills-languages .language-row small {
+    min-width: 54px;
+
+    justify-self: start;
+
+    padding: 6px 9px;
+
+    font-size: 0.61rem;
+  }
+
+
+  /* Disable browser sticky hover */
+
+  #skills .skills-languages .language-row:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(18, 56, 43, 0.2);
+  }
+
+
+  #skills .skills-languages .language-row:hover .language-flag {
+    transform: none !important;
+  }
+
+
+  #skills .skills-languages .language-row:hover strong {
+    color: #12382b;
+  }
+
+
+  #skills .skills-languages .language-row:hover small {
+    background: #2d7b61;
+    border-color: #2d7b61;
+
+    color: #f6fbf8;
+  }
+
+
+  /* Tap state */
+
+  #skills .skills-languages .language-row.is-active {
+    background: #12382b;
+    border-color: #12382b;
+  }
+
+
+  #skills .skills-languages .language-row.is-active strong {
+    color: #f6fbf8;
+  }
+
+
+  #skills .skills-languages .language-row.is-active small {
+    background: #ddefe7;
+    border-color: #ddefe7;
+
+    color: #12382b;
+  }
+
+}
 
 
 
