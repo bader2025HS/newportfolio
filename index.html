@@ -7023,51 +7023,91 @@ CONTACT — DESKTOP REVERSED HOVER
 
 
 /* ==========================================
-CONTACT GROUPS
+CONTACT — PROFESSIONAL / SOCIAL GROUPS
 ========================================== */
 
-.contact-group + .contact-group{
-    margin-top:48px;
+#contact .contact-groups {
+  margin-top: 90px;
 }
 
 
-.contact-group-title{
-
-    display:flex;
-    align-items:center;
-
-    gap:16px;
-
-    margin-bottom:22px;
+#contact .contact-group + .contact-group {
+  margin-top: 58px;
 }
 
 
-.contact-group-title span{
+/* GROUP LABEL */
 
-    color:#47695d;
+#contact .contact-group-title {
+  margin-bottom: 20px;
 
-    font-family:"Space Grotesk",sans-serif;
+  display: flex;
+  align-items: center;
 
-    font-size:.72rem;
-    font-weight:700;
-
-    letter-spacing:.24em;
-    text-transform:uppercase;
+  gap: 18px;
 }
 
 
-.contact-group-title::after{
+#contact .contact-group-title span {
+  flex-shrink: 0;
 
-    content:"";
+  color: #12382b;
 
-    flex:1;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
 
-    height:1px;
+  line-height: 1;
 
-    background:rgba(18,56,43,.18);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
 
+#contact .contact-group-title::after {
+  content: "";
+
+  width: 100%;
+  height: 1px;
+
+  background: rgba(18, 56, 43, 0.25);
+}
+
+
+/* REMOVE OLD GRID TOP MARGIN */
+
+#contact .contact-group .contact-grid {
+  margin-top: 0;
+}
+
+
+/* PHONE */
+
+@media (max-width: 650px) {
+
+  #contact .contact-groups {
+    margin-top: 65px;
+  }
+
+
+  #contact .contact-group + .contact-group {
+    margin-top: 42px;
+  }
+
+
+  #contact .contact-group-title {
+    margin-bottom: 14px;
+
+    gap: 12px;
+  }
+
+
+  #contact .contact-group-title span {
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+  }
+
+}
 
 
 
