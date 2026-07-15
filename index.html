@@ -7894,7 +7894,51 @@ LANGUAGES — FLAG VISIBILITY
 
 
 
+/* ==========================================
+FINAL FLAG VISIBILITY OVERRIDE
+========================================== */
 
+#skills .skills-languages .language-flag,
+#skills .skills-languages .language-row:hover .language-flag,
+#skills .skills-languages .language-row.is-active .language-flag {
+  position: relative !important;
+  z-index: 2 !important;
+
+  overflow: visible !important;
+
+  background: #ffffff !important;
+
+  box-shadow:
+    0 0 0 6px #ffffff,
+    0 0 0 8px rgba(18, 56, 43, 0.18) !important;
+
+  transform: none !important;
+}
+
+
+/* Keep the SVG clipped as a circle */
+
+#skills .skills-languages .language-flag svg {
+  position: relative;
+  z-index: 2;
+
+  overflow: hidden !important;
+
+  border-radius: 50% !important;
+}
+
+
+/* Slightly stronger effect on desktop hover */
+
+@media (min-width: 651px) {
+
+  #skills .skills-languages .language-row:hover .language-flag {
+    box-shadow:
+      0 0 0 7px #ffffff,
+      0 0 0 10px rgba(18, 56, 43, 0.2) !important;
+  }
+
+}
 
     
 
