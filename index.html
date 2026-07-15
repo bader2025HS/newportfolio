@@ -6389,23 +6389,95 @@ CONTACT — SAME OVERSIZED LABEL SIZE
 
 }
 
-
 /* ==========================================
-CONTACT — DARKER HOVER
+CONTACT — LIGHT DEFAULT / COLOURED HOVER
 ========================================== */
 
-.contact-card:hover{
+/* ---------- DEFAULT BACKGROUNDS ---------- */
 
-    background:
-        color-mix(in srgb,
-        var(--card-accent) 22%,
-        white) !important;
+.contact-email{
+  --card-bg:#edf7f2 !important;
+}
 
-    border-color:var(--card-accent);
+.contact-whatsapp{
+  --card-bg:#eef8ef !important;
+}
+
+.contact-cv{
+  --card-bg:#edf4f0 !important;
+}
+
+.contact-instagram{
+  --card-bg:#f8edf2 !important;
+}
+
+.contact-linkedin{
+  --card-bg:#edf4fb !important;
+}
+
+.contact-facebook{
+  --card-bg:#eef4fc !important;
 }
 
 
+/* Apply the light background */
 
+.contact-card{
+  background:var(--card-bg) !important;
+}
+
+
+/* ---------- HOVER ---------- */
+
+.contact-email:hover{
+  background:#bcded0 !important;
+}
+
+.contact-whatsapp:hover{
+  background:#c9e8cd !important;
+}
+
+.contact-cv:hover{
+  background:#b9d3c8 !important;
+}
+
+.contact-instagram:hover{
+  background:#ead0d9 !important;
+}
+
+.contact-linkedin:hover{
+  background:#c9ddeb !important;
+}
+
+.contact-facebook:hover{
+  background:#cadbf0 !important;
+}
+
+
+/* Border */
+
+.contact-card:hover{
+  border-color:var(--card-accent) !important;
+}
+
+
+/* Icon */
+
+.contact-card:hover .contact-icon{
+  background:rgba(255,255,255,.72) !important;
+  border-color:var(--card-accent) !important;
+}
+
+
+/* Text */
+
+.contact-card,
+.contact-card h3,
+.contact-card span{
+  transition:
+    background .3s ease,
+    color .3s ease;
+}
 
 
 
