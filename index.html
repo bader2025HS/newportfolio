@@ -650,7 +650,65 @@ section {
 
 
 
+@media (max-width: 768px) {
 
+  .hero {
+    position: relative;
+    display: block;
+  }
+
+  .hero-content {
+    padding-top: 0;
+  }
+
+  .hero-title {
+    max-width: calc(100% - 150px);
+
+    margin-bottom: 32px;
+
+    font-size: clamp(2.9rem, 14vw, 4.5rem);
+    line-height: 0.92;
+  }
+
+  .hero-photo {
+    position: absolute;
+
+    top: 6px;          /* aligns with "Basile" */
+    right: 0;
+
+    display: block;
+  }
+
+  .hero-photo-frame {
+    width: 125px;      /* bigger */
+    height: 125px;
+
+    padding: 6px;
+    border-width: 2px;
+  }
+
+  .hero-photo-frame::before {
+    inset: -8px;
+  }
+
+}
+
+    @media (max-width: 390px) {
+
+  .hero-title {
+    max-width: calc(100% - 125px);
+  }
+
+  .hero-photo {
+    top: 4px;
+  }
+
+  .hero-photo-frame {
+    width: 105px;
+    height: 105px;
+  }
+
+}
 
 
 
