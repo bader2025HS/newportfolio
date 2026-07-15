@@ -6693,7 +6693,119 @@ PHONE
 
 
 
+/* ==========================================
+CONTACT — BALANCED FINAL OVERRIDE
+========================================== */
 
+#contact .contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+
+/* REMOVE FEATURE CARD SPANS */
+
+#contact .contact-email,
+#contact .contact-cv {
+  grid-column: auto !important;
+}
+
+
+/* SAME SIZE FOR ALL CARDS */
+
+#contact .contact-card {
+  min-height: 165px;
+
+  grid-template-columns: 62px minmax(0, 1fr) auto;
+  column-gap: 20px;
+
+  padding: 26px;
+
+  transform: none !important;
+}
+
+
+/* KEEP BACKGROUND WORD SUBTLE */
+
+#contact .contact-card::before {
+  right: 18px;
+  bottom: -6px;
+
+  font-size: clamp(2.8rem, 4vw, 4.3rem);
+
+  color: rgba(18, 56, 43, 0.06);
+}
+
+
+/* REMOVE SIDE BAR */
+
+#contact .contact-card::after {
+  display: none !important;
+}
+
+
+/* SIMPLE HOVER */
+
+#contact .contact-card:hover {
+  transform: translateY(-5px) !important;
+
+  border-color: var(--card-accent);
+}
+
+
+/* NO ROTATION */
+
+#contact .contact-card:hover .contact-icon {
+  transform: scale(1.05);
+}
+
+
+/* KEEP TEXT FIXED */
+
+#contact .contact-card:hover .contact-card-content h3 {
+  transform: none;
+}
+
+
+/* KEEP BUTTON INSIDE */
+
+#contact .contact-action {
+  min-width: 68px;
+  padding: 9px 10px;
+
+  white-space: nowrap;
+}
+
+#contact .contact-card:hover .contact-action {
+  transform: none;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+  #contact .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* PHONE */
+
+@media (max-width: 650px) {
+
+  #contact .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #contact .contact-card::before {
+    font-size: 3rem;
+  }
+
+}
 
 
 
