@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfolioooo</title>
+  <title>Portfolio</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9169,7 +9169,159 @@ LANGUAGES — SEPARATED CLEAN ITEMS
 }
 
 
+/* ==========================================
+LANGUAGES — COMPACT HORIZONTAL LAYOUT
+========================================== */
 
+#skills .skills-languages .language-row{
+    display:grid;
+    grid-template-columns:58px 1fr auto;
+    align-items:center;
+
+    column-gap:22px;
+    row-gap:0;
+
+    padding:18px 22px;
+
+    border:1px solid rgba(18,56,43,.18);
+    background:transparent;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+/* Remove old effects */
+
+#skills .language-row::before,
+#skills .language-row::after{
+    display:none !important;
+}
+
+/* Name */
+
+#skills .language-row strong{
+    font-size:1.45rem;
+    color:#12382b;
+
+    transform:none !important;
+    transition:color .25s ease;
+}
+
+/* Level */
+
+#skills .language-row small{
+    width:auto;
+    min-width:68px;
+
+    margin:0;
+    padding:8px 14px;
+
+    background:#2d7b61;
+    border:1px solid #2d7b61;
+
+    color:#fff;
+
+    transform:none !important;
+}
+
+/* Flag */
+
+#skills .language-flag{
+    margin:0;
+    transition:transform .25s ease;
+}
+
+/* Hover */
+
+#skills .language-row:hover{
+    background:#12382b;
+
+    border-color:#12382b;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 24px rgba(18,56,43,.12);
+}
+
+#skills .language-row:hover strong{
+    color:#fff;
+}
+
+#skills .language-row:hover .language-flag{
+    transform:scale(1.08);
+}
+
+#skills .language-row:hover small{
+    background:#ddefe7;
+    border-color:#ddefe7;
+    color:#12382b;
+}
+
+/* Phone */
+
+@media (max-width:650px){
+
+    #skills .skills-languages .language-row{
+
+        grid-template-columns:46px 1fr auto;
+
+        column-gap:14px;
+
+        padding:14px;
+    }
+
+    #skills .language-row strong{
+        font-size:1.05rem;
+    }
+
+    #skills .language-row small{
+        min-width:56px;
+
+        padding:6px 10px;
+
+        font-size:.65rem;
+    }
+
+    #skills .language-row:hover{
+        transform:none;
+        box-shadow:none;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
