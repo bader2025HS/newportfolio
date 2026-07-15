@@ -4979,7 +4979,333 @@ EXPLORE PROJECT — FULL FILL HOVER
 
 }
 
+/* ==========================================
+WORK — EDITORIAL TILE OVERRIDE
+NO HTML CHANGES
+========================================== */
 
+#work .work-list {
+  margin-top: 90px;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  border-top: 0;
+}
+
+
+/* ==========================================
+WORK TILE
+========================================== */
+
+#work .work-item {
+  --work-accent: #b8ead8;
+
+  position: relative;
+  isolation: isolate;
+
+  min-height: 330px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: space-between;
+
+  padding: 32px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(246, 251, 248, 0.2);
+
+  color: #f6fbf8;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s cubic-bezier(.2, .8, .2, 1);
+}
+
+
+/* REMOVE OLD BACKGROUND */
+
+#work .work-item::before {
+  display: none !important;
+}
+
+
+/* ACCENT LINE */
+
+#work .work-item::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 6px;
+  height: 100%;
+
+  background: var(--work-accent);
+
+  transform: scaleY(0);
+  transform-origin: bottom;
+
+  transition: transform 0.4s cubic-bezier(.2, .8, .2, 1);
+}
+
+
+/* ==========================================
+INDIVIDUAL ACCENTS
+========================================== */
+
+#work .work-item:nth-child(1) {
+  --work-accent: #b8ead8;
+}
+
+#work .work-item:nth-child(2) {
+  --work-accent: #8ed4bf;
+}
+
+#work .work-item:nth-child(3) {
+  --work-accent: #c9ddeb;
+}
+
+#work .work-item:nth-child(4) {
+  --work-accent: #e3d77a;
+}
+
+
+/* ==========================================
+NUMBER
+========================================== */
+
+#work .work-number {
+  position: absolute;
+  right: 26px;
+  top: 22px;
+  z-index: 0;
+
+  padding: 0;
+
+  color: rgba(246, 251, 248, 0.1);
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(4.5rem, 7vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+
+  transition:
+    color 0.35s ease,
+    transform 0.4s cubic-bezier(.2, .8, .2, 1);
+}
+
+
+/* ==========================================
+CONTENT
+========================================== */
+
+#work .work-item > div:not(.work-number) {
+  position: relative;
+  z-index: 2;
+
+  min-width: 0;
+
+  padding: 65px 0 0;
+}
+
+
+/* TITLE */
+
+#work .work-item h3 {
+  max-width: 500px;
+
+  margin: 0 0 20px;
+
+  color: #f6fbf8;
+
+  font-size: clamp(2.1rem, 3.2vw, 3.8rem);
+  line-height: 0.95;
+
+  transition:
+    color 0.3s ease,
+    transform 0.35s cubic-bezier(.2, .8, .2, 1);
+}
+
+
+/* DESCRIPTION */
+
+#work .work-item p {
+  max-width: 510px;
+
+  color: rgba(246, 251, 248, 0.7);
+
+  font-size: 1rem;
+  line-height: 1.7;
+
+  transition: color 0.3s ease;
+}
+
+
+/* ==========================================
+EXPLORE BUTTON
+========================================== */
+
+#work .work-link {
+  position: relative;
+  z-index: 2;
+
+  grid-column: auto;
+
+  width: max-content;
+
+  margin-top: 32px;
+  padding: 12px 18px;
+
+  border: 1px solid rgba(246, 251, 248, 0.42);
+
+  color: #f6fbf8;
+  background: transparent;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* REMOVE OLD FILL ANIMATION */
+
+#work .work-link::after {
+  display: none !important;
+}
+
+
+/* ==========================================
+HOVER
+========================================== */
+
+#work .work-item:hover {
+  padding: 32px;
+
+  background: var(--work-accent);
+  border-color: var(--work-accent);
+
+  transform: translateY(-6px);
+}
+
+
+#work .work-item:hover::after {
+  transform: scaleY(1);
+}
+
+
+#work .work-item:hover .work-number {
+  color: rgba(18, 56, 43, 0.12);
+
+  transform: translate(-5px, 5px);
+}
+
+
+#work .work-item:hover h3 {
+  color: #12382b;
+
+  transform: translateX(6px);
+}
+
+
+#work .work-item:hover p {
+  color: rgba(18, 56, 43, 0.75);
+}
+
+
+#work .work-item:hover .work-link {
+  background: #12382b;
+  border-color: #12382b;
+
+  color: #f6fbf8;
+
+  transform: translateX(6px);
+}
+
+
+/* ==========================================
+TABLET
+========================================== */
+
+@media (max-width: 1050px) {
+
+  #work .work-item {
+    min-height: 300px;
+
+    padding: 28px;
+  }
+
+
+  #work .work-item:hover {
+    padding: 28px;
+  }
+
+}
+
+
+/* ==========================================
+MOBILE
+========================================== */
+
+@media (max-width: 850px) {
+
+  #work .work-list {
+    margin-top: 65px;
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+
+  #work .work-item {
+    min-height: 270px;
+
+    padding: 25px;
+  }
+
+
+  #work .work-item:hover {
+    padding: 25px;
+
+    transform: none;
+  }
+
+
+  #work .work-item > div:not(.work-number) {
+    padding-top: 50px;
+  }
+
+
+  #work .work-number {
+    right: 20px;
+    top: 18px;
+
+    font-size: 4.5rem;
+  }
+
+
+  #work .work-item h3 {
+    padding-right: 0;
+
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+
+  #work .work-link {
+    margin-top: 25px;
+  }
+
+}
 
 
 
