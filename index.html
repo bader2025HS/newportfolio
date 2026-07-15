@@ -713,7 +713,56 @@ section {
 
 
 
+@media (max-width: 768px) {
 
+  .hero-title{
+    max-width: calc(100% - 180px);
+  }
+
+  .hero-photo{
+    top: 2px;
+    right: 0;
+  }
+
+  .hero-photo-frame{
+    width: 155px;
+    height: 155px;
+
+    padding: 7px;
+    border-width: 2px;
+  }
+
+  .hero-photo-frame::before{
+    inset: -9px;
+  }
+
+}
+
+@media (max-width: 390px){
+
+  .hero-title{
+    max-width: calc(100% - 155px);
+  }
+
+  .hero-photo-frame{
+    width: 135px;
+    height: 135px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
