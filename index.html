@@ -5355,8 +5355,206 @@ MOBILE
 
 
 
+/* ==========================================
+WORK — ALIGNED ITEMS + CUSTOM BUTTON LABELS
+========================================== */
+
+/* Remove the staggered layout */
+
+#work .work-item,
+#work .work-item:nth-child(even) {
+  min-height: 310px;
+
+  padding: 42px 0;
+
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  grid-template-rows: 1fr auto;
+
+  column-gap: 24px;
+
+  align-items: start;
+}
 
 
+/* Main content fills the available height */
+
+#work .work-item > div {
+  min-width: 0;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding-right: 0;
+}
+
+
+/* Keep titles aligned */
+
+#work .work-item h3 {
+  margin: 0 0 18px;
+}
+
+
+/* Keep descriptions aligned */
+
+#work .work-item p {
+  margin: 0;
+
+  max-width: 520px;
+}
+
+
+/* ==========================================
+ACTION BUTTON
+========================================== */
+
+#work .work-link {
+  grid-column: 2;
+  grid-row: 2;
+
+  justify-self: start;
+
+  width: max-content;
+
+  margin-top: 30px;
+  padding: 12px 17px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: 1px solid #b8ead8;
+
+  color: #b8ead8;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0;
+  font-weight: 700;
+  line-height: 1;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  overflow: hidden;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* Remove previous underline/fill pseudo-element */
+
+#work .work-link::after {
+  display: none !important;
+}
+
+
+/* Button labels using the existing order */
+
+#work .work-item:nth-child(1) .work-link::before {
+  content: "READ PAPER";
+}
+
+#work .work-item:nth-child(2) .work-link::before {
+  content: "SEE BRIEFS";
+}
+
+#work .work-item:nth-child(3) .work-link::before {
+  content: "READ ARTICLES";
+}
+
+#work .work-item:nth-child(4) .work-link::before {
+  content: "VIEW VISUALS";
+}
+
+
+/* Shared button text style */
+
+#work .work-link::before {
+  position: relative;
+  z-index: 1;
+
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+}
+
+
+/* Hover */
+
+#work .work-item:hover .work-link {
+  background: #b8ead8;
+  border-color: #b8ead8;
+
+  color: #1f5644;
+
+  transform: translateY(-3px);
+}
+
+
+/* Keep all rows visually aligned */
+
+#work .work-item:hover,
+#work .work-item:nth-child(even):hover {
+  padding-left: 14px;
+  padding-right: 0;
+}
+
+
+/* ==========================================
+MOBILE
+========================================== */
+
+@media (max-width: 850px) {
+
+  #work .work-item,
+  #work .work-item:nth-child(even) {
+    min-height: 260px;
+
+    grid-template-columns: 46px minmax(0, 1fr);
+
+    column-gap: 14px;
+
+    padding: 32px 0;
+  }
+
+
+  #work .work-link {
+    grid-column: 2;
+
+    margin-top: 24px;
+    padding: 11px 14px;
+  }
+
+
+  #work .work-item:hover,
+  #work .work-item:nth-child(even):hover {
+    padding-left: 0;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     
 
 
