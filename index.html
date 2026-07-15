@@ -8897,7 +8897,74 @@ TOOLS — SIMPLE CLEAN LAYOUT
 
 
 
+/* ==========================================
+LANGUAGES — CLEAN STYLE
+========================================== */
 
+#skills .language-row {
+    position: relative;
+
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(18,56,43,.22);
+
+    padding: 18px 22px;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        transform .3s ease;
+}
+
+/* Remove previous effects */
+
+#skills .language-row::before,
+#skills .language-row::after{
+    display:none;
+}
+
+#skills .language-row:hover{
+    background:#12382b;
+    border-color:#12382b;
+
+    transform:translateY(-4px);
+}
+
+#skills .language-row strong{
+    transition:color .3s ease;
+}
+
+#skills .language-row:hover strong{
+    color:#f6fbf8;
+}
+
+/* Flag stays almost static */
+
+#skills .language-flag{
+    transition:transform .3s ease;
+}
+
+#skills .language-row:hover .language-flag{
+    transform:scale(1.06);
+}
+
+/* Badge stays in place */
+
+#skills .language-row small{
+    transform:none !important;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease;
+}
+
+#skills .language-row:hover small{
+    background:#ddefe7;
+    border-color:#ddefe7;
+    color:#12382b;
+
+    transform:none !important;
+}
 
 
 
