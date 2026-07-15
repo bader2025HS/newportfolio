@@ -8797,217 +8797,67 @@ LANGUAGE HOVER — DARK GREEN
 
     
 /* ==========================================
-TOOLS — EDITORIAL GRID
-NO HTML CHANGES
+TOOLS — SIMPLE CLEAN LAYOUT
 ========================================== */
-
-#skills .skills-tools {
-  width: 100%;
-}
-
-
-/* MAIN GRID */
 
 #skills .tools-directory {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 
-  gap: 14px;
-
-  counter-reset: tool-number;
+  gap: 12px;
 }
 
 
-/* ==========================================
-INDIVIDUAL TOOL
-========================================== */
+/* TOOL ITEM */
 
 #skills .tool-entry {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-
   min-width: 0;
-  min-height: 170px;
+
+  padding: 18px 20px;
 
   display: flex;
-  align-items: flex-end;
-
-  padding: 24px;
+  align-items: center;
+  justify-content: center;
 
   border: 1px solid rgba(18, 56, 43, 0.22);
 
-  background: rgba(246, 251, 248, 0.32);
+  background: rgba(255, 255, 255, 0.18);
   color: #12382b;
 
-  counter-increment: tool-number;
-
-  cursor: default;
-
   transition:
-    background 0.35s ease,
-    border-color 0.35s ease,
-    transform 0.4s cubic-bezier(.2, .8, .2, 1);
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
-
-/* LARGE BACKGROUND NUMBER */
-
-#skills .tool-entry::before {
-  content: counter(tool-number, decimal-leading-zero);
-
-  position: absolute;
-
-  top: 15px;
-  right: 18px;
-
-  font-family: "Space Grotesk", sans-serif;
-
-  font-size: clamp(2.7rem, 4vw, 4.8rem);
-  font-weight: 700;
-
-  line-height: 0.85;
-  letter-spacing: -0.08em;
-
-  color: rgba(45, 123, 97, 0.16);
-
-  transition:
-    color 0.35s ease,
-    transform 0.45s cubic-bezier(.2, .8, .2, 1);
-}
-
-
-/* SMALL DECORATIVE LINE */
-
-#skills .tool-entry::after {
-  content: "";
-
-  position: absolute;
-
-  left: 24px;
-  top: 25px;
-
-  width: 34px;
-  height: 3px;
-
-  background: #2d7b61;
-
-  transform-origin: left center;
-
-  transition:
-    width 0.4s cubic-bezier(.2, .8, .2, 1),
-    background 0.35s ease;
-}
-
-
-/* TOOL NAME */
 
 #skills .tool-entry span {
-  position: relative;
-  z-index: 2;
-
-  max-width: 90%;
-
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: clamp(1.35rem, 1.7vw, 2rem);
+  font-size: clamp(1.15rem, 1.5vw, 1.45rem);
   font-weight: 600;
 
   line-height: 1;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.03em;
 
-  overflow-wrap: anywhere;
-
-  transition:
-    color 0.35s ease,
-    transform 0.4s cubic-bezier(.2, .8, .2, 1);
+  text-align: center;
 }
 
 
-/* ==========================================
-VARIED LAYOUT
-========================================== */
-
-/* Some cards span two columns */
-
-#skills .tool-entry:nth-child(1),
-#skills .tool-entry:nth-child(6) {
-  grid-column: span 2;
-}
-
-
-/* Alternating dark cards */
-
-#skills .tool-entry:nth-child(3n + 2) {
-  background: #2d7b61;
-  border-color: #2d7b61;
-  color: #f6fbf8;
-}
-
-
-#skills .tool-entry:nth-child(3n + 2)::before {
-  color: rgba(246, 251, 248, 0.15);
-}
-
-
-#skills .tool-entry:nth-child(3n + 2)::after {
-  background: #9dd5bf;
-}
-
-
-/* Slight height variation */
-
-#skills .tool-entry:nth-child(4n + 1) {
-  min-height: 205px;
-}
-
-
-#skills .tool-entry:nth-child(4n + 3) {
-  min-height: 145px;
-}
-
-
-/* ==========================================
-HOVER
-========================================== */
+/* HOVER */
 
 #skills .tool-entry:hover {
-  z-index: 3;
-
   background: #12382b;
   border-color: #12382b;
+
   color: #f6fbf8;
 
-  transform: translateY(-8px);
+  transform: translateY(-4px);
 }
 
 
-#skills .tool-entry:hover::before {
-  color: rgba(221, 239, 231, 0.2);
-
-  transform:
-    translate(-5px, 5px)
-    scale(1.08);
-}
-
-
-#skills .tool-entry:hover::after {
-  width: calc(100% - 48px);
-
-  background: #9dd5bf;
-}
-
-
-#skills .tool-entry:hover span {
-  color: #f6fbf8;
-
-  transform: translateX(6px);
-}
-
-
-/* ==========================================
-TABLET
-========================================== */
+/* TABLET */
 
 @media (max-width: 900px) {
 
@@ -9015,24 +8865,10 @@ TABLET
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-
-  #skills .tool-entry:nth-child(1),
-  #skills .tool-entry:nth-child(6) {
-    grid-column: span 1;
-  }
-
-
-  #skills .tool-entry:nth-child(4n + 1),
-  #skills .tool-entry:nth-child(4n + 3) {
-    min-height: 165px;
-  }
-
 }
 
 
-/* ==========================================
-PHONE — 2 COLUMNS
-========================================== */
+/* PHONE */
 
 @media (max-width: 650px) {
 
@@ -9043,100 +8879,21 @@ PHONE — 2 COLUMNS
   }
 
 
-  #skills .tool-entry,
-  #skills .tool-entry:nth-child(4n + 1),
-  #skills .tool-entry:nth-child(4n + 3) {
-    min-height: 135px;
-
-    padding: 17px;
-  }
-
-
-  /* Keep one wide feature item */
-
-  #skills .tool-entry:first-child {
-    grid-column: 1 / -1;
-
-    min-height: 145px;
-  }
-
-
-  #skills .tool-entry::before {
-    top: 13px;
-    right: 14px;
-
-    font-size: 2.7rem;
-  }
-
-
-  #skills .tool-entry::after {
-    left: 17px;
-    top: 19px;
-
-    width: 25px;
-    height: 2px;
+  #skills .tool-entry {
+    padding: 16px 12px;
   }
 
 
   #skills .tool-entry span {
-    max-width: 100%;
-
-    font-size: 1.2rem;
+    font-size: 1.12rem;
   }
 
-
-  /* Avoid sticky hover on touchscreens */
 
   #skills .tool-entry:hover {
     transform: none;
   }
 
-
-  #skills .tool-entry:hover span {
-    transform: none;
-  }
-
 }
-
-
-/* ==========================================
-VERY SMALL PHONES
-========================================== */
-
-@media (max-width: 390px) {
-
-  #skills .tools-directory {
-    gap: 8px;
-  }
-
-
-  #skills .tool-entry,
-  #skills .tool-entry:nth-child(4n + 1),
-  #skills .tool-entry:nth-child(4n + 3) {
-    min-height: 125px;
-
-    padding: 15px;
-  }
-
-
-  #skills .tool-entry span {
-    font-size: 1.08rem;
-  }
-
-
-  #skills .tool-entry::before {
-    font-size: 2.35rem;
-  }
-
-
-  #skills .tool-entry::after {
-    left: 15px;
-
-    width: 22px;
-  }
-
-}
-
 
 
 
