@@ -581,7 +581,72 @@ section {
 
 
 
+/* ==========================================
+   MOBILE HERO — COMPACT PHOTO LAYOUT
+========================================== */
 
+@media (max-width: 768px) {
+
+  #home {
+    padding-top: 185px;
+  }
+
+  .hero {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 0;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+
+    padding-top: 20px;
+  }
+
+  .hero-title {
+    max-width: calc(100% - 115px);
+
+    margin-bottom: 36px;
+
+    font-size: clamp(2.9rem, 14vw, 4.5rem);
+    line-height: 0.92;
+  }
+
+  .hero-photo {
+    position: absolute;
+    top: 0;
+    right: 4px;
+
+    width: auto;
+
+    display: block;
+  }
+
+  .hero-photo-frame {
+    width: 95px;
+    height: 95px;
+
+    padding: 5px;
+
+    border-width: 2px;
+  }
+
+  .hero-photo-frame::before {
+    inset: -7px;
+  }
+
+  .hero-description {
+    width: 100%;
+    max-width: 100%;
+  }
+
+}
 
 
 
