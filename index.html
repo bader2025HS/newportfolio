@@ -756,7 +756,95 @@ section {
 
 
 
+/* ==========================================
+   MOBILE HERO — PHOTO RIGHT, TEXT LEFT
+   NO HTML CHANGES
+========================================== */
 
+@media (max-width: 768px) {
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(145px, 40vw, 180px);
+    align-items: center;
+    gap: 18px;
+
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+
+    overflow: visible;
+  }
+
+  .hero-title {
+    width: 100%;
+    max-width: none;
+
+    margin-bottom: 24px;
+
+    font-size: clamp(2.6rem, 11vw, 4rem);
+    line-height: 0.92;
+
+    overflow: visible;
+  }
+
+  .hero-description {
+    width: 100%;
+    max-width: none;
+
+    font-size: 1rem;
+    line-height: 1.6;
+
+    overflow: visible;
+  }
+
+  .hero-photo {
+    position: static;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-photo-frame {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+
+    padding: 7px;
+    border-width: 2px;
+  }
+
+  .hero-photo-frame::before {
+    inset: -9px;
+  }
+
+}
+
+@media (max-width: 390px) {
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 135px;
+    gap: 14px;
+  }
+
+  .hero-title {
+    font-size: 2.55rem;
+  }
+
+  .hero-description {
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+
+}
 
 
 
