@@ -4835,7 +4835,33 @@ OVERSIZED LABEL — MOBILE
 }
 
 
+/* ==========================================
+WORK — REMOVE EMPTY SPACE UNDER BUTTON
+========================================== */
 
+#work .work-item {
+    min-height: auto !important;
+    grid-template-rows: auto !important;
+    padding-top: 36px !important;
+    padding-bottom: 36px !important;
+}
+
+#work .work-link {
+    align-self: flex-start !important;
+    margin-top: 18px !important;
+}
+
+@media (max-width: 850px) {
+    #work .work-item {
+        min-height: auto !important;
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+
+    #work .work-link {
+        margin-top: 16px !important;
+    }
+}
 
 
 
