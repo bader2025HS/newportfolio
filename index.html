@@ -8182,7 +8182,35 @@ CONTACT INFO
 
 
 
+#contact .contact-info{
+    margin:32px 0 70px;
 
+    display:flex;
+    justify-content:flex-start;   /* instead of center */
+    align-items:center;
+    flex-wrap:wrap;
+    gap:24px;
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(1.4rem,1.8vw,2rem);   /* much bigger */
+    font-weight:500;
+    color:#27473d;
+}
+
+#contact .contact-info a{
+    color:inherit;
+    text-decoration:none;
+    transition:.25s;
+}
+
+#contact .contact-info a:hover{
+    color:var(--accent);
+}
+
+#contact .contact-separator{
+    color:#9aac9f;
+    font-size:.9em;
+}
 
 
 
