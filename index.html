@@ -4301,14 +4301,15 @@ EDUCATION — ACTIVE OVERRIDES HOVER
     
 
 
+
+
 /* ==========================================
 WORK SECTION
-2 × 2 MAGAZINE LAYOUT — NO PROJECT BOXES
+2 COLUMNS — EDITORIAL LAYOUT
 ========================================== */
 
 #work {
   padding: 140px 8vw;
-
   background: #1f5644;
   color: #f6fbf8;
 }
@@ -4318,11 +4319,9 @@ WORK SECTION
 CONTAINER
 ========================================== */
 
-#work .work-container {
-  width: 100%;
+.work-container {
   max-width: 1450px;
-
-  margin: 0 auto;
+  margin: auto;
 }
 
 
@@ -4330,19 +4329,18 @@ CONTAINER
 HEADER
 ========================================== */
 
-#work .work-header h2 {
-  max-width: 900px;
-
+.work-header h2 {
   margin-top: 18px;
+
+  max-width: 900px;
 
   font-size: clamp(3rem, 6vw, 5.8rem);
   line-height: 0.95;
-  letter-spacing: -0.055em;
 }
 
 
 #work .oversized-label::before {
-  color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.10);
 }
 
 
@@ -4355,101 +4353,95 @@ HEADER
 INTRO
 ========================================== */
 
-#work .work-intro {
-  max-width: 680px;
-
+.work-intro {
   margin-top: 34px;
 
-  color: rgba(246, 251, 248, 0.7);
+  max-width: 650px;
 
   font-size: 1.15rem;
   line-height: 1.8;
+
+  color: rgba(246, 251, 248, 0.72);
 }
 
 
 /* ==========================================
-WORK GRID — 2 COLUMNS × 2 ROWS
+WORK LIST — 2 COLUMNS
 ========================================== */
 
-#work .work-list {
-  position: relative;
-
-  margin-top: 95px;
+.work-list {
+  margin-top: 90px;
 
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  column-gap: clamp(55px, 7vw, 115px);
+  column-gap: 60px;
   row-gap: 0;
 
-  border-top: 1px solid rgba(246, 251, 248, 0.24);
-}
-
-
-/* Central vertical line */
-
-#work .work-list::before {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  bottom: 0;
-  left: 50%;
-
-  width: 1px;
-
-  background: rgba(246, 251, 248, 0.14);
-
-  transform: translateX(-0.5px);
-
-  pointer-events: none;
+  border-top: 1px solid rgba(246, 251, 248, 0.22);
 }
 
 
 /* ==========================================
-PROJECT ITEM
+WORK ITEM
 ========================================== */
 
-#work .work-item {
+.work-item {
   position: relative;
 
-  min-width: 0;
-  min-height: 390px;
+  display: grid;
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  grid-template-columns:
+    65px
+    minmax(0, 1fr);
 
-  padding: 52px 0 48px;
+  column-gap: 24px;
 
-  border-bottom: 1px solid rgba(246, 251, 248, 0.24);
+  align-items: start;
+
+  padding: 42px 0;
+
+  border-bottom: 1px solid rgba(246, 251, 248, 0.22);
 
   color: inherit;
   text-decoration: none;
 
-  background: transparent;
+  overflow: hidden;
 
-  overflow: visible;
+  transition:
+    padding-left 0.35s ease,
+    padding-right 0.35s ease,
+    background 0.35s ease;
 }
 
 
-/* Remove any previous hover layer */
+/* ==========================================
+SOFT HOVER BACKGROUND
+========================================== */
 
-#work .work-item::before {
-  display: none !important;
+.work-item::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.055),
+      transparent 75%
+    );
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: opacity 0.35s ease;
 }
 
 
-/* Space away from central divider */
-
-#work .work-item:nth-child(odd) {
-  padding-right: clamp(28px, 4vw, 68px);
-}
-
-
-#work .work-item:nth-child(even) {
-  padding-left: clamp(28px, 4vw, 68px);
+.work-item:hover::before {
+  opacity: 1;
 }
 
 
@@ -4457,46 +4449,21 @@ PROJECT ITEM
 NUMBER
 ========================================== */
 
-#work .work-number {
-  display: block;
+.work-number {
+  position: relative;
+  z-index: 1;
 
-  margin-bottom: 34px;
-  padding: 0;
-
-  color: rgba(246, 251, 248, 0.36);
+  padding-top: 5px;
 
   font-family: "Space Grotesk", sans-serif;
-  font-size: 0.82rem;
-  font-weight: 700;
-  line-height: 1;
 
-  letter-spacing: 0.16em;
+  font-size: 1rem;
 
-  transition:
-    color 280ms ease,
-    letter-spacing 280ms ease;
-}
-
-
-/* Decorative line beside number */
-
-#work .work-number::after {
-  content: "";
-
-  display: inline-block;
-
-  width: 36px;
-  height: 1px;
-
-  margin-left: 14px;
-
-  vertical-align: middle;
-
-  background: rgba(184, 234, 216, 0.42);
+  color: rgba(246, 251, 248, 0.48);
 
   transition:
-    width 300ms ease,
-    background-color 300ms ease;
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 
@@ -4504,15 +4471,13 @@ NUMBER
 CONTENT
 ========================================== */
 
-#work .work-item > div {
+.work-item > div:not(.work-number) {
+  position: relative;
+  z-index: 1;
+
   min-width: 0;
-  width: 100%;
 
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-
-  padding: 0;
+  padding-right: 90px;
 }
 
 
@@ -4520,21 +4485,20 @@ CONTENT
 TITLE
 ========================================== */
 
-#work .work-item h3 {
-  max-width: 580px;
-
-  margin: 0 0 24px;
+.work-item h3 {
+  margin: 0 0 14px;
 
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2.5rem, 4vw, 4.8rem);
-  font-weight: 600;
-  line-height: 0.9;
 
-  letter-spacing: -0.06em;
+  font-size: clamp(1.8rem, 2.7vw, 3.2rem);
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
 
   transition:
-    color 300ms ease,
-    transform 300ms ease;
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 
@@ -4542,95 +4506,67 @@ TITLE
 DESCRIPTION
 ========================================== */
 
-#work .work-item p {
-  max-width: 520px;
+.work-item p {
+  max-width: 540px;
 
   margin: 0;
 
-  color: rgba(246, 251, 248, 0.66);
-
   font-size: 1rem;
-  line-height: 1.72;
+  line-height: 1.65;
 
-  transition: color 300ms ease;
+  color: rgba(246, 251, 248, 0.68);
 }
 
 
 /* ==========================================
-RECTANGULAR ACTION BUTTON
+OPEN CONTROL
 ========================================== */
 
-#work .work-link {
-  position: relative;
+.work-link {
+  position: absolute;
 
-  width: max-content;
+  right: 0;
+  top: 2px;
 
-  margin-top: auto;
-  padding: 14px 19px;
+  min-width: 62px;
+  height: 34px;
 
-  display: inline-flex;
+  padding: 0 13px;
+
+  border: 1px solid rgba(184, 234, 216, 0.48);
+
+  display: flex;
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(184, 234, 216, 0.75);
-
-  background: transparent;
-  color: #b8ead8;
-
-  font-family: "Space Grotesk", sans-serif;
   font-size: 0;
-  font-weight: 700;
-  line-height: 1;
 
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  color: #b8ead8;
 
   overflow: hidden;
 
   transition:
-    background-color 280ms ease,
-    border-color 280ms ease,
-    color 280ms ease,
-    transform 280ms ease;
+    min-width 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 
-/* Remove conflicting previous pseudo-element effects */
+/* REPLACE ORIGINAL VIEW TEXT */
 
-#work .work-link::after {
-  display: none !important;
-}
+.work-link::before {
+  content: "OPEN";
 
+  font-family: "Space Grotesk", sans-serif;
 
-/* Button labels */
+  font-size: 0.67rem;
+  font-weight: 700;
 
-#work .work-item:nth-child(1) .work-link::before {
-  content: "READ PAPER  ↗";
-}
-
-
-#work .work-item:nth-child(2) .work-link::before {
-  content: "SEE BRIEFS  ↗";
-}
-
-
-#work .work-item:nth-child(3) .work-link::before {
-  content: "READ ARTICLES  ↗";
-}
-
-
-#work .work-item:nth-child(4) .work-link::before {
-  content: "VIEW VISUALS  ↗";
-}
-
-
-#work .work-link::before {
-  position: relative;
-  z-index: 1;
-
-  font-size: 0.7rem;
   letter-spacing: 0.14em;
-  white-space: pre;
+
+  line-height: 1;
 }
 
 
@@ -4638,39 +4574,35 @@ RECTANGULAR ACTION BUTTON
 HOVER
 ========================================== */
 
-#work .work-item:hover .work-number {
-  color: #b8ead8;
-  letter-spacing: 0.2em;
+.work-item:hover {
+  padding-left: 20px;
+  padding-right: 14px;
 }
 
 
-#work .work-item:hover .work-number::after {
-  width: 58px;
+.work-item:hover .work-number {
+  color: #b8ead8;
+
+  transform: translateX(3px);
+}
+
+
+.work-item:hover h3 {
+  color: #b8ead8;
+
+  transform: translateX(4px);
+}
+
+
+.work-item:hover .work-link {
+  min-width: 74px;
+
   background: #b8ead8;
-}
-
-
-#work .work-item:hover h3 {
-  color: #b8ead8;
-  transform: translateX(7px);
-}
-
-
-#work .work-item:hover p {
-  color: rgba(246, 251, 248, 0.86);
-}
-
-
-/* Button gets fully coloured on project hover */
-
-#work .work-item:hover .work-link,
-#work .work-link:hover {
   border-color: #b8ead8;
 
-  background: #b8ead8;
   color: #1f5644;
 
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 
@@ -4680,113 +4612,381 @@ TABLET
 
 @media (max-width: 1050px) {
 
-  #work .work-list {
-    column-gap: 46px;
+  .work-list {
+    column-gap: 38px;
   }
 
 
-  #work .work-item {
-    min-height: 365px;
+  .work-item {
+    grid-template-columns:
+      52px
+      minmax(0, 1fr);
+
+    column-gap: 18px;
   }
 
 
-  #work .work-item:nth-child(odd) {
-    padding-right: 25px;
+  .work-item > div:not(.work-number) {
+    padding-right: 78px;
   }
 
 
-  #work .work-item:nth-child(even) {
-    padding-left: 25px;
-  }
-
-
-  #work .work-item h3 {
-    font-size: clamp(2.15rem, 4.5vw, 3.8rem);
+  .work-item h3 {
+    font-size: clamp(1.7rem, 3.4vw, 2.7rem);
   }
 
 }
 
 
 /* ==========================================
-MOBILE — ONE COLUMN
+MOBILE — 1 COLUMN
 ========================================== */
 
-@media (max-width: 760px) {
+@media (max-width: 850px) {
 
   #work {
-    padding: 120px 20px 85px;
+    padding: 120px 20px 80px;
   }
 
 
-  #work .work-list {
+  .work-list {
     margin-top: 65px;
 
     grid-template-columns: 1fr;
+
     column-gap: 0;
   }
 
 
-  #work .work-list::before {
-    display: none;
+  .work-item {
+    grid-template-columns:
+      48px
+      minmax(0, 1fr);
+
+    column-gap: 16px;
+
+    padding: 32px 0;
   }
 
 
-  #work .work-item,
-  #work .work-item:nth-child(odd),
-  #work .work-item:nth-child(even) {
-    min-height: 340px;
-
-    padding: 36px 0;
+  .work-item > div:not(.work-number) {
+    padding-right: 75px;
   }
 
 
-  #work .work-number {
-    margin-bottom: 25px;
-
-    font-size: 0.74rem;
+  .work-item:hover {
+    padding-left: 0;
+    padding-right: 0;
   }
 
 
-  #work .work-number::after {
-    width: 28px;
-  }
-
-
-  #work .work-item h3 {
-    max-width: 500px;
-
-    font-size: clamp(2.2rem, 11vw, 3.4rem);
-    line-height: 0.92;
-  }
-
-
-  #work .work-item p {
-    font-size: 0.93rem;
-    line-height: 1.62;
-  }
-
-
-  #work .work-link {
-    margin-top: 30px;
-    padding: 13px 16px;
-  }
-
-
-  #work .work-link::before {
-    font-size: 0.63rem;
-  }
-
-
-  #work .work-item:hover h3,
-  #work .work-item:hover .work-link {
+  .work-item:hover .work-number,
+  .work-item:hover h3 {
     transform: none;
+  }
+
+
+  .work-link {
+    min-width: 58px;
+    height: 32px;
+
+    padding: 0 10px;
+  }
+
+
+  .work-link::before {
+    font-size: 0.62rem;
   }
 
 }
 
 
 /* ==========================================
-OVERSIZED LABEL — MOBILE
+SMALL MOBILE
+========================================== */
+
+@media (max-width: 500px) {
+
+  .work-item {
+    grid-template-columns:
+      38px
+      minmax(0, 1fr);
+
+    column-gap: 12px;
+
+    padding: 28px 0;
+  }
+
+
+  .work-number {
+    font-size: 0.82rem;
+  }
+
+
+  .work-item > div:not(.work-number) {
+    padding-right: 0;
+  }
+
+
+  .work-item h3 {
+    padding-right: 66px;
+
+    font-size: clamp(1.65rem, 8vw, 2.25rem);
+  }
+
+
+  .work-item p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
+
+
+  .work-link {
+    right: 0;
+    top: 0;
+
+    min-width: 54px;
+    height: 30px;
+  }
+
+
+  .work-link::before {
+    font-size: 0.58rem;
+  }
+
+}
+
+/* ==========================================
+WORK LINK — EDITORIAL UNDERLINE
+========================================== */
+
+.work-link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  width: max-content;
+
+  margin-top: 24px;
+  padding-bottom: 8px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0;
+  font-weight: 700;
+
+  color: #b8ead8;
+
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+
+/* REPLACE EXISTING TEXT */
+
+.work-link::before {
+  content: "EXPLORE PROJECT";
+
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+}
+
+
+/* UNDERLINE */
+
+.work-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 38px;
+  height: 1px;
+
+  background: #b8ead8;
+
+  transition: width 0.35s ease;
+}
+
+
+/* HOVER */
+
+.work-item:hover .work-link::after {
+  width: 100%;
+}
+
+
+/* REMOVE ANY PREVIOUS BUTTON TRANSFORM */
+
+.work-item:hover .work-link {
+  transform: none;
+  background: transparent;
+  color: #b8ead8;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+  .work-link {
+    margin-top: 20px;
+    padding-bottom: 7px;
+  }
+
+  .work-link::before {
+    font-size: 0.66rem;
+  }
+
+}
+
+.work-link {
+  grid-column: 2;
+
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  width: max-content;
+
+  margin-top: 24px;
+  padding-bottom: 8px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0;
+  font-weight: 700;
+
+  color: #b8ead8;
+
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* ==========================================
+EXPLORE PROJECT — FULL FILL HOVER
+========================================== */
+
+.work-link {
+  grid-column: 2;
+
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: max-content;
+
+  margin-top: 24px;
+  padding: 12px 18px;
+
+  border: 1px solid rgba(184, 234, 216, 0.55);
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0;
+  font-weight: 700;
+
+  color: #b8ead8;
+
+  text-transform: uppercase;
+  text-decoration: none;
+
+  overflow: hidden;
+
+  transition:
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+/* TEXT */
+
+.work-link::before {
+  content: "EXPLORE PROJECT";
+
+  position: relative;
+  z-index: 2;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+}
+
+
+/* ANIMATED BACKGROUND */
+
+.work-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: #b8ead8;
+
+  transform: scaleY(0);
+  transform-origin: bottom;
+
+  transition: transform 0.35s ease;
+}
+
+
+/* BUTTON HOVER */
+
+.work-link:hover::after {
+  transform: scaleY(1);
+}
+
+
+.work-link:hover {
+  color: #1f5644;
+  border-color: #b8ead8;
+}
+
+
+/* ALSO ACTIVATE WHEN HOVERING THE WHOLE PROJECT */
+
+.work-item:hover .work-link::after {
+  transform: scaleY(1);
+}
+
+
+.work-item:hover .work-link {
+  color: #1f5644;
+  border-color: #b8ead8;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+  .work-link {
+    margin-top: 20px;
+    padding: 11px 15px;
+  }
+
+
+  .work-link::before {
+    font-size: 0.66rem;
+  }
+
+}
+
+
+
+
+
+
+/* ==========================================
+WORK — SAME OVERSIZED LABEL SIZE
+AS EXPERIENCE + EDUCATION
 ========================================== */
 
 @media (max-width: 650px) {
@@ -4801,7 +5001,6 @@ OVERSIZED LABEL — MOBILE
     overflow: hidden !important;
   }
 
-
   #work .oversized-label::before {
     left: -3px !important;
     bottom: -8px !important;
@@ -4810,11 +5009,11 @@ OVERSIZED LABEL — MOBILE
 
     font-size: clamp(3.2rem, 16vw, 4.7rem) !important;
     line-height: 0.9 !important;
+
     letter-spacing: -0.065em !important;
 
     white-space: nowrap !important;
   }
-
 
   #work .oversized-label span {
     font-size: 0.68rem !important;
@@ -4831,6 +5030,524 @@ OVERSIZED LABEL — MOBILE
   }
 
 }
+
+
+
+
+/* ==========================================
+WORK — EDITORIAL ROWS, NO BOXES
+========================================== */
+
+#work .work-list {
+  margin-top: 90px;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 70px;
+  row-gap: 0;
+
+  border-top: 1px solid rgba(246, 251, 248, 0.22);
+}
+
+
+/* ==========================================
+ITEM
+========================================== */
+
+#work .work-item {
+  position: relative;
+
+  min-height: 245px;
+
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  column-gap: 24px;
+  align-items: start;
+
+  padding: 42px 0;
+
+  border-bottom: 1px solid rgba(246, 251, 248, 0.22);
+
+  background: transparent;
+
+  overflow: visible;
+
+  transition:
+    padding-left 0.35s ease,
+    padding-right 0.35s ease;
+}
+
+
+/* REMOVE OLD BACKGROUND EFFECT */
+
+#work .work-item::before {
+  display: none !important;
+}
+
+
+/* ==========================================
+NUMBER
+========================================== */
+
+#work .work-number {
+  position: relative;
+  z-index: 1;
+
+  padding-top: 3px;
+
+  color: rgba(246, 251, 248, 0.28);
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  transition:
+    color 0.3s ease,
+    transform 0.35s ease;
+}
+
+
+/* SMALL LINE UNDER NUMBER */
+
+#work .work-number::after {
+  content: "";
+
+  display: block;
+
+  width: 22px;
+  height: 2px;
+
+  margin-top: 12px;
+
+  background: rgba(184, 234, 216, 0.45);
+
+  transition:
+    width 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* ==========================================
+CONTENT
+========================================== */
+
+#work .work-item > div:not(.work-number) {
+  position: relative;
+  z-index: 1;
+
+  min-width: 0;
+  padding-right: 0;
+}
+
+
+/* TITLE */
+
+#work .work-item h3 {
+  max-width: 520px;
+
+  margin: 0 0 18px;
+
+  font-size: clamp(2rem, 3vw, 3.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+
+  transition:
+    color 0.3s ease,
+    transform 0.35s ease;
+}
+
+
+/* DESCRIPTION */
+
+#work .work-item p {
+  max-width: 520px;
+
+  color: rgba(246, 251, 248, 0.66);
+
+  font-size: 1rem;
+  line-height: 1.7;
+
+  transition:
+    color 0.3s ease,
+    transform 0.35s ease;
+}
+
+
+/* ==========================================
+LINK
+========================================== */
+
+#work .work-link {
+  position: relative;
+
+  width: max-content;
+
+  margin-top: 28px;
+  padding: 0 0 8px;
+
+  border: 0;
+
+  color: #b8ead8;
+  background: transparent;
+
+  overflow: visible;
+}
+
+
+/* TEXT */
+
+#work .work-link::before {
+  content: "EXPLORE PROJECT";
+
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+}
+
+
+/* UNDERLINE */
+
+#work .work-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 32px;
+  height: 1px;
+
+  display: block !important;
+
+  background: #b8ead8;
+
+  transform: none;
+
+  transition: width 0.35s ease;
+}
+
+
+/* ==========================================
+HOVER
+========================================== */
+
+#work .work-item:hover {
+  padding-left: 14px;
+  padding-right: 0;
+}
+
+
+#work .work-item:hover .work-number {
+  color: #b8ead8;
+
+  transform: translateX(3px);
+}
+
+
+#work .work-item:hover .work-number::after {
+  width: 42px;
+
+  background: #b8ead8;
+}
+
+
+#work .work-item:hover h3 {
+  color: #b8ead8;
+
+  transform: translateX(5px);
+}
+
+
+#work .work-item:hover p {
+  color: rgba(246, 251, 248, 0.82);
+
+  transform: translateX(5px);
+}
+
+
+#work .work-item:hover .work-link {
+  color: #b8ead8;
+
+  transform: translateX(5px);
+}
+
+
+#work .work-item:hover .work-link::after {
+  width: 100%;
+}
+
+
+/* ==========================================
+ALTERNATING RHYTHM
+========================================== */
+
+#work .work-item:nth-child(even) {
+  padding-top: 64px;
+  padding-bottom: 20px;
+}
+
+
+#work .work-item:nth-child(even):hover {
+  padding-left: 14px;
+}
+
+
+/* ==========================================
+TABLET
+========================================== */
+
+@media (max-width: 1050px) {
+
+  #work .work-list {
+    column-gap: 42px;
+  }
+
+
+  #work .work-item {
+    grid-template-columns: 56px minmax(0, 1fr);
+    column-gap: 18px;
+  }
+
+}
+
+
+/* ==========================================
+MOBILE
+========================================== */
+
+@media (max-width: 850px) {
+
+  #work .work-list {
+    grid-template-columns: 1fr;
+
+    column-gap: 0;
+  }
+
+
+  #work .work-item,
+  #work .work-item:nth-child(even) {
+    min-height: auto;
+
+    grid-template-columns: 46px minmax(0, 1fr);
+    column-gap: 14px;
+
+    padding: 30px 0;
+  }
+
+
+  #work .work-item:hover,
+  #work .work-item:nth-child(even):hover {
+    padding-left: 0;
+  }
+
+
+  #work .work-item:hover h3,
+  #work .work-item:hover p,
+  #work .work-item:hover .work-number,
+  #work .work-item:hover .work-link {
+    transform: none;
+  }
+
+}
+
+
+
+
+/* ==========================================
+WORK — ALIGNED ITEMS + CUSTOM BUTTON LABELS
+========================================== */
+
+/* Remove the staggered layout */
+
+#work .work-item,
+#work .work-item:nth-child(even) {
+  min-height: 310px;
+
+  padding: 42px 0;
+
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  grid-template-rows: 1fr auto;
+
+  column-gap: 24px;
+
+  align-items: start;
+}
+
+
+/* Main content fills the available height */
+
+#work .work-item > div {
+  min-width: 0;
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  padding-right: 0;
+}
+
+
+/* Keep titles aligned */
+
+#work .work-item h3 {
+  margin: 0 0 18px;
+}
+
+
+/* Keep descriptions aligned */
+
+#work .work-item p {
+  margin: 0;
+
+  max-width: 520px;
+}
+
+
+/* ==========================================
+ACTION BUTTON
+========================================== */
+
+#work .work-link {
+  grid-column: 2;
+  grid-row: 2;
+
+  justify-self: start;
+
+  width: max-content;
+
+  margin-top: 30px;
+  padding: 12px 17px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: 1px solid #b8ead8;
+
+  color: #b8ead8;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0;
+  font-weight: 700;
+  line-height: 1;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  overflow: hidden;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* Remove previous underline/fill pseudo-element */
+
+#work .work-link::after {
+  display: none !important;
+}
+
+
+/* Button labels using the existing order */
+
+#work .work-item:nth-child(1) .work-link::before {
+  content: "READ PAPER";
+}
+
+#work .work-item:nth-child(2) .work-link::before {
+  content: "SEE BRIEFS";
+}
+
+#work .work-item:nth-child(3) .work-link::before {
+  content: "READ ARTICLES";
+}
+
+#work .work-item:nth-child(4) .work-link::before {
+  content: "VIEW VISUALS";
+}
+
+
+/* Shared button text style */
+
+#work .work-link::before {
+  position: relative;
+  z-index: 1;
+
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+}
+
+
+/* Hover */
+
+#work .work-item:hover .work-link {
+  background: #b8ead8;
+  border-color: #b8ead8;
+
+  color: #1f5644;
+
+  transform: translateY(-3px);
+}
+
+
+/* Keep all rows visually aligned */
+
+#work .work-item:hover,
+#work .work-item:nth-child(even):hover {
+  padding-left: 14px;
+  padding-right: 0;
+}
+
+
+/* ==========================================
+MOBILE
+========================================== */
+
+@media (max-width: 850px) {
+
+  #work .work-item,
+  #work .work-item:nth-child(even) {
+    min-height: 260px;
+
+    grid-template-columns: 46px minmax(0, 1fr);
+
+    column-gap: 14px;
+
+    padding: 32px 0;
+  }
+
+
+  #work .work-link {
+    grid-column: 2;
+
+    margin-top: 24px;
+    padding: 11px 14px;
+  }
+
+
+  #work .work-item:hover,
+  #work .work-item:nth-child(even):hover {
+    padding-left: 0;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
