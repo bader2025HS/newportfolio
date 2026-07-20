@@ -5908,7 +5908,58 @@ MOBILE
 
 
 
+/* ==========================================
+   ACTIVITIES — CONTENT-HEIGHT CARDS
+========================================== */
 
+.activity-card {
+  min-height: 0 !important;
+  height: auto !important;
+  justify-content: flex-start !important;
+}
+
+.activity-card h3 {
+  margin-top: 32px !important;
+  padding-top: 0 !important;
+}
+
+.activity-card p {
+  margin-top: 24px !important;
+  padding-bottom: 0 !important;
+}
+
+/* Remove the bottom decorative line */
+
+.activity-card::before {
+  display: none !important;
+}
+
+/* Tablet */
+
+@media (max-width: 1150px) {
+  .activity-card {
+    min-height: 0 !important;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 750px) {
+  .activity-card {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .activity-card h3 {
+    margin-top: 26px !important;
+    padding-top: 0 !important;
+  }
+
+  .activity-card p {
+    margin-top: 20px !important;
+    padding-bottom: 0 !important;
+  }
+}
 
 
 
