@@ -5688,7 +5688,37 @@ MOBILE
 
 
 
+/* ==========================================
+   ACTIVITIES - LAYOUT OVERRIDE
+========================================== */
 
+/* Keep everything grouped near the top */
+
+.activity-card{
+    justify-content: flex-start !important;
+}
+
+/* Bring title closer to tag */
+
+.activity-card h3{
+    margin-top: 22px !important;
+    margin-bottom: 18px !important;
+    padding-top: 0 !important;
+}
+
+/* Remove extra spacing before description */
+
+.activity-card p{
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Remove the horizontal line */
+
+.activity-card p::before{
+    display: none !important;
+    content: none !important;
+}
 
 
 
