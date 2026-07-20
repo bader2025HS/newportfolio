@@ -5874,7 +5874,33 @@ MOBILE
 
 
 
+/* ==========================================
+   ACTIVITIES — REDUCE TAG → TITLE GAP
+========================================== */
 
+.activity-card h3{
+    margin-top: 34px !important;   /* adjust this value */
+    padding-top: 0 !important;
+}
+
+.activity-card p{
+    margin-top: auto !important;   /* keeps description at bottom */
+}
+
+/* Mobile */
+
+@media (max-width:750px){
+
+    .activity-card h3{
+        margin-top: 24px !important;
+        padding-top: 0 !important;
+    }
+
+    .activity-card p{
+        margin-top: auto !important;
+    }
+
+}
 
 
 
