@@ -6043,22 +6043,15 @@ MOBILE
 
 
 
-
-
 /* ==========================================
-   ACTIVITIES — DARK CARD STYLE
+   ACTIVITIES — ALL CARDS LIKE TARJIMLY
 ========================================== */
 
-/* Cards */
-
 #activities .activity-card{
-    background:#0f3026 !important;
-    border-color:#0f3026 !important;
+    background:#1f5644 !important;
     color:#f6fbf8 !important;
-
-    min-height:460px !important;   /* was 420 */
+    border-color:#1f5644 !important;
 }
-
 
 /* Titles */
 
@@ -6066,31 +6059,20 @@ MOBILE
     color:#f6fbf8 !important;
 }
 
-
-/* Description */
+/* Descriptions */
 
 #activities .activity-card p{
-    color:rgba(246,251,248,.80) !important;
-
-    margin-top:24px !important;
-    padding-bottom:40px !important;   /* creates space above bottom line */
+    color:rgba(246,251,248,.78) !important;
 }
-
-#activities .activity-tarjimly p{
-    color:rgba(246,251,248,.80) !important;
-}
-
 
 /* Tags */
 
 #activities .activity-card span{
-    color:#b7ead6 !important;
-    border-color:#b7ead6 !important;
     background:transparent !important;
-
+    color:#b8ead8 !important;
+    border-color:#b8ead8 !important;
     transform:none !important;
 }
-
 
 /* Hover */
 
@@ -6098,54 +6080,65 @@ MOBILE
     border-color:#8ed4bf !important;
 
     box-shadow:
-        0 20px 45px rgba(0,0,0,.18);
+        0 20px 40px rgba(18,56,43,.18);
 }
 
 #activities .activity-card:hover span{
     background:#f6fbf8 !important;
-    color:#0f3026 !important;
+    color:#12382b !important;
     border-color:#f6fbf8 !important;
-
     transform:none !important;
 }
 
-
-/* Bottom animated line */
+/* Bottom line */
 
 #activities .activity-card::before{
-    display:block !important;
-
-    left:28px;
-    right:28px;
-    bottom:26px;          /* lower than before */
-
-    height:2px;
-
-    background:#8ed4bf !important;
-
-    opacity:0;
-
-    transform:scaleX(0);
-    transform-origin:left;
-
-    transition:
-        transform .35s ease,
-        opacity .35s ease;
+    background:#b8ead8 !important;
 }
 
 #activities .activity-card:hover::before{
-    opacity:.45;
-    transform:scaleX(1);
+    opacity:.35 !important;
+    transform:scaleX(1) !important;
 }
 
 
+    /* ==========================================
+   ACTIVITIES — SLIGHTLY TALLER CARDS
+========================================== */
+
+#activities .activity-card{
+    min-height: 445px !important;   /* was 420px */
+}
+
+#activities .activity-card p{
+    padding-bottom: 16px !important;   /* small breathing room */
+}
+
+#activities .activity-card::before{
+    bottom: 22px !important;   /* keep the line near the bottom */
+}
 
 
+/* Tablet */
+
+@media (max-width:1150px){
+
+    #activities .activity-card{
+        min-height: 365px !important;
+    }
+
+}
 
 
+/* Mobile */
 
+@media (max-width:750px){
 
+    #activities .activity-card{
+        min-height: 300px !important;
+    }
 
+}
 
 
 
