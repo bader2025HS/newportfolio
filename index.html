@@ -6102,44 +6102,46 @@ MOBILE
 }
 
 
-    /* ==========================================
-   ACTIVITIES — SLIGHTLY TALLER CARDS
+/* ==========================================
+   ACTIVITIES — FINAL HEIGHT FIX
 ========================================== */
 
-#activities .activity-card{
-    min-height: 445px !important;   /* was 420px */
+#activities .activity-card {
+  min-height: 0 !important;
+  height: auto !important;
+  padding-bottom: 34px !important;
 }
 
-#activities .activity-card p{
-    padding-bottom: 16px !important;   /* small breathing room */
+#activities .activity-card p {
+  padding-bottom: 0 !important;
 }
 
-#activities .activity-card::before{
-    bottom: 22px !important;   /* keep the line near the bottom */
+#activities .activity-card::before {
+  bottom: 18px !important;
 }
-
 
 /* Tablet */
 
-@media (max-width:1150px){
-
-    #activities .activity-card{
-        min-height: 365px !important;
-    }
-
+@media (max-width: 1150px) {
+  #activities .activity-card {
+    min-height: 0 !important;
+    height: auto !important;
+  }
 }
-
 
 /* Mobile */
 
-@media (max-width:750px){
+@media (max-width: 750px) {
+  #activities .activity-card {
+    min-height: 0 !important;
+    height: auto !important;
+    padding-bottom: 30px !important;
+  }
 
-    #activities .activity-card{
-        min-height: 300px !important;
-    }
-
+  #activities .activity-card::before {
+    bottom: 15px !important;
+  }
 }
-
 
 
 
