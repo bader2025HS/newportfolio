@@ -5621,106 +5621,255 @@ MOBILE
 
 
 
+/* ==========================================
+ACTIVITY CARDS — HARMONIOUS 4-CARD LAYOUT
+========================================== */
+
+.activity-grid {
+  margin-top: 75px;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
 
 
 /* ==========================================
-   ACTIVITIES — CARD REFINEMENT OVERRIDE
+BASE CARD
 ========================================== */
 
-.activity-card h3{
-    padding-top: 28px !important;   /* less empty space */
-    margin-bottom: 20px !important;
-}
+.activity-card {
+  position: relative;
 
-.activity-card p{
-    position: relative;
-    margin-top: 0 !important;
-    padding-top: 22px;
-}
+  min-height: 420px;
+  padding: 28px;
 
-.activity-card p::before{
-    content: "";
+  border: 1px solid rgba(18, 56, 43, 0.16);
+  border-radius: 0;
 
-    position: absolute;
-    top: 0;
-    left: 0;
+  display: flex;
+  flex-direction: column;
 
-    width: 72px;
-    height: 2px;
+  overflow: hidden;
+  isolation: isolate;
 
-    background: currentColor;
-    opacity: .18;
-}
-
-/* ---------- Improved colour palette ---------- */
-
-.activity-tarjimly{
-    background: #184d3d !important;
-    color: #f8fbf9 !important;
-}
-
-.activity-events{
-    background: #ffffff !important;
-    color: #12382b !important;
-}
-
-.activity-medmun{
-    background: #eef5f2 !important;
-    color: #12382b !important;
-}
-
-.activity-spaw{
-    background: #e3efe9 !important;
-    color: #12382b !important;
-}
-
-/* slightly softer borders */
-
-.activity-card{
-    border-color: rgba(18,56,43,.12) !important;
-}
-
-.activity-card:hover{
-    border-color: #2d7b61 !important;
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 
+/* Decorative line */
 
+.activity-card::before {
+  content: "";
+
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 28px;
+
+  height: 1px;
+
+  background: currentColor;
+  opacity: 0.16;
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s ease;
+
+  z-index: -1;
+}
 
 
 /* ==========================================
-   ACTIVITIES - LAYOUT OVERRIDE
+COLORS
 ========================================== */
 
-/* Keep everything grouped near the top */
-
-.activity-card{
-    justify-content: flex-start !important;
+.activity-tarjimly {
+  background: #1f5644;
+  color: #f6fbf8;
 }
 
-/* Bring title closer to tag */
-
-.activity-card h3{
-    margin-top: 22px !important;
-    margin-bottom: 18px !important;
-    padding-top: 0 !important;
+.activity-events {
+  background: #f6fbf8;
+  color: #12382b;
 }
 
-/* Remove extra spacing before description */
-
-.activity-card p{
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+.activity-medmun {
+  background: #dcefe7;
+  color: #12382b;
 }
 
-/* Remove the horizontal line */
-
-.activity-card p::before{
-    display: none !important;
-    content: none !important;
+.activity-spaw {
+  background: #cfe7dc;
+  color: #12382b;
 }
 
 
+/* ==========================================
+TAG
+========================================== */
+
+.activity-card span {
+  width: fit-content;
+
+  padding: 9px 14px;
+
+  border: 1px solid currentColor;
+  border-radius: 0;
+
+  background: transparent;
+  color: #2d7b61;
+
+  font-size: 0.66rem;
+  font-weight: 800;
+  line-height: 1;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.activity-tarjimly span {
+  color: #b8ead8;
+}
+
+
+/* ==========================================
+TITLE
+========================================== */
+
+.activity-card h3 {
+  margin-top: auto;
+  padding-top: 70px;
+
+  max-width: 100%;
+
+  font-size: clamp(2.1rem, 2.6vw, 3.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+
+
+/* ==========================================
+DESCRIPTION
+========================================== */
+
+.activity-card p {
+  margin-top: 24px;
+  padding-bottom: 18px;
+
+  max-width: 100%;
+
+  font-size: 0.92rem;
+  line-height: 1.55;
+
+  opacity: 0.78;
+}
+
+.activity-tarjimly p {
+  color: rgba(246, 251, 248, 0.78);
+}
+
+
+/* ==========================================
+HOVER
+========================================== */
+
+.activity-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #2d7b61;
+
+  box-shadow:
+    0 18px 35px rgba(18, 56, 43, 0.1);
+}
+
+.activity-card:hover::before {
+  transform: scaleX(1);
+  opacity: 0.3;
+}
+
+.activity-card:hover span {
+  transform: translateX(6px);
+
+  background: #2d7b61;
+  color: #f6fbf8;
+}
+
+.activity-tarjimly:hover span {
+  background: #f6fbf8;
+  color: #12382b;
+}
+
+
+/* ==========================================
+SMALL DESKTOP / TABLET
+========================================== */
+
+@media (max-width: 1150px) {
+
+  .activity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .activity-card {
+    min-height: 340px;
+  }
+
+  .activity-card h3 {
+    font-size: clamp(2.3rem, 4vw, 3.8rem);
+  }
+}
+
+
+/* ==========================================
+MOBILE
+========================================== */
+
+@media (max-width: 750px) {
+
+  .activity-grid {
+    margin-top: 65px;
+
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .activity-card {
+    min-height: 280px;
+    padding: 24px;
+  }
+
+  .activity-card h3 {
+    padding-top: 55px;
+
+    font-size: clamp(2.4rem, 11vw, 4rem);
+  }
+
+  .activity-card p {
+    margin-top: 20px;
+    padding-bottom: 10px;
+
+    font-size: 0.94rem;
+  }
+
+  .activity-card::before {
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+  }
+}
 
 
 
