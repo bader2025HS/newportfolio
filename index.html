@@ -6156,81 +6156,112 @@ MOBILE
 
 
 
-
-    /* ==========================================
-   ACTIVITIES — NEW GREEN PALETTE
+/* ==========================================
+   ACTIVITIES — BRIGHTER WEBSITE-ALIGNED PALETTE
 ========================================== */
 
-/* Tarjimly - eucalyptus */
+/* ---------- CARD COLORS ---------- */
 
-#activities .activity-card.activity-tarjimly{
-    background:#7c9d90 !important;
-    border-color:#6d8d80 !important;
-    color:#18332a !important;
+#activities .activity-card.activity-tarjimly {
+  background: #2f765f !important;
+  border-color: #2f765f !important;
+  color: #f6fbf8 !important;
 }
 
-/* Events - ivory sage */
-
-#activities .activity-card.activity-events{
-    background:#eef4ef !important;
-    border-color:#c6d7cb !important;
-    color:#18332a !important;
+#activities .activity-card.activity-events {
+  background: #f6fbf8 !important;
+  border-color: #9bcbb9 !important;
+  color: #12382b !important;
 }
 
-/* MEDMUN - soft sage */
-
-#activities .activity-card.activity-medmun{
-    background:#dce9e1 !important;
-    border-color:#b8cec1 !important;
-    color:#18332a !important;
+#activities .activity-card.activity-medmun {
+  background: #c9eadf !important;
+  border-color: #79bda5 !important;
+  color: #12382b !important;
 }
 
-/* SPMA - muted mint */
-
-#activities .activity-card.activity-spaw{
-    background:#cddfd5 !important;
-    border-color:#aac3b7 !important;
-    color:#18332a !important;
+#activities .activity-card.activity-spaw {
+  background: #9fd7c3 !important;
+  border-color: #4e9e83 !important;
+  color: #12382b !important;
 }
 
 
-/* ---------- Text ---------- */
+/* ---------- TITLES ---------- */
 
-#activities .activity-card h3{
-    color:#18332a !important;
-}
-
-#activities .activity-card p,
-#activities .activity-tarjimly p{
-    color:rgba(24,51,42,.78) !important;
+#activities .activity-card h3 {
+  color: inherit !important;
 }
 
 
-/* ---------- Tags ---------- */
+/* ---------- DESCRIPTIONS ---------- */
 
-#activities .activity-card span{
-    color:#18332a !important;
-    border-color:#18332a !important;
-    background:transparent !important;
+#activities .activity-card p {
+  color: rgba(18, 56, 43, 0.74) !important;
+}
+
+#activities .activity-tarjimly p {
+  color: rgba(246, 251, 248, 0.78) !important;
 }
 
 
-/* ---------- Hover ---------- */
+/* ---------- TAGS ---------- */
 
-#activities .activity-card:hover{
-    border-color:#486b5b !important;
+#activities .activity-card span {
+  background: rgba(246, 251, 248, 0.3) !important;
+  color: #1f654f !important;
+  border-color: currentColor !important;
+  transform: none !important;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease !important;
 }
 
-#activities .activity-card:hover span{
-    background:#18332a !important;
-    color:#f6fbf8 !important;
-    border-color:#18332a !important;
+#activities .activity-tarjimly span {
+  background: transparent !important;
+  color: #d9f4ea !important;
 }
 
 
-    
+/* ---------- CARD HOVER ---------- */
+
+#activities .activity-card:hover {
+  transform: translateY(-7px) !important;
+  border-color: #1f654f !important;
+
+  box-shadow:
+    0 18px 38px rgba(18, 56, 43, 0.14) !important;
+}
 
 
+/* ---------- TAG HOVER ---------- */
+
+#activities .activity-card:hover span {
+  background: #1f654f !important;
+  color: #f6fbf8 !important;
+  border-color: #1f654f !important;
+  transform: none !important;
+}
+
+#activities .activity-tarjimly:hover span {
+  background: #f6fbf8 !important;
+  color: #1f654f !important;
+  border-color: #f6fbf8 !important;
+}
+
+
+/* ---------- BOTTOM LINE ---------- */
+
+#activities .activity-card::before {
+  background: currentColor !important;
+}
+
+#activities .activity-card:hover::before {
+  opacity: 0.28 !important;
+  transform: scaleX(1) !important;
+}
 
 
 
