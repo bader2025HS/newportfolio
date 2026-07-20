@@ -5995,7 +5995,37 @@ MOBILE
 
 
 
+/* ==========================================
+   ACTIVITIES — BOTTOM LINE HOVER
+========================================== */
 
+.activity-card::before{
+    display: block !important;
+
+    content: "";
+
+    position: absolute;
+    left: 28px;
+    right: 28px;
+    bottom: 24px;
+
+    height: 2px;
+
+    background: currentColor;
+    opacity: 0;
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition:
+        transform .35s ease,
+        opacity .35s ease;
+}
+
+.activity-card:hover::before{
+    opacity: .28;
+    transform: scaleX(1);
+}
 
 
     
