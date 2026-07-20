@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfolio</title>
+  <title>Portfoliooo</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -5875,31 +5875,33 @@ MOBILE
 
 
 /* ==========================================
-   ACTIVITIES — REDUCE TAG → TITLE GAP
+   ACTIVITIES — FIX TAG/TITLE SPACING
 ========================================== */
 
-.activity-card h3{
-    margin-top: 34px !important;   /* adjust this value */
-    padding-top: 0 !important;
+.activity-card {
+  justify-content: flex-start !important;
 }
 
-.activity-card p{
-    margin-top: auto !important;   /* keeps description at bottom */
+.activity-card h3 {
+  margin-top: 32px !important;
+  padding-top: 0 !important;
+}
+
+.activity-card p {
+  margin-top: 24px !important;
 }
 
 /* Mobile */
 
-@media (max-width:750px){
+@media (max-width: 750px) {
+  .activity-card h3 {
+    margin-top: 26px !important;
+    padding-top: 0 !important;
+  }
 
-    .activity-card h3{
-        margin-top: 24px !important;
-        padding-top: 0 !important;
-    }
-
-    .activity-card p{
-        margin-top: auto !important;
-    }
-
+  .activity-card p {
+    margin-top: 20px !important;
+  }
 }
 
 
