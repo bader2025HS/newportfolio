@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>PortfolioOO</title>
+  <title>Portfolio</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -659,7 +659,83 @@ section {
 
 
 
+/* ==========================================
+   HERO PHOTO — STATIC IMAGE, MOVING RING
+========================================== */
 
+/* Keep the entire photo frame static */
+.hero-photo-frame {
+    transform: none;
+    animation: none;
+    transition:
+        box-shadow 0.45s ease;
+}
+
+/* Keep the actual image static */
+.hero-photo-frame img {
+    transform: none;
+    transition:
+        filter 0.5s ease;
+}
+
+/* Only the outer ring moves */
+.hero-photo-frame::before {
+    animation: heroRingPulse 5s ease-in-out infinite;
+    transform-origin: center;
+}
+
+/* Keep hover effect without moving the picture */
+.hero-photo-frame:hover {
+    transform: none;
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.18),
+        0 0 40px rgba(142, 212, 191, 0.25);
+}
+
+/* Do not zoom the image on hover */
+.hero-photo-frame:hover img {
+    transform: none;
+    filter: brightness(1.04);
+}
+
+/* Outer ring movement */
+@keyframes heroRingPulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.45;
+    }
+
+    50% {
+        transform: scale(1.07);
+        opacity: 0.9;
+    }
+}
+
+
+/* ==========================================
+   MOBILE — CENTER PHOTO
+========================================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        align-items: center;
+    }
+
+    .hero-photo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-photo-frame {
+        margin-inline: auto;
+    }
+
+}
 
 
     
