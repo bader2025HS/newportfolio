@@ -2344,7 +2344,335 @@ ABOUT ICONS — CLEAN SINGLE COLOR
 
 
 
+/* ==========================================
+ABOUT — IMPROVED MOBILE LAYOUT
+========================================== */
 
+@media (max-width:750px){
+
+  /* Main spacing */
+
+  #about{
+    padding:85px 18px 90px !important;
+  }
+
+  #about .about-header{
+    margin-bottom:42px !important;
+  }
+
+  #about .about-layout{
+    display:flex !important;
+    flex-direction:column !important;
+
+    gap:38px !important;
+  }
+
+  #about .about-left{
+    display:flex !important;
+    flex-direction:column !important;
+
+    gap:32px !important;
+  }
+
+
+  /* ========================================
+     DESCRIPTION
+  ======================================== */
+
+  #about .about-description{
+    max-width:none !important;
+
+    font-size:.96rem !important;
+    line-height:1.72 !important;
+  }
+
+
+  /* ========================================
+     FOCUS AREAS
+  ======================================== */
+
+  #about .about-focus{
+    width:100% !important;
+    height:auto !important;
+
+    padding:22px 14px 14px !important;
+
+    background:#e6f0eb !important;
+
+    border:1px solid rgba(18,56,43,.15) !important;
+  }
+
+  #about .about-focus > h3{
+    margin:0 0 18px 4px !important;
+
+    font-size:.78rem !important;
+    line-height:1 !important;
+    letter-spacing:.18em !important;
+  }
+
+  #about .about-focus ul{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    grid-template-rows:none !important;
+
+    gap:8px !important;
+
+    margin:0 !important;
+  }
+
+  #about .about-focus li{
+    width:100% !important;
+    height:auto !important;
+    min-height:82px !important;
+
+    padding:13px 9px !important;
+
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+    align-items:center !important;
+
+    gap:8px !important;
+
+    background:#f8fbf9 !important;
+
+    border:1px solid rgba(18,56,43,.15) !important;
+
+    text-align:center !important;
+
+    transform:none !important;
+  }
+
+  #about .about-focus-icon{
+    width:27px !important;
+    height:27px !important;
+
+    flex:0 0 27px !important;
+
+    margin:0 !important;
+  }
+
+  #about .about-focus-icon svg{
+    width:27px !important;
+    height:27px !important;
+  }
+
+  #about .about-focus li > span:last-child{
+    font-size:.75rem !important;
+    font-weight:650 !important;
+    line-height:1.22 !important;
+  }
+
+
+  /* Touch effect */
+
+  #about .about-focus li:active{
+    background:#1f5644 !important;
+    border-color:#1f5644 !important;
+
+    color:#fff !important;
+  }
+
+  #about .about-focus li:active svg,
+  #about .about-focus li:active svg *{
+    color:#fff !important;
+    fill:#fff !important;
+    stroke:#fff !important;
+  }
+
+
+  /* ========================================
+     STATS
+  ======================================== */
+
+  #about .about-stats,
+  #about .about-stats-grid{
+    width:100% !important;
+    height:auto !important;
+  }
+
+  #about .about-stats-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    grid-template-rows:none !important;
+
+    gap:11px !important;
+  }
+
+  #about .about-stat{
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+
+    padding:22px 18px !important;
+
+    display:grid !important;
+    grid-template-columns:46px minmax(0,1fr) !important;
+    grid-template-rows:auto auto auto !important;
+
+    column-gap:15px !important;
+    row-gap:7px !important;
+
+    align-items:center !important;
+
+    background:#f8fbf9 !important;
+
+    border:1px solid rgba(18,56,43,.17) !important;
+
+    transform:none !important;
+    box-shadow:none !important;
+  }
+
+
+  /* Icon */
+
+  #about .about-stat-icon{
+    grid-column:1 !important;
+    grid-row:1 / 3 !important;
+
+    width:40px !important;
+    height:40px !important;
+
+    margin:0 !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+  }
+
+  #about .about-stat-icon svg{
+    width:35px !important;
+    height:35px !important;
+  }
+
+
+  /* Number */
+
+  #about .about-stat-number{
+    grid-column:2 !important;
+    grid-row:1 !important;
+
+    margin:0 !important;
+
+    font-size:3.35rem !important;
+    line-height:.86 !important;
+    letter-spacing:-.06em !important;
+  }
+
+
+  /* Remove horizontal line on mobile */
+
+  #about .about-stat-line{
+    display:none !important;
+  }
+
+
+  /* Label */
+
+  #about .about-stat-label{
+    grid-column:2 !important;
+    grid-row:2 !important;
+
+    margin:2px 0 0 !important;
+
+    font-size:.76rem !important;
+    line-height:1.2 !important;
+    letter-spacing:.16em !important;
+  }
+
+
+  /* Description */
+
+  #about .about-stat small{
+    grid-column:1 / -1 !important;
+    grid-row:3 !important;
+
+    width:100% !important;
+    max-width:none !important;
+
+    margin:8px 0 0 !important;
+    padding-top:13px !important;
+
+    border-top:1px solid rgba(18,56,43,.12) !important;
+
+    font-size:.88rem !important;
+    line-height:1.55 !important;
+  }
+
+
+  /* Mobile pressed state */
+
+  #about .about-stat:active{
+    background:#163f35 !important;
+    border-color:#163f35 !important;
+
+    color:#fff !important;
+  }
+
+  #about .about-stat:active .about-stat-number,
+  #about .about-stat:active .about-stat-label,
+  #about .about-stat:active small{
+    color:#fff !important;
+  }
+
+  #about .about-stat:active svg,
+  #about .about-stat:active svg *{
+    color:#fff !important;
+    fill:#fff !important;
+    stroke:#fff !important;
+  }
+
+  #about .about-stat:active small{
+    border-top-color:rgba(255,255,255,.2) !important;
+  }
+}
+
+
+/* ==========================================
+VERY SMALL PHONES
+========================================== */
+
+@media (max-width:390px){
+
+  #about{
+    padding-inline:14px !important;
+  }
+
+  #about .about-focus{
+    padding-inline:10px !important;
+  }
+
+  #about .about-focus li{
+    min-height:76px !important;
+    padding-inline:6px !important;
+  }
+
+  #about .about-focus li > span:last-child{
+    font-size:.7rem !important;
+  }
+
+  #about .about-stat{
+    padding:20px 15px !important;
+
+    grid-template-columns:40px minmax(0,1fr) !important;
+
+    column-gap:12px !important;
+  }
+
+  #about .about-stat-icon{
+    width:36px !important;
+    height:36px !important;
+  }
+
+  #about .about-stat-icon svg{
+    width:31px !important;
+    height:31px !important;
+  }
+
+  #about .about-stat-number{
+    font-size:3rem !important;
+  }
+}
 
 
 
