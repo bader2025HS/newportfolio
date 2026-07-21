@@ -1992,7 +1992,227 @@ section {
 
 
 
+/* ==========================================
+ABOUT — HEADER OVERRIDE
+MATCH EXPERIENCE LAYOUT
+========================================== */
 
+#about .about-header{
+  width:100% !important;
+  max-width:none !important;
+
+  margin:0 !important;
+}
+
+
+/* Oversized ABOUT label */
+
+#about .oversized-label{
+  position:relative !important;
+
+  width:max-content !important;
+  min-height:0 !important;
+  height:auto !important;
+
+  margin:0 !important;
+
+  display:block !important;
+
+  overflow:visible !important;
+}
+
+#about .oversized-label::before{
+  content:attr(data-letter) !important;
+
+  position:relative !important;
+  inset:auto !important;
+
+  display:block !important;
+
+  transform:none !important;
+
+  color:rgba(40,125,94,.09) !important;
+
+  font-family:"Space Grotesk",sans-serif !important;
+  font-size:clamp(7rem,12vw,12rem) !important;
+  font-weight:700 !important;
+  line-height:.72 !important;
+  letter-spacing:-.07em !important;
+
+  white-space:nowrap !important;
+
+  pointer-events:none !important;
+}
+
+
+/* Small WHO AM I? label */
+
+#about .oversized-label span{
+  position:absolute !important;
+
+  left:6px !important;
+  right:auto !important;
+  top:auto !important;
+  bottom:4px !important;
+
+  z-index:2 !important;
+
+  margin:0 !important;
+
+  color:#287d5e !important;
+
+  font-family:"Space Grotesk",sans-serif !important;
+  font-size:1.05rem !important;
+  font-weight:700 !important;
+  line-height:1 !important;
+  letter-spacing:.2em !important;
+  text-transform:uppercase !important;
+
+  white-space:nowrap !important;
+}
+
+
+/* Main About title */
+
+#about .about-header h2{
+  width:100% !important;
+  max-width:1000px !important;
+
+  margin-top:18px !important;
+  margin-bottom:38px !important;
+
+  color:#12382b !important;
+
+  font-family:"Space Grotesk",sans-serif !important;
+  font-size:clamp(3.4rem,6vw,6rem) !important;
+  font-weight:600 !important;
+  line-height:.94 !important;
+  letter-spacing:-.055em !important;
+}
+
+
+/* Description */
+
+#about .about-description{
+  width:100% !important;
+  max-width:850px !important;
+
+  margin:0 !important;
+
+  color:rgba(18,56,43,.78) !important;
+
+  font-family:"Manrope",sans-serif !important;
+  font-size:clamp(1rem,1.25vw,1.18rem) !important;
+  line-height:1.8 !important;
+}
+
+
+/* ==========================================
+FOCUS AREAS — CENTER CONTENT
+========================================== */
+
+#about .about-focus li{
+  justify-content:center !important;
+
+  text-align:center !important;
+}
+
+#about .about-focus li > span:last-child{
+  width:auto !important;
+
+  text-align:center !important;
+}
+
+
+/* ==========================================
+FOCUS + STATS — SAME BOTTOM LEVEL
+========================================== */
+
+@media (min-width:1001px){
+
+  #about .about-layout{
+    align-items:stretch !important;
+  }
+
+  #about .about-left{
+    height:100% !important;
+
+    display:grid !important;
+    grid-template-rows:auto 1fr !important;
+
+    gap:58px !important;
+  }
+
+  #about .about-focus{
+    height:100% !important;
+
+    display:flex !important;
+    flex-direction:column !important;
+  }
+
+  #about .about-focus ul{
+    flex:1 !important;
+
+    grid-template-rows:repeat(3,minmax(0,1fr)) !important;
+  }
+
+  #about .about-focus li{
+    height:100% !important;
+    min-height:0 !important;
+  }
+
+  #about .about-stats,
+  #about .about-stats-grid{
+    height:100% !important;
+  }
+
+  #about .about-stats-grid{
+    grid-template-rows:repeat(2,minmax(0,1fr)) !important;
+    grid-auto-rows:unset !important;
+  }
+
+  #about .about-stat{
+    height:100% !important;
+    min-height:0 !important;
+  }
+}
+
+
+/* ==========================================
+ABOUT — MOBILE HEADER OVERRIDE
+========================================== */
+
+@media (max-width:750px){
+
+  #about .oversized-label{
+    width:max-content !important;
+  }
+
+  #about .oversized-label::before{
+    font-size:clamp(4.8rem,24vw,7rem) !important;
+    line-height:.76 !important;
+  }
+
+  #about .oversized-label span{
+    left:3px !important;
+    bottom:2px !important;
+
+    font-size:.82rem !important;
+    letter-spacing:.16em !important;
+  }
+
+  #about .about-header h2{
+    margin-top:16px !important;
+    margin-bottom:26px !important;
+
+    font-size:clamp(2.6rem,13vw,4rem) !important;
+    line-height:.96 !important;
+  }
+
+  #about .about-left{
+    gap:40px !important;
+  }
+}
 
 
 
