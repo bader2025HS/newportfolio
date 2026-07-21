@@ -2217,7 +2217,111 @@ ABOUT — MOBILE HEADER OVERRIDE
 
 
 
+/* ==========================================
+ABOUT SVG COLORS
+========================================== */
 
+/* Default */
+
+#about svg{
+    color:#1f6d52 !important;
+}
+
+#about svg *,
+#about svg path,
+#about svg circle,
+#about svg rect,
+#about svg line,
+#about svg polyline,
+#about svg polygon,
+#about svg ellipse{
+    stroke:#1f6d52 !important;
+    fill:none !important;
+}
+
+
+/* Hover */
+
+#about .about-stat:hover svg,
+#about .about-focus li:hover svg{
+    color:#fff !important;
+}
+
+#about .about-stat:hover svg *,
+#about .about-stat:hover svg path,
+#about .about-stat:hover svg circle,
+#about .about-stat:hover svg rect,
+#about .about-stat:hover svg line,
+#about .about-stat:hover svg polyline,
+#about .about-stat:hover svg polygon,
+#about .about-stat:hover svg ellipse,
+
+#about .about-focus li:hover svg *,
+#about .about-focus li:hover svg path,
+#about .about-focus li:hover svg circle,
+#about .about-focus li:hover svg rect,
+#about .about-focus li:hover svg line,
+#about .about-focus li:hover svg polyline,
+#about .about-focus li:hover svg polygon,
+#about .about-focus li:hover svg ellipse{
+    stroke:#fff !important;
+    fill:none !important;
+}
+
+    /* ==========================================
+SHORTER STAT CARDS
+========================================== */
+
+@media (min-width:1001px){
+
+    #about .about-stat{
+        min-height:300px !important;
+        padding:30px 30px 28px !important;
+    }
+
+    #about .about-stat-icon{
+        margin-bottom:16px !important;
+    }
+
+    #about .about-stat-number{
+        font-size:clamp(3.8rem,5vw,5.2rem) !important;
+    }
+
+    #about .about-stat-line{
+        margin:18px 0 14px !important;
+    }
+
+    #about .about-stat-label{
+        margin-bottom:14px !important;
+    }
+
+    #about .about-stat small{
+        font-size:.95rem !important;
+        line-height:1.6 !important;
+    }
+
+}
+
+    /* ==========================================
+MORE COMPACT ABOUT SECTION
+========================================== */
+
+@media (min-width:1001px){
+
+    #about{
+        padding-top:120px !important;
+        padding-bottom:110px !important;
+    }
+
+    #about .about-left{
+        gap:42px !important;
+    }
+
+    #about .about-layout{
+        gap:56px !important;
+    }
+
+}
 
 
 
