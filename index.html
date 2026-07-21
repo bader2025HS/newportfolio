@@ -657,65 +657,64 @@ section {
 
 
 
-
-
 /* ==========================================
-   HERO PHOTO — STATIC IMAGE, MOVING RING
+   HERO PHOTO — STATIC FRAME, MOVING RING
 ========================================== */
 
-/* Keep the entire photo frame static */
+/* The circle and photo position stay static */
 .hero-photo-frame {
-    transform: none;
-    animation: none;
+    animation: none !important;
+    transform: none !important;
+
     transition:
         box-shadow 0.45s ease;
 }
 
-/* Keep the actual image static */
+/* Only the outer ring rotates */
+.hero-photo-frame::before {
+    transform-origin: center;
+    animation: heroRing 8s linear infinite !important;
+}
+
+/* Photo zooms inside the fixed frame */
 .hero-photo-frame img {
-    transform: none;
+    transform: scale(1);
     transition:
+        transform 0.5s ease,
         filter 0.5s ease;
 }
 
-/* Only the outer ring moves */
-.hero-photo-frame::before {
-    animation: heroRingPulse 5s ease-in-out infinite;
-    transform-origin: center;
-}
-
-/* Keep hover effect without moving the picture */
-.hero-photo-frame:hover {
-    transform: none;
+/* Frame does not move on hover */
+.hero-photo-frame:hover,
+.hero-photo-frame:active {
+    transform: none !important;
 
     box-shadow:
         0 18px 50px rgba(0, 0, 0, 0.18),
         0 0 40px rgba(142, 212, 191, 0.25);
 }
 
-/* Do not zoom the image on hover */
-.hero-photo-frame:hover img {
-    transform: none;
+/* Only the image zooms */
+.hero-photo-frame:hover img,
+.hero-photo-frame:active img {
+    transform: scale(1.08);
     filter: brightness(1.04);
 }
 
-/* Outer ring movement */
-@keyframes heroRingPulse {
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 0.45;
+/* Rotating ring */
+@keyframes heroRing {
+    from {
+        transform: rotate(0deg);
     }
 
-    50% {
-        transform: scale(1.07);
-        opacity: 0.9;
+    to {
+        transform: rotate(360deg);
     }
 }
 
 
 /* ==========================================
-   MOBILE — CENTER PHOTO
+   MOBILE — CENTER THE PHOTO
 ========================================== */
 
 @media (max-width: 768px) {
@@ -726,7 +725,6 @@ section {
 
     .hero-photo {
         width: 100%;
-        display: flex;
         justify-content: center;
         align-items: center;
     }
@@ -736,9 +734,6 @@ section {
     }
 
 }
-
-
-    
 
 
 
