@@ -2791,7 +2791,82 @@ ABOUT MOBILE — BIGGER STAT ICONS
     
 
 
+/* ==========================================
+ABOUT MOBILE — LABEL NEXT TO NUMBER
+========================================== */
 
+@media (max-width:750px){
+
+  #about .about-stat{
+    grid-template-columns:60px minmax(0,1fr) !important;
+    grid-template-rows:auto auto !important;
+
+    column-gap:18px !important;
+    row-gap:12px !important;
+  }
+
+  #about .about-stat-icon{
+    grid-column:1 !important;
+    grid-row:1 !important;
+
+    align-self:center !important;
+  }
+
+  #about .about-stat-number{
+    grid-column:2 !important;
+    grid-row:1 !important;
+
+    display:inline-flex !important;
+    align-items:center !important;
+
+    margin:0 !important;
+  }
+
+  #about .about-stat-label{
+    grid-column:2 !important;
+    grid-row:1 !important;
+
+    align-self:end !important;
+    justify-self:start !important;
+
+    margin:0 0 6px 0 !important;
+    padding-left:145px !important;
+
+    font-size:.76rem !important;
+    line-height:1.1 !important;
+    letter-spacing:.14em !important;
+  }
+
+  #about .about-stat small{
+    grid-column:1 / -1 !important;
+    grid-row:2 !important;
+
+    margin-top:4px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
