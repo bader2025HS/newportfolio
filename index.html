@@ -2017,7 +2017,208 @@ AS ALL OTHER SECTIONS
 
 
 
+/* ==========================================
+   ABOUT — OPTION A
+   FOCUS AREAS ABOVE STATISTICS
+   PASTE AT THE VERY END
+========================================== */
 
+/* ==========================================
+   DESKTOP / TABLET
+========================================== */
+
+@media (min-width: 651px) {
+
+  /* Change the main About layout to one column */
+
+  #about .about-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+
+    gap: 70px !important;
+
+    align-items: start !important;
+  }
+
+
+  /* ========================================
+     FOCUS AREAS — FULL WIDTH
+  ======================================== */
+
+  #about .about-focus {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #about .about-focus ul {
+    width: 100% !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+
+    gap: 12px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    list-style: none !important;
+  }
+
+  #about .about-focus li {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 76px !important;
+
+    padding: 18px 20px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border: 1px solid rgba(45, 123, 97, 0.38) !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+
+    color: #12382b !important;
+
+    font-family: "Space Grotesk", sans-serif !important;
+    font-size: clamp(0.95rem, 1.15vw, 1.12rem) !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+
+    text-align: center !important;
+
+    transform: none !important;
+
+    transition:
+      background 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease,
+      transform 0.3s ease !important;
+  }
+
+  #about .about-focus li::before,
+  #about .about-focus li::after {
+    display: none !important;
+  }
+
+  #about .about-focus li:hover {
+    padding: 18px 20px !important;
+
+    background: #2d7b61 !important;
+    border-color: #2d7b61 !important;
+
+    color: #f6fbf8 !important;
+
+    transform: translateY(-3px) !important;
+  }
+
+
+  /* ========================================
+     STATISTICS — FULL WIDTH 2 × 2
+  ======================================== */
+
+  #about .about-stats,
+  #about .about-stats-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #about .about-stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: auto !important;
+
+    column-gap: 70px !important;
+    row-gap: 45px !important;
+  }
+
+  #about .about-stat {
+    min-height: 190px !important;
+
+    padding: 0 0 30px !important;
+  }
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (min-width: 651px) and (max-width: 900px) {
+
+  #about .about-grid {
+    gap: 58px !important;
+  }
+
+  #about .about-focus ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  #about .about-stats-grid {
+    column-gap: 40px !important;
+  }
+}
+
+
+/* ==========================================
+   MOBILE
+   FOCUS REMAINS ABOVE STATS
+========================================== */
+
+@media (max-width: 650px) {
+
+  #about .about-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+
+    gap: 52px !important;
+  }
+
+  #about .about-focus {
+    width: 100% !important;
+  }
+
+  #about .about-focus ul {
+    width: 100% !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 10px !important;
+  }
+
+  #about .about-focus li {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 68px !important;
+
+    padding: 13px 9px !important;
+
+    border: 1px solid rgba(45, 123, 97, 0.4) !important;
+
+    background: transparent !important;
+    color: #12382b !important;
+
+    font-size: 0.88rem !important;
+    text-align: center !important;
+
+    transform: none !important;
+  }
+
+  #about .about-focus li:hover,
+  #about .about-focus li:active {
+    padding: 13px 9px !important;
+
+    background: #2d7b61 !important;
+    border-color: #2d7b61 !important;
+
+    color: #f6fbf8 !important;
+
+    transform: none !important;
+  }
+}
 
 
 
