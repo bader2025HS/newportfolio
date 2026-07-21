@@ -3917,18 +3917,6 @@ MORE SPACED NUMBERS
 
 
 
-/* AQLITY title uses the same yellow as the tags */
-
-#experience .experience-item.aqlity:hover h3{
-    color:#D4B204 !important;
-}
-
-#experience .experience-item.aqlity.active h3,
-#experience .experience-item.aqlity.selected h3{
-    color:#D4B204 !important;
-}
-
-
 
 
 /* ==========================================
@@ -4135,7 +4123,14 @@ MORE SPACED NUMBERS
 
 
 
-    
+    #experience .experience-item.aqlity:hover
+.experience-title-row h3,
+#experience .experience-item.aqlity.active
+.experience-title-row h3,
+#experience .experience-item.aqlity.selected
+.experience-title-row h3 {
+    color: var(--accent) !important;
+}
 
 
     
