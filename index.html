@@ -3880,10 +3880,39 @@ MORE SPACED NUMBERS
 
 
 
+/* ==========================================
+   OIF LOGO ALIGNMENT (PHONE)
+   Match BNP logo position
+========================================== */
+
+@media (max-width:768px){
+
+  /* Move the OIF logo up */
+  .experience-item.oif .experience-logo{
+      align-self:flex-start !important;
+      margin-top:-12px !important;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+  }
+
+  /* Keep the image anchored to the top */
+  .experience-item.oif .experience-logo img,
+  .experience-item.oif .experience-logo svg{
+      display:block;
+      margin-top:0 !important;
+  }
+
+}
 
 
+/* ==========================================
+   AQLITY — TITLE COLOR ON HOVER
+========================================== */
 
-
+#experience .experience-item.aqlity:hover h3{
+    color:#d4b100 !important; /* AQLITY yellow */
+}
 
 
 
