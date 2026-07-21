@@ -3506,17 +3506,26 @@ MORE SPACED NUMBERS
 
 
 
-
 /* ==========================================
-   AQLITY LOGO — CENTERING
+   AQLITY LOGO — LEFT ALIGN
 ========================================== */
 
+#experience .experience-item.aqlity .experience-logo{
+    overflow: hidden !important;
+}
+
 #experience .experience-item.aqlity .experience-logo img{
-    transform: translateX(5px) !important;
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: left center !important;
+
+    transform: translateX(-12px) !important;
 }
 
 #experience .experience-item.aqlity:hover .experience-logo img{
-    transform: translateX(5px) !important;
+    transform: translateX(-12px) !important;
 }
 
 /* Phone */
@@ -3525,11 +3534,10 @@ MORE SPACED NUMBERS
 
     #experience .experience-item.aqlity .experience-logo img,
     #experience .experience-item.aqlity:hover .experience-logo img{
-        transform: translateX(4px) !important;
+        transform: translateX(-10px) !important;
     }
 
 }
-
 
 
 
