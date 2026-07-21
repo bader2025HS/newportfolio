@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfolio</title>
+  <title>Portfoliooo</title>
 
   <link rel="icon" type="image/png" href="favicon-32x32[1].png">
   
@@ -3321,7 +3321,80 @@ MORE SPACED NUMBERS
 
 
 
+/* ==========================================
+   EXPERIENCE LOGO — COMPLETE OVERRIDE
+========================================== */
 
+/* Desktop */
+
+#experience .experience-logo{
+    overflow: hidden !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+#experience .experience-logo img,
+#experience .experience-logo svg{
+    width: 100% !important;
+    height: 100% !important;
+
+    display: block !important;
+
+    object-fit: cover !important;
+    object-position: center center !important;
+
+    border-radius: inherit !important;
+
+    transform: scale(1.15) !important;
+}
+
+
+/* Keep same effect on hover */
+
+#experience .experience-item:hover .experience-logo img,
+#experience .experience-item:hover .experience-logo svg{
+    transform: scale(1.22) !important;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:650px){
+
+    #experience .experience-logo{
+        overflow:hidden !important;
+
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+    }
+
+    #experience .experience-logo img,
+    #experience .experience-logo svg{
+
+        width:100% !important;
+        height:100% !important;
+
+        display:block !important;
+
+        object-fit:cover !important;
+        object-position:center !important;
+
+        border-radius:inherit !important;
+
+        transform:scale(1.15) !important;
+    }
+
+    #experience .experience-item:hover .experience-logo img,
+    #experience .experience-item:hover .experience-logo svg{
+        transform:scale(1.22) !important;
+    }
+
+}
 
 
 
