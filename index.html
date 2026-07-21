@@ -1810,7 +1810,181 @@ section {
 
 
 
+/* ==========================================
+   ABOUT — FINAL DESKTOP ALIGNMENT FIX
+========================================== */
 
+@media (min-width:1001px){
+
+    /* --------------------------------------
+       1. BOTH COLUMNS END AT THE SAME LEVEL
+    -------------------------------------- */
+
+    #about .about-layout{
+        align-items:stretch !important;
+    }
+
+    #about .about-left{
+        height:100% !important;
+
+        display:grid !important;
+        grid-template-rows:auto 1fr !important;
+
+        gap:48px !important;
+    }
+
+    #about .about-focus{
+        height:100% !important;
+        min-height:0 !important;
+
+        display:flex !important;
+        flex-direction:column !important;
+    }
+
+    #about .about-focus ul{
+        flex:1 !important;
+
+        grid-template-rows:repeat(3, minmax(0,1fr)) !important;
+    }
+
+    #about .about-focus li{
+        height:100% !important;
+        min-height:0 !important;
+    }
+
+    #about .about-stats{
+        height:100% !important;
+    }
+
+    #about .about-stats-grid{
+        height:100% !important;
+
+        grid-template-rows:repeat(2, minmax(0,1fr)) !important;
+        grid-auto-rows:unset !important;
+    }
+
+    #about .about-stat{
+        height:100% !important;
+        min-height:0 !important;
+    }
+
+
+    /* --------------------------------------
+       2. CENTER FOCUS AREA CONTENT
+    -------------------------------------- */
+
+    #about .about-focus li{
+        justify-content:center !important;
+
+        text-align:center !important;
+    }
+
+    #about .about-focus-icon{
+        flex-shrink:0 !important;
+    }
+
+    #about .about-focus li > span:last-child{
+        text-align:center !important;
+    }
+
+
+    /* --------------------------------------
+       3. OVERSIZED LABEL LIKE EXPERIENCE
+    -------------------------------------- */
+
+    #about .about-header{
+        max-width:none !important;
+    }
+
+    #about .oversized-label{
+        position:relative !important;
+
+        width:100% !important;
+        height:180px !important;
+        min-height:180px !important;
+
+        margin:0 0 60px !important;
+
+        display:flex !important;
+        align-items:flex-end !important;
+
+        overflow:visible !important;
+    }
+
+    #about .oversized-label::before{
+        content:attr(data-letter) !important;
+
+        position:absolute !important;
+
+        left:0 !important;
+        top:0 !important;
+
+        transform:none !important;
+
+        color:rgba(40,125,94,.09) !important;
+
+        font-family:"Space Grotesk",sans-serif !important;
+        font-size:clamp(7.5rem,11vw,12rem) !important;
+        font-weight:700 !important;
+        line-height:.78 !important;
+        letter-spacing:-.075em !important;
+
+        white-space:nowrap !important;
+    }
+
+    #about .oversized-label span{
+        position:relative !important;
+        z-index:2 !important;
+
+        margin:0 0 4px 6px !important;
+
+        color:var(--about-green) !important;
+
+        font-family:"Space Grotesk",sans-serif !important;
+        font-size:1.05rem !important;
+        font-weight:700 !important;
+        line-height:1.2 !important;
+        letter-spacing:.18em !important;
+        text-transform:uppercase !important;
+    }
+
+
+    /* Title positioning beneath the oversized label */
+
+    #about .about-header h2{
+        margin-top:0 !important;
+        margin-bottom:38px !important;
+
+        max-width:760px !important;
+    }
+
+    #about .about-description{
+        max-width:720px !important;
+    }
+}
+
+
+/* ==========================================
+   MEDIUM DESKTOP
+========================================== */
+
+@media (min-width:1001px) and (max-width:1250px){
+
+    #about .oversized-label{
+        height:145px !important;
+        min-height:145px !important;
+
+        margin-bottom:45px !important;
+    }
+
+    #about .oversized-label::before{
+        font-size:clamp(6rem,10vw,8.5rem) !important;
+    }
+
+    #about .about-left{
+        gap:38px !important;
+    }
+}
 
 
 
