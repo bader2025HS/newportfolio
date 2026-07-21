@@ -4165,7 +4165,158 @@ MORE SPACED NUMBERS
 
 
 
+/* ==========================================
+   EXPERIENCE — MOBILE SELECTED LOGO LAYOUT
+   Logo moves above title after tapping
+========================================== */
 
+@media (max-width: 650px) and (hover: none) {
+
+    /* Selected experience layout */
+
+    #experience .experience-item:hover {
+        grid-template-columns: 52px minmax(0, 1fr) !important;
+
+        grid-template-areas:
+            ". logo"
+            "year content" !important;
+
+        column-gap: 15px !important;
+        row-gap: 14px !important;
+
+        padding: 30px 10px !important;
+    }
+
+
+    /* Move logo above title */
+
+    #experience .experience-item:hover .experience-logo {
+        grid-area: logo !important;
+
+        width: 74px !important;
+        height: 74px !important;
+
+        margin: 0 0 3px 0 !important;
+
+        align-self: start !important;
+        justify-self: start !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+
+        overflow: visible !important;
+
+        transform: none !important;
+    }
+
+
+    /* Keep title/content directly below logo */
+
+    #experience .experience-item:hover .experience-content {
+        grid-area: content !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+
+    /* Remove the previous sideways title movement */
+
+    #experience .experience-item:hover
+    .experience-title-row h3 {
+        transform: none !important;
+    }
+
+
+    /* Keep year vertically on the left */
+
+    #experience .experience-item:hover .experience-year {
+        grid-area: year !important;
+
+        align-self: start !important;
+        justify-self: center !important;
+
+        margin-top: 2px !important;
+
+        transform: rotate(180deg) !important;
+    }
+
+
+    /* ======================================
+       SELECTED LOGO IMAGE SIZES
+    ====================================== */
+
+    #experience .experience-item:hover
+    .experience-logo img,
+    #experience .experience-item:hover
+    .experience-logo svg {
+        display: block !important;
+
+        width: 90% !important;
+        height: 90% !important;
+
+        margin: 0 !important;
+
+        object-fit: contain !important;
+        object-position: center center !important;
+
+        transform: none !important;
+    }
+
+
+    /* OIF needs slightly less internal size */
+
+    #experience .experience-item.oif:hover
+    .experience-logo img,
+    #experience .experience-item.oif:hover
+    .experience-logo svg {
+        width: 78% !important;
+        height: 78% !important;
+
+        margin: 0 !important;
+
+        transform: none !important;
+    }
+
+
+    /* Tarjimly can fill more of the available space */
+
+    #experience .experience-item.tarjimly:hover
+    .experience-logo img,
+    #experience .experience-item.tarjimly:hover
+    .experience-logo svg {
+        width: 96% !important;
+        height: 96% !important;
+    }
+}
+
+
+/* ==========================================
+   VERY SMALL PHONES
+========================================== */
+
+@media (max-width: 390px) and (hover: none) {
+
+    #experience .experience-item:hover {
+        grid-template-columns: 44px minmax(0, 1fr) !important;
+
+        grid-template-areas:
+            ". logo"
+            "year content" !important;
+
+        column-gap: 12px !important;
+    }
+
+    #experience .experience-item:hover .experience-logo {
+        width: 66px !important;
+        height: 66px !important;
+    }
+}
 
 
 
