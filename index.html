@@ -3506,42 +3506,42 @@ MORE SPACED NUMBERS
 
 
 
+
+
 /* ==========================================
-   AQLITY LOGO — LEFT ALIGN
+   AQLITY LOGO — REMOVE YELLOW BACKGROUND
 ========================================== */
 
 #experience .experience-item.aqlity .experience-logo{
+    background: transparent !important;
     overflow: hidden !important;
+}
+
+#experience .experience-item.aqlity:hover .experience-logo{
+    background: transparent !important;
 }
 
 #experience .experience-item.aqlity .experience-logo img{
     width: 100% !important;
     height: 100% !important;
 
-    object-fit: cover !important;
-    object-position: left center !important;
+    object-fit: contain !important;
+    object-position: center !important;
 
-    transform: translateX(-12px) !important;
+    transform: none !important;
 }
 
 #experience .experience-item.aqlity:hover .experience-logo img{
-    transform: translateX(-12px) !important;
-}
-
-/* Phone */
-
-@media (max-width:650px){
-
-    #experience .experience-item.aqlity .experience-logo img,
-    #experience .experience-item.aqlity:hover .experience-logo img{
-        transform: translateX(-10px) !important;
-    }
-
+    transform: none !important;
 }
 
 
 
 
+
+
+
+    
 
 
 
