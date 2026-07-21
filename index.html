@@ -2227,7 +2227,35 @@ AS ALL OTHER SECTIONS
 
 
 
+/* ==========================================
+   ABOUT — STATS IN ONE ROW
+========================================== */
 
+@media (min-width: 651px){
+
+    #about .about-stats-grid{
+
+        display:grid !important;
+        grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+
+        gap:28px !important;
+
+        align-items:start;
+    }
+
+    #about .about-stat{
+
+        min-height:unset !important;
+
+        padding:0 0 24px !important;
+    }
+
+    #about .about-stat small{
+
+        max-width:100% !important;
+    }
+
+}
 
 
     
