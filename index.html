@@ -3917,12 +3917,218 @@ MORE SPACED NUMBERS
 
 
 
+/* AQLITY title uses the same yellow as the tags */
+
+#experience .experience-item.aqlity:hover h3{
+    color:#D4B204 !important;
+}
+
+#experience .experience-item.aqlity.active h3,
+#experience .experience-item.aqlity.selected h3{
+    color:#D4B204 !important;
+}
 
 
 
 
+/* ==========================================
+   EXPERIENCE LOGOS — FINAL ALIGNMENT FIX
+   Keep every logo in the same grid position
+========================================== */
+
+/* DESKTOP */
+
+#experience .experience-logo,
+#experience .experience-item.oif .experience-logo,
+#experience .experience-item.aqlity .experience-logo,
+#experience .experience-item.ardhis .experience-logo,
+#experience .experience-item.tarjimly .experience-logo,
+#experience .experience-item.student .experience-logo {
+    width: 88px !important;
+    height: 88px !important;
+
+    margin: 0 !important;
+
+    align-self: center !important;
+    justify-self: center !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    overflow: visible !important;
+    transform: none !important;
+}
+
+/* Reset positioning applied directly to logo images */
+
+#experience .experience-logo img,
+#experience .experience-logo svg {
+    display: block !important;
+
+    margin: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center center !important;
+
+    transform: none !important;
+}
 
 
+/* Keep every logo container fixed during hover */
+
+#experience .experience-item:hover .experience-logo {
+    margin: 0 !important;
+    transform: none !important;
+}
+
+
+/* ==========================================
+   INDIVIDUAL IMAGE SIZES
+   Same container, adjusted visual logo size
+========================================== */
+
+#experience .experience-item.bnp .experience-logo img {
+    width: 88% !important;
+    height: 88% !important;
+}
+
+#experience .experience-item.oif .experience-logo img {
+    width: 78% !important;
+    height: 78% !important;
+}
+
+#experience .experience-item.aqlity .experience-logo img {
+    width: 88% !important;
+    height: 88% !important;
+}
+
+#experience .experience-item.ardhis .experience-logo img {
+    width: 88% !important;
+    height: 88% !important;
+}
+
+#experience .experience-item.tarjimly .experience-logo img {
+    width: 94% !important;
+    height: 94% !important;
+}
+
+#experience .experience-item.student .experience-logo img {
+    width: 88% !important;
+    height: 88% !important;
+}
+
+
+/* Very small image movement only — container never moves */
+
+#experience .experience-item:hover .experience-logo img,
+#experience .experience-item:hover .experience-logo svg {
+    transform: scale(1.04) !important;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 950px) and (min-width: 651px) {
+
+    #experience .experience-logo,
+    #experience .experience-item.oif .experience-logo {
+        width: 70px !important;
+        height: 70px !important;
+
+        margin: 0 !important;
+
+        align-self: center !important;
+        justify-self: center !important;
+    }
+}
+
+
+/* ==========================================
+   PHONE
+========================================== */
+
+@media (max-width: 650px) {
+
+    #experience .experience-logo,
+    #experience .experience-item.oif .experience-logo,
+    #experience .experience-item.aqlity .experience-logo,
+    #experience .experience-item.ardhis .experience-logo,
+    #experience .experience-item.tarjimly .experience-logo,
+    #experience .experience-item.student .experience-logo {
+        grid-area: logo !important;
+
+        width: 48px !important;
+        height: 48px !important;
+
+        margin: 0 !important;
+
+        align-self: start !important;
+        justify-self: center !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        overflow: visible !important;
+
+        transform: none !important;
+    }
+
+    /* Remove all previous OIF offsets */
+
+    #experience .experience-item.oif .experience-logo {
+        margin-top: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    #experience .experience-item.oif .experience-logo img,
+    #experience .experience-item.oif .experience-logo svg {
+        width: 78% !important;
+        height: 78% !important;
+
+        margin: 0 !important;
+
+        object-position: center center !important;
+
+        transform: none !important;
+    }
+
+    /* Keep every logo in place after tapping */
+
+    #experience .experience-item:hover .experience-logo {
+        margin: 0 !important;
+        transform: none !important;
+    }
+
+    #experience .experience-item:hover .experience-logo img,
+    #experience .experience-item:hover .experience-logo svg {
+        transform: none !important;
+    }
+}
+
+
+/* ==========================================
+   VERY SMALL PHONES
+========================================== */
+
+@media (max-width: 390px) {
+
+    #experience .experience-logo,
+    #experience .experience-item.oif .experience-logo {
+        width: 42px !important;
+        height: 42px !important;
+    }
+}
 
 
 
