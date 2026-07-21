@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfooolio</title>
+  <title>Portfolio</title>
  
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9924,53 +9924,12 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
 
     
-/* ==========================================
-   GENERAL SCROLL REVEAL
-   NO HTML CHANGES NEEDED
-========================================== */
 
-section > * {
-    opacity: 0;
-    transform: translateY(45px);
 
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s cubic-bezier(.22, 1, .36, 1);
-}
 
-/* Content becomes visible */
-section.section-visible > * {
-    opacity: 1;
-    transform: translateY(0);
-}
 
-/* Small stagger between direct children */
-section.section-visible > *:nth-child(2) {
-    transition-delay: 0.08s;
-}
 
-section.section-visible > *:nth-child(3) {
-    transition-delay: 0.16s;
-}
 
-section.section-visible > *:nth-child(4) {
-    transition-delay: 0.24s;
-}
-
-/* Keep the home section visible immediately */
-#home > * {
-    opacity: 1;
-    transform: none;
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-    section > * {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-}
 
 
 
@@ -12249,28 +12208,7 @@ contactGroups.forEach((group) => {
   });
 });
 
-
-
-
-    const sections = document.querySelectorAll("section");
-
-const sectionObserver = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("section-visible");
-            }
-        });
-    },
-    {
-        threshold: 0.12,
-        rootMargin: "0px 0px -60px 0px"
-    }
-);
-
-sections.forEach((section) => {
-    sectionObserver.observe(section);
-});
+    
     
   </script>
 
