@@ -2607,7 +2607,102 @@ AS ALL OTHER SECTIONS
 
 
 
+/* ==========================================
+   MOBILE — STATS IN ONE COLUMN
+========================================== */
 
+@media (max-width:650px){
+
+    #about .about-stats{
+        display:block !important;
+        width:100% !important;
+    }
+
+    #about .about-stats-grid{
+        display:grid !important;
+        grid-template-columns:minmax(0,1fr) !important;
+
+        gap:28px !important;
+
+        width:100% !important;
+    }
+
+    #about .about-stat,
+    #about .about-stat:nth-child(1),
+    #about .about-stat:nth-child(2),
+    #about .about-stat:nth-child(3),
+    #about .about-stat:nth-child(4){
+        grid-column:auto !important;
+        grid-row:auto !important;
+
+        width:100% !important;
+        min-width:0 !important;
+        min-height:0 !important;
+
+        padding:0 0 22px !important;
+
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:flex-start !important;
+
+        background:transparent !important;
+
+        border:0 !important;
+        border-bottom:1px solid rgba(18,56,43,.2) !important;
+        border-radius:0 !important;
+
+        transform:none !important;
+    }
+
+    #about .about-stat:hover{
+        background:transparent !important;
+        border-color:rgba(18,56,43,.2) !important;
+        color:inherit !important;
+        transform:none !important;
+    }
+
+    #about .about-stat:hover *{
+        color:inherit !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
