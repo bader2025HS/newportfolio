@@ -2679,11 +2679,113 @@ VERY SMALL PHONES
     
 
 
-    
+    /* ==========================================
+ABOUT MOBILE — STATIC CARD STYLES
+========================================== */
+
+@media (max-width:750px){
+
+  /* ========================================
+     FOCUS AREAS — NO HOVER OR CLICK EFFECT
+  ======================================== */
+
+  #about .about-focus li,
+  #about .about-focus li:hover,
+  #about .about-focus li:active,
+  #about .about-focus li:focus{
+    background:#f8fbf9 !important;
+    border-color:rgba(18,56,43,.15) !important;
+
+    color:#12382b !important;
+
+    transform:none !important;
+    box-shadow:none !important;
+  }
+
+  #about .about-focus li svg,
+  #about .about-focus li svg *,
+  #about .about-focus li:hover svg,
+  #about .about-focus li:hover svg *,
+  #about .about-focus li:active svg,
+  #about .about-focus li:active svg *{
+    color:#247b5c !important;
+    fill:#247b5c !important;
+    stroke:#247b5c !important;
+  }
+
+
+  /* ========================================
+     STATS — DESKTOP HOVER STYLE BY DEFAULT
+  ======================================== */
+
+  #about .about-stat,
+  #about .about-stat:hover,
+  #about .about-stat:active,
+  #about .about-stat:focus{
+    background:#163f35 !important;
+    border-color:#163f35 !important;
+
+    color:#f8fbf9 !important;
+
+    transform:none !important;
+    box-shadow:none !important;
+  }
+
+  #about .about-stat-number,
+  #about .about-stat-label,
+  #about .about-stat small,
+  #about .about-stat:hover .about-stat-number,
+  #about .about-stat:hover .about-stat-label,
+  #about .about-stat:hover small{
+    color:#f8fbf9 !important;
+  }
+
+  #about .about-stat small{
+    border-top-color:rgba(255,255,255,.2) !important;
+  }
+
+  #about .about-stat-icon,
+  #about .about-stat-icon svg,
+  #about .about-stat-icon svg *,
+  #about .about-stat:hover .about-stat-icon,
+  #about .about-stat:hover .about-stat-icon svg,
+  #about .about-stat:hover .about-stat-icon svg *{
+    color:#f8fbf9 !important;
+    fill:#f8fbf9 !important;
+    stroke:#f8fbf9 !important;
+  }
+}
 
 
 
+/* ==========================================
+ABOUT MOBILE — BIGGER STAT ICONS
+========================================== */
 
+@media (max-width:750px){
+
+    #about .about-stat{
+        grid-template-columns:60px minmax(0,1fr) !important;
+        column-gap:18px !important;
+    }
+
+    #about .about-stat-icon{
+        width:60px !important;
+        height:60px !important;
+
+        grid-row:1 / 3 !important;
+
+        display:flex !important;
+        align-items:flex-start !important;
+        justify-content:center !important;
+    }
+
+    #about .about-stat-icon svg{
+        width:52px !important;
+        height:52px !important;
+    }
+
+}
 
 
     
