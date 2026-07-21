@@ -5683,7 +5683,59 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 }
 
 
+/* ==========================================
+   EDUCATION — MOBILE TIMELINE LINE ALIGNMENT
+   Add at the very end of the CSS
+========================================== */
 
+@media (max-width: 750px) {
+
+  /*
+   The squares are 30px high, so their centre
+   is at 15px.
+  */
+
+  #education .edu-line-dashed {
+    top: 14px !important;
+    height: 2px !important;
+    width: 870px !important;
+  }
+
+  /*
+   Progress line is 5px high.
+   12.5px + 2.5px = 15px centre.
+  */
+
+  #education .edu-line-progress {
+    top: 12.5px !important;
+    height: 5px !important;
+    border-radius: 999px !important;
+  }
+
+  /* Keep the plane centred on the same axis */
+
+  #education .edu-plane {
+    top: 15px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
     
     
