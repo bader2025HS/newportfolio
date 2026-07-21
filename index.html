@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfoliooo</title>
+  <title>Portfolio</title>
 
   <link rel="icon" type="image/png" href="favicon-32x32[1].png">
   
@@ -4321,7 +4321,70 @@ MORE SPACED NUMBERS
 
 
 
+/* ==========================================
+   FINAL LOGO SIZES
+   (must be LAST in the CSS)
+========================================== */
 
+/* ---------- DESKTOP ---------- */
+
+@media (min-width:651px){
+
+    /* Make every logo larger */
+    #experience .experience-item .experience-logo img,
+    #experience .experience-item .experience-logo svg{
+        width:104% !important;
+        height:104% !important;
+    }
+
+    /* Individual adjustments */
+    #experience .experience-item.oif .experience-logo img{
+        width:94% !important;
+        height:94% !important;
+    }
+
+    #experience .experience-item.tarjimly .experience-logo img{
+        width:110% !important;
+        height:110% !important;
+    }
+
+    #experience .experience-item.ardhis .experience-logo img{
+        width:108% !important;
+        height:108% !important;
+    }
+}
+
+
+/* ---------- PHONE ---------- */
+
+@media (max-width:650px){
+
+    /* Slightly larger logos */
+    #experience .experience-item .experience-logo img,
+    #experience .experience-item .experience-logo svg{
+        width:96% !important;
+        height:96% !important;
+    }
+
+    /* OIF */
+    #experience .experience-item.oif .experience-logo img{
+        width:84% !important;
+        height:84% !important;
+        transform:none !important;
+    }
+
+    /* ARDHIS (currently too small) */
+    #experience .experience-item.ardhis .experience-logo img{
+        width:108% !important;
+        height:108% !important;
+    }
+
+    /* Tarjimly */
+    #experience .experience-item.tarjimly .experience-logo img{
+        width:102% !important;
+        height:102% !important;
+    }
+}
 
 
 
