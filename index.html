@@ -2497,7 +2497,535 @@ AS ALL OTHER SECTIONS
 
 
 
+/* ==========================================
+   ABOUT — INTRO + FOCUS LEFT / STATS RIGHT
+========================================== */
 
+#about{
+    --about-dark:#12382b;
+    --about-green:#267c5d;
+    --about-soft:#edf5f1;
+    --about-card:#f7fbf9;
+    --about-border:rgba(18,56,43,.17);
+}
+
+
+/* ==========================================
+   MAIN TWO-COLUMN LAYOUT
+========================================== */
+
+#about .about-layout{
+    width:100%;
+    max-width:1500px;
+    margin:0 auto;
+
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(560px,.98fr);
+
+    gap:72px;
+
+    align-items:start;
+}
+
+
+/* ==========================================
+   LEFT COLUMN
+========================================== */
+
+#about .about-left{
+    min-width:0;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:48px;
+}
+
+
+/* Intro */
+
+#about .about-intro{
+    max-width:680px;
+}
+
+#about .about-kicker{
+    display:block;
+
+    margin:0 0 22px;
+
+    color:#347b59;
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:1.1rem;
+    font-weight:700;
+    letter-spacing:.02em;
+}
+
+#about .about-intro h2{
+    max-width:680px;
+
+    margin:0 0 28px;
+
+    color:var(--about-dark);
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(2.4rem,4vw,4.3rem);
+    font-weight:600;
+    line-height:1.12;
+    letter-spacing:-.045em;
+}
+
+#about .about-intro p{
+    max-width:650px;
+
+    margin:0;
+
+    color:rgba(18,56,43,.82);
+
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(1rem,1.3vw,1.25rem);
+    font-weight:400;
+    line-height:1.8;
+}
+
+
+/* ==========================================
+   FOCUS AREA PANEL
+========================================== */
+
+#about .about-focus{
+    width:100%;
+
+    padding:38px;
+
+    background:rgba(226,239,233,.56);
+
+    border:1px solid var(--about-border);
+    border-radius:0;
+}
+
+#about .about-focus h3{
+    margin:0 0 26px;
+
+    color:var(--about-dark);
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:.98rem;
+    font-weight:700;
+    line-height:1;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+}
+
+#about .about-focus ul{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:10px;
+
+    margin:0;
+    padding:0;
+
+    list-style:none;
+}
+
+#about .about-focus li{
+    min-width:0;
+    min-height:98px;
+
+    padding:18px 24px;
+
+    display:flex;
+    align-items:center;
+
+    gap:20px;
+
+    background:rgba(250,253,251,.86);
+
+    border:1px solid var(--about-border);
+    border-radius:0;
+
+    color:var(--about-dark);
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:1rem;
+    font-weight:650;
+    line-height:1.25;
+
+    transition:
+        background .28s ease,
+        border-color .28s ease,
+        color .28s ease,
+        transform .28s ease;
+}
+
+#about .about-focus li::before,
+#about .about-focus li::after{
+    display:none !important;
+}
+
+#about .about-focus li:hover{
+    background:var(--about-green);
+    border-color:var(--about-green);
+
+    color:#f7fbf9;
+
+    transform:translateY(-3px);
+}
+
+
+/* Focus SVG space */
+
+#about .about-focus-icon{
+    width:42px;
+    height:42px;
+
+    flex:0 0 42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:var(--about-green);
+}
+
+#about .about-focus-icon svg{
+    width:34px;
+    height:34px;
+
+    display:block;
+
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.7;
+}
+
+#about .about-focus li:hover .about-focus-icon{
+    color:#f7fbf9;
+}
+
+
+/* ==========================================
+   RIGHT — FOUR STATS IN 2 × 2
+========================================== */
+
+#about .about-stats{
+    width:100%;
+    min-width:0;
+}
+
+#about .about-stats-grid{
+    width:100%;
+
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:14px;
+}
+
+#about .about-stat{
+    min-width:0;
+    min-height:410px;
+
+    padding:40px 38px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+
+    background:rgba(250,253,251,.8);
+
+    border:1px solid var(--about-border);
+    border-radius:0;
+
+    color:var(--about-dark);
+
+    transition:
+        background .28s ease,
+        border-color .28s ease,
+        color .28s ease,
+        transform .28s ease;
+}
+
+
+/* Stat icon */
+
+#about .about-stat-icon{
+    width:48px;
+    height:48px;
+
+    margin:0 0 22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+
+    color:#17603f;
+}
+
+#about .about-stat-icon:empty{
+    display:none;
+}
+
+#about .about-stat-icon svg{
+    width:40px;
+    height:40px;
+
+    display:block;
+
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.7;
+}
+
+
+/* Number */
+
+#about .about-stat strong{
+    display:block;
+
+    margin:0;
+
+    color:var(--about-green);
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(4.2rem,6vw,6.8rem);
+    font-weight:650;
+    line-height:.88;
+    letter-spacing:-.07em;
+}
+
+
+/* Small green line */
+
+#about .about-stat-line{
+    width:35px;
+    height:2px;
+
+    margin:30px 0 23px;
+
+    display:block;
+
+    background:var(--about-green);
+}
+
+
+/* Label */
+
+#about .about-stat h3{
+    margin:0 0 22px;
+
+    color:var(--about-dark);
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:1rem;
+    font-weight:700;
+    line-height:1.2;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+}
+
+
+/* Description */
+
+#about .about-stat p{
+    max-width:270px;
+
+    margin:0;
+
+    color:rgba(18,56,43,.75);
+
+    font-family:"Manrope",sans-serif;
+    font-size:1rem;
+    font-weight:400;
+    line-height:1.65;
+}
+
+
+/* Stat hover */
+
+#about .about-stat:hover{
+    background:#163f35;
+    border-color:#163f35;
+
+    color:#f7fbf9;
+
+    transform:translateY(-4px);
+}
+
+#about .about-stat:hover strong,
+#about .about-stat:hover h3,
+#about .about-stat:hover p,
+#about .about-stat:hover .about-stat-icon{
+    color:#f7fbf9;
+}
+
+#about .about-stat:hover .about-stat-line{
+    background:#8ed4bf;
+}
+
+
+/* ==========================================
+   MEDIUM DESKTOP / TABLET
+========================================== */
+
+@media (min-width:751px) and (max-width:1150px){
+
+    #about .about-layout{
+        grid-template-columns:minmax(0,.9fr) minmax(480px,1.1fr);
+
+        gap:38px;
+    }
+
+    #about .about-left{
+        gap:36px;
+    }
+
+    #about .about-focus{
+        padding:28px;
+    }
+
+    #about .about-focus li{
+        min-height:84px;
+
+        padding:15px 16px;
+
+        gap:13px;
+
+        font-size:.9rem;
+    }
+
+    #about .about-focus-icon{
+        width:34px;
+        height:34px;
+
+        flex-basis:34px;
+    }
+
+    #about .about-focus-icon svg{
+        width:29px;
+        height:29px;
+    }
+
+    #about .about-stat{
+        min-height:360px;
+
+        padding:30px 26px;
+    }
+
+    #about .about-stat strong{
+        font-size:clamp(3.7rem,6vw,5.6rem);
+    }
+}
+
+
+/* ==========================================
+   MOBILE — KEEP THE PREVIOUS STACKED LAYOUT
+========================================== */
+
+@media (max-width:750px){
+
+    #about .about-layout{
+        display:flex;
+        flex-direction:column;
+
+        gap:48px;
+    }
+
+    #about .about-left{
+        gap:34px;
+    }
+
+    #about .about-intro h2{
+        font-size:clamp(2rem,10vw,3rem);
+        line-height:1.12;
+    }
+
+    #about .about-intro p{
+        font-size:1rem;
+        line-height:1.7;
+    }
+
+    #about .about-focus{
+        padding:20px 14px;
+    }
+
+    #about .about-focus h3{
+        margin-bottom:17px;
+    }
+
+    #about .about-focus ul{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+
+        gap:8px;
+    }
+
+    #about .about-focus li{
+        min-height:72px;
+
+        padding:11px 9px;
+
+        justify-content:center;
+
+        gap:8px;
+
+        font-size:.8rem;
+        text-align:center;
+
+        transform:none;
+    }
+
+    #about .about-focus li:hover{
+        transform:none;
+    }
+
+    #about .about-focus-icon{
+        width:27px;
+        height:27px;
+
+        flex:0 0 27px;
+    }
+
+    #about .about-focus-icon svg{
+        width:24px;
+        height:24px;
+    }
+
+
+    /* One stat per row on phone */
+
+    #about .about-stats-grid{
+        grid-template-columns:minmax(0,1fr);
+
+        gap:20px;
+    }
+
+    #about .about-stat{
+        min-height:0;
+
+        padding:26px 22px 28px;
+    }
+
+    #about .about-stat strong{
+        font-size:4.2rem;
+    }
+
+    #about .about-stat-line{
+        margin:22px 0 17px;
+    }
+
+    #about .about-stat h3{
+        margin-bottom:13px;
+    }
+
+    #about .about-stat p{
+        max-width:none;
+    }
+
+    #about .about-stat:hover{
+        transform:none;
+    }
+}
 
 
 
@@ -11705,71 +12233,167 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
 
 
-    
-<section id="about">
+ <section id="about">
   <div class="about-container">
 
-    <div class="about-header">
-<div class="oversized-label" data-letter="ABOUT">
-  <span>Who am I?</span>
-</div>
-      <h2>
-        I make sense first,<br>
-        then make it simple.
-      </h2>
+    <div class="about-layout">
 
-      <p class="about-description">
-        Think press reviews that highlight what matters, maps you can read in five seconds,
-        and concise briefs that help teams decide the next step. I enjoy practical research,
-        from digging through datasets and field notes to speaking with practitioners, then
-        turning it into clear takeaways and visuals that move work forward.
-      </p>
-    </div>
+      <!-- LEFT COLUMN -->
+      <div class="about-left">
 
-    <div class="about-grid">
-      <div class="about-focus">
-        <ul>
-          <li>Displacement</li>
-          <li>Sustainability</li>
-          <li>Energy transitions</li>
-          <li>MENA & Africa</li>
-          <li>Development</li>
-          <li>Peacebuilding</li>
-        </ul>
-      </div>
-
-      <div class="about-stats">    
-        <div class="about-stats-grid">
-          <div class="about-stat">
-            <span>30</span>
-            <p>Countries</p>
-            <small>Visited, lived, studied and explored. See map for details.</small>
+        <div class="about-header">
+          <div class="oversized-label" data-letter="ABOUT">
+            <span>Who am I?</span>
           </div>
 
-          <div class="about-stat">
-            <span>100+</span>
-            <p>Translations</p>
-            <small>For asylum seekers from the MENA region in the US and the UK.</small>
-          </div>
+          <h2>
+            I make sense first,<br>
+            then make it simple.
+          </h2>
 
-          <div class="about-stat">
-            <span>200+</span>
-            <p>Refugees</p>
-            <small>Assisted refugees from Sub-Saharan Africa and South-East Asia.</small>
-          </div>
-
-          <div class="about-stat">
-            <span>8</span>
-            <p>Cities</p>
-            <small>Damascus · Abu Dhabi · Amman · Niort · Nancy · Menton · Tokyo · Paris.</small>
-          </div>
+          <p class="about-description">
+            Think press reviews that highlight what matters, maps you can read in five seconds,
+            and concise briefs that help teams decide the next step. I enjoy practical research,
+            from digging through datasets and field notes to speaking with practitioners, then
+            turning it into clear takeaways and visuals that move work forward.
+          </p>
         </div>
+
+
+        <div class="about-focus">
+          <h3>Focus Areas</h3>
+
+          <ul>
+            <li>
+              <span class="about-focus-icon">
+                <!-- Add displacement SVG here -->
+              </span>
+              <span>Displacement</span>
+            </li>
+
+            <li>
+              <span class="about-focus-icon">
+                <!-- Add sustainability SVG here -->
+              </span>
+              <span>Sustainability</span>
+            </li>
+
+            <li>
+              <span class="about-focus-icon">
+                <!-- Add energy SVG here -->
+              </span>
+              <span>Energy transitions</span>
+            </li>
+
+            <li>
+              <span class="about-focus-icon">
+                <!-- Add MENA SVG here -->
+              </span>
+              <span>MENA &amp; Africa</span>
+            </li>
+
+            <li>
+              <span class="about-focus-icon">
+                <!-- Add development SVG here -->
+              </span>
+              <span>Development</span>
+            </li>
+
+            <li>
+              <span class="about-focus-icon">
+                <!-- Add peacebuilding SVG here -->
+              </span>
+              <span>Peacebuilding</span>
+            </li>
+          </ul>
+        </div>
+
       </div>
+
+
+      <!-- RIGHT COLUMN -->
+      <div class="about-stats">
+
+        <div class="about-stats-grid">
+
+          <article class="about-stat">
+            <span class="about-stat-icon">
+              <!-- Add countries SVG here -->
+            </span>
+
+            <span class="about-stat-number">30</span>
+
+            <span class="about-stat-line"></span>
+
+            <p class="about-stat-label">Countries</p>
+
+            <small>
+              Visited, lived, studied and explored.
+              See map for details.
+            </small>
+          </article>
+
+
+          <article class="about-stat">
+            <span class="about-stat-icon">
+              <!-- Add translations SVG here -->
+            </span>
+
+            <span class="about-stat-number">100+</span>
+
+            <span class="about-stat-line"></span>
+
+            <p class="about-stat-label">Translations</p>
+
+            <small>
+              For asylum seekers from the MENA region
+              in the US and the UK.
+            </small>
+          </article>
+
+
+          <article class="about-stat">
+            <span class="about-stat-icon">
+              <!-- Add refugees SVG here -->
+            </span>
+
+            <span class="about-stat-number">200+</span>
+
+            <span class="about-stat-line"></span>
+
+            <p class="about-stat-label">Refugees</p>
+
+            <small>
+              Assisted refugees from Sub-Saharan Africa
+              and South-East Asia.
+            </small>
+          </article>
+
+
+          <article class="about-stat">
+            <span class="about-stat-icon">
+              <!-- Add cities SVG here -->
+            </span>
+
+            <span class="about-stat-number">8</span>
+
+            <span class="about-stat-line"></span>
+
+            <p class="about-stat-label">Cities</p>
+
+            <small>
+              Damascus · Abu Dhabi · Amman · Niort · Nancy · Menton · Tokyo · Paris.
+            </small>
+          </article>
+
+        </div>
+
+      </div>
+
     </div>
 
   </div>
 </section>
-
 
 
 
