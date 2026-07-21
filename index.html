@@ -3576,7 +3576,81 @@ MORE SPACED NUMBERS
 
 
 
+/* ==========================================
+   EXPERIENCE LOGOS — UNIFIED TILE STYLE
+========================================== */
 
+#experience .experience-logo{
+    background: #ffffff !important;
+    border: 5px solid var(--accent) !important;
+    border-radius: 24px !important;
+
+    overflow: hidden !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* All logos */
+
+#experience .experience-logo img,
+#experience .experience-logo svg{
+    width: 82% !important;
+    height: 82% !important;
+
+    display: block !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    transform: none !important;
+}
+
+/* Hover */
+
+#experience .experience-item:hover .experience-logo{
+    background: #ffffff !important;
+    border-color: var(--accent) !important;
+
+    transform: translateY(-6px) scale(1.08) !important;
+}
+
+#experience .experience-item:hover .experience-logo img,
+#experience .experience-item:hover .experience-logo svg{
+    transform: scale(1.04) !important;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:650px){
+
+    #experience .experience-logo{
+        background: #ffffff !important;
+        border: 3px solid var(--accent) !important;
+    }
+
+    #experience .experience-logo img,
+    #experience .experience-logo svg{
+        width: 82% !important;
+        height: 82% !important;
+
+        transform: none !important;
+    }
+
+    #experience .experience-item:hover .experience-logo{
+        transform: scale(1.05) !important;
+    }
+
+    #experience .experience-item:hover .experience-logo img,
+    #experience .experience-item:hover .experience-logo svg{
+        transform: none !important;
+    }
+
+}
 
 
 
