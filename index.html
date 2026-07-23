@@ -12186,7 +12186,38 @@ GALLERY — SAME OVERSIZED LABEL SIZE
 
 
 
+/* ==========================================
+   GALLERY — SOFT FADED LOOK
+========================================== */
 
+.gallery-item img{
+    filter:
+        saturate(65%)
+        contrast(.96)
+        brightness(1.04)
+        opacity(.92) !important;
+
+    transition:
+        transform .55s cubic-bezier(.22,1,.36,1),
+        filter .45s ease !important;
+}
+
+.gallery-item:hover img{
+    filter:
+        saturate(100%)
+        contrast(1)
+        brightness(1)
+        opacity(1) !important;
+}
+
+@media (hover:none){
+
+    .gallery-item img,
+    .gallery-item:hover img{
+        filter:none !important;
+    }
+
+}
 
 
 
