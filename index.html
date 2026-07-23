@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfoliooo</title>
+  <title>Portfolio</title>
 
   <link rel="icon" type="image/png" href="favicon-32x32[1].png">
   
@@ -913,7 +913,63 @@ section {
 
 
 
+/* ==========================================
+   HOME / INTRODUCTION — FINAL ALIGNMENT
+   Keeps content centred when zooming out
+========================================== */
 
+@media (min-width: 769px) {
+
+  #home {
+    padding-left: 8vw !important;
+    padding-right: 8vw !important;
+  }
+
+  #home .section-inner.hero {
+    width: 100% !important;
+    max-width: 1450px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    display: grid !important;
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(280px, 430px) !important;
+
+    align-items: center !important;
+
+    gap: clamp(60px, 7vw, 120px) !important;
+  }
+
+  #home .hero-content {
+    width: 100% !important;
+    max-width: 850px !important;
+
+    margin: 0 !important;
+  }
+
+  #home .hero-photo {
+    width: 100% !important;
+
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+  }
+
+  #home .hero-photo-frame {
+    width: min(100%, 430px) !important;
+  }
+}
+
+
+/* Prevent excessive separation on very wide screens */
+@media (min-width: 1700px) {
+
+  #home .section-inner.hero {
+    gap: 90px !important;
+  }
+}
 
 
 
