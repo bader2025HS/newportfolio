@@ -12529,7 +12529,26 @@ LANGUAGE-SPECIFIC HOVER COLORS
 }
 
 
+/* ==========================================
+   SECTION SUBTITLES — KEEP ON ONE LINE
+   (Place at the very end of your CSS)
+========================================== */
 
+@media (min-width: 901px){
+
+    .oversized-label span{
+        white-space: nowrap !important;
+        display: inline-block !important;
+        max-width: none !important;
+        width: auto !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
+
+        font-size: .98rem !important; /* adjust to .95rem if needed */
+        letter-spacing: .08em !important;
+    }
+
+}
 
 
 
@@ -13139,7 +13158,7 @@ LANGUAGE-SPECIFIC HOVER COLORS
         <span>What I use</span>
       </div>
 
-      <h2>Languages,<br>tools and platforms.</h2>
+      <h2>Tools behind the work.</h2>
     </div>
 
     <div class="skills-directory">
