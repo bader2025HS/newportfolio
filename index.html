@@ -3231,73 +3231,117 @@ ABOUT MOBILE — BIGGER STAT ICONS
 
 
 
-
 /* ==========================================
-   ABOUT — FOCUS PICTOGRAM ALIGNMENT ONLY
-   Keeps the original icon sizes
+   ABOUT — FOCUS AREAS FINAL FIX
+   Aligned icons + contained text
 ========================================== */
 
-#about .about-focus-icon {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+#about .about-focus li{
+    display:grid !important;
+    grid-template-columns:56px minmax(0,1fr) !important;
 
-  width: 52px !important;
-  height: 52px !important;
-  flex: 0 0 52px !important;
+    align-items:center !important;
+    column-gap:16px !important;
 
-  margin: 0 !important;
+    padding:18px 16px !important;
+
+    overflow:hidden !important;
 }
 
-#about .about-focus-icon svg {
-  width: 42px !important;
-  height: 42px !important;
+#about .about-focus-icon{
+    width:56px !important;
+    height:56px !important;
 
-  display: block !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
 
-  margin: 0 auto !important;
-  transform: none !important;
+    flex:none !important;
 }
 
-/* Keep each card content aligned on one shared grid */
-#about .about-focus li {
-  display: grid !important;
-  grid-template-columns: 52px minmax(0, 1fr) !important;
+#about .about-focus-icon svg{
+    width:46px !important;
+    height:46px !important;
 
-  align-items: center !important;
-  column-gap: 18px !important;
+    display:block !important;
 }
 
-/* Keep the text centred in its own area */
-#about .about-focus li > span:last-child {
-  width: 100% !important;
-  text-align: center !important;
+#about .about-focus li > span:last-child{
+    width:100% !important;
+    min-width:0 !important;
+
+    display:block !important;
+
+    text-align:center !important;
+
+    white-space:normal !important;
+    overflow-wrap:break-word !important;
+    word-break:normal !important;
 }
 
 
-/* PHONE — keep the existing stacked layout */
-@media (max-width: 750px) {
+/* ==========================================
+   NARROWER DESKTOP
+========================================== */
 
-  #about .about-focus li {
-    display: flex !important;
-    flex-direction: column !important;
+@media (min-width:751px) and (max-width:1250px){
 
-    justify-content: center !important;
-    align-items: center !important;
+    #about .about-focus li{
+        grid-template-columns:48px minmax(0,1fr) !important;
 
-    gap: 8px !important;
-  }
+        column-gap:12px !important;
 
-  #about .about-focus-icon {
-    width: 42px !important;
-    height: 42px !important;
-    flex: 0 0 42px !important;
-  }
+        padding:16px 12px !important;
+    }
 
-  #about .about-focus-icon svg {
-    width: 34px !important;
-    height: 34px !important;
-  }
+    #about .about-focus-icon{
+        width:48px !important;
+        height:48px !important;
+    }
+
+    #about .about-focus-icon svg{
+        width:40px !important;
+        height:40px !important;
+    }
+
+    #about .about-focus li > span:last-child{
+        font-size:.88rem !important;
+    }
+}
+
+
+/* ==========================================
+   PHONE — KEEP STACKED
+========================================== */
+
+@media (max-width:750px){
+
+    #about .about-focus li{
+        display:flex !important;
+        flex-direction:column !important;
+
+        justify-content:center !important;
+        align-items:center !important;
+
+        gap:8px !important;
+
+        padding:12px 8px !important;
+    }
+
+    #about .about-focus-icon{
+        width:36px !important;
+        height:36px !important;
+    }
+
+    #about .about-focus-icon svg{
+        width:32px !important;
+        height:32px !important;
+    }
+
+    #about .about-focus li > span:last-child{
+        text-align:center !important;
+        font-size:.75rem !important;
+    }
 }
     
 
