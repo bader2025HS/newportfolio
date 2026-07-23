@@ -12530,26 +12530,27 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
 
 /* ==========================================
-   SECTION SUBTITLES — KEEP ON ONE LINE
-   (Place at the very end of your CSS)
+   EXPERIENCE / CONTACT — KEEP SUBTITLE ON ONE LINE
 ========================================== */
 
-@media (min-width: 901px){
+@media (min-width:901px){
 
-    .oversized-label span{
-        white-space: nowrap !important;
-        display: inline-block !important;
-        max-width: none !important;
-        width: auto !important;
-        overflow: visible !important;
-        text-overflow: unset !important;
+  #experience .oversized-label,
+  #contact .oversized-label{
+      width:max-content !important;
+      max-width:none !important;
+  }
 
-        font-size: .98rem !important; /* adjust to .95rem if needed */
-        letter-spacing: .08em !important;
-    }
+  #experience .oversized-label span,
+  #contact .oversized-label span{
+      white-space:nowrap !important;
+      display:inline-block !important;
+
+      font-size:.90rem !important;
+      letter-spacing:.14em !important;
+  }
 
 }
-
 
 
     
