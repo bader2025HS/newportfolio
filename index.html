@@ -12128,6 +12128,41 @@ GALLERY — SAME OVERSIZED LABEL SIZE
 
 
 
+    /* ==========================================
+   GALLERY — DESATURATED → FULL COLOUR
+========================================== */
+
+.gallery-item img{
+    filter:
+        grayscale(70%)
+        saturate(55%)
+        brightness(.92)
+        contrast(.95) !important;
+
+    transition:
+        transform .55s cubic-bezier(.22,1,.36,1),
+        filter .45s ease !important;
+}
+
+.gallery-item:hover img{
+    filter:
+        grayscale(0%)
+        saturate(100%)
+        brightness(1)
+        contrast(1) !important;
+}
+
+/* Touch devices stay in full colour */
+
+@media (hover:none){
+
+    .gallery-item img,
+    .gallery-item:hover img{
+        filter:none !important;
+    }
+
+}
+
 
 /* ==========================================
    MOBILE HAMBURGER MENU
