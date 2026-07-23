@@ -12654,35 +12654,15 @@ body.gallery-lightbox-open{
 }
 
 
-/* ==========================================
-   LIGHTBOX — CONTROLS
-========================================== */
-
-.gallery-lightbox-media{
-    position: relative !important;
-
-    display: inline-block !important;
-
-    padding: 0 90px !important;   /* space for arrows */
-
-    box-sizing: content-box !important;
-}
-
-.gallery-lightbox-prev{
-    left: 22px !important;
-    right: auto !important;
-}
-
-.gallery-lightbox-next{
-    right: 22px !important;
-    left: auto !important;
-}
-
-.gallery-lightbox-close{
-    top: 22px !important;
-    right: 22px !important;
-}
-
+/*========================================== LIGHTBOX — CONTROLS CLOSER TO IMAGE ========================================== */ 
+    .gallery-lightbox-prev{ 
+      left: calc(50% - 355px) !important; 
+    } .gallery-lightbox-next
+    { right: calc(50% - 355px) !important; } 
+    .gallery-lightbox-close{ top: calc(50% - 370px) !important; right: calc(50% - 355px) !important; }
+    .gallery-lightbox-prev{ left: max(24px, calc(50% - 340px)) !important; }
+    .gallery-lightbox-next{ right: max(24px, calc(50% - 340px)) !important; } 
+    .gallery-lightbox-close{ top: 24px !important; right: max(24px, calc(50% - 340px)) !important; }
 
 
 
