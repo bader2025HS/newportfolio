@@ -3373,7 +3373,21 @@ ABOUT MOBILE — BIGGER STAT ICONS
 
 
 
+/* ==========================================
+   ABOUT — PREVENT AWKWARD WORD BREAKS
+========================================== */
 
+#about .about-focus li > span:last-child{
+    min-width:0 !important;
+
+    white-space:normal !important;
+
+    word-break:normal !important;
+    overflow-wrap:normal !important;
+    hyphens:none !important;
+
+    text-align:center !important;
+}
 
 
 
