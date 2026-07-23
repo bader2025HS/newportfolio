@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfolio</title>
+  <title>Portfoliooo</title>
 
   <link rel="icon" type="image/png" href="favicon-32x32[1].png">
   
@@ -975,7 +975,156 @@ section {
 
     
 
+/* ==========================================
+   HOME — BALANCED NORMAL DESKTOP LAYOUT
+   Keeps zoomed-out alignment without overlap
+========================================== */
 
+@media (min-width: 769px) and (max-width: 1700px) {
+
+  #home {
+    padding-left: 7vw !important;
+    padding-right: 7vw !important;
+  }
+
+  #home .section-inner.hero {
+    width: 100% !important;
+    max-width: 1450px !important;
+
+    margin-inline: auto !important;
+
+    display: grid !important;
+    grid-template-columns:
+      minmax(0, 1.25fr)
+      minmax(300px, 0.75fr) !important;
+
+    gap: clamp(45px, 5vw, 80px) !important;
+
+    align-items: center !important;
+  }
+
+  #home .hero-content {
+    width: 100% !important;
+    max-width: 850px !important;
+    min-width: 0 !important;
+  }
+
+  #home .hero-title {
+    width: 100% !important;
+
+    margin-bottom: 38px !important;
+
+    font-size: clamp(4.4rem, 6.7vw, 7rem) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.065em !important;
+
+    white-space: nowrap !important;
+  }
+
+  #home .hero-description {
+    max-width: 690px !important;
+
+    font-size: clamp(1rem, 1.35vw, 1.2rem) !important;
+    line-height: 1.85 !important;
+  }
+
+  #home .hero-photo {
+    width: 100% !important;
+
+    justify-content: flex-end !important;
+  }
+
+  #home .hero-photo-frame {
+    width: clamp(300px, 29vw, 410px) !important;
+    max-width: 100% !important;
+  }
+}
+
+
+/* ==========================================
+   SMALLER DESKTOP / LAPTOP
+========================================== */
+
+@media (min-width: 769px) and (max-width: 1250px) {
+
+  #home .section-inner.hero {
+    grid-template-columns:
+      minmax(0, 1.2fr)
+      minmax(270px, 0.8fr) !important;
+
+    gap: 38px !important;
+  }
+
+  #home .hero-title {
+    font-size: clamp(3.8rem, 6.8vw, 5.6rem) !important;
+  }
+
+  #home .hero-photo-frame {
+    width: clamp(270px, 30vw, 350px) !important;
+  }
+
+  #home .hero-description {
+    max-width: 610px !important;
+
+    font-size: 1rem !important;
+    line-height: 1.75 !important;
+  }
+}
+
+
+/* ==========================================
+   VERY WIDE / ZOOMED-OUT SCREENS
+========================================== */
+
+@media (min-width: 1701px) {
+
+  #home .section-inner.hero {
+    width: 100% !important;
+    max-width: 1450px !important;
+
+    margin-inline: auto !important;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(280px, 410px) !important;
+
+    gap: 80px !important;
+  }
+
+  #home .hero-title {
+    font-size: 7rem !important;
+  }
+
+  #home .hero-photo-frame {
+    width: 390px !important;
+  }
+}
+
+    /* ==========================================
+   HEADER — CENTERED ON WIDE / ZOOMED-OUT VIEW
+========================================== */
+
+@media (min-width: 1101px) {
+
+  .header {
+    left: 50% !important;
+    right: auto !important;
+
+    width: calc(100% - 44px) !important;
+    max-width: 1450px !important;
+
+    transform: translateX(-50%) !important;
+  }
+}
+
+
+/* Keep a little more breathing room on very wide screens */
+@media (min-width: 1700px) {
+
+  .header {
+    width: calc(100% - 80px) !important;
+  }
+}
 
 
 
