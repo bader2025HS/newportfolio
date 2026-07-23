@@ -3374,21 +3374,49 @@ ABOUT MOBILE — BIGGER STAT ICONS
 
 
 /* ==========================================
-   ABOUT — PREVENT AWKWARD WORD BREAKS
+   ABOUT — FOCUS CARDS FINAL DESKTOP
 ========================================== */
 
-#about .about-focus li > span:last-child{
-    min-width:0 !important;
+@media (min-width:751px){
 
-    white-space:normal !important;
+    #about .about-focus li{
+        display:grid !important;
+        grid-template-columns:44px 1fr !important;
 
-    word-break:normal !important;
-    overflow-wrap:normal !important;
-    hyphens:none !important;
+        align-items:center !important;
 
-    text-align:center !important;
+        column-gap:12px !important;
+
+        padding:18px 20px !important;
+    }
+
+    #about .about-focus-icon{
+        width:44px !important;
+        height:44px !important;
+
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+    }
+
+    #about .about-focus-icon svg{
+        width:40px !important;
+        height:40px !important;
+    }
+
+    #about .about-focus li > span:last-child{
+        width:100% !important;
+
+        text-align:center !important;
+
+        white-space:normal !important;
+        word-break:normal !important;
+        overflow-wrap:normal !important;
+
+        font-size:1rem !important;
+    }
+
 }
-
 
 
 
