@@ -12491,7 +12491,69 @@ body.gallery-lightbox-open{
 
 
 
+/* ==========================================
+   GALLERY LIGHTBOX — CAPTION SAME WIDTH AS IMAGE
+========================================== */
 
+.gallery-lightbox-inner{
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.gallery-lightbox-image{
+    display: block !important;
+    width: auto !important;
+    max-width: 100% !important;
+    max-height: calc(88vh - 90px) !important;
+}
+
+.gallery-lightbox-info{
+    position: static !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin-top: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+    /* ==========================================
+   GALLERY — FLOATING CAPTION
+========================================== */
+
+.gallery-item figcaption{
+    left: auto !important;
+
+    right: 16px !important;
+    bottom: 16px !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    padding: 10px 16px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 14px !important;
+
+    background: rgba(246,248,245,.94) !important;
+
+    white-space: nowrap !important;
+}
+
+.gallery-item figcaption span{
+    flex: 0 0 auto !important;
+}
+
+.gallery-item figcaption p{
+    flex: 0 0 auto !important;
+    text-align: left !important;
+}
 
 
 
