@@ -6482,6 +6482,234 @@ MORE SPACED NUMBERS
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ==========================================
+   EXPERIENCE — VERTICAL DUPLICATED LOGOS
+   DESKTOP HOVER ONLY
+   Add at the very end of the CSS
+========================================== */
+
+
+/* Assign the correct image to every experience */
+
+#experience .experience-item.bnp{
+    --repeated-logo:url("bnplogo.png");
+}
+
+#experience .experience-item.oif{
+    --repeated-logo:url("oiflogo.webp");
+}
+
+#experience .experience-item.aqlity{
+    --repeated-logo:url("aqlitylogo.png");
+}
+
+#experience .experience-item.ardhis{
+    --repeated-logo:url("ardhislogo.png");
+}
+
+/* Your Royal Scientific Society item currently uses
+   the class "tarjimly" and the file rsslogo.png */
+
+#experience .experience-item.tarjimly{
+    --repeated-logo:url("rsslogo.png");
+}
+
+
+/* ==========================================
+   DESKTOP ONLY
+========================================== */
+
+@media (min-width:769px) and (hover:hover){
+
+    /* Allow the logo container to stretch vertically
+       when the experience opens */
+
+    #experience .experience-item .experience-logo{
+        position:relative !important;
+        isolation:isolate !important;
+
+        align-self:start !important;
+
+        width:88px !important;
+        height:88px !important;
+        min-height:88px !important;
+
+        overflow:hidden !important;
+
+        transition:
+            height .5s ease,
+            min-height .5s ease,
+            background-color .35s ease,
+            transform .35s ease !important;
+    }
+
+
+    /* Repeated-logo layer */
+
+    #experience .experience-item .experience-logo::before{
+        content:"" !important;
+
+        position:absolute !important;
+        inset:0 !important;
+        z-index:2 !important;
+
+        display:block !important;
+
+        background-image:var(--repeated-logo) !important;
+        background-repeat:repeat-y !important;
+        background-position:center top !important;
+
+        /*
+          Each duplicate keeps the same 88px logo height.
+          The width remains proportional to the source image.
+        */
+        background-size:auto 88px !important;
+
+        opacity:0 !important;
+        pointer-events:none !important;
+
+        transition:opacity .3s ease .08s !important;
+    }
+
+
+    /* Make the logo column cover the full expanded card */
+
+    #experience .experience-item:hover .experience-logo{
+        align-self:stretch !important;
+
+        width:88px !important;
+        height:auto !important;
+        min-height:100% !important;
+
+        margin:0 !important;
+
+        background:transparent !important;
+
+        border-radius:0 !important;
+
+        transform:none !important;
+    }
+
+
+    /* Reveal repeated logos */
+
+    #experience .experience-item:hover .experience-logo::before{
+        opacity:1 !important;
+    }
+
+
+    /* Hide only the original logo while the copies appear */
+
+    #experience .experience-item:hover .experience-logo > img,
+    #experience .experience-item:hover .experience-logo > svg{
+        opacity:0 !important;
+        visibility:hidden !important;
+
+        transform:none !important;
+    }
+}
+
+
+/* ==========================================
+   OIF — PRESERVE ITS SMALLER VISUAL SCALE
+========================================== */
+
+@media (min-width:769px) and (hover:hover){
+
+    #experience .experience-item.oif .experience-logo::before{
+        background-size:auto 78px !important;
+    }
+}
+
+
+/* ==========================================
+   PHONE / TOUCH — KEEP CURRENT LOGOS
+========================================== */
+
+@media (max-width:768px), (hover:none){
+
+    #experience .experience-logo::before{
+        display:none !important;
+    }
+
+    #experience .experience-item:hover .experience-logo{
+        height:48px !important;
+        min-height:48px !important;
+
+        overflow:visible !important;
+    }
+
+    #experience .experience-item:hover .experience-logo > img,
+    #experience .experience-item:hover .experience-logo > svg{
+        opacity:1 !important;
+        visibility:visible !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 
