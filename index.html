@@ -15619,12 +15619,31 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
-  <script>
+ <script>
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* ==========================================
+     IMAGE GROUPS
+  ========================================== */
 
   const galleryImages = Array.from(
     document.querySelectorAll("#gallery .gallery-item img")
   );
+
+  const allFilmImages = Array.from(
+    document.querySelectorAll(".filmstrip-track .film-frame img")
+  );
+
+  /* First half only — ignores duplicated loop images */
+  const filmImages = allFilmImages.slice(
+    0,
+    Math.ceil(allFilmImages.length / 2)
+  );
+
+
+  /* ==========================================
+     LIGHTBOX ELEMENTS
+  ========================================== */
 
   const lightbox = document.getElementById("galleryLightbox");
   const lightboxImage = lightbox?.querySelector(".gallery-lightbox-image");
@@ -15636,7 +15655,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextButton = lightbox?.querySelector(".gallery-lightbox-next");
 
   if (
-    !galleryImages.length ||
     !lightbox ||
     !lightboxImage ||
     !lightboxCaption ||
@@ -15645,10 +15663,22 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+
+  /* ==========================================
+     ACTIVE IMAGE SET
+  ========================================== */
+
+  let activeImages = [];
+  let activeType = "gallery";
   let currentIndex = 0;
+  let lastOpenedImage = null;
 
 
-  function getCaption(image) {
+  /* ==========================================
+     CAPTIONS
+  ========================================== */
+
+  function getGalleryCaption(image) {
     const galleryItem = image.closest(".gallery-item");
 
     const location =
@@ -15664,23 +15694,44 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  function updateLightbox() {
-    const image = galleryImages[currentIndex];
-    const caption = getCaption(image);
+  function getImageCaption(image) {
 
-    lightboxImage.src = image.currentSrc || image.src;
-    lightboxImage.alt = image.alt || caption.location || "Gallery image";
+    if (activeType === "filmstrip") {
+      return image.alt || "";
+    }
 
-    lightboxCaption.textContent =
-      caption.location || image.alt || "";
+    const caption = getGalleryCaption(image);
 
-    lightboxCounter.textContent =
-      `${currentIndex + 1} / ${galleryImages.length}`;
+    return caption.location || image.alt || "";
   }
 
 
-  function openLightbox(index) {
+  /* ==========================================
+     LIGHTBOX FUNCTIONS
+  ========================================== */
+
+  function updateLightbox() {
+    const image = activeImages[currentIndex];
+
+    if (!image) return;
+
+    const caption = getImageCaption(image);
+
+    lightboxImage.src = image.currentSrc || image.src;
+    lightboxImage.alt = image.alt || caption || "Image";
+
+    lightboxCaption.textContent = caption;
+
+    lightboxCounter.textContent =
+      `${currentIndex + 1} / ${activeImages.length}`;
+  }
+
+
+  function openLightbox(images, index, type, clickedImage) {
+    activeImages = images;
     currentIndex = index;
+    activeType = type;
+    lastOpenedImage = clickedImage;
 
     updateLightbox();
 
@@ -15699,13 +15750,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.classList.remove("gallery-lightbox-open");
 
-    galleryImages[currentIndex]?.focus();
+    lastOpenedImage?.focus();
   }
 
 
   function showNext() {
     currentIndex =
-      (currentIndex + 1) % galleryImages.length;
+      (currentIndex + 1) % activeImages.length;
 
     updateLightbox();
   }
@@ -15713,32 +15764,101 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showPrevious() {
     currentIndex =
-      (currentIndex - 1 + galleryImages.length) %
-      galleryImages.length;
+      (currentIndex - 1 + activeImages.length) %
+      activeImages.length;
 
     updateLightbox();
   }
 
 
+  /* ==========================================
+     GALLERY IMAGES
+  ========================================== */
+
   galleryImages.forEach((image, index) => {
 
     image.setAttribute("tabindex", "0");
     image.setAttribute("role", "button");
-    image.setAttribute("aria-label", `Open image ${index + 1}`);
+    image.setAttribute(
+      "aria-label",
+      `Open gallery image ${index + 1}`
+    );
 
     image.addEventListener("click", () => {
-      openLightbox(index);
+      openLightbox(
+        galleryImages,
+        index,
+        "gallery",
+        image
+      );
     });
 
     image.addEventListener("keydown", event => {
+
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
-        openLightbox(index);
+
+        openLightbox(
+          galleryImages,
+          index,
+          "gallery",
+          image
+        );
       }
+
     });
 
   });
 
+
+  /* ==========================================
+     FILMSTRIP IMAGES
+  ========================================== */
+
+  allFilmImages.forEach(image => {
+
+    image.style.cursor = "pointer";
+
+    image.setAttribute("tabindex", "0");
+    image.setAttribute("role", "button");
+
+    const matchingIndex = filmImages.findIndex(
+      original => original.src === image.src
+    );
+
+    image.setAttribute(
+      "aria-label",
+      `Open activity image ${matchingIndex + 1}`
+    );
+
+    function openFilmImage() {
+      const index = matchingIndex >= 0 ? matchingIndex : 0;
+
+      openLightbox(
+        filmImages,
+        index,
+        "filmstrip",
+        image
+      );
+    }
+
+    image.addEventListener("click", openFilmImage);
+
+    image.addEventListener("keydown", event => {
+
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openFilmImage();
+      }
+
+    });
+
+  });
+
+
+  /* ==========================================
+     LIGHTBOX CONTROLS
+  ========================================== */
 
   closeButton?.addEventListener("click", closeLightbox);
   nextButton?.addEventListener("click", showNext);
@@ -15746,9 +15866,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   lightbox.addEventListener("click", event => {
+
     if (event.target === lightbox) {
       closeLightbox();
     }
+
   });
 
 
@@ -15773,47 +15895,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
-
-
-    /* ==========================================
-   ACTIVITIES FILMSTRIP → GALLERY LIGHTBOX
-========================================== */
-
-const filmImages = document.querySelectorAll(".film-frame img");
-
-filmImages.forEach(img => {
-
-    img.style.cursor = "pointer";
-
-    img.addEventListener("click", () => {
-
-        /* Build array from ORIGINAL images only
-           (ignore duplicated loop images) */
-
-        const originals = [...document.querySelectorAll(
-            ".filmstrip-track .film-frame:nth-child(-n+5) img"
-        )];
-
-        galleryImages.length = 0;
-
-        originals.forEach(image => {
-            galleryImages.push({
-                src: image.src,
-                caption: image.alt
-            });
-        });
-
-        currentImage = originals.findIndex(image => image.src === img.src);
-
-        if(currentImage === -1) currentImage = 0;
-
-        openLightbox(currentImage);
-
-    });
-
-});
-
-    
 </script>
 
   
