@@ -15773,6 +15773,47 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+
+    /* ==========================================
+   ACTIVITIES FILMSTRIP → GALLERY LIGHTBOX
+========================================== */
+
+const filmImages = document.querySelectorAll(".film-frame img");
+
+filmImages.forEach(img => {
+
+    img.style.cursor = "pointer";
+
+    img.addEventListener("click", () => {
+
+        /* Build array from ORIGINAL images only
+           (ignore duplicated loop images) */
+
+        const originals = [...document.querySelectorAll(
+            ".filmstrip-track .film-frame:nth-child(-n+5) img"
+        )];
+
+        galleryImages.length = 0;
+
+        originals.forEach(image => {
+            galleryImages.push({
+                src: image.src,
+                caption: image.alt
+            });
+        });
+
+        currentImage = originals.findIndex(image => image.src === img.src);
+
+        if(currentImage === -1) currentImage = 0;
+
+        openLightbox(currentImage);
+
+    });
+
+});
+
+    
 </script>
 
   
