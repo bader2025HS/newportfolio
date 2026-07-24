@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfoliooo</title>
+  <title>Portfolio</title>
 
   <link rel="icon" type="image/png" href="favicon-32x32[1].png">
   
@@ -12685,35 +12685,8 @@ body.gallery-lightbox-open{
 
 
 
-
-    
 /* ==========================================
-   FILMSTRIP LIGHTBOX — DESKTOP
-   CONTROLS AT SCREEN EDGES
-========================================== */
-
-.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-prev{
-  left:24px !important;
-  right:auto !important;
-}
-
-.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-next{
-  right:24px !important;
-  left:auto !important;
-}
-
-.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-close{
-  top:24px !important;
-  right:24px !important;
-  left:auto !important;
-  bottom:auto !important;
-  transform:none !important;
-}
-
-
-/* ==========================================
-   MOBILE — SAME ROW FOR GALLERY + FILMSTRIP
-   ‹   ×   ›
+   LIGHTBOX — MOBILE CONTROLS ROW
 ========================================== */
 
 @media (max-width:650px){
@@ -12740,23 +12713,115 @@ body.gallery-lightbox-open{
     transform:none !important;
   }
 
+  /* Left arrow */
   .gallery-lightbox-prev{
     left:calc(50% - 72px) !important;
     right:auto !important;
   }
 
+  /* Close button in centre */
   .gallery-lightbox-close{
     left:50% !important;
     right:auto !important;
+
     transform:translateX(-50%) !important;
   }
 
+  /* Right arrow */
   .gallery-lightbox-next{
     right:calc(50% - 72px) !important;
     left:auto !important;
   }
 
 }
+
+
+
+    
+    
+/* ==========================================
+   FILMSTRIP LIGHTBOX — FULL SCREEN CONTROLS
+========================================== */
+
+.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-prev{
+    left:24px !important;
+    right:auto !important;
+}
+
+.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-next{
+    right:24px !important;
+    left:auto !important;
+}
+
+.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-close{
+    top:24px !important;
+    right:24px !important;
+}
+
+@media (max-width:650px){
+
+    .gallery-lightbox.filmstrip-lightbox .gallery-lightbox-prev{
+        left:24px !important;
+    }
+
+    .gallery-lightbox.filmstrip-lightbox .gallery-lightbox-next{
+        right:24px !important;
+    }
+
+    .gallery-lightbox.filmstrip-lightbox .gallery-lightbox-close{
+        right:24px !important;
+        top:24px !important;
+    }
+
+}
+
+
+/* ==========================================
+   FILMSTRIP LIGHTBOX — DESKTOP FULL SCREEN
+========================================== */
+
+.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-prev{
+  left:24px !important;
+  right:auto !important;
+}
+
+.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-next{
+  right:24px !important;
+  left:auto !important;
+}
+
+.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-close{
+  top:24px !important;
+  right:24px !important;
+  left:auto !important;
+  bottom:auto !important;
+  transform:none !important;
+}
+
+
+/* ==========================================
+   FILMSTRIP LIGHTBOX — DESKTOP
+   CONTROLS AT SCREEN EDGES
+========================================== */
+
+.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-prev{
+  left:24px !important;
+  right:auto !important;
+}
+
+.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-next{
+  right:24px !important;
+  left:auto !important;
+}
+
+.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-close{
+  top:24px !important;
+  right:24px !important;
+  left:auto !important;
+  bottom:auto !important;
+  transform:none !important;
+}
+
 
 
 
