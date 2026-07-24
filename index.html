@@ -5768,7 +5768,85 @@ MORE SPACED NUMBERS
 
 
 
+/* ==========================================
+   EXPERIENCE — BULLET LIST
+========================================== */
 
+.experience-text{
+    margin:0 !important;
+    padding:0 !important;
+
+    list-style:none !important;
+
+    display:flex !important;
+    flex-direction:column !important;
+    gap:14px !important;
+}
+
+.experience-text li{
+    position:relative;
+
+    padding-left:24px !important;
+
+    color:rgba(18,56,43,.78) !important;
+
+    font-size:.97rem !important;
+    line-height:1.75 !important;
+}
+
+.experience-text li::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:.72em;
+
+    width:8px;
+    height:8px;
+
+    background:currentColor;
+
+    border-radius:50%;
+
+    opacity:.65;
+}
+
+/* Hover */
+
+.experience-item:hover .experience-text li{
+    color:rgba(255,255,255,.92) !important;
+}
+
+.experience-item:hover .experience-text li::before{
+    background:#8ed4bf !important;
+    opacity:1;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .experience-text{
+        gap:12px !important;
+    }
+
+    .experience-text li{
+        padding-left:20px !important;
+
+        font-size:.92rem !important;
+        line-height:1.65 !important;
+    }
+
+    .experience-text li::before{
+        width:6px;
+        height:6px;
+    }
+
+}
 
 
 
@@ -13558,11 +13636,35 @@ LANGUAGE-SPECIFIC HOVER COLORS
             CSR &amp; Sustainability Communications
           </p>
 
-          <p class="experience-text">
-            Working on CSR and sustainability communications, turning complex
-            transition, engagement and corporate responsibility topics into
-            clear editorial, digital and visual content.
-          </p>
+<ul class="experience-text">
+  <li>
+    Produced editorial content for BNP Paribas' corporate website and internal communication channels, authoring one feature article and contributing to 10+ publications covering sustainability, climate, energy transition, circular economy, impact finance, biodiversity and One Health.
+  </li>
+
+  <li>
+    Created multimedia communication assets, including 6 PlayPlay videos, 2 infographics and contributions to the <em>Let's Break Down Clichés</em> series on the Just Transition, supporting employee engagement and sustainability awareness.
+  </li>
+
+  <li>
+    Coordinated two international sustainability webinars on Circular Economy and One Health, identifying speakers, managing event logistics, preparing briefing materials and Q&amp;A content, and coordinating post-event communications, generating approximately 2,000 views per webinar.
+  </li>
+
+  <li>
+    Collaborated with Social Media, Employee Engagement and Sustainability teams across France, Belgium, India and the Netherlands to deliver coordinated internal and external communication campaigns.
+  </li>
+
+  <li>
+    Monitored communication performance by tracking KPIs, including page views, impressions, engagement rates, click-through rates, video performance and newsletter metrics, while maintaining reporting dashboards to measure campaign visibility and impact.
+  </li>
+
+  <li>
+    Contributed to the production of sustainability newsletters and digital communication campaigns promoting BNP Paribas' corporate responsibility strategy and strategic sustainability initiatives.
+  </li>
+
+  <li>
+    Supported communications for the BNP Paribas Foundation and the Group's corporate philanthropy (<em>mécénat</em>) initiatives, producing editorial and digital content on programmes supporting education, social inclusion, women affected by violence and emergency relief efforts for communities impacted by climate-related disasters and humanitarian crises.
+  </li>
+</ul>
 
           <div class="experience-tags">
 
@@ -13570,9 +13672,18 @@ LANGUAGE-SPECIFIC HOVER COLORS
               Private sector
             </span>
 
-            <small>Communication</small>
-            <small>CSR</small>
-            <small>Sustainability</small>
+            <small>Content Production</small>
+            <small>Campaign Coordination</small>
+            <small>Event Management</small>
+            <small>Editorial Planning</small>
+            <small>Stakeholder Engagement</small>
+            <small>Corporate Philanthropy</small>
+            <small>Performance Analytics</small>
+            <small>Visual Communications</small>
+            <small>Event management</small>
+            <small>Editorial planning</small>
+            <small>Stakeholder engagement</small>
+            <small>Corporate Philanthropy</small>
 
           </div>
 
