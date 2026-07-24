@@ -12685,8 +12685,35 @@ body.gallery-lightbox-open{
 
 
 
+
+    
 /* ==========================================
-   LIGHTBOX — MOBILE CONTROLS ROW
+   FILMSTRIP LIGHTBOX — DESKTOP
+   CONTROLS AT SCREEN EDGES
+========================================== */
+
+.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-prev{
+  left:24px !important;
+  right:auto !important;
+}
+
+.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-next{
+  right:24px !important;
+  left:auto !important;
+}
+
+.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-close{
+  top:24px !important;
+  right:24px !important;
+  left:auto !important;
+  bottom:auto !important;
+  transform:none !important;
+}
+
+
+/* ==========================================
+   MOBILE — SAME ROW FOR GALLERY + FILMSTRIP
+   ‹   ×   ›
 ========================================== */
 
 @media (max-width:650px){
@@ -12713,139 +12740,18 @@ body.gallery-lightbox-open{
     transform:none !important;
   }
 
-  /* Left arrow */
   .gallery-lightbox-prev{
     left:calc(50% - 72px) !important;
     right:auto !important;
   }
 
-  /* Close button in centre */
   .gallery-lightbox-close{
     left:50% !important;
     right:auto !important;
-
     transform:translateX(-50%) !important;
   }
 
-  /* Right arrow */
   .gallery-lightbox-next{
-    right:calc(50% - 72px) !important;
-    left:auto !important;
-  }
-
-}
-
-
-
-    
-    
-/* ==========================================
-   FILMSTRIP LIGHTBOX — FULL SCREEN CONTROLS
-========================================== */
-
-.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-prev{
-    left:24px !important;
-    right:auto !important;
-}
-
-.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-next{
-    right:24px !important;
-    left:auto !important;
-}
-
-.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-close{
-    top:24px !important;
-    right:24px !important;
-}
-
-@media (max-width:650px){
-
-    .gallery-lightbox.filmstrip-lightbox .gallery-lightbox-prev{
-        left:24px !important;
-    }
-
-    .gallery-lightbox.filmstrip-lightbox .gallery-lightbox-next{
-        right:24px !important;
-    }
-
-    .gallery-lightbox.filmstrip-lightbox .gallery-lightbox-close{
-        right:24px !important;
-        top:24px !important;
-    }
-
-}
-
-
-/* ==========================================
-   FILMSTRIP LIGHTBOX — DESKTOP FULL SCREEN
-========================================== */
-
-.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-prev{
-  left:24px !important;
-  right:auto !important;
-}
-
-.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-next{
-  right:24px !important;
-  left:auto !important;
-}
-
-.gallery-lightbox.filmstrip-lightbox .gallery-lightbox-close{
-  top:24px !important;
-  right:24px !important;
-  left:auto !important;
-  bottom:auto !important;
-  transform:none !important;
-}
-
-
-/* ==========================================
-   ALL LIGHTBOXES — MOBILE CONTROLS ROW
-========================================== */
-
-@media (max-width:650px){
-
-  .gallery-lightbox-inner{
-    padding-bottom:70px !important;
-    box-sizing:border-box !important;
-  }
-
-  .gallery-lightbox .gallery-lightbox-arrow,
-  .gallery-lightbox .gallery-lightbox-close{
-    position:absolute !important;
-
-    top:auto !important;
-    bottom:0 !important;
-
-    width:48px !important;
-    height:48px !important;
-
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-
-    transform:none !important;
-  }
-
-  /* Previous arrow */
-
-  .gallery-lightbox .gallery-lightbox-prev{
-    left:calc(50% - 72px) !important;
-    right:auto !important;
-  }
-
-  /* Close button */
-
-  .gallery-lightbox .gallery-lightbox-close{
-    left:50% !important;
-    right:auto !important;
-
-    transform:translateX(-50%) !important;
-  }
-
-  /* Next arrow */
-
-  .gallery-lightbox .gallery-lightbox-next{
     right:calc(50% - 72px) !important;
     left:auto !important;
   }
