@@ -6667,7 +6667,72 @@ MORE SPACED NUMBERS
 
 
 
+/* ==========================================
+   EXPERIENCE — CLEANER REPEATED LOGO COLUMN
+========================================== */
 
+@media (min-width:769px) and (hover:hover){
+
+    #experience .experience-item .experience-logo::before{
+        background-repeat:space !important;
+        background-position:center !important;
+        background-size:auto 72px !important;
+
+        padding-top:28px !important;
+        padding-bottom:28px !important;
+
+        opacity:0 !important;
+    }
+
+    #experience .experience-item:hover .experience-logo::before{
+        opacity:1 !important;
+    }
+
+
+    /* Keep the column lighter and less dominant */
+
+    #experience .experience-item:hover .experience-logo{
+        width:88px !important;
+
+        background:transparent !important;
+        border:none !important;
+    }
+
+
+    /* BNP */
+
+    #experience .experience-item.bnp .experience-logo::before{
+        background-size:auto 70px !important;
+    }
+
+
+    /* OIF */
+
+    #experience .experience-item.oif .experience-logo::before{
+        background-size:auto 62px !important;
+    }
+
+
+    /* AQLITY */
+
+    #experience .experience-item.aqlity .experience-logo::before{
+        background-size:auto 66px !important;
+    }
+
+
+    /* ARDHIS */
+
+    #experience .experience-item.ardhis .experience-logo::before{
+        background-size:auto 66px !important;
+    }
+
+
+    /* Royal Scientific Society */
+
+    #experience .experience-item.tarjimly .experience-logo::before{
+        background-size:auto 65px !important;
+    }
+}
 
 
 
