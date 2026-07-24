@@ -5900,7 +5900,97 @@ MORE SPACED NUMBERS
 
 
 
+/* ==========================================
+   EXPERIENCE — POLISHED BULLET LIST
+========================================== */
 
+#experience .experience-text{
+    margin:18px 0 0 !important;
+    padding:0 !important;
+
+    list-style:none !important;
+
+    display:flex !important;
+    flex-direction:column !important;
+    gap:18px !important;
+}
+
+#experience .experience-text li{
+    position:relative;
+
+    margin:0 !important;
+    padding-left:22px !important;
+
+    color:rgba(18,56,43,.80) !important;
+
+    font-size:.98rem !important;
+    line-height:1.72 !important;
+}
+
+#experience .experience-text li::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:.68em;
+
+    width:7px;
+    height:7px;
+
+    background:currentColor;
+
+    border-radius:0;
+}
+
+
+/* Verbs + numbers */
+
+#experience .experience-text strong{
+    color:#0b6b4d !important;
+    font-weight:700 !important;
+}
+
+
+/* Hover */
+
+#experience .experience-item:hover .experience-text li{
+    color:rgba(255,255,255,.92) !important;
+}
+
+#experience .experience-item:hover .experience-text li::before{
+    background:#8ed4bf !important;
+}
+
+#experience .experience-item:hover .experience-text strong{
+    color:#8ed4bf !important;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    #experience .experience-text{
+        margin-top:16px !important;
+        gap:15px !important;
+    }
+
+    #experience .experience-text li{
+        padding-left:18px !important;
+
+        font-size:.91rem !important;
+        line-height:1.62 !important;
+    }
+
+    #experience .experience-text li::before{
+        width:6px;
+        height:6px;
+    }
+
+}
 
 
 
@@ -13688,37 +13778,36 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
 <ul class="experience-text">
   <li>
-    Produced editorial content for BNP Paribas' corporate website and internal platforms, authoring one feature article and contributing to <strong>10+ publications</strong> on sustainability, climate, energy transition and corporate responsibility.
+    <strong>Produced</strong> editorial content for BNP Paribas' corporate website and internal platforms, including <strong>1 feature article</strong> and <strong>10+ sustainability publications</strong> covering climate, energy transition and corporate responsibility.
   </li>
 
   <li>
-    Created multimedia communications including <strong>6 PlayPlay videos</strong>, <strong>2 infographics</strong> and digital campaigns promoting sustainability initiatives and employee engagement.
+    <strong>Created</strong> multimedia communications including <strong>6 PlayPlay videos</strong>, <strong>2 infographics</strong> and digital campaigns promoting sustainability initiatives and employee engagement.
   </li>
 
   <li>
-    Coordinated <strong>2 international webinars</strong> on Circular Economy and One Health, managing speaker engagement, event preparation and post-event communications, generating approximately <strong>2,000 views per webinar</strong>.
+    <strong>Coordinated</strong> <strong>2 international webinars</strong> on Circular Economy and One Health, generating approximately <strong>2,000 views per webinar</strong> through speaker coordination, event preparation and post-event communications.
   </li>
 
   <li>
-    Collaborated with communications teams across <strong>4 countries</strong> (France, Belgium, India and the Netherlands) while monitoring campaign performance through KPIs, newsletters and digital analytics.
+    <strong>Collaborated</strong> with communications teams across <strong>4 countries</strong> (France, Belgium, India and the Netherlands) while monitoring campaign performance through KPIs, newsletters and digital analytics.
   </li>
 </ul>
 
-          <div class="experience-tags">
+<div class="experience-tags">
 
-            <span class="experience-type">
-              Private sector
-            </span>
+    <span class="experience-type">
+        Private Sector
+    </span>
 
-            <small>Content Production</small>
-            <small>Campaign Coordination</small>
-            <small>Event Management</small>
-            <small>Editorial Planning</small>
-            <small>Stakeholder Engagement</small>
-            <small>Corporate Philanthropy</small>
-            <small>Performance Analytics</small>
+    <small>Content Production</small>
+    <small>Editorial Planning</small>
+    <small>Campaign Coordination</small>
+    <small>Stakeholder Engagement</small>
+    <small>Performance Analytics</small>
+    <small>Corporate Philanthropy</small>
 
-          </div>
+</div>
 
         </div>
 
