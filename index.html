@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfoliooo</title>
+  <title>Portfolio</title>
 
   <link rel="icon" type="image/png" href="favicon-32x32[1].png">
   
@@ -6061,7 +6061,426 @@ MORE SPACED NUMBERS
 
 
 
+/* ==========================================
+   EXPERIENCE — POLISHED EXPANDED STATE
+   Place at the very end of the CSS
+========================================== */
 
+
+/* ------------------------------------------
+   1. SMOOTHER CARD TRANSITION
+------------------------------------------ */
+
+#experience .experience-item{
+    transition:
+        background-color .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease,
+        padding .35s ease !important;
+}
+
+
+/* Add more breathing room when expanded */
+
+#experience .experience-item:hover{
+    padding-bottom:34px !important;
+}
+
+
+/* ------------------------------------------
+   2. LIGHTER SUMMARY DESCRIPTION
+------------------------------------------ */
+
+#experience .experience-description,
+#experience .experience-item > div > p{
+    color:rgba(18,56,43,.66) !important;
+
+    font-weight:400 !important;
+    line-height:1.7 !important;
+
+    transition:
+        color .3s ease,
+        opacity .3s ease !important;
+}
+
+
+#experience .experience-item:hover .experience-description,
+#experience .experience-item:hover > div > p{
+    color:rgba(18,56,43,.62) !important;
+}
+
+
+/* ------------------------------------------
+   3. EXPANDED BULLET AREA
+------------------------------------------ */
+
+#experience ul.experience-text{
+    position:relative !important;
+
+    width:100% !important;
+    max-width:900px !important;
+    max-height:0 !important;
+
+    margin:0 !important;
+    padding:0 !important;
+    padding-top:0 !important;
+
+    display:flex !important;
+    flex-direction:column !important;
+    gap:18px !important;
+
+    overflow:hidden !important;
+    opacity:0 !important;
+
+    list-style:none !important;
+
+    color:rgba(18,56,43,.82) !important;
+
+    transform:translateY(14px) !important;
+
+    transition:
+        max-height .6s ease,
+        margin .45s ease,
+        padding .45s ease,
+        opacity .35s ease,
+        transform .45s ease !important;
+}
+
+
+/* Open list */
+
+#experience .experience-item:hover ul.experience-text{
+    max-height:1200px !important;
+
+    margin-top:24px !important;
+    padding-top:22px !important;
+
+    overflow:visible !important;
+    opacity:1 !important;
+
+    transform:translateY(0) !important;
+}
+
+
+/* ------------------------------------------
+   4. DIVIDER ABOVE BULLETS
+------------------------------------------ */
+
+#experience ul.experience-text::before{
+    content:"" !important;
+
+    position:absolute !important;
+
+    top:0 !important;
+    left:0 !important;
+
+    width:0 !important;
+    height:1px !important;
+
+    background:color-mix(
+        in srgb,
+        var(--accent) 45%,
+        transparent
+    ) !important;
+
+    opacity:0 !important;
+
+    transition:
+        width .55s ease .08s,
+        opacity .3s ease !important;
+}
+
+
+#experience .experience-item:hover ul.experience-text::before{
+    width:100% !important;
+    opacity:1 !important;
+}
+
+
+/* Fallback for browsers without color-mix */
+
+@supports not (
+    background:color-mix(in srgb, black 50%, transparent)
+){
+    #experience ul.experience-text::before{
+        background:rgba(18,56,43,.18) !important;
+    }
+}
+
+
+/* ------------------------------------------
+   5. BULLET TYPOGRAPHY
+------------------------------------------ */
+
+#experience ul.experience-text li{
+    position:relative !important;
+
+    margin:0 !important;
+    padding-left:27px !important;
+
+    color:rgba(18,56,43,.82) !important;
+
+    font-family:"Manrope",sans-serif !important;
+    font-size:.98rem !important;
+    font-weight:430 !important;
+    line-height:1.72 !important;
+}
+
+
+/* Square bullets */
+
+#experience ul.experience-text li::before{
+    content:"" !important;
+
+    position:absolute !important;
+
+    left:0 !important;
+    top:.72em !important;
+
+    width:7px !important;
+    height:7px !important;
+
+    background:var(--accent) !important;
+
+    border-radius:0 !important;
+
+    transform:scale(.75) !important;
+
+    transition:
+        transform .25s ease,
+        background-color .25s ease !important;
+}
+
+
+#experience .experience-item:hover ul.experience-text li::before{
+    transform:scale(1) !important;
+}
+
+
+/* Highlight numbers and key phrases */
+
+#experience ul.experience-text strong{
+    color:var(--accent) !important;
+    font-weight:750 !important;
+}
+
+
+/* ------------------------------------------
+   6. STAGGERED BULLET REVEAL
+------------------------------------------ */
+
+#experience ul.experience-text li{
+    opacity:0 !important;
+    transform:translateY(8px) !important;
+
+    transition:
+        opacity .32s ease,
+        transform .38s ease !important;
+}
+
+
+#experience .experience-item:hover ul.experience-text li{
+    opacity:1 !important;
+    transform:translateY(0) !important;
+}
+
+
+#experience .experience-item:hover ul.experience-text li:nth-child(1){
+    transition-delay:.08s !important;
+}
+
+#experience .experience-item:hover ul.experience-text li:nth-child(2){
+    transition-delay:.13s !important;
+}
+
+#experience .experience-item:hover ul.experience-text li:nth-child(3){
+    transition-delay:.18s !important;
+}
+
+#experience .experience-item:hover ul.experience-text li:nth-child(4){
+    transition-delay:.23s !important;
+}
+
+#experience .experience-item:hover ul.experience-text li:nth-child(5){
+    transition-delay:.28s !important;
+}
+
+
+/* ------------------------------------------
+   7. LOGO HOVER REFINEMENT
+------------------------------------------ */
+
+#experience .experience-logo{
+    transform-origin:center !important;
+
+    transition:
+        transform .4s cubic-bezier(.2,.75,.25,1),
+        opacity .3s ease,
+        filter .3s ease !important;
+}
+
+
+#experience .experience-logo img,
+#experience .experience-logo svg{
+    transition:
+        transform .4s cubic-bezier(.2,.75,.25,1),
+        opacity .3s ease,
+        filter .3s ease !important;
+}
+
+
+#experience .experience-item:hover .experience-logo{
+    transform:translateY(-2px) scale(1.04) !important;
+}
+
+
+#experience .experience-item:hover .experience-logo img,
+#experience .experience-item:hover .experience-logo svg{
+    transform:scale(1.05) !important;
+}
+
+
+/* ------------------------------------------
+   8. ROLE TITLE EMPHASIS
+------------------------------------------ */
+
+#experience .experience-role,
+#experience .experience-item h3{
+    transition:
+        color .3s ease,
+        transform .35s ease !important;
+}
+
+
+#experience .experience-item:hover .experience-role,
+#experience .experience-item:hover h3{
+    color:var(--accent) !important;
+    transform:translateX(3px) !important;
+}
+
+
+/* ------------------------------------------
+   9. TAG REFINEMENT
+------------------------------------------ */
+
+#experience .experience-tags{
+    transition:
+        margin .35s ease,
+        transform .35s ease !important;
+}
+
+
+#experience .experience-item:hover .experience-tags{
+    transform:translateY(-1px) !important;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    /* Keep cards comfortable on mobile */
+
+    #experience .experience-item,
+    #experience .experience-item:hover{
+        padding-bottom:24px !important;
+    }
+
+
+    /* Do not scale logos too aggressively */
+
+    #experience .experience-item:hover .experience-logo{
+        transform:none !important;
+    }
+
+    #experience .experience-item:hover .experience-logo img,
+    #experience .experience-item:hover .experience-logo svg{
+        transform:scale(1.02) !important;
+    }
+
+
+    /* Bullets remain visible */
+
+    #experience ul.experience-text,
+    #experience .experience-item:hover ul.experience-text{
+        width:100% !important;
+        max-width:100% !important;
+        max-height:none !important;
+
+        margin-top:18px !important;
+        padding-top:18px !important;
+
+        gap:14px !important;
+
+        overflow:visible !important;
+        opacity:1 !important;
+
+        transform:none !important;
+    }
+
+
+    /* Divider always visible */
+
+    #experience ul.experience-text::before,
+    #experience .experience-item:hover ul.experience-text::before{
+        width:100% !important;
+        opacity:1 !important;
+    }
+
+
+    /* No stagger delay on phones */
+
+    #experience ul.experience-text li,
+    #experience .experience-item:hover ul.experience-text li{
+        padding-left:21px !important;
+
+        opacity:1 !important;
+        transform:none !important;
+
+        font-size:.89rem !important;
+        line-height:1.62 !important;
+
+        transition:none !important;
+    }
+
+
+    #experience ul.experience-text li::before{
+        top:.68em !important;
+
+        width:6px !important;
+        height:6px !important;
+
+        transform:none !important;
+    }
+
+
+    /* Prevent title movement on mobile */
+
+    #experience .experience-item:hover .experience-role,
+    #experience .experience-item:hover h3{
+        transform:none !important;
+    }
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    #experience .experience-item,
+    #experience .experience-logo,
+    #experience .experience-logo img,
+    #experience .experience-logo svg,
+    #experience ul.experience-text,
+    #experience ul.experience-text li,
+    #experience ul.experience-text::before{
+        transition:none !important;
+    }
+}
 
     
 
