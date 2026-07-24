@@ -5900,70 +5900,113 @@ MORE SPACED NUMBERS
 
 
 
-/* ==========================================
-   EXPERIENCE — POLISHED BULLET LIST
+
+
+
+    /* ==========================================
+   EXPERIENCE — FINAL BULLET LIST
 ========================================== */
 
-#experience .experience-text{
-    margin:18px 0 0 !important;
-    padding:0 !important;
+#experience ul.experience-text{
+    width:100% !important;
+    max-width:900px !important;
+    max-height:0 !important;
 
-    list-style:none !important;
+    margin:0 !important;
+    padding:0 !important;
 
     display:flex !important;
     flex-direction:column !important;
     gap:18px !important;
-}
 
-#experience .experience-text li{
-    position:relative;
+    overflow:hidden !important;
+    opacity:0 !important;
 
-    margin:0 !important;
-    padding-left:22px !important;
+    list-style:none !important;
 
     color:rgba(18,56,43,.80) !important;
 
+    transform:translateY(14px) !important;
+
+    transition:
+        max-height .55s ease,
+        margin .4s ease,
+        opacity .32s ease,
+        transform .4s ease !important;
+}
+
+
+/* Open list */
+
+#experience .experience-item:hover ul.experience-text{
+    max-height:900px !important;
+
+    margin-top:22px !important;
+
+    opacity:1 !important;
+
+    color:rgba(18,56,43,.82) !important;
+
+    transform:translateY(0) !important;
+}
+
+
+/* Bullet rows */
+
+#experience ul.experience-text li{
+    position:relative !important;
+
+    margin:0 !important;
+    padding-left:26px !important;
+
+    color:inherit !important;
+
+    font-family:"Manrope",sans-serif !important;
     font-size:.98rem !important;
+    font-weight:400 !important;
     line-height:1.72 !important;
 }
 
-#experience .experience-text li::before{
-    content:"";
 
-    position:absolute;
+/* Square bullet */
 
-    left:0;
-    top:.68em;
+#experience ul.experience-text li::before{
+    content:"" !important;
 
-    width:7px;
-    height:7px;
+    position:absolute !important;
 
-    background:currentColor;
+    left:0 !important;
+    top:.72em !important;
 
-    border-radius:0;
+    width:7px !important;
+    height:7px !important;
+
+    background:var(--accent) !important;
+
+    border-radius:0 !important;
 }
 
 
-/* Verbs + numbers */
+/* Verbs and numbers */
 
-#experience .experience-text strong{
-    color:#0b6b4d !important;
-    font-weight:700 !important;
+#experience ul.experience-text strong{
+    color:var(--accent) !important;
+    font-weight:750 !important;
 }
 
 
-/* Hover */
+/* Keep the same readable colors on hover */
 
-#experience .experience-item:hover .experience-text li{
-    color:rgba(255,255,255,.92) !important;
+#experience .experience-item:hover ul.experience-text li{
+    color:rgba(18,56,43,.82) !important;
 }
 
-#experience .experience-item:hover .experience-text li::before{
-    background:#8ed4bf !important;
+#experience .experience-item:hover ul.experience-text strong{
+    color:var(--accent) !important;
 }
 
-#experience .experience-item:hover .experience-text strong{
-    color:#8ed4bf !important;
+#experience .experience-item:hover ul.experience-text li::before{
+    background:var(--accent) !important;
 }
 
 
@@ -5973,25 +6016,47 @@ MORE SPACED NUMBERS
 
 @media (max-width:768px){
 
-    #experience .experience-text{
+    #experience ul.experience-text,
+    #experience .experience-item:hover ul.experience-text{
+        width:100% !important;
+        max-width:100% !important;
+        max-height:none !important;
+
         margin-top:16px !important;
-        gap:15px !important;
+
+        gap:14px !important;
+
+        overflow:visible !important;
+        opacity:1 !important;
+
+        color:rgba(18,56,43,.80) !important;
+
+        transform:none !important;
     }
 
-    #experience .experience-text li{
-        padding-left:18px !important;
+    #experience ul.experience-text li{
+        padding-left:20px !important;
 
-        font-size:.91rem !important;
+        font-size:.89rem !important;
         line-height:1.62 !important;
     }
 
-    #experience .experience-text li::before{
-        width:6px;
-        height:6px;
+    #experience ul.experience-text li::before{
+        top:.68em !important;
+
+        width:6px !important;
+        height:6px !important;
     }
 
+    #experience ul.experience-text strong{
+        color:var(--accent) !important;
+    }
 }
 
+
+
+
+    
 
 
 
