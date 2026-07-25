@@ -4679,7 +4679,39 @@ ABOUT MOBILE — BIGGER STAT ICONS
 }
 
 
+/* ==========================================
+   EXPERIENCE — DESKTOP SPACING REFINEMENT
+========================================== */
 
+@media (min-width: 951px) {
+
+  /* More breathing room between title, role and location */
+
+  #experience .experience-heading h3 {
+    margin-bottom: 18px;
+  }
+
+  #experience .experience-role {
+    margin-bottom: 16px;
+  }
+
+
+  /* Location stays in exactly the same position */
+
+  #experience .experience-item.is-open
+  .experience-location {
+    transform: none;
+  }
+
+
+  /* Less empty space below the divider */
+
+  #experience .experience-item.is-open
+  .experience-details-inner {
+    padding-top: 24px;
+  }
+
+}
 
 
 
