@@ -6770,7 +6770,73 @@ MORE SPACED NUMBERS
 
 
 
+/* ==========================================
+   EXPERIENCE — HOVER LAYOUT IMPROVEMENT
+========================================== */
 
+@media (min-width:769px){
+
+    /* Reduce the width reserved for the year */
+    #experience .experience-item:hover{
+        grid-template-columns:
+            110px
+            minmax(0,1fr)
+            90px !important;
+    }
+
+    /* Vertical year */
+    #experience .experience-item:hover .experience-year{
+
+        writing-mode:vertical-rl;
+        text-orientation:mixed;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        justify-self:end;
+        align-self:center;
+
+        width:auto;
+        height:100%;
+
+        font-size:3rem !important;
+        line-height:1;
+        letter-spacing:-0.04em;
+
+        white-space:nowrap;
+    }
+
+    /* Give the content more room */
+    #experience .experience-item:hover .experience-content{
+        max-width:none !important;
+        width:100% !important;
+    }
+
+    /* Allow the bullet list to use the full width */
+    #experience .experience-item:hover .experience-text{
+        max-width:none !important;
+        width:100% !important;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
