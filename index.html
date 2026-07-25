@@ -5338,7 +5338,79 @@ cutting the background at the content width.
 
 
 
+/* ==========================================
+   EXPERIENCE — MOBILE DATE
+========================================== */
 
+@media (max-width:650px){
+
+    #experience .experience-year,
+    #experience .experience-item.is-open .experience-year{
+
+        margin-top:12px !important;
+
+        font-size:.9rem !important;
+        font-weight:700 !important;
+        line-height:1.2 !important;
+        letter-spacing:.05em !important;
+
+        color:var(--accent) !important;
+
+        opacity:1 !important;
+
+        text-transform:none !important;
+
+        writing-mode:horizontal-tb !important;
+        transform:none !important;
+    }
+
+}
+
+    /* ==========================================
+   EXPERIENCE — COLORED DIVIDER
+========================================== */
+
+/* Default */
+
+#experience .experience-details-inner{
+    border-top:2px solid var(--accent) !important;
+
+    padding-top:42px !important;
+}
+
+
+/* Closed state (optional preview line) */
+
+#experience .experience-summary{
+    border-bottom:2px solid rgba(18,56,43,.18);
+}
+
+
+/* Company-specific divider colors */
+
+#experience .experience-item.bnp{
+    --divider: #008755;
+}
+
+#experience .experience-item.oif{
+    --divider: #1F5FBF;
+}
+
+#experience .experience-item.aqlity{
+    --divider: #8C6B00;
+}
+
+#experience .experience-item.ardhis{
+    --divider: #B33B45;
+}
+
+#experience .experience-item.rss{
+    --divider: #7C3AED;
+}
+
+#experience .experience-item .experience-details-inner{
+    border-top:3px solid var(--divider) !important;
+}
 
 
 
