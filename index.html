@@ -3427,10 +3427,17 @@ ABOUT MOBILE — BIGGER STAT ICONS
 
 
 
+/* ==========================================
+   EXPERIENCE — CLEAN FINAL CSS
+   PART 1: BASE + DESKTOP
+
+   Delete every previous #experience rule
+   before adding this new version.
+========================================== */
 
 
 /* ==========================================
-EXPERIENCE
+   SECTION
 ========================================== */
 
 #experience {
@@ -3451,7 +3458,7 @@ EXPERIENCE
 
 
 /* ==========================================
-HEADER
+   HEADER
 ========================================== */
 
 #experience .experience-header h2 {
@@ -3466,286 +3473,704 @@ HEADER
 
 
 /* ==========================================
-LIST
+   LIST
 ========================================== */
 
 #experience .experience-list {
-  margin-top: 105px;
+  margin-top: 90px;
 
   border-top: 1px solid rgba(18, 56, 43, 0.2);
 }
 
 
 /* ==========================================
-ITEM
+   DEFAULT COLOURS
 ========================================== */
 
 #experience .experience-item {
   --accent: #2d7b61;
   --logo-bg: #c7ded3;
-  --hover-bg: #dceae3;
+  --open-bg: #dceae3;
+}
 
+
+/* BNP PARIBAS */
+
+#experience .experience-item.bnp {
+  --accent: #07583f;
+  --logo-bg: #8fb9a3;
+  --open-bg: #b5d3c3;
+}
+
+
+/* OIF */
+
+#experience .experience-item.oif {
+  --accent: #1f6fa8;
+  --logo-bg: #b8cfdf;
+  --open-bg: #bdd4e4;
+}
+
+
+/* AQLITY */
+
+#experience .experience-item.aqlity {
+  --accent: #d4b100;
+  --logo-bg: #e2cf9a;
+  --open-bg: #e6d7aa;
+}
+
+
+/* ARDHIS */
+
+#experience .experience-item.ardhis {
+  --accent: #b93d43;
+  --logo-bg: #e0b8ba;
+  --open-bg: #e4c2c4;
+}
+
+
+/* ROYAL SCIENTIFIC SOCIETY */
+
+#experience .experience-item.rss {
+  --accent: #6544a8;
+  --logo-bg: #c9bbe2;
+  --open-bg: #d0c5e6;
+}
+
+
+/* ==========================================
+   EXPERIENCE ITEM
+========================================== */
+
+#experience .experience-item {
   position: relative;
+  isolation: isolate;
 
   width: 100%;
   min-width: 0;
-  min-height: 260px;
 
-  padding: 46px 0;
-
-  display: grid;
-  grid-template-columns: 105px minmax(0, 1fr) 175px;
-  align-items: center;
-
-  gap: 38px;
-
-  border-top: 1px solid transparent;
   border-bottom: 1px solid rgba(18, 56, 43, 0.2);
 
-  background: transparent;
   color: #12382b;
 
-  overflow: visible;
+  overflow: hidden;
 
   transition:
-    padding-left 0.4s ease,
-    padding-right 0.4s ease,
     border-color 0.35s ease;
 }
 
 
 /* ==========================================
-FULL-WIDTH HOVER BACKGROUND
+   OPEN BACKGROUND
 ========================================== */
 
-#experience .experience-item::after {
+#experience .experience-item::before {
   content: "";
 
   position: absolute;
 
   top: 0;
   bottom: 0;
+
   left: calc(-50vw + 50%);
   right: calc(-50vw + 50%);
 
-  z-index: 0;
+  z-index: -1;
 
-  background: var(--hover-bg);
+  background: var(--open-bg);
 
   opacity: 0;
 
   pointer-events: none;
 
-  transition: opacity 0.4s ease;
+  transition:
+    opacity 0.4s ease;
 }
 
-
-/* ==========================================
-HOVER
-========================================== */
-
-#experience .experience-item:hover {
-  padding-left: 30px;
-  padding-right: 24px;
-
-  border-top-color: var(--accent);
-  border-bottom-color: var(--accent);
+#experience .experience-item.is-open {
+  border-color: var(--accent);
 }
 
-#experience .experience-item:hover::after {
+#experience .experience-item.is-open::before {
   opacity: 1;
 }
 
 
 /* ==========================================
-KEEP CONTENT ABOVE BACKGROUND
+   CLOSED SUMMARY
 ========================================== */
 
-#experience .experience-logo,
-#experience .experience-content,
-#experience .experience-year {
-  position: relative;
-  z-index: 1;
+#experience .experience-summary {
+  min-height: 168px;
+
+  padding: 34px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    100px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  column-gap: 32px;
 }
 
 
 /* ==========================================
-LOGO
+   HEADING
+========================================== */
+
+#experience .experience-heading {
+  min-width: 0;
+}
+
+#experience .experience-heading h3 {
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(2.25rem, 3.8vw, 4.6rem);
+  font-weight: 700;
+  line-height: 0.93;
+
+  letter-spacing: -0.058em;
+
+  color: #12382b;
+
+  overflow-wrap: anywhere;
+
+  transition:
+    color 0.3s ease,
+    transform 0.35s ease;
+}
+
+
+/* ==========================================
+   ROLE
+========================================== */
+
+#experience .experience-role {
+  margin: 14px 0 0;
+
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.4;
+
+  color: rgba(18, 56, 43, 0.68);
+
+  transition:
+    color 0.3s ease;
+}
+
+
+/* OPEN TITLE COLOUR */
+
+#experience .experience-item.is-open
+.experience-heading h3,
+#experience .experience-item.is-open
+.experience-role {
+  color: var(--accent);
+}
+
+
+/* ==========================================
+   LOGO CONTAINER
 ========================================== */
 
 #experience .experience-logo {
   width: 88px;
   height: 88px;
 
-  border-radius: 24px;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
-  flex-shrink: 0;
+  align-self: center;
+  justify-self: center;
 
-  background: var(--logo-bg);
-  color: var(--accent);
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1rem;
-  font-weight: 800;
+  overflow: visible;
 
   transition:
-    transform 0.4s ease,
-    background 0.4s ease,
-    color 0.4s ease;
+    transform 0.4s cubic-bezier(.2, .75, .25, 1);
 }
+
+
+/* ==========================================
+   DEFAULT LOGO SIZE
+========================================== */
 
 #experience .experience-logo img,
 #experience .experience-logo svg {
-  width: 74%;
-  height: 74%;
+  width: 104%;
+  height: 104%;
 
   display: block;
 
   object-fit: contain;
+  object-position: center;
+
+  transition:
+    transform 0.4s cubic-bezier(.2, .75, .25, 1);
 }
 
-#experience .experience-item:hover .experience-logo {
-  transform: translateY(-6px) scale(1.1);
 
+/* ==========================================
+   INDIVIDUAL LOGO ADJUSTMENTS
+========================================== */
+
+#experience .experience-item.oif
+.experience-logo img,
+#experience .experience-item.oif
+.experience-logo svg {
+  width: 94%;
+  height: 94%;
+}
+
+#experience .experience-item.ardhis
+.experience-logo img,
+#experience .experience-item.ardhis
+.experience-logo svg {
+  width: 108%;
+  height: 108%;
+}
+
+#experience .experience-item.rss
+.experience-logo img,
+#experience .experience-item.rss
+.experience-logo svg {
+  width: 110%;
+  height: 110%;
+}
+
+
+/* OPEN LOGO */
+
+#experience .experience-item.is-open
+.experience-logo {
+  transform: scale(1.06);
+}
+
+
+/* ==========================================
+   DATE + BUTTON AREA
+========================================== */
+
+#experience .experience-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 22px;
+}
+
+
+/* ==========================================
+   DATE
+========================================== */
+
+#experience .experience-year {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(1.45rem, 2vw, 2.45rem);
+  font-weight: 700;
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+
+  color: var(--accent);
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.45s ease,
+    letter-spacing 0.45s ease;
+}
+
+
+/* ==========================================
+   PLUS BUTTON
+========================================== */
+
+#experience .experience-toggle {
+  position: relative;
+
+  width: 54px;
+  height: 54px;
+
+  flex: 0 0 54px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 2px solid var(--accent);
+  border-radius: 0;
+
+  background: transparent;
+  color: var(--accent);
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.25s ease;
+}
+
+#experience .experience-toggle:hover,
+#experience .experience-toggle:focus-visible {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+#experience .experience-toggle:active {
+  transform: scale(0.94);
+}
+
+#experience .experience-toggle:focus-visible {
+  outline: 3px solid rgba(18, 56, 43, 0.25);
+  outline-offset: 4px;
+}
+
+
+/* ==========================================
+   PLUS ICON
+========================================== */
+
+#experience .experience-toggle-icon,
+#experience .experience-toggle-icon::after {
+  position: absolute;
+
+  width: 20px;
+  height: 2px;
+
+  background: currentColor;
+
+  content: "";
+
+  transition:
+    transform 0.35s ease;
+}
+
+#experience .experience-toggle-icon::after {
+  inset: 0;
+
+  transform: rotate(90deg);
+}
+
+
+/* OPEN BUTTON */
+
+#experience .experience-item.is-open
+.experience-toggle {
   background: var(--accent);
   color: #ffffff;
 }
 
 
-/* ==========================================
-CONTENT
-========================================== */
+/* PLUS BECOMES X */
 
-#experience .experience-content {
-  min-width: 0;
+#experience .experience-item.is-open
+.experience-toggle-icon {
+  transform: rotate(45deg);
 }
 
 
 /* ==========================================
-TITLE ROW
+   ACCORDION DETAILS
 ========================================== */
 
-#experience .experience-title-row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+#experience .experience-details {
+  display: grid;
 
-  gap: 14px 20px;
+  grid-template-rows: 0fr;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition:
+    grid-template-rows 0.55s cubic-bezier(.2, .75, .25, 1),
+    opacity 0.35s ease,
+    visibility 0s linear 0.55s;
 }
 
-#experience .experience-title-row h3 {
-  margin: 0;
-
-  font-family: "Space Grotesk", sans-serif;
-
-  font-size: clamp(2.5rem, 4vw, 4.8rem);
-  line-height: 0.92;
-  letter-spacing: -0.06em;
-
-  color: #12382b;
-
-  transition: transform 0.4s ease;
-}
-
-#experience .experience-item:hover .experience-title-row h3 {
-  transform: translateX(7px);
-}
-
-#experience .experience-title-row > span {
-  color: var(--accent);
-
-  font-size: 0.72rem;
-  font-weight: 800;
-  line-height: 1.25;
-
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-
-/* ==========================================
-ROLE
-========================================== */
-
-#experience .experience-role {
-  margin: 18px 0 0;
-
-  font-size: 1.22rem;
-  font-weight: 750;
-  line-height: 1.35;
-
-  color: #36594d;
-}
-
-
-/* ==========================================
-DESCRIPTION
-========================================== */
-
-#experience .experience-text {
-  max-width: 850px;
-  max-height: 0;
-
-  margin: 0;
+#experience .experience-details-inner {
+  min-height: 0;
 
   overflow: hidden;
 
-  opacity: 0;
-
-  font-size: 1rem;
-  line-height: 1.7;
-
-  color: rgba(18, 56, 43, 0.72);
-
-  transform: translateY(14px);
-
-  transition:
-    max-height 0.45s ease,
-    margin 0.4s ease,
-    opacity 0.32s ease,
-    transform 0.4s ease;
+  margin-left: 132px;
+  padding-right: 108px;
 }
 
-#experience .experience-item:hover .experience-text {
-  max-height: 180px;
 
-  margin-top: 20px;
+/* OPEN DETAILS */
 
+#experience .experience-item.is-open
+.experience-details {
+  grid-template-rows: 1fr;
+
+  visibility: visible;
+  opacity: 1;
+
+  transition:
+    grid-template-rows 0.55s cubic-bezier(.2, .75, .25, 1),
+    opacity 0.35s ease 0.1s,
+    visibility 0s;
+}
+
+#experience .experience-item.is-open
+.experience-details-inner {
+  padding-bottom: 38px;
+}
+
+
+/* ==========================================
+   OPEN DESKTOP LAYOUT
+========================================== */
+
+@media (min-width: 769px) {
+
+  #experience .experience-item.is-open
+  .experience-summary {
+    grid-template-columns:
+      100px
+      minmax(0, 1fr)
+      104px;
+  }
+
+
+  #experience .experience-item.is-open
+  .experience-actions {
+    position: relative;
+
+    align-self: stretch;
+
+    min-height: 92px;
+
+    justify-content: flex-end;
+  }
+
+
+  /* VERTICAL DATE */
+
+  #experience .experience-item.is-open
+  .experience-year {
+    position: absolute;
+
+    right: 70px;
+    top: 50%;
+
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+
+    font-size: 1.55rem;
+    line-height: 1;
+
+    letter-spacing: 0.24em;
+
+    transform:
+      translateY(-50%)
+      rotate(180deg);
+  }
+
+
+  #experience .experience-item.is-open
+  .experience-toggle {
+    align-self: center;
+  }
+
+}
+
+
+/* ==========================================
+   BULLET LIST
+========================================== */
+
+#experience .experience-text {
+  position: relative;
+
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+  padding: 24px 0 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 17px;
+
+  list-style: none;
+
+  color: rgba(18, 56, 43, 0.82);
+}
+
+
+/* DIVIDER ABOVE BULLETS */
+
+#experience .experience-text::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: rgba(18, 56, 43, 0.18);
+}
+
+
+/* BULLET ROW */
+
+#experience .experience-text li {
+  position: relative;
+
+  margin: 0;
+  padding-left: 27px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 0.98rem;
+  font-weight: 430;
+  line-height: 1.7;
+
+  opacity: 0;
+
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.32s ease,
+    transform 0.38s ease;
+}
+
+
+/* SQUARE BULLET */
+
+#experience .experience-text li::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0.72em;
+
+  width: 7px;
+  height: 7px;
+
+  background: var(--accent);
+}
+
+
+/* STRONG WORDS + NUMBERS */
+
+#experience .experience-text strong {
+  color: var(--accent);
+
+  font-weight: 750;
+}
+
+
+/* BULLETS APPEAR WHEN OPEN */
+
+#experience .experience-item.is-open
+.experience-text li {
   opacity: 1;
 
   transform: translateY(0);
 }
 
+#experience .experience-item.is-open
+.experience-text li:nth-child(1) {
+  transition-delay: 0.12s;
+}
+
+#experience .experience-item.is-open
+.experience-text li:nth-child(2) {
+  transition-delay: 0.18s;
+}
+
+#experience .experience-item.is-open
+.experience-text li:nth-child(3) {
+  transition-delay: 0.24s;
+}
+
 
 /* ==========================================
-TAGS — SHARP RECTANGLES
+   TAGS
 ========================================== */
 
 #experience .experience-tags {
-  margin-top: 23px;
+  width: 100%;
+
+  margin-top: 24px;
 
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 
   gap: 9px;
 }
 
+#experience .experience-type,
 #experience .experience-tags small {
+  min-height: 36px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
+  box-sizing: border-box;
+
+  border-radius: 0;
+}
+
+
+/* ==========================================
+   ORGANISATION TYPE
+========================================== */
+
+#experience .experience-type {
+  margin-right: 7px;
+
+  padding: 9px 14px;
+
+  border: 1.5px solid var(--accent);
+
+  background: #ffffff;
+  color: var(--accent);
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 0.69rem;
+  font-weight: 800;
+  line-height: 1;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+
+/* ==========================================
+   REGULAR TAGS
+========================================== */
+
+#experience .experience-tags small {
   padding: 8px 13px;
 
   border: 1.5px solid var(--accent);
-  border-radius: 0;
 
-  background: transparent;
-  color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
 
   font-size: 0.74rem;
   font-weight: 750;
@@ -3754,100 +4179,44 @@ TAGS — SHARP RECTANGLES
   letter-spacing: 0.03em;
 
   white-space: nowrap;
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    color 0.3s ease;
-}
-
-#experience .experience-tags small::before,
-#experience .experience-tags small::after {
-  display: none;
-  content: none;
-}
-
-#experience .experience-item:hover .experience-tags small {
-  background: var(--accent);
-  color: #ffffff;
-}
-
-#experience .experience-tags small:hover {
-  transform: translateY(-2px);
 }
 
 
 /* ==========================================
-YEAR
+   DESKTOP HOVER
+   SUBTLE PREVIEW ONLY
 ========================================== */
 
-#experience .experience-year {
-  justify-self: end;
-  align-self: center;
+@media (min-width: 769px) and (hover: hover) {
 
-  font-family: "Space Grotesk", sans-serif;
+  #experience .experience-item:not(.is-open):hover {
+    border-color: var(--accent);
+  }
 
-  font-size: clamp(2rem, 3vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1;
+  #experience .experience-item:not(.is-open):hover
+  .experience-heading h3 {
+    color: var(--accent);
 
-  letter-spacing: -0.06em;
+    transform: translateX(4px);
+  }
 
-  color: var(--accent);
+  #experience .experience-item:not(.is-open):hover
+  .experience-logo {
+    transform: scale(1.035);
+  }
 
-  white-space: nowrap;
-
-  transition: transform 0.4s ease;
 }
 
-#experience .experience-item:hover .experience-year {
-  transform: translateX(-8px);
-}
+    /* ==========================================
+   EXPERIENCE — CLEAN FINAL CSS
+   PART 2: TABLET + PHONE + ACCESSIBILITY
 
-
-/* ==========================================
-ACCENT COLOURS
+   Paste this directly after Part 1.
 ========================================== */
 
-#experience .experience-item.bnp {
-  --accent: #07583f;
-  --logo-bg: #8fb9a3;
-  --hover-bg: #b5d3c3;
-}
-
-#experience .experience-item.oif {
-  --accent: #1f6fa8;
-  --logo-bg: #b8cfdf;
-  --hover-bg: #bdd4e4;
-}
-
-#experience .experience-item.aqlity {
-  --accent: #a37400;
-  --logo-bg: #e2cf9a;
-  --hover-bg: #e6d7aa;
-}
-
-#experience .experience-item.ardhis {
-  --accent: #b93d43;
-  --logo-bg: #e0b8ba;
-  --hover-bg: #e4c2c4;
-}
-
-#experience .experience-item.tarjimly {
-  --accent: #6544a8;
-  --logo-bg: #c9bbe2;
-  --hover-bg: #d0c5e6;
-}
-
-#experience .experience-item.student {
-  --accent: #8e3440;
-  --logo-bg: #d9b5bb;
-  --hover-bg: #dfc0c5;
-}
-
 
 /* ==========================================
-TABLET
+   TABLET
 ========================================== */
 
 @media (max-width: 950px) {
@@ -3856,43 +4225,89 @@ TABLET
     padding: 125px 6vw 100px;
   }
 
+
+  /* HEADER */
+
+  #experience .experience-header h2 {
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+
+
+  /* LIST */
+
   #experience .experience-list {
-    margin-top: 80px;
+    margin-top: 75px;
   }
 
-  #experience .experience-item {
-    min-height: 230px;
 
-    padding: 38px 0;
+  /* SUMMARY */
 
-    grid-template-columns: 82px minmax(0, 1fr) 105px;
+  #experience .experience-summary {
+    min-height: 145px;
 
-    gap: 25px;
+    padding: 28px 0;
+
+    grid-template-columns:
+      76px
+      minmax(0, 1fr)
+      auto;
+
+    column-gap: 22px;
   }
+
+
+  /* LOGO */
 
   #experience .experience-logo {
-    width: 70px;
-    height: 70px;
-
-    border-radius: 19px;
+    width: 68px;
+    height: 68px;
   }
 
-  #experience .experience-title-row h3 {
-    font-size: clamp(2.1rem, 5vw, 3.6rem);
+
+  /* TITLE */
+
+  #experience .experience-heading h3 {
+    font-size: clamp(2rem, 5vw, 3.45rem);
   }
+
+
+  /* ROLE */
 
   #experience .experience-role {
-    font-size: 1.05rem;
+    font-size: 0.98rem;
+  }
+
+
+  /* DATE + BUTTON */
+
+  #experience .experience-actions {
+    gap: 14px;
   }
 
   #experience .experience-year {
-    font-size: 1.9rem;
+    font-size: 1.45rem;
   }
+
+  #experience .experience-toggle {
+    width: 48px;
+    height: 48px;
+
+    flex-basis: 48px;
+  }
+
+
+  /* DETAILS */
+
+  #experience .experience-details-inner {
+    margin-left: 98px;
+    padding-right: 70px;
+  }
+
 }
 
 
 /* ==========================================
-PHONE
+   PHONE
 ========================================== */
 
 @media (max-width: 650px) {
@@ -3902,8 +4317,6 @@ PHONE
     max-width: 100%;
 
     padding: 100px 16px 75px;
-
-    overflow: hidden;
   }
 
   #experience .experience-container {
@@ -3912,7 +4325,9 @@ PHONE
   }
 
 
-  /* HEADER */
+  /* ========================================
+     HEADER
+  ======================================== */
 
   #experience .experience-header h2 {
     width: 100%;
@@ -3927,591 +4342,245 @@ PHONE
   }
 
 
-  /* LIST */
-
-  #experience .experience-list {
-    width: 100%;
-
-    margin-top: 58px;
-  }
-
-
-  /* ITEM */
-
-  #experience .experience-item,
-  #experience .experience-item:hover {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    min-height: 0;
-
-    padding: 28px 0;
-
-    display: grid;
-
-    grid-template-columns: 52px minmax(0, 1fr);
-
-    grid-template-areas:
-      "logo content"
-      "year content";
-
-    column-gap: 15px;
-    row-gap: 10px;
-
-    align-items: start;
-
-    border-top: 0;
-    border-bottom: 1px solid rgba(18, 56, 43, 0.2);
-
-    overflow: hidden;
-  }
-
-  #experience .experience-item::after {
-    display: none;
-  }
-
-
-  /* LOGO */
-
-  #experience .experience-logo,
-  #experience .experience-item:hover .experience-logo {
-    grid-area: logo;
-
-    width: 48px;
-    height: 48px;
-
-    border-radius: 13px;
-
-    background: var(--logo-bg);
-    color: var(--accent);
-
-    font-size: 0.68rem;
-
-    transform: none;
-  }
-
-
-  /* CONTENT */
-
-  #experience .experience-content {
-    grid-area: content;
-
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-  }
-
-
-  /* TITLE */
-
-  #experience .experience-title-row {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    gap: 8px;
-  }
-
-  #experience .experience-title-row h3,
-  #experience .experience-item:hover .experience-title-row h3 {
-    width: 100%;
-    max-width: 100%;
-
-    font-size: clamp(1.65rem, 8vw, 2.35rem);
-    line-height: 0.98;
-    letter-spacing: -0.05em;
-
-    overflow-wrap: anywhere;
-
-    transform: none;
-  }
-
-  #experience .experience-title-row > span {
-    max-width: 100%;
-
-    font-size: 0.57rem;
-    line-height: 1.35;
-
-    letter-spacing: 0.11em;
-
-    overflow-wrap: anywhere;
-  }
-
-
-  /* ROLE */
-
-  #experience .experience-role {
-    width: 100%;
-    max-width: 100%;
-
-    margin-top: 13px;
-
-    font-size: 0.92rem;
-    line-height: 1.45;
-
-    overflow-wrap: anywhere;
-  }
-
-
-  /* DESCRIPTION ALWAYS VISIBLE */
-
-  #experience .experience-text,
-  #experience .experience-item:hover .experience-text {
-    width: 100%;
-    max-width: 100%;
-    max-height: none;
-
-    margin-top: 14px;
-
-    opacity: 1;
-
-    overflow: visible;
-
-    font-size: 0.84rem;
-    line-height: 1.6;
-
-    transform: none;
-  }
-
-
-  /* TAGS */
-
-  #experience .experience-tags {
-    width: 100%;
-    max-width: 100%;
-
-    margin-top: 16px;
-
-    gap: 6px;
-  }
-
-  #experience .experience-tags small,
-  #experience .experience-item:hover .experience-tags small {
-    max-width: 100%;
-
-    padding: 6px 8px;
-
-    border: 1px solid var(--accent);
-    border-radius: 0;
-
-    background: transparent;
-    color: var(--accent);
-
-    font-size: 0.6rem;
-    line-height: 1.15;
-
-    white-space: normal;
-
-    transform: none;
-  }
-
-
-  /* YEAR */
-
-  #experience .experience-year,
-  #experience .experience-item:hover .experience-year {
-    grid-area: year;
-
-    width: 48px;
-
-    margin: 0;
-
-    justify-self: start;
-    align-self: start;
-
-    font-size: 0.79rem;
-    line-height: 1.15;
-    letter-spacing: 0;
-
-    color: var(--accent);
-
-    white-space: normal;
-    text-align: center;
-
-    transform: none;
-  }
-}
-
-
-/* ==========================================
-VERY SMALL PHONES
-========================================== */
-
-@media (max-width: 390px) {
-
-  #experience {
-    padding-right: 12px;
-    padding-left: 12px;
-  }
-
-  #experience .experience-item,
-  #experience .experience-item:hover {
-    grid-template-columns: 44px minmax(0, 1fr);
-
-    column-gap: 12px;
-  }
-
-  #experience .experience-logo,
-  #experience .experience-item:hover .experience-logo {
-    width: 42px;
-    height: 42px;
-
-    border-radius: 11px;
-  }
-
-  #experience .experience-year,
-  #experience .experience-item:hover .experience-year {
-    width: 42px;
-
-    font-size: 0.72rem;
-  }
-
-  #experience .experience-title-row h3,
-  #experience .experience-item:hover .experience-title-row h3 {
-    font-size: clamp(1.45rem, 8vw, 2rem);
-  }
-
-  #experience .experience-tags small,
-  #experience .experience-item:hover .experience-tags small {
-    padding: 5px 7px;
-
-    font-size: 0.56rem;
-  }
-}
-
-
-
-
-
-/* ==========================================
-EXPERIENCE — BALANCED PHONE SIZE
-========================================== */
-
-@media (max-width: 650px) {
+  /* OVERSIZED BACKGROUND LABEL */
 
   #experience .oversized-label::before {
-    left: -3px !important;
-    bottom: -8px !important;
+    left: -3px;
+    bottom: -8px;
 
-    max-width: 100% !important;
+    max-width: 100%;
 
-    font-size: clamp(3.2rem, 16vw, 4.7rem) !important;
-    line-height: 0.9 !important;
+    font-size: clamp(3.2rem, 16vw, 4.7rem);
+    line-height: 0.9;
+    letter-spacing: -0.065em;
 
-    letter-spacing: -0.065em !important;
-
-    white-space: nowrap !important;
-  }
-
-}
-
-
-@media (max-width: 390px) {
-
-  #experience .oversized-label::before {
-    font-size: 15vw !important;
-  }
-
-}
-
-
-
-    
-
-
-/* ==========================================
-EXPERIENCE — MOBILE TAP SELECTION
-SAME BEHAVIOUR AS ACTIVITIES CARDS
-NO JAVASCRIPT
-========================================== */
-
-@media (max-width: 650px) and (hover: none) {
-
-  /* Allow the coloured background layer again */
-  #experience .experience-item,
-  #experience .experience-item:hover {
-    position: relative !important;
-
-    overflow: hidden !important;
-
-    transition:
-      background 0.35s ease,
-      border-color 0.35s ease,
-      transform 0.35s ease !important;
-  }
-
-
-  /* Mobile selected-card background */
-  #experience .experience-item::after {
-    display: block !important;
-
-    content: "";
-
-    position: absolute !important;
-    inset: 0 !important;
-
-    z-index: 0 !important;
-
-    background: var(--hover-bg) !important;
-
-    opacity: 0 !important;
-
-    pointer-events: none !important;
-
-    transition: opacity 0.35s ease !important;
-  }
-
-
-  /* Keep content above background */
-  #experience .experience-logo,
-  #experience .experience-content,
-  #experience .experience-year {
-    position: relative !important;
-    z-index: 1 !important;
+    white-space: nowrap;
   }
 
 
   /* ========================================
-     CARD SELECTED AFTER TAP
+     LIST
   ======================================== */
 
-  #experience .experience-item:hover {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-
-    border-top-color: var(--accent) !important;
-    border-bottom-color: var(--accent) !important;
-
-    transform: translateY(-3px) !important;
+  #experience .experience-list {
+    margin-top: 58px;
   }
 
 
-  #experience .experience-item:hover::after {
-    opacity: 1 !important;
+  /* ========================================
+     SUMMARY
+  ======================================== */
+
+  #experience .experience-summary {
+    min-height: 0;
+
+    padding: 25px 0;
+
+    grid-template-columns:
+      54px
+      minmax(0, 1fr)
+      44px;
+
+    column-gap: 13px;
+
+    align-items: start;
   }
 
 
-  /* LOGO */
+  /* ========================================
+     LOGOS
+  ======================================== */
 
-  #experience .experience-item:hover .experience-logo {
-    background: var(--accent) !important;
-    color: #ffffff !important;
+  #experience .experience-logo {
+    width: 48px;
+    height: 48px;
 
-    transform: scale(1.08) !important;
+    align-self: start;
+    justify-self: center;
+  }
+
+  #experience .experience-logo img,
+  #experience .experience-logo svg {
+    width: 96%;
+    height: 96%;
   }
 
 
-  /* TITLE */
+  /* OIF */
 
-  #experience .experience-item:hover
-  .experience-title-row h3 {
-    color: var(--accent) !important;
-
-    transform: translateX(5px) !important;
+  #experience .experience-item.oif
+  .experience-logo img,
+  #experience .experience-item.oif
+  .experience-logo svg {
+    width: 84%;
+    height: 84%;
   }
 
 
-  /* TAGS */
+  /* ARDHIS */
 
-  #experience .experience-item:hover
-  .experience-tags small {
-    background: var(--accent) !important;
-    border-color: var(--accent) !important;
-    color: #ffffff !important;
-
-    transform: none !important;
+  #experience .experience-item.ardhis
+  .experience-logo img,
+  #experience .experience-item.ardhis
+  .experience-logo svg {
+    width: 108%;
+    height: 108%;
   }
 
 
-  /* YEAR */
+  /* RSS */
 
-  #experience .experience-item:hover
+  #experience .experience-item.rss
+  .experience-logo img,
+  #experience .experience-item.rss
+  .experience-logo svg {
+    width: 102%;
+    height: 102%;
+  }
+
+
+  /* ========================================
+     TITLE
+  ======================================== */
+
+  #experience .experience-heading h3 {
+    font-size: clamp(1.6rem, 7.8vw, 2.25rem);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+  }
+
+
+  /* ========================================
+     ROLE
+  ======================================== */
+
+  #experience .experience-role {
+    margin-top: 10px;
+
+    font-size: 0.89rem;
+    line-height: 1.45;
+  }
+
+
+  /* ========================================
+     DATE + BUTTON
+  ======================================== */
+
+  #experience .experience-actions {
+    position: static;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 12px;
+  }
+
+
+  /* DATE ALWAYS VERTICAL ON PHONE */
+
+  #experience .experience-year,
+  #experience .experience-item.is-open
   .experience-year {
-    color: var(--accent) !important;
+    position: static;
 
-    transform: translateX(3px) !important;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+
+    font-size: 0.86rem;
+    line-height: 1;
+    letter-spacing: 0.18em;
+
+    white-space: nowrap;
+
+    transform: rotate(180deg);
   }
-}
 
 
+  /* PLUS BUTTON */
+
+  #experience .experience-toggle {
+    width: 42px;
+    height: 42px;
+
+    flex-basis: 42px;
+  }
+
+  #experience .experience-toggle-icon,
+  #experience .experience-toggle-icon::after {
+    width: 17px;
+  }
 
 
+  /* OPEN LOGO DOES NOT MOVE */
+
+  #experience .experience-item.is-open
+  .experience-logo {
+    transform: none;
+  }
 
 
+  /* ========================================
+     DETAILS
+  ======================================== */
+
+  #experience .experience-details-inner {
+    margin-left: 67px;
+    padding-right: 0;
+  }
+
+  #experience .experience-item.is-open
+  .experience-details-inner {
+    padding-bottom: 28px;
+  }
 
 
+  /* ========================================
+     BULLETS
+  ======================================== */
+
+  #experience .experience-text {
+    padding-top: 18px;
+
+    gap: 14px;
+  }
+
+  #experience .experience-text li {
+    padding-left: 20px;
+
+    font-size: 0.88rem;
+    line-height: 1.62;
+
+    opacity: 1;
+    transform: none;
+  }
+
+  #experience .experience-text li::before {
+    top: 0.68em;
+
+    width: 6px;
+    height: 6px;
+  }
 
 
-
-/* ==========================================
-EXPERIENCE — UPDATED TAG ROW
-ORGANISATION TYPE + REGULAR TAGS
-========================================== */
-
-#experience .experience-tags {
-  width: 100%;
-
-  margin-top: 23px;
-
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-
-  gap: 9px;
-}
-
-
-/* ==========================================
-ORGANISATION TYPE
-DISTINCT FROM REGULAR TAGS
-========================================== */
-
-#experience .experience-type {
-  position: relative;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  width: fit-content;
-
-  margin-right: 7px;
-
-  padding: 9px 14px;
-
-  border: 1.5px solid var(--accent);
-  border-radius: 0;
-
-  background: var(--accent);
-  color: #ffffff;
-
-  box-shadow: 5px 5px 0 var(--logo-bg);
-
-  font-family: "Space Grotesk", sans-serif;
-
-  font-size: 0.69rem;
-  font-weight: 800;
-  line-height: 1;
-
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-
-  white-space: nowrap;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease,
-    border-color 0.3s ease,
-    color 0.3s ease;
-}
-
-
-/* Remove any previous marker/stamp pseudo-elements */
-
-#experience .experience-type::before,
-#experience .experience-type::after {
-  display: none !important;
-  content: none !important;
-}
-
-
-/* ==========================================
-REGULAR TAGS
-========================================== */
-
-#experience .experience-tags small {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 8px 13px;
-
-  border: 1.5px solid var(--accent);
-  border-radius: 0;
-
-  background: transparent;
-  color: var(--accent);
-
-  font-size: 0.74rem;
-  font-weight: 750;
-  line-height: 1;
-
-  letter-spacing: 0.03em;
-
-  white-space: nowrap;
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease;
-}
-
-
-/* ==========================================
-DESKTOP HOVER
-TYPE STAYS ALIGNED WITH EXPERIENCE COLOUR
-========================================== */
-
-#experience .experience-item:hover .experience-type {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #ffffff;
-
-  box-shadow: 0 0 0 var(--logo-bg);
-
-  transform: translate(5px, 5px);
-}
-
-
-#experience .experience-item:hover .experience-tags small {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #ffffff;
-}
-
-
-#experience .experience-tags small:hover {
-  transform: translateY(-2px);
-}
-
-
-/* ==========================================
-REMOVE OLD TITLE-ROW TYPE STYLING
-========================================== */
-
-#experience .experience-title-row > span {
-  all: unset;
-}
-
-
-/* ==========================================
-PHONE
-========================================== */
-
-@media (max-width: 650px) {
+  /* ========================================
+     TAGS
+  ======================================== */
 
   #experience .experience-tags {
-    width: 100%;
-    max-width: 100%;
-
-    margin-top: 16px;
+    margin-top: 18px;
 
     gap: 7px;
   }
 
 
-  #experience .experience-type {
-    max-width: 100%;
+  /* ORGANISATION TYPE */
 
-    margin-right: 4px;
+  #experience .experience-type {
+    margin-right: 3px;
 
     padding: 7px 10px;
-
-    box-shadow: 4px 4px 0 var(--logo-bg);
 
     font-size: 0.57rem;
     line-height: 1.15;
@@ -4522,9 +4591,9 @@ PHONE
   }
 
 
-  #experience .experience-tags small {
-    max-width: 100%;
+  /* REGULAR TAGS */
 
+  #experience .experience-tags small {
     padding: 6px 8px;
 
     border-width: 1px;
@@ -4539,1929 +4608,106 @@ PHONE
 
 
 /* ==========================================
-PHONE TAP / SELECTED STATE
-MATCHES YOUR EXISTING MOBILE :HOVER SYSTEM
-========================================== */
-
-@media (max-width: 650px) and (hover: none) {
-
-  #experience .experience-item:hover .experience-type {
-    background: var(--accent) !important;
-    border-color: var(--accent) !important;
-    color: #ffffff !important;
-
-    box-shadow: 0 0 0 var(--logo-bg) !important;
-
-    transform: translate(4px, 4px) !important;
-  }
-
-
-  #experience .experience-item:hover .experience-tags small {
-    background: var(--accent) !important;
-    border-color: var(--accent) !important;
-    color: #ffffff !important;
-
-    transform: none !important;
-  }
-
-}
-
-
-
-
-
-/* ==========================================
-EXPERIENCE TYPE — HOVER ALIGNMENT FIX
-========================================== */
-
-#experience .experience-item:hover .experience-type {
-  background: #ffffff !important;
-  color: var(--accent) !important;
-
-  border-color: var(--accent) !important;
-
-  box-shadow: none !important;
-
-  transform: none !important;
-}
-
-
-/* Regular tags stay filled on hover */
-
-#experience .experience-item:hover .experience-tags small {
-  background: var(--accent) !important;
-  border-color: var(--accent) !important;
-
-  color: #ffffff !important;
-
-  transform: none !important;
-}
-
-
-/* Keep type and tags vertically aligned */
-
-#experience .experience-type,
-#experience .experience-tags small {
-  min-height: 36px !important;
-
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  box-sizing: border-box !important;
-}
-
-
-/* ==========================================
-PHONE TAP / SELECTED STATE
-========================================== */
-
-@media (max-width: 650px) and (hover: none) {
-
-  #experience .experience-item:hover .experience-type {
-    background: #ffffff !important;
-    color: var(--accent) !important;
-
-    border-color: var(--accent) !important;
-
-    box-shadow: none !important;
-
-    transform: none !important;
-  }
-
-  #experience .experience-item:hover .experience-tags small {
-    background: var(--accent) !important;
-    border-color: var(--accent) !important;
-
-    color: #ffffff !important;
-
-    transform: none !important;
-  }
-
-}
-
-
-
-
-
-
-
-
-
-/* ==========================================
-EXPERIENCE — PHONE VERTICAL YEAR
-MORE SPACED NUMBERS
-========================================== */
-
-@media (max-width: 650px) {
-
-  #experience .experience-year {
-    align-self: center !important;
-    justify-self: center !important;
-
-    width: auto !important;
-    min-width: 0 !important;
-
-    margin: 0 !important;
-    padding: 8px 0 !important;
-
-    writing-mode: vertical-rl !important;
-    text-orientation: mixed !important;
-
-    white-space: nowrap !important;
-
-    font-size: 1.2rem !important;
-    line-height: 1 !important;
-
-    /* MORE SPACE BETWEEN NUMBERS */
-    letter-spacing: 0.3em !important;
-
-    transform: rotate(180deg) !important;
-  }
-
-
-  /* KEEP VERTICAL YEAR WHEN SELECTED */
-
-  #experience .experience-item:hover
-  .experience-year {
-    transform: rotate(180deg) !important;
-  }
-
-}
-
-
-
-
-
-
-
-    
-
-
-
-/* ==========================================
-   EXPERIENCE LOGO — COMPLETE OVERRIDE
-========================================== */
-
-/* Desktop */
-
-#experience .experience-logo{
-    overflow: hidden !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-#experience .experience-logo img,
-#experience .experience-logo svg{
-    width: 100% !important;
-    height: 100% !important;
-
-    display: block !important;
-
-    object-fit: cover !important;
-    object-position: center center !important;
-
-    border-radius: inherit !important;
-
-    transform: scale(1.15) !important;
-}
-
-
-/* Keep same effect on hover */
-
-#experience .experience-item:hover .experience-logo img,
-#experience .experience-item:hover .experience-logo svg{
-    transform: scale(1.22) !important;
-}
-
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width:650px){
-
-    #experience .experience-logo{
-        overflow:hidden !important;
-
-        display:flex !important;
-        align-items:center !important;
-        justify-content:center !important;
-    }
-
-    #experience .experience-logo img,
-    #experience .experience-logo svg{
-
-        width:100% !important;
-        height:100% !important;
-
-        display:block !important;
-
-        object-fit:cover !important;
-        object-position:center !important;
-
-        border-radius:inherit !important;
-
-        transform:scale(1.15) !important;
-    }
-
-    #experience .experience-item:hover .experience-logo img,
-    #experience .experience-item:hover .experience-logo svg{
-        transform:scale(1.22) !important;
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================================
-   OIF LOGO
-========================================== */
-
-#experience .experience-item.oif .experience-logo{
-    background: transparent !important;
-    box-shadow: none !important;
-}
-
-#experience .experience-item.oif img{
-    width: 100% !important;
-    height: 100% !important;
-
-    object-fit: contain !important;
-    object-position: center !important;
-
-    transform: scale(1.35) !important;
-}
-
-#experience .experience-item.oif:hover img{
-    transform: scale(1.42) !important;
-}
-
-/* Phone */
-
-@media (max-width:650px){
-
-    #experience .experience-item.oif img{
-        transform: scale(1.35) !important;
-    }
-
-    #experience .experience-item.oif:hover img{
-        transform: scale(1.42) !important;
-    }
-
-}
-
-
-
-
-/* ==========================================
-   OIF LOGO — LARGER CONTAINER
-========================================== */
-
-#experience .experience-item.oif .experience-logo{
-    width: 108px !important;
-    height: 108px !important;
-
-    background: transparent !important;
-    box-shadow: none !important;
-}
-
-#experience .experience-item.oif img{
-    width: 100% !important;
-    height: 100% !important;
-
-    object-fit: contain !important;
-    object-position: center !important;
-
-    transform: none !important;
-}
-
-/* Tablet */
-
-@media (max-width:950px){
-
-    #experience .experience-item.oif .experience-logo{
-        width: 86px !important;
-        height: 86px !important;
-    }
-
-}
-
-/* Phone */
-
-@media (max-width:650px){
-
-    #experience .experience-item.oif .experience-logo{
-        width: 62px !important;
-        height: 62px !important;
-
-        background: transparent !important;
-    }
-
-}
-
-    
-
-
-/* ==========================================
-   OIF LOGO — NO HOVER SCALE
-========================================== */
-
-#experience .experience-item.oif:hover .experience-logo{
-    transform: none !important;
-}
-
-#experience .experience-item.oif:hover .experience-logo img,
-#experience .experience-item.oif:hover .experience-logo svg{
-    transform: none !important;
-}
-
-
-
-
-
-/* ==========================================
-   AQLITY LOGO — REMOVE YELLOW BACKGROUND
-========================================== */
-
-#experience .experience-item.aqlity .experience-logo{
-    background: transparent !important;
-    overflow: hidden !important;
-}
-
-#experience .experience-item.aqlity:hover .experience-logo{
-    background: transparent !important;
-}
-
-#experience .experience-item.aqlity .experience-logo img{
-    width: 100% !important;
-    height: 100% !important;
-
-    object-fit: contain !important;
-    object-position: center !important;
-
-    transform: none !important;
-}
-
-#experience .experience-item.aqlity:hover .experience-logo img{
-    transform: none !important;
-}
-
-
-
-/* ==========================================
-   RSS LOGO — CENTER INSIDE FRAME
-========================================== */
-
-#experience .experience-item.tarjimly .experience-logo img{
-    width: 94% !important;
-    height: 94% !important;
-
-    object-fit: contain !important;
-    object-position: center center !important;
-
-    transform: none !important;
-}
-
-#experience .experience-item.tarjimly:hover .experience-logo img{
-    width: 94% !important;
-    height: 94% !important;
-
-    transform: none !important;
-}
-
-/* Phone */
-
-@media (max-width:650px){
-
-    #experience .experience-item.tarjimly .experience-logo img,
-    #experience .experience-item.tarjimly:hover .experience-logo img{
-        width: 94% !important;
-        height: 94% !important;
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================================
-   EXPERIENCE LOGOS — UNIFIED TILE STYLE
-========================================== */
-
-#experience .experience-logo{
-    background: #ffffff !important;
-    border: 5px solid var(--accent) !important;
-    border-radius: 24px !important;
-
-    overflow: hidden !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-
-/* All logos */
-
-#experience .experience-logo img,
-#experience .experience-logo svg{
-    width: 82% !important;
-    height: 82% !important;
-
-    display: block !important;
-
-    object-fit: contain !important;
-    object-position: center !important;
-
-    transform: none !important;
-}
-
-/* Hover */
-
-#experience .experience-item:hover .experience-logo{
-    background: #ffffff !important;
-    border-color: var(--accent) !important;
-
-    transform: translateY(-6px) scale(1.08) !important;
-}
-
-#experience .experience-item:hover .experience-logo img,
-#experience .experience-item:hover .experience-logo svg{
-    transform: scale(1.04) !important;
-}
-
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width:650px){
-
-    #experience .experience-logo{
-        background: #ffffff !important;
-        border: 3px solid var(--accent) !important;
-    }
-
-    #experience .experience-logo img,
-    #experience .experience-logo svg{
-        width: 82% !important;
-        height: 82% !important;
-
-        transform: none !important;
-    }
-
-    #experience .experience-item:hover .experience-logo{
-        transform: scale(1.05) !important;
-    }
-
-    #experience .experience-item:hover .experience-logo img,
-    #experience .experience-item:hover .experience-logo svg{
-        transform: none !important;
-    }
-
-}
-
-
-
-
-    
-/* ==========================================
-   OIF LOGO — FINAL SIZE
-========================================== */
-
-#experience .experience-item.oif .experience-logo{
-    width: 88px !important;
-    height: 88px !important;
-}
-
-#experience .experience-item.oif .experience-logo img{
-    width: 72% !important;
-    height: 72% !important;
-
-    object-fit: contain !important;
-    object-position: center !important;
-
-    transform: none !important;
-}
-
-#experience .experience-item.oif:hover .experience-logo img{
-    transform: scale(1.04) !important;
-}
-
-/* Phone */
-
-@media (max-width:650px){
-
-    #experience .experience-item.oif .experience-logo{
-        width: 68px !important;
-        height: 68px !important;
-    }
-
-    #experience .experience-item.oif .experience-logo img{
-        width: 72% !important;
-        height: 72% !important;
-    }
-
-}
-
-
-
-
-
-
-    /* ==========================================
-   OIF LOGO — SLIGHTLY LARGER
-========================================== */
-
-#experience .experience-item.oif .experience-logo img{
-    width: 78% !important;
-    height: 78% !important;
-
-    object-fit: contain !important;
-    object-position: center !important;
-}
-
-/* Phone */
-
-@media (max-width:650px){
-
-    #experience .experience-item.oif .experience-logo img{
-        width: 78% !important;
-        height: 78% !important;
-    }
-
-}
-
-
-
-
-
-
-/* ==========================================
-   EXPERIENCE LOGOS — PLAIN STYLE
-========================================== */
-
-#experience .experience-logo{
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: visible !important;
-}
-
-#experience .experience-logo img,
-#experience .experience-logo svg{
-    display: block;
-
-    width: 88% !important;
-    height: 88% !important;
-
-    object-fit: contain !important;
-    object-position: center !important;
-
-    transform: none !important;
-}
-
-#experience .experience-item:hover .experience-logo{
-    background: transparent !important;
-    border: none !important;
-    transform: none !important;
-}
-
-#experience .experience-item:hover .experience-logo img,
-#experience .experience-item:hover .experience-logo svg{
-    transform: scale(1.04) !important;
-}
-
-
-
-
-
-/* ==========================================
-   OIF LOGO — PHONE SIZE FIX
-========================================== */
-
-@media (max-width:650px){
-
-    #experience .experience-item.oif .experience-logo img{
-        width: 64% !important;
-        height: 64% !important;
-
-        object-fit: contain !important;
-        object-position: center !important;
-
-        transform: none !important;
-    }
-
-}
-
-
-
-
-
-/* ==========================================
-   OIF LOGO — PHONE POSITION FIX
-========================================== */
-
-@media (max-width:650px){
-
-    #experience .experience-item.oif .experience-logo{
-        display:flex !important;
-        justify-content:center !important;
-        align-items:center !important;
-        overflow:hidden !important;
-    }
-
-    #experience .experience-item.oif .experience-logo img{
-        width:68% !important;
-        height:68% !important;
-
-        object-fit:contain !important;
-
-        transform:translateX(-8px) !important;
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================================
-   EXPERIENCE TITLE — MATCH HOVER ACCENT
-========================================== */
-
-#experience .experience-item:hover h3{
-    color: var(--accent-dark) !important;
-    transition: color .35s ease;
-}
-
-/* Fallback if --accent-dark isn't defined */
-
-#experience .experience-item.bnp:hover h3{
-    color:#0d5f46 !important;
-}
-
-#experience .experience-item.oif:hover h3{
-    color:#236ba8 !important;
-}
-
-#experience .experience-item.aqlity:hover h3{
-    color:#666666 !important;
-}
-
-#experience .experience-item.ardhis:hover h3{
-    color:#b33a3a !important;
-}
-
-#experience .experience-item.tarjimly:hover h3{
-    color:#6546b3 !important;
-}
-
-#experience .experience-item.student:hover h3{
-    color:#8b2d4d !important;
-}
-
-
-
-
-    /* ==========================================
-   OIF — KEEP LOGO POSITION ON HOVER
-========================================== */
-
-#experience .experience-item.oif:hover .experience-logo{
-    transform: none !important;
-}
-
-#experience .experience-item.oif:hover .experience-logo img{
-    transform: none !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
-
-
-
-
-/* ==========================================
-   OIF LOGO ALIGNMENT (PHONE)
-   Match BNP logo position
-========================================== */
-
-@media (max-width:768px){
-
-  /* Move the OIF logo up */
-  .experience-item.oif .experience-logo{
-      align-self:flex-start !important;
-      margin-top:-12px !important;
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
-  }
-
-  /* Keep the image anchored to the top */
-  .experience-item.oif .experience-logo img,
-  .experience-item.oif .experience-logo svg{
-      display:block;
-      margin-top:0 !important;
-  }
-
-}
-
-
-/* ==========================================
-   AQLITY — TITLE COLOR ON HOVER
-========================================== */
-
-#experience .experience-item.aqlity:hover h3{
-    color:#d4b100 !important; /* AQLITY yellow */
-}
-
-
-
-
-
-
-/* ==========================================
-   EXPERIENCE LOGOS — FINAL ALIGNMENT FIX
-   Keep every logo in the same grid position
-========================================== */
-
-/* DESKTOP */
-
-#experience .experience-logo,
-#experience .experience-item.oif .experience-logo,
-#experience .experience-item.aqlity .experience-logo,
-#experience .experience-item.ardhis .experience-logo,
-#experience .experience-item.tarjimly .experience-logo,
-#experience .experience-item.student .experience-logo {
-    width: 88px !important;
-    height: 88px !important;
-
-    margin: 0 !important;
-
-    align-self: center !important;
-    justify-self: center !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-
-    overflow: visible !important;
-    transform: none !important;
-}
-
-/* Reset positioning applied directly to logo images */
-
-#experience .experience-logo img,
-#experience .experience-logo svg {
-    display: block !important;
-
-    margin: 0 !important;
-
-    object-fit: contain !important;
-    object-position: center center !important;
-
-    transform: none !important;
-}
-
-
-/* Keep every logo container fixed during hover */
-
-#experience .experience-item:hover .experience-logo {
-    margin: 0 !important;
-    transform: none !important;
-}
-
-
-/* ==========================================
-   INDIVIDUAL IMAGE SIZES
-   Same container, adjusted visual logo size
-========================================== */
-
-#experience .experience-item.bnp .experience-logo img {
-    width: 88% !important;
-    height: 88% !important;
-}
-
-#experience .experience-item.oif .experience-logo img {
-    width: 78% !important;
-    height: 78% !important;
-}
-
-#experience .experience-item.aqlity .experience-logo img {
-    width: 88% !important;
-    height: 88% !important;
-}
-
-#experience .experience-item.ardhis .experience-logo img {
-    width: 88% !important;
-    height: 88% !important;
-}
-
-#experience .experience-item.tarjimly .experience-logo img {
-    width: 94% !important;
-    height: 94% !important;
-}
-
-#experience .experience-item.student .experience-logo img {
-    width: 88% !important;
-    height: 88% !important;
-}
-
-
-/* Very small image movement only — container never moves */
-
-#experience .experience-item:hover .experience-logo img,
-#experience .experience-item:hover .experience-logo svg {
-    transform: scale(1.04) !important;
-}
-
-
-/* ==========================================
-   TABLET
-========================================== */
-
-@media (max-width: 950px) and (min-width: 651px) {
-
-    #experience .experience-logo,
-    #experience .experience-item.oif .experience-logo {
-        width: 70px !important;
-        height: 70px !important;
-
-        margin: 0 !important;
-
-        align-self: center !important;
-        justify-self: center !important;
-    }
-}
-
-
-/* ==========================================
-   PHONE
-========================================== */
-
-@media (max-width: 650px) {
-
-    #experience .experience-logo,
-    #experience .experience-item.oif .experience-logo,
-    #experience .experience-item.aqlity .experience-logo,
-    #experience .experience-item.ardhis .experience-logo,
-    #experience .experience-item.tarjimly .experience-logo,
-    #experience .experience-item.student .experience-logo {
-        grid-area: logo !important;
-
-        width: 48px !important;
-        height: 48px !important;
-
-        margin: 0 !important;
-
-        align-self: start !important;
-        justify-self: center !important;
-
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-
-        overflow: visible !important;
-
-        transform: none !important;
-    }
-
-    /* Remove all previous OIF offsets */
-
-    #experience .experience-item.oif .experience-logo {
-        margin-top: 0 !important;
-        margin-right: 0 !important;
-        margin-bottom: 0 !important;
-        margin-left: 0 !important;
-    }
-
-    #experience .experience-item.oif .experience-logo img,
-    #experience .experience-item.oif .experience-logo svg {
-        width: 78% !important;
-        height: 78% !important;
-
-        margin: 0 !important;
-
-        object-position: center center !important;
-
-        transform: none !important;
-    }
-
-    /* Keep every logo in place after tapping */
-
-    #experience .experience-item:hover .experience-logo {
-        margin: 0 !important;
-        transform: none !important;
-    }
-
-    #experience .experience-item:hover .experience-logo img,
-    #experience .experience-item:hover .experience-logo svg {
-        transform: none !important;
-    }
-}
-
-
-/* ==========================================
    VERY SMALL PHONES
 ========================================== */
 
 @media (max-width: 390px) {
 
-    #experience .experience-logo,
-    #experience .experience-item.oif .experience-logo {
-        width: 42px !important;
-        height: 42px !important;
-    }
-}
+  #experience {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
 
 
+  /* OVERSIZED LABEL */
+
+  #experience .oversized-label::before {
+    font-size: 15vw;
+  }
 
 
+  /* SUMMARY */
+
+  #experience .experience-summary {
+    grid-template-columns:
+      46px
+      minmax(0, 1fr)
+      39px;
+
+    column-gap: 10px;
+  }
 
 
-    #experience .experience-item.aqlity:hover
-.experience-title-row h3,
-#experience .experience-item.aqlity.active
-.experience-title-row h3,
-#experience .experience-item.aqlity.selected
-.experience-title-row h3 {
-    color: var(--accent) !important;
-}
+  /* LOGO */
+
+  #experience .experience-logo {
+    width: 42px;
+    height: 42px;
+  }
 
 
-    
+  /* TITLE */
+
+  #experience .experience-heading h3 {
+    font-size: clamp(1.42rem, 7.7vw, 1.95rem);
+  }
 
 
-/* ==========================================
-   EXPERIENCE LOGOS — DESKTOP LARGER
-========================================== */
+  /* BUTTON */
 
-@media (min-width:651px){
+  #experience .experience-toggle {
+    width: 38px;
+    height: 38px;
 
-    #experience .experience-logo img,
-    #experience .experience-logo svg{
-        width: 96% !important;
-        height: 96% !important;
-    }
-
-    /* Tarjimly slightly larger */
-    #experience .experience-item.tarjimly .experience-logo img{
-        width: 100% !important;
-        height: 100% !important;
-    }
-
-    /* OIF stays slightly smaller because of its proportions */
-    #experience .experience-item.oif .experience-logo img{
-        width: 86% !important;
-        height: 86% !important;
-    }
-
-}
+    flex-basis: 38px;
+  }
 
 
+  /* DATE */
+
+  #experience .experience-year,
+  #experience .experience-item.is-open
+  .experience-year {
+    font-size: 0.77rem;
+
+    letter-spacing: 0.14em;
+  }
 
 
-/* ==========================================
-   EXPERIENCE — MOBILE SELECTED LOGO LAYOUT
-   Logo moves above title after tapping
-========================================== */
+  /* DETAILS */
 
-@media (max-width: 650px) and (hover: none) {
-
-    /* Selected experience layout */
-
-    #experience .experience-item:hover {
-        grid-template-columns: 52px minmax(0, 1fr) !important;
-
-        grid-template-areas:
-            ". logo"
-            "year content" !important;
-
-        column-gap: 15px !important;
-        row-gap: 14px !important;
-
-        padding: 30px 10px !important;
-    }
+  #experience .experience-details-inner {
+    margin-left: 56px;
+  }
 
 
-    /* Move logo above title */
+  /* BULLETS */
 
-    #experience .experience-item:hover .experience-logo {
-        grid-area: logo !important;
+  #experience .experience-text li {
+    font-size: 0.84rem;
+  }
 
-        width: 74px !important;
-        height: 74px !important;
-
-        margin: 0 0 3px 0 !important;
-
-        align-self: start !important;
-        justify-self: start !important;
-
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-
-        overflow: visible !important;
-
-        transform: none !important;
-    }
-
-
-    /* Keep title/content directly below logo */
-
-    #experience .experience-item:hover .experience-content {
-        grid-area: content !important;
-
-        width: 100% !important;
-        min-width: 0 !important;
-    }
-
-
-    /* Remove the previous sideways title movement */
-
-    #experience .experience-item:hover
-    .experience-title-row h3 {
-        transform: none !important;
-    }
-
-
-    /* Keep year vertically on the left */
-
-    #experience .experience-item:hover .experience-year {
-        grid-area: year !important;
-
-        align-self: start !important;
-        justify-self: center !important;
-
-        margin-top: 2px !important;
-
-        transform: rotate(180deg) !important;
-    }
-
-
-    /* ======================================
-       SELECTED LOGO IMAGE SIZES
-    ====================================== */
-
-    #experience .experience-item:hover
-    .experience-logo img,
-    #experience .experience-item:hover
-    .experience-logo svg {
-        display: block !important;
-
-        width: 90% !important;
-        height: 90% !important;
-
-        margin: 0 !important;
-
-        object-fit: contain !important;
-        object-position: center center !important;
-
-        transform: none !important;
-    }
-
-
-    /* OIF needs slightly less internal size */
-
-    #experience .experience-item.oif:hover
-    .experience-logo img,
-    #experience .experience-item.oif:hover
-    .experience-logo svg {
-        width: 78% !important;
-        height: 78% !important;
-
-        margin: 0 !important;
-
-        transform: none !important;
-    }
-
-
-    /* Tarjimly can fill more of the available space */
-
-    #experience .experience-item.tarjimly:hover
-    .experience-logo img,
-    #experience .experience-item.tarjimly:hover
-    .experience-logo svg {
-        width: 96% !important;
-        height: 96% !important;
-    }
 }
 
 
 /* ==========================================
-   VERY SMALL PHONES
+   TOUCH DEVICES
+   REMOVE STICKY HOVER EFFECTS
 ========================================== */
 
-@media (max-width: 390px) and (hover: none) {
+@media (hover: none) {
+
+  #experience .experience-toggle:hover {
+    background: transparent;
+    color: var(--accent);
+  }
+
+  #experience .experience-item.is-open
+  .experience-toggle:hover {
+    background: var(--accent);
+    color: #ffffff;
+  }
 
-    #experience .experience-item:hover {
-        grid-template-columns: 44px minmax(0, 1fr) !important;
-
-        grid-template-areas:
-            ". logo"
-            "year content" !important;
-
-        column-gap: 12px !important;
-    }
-
-    #experience .experience-item:hover .experience-logo {
-        width: 66px !important;
-        height: 66px !important;
-    }
-}
-
-
-
-
-/* ==========================================
-   FINAL LOGO SIZES
-   (must be LAST in the CSS)
-========================================== */
-
-/* ---------- DESKTOP ---------- */
-
-@media (min-width:651px){
-
-    /* Make every logo larger */
-    #experience .experience-item .experience-logo img,
-    #experience .experience-item .experience-logo svg{
-        width:104% !important;
-        height:104% !important;
-    }
-
-    /* Individual adjustments */
-    #experience .experience-item.oif .experience-logo img{
-        width:94% !important;
-        height:94% !important;
-    }
-
-    #experience .experience-item.tarjimly .experience-logo img{
-        width:110% !important;
-        height:110% !important;
-    }
-
-    #experience .experience-item.ardhis .experience-logo img{
-        width:108% !important;
-        height:108% !important;
-    }
-}
-
-
-/* ---------- PHONE ---------- */
-
-@media (max-width:650px){
-
-    /* Slightly larger logos */
-    #experience .experience-item .experience-logo img,
-    #experience .experience-item .experience-logo svg{
-        width:96% !important;
-        height:96% !important;
-    }
-
-    /* OIF */
-    #experience .experience-item.oif .experience-logo img{
-        width:84% !important;
-        height:84% !important;
-        transform:none !important;
-    }
-
-    /* ARDHIS (currently too small) */
-    #experience .experience-item.ardhis .experience-logo img{
-        width:108% !important;
-        height:108% !important;
-    }
-
-    /* Tarjimly */
-    #experience .experience-item.tarjimly .experience-logo img{
-        width:102% !important;
-        height:102% !important;
-    }
-}
-
-
-
-/* ==========================================
-   EXPERIENCE — LONG BULLET DESCRIPTION FIX
-========================================== */
-
-#experience ul.experience-text{
-    width:100% !important;
-    max-width:950px !important;
-    max-height:0 !important;
-
-    margin:0 !important;
-    padding:0 !important;
-
-    display:flex !important;
-    flex-direction:column !important;
-    gap:13px !important;
-
-    overflow:hidden !important;
-    opacity:0 !important;
-
-    list-style:none !important;
-
-    color:rgba(18,56,43,.78) !important;
-
-    transform:translateY(14px) !important;
-
-    transition:
-        max-height .65s ease,
-        margin .4s ease,
-        opacity .32s ease,
-        transform .4s ease !important;
-}
-
-
-/* Open the complete list on hover */
-
-#experience .experience-item:hover ul.experience-text{
-    max-height:1200px !important;
-
-    margin-top:20px !important;
-
-    opacity:1 !important;
-
-    color:rgba(18,56,43,.82) !important;
-
-    transform:translateY(0) !important;
-}
-
-
-/* Individual bullet */
-
-#experience ul.experience-text li{
-    position:relative !important;
-
-    margin:0 !important;
-    padding-left:21px !important;
-
-    color:inherit !important;
-
-    font-family:"Manrope",sans-serif !important;
-    font-size:.96rem !important;
-    font-weight:400 !important;
-    line-height:1.68 !important;
-}
-
-
-/* Custom square bullet */
-
-#experience ul.experience-text li::before{
-    content:"" !important;
-
-    position:absolute !important;
-
-    left:0 !important;
-    top:.68em !important;
-
-    width:7px !important;
-    height:7px !important;
-
-    background:var(--accent) !important;
-
-    border-radius:0 !important;
-}
-
-
-/* Keep text dark on all experience hover backgrounds */
-
-#experience .experience-item:hover ul.experience-text,
-#experience .experience-item:hover ul.experience-text li{
-    color:rgba(18,56,43,.82) !important;
-}
-
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width:768px){
-
-    #experience ul.experience-text,
-    #experience .experience-item:hover ul.experience-text{
-        width:100% !important;
-        max-width:100% !important;
-        max-height:none !important;
-
-        margin-top:14px !important;
-        padding:0 !important;
-
-        gap:11px !important;
-
-        overflow:visible !important;
-        opacity:1 !important;
-
-        color:rgba(18,56,43,.76) !important;
-
-        transform:none !important;
-    }
-
-    #experience ul.experience-text li{
-        padding-left:17px !important;
-
-        font-size:.82rem !important;
-        line-height:1.58 !important;
-    }
-
-    #experience ul.experience-text li::before{
-        top:.66em !important;
-
-        width:6px !important;
-        height:6px !important;
-    }
-}
-
-
-
-
-
-
-    /* ==========================================
-   EXPERIENCE — FINAL BULLET LIST
-========================================== */
-
-#experience ul.experience-text{
-    width:100% !important;
-    max-width:900px !important;
-    max-height:0 !important;
-
-    margin:0 !important;
-    padding:0 !important;
-
-    display:flex !important;
-    flex-direction:column !important;
-    gap:18px !important;
-
-    overflow:hidden !important;
-    opacity:0 !important;
-
-    list-style:none !important;
-
-    color:rgba(18,56,43,.80) !important;
-
-    transform:translateY(14px) !important;
-
-    transition:
-        max-height .55s ease,
-        margin .4s ease,
-        opacity .32s ease,
-        transform .4s ease !important;
-}
-
-
-/* Open list */
-
-#experience .experience-item:hover ul.experience-text{
-    max-height:900px !important;
-
-    margin-top:22px !important;
-
-    opacity:1 !important;
-
-    color:rgba(18,56,43,.82) !important;
-
-    transform:translateY(0) !important;
-}
-
-
-/* Bullet rows */
-
-#experience ul.experience-text li{
-    position:relative !important;
-
-    margin:0 !important;
-    padding-left:26px !important;
-
-    color:inherit !important;
-
-    font-family:"Manrope",sans-serif !important;
-    font-size:.98rem !important;
-    font-weight:400 !important;
-    line-height:1.72 !important;
-}
-
-
-/* Square bullet */
-
-#experience ul.experience-text li::before{
-    content:"" !important;
-
-    position:absolute !important;
-
-    left:0 !important;
-    top:.72em !important;
-
-    width:7px !important;
-    height:7px !important;
-
-    background:var(--accent) !important;
-
-    border-radius:0 !important;
-}
-
-
-/* Verbs and numbers */
-
-#experience ul.experience-text strong{
-    color:var(--accent) !important;
-    font-weight:750 !important;
-}
-
-
-/* Keep the same readable colors on hover */
-
-#experience .experience-item:hover ul.experience-text li{
-    color:rgba(18,56,43,.82) !important;
-}
-
-#experience .experience-item:hover ul.experience-text strong{
-    color:var(--accent) !important;
-}
-
-#experience .experience-item:hover ul.experience-text li::before{
-    background:var(--accent) !important;
-}
-
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width:768px){
-
-    #experience ul.experience-text,
-    #experience .experience-item:hover ul.experience-text{
-        width:100% !important;
-        max-width:100% !important;
-        max-height:none !important;
-
-        margin-top:16px !important;
-
-        gap:14px !important;
-
-        overflow:visible !important;
-        opacity:1 !important;
-
-        color:rgba(18,56,43,.80) !important;
-
-        transform:none !important;
-    }
-
-    #experience ul.experience-text li{
-        padding-left:20px !important;
-
-        font-size:.89rem !important;
-        line-height:1.62 !important;
-    }
-
-    #experience ul.experience-text li::before{
-        top:.68em !important;
-
-        width:6px !important;
-        height:6px !important;
-    }
-
-    #experience ul.experience-text strong{
-        color:var(--accent) !important;
-    }
-}
-
-
-
-
-    
-
-
-
-
-/* ==========================================
-   EXPERIENCE — POLISHED EXPANDED STATE
-   Place at the very end of the CSS
-========================================== */
-
-
-/* ------------------------------------------
-   1. SMOOTHER CARD TRANSITION
------------------------------------------- */
-
-#experience .experience-item{
-    transition:
-        background-color .35s ease,
-        border-color .35s ease,
-        box-shadow .35s ease,
-        padding .35s ease !important;
-}
-
-
-/* Add more breathing room when expanded */
-
-#experience .experience-item:hover{
-    padding-bottom:34px !important;
-}
-
-
-/* ------------------------------------------
-   2. LIGHTER SUMMARY DESCRIPTION
------------------------------------------- */
-
-#experience .experience-description,
-#experience .experience-item > div > p{
-    color:rgba(18,56,43,.66) !important;
-
-    font-weight:400 !important;
-    line-height:1.7 !important;
-
-    transition:
-        color .3s ease,
-        opacity .3s ease !important;
-}
-
-
-#experience .experience-item:hover .experience-description,
-#experience .experience-item:hover > div > p{
-    color:rgba(18,56,43,.62) !important;
-}
-
-
-/* ------------------------------------------
-   3. EXPANDED BULLET AREA
------------------------------------------- */
-
-#experience ul.experience-text{
-    position:relative !important;
-
-    width:100% !important;
-    max-width:900px !important;
-    max-height:0 !important;
-
-    margin:0 !important;
-    padding:0 !important;
-    padding-top:0 !important;
-
-    display:flex !important;
-    flex-direction:column !important;
-    gap:18px !important;
-
-    overflow:hidden !important;
-    opacity:0 !important;
-
-    list-style:none !important;
-
-    color:rgba(18,56,43,.82) !important;
-
-    transform:translateY(14px) !important;
-
-    transition:
-        max-height .6s ease,
-        margin .45s ease,
-        padding .45s ease,
-        opacity .35s ease,
-        transform .45s ease !important;
-}
-
-
-/* Open list */
-
-#experience .experience-item:hover ul.experience-text{
-    max-height:1200px !important;
-
-    margin-top:24px !important;
-    padding-top:22px !important;
-
-    overflow:visible !important;
-    opacity:1 !important;
-
-    transform:translateY(0) !important;
-}
-
-
-/* ------------------------------------------
-   4. DIVIDER ABOVE BULLETS
------------------------------------------- */
-
-#experience ul.experience-text::before{
-    content:"" !important;
-
-    position:absolute !important;
-
-    top:0 !important;
-    left:0 !important;
-
-    width:0 !important;
-    height:1px !important;
-
-    background:color-mix(
-        in srgb,
-        var(--accent) 45%,
-        transparent
-    ) !important;
-
-    opacity:0 !important;
-
-    transition:
-        width .55s ease .08s,
-        opacity .3s ease !important;
-}
-
-
-#experience .experience-item:hover ul.experience-text::before{
-    width:100% !important;
-    opacity:1 !important;
-}
-
-
-/* Fallback for browsers without color-mix */
-
-@supports not (
-    background:color-mix(in srgb, black 50%, transparent)
-){
-    #experience ul.experience-text::before{
-        background:rgba(18,56,43,.18) !important;
-    }
-}
-
-
-/* ------------------------------------------
-   5. BULLET TYPOGRAPHY
------------------------------------------- */
-
-#experience ul.experience-text li{
-    position:relative !important;
-
-    margin:0 !important;
-    padding-left:27px !important;
-
-    color:rgba(18,56,43,.82) !important;
-
-    font-family:"Manrope",sans-serif !important;
-    font-size:.98rem !important;
-    font-weight:430 !important;
-    line-height:1.72 !important;
-}
-
-
-/* Square bullets */
-
-#experience ul.experience-text li::before{
-    content:"" !important;
-
-    position:absolute !important;
-
-    left:0 !important;
-    top:.72em !important;
-
-    width:7px !important;
-    height:7px !important;
-
-    background:var(--accent) !important;
-
-    border-radius:0 !important;
-
-    transform:scale(.75) !important;
-
-    transition:
-        transform .25s ease,
-        background-color .25s ease !important;
-}
-
-
-#experience .experience-item:hover ul.experience-text li::before{
-    transform:scale(1) !important;
-}
-
-
-/* Highlight numbers and key phrases */
-
-#experience ul.experience-text strong{
-    color:var(--accent) !important;
-    font-weight:750 !important;
-}
-
-
-/* ------------------------------------------
-   6. STAGGERED BULLET REVEAL
------------------------------------------- */
-
-#experience ul.experience-text li{
-    opacity:0 !important;
-    transform:translateY(8px) !important;
-
-    transition:
-        opacity .32s ease,
-        transform .38s ease !important;
-}
-
-
-#experience .experience-item:hover ul.experience-text li{
-    opacity:1 !important;
-    transform:translateY(0) !important;
-}
-
-
-#experience .experience-item:hover ul.experience-text li:nth-child(1){
-    transition-delay:.08s !important;
-}
-
-#experience .experience-item:hover ul.experience-text li:nth-child(2){
-    transition-delay:.13s !important;
-}
-
-#experience .experience-item:hover ul.experience-text li:nth-child(3){
-    transition-delay:.18s !important;
-}
-
-#experience .experience-item:hover ul.experience-text li:nth-child(4){
-    transition-delay:.23s !important;
-}
-
-#experience .experience-item:hover ul.experience-text li:nth-child(5){
-    transition-delay:.28s !important;
-}
-
-
-/* ------------------------------------------
-   7. LOGO HOVER REFINEMENT
------------------------------------------- */
-
-#experience .experience-logo{
-    transform-origin:center !important;
-
-    transition:
-        transform .4s cubic-bezier(.2,.75,.25,1),
-        opacity .3s ease,
-        filter .3s ease !important;
-}
-
-
-#experience .experience-logo img,
-#experience .experience-logo svg{
-    transition:
-        transform .4s cubic-bezier(.2,.75,.25,1),
-        opacity .3s ease,
-        filter .3s ease !important;
-}
-
-
-#experience .experience-item:hover .experience-logo{
-    transform:translateY(-2px) scale(1.04) !important;
-}
-
-
-#experience .experience-item:hover .experience-logo img,
-#experience .experience-item:hover .experience-logo svg{
-    transform:scale(1.05) !important;
-}
-
-
-/* ------------------------------------------
-   8. ROLE TITLE EMPHASIS
------------------------------------------- */
-
-#experience .experience-role,
-#experience .experience-item h3{
-    transition:
-        color .3s ease,
-        transform .35s ease !important;
-}
-
-
-#experience .experience-item:hover .experience-role,
-#experience .experience-item:hover h3{
-    color:var(--accent) !important;
-    transform:translateX(3px) !important;
-}
-
-
-/* ------------------------------------------
-   9. TAG REFINEMENT
------------------------------------------- */
-
-#experience .experience-tags{
-    transition:
-        margin .35s ease,
-        transform .35s ease !important;
-}
-
-
-#experience .experience-item:hover .experience-tags{
-    transform:translateY(-1px) !important;
-}
-
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width:768px){
-
-    /* Keep cards comfortable on mobile */
-
-    #experience .experience-item,
-    #experience .experience-item:hover{
-        padding-bottom:24px !important;
-    }
-
-
-    /* Do not scale logos too aggressively */
-
-    #experience .experience-item:hover .experience-logo{
-        transform:none !important;
-    }
-
-    #experience .experience-item:hover .experience-logo img,
-    #experience .experience-item:hover .experience-logo svg{
-        transform:scale(1.02) !important;
-    }
-
-
-    /* Bullets remain visible */
-
-    #experience ul.experience-text,
-    #experience .experience-item:hover ul.experience-text{
-        width:100% !important;
-        max-width:100% !important;
-        max-height:none !important;
-
-        margin-top:18px !important;
-        padding-top:18px !important;
-
-        gap:14px !important;
-
-        overflow:visible !important;
-        opacity:1 !important;
-
-        transform:none !important;
-    }
-
-
-    /* Divider always visible */
-
-    #experience ul.experience-text::before,
-    #experience .experience-item:hover ul.experience-text::before{
-        width:100% !important;
-        opacity:1 !important;
-    }
-
-
-    /* No stagger delay on phones */
-
-    #experience ul.experience-text li,
-    #experience .experience-item:hover ul.experience-text li{
-        padding-left:21px !important;
-
-        opacity:1 !important;
-        transform:none !important;
-
-        font-size:.89rem !important;
-        line-height:1.62 !important;
-
-        transition:none !important;
-    }
-
-
-    #experience ul.experience-text li::before{
-        top:.68em !important;
-
-        width:6px !important;
-        height:6px !important;
-
-        transform:none !important;
-    }
-
-
-    /* Prevent title movement on mobile */
-
-    #experience .experience-item:hover .experience-role,
-    #experience .experience-item:hover h3{
-        transform:none !important;
-    }
 }
 
 
@@ -6469,367 +4715,25 @@ MORE SPACED NUMBERS
    REDUCED MOTION
 ========================================== */
 
-@media (prefers-reduced-motion:reduce){
-
-    #experience .experience-item,
-    #experience .experience-logo,
-    #experience .experience-logo img,
-    #experience .experience-logo svg,
-    #experience ul.experience-text,
-    #experience ul.experience-text li,
-    #experience ul.experience-text::before{
-        transition:none !important;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* ==========================================
-   EXPERIENCE — VERTICAL DUPLICATED LOGOS
-   DESKTOP HOVER ONLY
-   Add at the very end of the CSS
-========================================== */
-
-
-/* Assign the correct image to every experience */
-
-#experience .experience-item.bnp{
-    --repeated-logo:url("bnplogo.png");
-}
-
-#experience .experience-item.oif{
-    --repeated-logo:url("oiflogo.webp");
-}
-
-#experience .experience-item.aqlity{
-    --repeated-logo:url("aqlitylogo.png");
-}
-
-#experience .experience-item.ardhis{
-    --repeated-logo:url("ardhislogo.png");
-}
-
-/* Your Royal Scientific Society item currently uses
-   the class "tarjimly" and the file rsslogo.png */
-
-#experience .experience-item.tarjimly{
-    --repeated-logo:url("rsslogo.png");
-}
-
-
-/* ==========================================
-   DESKTOP ONLY
-========================================== */
-
-@media (min-width:769px) and (hover:hover){
-
-    /* Allow the logo container to stretch vertically
-       when the experience opens */
-
-    #experience .experience-item .experience-logo{
-        position:relative !important;
-        isolation:isolate !important;
-
-        align-self:start !important;
-
-        width:88px !important;
-        height:88px !important;
-        min-height:88px !important;
-
-        overflow:hidden !important;
-
-        transition:
-            height .5s ease,
-            min-height .5s ease,
-            background-color .35s ease,
-            transform .35s ease !important;
-    }
-
-
-    /* Repeated-logo layer */
-
-    #experience .experience-item .experience-logo::before{
-        content:"" !important;
-
-        position:absolute !important;
-        inset:0 !important;
-        z-index:2 !important;
-
-        display:block !important;
-
-        background-image:var(--repeated-logo) !important;
-        background-repeat:repeat-y !important;
-        background-position:center top !important;
-
-        /*
-          Each duplicate keeps the same 88px logo height.
-          The width remains proportional to the source image.
-        */
-        background-size:auto 88px !important;
-
-        opacity:0 !important;
-        pointer-events:none !important;
-
-        transition:opacity .3s ease .08s !important;
-    }
-
-
-    /* Make the logo column cover the full expanded card */
-
-    #experience .experience-item:hover .experience-logo{
-        align-self:stretch !important;
-
-        width:88px !important;
-        height:auto !important;
-        min-height:100% !important;
-
-        margin:0 !important;
-
-        background:transparent !important;
-
-        border-radius:0 !important;
-
-        transform:none !important;
-    }
-
-
-    /* Reveal repeated logos */
-
-    #experience .experience-item:hover .experience-logo::before{
-        opacity:1 !important;
-    }
-
-
-    /* Hide only the original logo while the copies appear */
-
-    #experience .experience-item:hover .experience-logo > img,
-    #experience .experience-item:hover .experience-logo > svg{
-        opacity:0 !important;
-        visibility:hidden !important;
-
-        transform:none !important;
-    }
-}
-
-
-/* ==========================================
-   OIF — PRESERVE ITS SMALLER VISUAL SCALE
-========================================== */
-
-@media (min-width:769px) and (hover:hover){
-
-    #experience .experience-item.oif .experience-logo::before{
-        background-size:auto 78px !important;
-    }
-}
-
-
-/* ==========================================
-   PHONE / TOUCH — KEEP CURRENT LOGOS
-========================================== */
-
-@media (max-width:768px), (hover:none){
-
-    #experience .experience-logo::before{
-        display:none !important;
-    }
-
-    #experience .experience-item:hover .experience-logo{
-        height:48px !important;
-        min-height:48px !important;
-
-        overflow:visible !important;
-    }
-
-    #experience .experience-item:hover .experience-logo > img,
-    #experience .experience-item:hover .experience-logo > svg{
-        opacity:1 !important;
-        visibility:visible !important;
-    }
-}
-
-
-
-
-
-
-
-/* ==========================================
-   EXPERIENCE — CLEANER REPEATED LOGO COLUMN
-========================================== */
-
-@media (min-width:769px) and (hover:hover){
-
-    #experience .experience-item .experience-logo::before{
-        background-repeat:space !important;
-        background-position:center !important;
-        background-size:auto 72px !important;
-
-        padding-top:28px !important;
-        padding-bottom:28px !important;
-
-        opacity:0 !important;
-    }
-
-    #experience .experience-item:hover .experience-logo::before{
-        opacity:1 !important;
-    }
-
-
-    /* Keep the column lighter and less dominant */
-
-    #experience .experience-item:hover .experience-logo{
-        width:88px !important;
-
-        background:transparent !important;
-        border:none !important;
-    }
-
-
-    /* BNP */
-
-    #experience .experience-item.bnp .experience-logo::before{
-        background-size:auto 70px !important;
-    }
-
-
-    /* OIF */
-
-    #experience .experience-item.oif .experience-logo::before{
-        background-size:auto 62px !important;
-    }
-
-
-    /* AQLITY */
-
-    #experience .experience-item.aqlity .experience-logo::before{
-        background-size:auto 66px !important;
-    }
-
-
-    /* ARDHIS */
-
-    #experience .experience-item.ardhis .experience-logo::before{
-        background-size:auto 66px !important;
-    }
-
-
-    /* Royal Scientific Society */
-
-    #experience .experience-item.tarjimly .experience-logo::before{
-        background-size:auto 65px !important;
-    }
-}
-
-
-/* ==========================================
-   BNP LOGO — FINAL DESKTOP POSITION
-========================================== */
-
-@media (min-width: 769px) and (hover: hover){
-
-    /* Closed card: lower BNP to match the other logos */
-    #experience .experience-item.bnp:not(:hover) .experience-logo{
-        align-self:center !important;
-        transform:translateY(18px) !important;
-    }
-
-    /* Keep the image centred inside its container */
-    #experience .experience-item.bnp:not(:hover) .experience-logo img{
-        margin:0 !important;
-        object-position:center center !important;
-        transform:none !important;
-    }
-
-    /* Expanded card: restore the repeated-logo column */
-    #experience .experience-item.bnp:hover .experience-logo{
-        align-self:stretch !important;
-        transform:none !important;
-    }
-}
-
-
-
-
-
-
-
-
-/* ==========================================
-   EXPERIENCE — COMPACT HOVER LAYOUT
-========================================== */
-
-@media (min-width:769px){
-
-    /* Much smaller year column */
-    #experience .experience-item:hover{
-        grid-template-columns:
-            105px
-            minmax(0,1fr)
-            55px !important;
-
-        column-gap:34px !important;
-    }
-
-    /* Push the year outside the card */
-    #experience .experience-item:hover .experience-year{
-
-        writing-mode:vertical-rl;
-        text-orientation:mixed;
-
-        display:flex;
-        align-items:center;
-        justify-content:center;
-
-        justify-self:end;
-        align-self:center;
-
-        margin-right:-38px !important;
-
-        width:auto;
-        height:100%;
-
-        font-size:2.8rem !important;
-        line-height:1.05 !important;
-        letter-spacing:.18em !important;
-
-        white-space:nowrap;
-    }
-
-    /* Let content use all available width */
-    #experience .experience-item:hover .experience-content{
-        width:100% !important;
-        max-width:none !important;
-        padding-right:0 !important;
-    }
-
-    #experience .experience-item:hover .experience-text{
-        width:100% !important;
-        max-width:none !important;
-        padding-right:0 !important;
-    }
+@media (prefers-reduced-motion: reduce) {
+
+  #experience .experience-item,
+  #experience .experience-item::before,
+  #experience .experience-logo,
+  #experience .experience-logo img,
+  #experience .experience-logo svg,
+  #experience .experience-heading h3,
+  #experience .experience-role,
+  #experience .experience-year,
+  #experience .experience-toggle,
+  #experience .experience-toggle-icon,
+  #experience .experience-toggle-icon::after,
+  #experience .experience-details,
+  #experience .experience-text li {
+    transition: none;
+  }
 
 }
-
-
-
-
-
-
-
 
 
 
@@ -14605,313 +12509,557 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
 
 
-
 <section id="experience">
+
   <div class="experience-container">
 
-    <div class="experience-header">
-      <div class="oversized-label" data-letter="EXPERIENCE">
+
+    <!-- =====================================
+         SECTION HEADER
+    ====================================== -->
+
+    <header class="experience-header">
+
+      <div
+        class="oversized-label"
+        data-letter="EXPERIENCE"
+      >
         <span>Who have I worked with?</span>
       </div>
 
-      <h2>
-          Built across sectors.
-      </h2>
-    </div>
+      <h2>Built across sectors.</h2>
 
+    </header>
+
+
+    <!-- =====================================
+         EXPERIENCE LIST
+    ====================================== -->
 
     <div class="experience-list">
 
+
       <!-- =====================================
-      BNP PARIBAS
+           BNP PARIBAS
       ====================================== -->
 
       <article class="experience-item bnp">
 
-        <div class="experience-logo">
-        <img src="bnplogo.png" alt="BNP Paribas logo">
-        </div>
+        <div class="experience-summary">
 
-        <div class="experience-content">
-
-          <div class="experience-title-row">
-            <h3>BNP Paribas</h3>
+          <div class="experience-logo">
+            <img
+              src="bnplogo.png"
+              alt="BNP Paribas logo"
+            >
           </div>
 
-          <p class="experience-role">
-            CSR &amp; Sustainability Communications · Paris, France
-          </p>
 
-<ul class="experience-text">
-  <li>
-    <strong>Produced</strong> editorial content for BNP Paribas' corporate website and internal platforms, including <strong>1 feature article</strong> and <strong>10+ sustainability publications</strong> covering climate, energy transition and corporate responsibility, as well as 
-    <strong>6 PlayPlay videos</strong>, <strong>2 infographics</strong> and digital campaigns promoting sustainability initiatives.
-  </li>
+          <div class="experience-heading">
+
+            <h3>BNP Paribas</h3>
+
+            <p class="experience-role">
+              CSR &amp; Sustainability Communications · Paris, France
+            </p>
+
+          </div>
 
 
-  <li>
-    <strong>Coordinated</strong> <strong>2 international webinars</strong> on Circular Economy and One Health, generating approximately <strong>2,000 views per webinar</strong> through speaker coordination, event preparation and post-event communications.
-  </li>
+          <div class="experience-actions">
 
-  <li>
-    <strong>Collaborated</strong> with communications teams across <strong>4 countries</strong> (France, Belgium, India and the Netherlands) while monitoring campaign performance through KPIs.
-  </li>
-</ul>
+            <time
+              class="experience-year"
+              datetime="2026-01/2026-07"
+            >
+              Jan–Jul 2026
+            </time>
 
-<div class="experience-tags">
+            <button
+              class="experience-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="experience-bnp-details"
+              aria-label="Open BNP Paribas experience details"
+            >
+              <span class="experience-toggle-icon" aria-hidden="true"></span>
+            </button>
 
-    <span class="experience-type">
-        Private Sector
-    </span>
-
-    <small>Content Production</small>
-    <small>Performance Analytics</small>
-    <small>Corporate Philanthropy</small>
-
-</div>
+          </div>
 
         </div>
 
-        <div class="experience-year">
-          Jan-Jul 2026
+
+        <div
+          class="experience-details"
+          id="experience-bnp-details"
+        >
+          <div class="experience-details-inner">
+
+            <ul class="experience-text">
+
+              <li>
+                <strong>Produced</strong> editorial content for BNP Paribas'
+                corporate website and internal platforms, including
+                <strong>1 feature article</strong> and
+                <strong>10+ sustainability publications</strong> covering
+                climate, energy transition and corporate responsibility, as
+                well as <strong>6 PlayPlay videos</strong>,
+                <strong>2 infographics</strong> and digital campaigns
+                promoting sustainability initiatives.
+              </li>
+
+              <li>
+                <strong>Coordinated</strong>
+                <strong>2 international webinars</strong> on Circular Economy
+                and One Health, generating approximately
+                <strong>2,000 views per webinar</strong> through speaker
+                coordination, event preparation and post-event communications.
+              </li>
+
+              <li>
+                <strong>Collaborated</strong> with communications teams across
+                <strong>4 countries</strong> — France, Belgium, India and the
+                Netherlands — while monitoring campaign performance through
+                KPIs.
+              </li>
+
+            </ul>
+
+
+            <div class="experience-tags">
+
+              <span class="experience-type">
+                Private Sector
+              </span>
+
+              <small>Content Production</small>
+              <small>Performance Analytics</small>
+              <small>Corporate Philanthropy</small>
+
+            </div>
+
+          </div>
         </div>
 
       </article>
 
 
+
       <!-- =====================================
-      OIF
+           OIF
       ====================================== -->
 
       <article class="experience-item oif">
 
-        <div class="experience-logo">
-        <img src="oiflogo.webp" alt="OIF logo">
-        </div>
+        <div class="experience-summary">
 
-        <div class="experience-content">
+          <div class="experience-logo">
+            <img
+              src="oiflogo.webp"
+              alt="Organisation Internationale de la Francophonie logo"
+            >
+          </div>
 
-          <div class="experience-title-row">
+
+          <div class="experience-heading">
+
             <h3>
               Organisation Internationale de la Francophonie
             </h3>
+
+            <p class="experience-role">
+              Project Monitoring &amp; Strategic Reporting · Paris, France
+            </p>
+
           </div>
 
-          <p class="experience-role">
-            Project Monitoring &amp; Strategic Reporting · Paris, France
-          </p>
 
-<ul class="experience-text">
-  <li>
-    Managed monitoring and evaluation of <strong>20+ international development projects</strong> spanning <strong>90 member states</strong>, ensuring consistent performance reporting.
-  </li>
+          <div class="experience-actions">
 
-  <li>
-    Built interactive <strong>Power BI dashboards</strong> and <strong>Excel monitoring systems</strong> integrating <strong>10+ KPIs</strong> to improve project oversight and strategic planning.
-  </li>
+            <time
+              class="experience-year"
+              datetime="2025-09/2025-12"
+            >
+              Sep–Dec 2025
+            </time>
 
-  <li>
-    Authored <strong>70 analytical country briefs</strong> for executive leadership, transforming political and socio-economic information into concise decision-support products.
-  </li>
-
-</ul>
-
-          <div class="experience-tags">
-
-            <span class="experience-type">
-              International organisation
-            </span>
-
-            <small>Strategic Reporting</small>
-            <small>Project Monitoring</small>
-              <small>Policy Analysis</small>
+            <button
+              class="experience-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="experience-oif-details"
+              aria-label="Open OIF experience details"
+            >
+              <span class="experience-toggle-icon" aria-hidden="true"></span>
+            </button>
 
           </div>
 
         </div>
 
-        <div class="experience-year">
-          Sep-Dec 2025
+
+        <div
+          class="experience-details"
+          id="experience-oif-details"
+        >
+          <div class="experience-details-inner">
+
+            <ul class="experience-text">
+
+              <li>
+                Managed monitoring and evaluation of
+                <strong>20+ international development projects</strong>
+                spanning <strong>90 member states</strong>, ensuring consistent
+                performance reporting.
+              </li>
+
+              <li>
+                Built interactive <strong>Power BI dashboards</strong> and
+                <strong>Excel monitoring systems</strong> integrating
+                <strong>10+ KPIs</strong> to improve project oversight and
+                strategic planning.
+              </li>
+
+              <li>
+                Authored <strong>70 analytical country briefs</strong> for
+                executive leadership, transforming political and
+                socio-economic information into concise decision-support
+                products.
+              </li>
+
+            </ul>
+
+
+            <div class="experience-tags">
+
+              <span class="experience-type">
+                International Organisation
+              </span>
+
+              <small>Strategic Reporting</small>
+              <small>Project Monitoring</small>
+              <small>Policy Analysis</small>
+
+            </div>
+
+          </div>
         </div>
 
       </article>
 
 
+
       <!-- =====================================
-      AQLITY
+           AQLITY
       ====================================== -->
 
       <article class="experience-item aqlity">
 
-        <div class="experience-logo">
-        <img src="aqlitylogo.png" alt="AQLITY logo">
-        </div>
+        <div class="experience-summary">
 
-        <div class="experience-content">
+          <div class="experience-logo">
+            <img
+              src="aqlitylogo.png"
+              alt="AQLITY logo"
+            >
+          </div>
 
-          <div class="experience-title-row">
+
+          <div class="experience-heading">
+
             <h3>AQLITY</h3>
+
+            <p class="experience-role">
+              Humanitarian Data Analyst · Remote
+            </p>
+
           </div>
 
-          <p class="experience-role">
-            Humanitarian Data Analyst · Remote
-          </p>
 
-<ul class="experience-text">
-  <li>
-    Completed <strong>170 hours of advanced humanitarian data training</strong>, developing expertise in data analysis, geospatial intelligence and evidence-driven humanitarian programming.
-  </li>
+          <div class="experience-actions">
 
-  <li>
-    Processed and analysed datasets from <strong>50+ conflict-affected Ukrainian settlements</strong>, strengthening data reliability and supporting operational decision-making in humanitarian response.
-  </li>
+            <time
+              class="experience-year"
+              datetime="2025-07/2025-09"
+            >
+              Jul–Sep 2025
+            </time>
 
-  <li>
-    Designed <strong>10+ geospatial maps</strong> and authored <strong>12 analytical reports</strong> using <strong>Mapbox, Adobe Illustrator and Excel</strong>, converting complex datasets into clear visual products that informed assessments of displacement, shelter, security and infrastructure.
-  </li>
-</ul>
-          <div class="experience-tags">
-
-            <span class="experience-type">
-              Humanitarian NGO
-            </span>
-
-            <small>Humanitarian Response</small>
-            <small>Evident-Based Research</small>
-            <small>Data Visualisation</small>
+            <button
+              class="experience-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="experience-aqlity-details"
+              aria-label="Open AQLITY experience details"
+            >
+              <span class="experience-toggle-icon" aria-hidden="true"></span>
+            </button>
 
           </div>
 
         </div>
 
-        <div class="experience-year">
-          Jul-Sep 2025
+
+        <div
+          class="experience-details"
+          id="experience-aqlity-details"
+        >
+          <div class="experience-details-inner">
+
+            <ul class="experience-text">
+
+              <li>
+                Completed
+                <strong>
+                  170 hours of advanced humanitarian data training
+                </strong>,
+                developing expertise in data analysis, geospatial intelligence
+                and evidence-driven humanitarian programming.
+              </li>
+
+              <li>
+                Processed and analysed datasets from
+                <strong>
+                  50+ conflict-affected Ukrainian settlements
+                </strong>,
+                strengthening data reliability and supporting operational
+                decision-making in humanitarian response.
+              </li>
+
+              <li>
+                Designed <strong>10+ geospatial maps</strong> and authored
+                <strong>12 analytical reports</strong> using
+                <strong>Mapbox, Adobe Illustrator and Excel</strong>,
+                converting complex datasets into clear visual products that
+                informed assessments of displacement, shelter, security and
+                infrastructure.
+              </li>
+
+            </ul>
+
+
+            <div class="experience-tags">
+
+              <span class="experience-type">
+                Humanitarian NGO
+              </span>
+
+              <small>Humanitarian Response</small>
+              <small>Evidence-Based Research</small>
+              <small>Data Visualisation</small>
+
+            </div>
+
+          </div>
         </div>
 
       </article>
 
 
+
       <!-- =====================================
-      ARDHIS
+           ARDHIS
       ====================================== -->
 
       <article class="experience-item ardhis">
 
-        <div class="experience-logo">
-        <img src="ardhislogo.png" alt="ARDHIS logo">
-        </div>
+        <div class="experience-summary">
 
-        <div class="experience-content">
+          <div class="experience-logo">
+            <img
+              src="ardhislogo.png"
+              alt="ARDHIS logo"
+            >
+          </div>
 
-          <div class="experience-title-row">
+
+          <div class="experience-heading">
+
             <h3>ARDHIS</h3>
+
+            <p class="experience-role">
+              Asylum Casework &amp; Research · Paris, France
+            </p>
+
           </div>
 
-          <p class="experience-role">
-            Asylum Casework &amp; Research · Paris, France
-          </p>
 
-<ul class="experience-text">
-  <li>
-    Supported <strong>200+ asylum seekers</strong> during weekly legal
-    drop-in sessions, reviewing asylum applications, explaining procedures,
-    addressing protection concerns, and preparing applicants for
-    <strong>OFPRA interviews</strong>.
-  </li>
+          <div class="experience-actions">
 
+            <time
+              class="experience-year"
+              datetime="2025-01/2025-05"
+            >
+              Jan–May 2025
+            </time>
 
-<li>
-  Conducted <strong>Country of Origin Information (COI)</strong> research on
-  the legal, political, and social conditions affecting LGBTQIA+ communities,
-  producing a <strong>60+ page report</strong> on
-  <strong>four African countries</strong> that strengthened evidence-based
-  asylum assessments and legal case preparation.
-</li>
-
-    <li>
-    Assisted asylum caseworkers by reviewing supporting documentation,
-    identifying gaps in case files, and helping applicants strengthen their
-    asylum claims before submission.
-  </li>
-</ul>
-
-          <div class="experience-tags">
-
-            <span class="experience-type">
-              Asylum NGO
-            </span>
-
-            <small>Asylum & Protection</small>
-            <small>Human Rights Analysis</small>
-            <small>Legal ase Support</small>
+            <button
+              class="experience-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="experience-ardhis-details"
+              aria-label="Open ARDHIS experience details"
+            >
+              <span class="experience-toggle-icon" aria-hidden="true"></span>
+            </button>
 
           </div>
 
         </div>
 
-        <div class="experience-year">
-          Jan-May 2025
+
+        <div
+          class="experience-details"
+          id="experience-ardhis-details"
+        >
+          <div class="experience-details-inner">
+
+            <ul class="experience-text">
+
+              <li>
+                Supported <strong>200+ asylum seekers</strong> during weekly
+                legal drop-in sessions, reviewing asylum applications,
+                explaining procedures, addressing protection concerns and
+                preparing applicants for
+                <strong>OFPRA interviews</strong>.
+              </li>
+
+              <li>
+                Conducted
+                <strong>Country of Origin Information (COI)</strong>
+                research on the legal, political and social conditions
+                affecting LGBTQIA+ communities, producing a
+                <strong>60+ page report</strong> on
+                <strong>four African countries</strong> that strengthened
+                evidence-based asylum assessments and legal case preparation.
+              </li>
+
+              <li>
+                Assisted asylum caseworkers by reviewing supporting
+                documentation, identifying gaps in case files and helping
+                applicants strengthen their asylum claims before submission.
+              </li>
+
+            </ul>
+
+
+            <div class="experience-tags">
+
+              <span class="experience-type">
+                Asylum NGO
+              </span>
+
+              <small>Asylum &amp; Protection</small>
+              <small>Human Rights Analysis</small>
+              <small>Legal Case Support</small>
+
+            </div>
+
+          </div>
         </div>
 
       </article>
 
 
+
       <!-- =====================================
-      ROYAL SCIENTIFIC SOCIETY
+           ROYAL SCIENTIFIC SOCIETY
       ====================================== -->
 
-      <article class="experience-item tarjimly">
+      <article class="experience-item rss">
 
-        <div class="experience-logo">
-        <img src="rsslogo.png" alt="RSS logo">
-        </div>
+        <div class="experience-summary">
 
-        <div class="experience-content">
+          <div class="experience-logo">
+            <img
+              src="rsslogo.png"
+              alt="Royal Scientific Society logo"
+            >
+          </div>
 
-          <div class="experience-title-row">
+
+          <div class="experience-heading">
+
             <h3>Royal Scientific Society</h3>
+
+            <p class="experience-role">
+              Research Assistant · Amman, Jordan
+            </p>
+
           </div>
 
-          <p class="experience-role">
-Research Assistant · Amman, Jordan
-          </p>
 
-    <ul class="experience-text">
-  <li>
-    Co-authored a <strong>10-page policy paper</strong> published by the
-    <strong>Konrad Adenauer Stiftung</strong>, synthesizing evidence from
-    <strong>50+ academic and policy sources</strong> to develop recommendations
-    for sustainable desalination and water governance in Jordan.
-  </li>
+          <div class="experience-actions">
 
-  <li>
-    Mapped <strong>20+ science diplomacy initiatives</strong>, highlighting
-    links between research, policymaking, and international cooperation to
-    identify opportunities for regional collaboration.
-  </li>
+            <time
+              class="experience-year"
+              datetime="2023-06/2023-09"
+            >
+              Jun–Sep 2023
+            </time>
 
-  <li>
-    Reviewed and edited policy articles prior to publication, ensuring
-    analytical quality, factual accuracy, and consistency with organizational
-    research standards.
-  </li>
-</ul>
-          <div class="experience-tags">
-
-            <span class="experience-type">
-      Research Institute
-            </span>
-
-            <small>Sciences Diplomacy</small>
-            <small>Policy Research</small>
-            <small>Water Governance</small>
+            <button
+              class="experience-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="experience-rss-details"
+              aria-label="Open Royal Scientific Society experience details"
+            >
+              <span class="experience-toggle-icon" aria-hidden="true"></span>
+            </button>
 
           </div>
 
         </div>
 
-        <div class="experience-year">
-          Jun-Sep 2023
+
+        <div
+          class="experience-details"
+          id="experience-rss-details"
+        >
+          <div class="experience-details-inner">
+
+            <ul class="experience-text">
+
+              <li>
+                Co-authored a <strong>10-page policy paper</strong> published
+                by the <strong>Konrad Adenauer Stiftung</strong>, synthesising
+                evidence from <strong>50+ academic and policy sources</strong>
+                to develop recommendations for sustainable desalination and
+                water governance in Jordan.
+              </li>
+
+              <li>
+                Mapped
+                <strong>20+ science diplomacy initiatives</strong>,
+                highlighting links between research, policymaking and
+                international cooperation to identify opportunities for
+                regional collaboration.
+              </li>
+
+              <li>
+                Reviewed and edited policy articles before publication,
+                ensuring analytical quality, factual accuracy and consistency
+                with organisational research standards.
+              </li>
+
+            </ul>
+
+
+            <div class="experience-tags">
+
+              <span class="experience-type">
+                Research Institute
+              </span>
+
+              <small>Science Diplomacy</small>
+              <small>Policy Research</small>
+              <small>Water Governance</small>
+
+            </div>
+
+          </div>
         </div>
 
       </article>
@@ -14919,9 +13067,8 @@ Research Assistant · Amman, Jordan
 
     </div>
   </div>
+
 </section>
-
-
 
 
 
@@ -17181,7 +15328,67 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-  
+
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const experienceItems = document.querySelectorAll(
+    "#experience .experience-item"
+  );
+
+
+  experienceItems.forEach((item) => {
+
+    const button = item.querySelector(".experience-toggle");
+    const details = item.querySelector(".experience-details");
+
+    if (!button || !details) return;
+
+
+    button.addEventListener("click", () => {
+
+      const shouldOpen = !item.classList.contains("is-open");
+
+
+      /* Close every experience */
+
+      experienceItems.forEach((otherItem) => {
+
+        const otherButton =
+          otherItem.querySelector(".experience-toggle");
+
+        otherItem.classList.remove("is-open");
+
+        if (otherButton) {
+          otherButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+        }
+
+      });
+
+
+      /* Open the selected experience */
+
+      if (shouldOpen) {
+
+        item.classList.add("is-open");
+
+        button.setAttribute(
+          "aria-expanded",
+          "true"
+        );
+
+      }
+
+    });
+
+  });
+
+});
+</script>
   
 </body>
 </html>
