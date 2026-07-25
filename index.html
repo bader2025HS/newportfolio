@@ -4906,7 +4906,165 @@ cutting the background at the content width.
 
 }
 
+/* ==========================================
+   EXPERIENCE — HEADING STRUCTURE OVERRIDE
+========================================== */
 
+#experience .experience-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+
+/* Organisation */
+
+#experience .experience-heading h3 {
+  margin: 0;
+}
+
+
+/* Role */
+
+#experience .experience-role {
+  margin: 5px 0 0;
+
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+
+  color: var(--text, #12382b);
+}
+
+
+/* City and country */
+
+#experience .experience-location {
+  margin: 3px 0 0;
+
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.015em;
+
+  color: rgba(18, 56, 43, 0.62);
+}
+
+
+/* Date */
+
+#experience .experience-year,
+#experience .experience-item.is-open .experience-year {
+  position: static !important;
+
+  display: block;
+
+  margin-top: 10px;
+
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  color: rgba(18, 56, 43, 0.5);
+
+  transform: none !important;
+}
+
+
+/* Actions now contain only the button */
+
+#experience .experience-actions,
+#experience .experience-item.is-open .experience-actions {
+  position: static;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  min-height: 0;
+}
+
+
+/* ==========================================
+   EXPERIENCE — MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+  #experience .experience-summary {
+    display: grid;
+
+    grid-template-columns:
+      54px
+      minmax(0, 1fr)
+      42px;
+
+    grid-template-areas:
+      "logo heading actions";
+
+    align-items: start;
+    column-gap: 14px;
+  }
+
+  #experience .experience-logo {
+    grid-area: logo;
+  }
+
+  #experience .experience-heading {
+    grid-area: heading;
+  }
+
+  #experience .experience-actions {
+    grid-area: actions;
+
+    align-self: start;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  #experience .experience-role {
+    margin-top: 5px;
+
+    font-size: 0.88rem;
+    line-height: 1.35;
+  }
+
+  #experience .experience-location {
+    margin-top: 3px;
+
+    font-size: 0.78rem;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+  }
+
+  #experience .experience-year,
+  #experience .experience-item.is-open .experience-year {
+    margin-top: 8px;
+
+    font-size: 0.72rem;
+    line-height: 1.2;
+    letter-spacing: 0.06em;
+
+    writing-mode: horizontal-tb !important;
+    transform: none !important;
+  }
+
+  #experience .experience-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
+}
 
 
 
@@ -12663,8 +12821,6 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
 
 
-
-
 <section id="experience">
 
   <div class="experience-container">
@@ -12716,13 +12872,12 @@ LANGUAGE-SPECIFIC HOVER COLORS
             <h3>BNP Paribas</h3>
 
             <p class="experience-role">
-              CSR &amp; Sustainability Communications · Paris, France
+              CSR &amp; Sustainability Communications
             </p>
 
-          </div>
-
-
-          <div class="experience-actions">
+            <p class="experience-location">
+              Paris, France
+            </p>
 
             <time
               class="experience-year"
@@ -12731,6 +12886,11 @@ LANGUAGE-SPECIFIC HOVER COLORS
               Jan–Jul 2026
             </time>
 
+          </div>
+
+
+          <div class="experience-actions">
+
             <button
               class="experience-toggle"
               type="button"
@@ -12738,7 +12898,10 @@ LANGUAGE-SPECIFIC HOVER COLORS
               aria-controls="experience-bnp-details"
               aria-label="Open BNP Paribas experience details"
             >
-              <span class="experience-toggle-icon" aria-hidden="true"></span>
+              <span
+                class="experience-toggle-icon"
+                aria-hidden="true"
+              ></span>
             </button>
 
           </div>
@@ -12825,13 +12988,12 @@ LANGUAGE-SPECIFIC HOVER COLORS
             </h3>
 
             <p class="experience-role">
-              Project Monitoring &amp; Strategic Reporting · Paris, France
+              Project Monitoring &amp; Strategic Reporting
             </p>
 
-          </div>
-
-
-          <div class="experience-actions">
+            <p class="experience-location">
+              Paris, France
+            </p>
 
             <time
               class="experience-year"
@@ -12840,6 +13002,11 @@ LANGUAGE-SPECIFIC HOVER COLORS
               Sep–Dec 2025
             </time>
 
+          </div>
+
+
+          <div class="experience-actions">
+
             <button
               class="experience-toggle"
               type="button"
@@ -12847,7 +13014,10 @@ LANGUAGE-SPECIFIC HOVER COLORS
               aria-controls="experience-oif-details"
               aria-label="Open OIF experience details"
             >
-              <span class="experience-toggle-icon" aria-hidden="true"></span>
+              <span
+                class="experience-toggle-icon"
+                aria-hidden="true"
+              ></span>
             </button>
 
           </div>
@@ -12927,13 +13097,12 @@ LANGUAGE-SPECIFIC HOVER COLORS
             <h3>AQLITY</h3>
 
             <p class="experience-role">
-              Humanitarian Data Analyst · Remote
+              Humanitarian Data Analyst
             </p>
 
-          </div>
-
-
-          <div class="experience-actions">
+            <p class="experience-location">
+              Remote
+            </p>
 
             <time
               class="experience-year"
@@ -12942,6 +13111,11 @@ LANGUAGE-SPECIFIC HOVER COLORS
               Jul–Sep 2025
             </time>
 
+          </div>
+
+
+          <div class="experience-actions">
+
             <button
               class="experience-toggle"
               type="button"
@@ -12949,7 +13123,10 @@ LANGUAGE-SPECIFIC HOVER COLORS
               aria-controls="experience-aqlity-details"
               aria-label="Open AQLITY experience details"
             >
-              <span class="experience-toggle-icon" aria-hidden="true"></span>
+              <span
+                class="experience-toggle-icon"
+                aria-hidden="true"
+              ></span>
             </button>
 
           </div>
@@ -13035,13 +13212,12 @@ LANGUAGE-SPECIFIC HOVER COLORS
             <h3>ARDHIS</h3>
 
             <p class="experience-role">
-              Asylum Casework &amp; Research · Paris, France
+              Asylum Casework &amp; Research
             </p>
 
-          </div>
-
-
-          <div class="experience-actions">
+            <p class="experience-location">
+              Paris, France
+            </p>
 
             <time
               class="experience-year"
@@ -13050,6 +13226,11 @@ LANGUAGE-SPECIFIC HOVER COLORS
               Jan–May 2025
             </time>
 
+          </div>
+
+
+          <div class="experience-actions">
+
             <button
               class="experience-toggle"
               type="button"
@@ -13057,7 +13238,10 @@ LANGUAGE-SPECIFIC HOVER COLORS
               aria-controls="experience-ardhis-details"
               aria-label="Open ARDHIS experience details"
             >
-              <span class="experience-toggle-icon" aria-hidden="true"></span>
+              <span
+                class="experience-toggle-icon"
+                aria-hidden="true"
+              ></span>
             </button>
 
           </div>
@@ -13140,13 +13324,12 @@ LANGUAGE-SPECIFIC HOVER COLORS
             <h3>Royal Scientific Society</h3>
 
             <p class="experience-role">
-              Research Assistant · Amman, Jordan
+              Research Assistant
             </p>
 
-          </div>
-
-
-          <div class="experience-actions">
+            <p class="experience-location">
+              Amman, Jordan
+            </p>
 
             <time
               class="experience-year"
@@ -13155,6 +13338,11 @@ LANGUAGE-SPECIFIC HOVER COLORS
               Jun–Sep 2023
             </time>
 
+          </div>
+
+
+          <div class="experience-actions">
+
             <button
               class="experience-toggle"
               type="button"
@@ -13162,7 +13350,10 @@ LANGUAGE-SPECIFIC HOVER COLORS
               aria-controls="experience-rss-details"
               aria-label="Open Royal Scientific Society experience details"
             >
-              <span class="experience-toggle-icon" aria-hidden="true"></span>
+              <span
+                class="experience-toggle-icon"
+                aria-hidden="true"
+              ></span>
             </button>
 
           </div>
@@ -13222,11 +13413,10 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
 
     </div>
+
   </div>
 
 </section>
-
-
 
 
 
