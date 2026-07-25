@@ -4858,7 +4858,53 @@ cutting the background at the content width.
 
 
 
+/* ==========================================
+   EXPERIENCE — PHONE DATE FIX
+========================================== */
 
+@media (max-width: 650px) {
+
+  #experience .experience-summary {
+    grid-template-columns:
+      54px
+      minmax(0, 1fr)
+      42px;
+
+    align-items: start;
+  }
+
+  #experience .experience-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+  }
+
+  #experience .experience-year,
+  #experience .experience-item.is-open
+  .experience-year {
+    position: static;
+
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+
+    order: 1;
+
+    font-size: 0.78rem;
+    line-height: 1.2;
+    letter-spacing: 0;
+
+    white-space: nowrap;
+
+    transform: none;
+  }
+
+  #experience .experience-toggle {
+    order: 2;
+  }
+
+}
 
 
 
