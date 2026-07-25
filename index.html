@@ -5125,13 +5125,9 @@ cutting the background at the content width.
 
 }
 
-    /* ==========================================
-   EXPERIENCE DATE
-   Desktop = right side
-   Mobile = under location
+/* ==========================================
+   EXPERIENCE DATE — DESKTOP (ORIGINAL STYLE)
 ========================================== */
-
-/* ---------- Desktop ---------- */
 
 @media (min-width:651px){
 
@@ -5139,32 +5135,40 @@ cutting the background at the content width.
         position:relative;
     }
 
+    /* Leave room for the date */
     #experience .experience-heading{
-        position:relative;
-        padding-right:150px;
+        padding-right:190px;
     }
 
+    /* Date back on the right */
     #experience .experience-year{
         position:absolute !important;
 
         top:50%;
-        right:68px;
-
-        margin:0;
+        right:78px;
 
         transform:translateY(-50%) !important;
 
-        writing-mode:horizontal-tb !important;
+        margin:0 !important;
 
-        font-size:.9rem;
+        font-size:clamp(1.45rem,2vw,2.45rem);
         font-weight:700;
-        letter-spacing:.08em;
+        letter-spacing:-.04em;
+        line-height:1;
 
+        color:var(--accent);
+
+        text-transform:none;
         white-space:nowrap;
+
+        writing-mode:horizontal-tb !important;
+        text-orientation:mixed;
     }
 
+    /* Plus button */
     #experience .experience-actions{
         position:absolute;
+
         top:50%;
         right:0;
 
@@ -5174,7 +5178,9 @@ cutting the background at the content width.
 }
 
 
-/* ---------- Phone ---------- */
+/* ==========================================
+   EXPERIENCE DATE — MOBILE
+========================================== */
 
 @media (max-width:650px){
 
@@ -5190,6 +5196,10 @@ cutting the background at the content width.
         transform:none !important;
 
         font-size:.72rem;
+        font-weight:700;
+        letter-spacing:.06em;
+
+        color:rgba(18,56,43,.55);
     }
 
     #experience .experience-actions{
@@ -5198,8 +5208,6 @@ cutting the background at the content width.
     }
 
 }
-
-
 
 
 
