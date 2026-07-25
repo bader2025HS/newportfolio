@@ -5542,7 +5542,122 @@ cutting the background at the content width.
 
 
 
+/* ==========================================
+   EXPERIENCE — SINGLE CONTENT DIVIDER
+========================================== */
 
+/* Remove ALL existing dividers */
+
+#experience .experience-summary,
+#experience .experience-details,
+#experience .experience-details-inner,
+#experience .experience-text{
+    border:none !important;
+}
+
+
+/* Create only ONE divider */
+
+#experience .experience-details-inner{
+    position:relative;
+
+    padding-top:44px !important;
+}
+
+
+/* Divider starts under the text column, not the logo */
+
+#experience .experience-details-inner::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+    right:0;
+
+    height:4px;
+
+    background:var(--accent);
+
+}
+
+    /* ==========================================
+   EXPERIENCE LOCATION
+========================================== */
+
+/* Closed */
+
+#experience .experience-location{
+
+    display:inline-flex;
+    align-items:center;
+
+    margin-top:8px;
+    padding:6px 11px;
+
+    font-size:.88rem;
+    font-weight:700;
+    line-height:1;
+
+    letter-spacing:.05em;
+    text-transform:uppercase;
+
+    color:var(--accent);
+
+    border:2px solid var(--accent);
+
+    background:transparent;
+
+    transition:
+        background .28s ease,
+        color .28s ease,
+        border-color .28s ease,
+        transform .28s ease,
+        box-shadow .28s ease;
+}
+
+
+/* Open */
+
+#experience .experience-item.is-open
+.experience-location{
+
+    color:#fff;
+
+    background:var(--accent);
+
+    border-color:var(--accent);
+
+    transform:translateX(6px);
+
+    box-shadow:
+        0 8px 18px rgba(18,56,43,.12);
+}
+
+
+/* Mobile */
+
+@media (max-width:650px){
+
+    #experience .experience-location{
+
+        margin-top:8px;
+
+        padding:5px 10px;
+
+        font-size:.78rem;
+    }
+
+    #experience .experience-item.is-open
+    .experience-location{
+
+        transform:translateX(4px);
+    }
+
+}
 
 
 
