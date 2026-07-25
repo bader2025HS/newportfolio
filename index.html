@@ -6748,77 +6748,11 @@ MORE SPACED NUMBERS
 
 
 
-/* ==========================================
-   EXPERIENCE — PLUS INDICATOR
-========================================== */
-
-#experience .experience-item{
-    position:relative !important;
-}
-
-#experience .experience-plus{
-    position:absolute !important;
-
-    top:24px !important;
-    right:24px !important;
-
-    z-index:20 !important;
-
-    display:block !important;
-
-    margin:0 !important;
-    padding:0 !important;
-
-    font-family:"Space Grotesk",sans-serif !important;
-    font-size:1.8rem !important;
-    font-weight:300 !important;
-    line-height:1 !important;
-
-    color:rgba(18,56,43,.42) !important;
-
-    pointer-events:none !important;
-
-    transform:rotate(0deg) !important;
-    transform-origin:center !important;
-
-    transition:
-        transform .3s ease,
-        color .3s ease !important;
-}
-
-#experience .experience-item:hover .experience-plus{
-    transform:rotate(45deg) !important;
-    color:var(--accent, #12382b) !important;
-}
 
 
-/* Keep the plus visible on coloured hover cards */
-
-#experience .experience-item:hover .experience-plus{
-    color:#ffffff !important;
-}
 
 
-/* ==========================================
-   PHONE
-========================================== */
 
-@media (max-width:768px){
-
-    #experience .experience-plus{
-        top:18px !important;
-        right:18px !important;
-
-        font-size:1.55rem !important;
-    }
-
-    #experience .experience-item.active .experience-plus,
-    #experience .experience-item.selected .experience-plus{
-        transform:rotate(45deg) !important;
-        color:#ffffff !important;
-    }
-
-}
 
 
 
@@ -14580,46 +14514,34 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
 
 
+
+
+
 <section id="experience">
   <div class="experience-container">
 
     <div class="experience-header">
-
-      <div
-        class="oversized-label"
-        data-letter="EXPERIENCE"
-      >
+      <div class="oversized-label" data-letter="EXPERIENCE">
         <span>Who have I worked with?</span>
       </div>
 
-      <h2>Built across sectors.</h2>
-
+      <h2>
+          Built across sectors.
+      </h2>
     </div>
 
 
     <div class="experience-list">
 
-
       <!-- =====================================
-           BNP PARIBAS
+      BNP PARIBAS
       ====================================== -->
 
       <article class="experience-item bnp">
 
-        <span
-          class="experience-plus"
-          aria-hidden="true"
-        >
-          +
-        </span>
-
         <div class="experience-logo">
-          <img
-            src="bnplogo.png"
-            alt="BNP Paribas logo"
-          >
+        <img src="bnplogo.png" alt="BNP Paribas logo">
         </div>
-
 
         <div class="experience-content">
 
@@ -14631,52 +14553,35 @@ LANGUAGE-SPECIFIC HOVER COLORS
             CSR &amp; Sustainability Communications · Paris, France
           </p>
 
-
-          <ul class="experience-text">
-
-            <li>
-              <strong>Produced</strong> editorial content for BNP Paribas'
-              corporate website and internal platforms, including
-              <strong>1 feature article</strong> and
-              <strong>10+ sustainability publications</strong> covering
-              climate, energy transition and corporate responsibility, as
-              well as <strong>6 PlayPlay videos</strong>,
-              <strong>2 infographics</strong> and digital campaigns promoting
-              sustainability initiatives.
-            </li>
-
-            <li>
-              <strong>Coordinated</strong>
-              <strong>2 international webinars</strong> on Circular Economy
-              and One Health, generating approximately
-              <strong>2,000 views per webinar</strong> through speaker
-              coordination, event preparation and post-event communications.
-            </li>
-
-            <li>
-              <strong>Collaborated</strong> with communications teams across
-              <strong>4 countries</strong> — France, Belgium, India and the
-              Netherlands — while monitoring campaign performance through
-              KPIs.
-            </li>
-
-          </ul>
+<ul class="experience-text">
+  <li>
+    <strong>Produced</strong> editorial content for BNP Paribas' corporate website and internal platforms, including <strong>1 feature article</strong> and <strong>10+ sustainability publications</strong> covering climate, energy transition and corporate responsibility, as well as 
+    <strong>6 PlayPlay videos</strong>, <strong>2 infographics</strong> and digital campaigns promoting sustainability initiatives.
+  </li>
 
 
-          <div class="experience-tags">
+  <li>
+    <strong>Coordinated</strong> <strong>2 international webinars</strong> on Circular Economy and One Health, generating approximately <strong>2,000 views per webinar</strong> through speaker coordination, event preparation and post-event communications.
+  </li>
 
-            <span class="experience-type">
-              Private Sector
-            </span>
+  <li>
+    <strong>Collaborated</strong> with communications teams across <strong>4 countries</strong> (France, Belgium, India and the Netherlands) while monitoring campaign performance through KPIs.
+  </li>
+</ul>
 
-            <small>Content Production</small>
-            <small>Performance Analytics</small>
-            <small>Corporate Philanthropy</small>
+<div class="experience-tags">
 
-          </div>
+    <span class="experience-type">
+        Private Sector
+    </span>
+
+    <small>Content Production</small>
+    <small>Performance Analytics</small>
+    <small>Corporate Philanthropy</small>
+
+</div>
 
         </div>
-
 
         <div class="experience-year">
           2026
@@ -14685,27 +14590,15 @@ LANGUAGE-SPECIFIC HOVER COLORS
       </article>
 
 
-
       <!-- =====================================
-           OIF
+      OIF
       ====================================== -->
 
       <article class="experience-item oif">
 
-        <span
-          class="experience-plus"
-          aria-hidden="true"
-        >
-          +
-        </span>
-
         <div class="experience-logo">
-          <img
-            src="oiflogo.webp"
-            alt="Organisation Internationale de la Francophonie logo"
-          >
+        <img src="oiflogo.webp" alt="OIF logo">
         </div>
-
 
         <div class="experience-content">
 
@@ -14719,46 +14612,34 @@ LANGUAGE-SPECIFIC HOVER COLORS
             Project Monitoring &amp; Strategic Reporting · Paris, France
           </p>
 
+<ul class="experience-text">
+  <li>
+    Managed monitoring and evaluation of <strong>20+ international development projects</strong> spanning <strong>90 member states</strong>, ensuring consistent performance reporting.
+  </li>
 
-          <ul class="experience-text">
+  <li>
+    Built interactive <strong>Power BI dashboards</strong> and <strong>Excel monitoring systems</strong> integrating <strong>10+ KPIs</strong> to improve project oversight and strategic planning.
+  </li>
 
-            <li>
-              Managed the monitoring and evaluation of
-              <strong>20+ international development projects</strong>
-              spanning <strong>90 member states</strong>, ensuring consistent
-              performance reporting.
-            </li>
+  <li>
+    Authored <strong>70 analytical country briefs</strong> for executive leadership, transforming political and socio-economic information into concise decision-support products.
+  </li>
 
-            <li>
-              Built interactive <strong>Power BI dashboards</strong> and
-              <strong>Excel monitoring systems</strong> integrating
-              <strong>10+ KPIs</strong> to improve project oversight and
-              strategic planning.
-            </li>
-
-            <li>
-              Authored <strong>70 analytical country briefs</strong> for
-              executive leadership, transforming political and socio-economic
-              information into concise decision-support products.
-            </li>
-
-          </ul>
-
+</ul>
 
           <div class="experience-tags">
 
             <span class="experience-type">
-              International Organisation
+              International organisation
             </span>
 
             <small>Strategic Reporting</small>
             <small>Project Monitoring</small>
-            <small>Policy Analysis</small>
+              <small>Policy Analysis</small>
 
           </div>
 
         </div>
-
 
         <div class="experience-year">
           2025
@@ -14767,27 +14648,15 @@ LANGUAGE-SPECIFIC HOVER COLORS
       </article>
 
 
-
       <!-- =====================================
-           AQLITY
+      AQLITY
       ====================================== -->
 
       <article class="experience-item aqlity">
 
-        <span
-          class="experience-plus"
-          aria-hidden="true"
-        >
-          +
-        </span>
-
         <div class="experience-logo">
-          <img
-            src="aqlitylogo.png"
-            alt="AQLITY logo"
-          >
+        <img src="aqlitylogo.png" alt="AQLITY logo">
         </div>
-
 
         <div class="experience-content">
 
@@ -14799,53 +14668,32 @@ LANGUAGE-SPECIFIC HOVER COLORS
             Humanitarian Data Analyst · Remote
           </p>
 
+<ul class="experience-text">
+  <li>
+    Completed <strong>170 hours of advanced humanitarian data training</strong>, developing expertise in data analysis, geospatial intelligence and evidence-driven humanitarian programming.
+  </li>
 
-          <ul class="experience-text">
+  <li>
+    Processed and analysed datasets from <strong>50+ conflict-affected Ukrainian settlements</strong>, strengthening data reliability and supporting operational decision-making in humanitarian response.
+  </li>
 
-            <li>
-              Completed
-              <strong>
-                170 hours of advanced humanitarian data training
-              </strong>,
-              developing expertise in data analysis, geospatial intelligence
-              and evidence-driven humanitarian programming.
-            </li>
-
-            <li>
-              Processed and analysed datasets from
-              <strong>
-                50+ conflict-affected Ukrainian settlements
-              </strong>,
-              strengthening data reliability and supporting operational
-              decision-making in humanitarian response.
-            </li>
-
-            <li>
-              Designed <strong>10+ geospatial maps</strong> and authored
-              <strong>12 analytical reports</strong> using
-              <strong>Mapbox, Adobe Illustrator and Excel</strong>,
-              converting complex datasets into clear visual products that
-              informed assessments of displacement, shelter, security and
-              infrastructure.
-            </li>
-
-          </ul>
-
-
+  <li>
+    Designed <strong>10+ geospatial maps</strong> and authored <strong>12 analytical reports</strong> using <strong>Mapbox, Adobe Illustrator and Excel</strong>, converting complex datasets into clear visual products that informed assessments of displacement, shelter, security and infrastructure.
+  </li>
+</ul>
           <div class="experience-tags">
 
             <span class="experience-type">
-              Humanitarian Innovation
+              Humanitarian innovation
             </span>
 
             <small>Humanitarian Response</small>
-            <small>Evidence-Based Research</small>
+            <small>Evident-Based Research</small>
             <small>Data Visualisation</small>
 
           </div>
 
         </div>
-
 
         <div class="experience-year">
           2025
@@ -14854,27 +14702,15 @@ LANGUAGE-SPECIFIC HOVER COLORS
       </article>
 
 
-
       <!-- =====================================
-           ARDHIS
+      ARDHIS
       ====================================== -->
 
       <article class="experience-item ardhis">
 
-        <span
-          class="experience-plus"
-          aria-hidden="true"
-        >
-          +
-        </span>
-
         <div class="experience-logo">
-          <img
-            src="ardhislogo.png"
-            alt="ARDHIS logo"
-          >
+        <img src="ardhislogo.png" alt="ARDHIS logo">
         </div>
-
 
         <div class="experience-content">
 
@@ -14886,35 +14722,29 @@ LANGUAGE-SPECIFIC HOVER COLORS
             Asylum Casework &amp; Research · Paris, France
           </p>
 
+<ul class="experience-text">
+  <li>
+    Supported <strong>200+ asylum seekers</strong> during weekly legal
+    drop-in sessions, reviewing asylum applications, explaining procedures,
+    addressing protection concerns, and preparing applicants for
+    <strong>OFPRA interviews</strong>.
+  </li>
 
-          <ul class="experience-text">
 
-            <li>
-              Supported <strong>200+ asylum seekers</strong> during weekly
-              legal drop-in sessions, reviewing asylum applications,
-              explaining procedures, addressing protection concerns and
-              preparing applicants for
-              <strong>OFPRA interviews</strong>.
-            </li>
+<li>
+  Conducted <strong>Country of Origin Information (COI)</strong> research on
+  the legal, political, and social conditions affecting LGBTQIA+ communities,
+  producing a <strong>60+ page report</strong> on
+  <strong>four African countries</strong> that strengthened evidence-based
+  asylum assessments and legal case preparation.
+</li>
 
-            <li>
-              Conducted
-              <strong>Country of Origin Information (COI)</strong>
-              research on the legal, political and social conditions affecting
-              LGBTQIA+ communities, producing a
-              <strong>60+ page report</strong> on
-              <strong>four African countries</strong> that strengthened
-              evidence-based asylum assessments and legal case preparation.
-            </li>
-
-            <li>
-              Assisted asylum caseworkers by reviewing supporting
-              documentation, identifying gaps in case files and helping
-              applicants strengthen their asylum claims before submission.
-            </li>
-
-          </ul>
-
+    <li>
+    Assisted asylum caseworkers by reviewing supporting documentation,
+    identifying gaps in case files, and helping applicants strengthen their
+    asylum claims before submission.
+  </li>
+</ul>
 
           <div class="experience-tags">
 
@@ -14922,14 +14752,13 @@ LANGUAGE-SPECIFIC HOVER COLORS
               Asylum NGO
             </span>
 
-            <small>Asylum &amp; Protection</small>
+            <small>Asylum & Protection</small>
             <small>Human Rights Analysis</small>
-            <small>Legal Case Support</small>
+            <small>Legal ase Support</small>
 
           </div>
 
         </div>
-
 
         <div class="experience-year">
           2024–25
@@ -14938,27 +14767,15 @@ LANGUAGE-SPECIFIC HOVER COLORS
       </article>
 
 
-
       <!-- =====================================
-           ROYAL SCIENTIFIC SOCIETY
+      ROYAL SCIENTIFIC SOCIETY
       ====================================== -->
 
       <article class="experience-item tarjimly">
 
-        <span
-          class="experience-plus"
-          aria-hidden="true"
-        >
-          +
-        </span>
-
         <div class="experience-logo">
-          <img
-            src="rsslogo.png"
-            alt="Royal Scientific Society logo"
-          >
+        <img src="rsslogo.png" alt="RSS logo">
         </div>
-
 
         <div class="experience-content">
 
@@ -14967,52 +14784,42 @@ LANGUAGE-SPECIFIC HOVER COLORS
           </div>
 
           <p class="experience-role">
-            Research Assistant · Amman, Jordan
+Research Assistant · Amman, Jordan
           </p>
 
+    <ul class="experience-text">
+  <li>
+    Co-authored a <strong>10-page policy paper</strong> published by the
+    <strong>Konrad Adenauer Stiftung</strong>, synthesizing evidence from
+    <strong>50+ academic and policy sources</strong> to develop recommendations
+    for sustainable desalination and water governance in Jordan.
+  </li>
 
-          <ul class="experience-text">
+  <li>
+    Mapped <strong>20+ science diplomacy initiatives</strong>, highlighting
+    links between research, policymaking, and international cooperation to
+    identify opportunities for regional collaboration.
+  </li>
 
-            <li>
-              Co-authored a <strong>10-page policy paper</strong> published by
-              the <strong>Konrad Adenauer Stiftung</strong>, synthesising
-              evidence from
-              <strong>50+ academic and policy sources</strong> to develop
-              recommendations for sustainable desalination and water
-              governance in Jordan.
-            </li>
-
-            <li>
-              Mapped
-              <strong>20+ science diplomacy initiatives</strong>,
-              highlighting links between research, policymaking and
-              international cooperation to identify opportunities for
-              regional collaboration.
-            </li>
-
-            <li>
-              Reviewed and edited policy articles prior to publication,
-              ensuring analytical quality, factual accuracy and consistency
-              with organisational research standards.
-            </li>
-
-          </ul>
-
-
+  <li>
+    Reviewed and edited policy articles prior to publication, ensuring
+    analytical quality, factual accuracy, and consistency with organizational
+    research standards.
+  </li>
+</ul>
           <div class="experience-tags">
 
             <span class="experience-type">
-              Research Institute
+      Research Institute
             </span>
 
-            <small>Science Diplomacy</small>
+            <small>Sciences Diplomacy</small>
             <small>Policy Research</small>
             <small>Water Governance</small>
 
           </div>
 
         </div>
-
 
         <div class="experience-year">
           2023
