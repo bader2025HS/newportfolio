@@ -6746,822 +6746,11 @@ MORE SPACED NUMBERS
 
 
 
-/* ==========================================
-   EXPERIENCE — READ MORE ACCORDION
-   FINAL OVERRIDE
-========================================== */
 
 
-/* ==========================================
-   BUTTON
-========================================== */
 
-#experience .experience-toggle {
-  position: relative;
 
-  width: max-content;
 
-  margin-top: 22px;
-  padding: 11px 15px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 18px;
-
-  border: 1.5px solid var(--accent);
-  border-radius: 0;
-
-  background: transparent;
-  color: var(--accent);
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.68rem;
-  font-weight: 800;
-  line-height: 1;
-
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-
-  cursor: pointer;
-
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-
-/* Button hover */
-
-#experience .experience-toggle:hover {
-  background: var(--accent);
-  color: #ffffff;
-
-  transform: translateY(-2px);
-
-  box-shadow: 5px 5px 0 var(--logo-bg);
-}
-
-
-/* Keyboard accessibility */
-
-#experience .experience-toggle:focus-visible {
-  outline: 3px solid var(--logo-bg);
-  outline-offset: 4px;
-}
-
-
-/* ==========================================
-   PLUS / MINUS ICON
-========================================== */
-
-#experience .experience-toggle-icon {
-  position: relative;
-
-  width: 14px;
-  height: 14px;
-
-  display: block;
-
-  flex: 0 0 14px;
-}
-
-
-/* Horizontal line */
-
-#experience .experience-toggle-icon::before {
-  content: "";
-
-  position: absolute;
-  top: 50%;
-  left: 0;
-
-  width: 100%;
-  height: 2px;
-
-  background: currentColor;
-
-  transform: translateY(-50%);
-}
-
-
-/* Vertical line */
-
-#experience .experience-toggle-icon::after {
-  content: "";
-
-  position: absolute;
-  top: 0;
-  left: 50%;
-
-  width: 2px;
-  height: 100%;
-
-  background: currentColor;
-
-  transform: translateX(-50%);
-
-  transition:
-    opacity 0.25s ease,
-    transform 0.3s ease;
-}
-
-
-/* Turn plus into minus */
-
-#experience .experience-item.is-open
-.experience-toggle-icon::after {
-  opacity: 0;
-
-  transform:
-    translateX(-50%)
-    rotate(90deg);
-}
-
-
-/* Open button style */
-
-#experience .experience-item.is-open
-.experience-toggle {
-  background: var(--accent);
-  color: #ffffff;
-
-  box-shadow: 5px 5px 0 var(--logo-bg);
-}
-
-
-/* ==========================================
-   COLLAPSIBLE DETAILS
-========================================== */
-
-#experience .experience-details {
-  display: grid;
-  grid-template-rows: 0fr;
-
-  opacity: 0;
-
-  transition:
-    grid-template-rows 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.3s ease;
-}
-
-
-/*
-The extra wrapper is not necessary because
-the first children are contained by overflow.
-*/
-
-#experience .experience-details > * {
-  min-height: 0;
-}
-
-
-/* Hide content while closed */
-
-#experience .experience-details {
-  overflow: hidden;
-}
-
-
-/* Open details */
-
-#experience .experience-item.is-open
-.experience-details {
-  grid-template-rows: 1fr;
-
-  opacity: 1;
-
-  overflow: visible;
-}
-
-
-/* ==========================================
-   RESET OLD HOVER REVEAL
-========================================== */
-
-#experience .experience-text,
-#experience .experience-item:hover .experience-text {
-  max-height: none !important;
-
-  margin-top: 24px !important;
-
-  opacity: 1 !important;
-
-  overflow: visible !important;
-
-  transform: none !important;
-}
-
-
-/* Keep tags inside the animated area */
-
-#experience .experience-tags {
-  margin-bottom: 4px;
-}
-
-
-/* ==========================================
-   CARD OPEN STATE
-========================================== */
-
-#experience .experience-item.is-open {
-  padding-left: 14px;
-  padding-right: 14px;
-
-  background: var(--hover-bg);
-
-  border-top-color: var(--accent);
-  border-bottom-color: var(--accent);
-}
-
-
-/* Title */
-
-#experience .experience-item.is-open
-.experience-title-row h3 {
-  color: var(--accent);
-}
-
-
-/* Tags */
-
-#experience .experience-item.is-open
-.experience-tags small {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #ffffff;
-}
-
-
-/* Year */
-
-#experience .experience-item.is-open
-.experience-year {
-  transform: translateX(-8px);
-}
-
-
-/* ==========================================
-   REPEATED LOGO COLUMN — OPEN STATE
-========================================== */
-
-@media (min-width: 769px) and (hover: hover) {
-
-  /*
-  Stop ordinary hover from activating
-  the repeated-logo column.
-  */
-
-  #experience .experience-item:hover
-  .experience-logo {
-    align-self: start !important;
-
-    width: 88px !important;
-    height: 88px !important;
-    min-height: 88px !important;
-
-    overflow: hidden !important;
-  }
-
-  #experience .experience-item:hover
-  .experience-logo::before {
-    opacity: 0 !important;
-  }
-
-  #experience .experience-item:hover
-  .experience-logo > img,
-  #experience .experience-item:hover
-  .experience-logo > svg {
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-
-  /*
-  Activate repeated logos only when
-  the Read more button is opened.
-  */
-
-  #experience .experience-item.is-open
-  .experience-logo {
-    align-self: stretch !important;
-
-    width: 88px !important;
-    height: auto !important;
-    min-height: 100% !important;
-
-    margin: 0 !important;
-
-    background: transparent !important;
-
-    border-radius: 0 !important;
-    overflow: hidden !important;
-
-    transform: none !important;
-  }
-
-  #experience .experience-item.is-open
-  .experience-logo::before {
-    opacity: 1 !important;
-  }
-
-  #experience .experience-item.is-open
-  .experience-logo > img,
-  #experience .experience-item.is-open
-  .experience-logo > svg {
-    opacity: 0 !important;
-    visibility: hidden !important;
-  }
-}
-
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width: 768px) {
-
-  #experience .experience-toggle {
-    width: 100%;
-
-    margin-top: 17px;
-    padding: 11px 13px;
-
-    justify-content: space-between;
-
-    font-size: 0.63rem;
-  }
-
-  #experience .experience-details {
-    grid-template-rows: 0fr !important;
-
-    opacity: 0 !important;
-    overflow: hidden !important;
-  }
-
-  #experience .experience-item.is-open
-  .experience-details {
-    grid-template-rows: 1fr !important;
-
-    opacity: 1 !important;
-    overflow: visible !important;
-  }
-
-  /*
-  Override the previous rule that made
-  descriptions permanently visible on phones.
-  */
-
-  #experience .experience-text,
-  #experience .experience-item:hover
-  .experience-text {
-    margin-top: 18px !important;
-
-    font-size: 0.84rem !important;
-    line-height: 1.6 !important;
-  }
-
-  #experience .experience-item.is-open,
-  #experience .experience-item.is-open:hover {
-    background: var(--hover-bg) !important;
-
-    border-top-color: var(--accent) !important;
-    border-bottom-color: var(--accent) !important;
-
-    transform: none !important;
-  }
-
-  #experience .experience-item.is-open
-  .experience-year {
-    transform: none !important;
-  }
-}
-
-
-
-/* ==========================================
-   EXPERIENCE ACCORDION — FINAL FIX
-========================================== */
-
-
-/* ==========================================
-   REMOVE OLD HOVER BEHAVIOUR
-========================================== */
-
-#experience .experience-item,
-#experience .experience-item:hover {
-  min-height: 0 !important;
-
-  background: transparent !important;
-
-  transform: none !important;
-
-  border-top-color: rgba(18, 56, 43, 0.22) !important;
-  border-bottom-color: rgba(18, 56, 43, 0.22) !important;
-}
-
-
-/* Do not colour titles simply from hovering */
-
-#experience .experience-item:hover .experience-title-row h3 {
-  color: inherit !important;
-}
-
-
-/* Do not move the year on hover */
-
-#experience .experience-item:hover .experience-year {
-  transform: none !important;
-}
-
-
-/* Do not reveal descriptions on hover */
-
-#experience .experience-item:hover .experience-text,
-#experience .experience-text {
-  max-height: none !important;
-
-  opacity: 1 !important;
-  visibility: visible !important;
-
-  transform: none !important;
-
-  overflow: visible !important;
-}
-
-
-/* Do not colour tags on hover */
-
-#experience .experience-item:hover .experience-tags small {
-  background: transparent !important;
-  color: var(--accent) !important;
-  border-color: var(--accent) !important;
-}
-
-
-/* ==========================================
-   COMPACT CLOSED CARD
-========================================== */
-
-#experience .experience-item {
-  padding-top: 34px !important;
-  padding-bottom: 34px !important;
-
-  align-items: start !important;
-
-  transition:
-    background-color 0.35s ease,
-    border-color 0.35s ease,
-    padding 0.35s ease;
-}
-
-
-#experience .experience-content {
-  align-self: start !important;
-}
-
-
-#experience .experience-role {
-  margin-bottom: 0 !important;
-}
-
-
-/* ==========================================
-   BUTTON
-========================================== */
-
-#experience .experience-toggle {
-  width: max-content;
-
-  margin-top: 20px;
-  padding: 12px 16px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 20px;
-
-  background: var(--accent);
-  color: #ffffff;
-
-  border: 1.5px solid var(--accent);
-  border-radius: 0;
-
-  box-shadow: 6px 6px 0 rgba(18, 56, 43, 0.16);
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.7rem;
-  font-weight: 800;
-
-  letter-spacing: 0.14em;
-  line-height: 1;
-  text-transform: uppercase;
-
-  cursor: pointer;
-
-  transition:
-    background-color 0.25s ease,
-    color 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
-}
-
-
-#experience .experience-toggle:hover {
-  background: transparent;
-  color: var(--accent);
-
-  transform: translateY(-2px);
-
-  box-shadow: 4px 4px 0 rgba(18, 56, 43, 0.14);
-}
-
-
-/* ==========================================
-   PLUS / MINUS
-========================================== */
-
-#experience .experience-toggle-icon {
-  position: relative;
-
-  width: 14px;
-  height: 14px;
-
-  flex: 0 0 14px;
-}
-
-
-#experience .experience-toggle-icon::before,
-#experience .experience-toggle-icon::after {
-  content: "";
-
-  position: absolute;
-
-  background: currentColor;
-}
-
-
-#experience .experience-toggle-icon::before {
-  top: 50%;
-  left: 0;
-
-  width: 100%;
-  height: 2px;
-
-  transform: translateY(-50%);
-}
-
-
-#experience .experience-toggle-icon::after {
-  top: 0;
-  left: 50%;
-
-  width: 2px;
-  height: 100%;
-
-  transform: translateX(-50%);
-
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
-}
-
-
-#experience .experience-item.is-open
-.experience-toggle-icon::after {
-  opacity: 0;
-
-  transform:
-    translateX(-50%)
-    rotate(90deg);
-}
-
-
-/* ==========================================
-   CLOSED DETAILS
-========================================== */
-
-#experience .experience-details {
-  display: grid;
-
-  grid-template-rows: 0fr;
-
-  opacity: 0;
-
-  overflow: hidden;
-
-  transition:
-    grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.25s ease;
-}
-
-
-#experience .experience-details-inner {
-  min-height: 0;
-
-  overflow: hidden;
-}
-
-
-/* Prevent hidden content creating space */
-
-#experience .experience-details:not(.is-open) {
-  margin: 0 !important;
-}
-
-
-#experience .experience-details .experience-text {
-  margin-top: 26px !important;
-}
-
-
-#experience .experience-details .experience-tags {
-  margin-top: 24px !important;
-  margin-bottom: 2px !important;
-}
-
-
-/* ==========================================
-   OPEN STATE — CLICK ONLY
-========================================== */
-
-#experience .experience-item.is-open {
-  background: var(--hover-bg) !important;
-
-  border-top-color: var(--accent) !important;
-  border-bottom-color: var(--accent) !important;
-
-  padding-top: 34px !important;
-  padding-bottom: 38px !important;
-}
-
-
-#experience .experience-item.is-open
-.experience-details {
-  grid-template-rows: 1fr;
-
-  opacity: 1;
-}
-
-
-#experience .experience-item.is-open
-.experience-details-inner {
-  overflow: visible;
-}
-
-
-#experience .experience-item.is-open
-.experience-title-row h3 {
-  color: var(--accent) !important;
-}
-
-
-#experience .experience-item.is-open
-.experience-tags small,
-#experience .experience-item.is-open
-.experience-tags .experience-type {
-  background: var(--accent) !important;
-  color: #ffffff !important;
-  border-color: var(--accent) !important;
-}
-
-
-#experience .experience-item.is-open
-.experience-toggle {
-  background: var(--accent);
-  color: #ffffff;
-}
-
-
-/* ==========================================
-   LOGO — NORMAL STATE
-========================================== */
-
-#experience .experience-logo,
-#experience .experience-item:hover .experience-logo {
-  align-self: start !important;
-
-  width: 88px !important;
-  height: 88px !important;
-  min-height: 88px !important;
-
-  overflow: hidden !important;
-
-  transform: none !important;
-}
-
-
-#experience .experience-logo::before,
-#experience .experience-item:hover .experience-logo::before {
-  opacity: 0 !important;
-}
-
-
-#experience .experience-logo > img,
-#experience .experience-logo > svg,
-#experience .experience-item:hover .experience-logo > img,
-#experience .experience-item:hover .experience-logo > svg {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-
-/* ==========================================
-   REPEATED LOGOS — OPEN CLICK STATE ONLY
-========================================== */
-
-@media (min-width: 769px) {
-
-  #experience .experience-item.is-open
-  .experience-logo {
-    align-self: stretch !important;
-
-    width: 88px !important;
-    height: auto !important;
-    min-height: 100% !important;
-
-    overflow: hidden !important;
-  }
-
-
-  #experience .experience-item.is-open
-  .experience-logo::before {
-    opacity: 1 !important;
-  }
-
-
-  #experience .experience-item.is-open
-  .experience-logo > img,
-  #experience .experience-item.is-open
-  .experience-logo > svg {
-    opacity: 0 !important;
-    visibility: hidden !important;
-  }
-}
-
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width: 768px) {
-
-  #experience .experience-item,
-  #experience .experience-item:hover,
-  #experience .experience-item.is-open {
-    min-height: 0 !important;
-
-    padding-top: 26px !important;
-    padding-bottom: 26px !important;
-
-    transform: none !important;
-  }
-
-
-  #experience .experience-toggle {
-    width: 100%;
-
-    justify-content: space-between;
-
-    margin-top: 18px;
-  }
-
-
-  #experience .experience-details {
-    grid-template-rows: 0fr !important;
-
-    opacity: 0 !important;
-
-    overflow: hidden !important;
-  }
-
-
-  #experience .experience-item.is-open
-  .experience-details {
-    grid-template-rows: 1fr !important;
-
-    opacity: 1 !important;
-  }
-
-
-  #experience .experience-item.is-open {
-    background: var(--hover-bg) !important;
-  }
-
-
-  #experience .experience-logo,
-  #experience .experience-item:hover .experience-logo,
-  #experience .experience-item.is-open .experience-logo {
-    align-self: start !important;
-
-    height: auto !important;
-    min-height: 0 !important;
-  }
-}
 
 
 
@@ -15327,31 +14516,31 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
 
 
+
 <section id="experience">
   <div class="experience-container">
 
     <div class="experience-header">
-
       <div class="oversized-label" data-letter="EXPERIENCE">
         <span>Who have I worked with?</span>
       </div>
 
-      <h2>Built across sectors.</h2>
-
+      <h2>
+          Built across sectors.
+      </h2>
     </div>
 
 
     <div class="experience-list">
 
-
       <!-- =====================================
-           BNP PARIBAS
+      BNP PARIBAS
       ====================================== -->
 
       <article class="experience-item bnp">
 
         <div class="experience-logo">
-          <img src="bnplogo.png" alt="BNP Paribas logo">
+        <img src="bnplogo.png" alt="BNP Paribas logo">
         </div>
 
         <div class="experience-content">
@@ -15364,74 +14553,35 @@ LANGUAGE-SPECIFIC HOVER COLORS
             CSR &amp; Sustainability Communications · Paris, France
           </p>
 
-          <button
-            class="experience-toggle"
-            type="button"
-            aria-expanded="false"
-          >
-            <span class="experience-toggle-label">Read more</span>
-
-            <span
-              class="experience-toggle-icon"
-              aria-hidden="true"
-            ></span>
-          </button>
+<ul class="experience-text">
+  <li>
+    <strong>Produced</strong> editorial content for BNP Paribas' corporate website and internal platforms, including <strong>1 feature article</strong> and <strong>10+ sustainability publications</strong> covering climate, energy transition and corporate responsibility, as well as 
+    <strong>6 PlayPlay videos</strong>, <strong>2 infographics</strong> and digital campaigns promoting sustainability initiatives.
+  </li>
 
 
-          <div class="experience-details">
+  <li>
+    <strong>Coordinated</strong> <strong>2 international webinars</strong> on Circular Economy and One Health, generating approximately <strong>2,000 views per webinar</strong> through speaker coordination, event preparation and post-event communications.
+  </li>
 
-            <div class="experience-details-inner">
+  <li>
+    <strong>Collaborated</strong> with communications teams across <strong>4 countries</strong> (France, Belgium, India and the Netherlands) while monitoring campaign performance through KPIs.
+  </li>
+</ul>
 
-              <ul class="experience-text">
+<div class="experience-tags">
 
-                <li>
-                  <strong>Produced</strong> editorial content for BNP Paribas'
-                  corporate website and internal platforms, including
-                  <strong>1 feature article</strong> and
-                  <strong>10+ sustainability publications</strong> covering
-                  climate, energy transition and corporate responsibility, as
-                  well as <strong>6 PlayPlay videos</strong>,
-                  <strong>2 infographics</strong> and digital campaigns
-                  promoting sustainability initiatives.
-                </li>
+    <span class="experience-type">
+        Private Sector
+    </span>
 
-                <li>
-                  <strong>Coordinated</strong>
-                  <strong>2 international webinars</strong> on Circular Economy
-                  and One Health, generating approximately
-                  <strong>2,000 views per webinar</strong> through speaker
-                  coordination, event preparation and post-event
-                  communications.
-                </li>
+    <small>Content Production</small>
+    <small>Performance Analytics</small>
+    <small>Corporate Philanthropy</small>
 
-                <li>
-                  <strong>Collaborated</strong> with communications teams across
-                  <strong>4 countries</strong> — France, Belgium, India and the
-                  Netherlands — while monitoring campaign performance through
-                  KPIs.
-                </li>
-
-              </ul>
-
-
-              <div class="experience-tags">
-
-                <span class="experience-type">
-                  Private Sector
-                </span>
-
-                <small>Content Production</small>
-                <small>Performance Analytics</small>
-                <small>Corporate Philanthropy</small>
-
-              </div>
-
-            </div>
-
-          </div>
+</div>
 
         </div>
-
 
         <div class="experience-year">
           2026
@@ -15440,18 +14590,14 @@ LANGUAGE-SPECIFIC HOVER COLORS
       </article>
 
 
-
       <!-- =====================================
-           OIF
+      OIF
       ====================================== -->
 
       <article class="experience-item oif">
 
         <div class="experience-logo">
-          <img
-            src="oiflogo.webp"
-            alt="Organisation Internationale de la Francophonie logo"
-          >
+        <img src="oiflogo.webp" alt="OIF logo">
         </div>
 
         <div class="experience-content">
@@ -15466,68 +14612,34 @@ LANGUAGE-SPECIFIC HOVER COLORS
             Project Monitoring &amp; Strategic Reporting · Paris, France
           </p>
 
-          <button
-            class="experience-toggle"
-            type="button"
-            aria-expanded="false"
-          >
-            <span class="experience-toggle-label">Read more</span>
+<ul class="experience-text">
+  <li>
+    Managed monitoring and evaluation of <strong>20+ international development projects</strong> spanning <strong>90 member states</strong>, ensuring consistent performance reporting.
+  </li>
 
-            <span
-              class="experience-toggle-icon"
-              aria-hidden="true"
-            ></span>
-          </button>
+  <li>
+    Built interactive <strong>Power BI dashboards</strong> and <strong>Excel monitoring systems</strong> integrating <strong>10+ KPIs</strong> to improve project oversight and strategic planning.
+  </li>
 
+  <li>
+    Authored <strong>70 analytical country briefs</strong> for executive leadership, transforming political and socio-economic information into concise decision-support products.
+  </li>
 
-          <div class="experience-details">
+</ul>
 
-            <div class="experience-details-inner">
+          <div class="experience-tags">
 
-              <ul class="experience-text">
+            <span class="experience-type">
+              International organisation
+            </span>
 
-                <li>
-                  Managed the monitoring and evaluation of
-                  <strong>20+ international development projects</strong>
-                  spanning <strong>90 member states</strong>, ensuring
-                  consistent performance reporting.
-                </li>
-
-                <li>
-                  Built interactive <strong>Power BI dashboards</strong> and
-                  <strong>Excel monitoring systems</strong> integrating
-                  <strong>10+ KPIs</strong> to improve project oversight and
-                  strategic planning.
-                </li>
-
-                <li>
-                  Authored <strong>70 analytical country briefs</strong> for
-                  executive leadership, transforming political and
-                  socio-economic information into concise decision-support
-                  products.
-                </li>
-
-              </ul>
-
-
-              <div class="experience-tags">
-
-                <span class="experience-type">
-                  International Organisation
-                </span>
-
-                <small>Strategic Reporting</small>
-                <small>Project Monitoring</small>
-                <small>Policy Analysis</small>
-
-              </div>
-
-            </div>
+            <small>Strategic Reporting</small>
+            <small>Project Monitoring</small>
+              <small>Policy Analysis</small>
 
           </div>
 
         </div>
-
 
         <div class="experience-year">
           2025
@@ -15536,15 +14648,14 @@ LANGUAGE-SPECIFIC HOVER COLORS
       </article>
 
 
-
       <!-- =====================================
-           AQLITY
+      AQLITY
       ====================================== -->
 
       <article class="experience-item aqlity">
 
         <div class="experience-logo">
-          <img src="aqlitylogo.png" alt="AQLITY logo">
+        <img src="aqlitylogo.png" alt="AQLITY logo">
         </div>
 
         <div class="experience-content">
@@ -15557,74 +14668,32 @@ LANGUAGE-SPECIFIC HOVER COLORS
             Humanitarian Data Analyst · Remote
           </p>
 
-          <button
-            class="experience-toggle"
-            type="button"
-            aria-expanded="false"
-          >
-            <span class="experience-toggle-label">Read more</span>
+<ul class="experience-text">
+  <li>
+    Completed <strong>170 hours of advanced humanitarian data training</strong>, developing expertise in data analysis, geospatial intelligence and evidence-driven humanitarian programming.
+  </li>
 
-            <span
-              class="experience-toggle-icon"
-              aria-hidden="true"
-            ></span>
-          </button>
+  <li>
+    Processed and analysed datasets from <strong>50+ conflict-affected Ukrainian settlements</strong>, strengthening data reliability and supporting operational decision-making in humanitarian response.
+  </li>
 
+  <li>
+    Designed <strong>10+ geospatial maps</strong> and authored <strong>12 analytical reports</strong> using <strong>Mapbox, Adobe Illustrator and Excel</strong>, converting complex datasets into clear visual products that informed assessments of displacement, shelter, security and infrastructure.
+  </li>
+</ul>
+          <div class="experience-tags">
 
-          <div class="experience-details">
+            <span class="experience-type">
+              Humanitarian innovation
+            </span>
 
-            <div class="experience-details-inner">
-
-              <ul class="experience-text">
-
-                <li>
-                  Completed
-                  <strong>
-                    170 hours of advanced humanitarian data training
-                  </strong>,
-                  developing expertise in data analysis, geospatial
-                  intelligence and evidence-driven humanitarian programming.
-                </li>
-
-                <li>
-                  Processed and analysed datasets from
-                  <strong>
-                    50+ conflict-affected Ukrainian settlements
-                  </strong>,
-                  strengthening data reliability and supporting operational
-                  decision-making in humanitarian response.
-                </li>
-
-                <li>
-                  Designed <strong>10+ geospatial maps</strong> and authored
-                  <strong>12 analytical reports</strong> using
-                  <strong>Mapbox, Adobe Illustrator and Excel</strong>,
-                  converting complex datasets into clear visual products that
-                  informed assessments of displacement, shelter, security and
-                  infrastructure.
-                </li>
-
-              </ul>
-
-
-              <div class="experience-tags">
-
-                <span class="experience-type">
-                  Humanitarian Innovation
-                </span>
-
-                <small>Humanitarian Response</small>
-                <small>Evidence-Based Research</small>
-                <small>Data Visualisation</small>
-
-              </div>
-
-            </div>
+            <small>Humanitarian Response</small>
+            <small>Evident-Based Research</small>
+            <small>Data Visualisation</small>
 
           </div>
 
         </div>
-
 
         <div class="experience-year">
           2025
@@ -15633,15 +14702,14 @@ LANGUAGE-SPECIFIC HOVER COLORS
       </article>
 
 
-
       <!-- =====================================
-           ARDHIS
+      ARDHIS
       ====================================== -->
 
       <article class="experience-item ardhis">
 
         <div class="experience-logo">
-          <img src="ardhislogo.png" alt="ARDHIS logo">
+        <img src="ardhislogo.png" alt="ARDHIS logo">
         </div>
 
         <div class="experience-content">
@@ -15654,72 +14722,43 @@ LANGUAGE-SPECIFIC HOVER COLORS
             Asylum Casework &amp; Research · Paris, France
           </p>
 
-          <button
-            class="experience-toggle"
-            type="button"
-            aria-expanded="false"
-          >
-            <span class="experience-toggle-label">Read more</span>
-
-            <span
-              class="experience-toggle-icon"
-              aria-hidden="true"
-            ></span>
-          </button>
+<ul class="experience-text">
+  <li>
+    Supported <strong>200+ asylum seekers</strong> during weekly legal
+    drop-in sessions, reviewing asylum applications, explaining procedures,
+    addressing protection concerns, and preparing applicants for
+    <strong>OFPRA interviews</strong>.
+  </li>
 
 
-          <div class="experience-details">
+<li>
+  Conducted <strong>Country of Origin Information (COI)</strong> research on
+  the legal, political, and social conditions affecting LGBTQIA+ communities,
+  producing a <strong>60+ page report</strong> on
+  <strong>four African countries</strong> that strengthened evidence-based
+  asylum assessments and legal case preparation.
+</li>
 
-            <div class="experience-details-inner">
+    <li>
+    Assisted asylum caseworkers by reviewing supporting documentation,
+    identifying gaps in case files, and helping applicants strengthen their
+    asylum claims before submission.
+  </li>
+</ul>
 
-              <ul class="experience-text">
+          <div class="experience-tags">
 
-                <li>
-                  Supported <strong>200+ asylum seekers</strong> during weekly
-                  legal drop-in sessions, reviewing asylum applications,
-                  explaining procedures, addressing protection concerns and
-                  preparing applicants for
-                  <strong>OFPRA interviews</strong>.
-                </li>
+            <span class="experience-type">
+              Asylum NGO
+            </span>
 
-                <li>
-                  Conducted
-                  <strong>Country of Origin Information (COI)</strong>
-                  research on the legal, political and social conditions
-                  affecting LGBTQIA+ communities, producing a
-                  <strong>60+ page report</strong> on
-                  <strong>four African countries</strong> that strengthened
-                  evidence-based asylum assessments and legal case
-                  preparation.
-                </li>
-
-                <li>
-                  Assisted asylum caseworkers by reviewing supporting
-                  documentation, identifying gaps in case files and helping
-                  applicants strengthen their asylum claims before submission.
-                </li>
-
-              </ul>
-
-
-              <div class="experience-tags">
-
-                <span class="experience-type">
-                  Asylum NGO
-                </span>
-
-                <small>Asylum &amp; Protection</small>
-                <small>Human Rights Analysis</small>
-                <small>Legal Case Support</small>
-
-              </div>
-
-            </div>
+            <small>Asylum & Protection</small>
+            <small>Human Rights Analysis</small>
+            <small>Legal ase Support</small>
 
           </div>
 
         </div>
-
 
         <div class="experience-year">
           2024–25
@@ -15728,18 +14767,14 @@ LANGUAGE-SPECIFIC HOVER COLORS
       </article>
 
 
-
       <!-- =====================================
-           ROYAL SCIENTIFIC SOCIETY
+      ROYAL SCIENTIFIC SOCIETY
       ====================================== -->
 
-      <article class="experience-item rss">
+      <article class="experience-item tarjimly">
 
         <div class="experience-logo">
-          <img
-            src="rsslogo.png"
-            alt="Royal Scientific Society logo"
-          >
+        <img src="rsslogo.png" alt="RSS logo">
         </div>
 
         <div class="experience-content">
@@ -15749,73 +14784,42 @@ LANGUAGE-SPECIFIC HOVER COLORS
           </div>
 
           <p class="experience-role">
-            Research Assistant · Amman, Jordan
+Research Assistant · Amman, Jordan
           </p>
 
-          <button
-            class="experience-toggle"
-            type="button"
-            aria-expanded="false"
-          >
-            <span class="experience-toggle-label">Read more</span>
+    <ul class="experience-text">
+  <li>
+    Co-authored a <strong>10-page policy paper</strong> published by the
+    <strong>Konrad Adenauer Stiftung</strong>, synthesizing evidence from
+    <strong>50+ academic and policy sources</strong> to develop recommendations
+    for sustainable desalination and water governance in Jordan.
+  </li>
 
-            <span
-              class="experience-toggle-icon"
-              aria-hidden="true"
-            ></span>
-          </button>
+  <li>
+    Mapped <strong>20+ science diplomacy initiatives</strong>, highlighting
+    links between research, policymaking, and international cooperation to
+    identify opportunities for regional collaboration.
+  </li>
 
+  <li>
+    Reviewed and edited policy articles prior to publication, ensuring
+    analytical quality, factual accuracy, and consistency with organizational
+    research standards.
+  </li>
+</ul>
+          <div class="experience-tags">
 
-          <div class="experience-details">
+            <span class="experience-type">
+      Research Institute
+            </span>
 
-            <div class="experience-details-inner">
-
-              <ul class="experience-text">
-
-                <li>
-                  Co-authored a <strong>10-page policy paper</strong> published
-                  by the <strong>Konrad Adenauer Stiftung</strong>,
-                  synthesising evidence from
-                  <strong>50+ academic and policy sources</strong> to develop
-                  recommendations for sustainable desalination and water
-                  governance in Jordan.
-                </li>
-
-                <li>
-                  Mapped
-                  <strong>20+ science diplomacy initiatives</strong>,
-                  highlighting links between research, policymaking and
-                  international cooperation to identify opportunities for
-                  regional collaboration.
-                </li>
-
-                <li>
-                  Reviewed and edited policy articles prior to publication,
-                  ensuring analytical quality, factual accuracy and
-                  consistency with organisational research standards.
-                </li>
-
-              </ul>
-
-
-              <div class="experience-tags">
-
-                <span class="experience-type">
-                  Research Institute
-                </span>
-
-                <small>Science Diplomacy</small>
-                <small>Policy Research</small>
-                <small>Water Governance</small>
-
-              </div>
-
-            </div>
+            <small>Sciences Diplomacy</small>
+            <small>Policy Research</small>
+            <small>Water Governance</small>
 
           </div>
 
         </div>
-
 
         <div class="experience-year">
           2023
@@ -15827,6 +14831,9 @@ LANGUAGE-SPECIFIC HOVER COLORS
     </div>
   </div>
 </section>
+
+
+
 
 
 
@@ -18083,62 +17090,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
-
 </script>
+
   
-  <script>
-    
-document.addEventListener("DOMContentLoaded", function () {
-  const experienceItems = document.querySelectorAll(
-    "#experience .experience-item"
-  );
-
-  experienceItems.forEach(function (item) {
-    const button = item.querySelector(".experience-toggle");
-    const label = item.querySelector(".experience-toggle-label");
-
-    if (!button || !label) return;
-
-    button.addEventListener("click", function () {
-      const shouldOpen = !item.classList.contains("is-open");
-
-      experienceItems.forEach(function (otherItem) {
-        const otherButton = otherItem.querySelector(
-          ".experience-toggle"
-        );
-
-        const otherLabel = otherItem.querySelector(
-          ".experience-toggle-label"
-        );
-
-        otherItem.classList.remove("is-open");
-
-        if (otherButton) {
-          otherButton.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-        }
-
-        if (otherLabel) {
-          otherLabel.textContent = "Read more";
-        }
-      });
-
-      if (shouldOpen) {
-        item.classList.add("is-open");
-
-        button.setAttribute(
-          "aria-expanded",
-          "true"
-        );
-
-        label.textContent = "Hide details";
-      }
-    });
-  });
-});
-</script>
   
 </body>
 </html>
