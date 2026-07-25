@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfoliooo</title>
+  <title>Portfolio</title>
 
   <link rel="icon" type="image/png" href="favicon-32x32[1].png">
   
@@ -6735,28 +6735,31 @@ MORE SPACED NUMBERS
 }
 
 
-
-
 /* ==========================================
-   EXPERIENCE — CENTER ALL LOGOS
+   BNP LOGO — FINAL DESKTOP POSITION
 ========================================== */
 
-#experience .experience-item{
-    display:grid !important;
-    align-items:center !important;
+@media (min-width: 769px) and (hover: hover){
+
+    /* Closed card: lower BNP to match the other logos */
+    #experience .experience-item.bnp:not(:hover) .experience-logo{
+        align-self:center !important;
+        transform:translateY(18px) !important;
+    }
+
+    /* Keep the image centred inside its container */
+    #experience .experience-item.bnp:not(:hover) .experience-logo img{
+        margin:0 !important;
+        object-position:center center !important;
+        transform:none !important;
+    }
+
+    /* Expanded card: restore the repeated-logo column */
+    #experience .experience-item.bnp:hover .experience-logo{
+        align-self:stretch !important;
+        transform:none !important;
+    }
 }
-
-#experience .experience-logo{
-    align-self:center !important;
-    justify-self:center !important;
-
-    display:flex !important;
-    align-items:center !important;
-    justify-content:center !important;
-
-    margin:0 !important;
-}
-
 
 
 
