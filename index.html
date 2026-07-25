@@ -6768,23 +6768,23 @@ MORE SPACED NUMBERS
 
 
 
-
-
 /* ==========================================
-   EXPERIENCE — HOVER LAYOUT IMPROVEMENT
+   EXPERIENCE — COMPACT HOVER LAYOUT
 ========================================== */
 
 @media (min-width:769px){
 
-    /* Reduce the width reserved for the year */
+    /* Much smaller year column */
     #experience .experience-item:hover{
         grid-template-columns:
-            110px
+            105px
             minmax(0,1fr)
-            90px !important;
+            55px !important;
+
+        column-gap:34px !important;
     }
 
-    /* Vertical year */
+    /* Push the year outside the card */
     #experience .experience-item:hover .experience-year{
 
         writing-mode:vertical-rl;
@@ -6797,30 +6797,32 @@ MORE SPACED NUMBERS
         justify-self:end;
         align-self:center;
 
+        margin-right:-38px !important;
+
         width:auto;
         height:100%;
 
-        font-size:3rem !important;
-        line-height:1;
-        letter-spacing:-0.04em;
+        font-size:2.8rem !important;
+        line-height:1.05 !important;
+        letter-spacing:.18em !important;
 
         white-space:nowrap;
     }
 
-    /* Give the content more room */
+    /* Let content use all available width */
     #experience .experience-item:hover .experience-content{
-        max-width:none !important;
         width:100% !important;
+        max-width:none !important;
+        padding-right:0 !important;
     }
 
-    /* Allow the bullet list to use the full width */
     #experience .experience-item:hover .experience-text{
-        max-width:none !important;
         width:100% !important;
+        max-width:none !important;
+        padding-right:0 !important;
     }
 
 }
-
 
 
 
