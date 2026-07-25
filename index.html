@@ -5496,7 +5496,47 @@ cutting the background at the content width.
 
 
 
+/* ==========================================
+   EXPERIENCE — SINGLE DIVIDER ONLY
+========================================== */
 
+/* Remove every old divider */
+
+#experience .experience-summary,
+#experience .experience-item.is-open .experience-summary,
+#experience .experience-details,
+#experience .experience-item.is-open .experience-details,
+#experience .experience-details-inner,
+#experience .experience-item.is-open .experience-details-inner {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+
+
+/* One neutral line while closed */
+
+#experience .experience-item {
+  border-bottom: 2px solid rgba(18, 56, 43, 0.18) !important;
+}
+
+
+/* One colored line when open */
+
+#experience .experience-item.is-open {
+  border-bottom: 0 !important;
+}
+
+#experience .experience-item.is-open .experience-details {
+  border-top: 4px solid var(--accent) !important;
+}
+
+
+/* Space below the single divider */
+
+#experience .experience-item.is-open
+.experience-details-inner {
+  padding-top: 38px !important;
+}
 
 
 
