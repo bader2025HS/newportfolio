@@ -4740,7 +4740,117 @@ ABOUT MOBILE — BIGGER STAT ICONS
 
 
 
+/* ==========================================
+   EXPERIENCE — INTERACTION FIXES
+========================================== */
 
+
+/* 1. Make the whole summary strip clickable */
+
+#experience .experience-summary {
+  cursor: pointer;
+}
+
+
+/* Keep links and buttons visibly interactive */
+
+#experience .experience-toggle {
+  cursor: pointer;
+}
+
+
+/* ==========================================
+   2. KEEP DATE HORIZONTAL WHEN OPEN
+========================================== */
+
+@media (min-width: 769px) {
+
+  #experience .experience-item.is-open
+  .experience-actions {
+    position: static;
+
+    align-self: center;
+
+    min-height: 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 22px;
+  }
+
+  #experience .experience-item.is-open
+  .experience-year {
+    position: static;
+
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+
+    font-size: clamp(1.45rem, 2vw, 2.45rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+
+    white-space: nowrap;
+
+    transform: none;
+  }
+
+}
+
+
+/* ==========================================
+   3. FULL-WIDTH OPEN BACKGROUND
+========================================== */
+
+/*
+The previous overflow:hidden on the item was
+cutting the background at the content width.
+*/
+
+#experience .experience-item {
+  overflow: visible;
+}
+
+
+/* Full viewport-width background */
+
+#experience .experience-item::before {
+  left: 50%;
+  right: auto;
+
+  width: 100vw;
+
+  transform: translateX(-50%);
+}
+
+
+/* Keep accordion content properly clipped */
+
+#experience .experience-details-inner {
+  overflow: hidden;
+}
+
+
+/* Keep each item above its background */
+
+#experience .experience-summary,
+#experience .experience-details {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Optional subtle full-width preview on desktop */
+
+@media (min-width: 769px) and (hover: hover) {
+
+  #experience .experience-item:not(.is-open):hover::before {
+    opacity: 0.28;
+  }
+
+}
 
     
 
@@ -15330,59 +15440,79 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
 
   const experienceItems = document.querySelectorAll(
     "#experience .experience-item"
   );
 
+  function closeExperience(item) {
+    const button =
+      item.querySelector(".experience-toggle");
 
-  experienceItems.forEach((item) => {
+    item.classList.remove("is-open");
 
-    const button = item.querySelector(".experience-toggle");
-    const details = item.querySelector(".experience-details");
+    if (button) {
+      button.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+    }
+  }
 
-    if (!button || !details) return;
+  function toggleExperience(item) {
 
+    const button =
+      item.querySelector(".experience-toggle");
 
-    button.addEventListener("click", () => {
-
-      const shouldOpen = !item.classList.contains("is-open");
-
-
-      /* Close every experience */
-
-      experienceItems.forEach((otherItem) => {
-
-        const otherButton =
-          otherItem.querySelector(".experience-toggle");
-
-        otherItem.classList.remove("is-open");
-
-        if (otherButton) {
-          otherButton.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-        }
-
-      });
+    const shouldOpen =
+      !item.classList.contains("is-open");
 
 
-      /* Open the selected experience */
+    /* Close every card first */
 
-      if (shouldOpen) {
+    experienceItems.forEach((otherItem) => {
+      closeExperience(otherItem);
+    });
 
-        item.classList.add("is-open");
 
+    /* Open selected card */
+
+    if (shouldOpen) {
+      item.classList.add("is-open");
+
+      if (button) {
         button.setAttribute(
           "aria-expanded",
           "true"
         );
-
       }
+    }
 
+  }
+
+
+  experienceItems.forEach((item) => {
+
+    const summary =
+      item.querySelector(".experience-summary");
+
+    const button =
+      item.querySelector(".experience-toggle");
+
+    const details =
+      item.querySelector(".experience-details");
+
+    if (!summary || !button || !details) {
+      return;
+    }
+
+
+    /* Clicking anywhere on the summary opens it */
+
+    summary.addEventListener("click", () => {
+      toggleExperience(item);
     });
 
   });
