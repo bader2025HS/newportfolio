@@ -6750,7 +6750,36 @@ MORE SPACED NUMBERS
 
 
 
+/* ==========================================
+   EXPERIENCE — PLUS INDICATOR
+========================================== */
 
+#experience .experience-title-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+}
+
+#experience .experience-plus{
+    flex:0 0 auto;
+
+    font-size:1.5rem;
+    font-weight:300;
+    line-height:1;
+
+    color:rgba(18,56,43,.35);
+
+    transition:
+        color .25s ease,
+        transform .25s ease,
+        opacity .25s ease;
+}
+
+#experience .experience-item:hover .experience-plus{
+    color:currentColor;
+    transform:rotate(45deg) scale(1.15);
+}
 
 
 
@@ -14547,6 +14576,7 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
           <div class="experience-title-row">
             <h3>BNP Paribas</h3>
+                <span class="experience-plus">+</span>
           </div>
 
           <p class="experience-role">
@@ -14606,6 +14636,8 @@ LANGUAGE-SPECIFIC HOVER COLORS
             <h3>
               Organisation Internationale de la Francophonie
             </h3>
+                <span class="experience-plus">+</span>
+
           </div>
 
           <p class="experience-role">
@@ -14662,6 +14694,8 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
           <div class="experience-title-row">
             <h3>AQLITY</h3>
+                <span class="experience-plus">+</span>
+
           </div>
 
           <p class="experience-role">
@@ -14716,6 +14750,8 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
           <div class="experience-title-row">
             <h3>ARDHIS</h3>
+                <span class="experience-plus">+</span>
+
           </div>
 
           <p class="experience-role">
@@ -14781,6 +14817,8 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
           <div class="experience-title-row">
             <h3>Royal Scientific Society</h3>
+                <span class="experience-plus">+</span>
+
           </div>
 
           <p class="experience-role">
