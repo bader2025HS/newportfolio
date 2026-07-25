@@ -5071,7 +5071,133 @@ cutting the background at the content width.
 
 
 
+/* ==========================================
+   EXPERIENCE LOCATION — DESKTOP + PHONE
+========================================== */
 
+
+/* Desktop */
+
+#experience .experience-location{
+  display:inline-flex;
+  align-items:center;
+
+  width:fit-content;
+
+  margin:6px 0 0;
+  padding:4px 8px;
+
+  font-size:.82rem;
+  font-weight:600;
+  line-height:1;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+
+  color:var(--accent);
+  background:rgba(255,255,255,.55);
+
+  border:1px solid currentColor;
+}
+
+
+/* Open card */
+
+#experience .experience-item.is-open
+.experience-location{
+  background:rgba(255,255,255,.72);
+}
+
+
+/* Phone */
+
+@media (max-width:650px){
+
+  #experience .experience-location{
+    margin-top:6px;
+    padding:4px 7px;
+
+    font-size:.68rem;
+    line-height:1;
+    letter-spacing:.05em;
+
+    white-space:nowrap;
+  }
+
+}
+
+    /* ==========================================
+   EXPERIENCE DATE
+   Desktop = right side
+   Mobile = under location
+========================================== */
+
+/* ---------- Desktop ---------- */
+
+@media (min-width:651px){
+
+    #experience .experience-summary{
+        position:relative;
+    }
+
+    #experience .experience-heading{
+        position:relative;
+        padding-right:150px;
+    }
+
+    #experience .experience-year{
+        position:absolute !important;
+
+        top:50%;
+        right:68px;
+
+        margin:0;
+
+        transform:translateY(-50%) !important;
+
+        writing-mode:horizontal-tb !important;
+
+        font-size:.9rem;
+        font-weight:700;
+        letter-spacing:.08em;
+
+        white-space:nowrap;
+    }
+
+    #experience .experience-actions{
+        position:absolute;
+        top:50%;
+        right:0;
+
+        transform:translateY(-50%);
+    }
+
+}
+
+
+/* ---------- Phone ---------- */
+
+@media (max-width:650px){
+
+    #experience .experience-heading{
+        padding-right:0;
+    }
+
+    #experience .experience-year{
+        position:static !important;
+
+        margin-top:8px;
+
+        transform:none !important;
+
+        font-size:.72rem;
+    }
+
+    #experience .experience-actions{
+        position:static;
+        transform:none;
+    }
+
+}
 
 
 
