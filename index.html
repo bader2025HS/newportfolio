@@ -7142,7 +7142,426 @@ the first children are contained by overflow.
 
 
 
+/* ==========================================
+   EXPERIENCE ACCORDION — FINAL FIX
+========================================== */
 
+
+/* ==========================================
+   REMOVE OLD HOVER BEHAVIOUR
+========================================== */
+
+#experience .experience-item,
+#experience .experience-item:hover {
+  min-height: 0 !important;
+
+  background: transparent !important;
+
+  transform: none !important;
+
+  border-top-color: rgba(18, 56, 43, 0.22) !important;
+  border-bottom-color: rgba(18, 56, 43, 0.22) !important;
+}
+
+
+/* Do not colour titles simply from hovering */
+
+#experience .experience-item:hover .experience-title-row h3 {
+  color: inherit !important;
+}
+
+
+/* Do not move the year on hover */
+
+#experience .experience-item:hover .experience-year {
+  transform: none !important;
+}
+
+
+/* Do not reveal descriptions on hover */
+
+#experience .experience-item:hover .experience-text,
+#experience .experience-text {
+  max-height: none !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  transform: none !important;
+
+  overflow: visible !important;
+}
+
+
+/* Do not colour tags on hover */
+
+#experience .experience-item:hover .experience-tags small {
+  background: transparent !important;
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+
+/* ==========================================
+   COMPACT CLOSED CARD
+========================================== */
+
+#experience .experience-item {
+  padding-top: 34px !important;
+  padding-bottom: 34px !important;
+
+  align-items: start !important;
+
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    padding 0.35s ease;
+}
+
+
+#experience .experience-content {
+  align-self: start !important;
+}
+
+
+#experience .experience-role {
+  margin-bottom: 0 !important;
+}
+
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+#experience .experience-toggle {
+  width: max-content;
+
+  margin-top: 20px;
+  padding: 12px 16px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  background: var(--accent);
+  color: #ffffff;
+
+  border: 1.5px solid var(--accent);
+  border-radius: 0;
+
+  box-shadow: 6px 6px 0 rgba(18, 56, 43, 0.16);
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+#experience .experience-toggle:hover {
+  background: transparent;
+  color: var(--accent);
+
+  transform: translateY(-2px);
+
+  box-shadow: 4px 4px 0 rgba(18, 56, 43, 0.14);
+}
+
+
+/* ==========================================
+   PLUS / MINUS
+========================================== */
+
+#experience .experience-toggle-icon {
+  position: relative;
+
+  width: 14px;
+  height: 14px;
+
+  flex: 0 0 14px;
+}
+
+
+#experience .experience-toggle-icon::before,
+#experience .experience-toggle-icon::after {
+  content: "";
+
+  position: absolute;
+
+  background: currentColor;
+}
+
+
+#experience .experience-toggle-icon::before {
+  top: 50%;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  transform: translateY(-50%);
+}
+
+
+#experience .experience-toggle-icon::after {
+  top: 0;
+  left: 50%;
+
+  width: 2px;
+  height: 100%;
+
+  transform: translateX(-50%);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+#experience .experience-item.is-open
+.experience-toggle-icon::after {
+  opacity: 0;
+
+  transform:
+    translateX(-50%)
+    rotate(90deg);
+}
+
+
+/* ==========================================
+   CLOSED DETAILS
+========================================== */
+
+#experience .experience-details {
+  display: grid;
+
+  grid-template-rows: 0fr;
+
+  opacity: 0;
+
+  overflow: hidden;
+
+  transition:
+    grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease;
+}
+
+
+#experience .experience-details-inner {
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+
+/* Prevent hidden content creating space */
+
+#experience .experience-details:not(.is-open) {
+  margin: 0 !important;
+}
+
+
+#experience .experience-details .experience-text {
+  margin-top: 26px !important;
+}
+
+
+#experience .experience-details .experience-tags {
+  margin-top: 24px !important;
+  margin-bottom: 2px !important;
+}
+
+
+/* ==========================================
+   OPEN STATE — CLICK ONLY
+========================================== */
+
+#experience .experience-item.is-open {
+  background: var(--hover-bg) !important;
+
+  border-top-color: var(--accent) !important;
+  border-bottom-color: var(--accent) !important;
+
+  padding-top: 34px !important;
+  padding-bottom: 38px !important;
+}
+
+
+#experience .experience-item.is-open
+.experience-details {
+  grid-template-rows: 1fr;
+
+  opacity: 1;
+}
+
+
+#experience .experience-item.is-open
+.experience-details-inner {
+  overflow: visible;
+}
+
+
+#experience .experience-item.is-open
+.experience-title-row h3 {
+  color: var(--accent) !important;
+}
+
+
+#experience .experience-item.is-open
+.experience-tags small,
+#experience .experience-item.is-open
+.experience-tags .experience-type {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+  border-color: var(--accent) !important;
+}
+
+
+#experience .experience-item.is-open
+.experience-toggle {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+
+/* ==========================================
+   LOGO — NORMAL STATE
+========================================== */
+
+#experience .experience-logo,
+#experience .experience-item:hover .experience-logo {
+  align-self: start !important;
+
+  width: 88px !important;
+  height: 88px !important;
+  min-height: 88px !important;
+
+  overflow: hidden !important;
+
+  transform: none !important;
+}
+
+
+#experience .experience-logo::before,
+#experience .experience-item:hover .experience-logo::before {
+  opacity: 0 !important;
+}
+
+
+#experience .experience-logo > img,
+#experience .experience-logo > svg,
+#experience .experience-item:hover .experience-logo > img,
+#experience .experience-item:hover .experience-logo > svg {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+
+/* ==========================================
+   REPEATED LOGOS — OPEN CLICK STATE ONLY
+========================================== */
+
+@media (min-width: 769px) {
+
+  #experience .experience-item.is-open
+  .experience-logo {
+    align-self: stretch !important;
+
+    width: 88px !important;
+    height: auto !important;
+    min-height: 100% !important;
+
+    overflow: hidden !important;
+  }
+
+
+  #experience .experience-item.is-open
+  .experience-logo::before {
+    opacity: 1 !important;
+  }
+
+
+  #experience .experience-item.is-open
+  .experience-logo > img,
+  #experience .experience-item.is-open
+  .experience-logo > svg {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+  #experience .experience-item,
+  #experience .experience-item:hover,
+  #experience .experience-item.is-open {
+    min-height: 0 !important;
+
+    padding-top: 26px !important;
+    padding-bottom: 26px !important;
+
+    transform: none !important;
+  }
+
+
+  #experience .experience-toggle {
+    width: 100%;
+
+    justify-content: space-between;
+
+    margin-top: 18px;
+  }
+
+
+  #experience .experience-details {
+    grid-template-rows: 0fr !important;
+
+    opacity: 0 !important;
+
+    overflow: hidden !important;
+  }
+
+
+  #experience .experience-item.is-open
+  .experience-details {
+    grid-template-rows: 1fr !important;
+
+    opacity: 1 !important;
+  }
+
+
+  #experience .experience-item.is-open {
+    background: var(--hover-bg) !important;
+  }
+
+
+  #experience .experience-logo,
+  #experience .experience-item:hover .experience-logo,
+  #experience .experience-item.is-open .experience-logo {
+    align-self: start !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+  }
+}
 
 
 
@@ -14908,23 +15327,25 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
 
 
-
 <section id="experience">
   <div class="experience-container">
 
     <div class="experience-header">
+
       <div class="oversized-label" data-letter="EXPERIENCE">
         <span>Who have I worked with?</span>
       </div>
 
       <h2>Built across sectors.</h2>
+
     </div>
 
 
     <div class="experience-list">
 
+
       <!-- =====================================
-      BNP PARIBAS
+           BNP PARIBAS
       ====================================== -->
 
       <article class="experience-item bnp">
@@ -14949,68 +15370,96 @@ LANGUAGE-SPECIFIC HOVER COLORS
             aria-expanded="false"
           >
             <span class="experience-toggle-label">Read more</span>
-            <span class="experience-toggle-icon" aria-hidden="true"></span>
+
+            <span
+              class="experience-toggle-icon"
+              aria-hidden="true"
+            ></span>
           </button>
+
 
           <div class="experience-details">
 
-            <ul class="experience-text">
-              <li>
-                <strong>Produced</strong> editorial content for BNP Paribas'
-                corporate website and internal platforms, including
-                <strong>1 feature article</strong> and
-                <strong>10+ sustainability publications</strong> covering
-                climate, energy transition and corporate responsibility, as
-                well as <strong>6 PlayPlay videos</strong>,
-                <strong>2 infographics</strong> and digital campaigns promoting
-                sustainability initiatives.
-              </li>
+            <div class="experience-details-inner">
 
-              <li>
-                <strong>Coordinated</strong>
-                <strong>2 international webinars</strong> on Circular Economy
-                and One Health, generating approximately
-                <strong>2,000 views per webinar</strong> through speaker
-                coordination, event preparation and post-event communications.
-              </li>
+              <ul class="experience-text">
 
-              <li>
-                <strong>Collaborated</strong> with communications teams across
-                <strong>4 countries</strong> — France, Belgium, India and the
-                Netherlands — while monitoring campaign performance through
-                KPIs.
-              </li>
-            </ul>
+                <li>
+                  <strong>Produced</strong> editorial content for BNP Paribas'
+                  corporate website and internal platforms, including
+                  <strong>1 feature article</strong> and
+                  <strong>10+ sustainability publications</strong> covering
+                  climate, energy transition and corporate responsibility, as
+                  well as <strong>6 PlayPlay videos</strong>,
+                  <strong>2 infographics</strong> and digital campaigns
+                  promoting sustainability initiatives.
+                </li>
 
-            <div class="experience-tags">
-              <span class="experience-type">Private Sector</span>
-              <small>Content Production</small>
-              <small>Performance Analytics</small>
-              <small>Corporate Philanthropy</small>
+                <li>
+                  <strong>Coordinated</strong>
+                  <strong>2 international webinars</strong> on Circular Economy
+                  and One Health, generating approximately
+                  <strong>2,000 views per webinar</strong> through speaker
+                  coordination, event preparation and post-event
+                  communications.
+                </li>
+
+                <li>
+                  <strong>Collaborated</strong> with communications teams across
+                  <strong>4 countries</strong> — France, Belgium, India and the
+                  Netherlands — while monitoring campaign performance through
+                  KPIs.
+                </li>
+
+              </ul>
+
+
+              <div class="experience-tags">
+
+                <span class="experience-type">
+                  Private Sector
+                </span>
+
+                <small>Content Production</small>
+                <small>Performance Analytics</small>
+                <small>Corporate Philanthropy</small>
+
+              </div>
+
             </div>
 
           </div>
+
         </div>
 
-        <div class="experience-year">2026</div>
+
+        <div class="experience-year">
+          2026
+        </div>
 
       </article>
 
 
+
       <!-- =====================================
-      OIF
+           OIF
       ====================================== -->
 
       <article class="experience-item oif">
 
         <div class="experience-logo">
-          <img src="oiflogo.webp" alt="OIF logo">
+          <img
+            src="oiflogo.webp"
+            alt="Organisation Internationale de la Francophonie logo"
+          >
         </div>
 
         <div class="experience-content">
 
           <div class="experience-title-row">
-            <h3>Organisation Internationale de la Francophonie</h3>
+            <h3>
+              Organisation Internationale de la Francophonie
+            </h3>
           </div>
 
           <p class="experience-role">
@@ -15023,54 +15472,73 @@ LANGUAGE-SPECIFIC HOVER COLORS
             aria-expanded="false"
           >
             <span class="experience-toggle-label">Read more</span>
-            <span class="experience-toggle-icon" aria-hidden="true"></span>
+
+            <span
+              class="experience-toggle-icon"
+              aria-hidden="true"
+            ></span>
           </button>
+
 
           <div class="experience-details">
 
-            <ul class="experience-text">
-              <li>
-                Managed the monitoring and evaluation of
-                <strong>20+ international development projects</strong>
-                spanning <strong>90 member states</strong>, ensuring consistent
-                performance reporting.
-              </li>
+            <div class="experience-details-inner">
 
-              <li>
-                Built interactive <strong>Power BI dashboards</strong> and
-                <strong>Excel monitoring systems</strong> integrating
-                <strong>10+ KPIs</strong> to improve project oversight and
-                strategic planning.
-              </li>
+              <ul class="experience-text">
 
-              <li>
-                Authored <strong>70 analytical country briefs</strong> for
-                executive leadership, transforming political and
-                socio-economic information into concise decision-support
-                products.
-              </li>
-            </ul>
+                <li>
+                  Managed the monitoring and evaluation of
+                  <strong>20+ international development projects</strong>
+                  spanning <strong>90 member states</strong>, ensuring
+                  consistent performance reporting.
+                </li>
 
-            <div class="experience-tags">
-              <span class="experience-type">
-                International Organisation
-              </span>
+                <li>
+                  Built interactive <strong>Power BI dashboards</strong> and
+                  <strong>Excel monitoring systems</strong> integrating
+                  <strong>10+ KPIs</strong> to improve project oversight and
+                  strategic planning.
+                </li>
 
-              <small>Strategic Reporting</small>
-              <small>Project Monitoring</small>
-              <small>Policy Analysis</small>
+                <li>
+                  Authored <strong>70 analytical country briefs</strong> for
+                  executive leadership, transforming political and
+                  socio-economic information into concise decision-support
+                  products.
+                </li>
+
+              </ul>
+
+
+              <div class="experience-tags">
+
+                <span class="experience-type">
+                  International Organisation
+                </span>
+
+                <small>Strategic Reporting</small>
+                <small>Project Monitoring</small>
+                <small>Policy Analysis</small>
+
+              </div>
+
             </div>
 
           </div>
+
         </div>
 
-        <div class="experience-year">2025</div>
+
+        <div class="experience-year">
+          2025
+        </div>
 
       </article>
 
 
+
       <!-- =====================================
-      AQLITY
+           AQLITY
       ====================================== -->
 
       <article class="experience-item aqlity">
@@ -15095,56 +15563,79 @@ LANGUAGE-SPECIFIC HOVER COLORS
             aria-expanded="false"
           >
             <span class="experience-toggle-label">Read more</span>
-            <span class="experience-toggle-icon" aria-hidden="true"></span>
+
+            <span
+              class="experience-toggle-icon"
+              aria-hidden="true"
+            ></span>
           </button>
+
 
           <div class="experience-details">
 
-            <ul class="experience-text">
-              <li>
-                Completed
-                <strong>170 hours of advanced humanitarian data training</strong>,
-                developing expertise in data analysis, geospatial intelligence
-                and evidence-driven humanitarian programming.
-              </li>
+            <div class="experience-details-inner">
 
-              <li>
-                Processed and analysed datasets from
-                <strong>50+ conflict-affected Ukrainian settlements</strong>,
-                strengthening data reliability and supporting operational
-                decision-making in humanitarian response.
-              </li>
+              <ul class="experience-text">
 
-              <li>
-                Designed <strong>10+ geospatial maps</strong> and authored
-                <strong>12 analytical reports</strong> using
-                <strong>Mapbox, Adobe Illustrator and Excel</strong>,
-                converting complex datasets into visual products that informed
-                assessments of displacement, shelter, security and
-                infrastructure.
-              </li>
-            </ul>
+                <li>
+                  Completed
+                  <strong>
+                    170 hours of advanced humanitarian data training
+                  </strong>,
+                  developing expertise in data analysis, geospatial
+                  intelligence and evidence-driven humanitarian programming.
+                </li>
 
-            <div class="experience-tags">
-              <span class="experience-type">
-                Humanitarian Innovation
-              </span>
+                <li>
+                  Processed and analysed datasets from
+                  <strong>
+                    50+ conflict-affected Ukrainian settlements
+                  </strong>,
+                  strengthening data reliability and supporting operational
+                  decision-making in humanitarian response.
+                </li>
 
-              <small>Humanitarian Response</small>
-              <small>Evidence-Based Research</small>
-              <small>Data Visualisation</small>
+                <li>
+                  Designed <strong>10+ geospatial maps</strong> and authored
+                  <strong>12 analytical reports</strong> using
+                  <strong>Mapbox, Adobe Illustrator and Excel</strong>,
+                  converting complex datasets into clear visual products that
+                  informed assessments of displacement, shelter, security and
+                  infrastructure.
+                </li>
+
+              </ul>
+
+
+              <div class="experience-tags">
+
+                <span class="experience-type">
+                  Humanitarian Innovation
+                </span>
+
+                <small>Humanitarian Response</small>
+                <small>Evidence-Based Research</small>
+                <small>Data Visualisation</small>
+
+              </div>
+
             </div>
 
           </div>
+
         </div>
 
-        <div class="experience-year">2025</div>
+
+        <div class="experience-year">
+          2025
+        </div>
 
       </article>
 
 
+
       <!-- =====================================
-      ARDHIS
+           ARDHIS
       ====================================== -->
 
       <article class="experience-item ardhis">
@@ -15169,59 +15660,86 @@ LANGUAGE-SPECIFIC HOVER COLORS
             aria-expanded="false"
           >
             <span class="experience-toggle-label">Read more</span>
-            <span class="experience-toggle-icon" aria-hidden="true"></span>
+
+            <span
+              class="experience-toggle-icon"
+              aria-hidden="true"
+            ></span>
           </button>
+
 
           <div class="experience-details">
 
-            <ul class="experience-text">
-              <li>
-                Supported <strong>200+ asylum seekers</strong> during weekly
-                legal drop-in sessions, reviewing asylum applications,
-                explaining procedures, addressing protection concerns and
-                preparing applicants for <strong>OFPRA interviews</strong>.
-              </li>
+            <div class="experience-details-inner">
 
-              <li>
-                Conducted
-                <strong>Country of Origin Information (COI)</strong> research
-                on the legal, political and social conditions affecting
-                LGBTQIA+ communities, producing a
-                <strong>60+ page report</strong> on
-                <strong>four African countries</strong> that strengthened
-                evidence-based asylum assessments and legal case preparation.
-              </li>
+              <ul class="experience-text">
 
-              <li>
-                Assisted asylum caseworkers by reviewing supporting
-                documentation, identifying gaps in case files and helping
-                applicants strengthen their asylum claims before submission.
-              </li>
-            </ul>
+                <li>
+                  Supported <strong>200+ asylum seekers</strong> during weekly
+                  legal drop-in sessions, reviewing asylum applications,
+                  explaining procedures, addressing protection concerns and
+                  preparing applicants for
+                  <strong>OFPRA interviews</strong>.
+                </li>
 
-            <div class="experience-tags">
-              <span class="experience-type">Asylum NGO</span>
-              <small>Asylum &amp; Protection</small>
-              <small>Human Rights Analysis</small>
-              <small>Legal Case Support</small>
+                <li>
+                  Conducted
+                  <strong>Country of Origin Information (COI)</strong>
+                  research on the legal, political and social conditions
+                  affecting LGBTQIA+ communities, producing a
+                  <strong>60+ page report</strong> on
+                  <strong>four African countries</strong> that strengthened
+                  evidence-based asylum assessments and legal case
+                  preparation.
+                </li>
+
+                <li>
+                  Assisted asylum caseworkers by reviewing supporting
+                  documentation, identifying gaps in case files and helping
+                  applicants strengthen their asylum claims before submission.
+                </li>
+
+              </ul>
+
+
+              <div class="experience-tags">
+
+                <span class="experience-type">
+                  Asylum NGO
+                </span>
+
+                <small>Asylum &amp; Protection</small>
+                <small>Human Rights Analysis</small>
+                <small>Legal Case Support</small>
+
+              </div>
+
             </div>
 
           </div>
+
         </div>
 
-        <div class="experience-year">2024–25</div>
+
+        <div class="experience-year">
+          2024–25
+        </div>
 
       </article>
 
 
+
       <!-- =====================================
-      ROYAL SCIENTIFIC SOCIETY
+           ROYAL SCIENTIFIC SOCIETY
       ====================================== -->
 
-      <article class="experience-item tarjimly">
+      <article class="experience-item rss">
 
         <div class="experience-logo">
-          <img src="rsslogo.png" alt="Royal Scientific Society logo">
+          <img
+            src="rsslogo.png"
+            alt="Royal Scientific Society logo"
+          >
         </div>
 
         <div class="experience-content">
@@ -15240,52 +15758,75 @@ LANGUAGE-SPECIFIC HOVER COLORS
             aria-expanded="false"
           >
             <span class="experience-toggle-label">Read more</span>
-            <span class="experience-toggle-icon" aria-hidden="true"></span>
+
+            <span
+              class="experience-toggle-icon"
+              aria-hidden="true"
+            ></span>
           </button>
+
 
           <div class="experience-details">
 
-            <ul class="experience-text">
-              <li>
-                Co-authored a <strong>10-page policy paper</strong> published by
-                the <strong>Konrad Adenauer Stiftung</strong>, synthesising
-                evidence from <strong>50+ academic and policy sources</strong>
-                to develop recommendations for sustainable desalination and
-                water governance in Jordan.
-              </li>
+            <div class="experience-details-inner">
 
-              <li>
-                Mapped <strong>20+ science diplomacy initiatives</strong>,
-                highlighting links between research, policymaking and
-                international cooperation to identify opportunities for
-                regional collaboration.
-              </li>
+              <ul class="experience-text">
 
-              <li>
-                Reviewed and edited policy articles prior to publication,
-                ensuring analytical quality, factual accuracy and consistency
-                with organisational research standards.
-              </li>
-            </ul>
+                <li>
+                  Co-authored a <strong>10-page policy paper</strong> published
+                  by the <strong>Konrad Adenauer Stiftung</strong>,
+                  synthesising evidence from
+                  <strong>50+ academic and policy sources</strong> to develop
+                  recommendations for sustainable desalination and water
+                  governance in Jordan.
+                </li>
 
-            <div class="experience-tags">
-              <span class="experience-type">Research Institute</span>
-              <small>Science Diplomacy</small>
-              <small>Policy Research</small>
-              <small>Water Governance</small>
+                <li>
+                  Mapped
+                  <strong>20+ science diplomacy initiatives</strong>,
+                  highlighting links between research, policymaking and
+                  international cooperation to identify opportunities for
+                  regional collaboration.
+                </li>
+
+                <li>
+                  Reviewed and edited policy articles prior to publication,
+                  ensuring analytical quality, factual accuracy and
+                  consistency with organisational research standards.
+                </li>
+
+              </ul>
+
+
+              <div class="experience-tags">
+
+                <span class="experience-type">
+                  Research Institute
+                </span>
+
+                <small>Science Diplomacy</small>
+                <small>Policy Research</small>
+                <small>Water Governance</small>
+
+              </div>
+
             </div>
 
           </div>
+
         </div>
 
-        <div class="experience-year">2023</div>
+
+        <div class="experience-year">
+          2023
+        </div>
 
       </article>
+
 
     </div>
   </div>
 </section>
-
 
 
 
@@ -17542,33 +18083,39 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
-</script>
+
 
   <script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const experienceItems = document.querySelectorAll(
     "#experience .experience-item"
   );
 
-  experienceItems.forEach((item) => {
+  experienceItems.forEach(function (item) {
     const button = item.querySelector(".experience-toggle");
     const label = item.querySelector(".experience-toggle-label");
 
     if (!button || !label) return;
 
-    button.addEventListener("click", () => {
-      const willOpen = !item.classList.contains("is-open");
+    button.addEventListener("click", function () {
+      const shouldOpen = !item.classList.contains("is-open");
 
-      experienceItems.forEach((otherItem) => {
-        otherItem.classList.remove("is-open");
+      experienceItems.forEach(function (otherItem) {
+        const otherButton = otherItem.querySelector(
+          ".experience-toggle"
+        );
 
-        const otherButton = otherItem.querySelector(".experience-toggle");
         const otherLabel = otherItem.querySelector(
           ".experience-toggle-label"
         );
 
+        otherItem.classList.remove("is-open");
+
         if (otherButton) {
-          otherButton.setAttribute("aria-expanded", "false");
+          otherButton.setAttribute(
+            "aria-expanded",
+            "false"
+          );
         }
 
         if (otherLabel) {
@@ -17576,9 +18123,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      if (willOpen) {
+      if (shouldOpen) {
         item.classList.add("is-open");
-        button.setAttribute("aria-expanded", "true");
+
+        button.setAttribute(
+          "aria-expanded",
+          "true"
+        );
+
         label.textContent = "Hide details";
       }
     });
