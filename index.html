@@ -7629,181 +7629,72 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 }
 
-
 /* =========================================================
-   PROJECTS — GEOMETRIC SHAPES
+   PROJECTS — EDITORIAL CORNER BRACKETS
 ========================================================= */
 
 #projects .work-item{
-    position:relative !important;
-    isolation:isolate !important;
+    position:relative;
+    overflow:hidden;
 }
 
-
-/* Keep all actual content above the shapes */
+/* Keep content above decoration */
 
 #projects .work-number,
 #projects .work-item > div,
 #projects .work-link{
-    position:relative !important;
-    z-index:3 !important;
+    position:relative;
+    z-index:2;
 }
 
 
-/* Shared decorative layers */
+/* TOP LEFT */
 
-#projects .work-item::before,
-#projects .work-item::after{
+#projects .work-item::before{
+
     content:"";
 
     position:absolute;
-    z-index:1;
 
-    pointer-events:none;
+    top:28px;
+    left:28px;
+
+    width:48px;
+    height:48px;
+
+    border-top:1px solid rgba(246,251,248,.10);
+    border-left:1px solid rgba(246,251,248,.10);
 
     transition:
-        transform .65s cubic-bezier(.22,1,.36,1),
-        opacity .4s ease,
-        border-color .4s ease,
-        background-color .4s ease;
+        width .45s ease,
+        height .45s ease,
+        opacity .35s ease,
+        border-color .35s ease;
 }
 
 
-/* =========================================================
-   TILE 01 — OFFSET RECTANGLES
-========================================================= */
+/* BOTTOM RIGHT */
 
-#projects .work-item:nth-child(1)::before{
+#projects .work-item::after{
+
+    content:"";
+
+    position:absolute;
+
     right:28px;
-    bottom:34px;
+    bottom:28px;
 
-    width:105px;
-    height:145px;
+    width:48px;
+    height:48px;
 
-    border:1px solid rgba(246,251,248,.13);
+    border-right:1px solid rgba(246,251,248,.10);
+    border-bottom:1px solid rgba(246,251,248,.10);
 
-    transform:translate(18px,18px);
-}
-
-#projects .work-item:nth-child(1)::after{
-    right:58px;
-    bottom:64px;
-
-    width:105px;
-    height:145px;
-
-    border:1px solid rgba(246,251,248,.23);
-}
-
-
-/* =========================================================
-   TILE 02 — ANGULAR STEPS
-========================================================= */
-
-#projects .work-item:nth-child(2)::before{
-    right:28px;
-    bottom:38px;
-
-    width:150px;
-    height:120px;
-
-    border-right:1px solid rgba(246,251,248,.2);
-    border-bottom:1px solid rgba(246,251,248,.2);
-
-    clip-path:polygon(
-        0 68%,
-        32% 68%,
-        32% 42%,
-        66% 42%,
-        66% 15%,
-        100% 15%,
-        100% 100%,
-        0 100%
-    );
-
-    background:rgba(246,251,248,.045);
-}
-
-#projects .work-item:nth-child(2)::after{
-    right:50px;
-    bottom:58px;
-
-    width:115px;
-    height:1px;
-
-    background:rgba(246,251,248,.2);
-
-    transform:rotate(-42deg);
-    transform-origin:right center;
-}
-
-
-/* =========================================================
-   TILE 03 — TRIANGULAR COMPOSITION
-========================================================= */
-
-#projects .work-item:nth-child(3)::before{
-    right:28px;
-    bottom:35px;
-
-    width:150px;
-    height:150px;
-
-    border:1px solid rgba(246,251,248,.18);
-
-    clip-path:polygon(50% 0,100% 100%,0 100%);
-}
-
-#projects .work-item:nth-child(3)::after{
-    right:67px;
-    bottom:65px;
-
-    width:78px;
-    height:78px;
-
-    background:rgba(246,251,248,.06);
-
-    clip-path:polygon(50% 0,100% 100%,0 100%);
-
-    transform:rotate(180deg);
-}
-
-
-/* =========================================================
-   TILE 04 — DIAGONAL GRID
-========================================================= */
-
-#projects .work-item:nth-child(4)::before{
-    right:34px;
-    bottom:38px;
-
-    width:155px;
-    height:125px;
-
-    border:1px solid rgba(246,251,248,.17);
-
-    background:
-        linear-gradient(
-            135deg,
-            transparent 0 31%,
-            rgba(246,251,248,.12) 31% 32%,
-            transparent 32% 64%,
-            rgba(246,251,248,.12) 64% 65%,
-            transparent 65%
-        );
-}
-
-#projects .work-item:nth-child(4)::after{
-    right:68px;
-    bottom:68px;
-
-    width:92px;
-    height:65px;
-
-    border-left:1px solid rgba(246,251,248,.2);
-    border-top:1px solid rgba(246,251,248,.2);
-
-    transform:skewX(-18deg);
+    transition:
+        width .45s ease,
+        height .45s ease,
+        opacity .35s ease,
+        border-color .35s ease;
 }
 
 
@@ -7814,130 +7705,40 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 @media (hover:hover) and (pointer:fine){
 
     #projects .work-item:hover::before{
-        opacity:.8;
-        transform:translate(-10px,-8px);
+
+        width:68px;
+        height:68px;
+
+        border-color:rgba(22,63,53,.18);
     }
 
     #projects .work-item:hover::after{
-        opacity:1;
-        transform:translate(8px,6px);
-    }
 
+        width:68px;
+        height:68px;
 
-    /* Correct special rotations after hover */
-
-    #projects .work-item:nth-child(2):hover::after{
-        transform:rotate(-42deg) translateX(-10px);
-    }
-
-    #projects .work-item:nth-child(3):hover::after{
-        transform:rotate(180deg) translate(-8px,-6px);
-    }
-
-    #projects .work-item:nth-child(4):hover::after{
-        transform:skewX(-18deg) translate(-8px,-6px);
-    }
-
-
-    /* Shapes become dark green inside the white tile */
-
-    #projects .work-item:hover::before,
-    #projects .work-item:hover::after{
-        border-color:rgba(22,63,53,.2);
-    }
-
-    #projects .work-item:nth-child(2):hover::before,
-    #projects .work-item:nth-child(3):hover::after{
-        background-color:rgba(22,63,53,.055);
-    }
-
-    #projects .work-item:nth-child(2):hover::after{
-        background:rgba(22,63,53,.22);
-    }
-
-    #projects .work-item:nth-child(4):hover::before{
-        background:
-            linear-gradient(
-                135deg,
-                transparent 0 31%,
-                rgba(22,63,53,.14) 31% 32%,
-                transparent 32% 64%,
-                rgba(22,63,53,.14) 64% 65%,
-                transparent 65%
-            );
+        border-color:rgba(22,63,53,.18);
     }
 
 }
 
 
 /* =========================================================
-   PHONE — SUBTLE SHAPES ON WHITE TILES
+   MOBILE
 ========================================================= */
 
 @media (max-width:900px){
 
     #projects .work-item::before,
     #projects .work-item::after{
-        opacity:.75 !important;
-        border-color:rgba(22,63,53,.14) !important;
-    }
 
-    #projects .work-item:nth-child(1)::before,
-    #projects .work-item:nth-child(1)::after{
-        width:76px;
-        height:105px;
-    }
+        width:34px;
+        height:34px;
 
-    #projects .work-item:nth-child(2)::before{
-        width:105px;
-        height:88px;
-
-        background:rgba(22,63,53,.035);
-    }
-
-    #projects .work-item:nth-child(2)::after{
-        width:82px;
-
-        background:rgba(22,63,53,.16);
-    }
-
-    #projects .work-item:nth-child(3)::before{
-        width:105px;
-        height:105px;
-    }
-
-    #projects .work-item:nth-child(3)::after{
-        width:55px;
-        height:55px;
-
-        background:rgba(22,63,53,.045);
-    }
-
-    #projects .work-item:nth-child(4)::before{
-        width:110px;
-        height:88px;
-
-        background:
-            linear-gradient(
-                135deg,
-                transparent 0 31%,
-                rgba(22,63,53,.1) 31% 32%,
-                transparent 32% 64%,
-                rgba(22,63,53,.1) 64% 65%,
-                transparent 65%
-            );
-    }
-
-    #projects .work-item:nth-child(4)::after{
-        width:64px;
-        height:48px;
+        border-color:rgba(22,63,53,.10);
     }
 
 }
-
-
-
-
 
 
 
