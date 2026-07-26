@@ -7843,7 +7843,86 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 
+/* =========================================================
+   PROJECTS — PHONE
+   REMOVE ALL HOVER EFFECTS
+========================================================= */
 
+@media (hover:none), (pointer:coarse){
+
+    /* Disable all transitions */
+
+    #projects .work-item,
+    #projects .work-number,
+    #projects .work-number::after,
+    #projects .work-item h3,
+    #projects .work-item p,
+    #projects .work-link{
+        transition:none !important;
+    }
+
+    /* Never change the card appearance */
+
+    #projects .work-item:hover,
+    #projects .work-item:active,
+    #projects .work-item:focus,
+    #projects .work-item:focus-visible{
+
+        background:#f1f7f3 !important;
+        color:#163f35 !important;
+
+        transform:none !important;
+        box-shadow:none !important;
+    }
+
+    /* Keep typography identical */
+
+    #projects .work-item:hover h3,
+    #projects .work-item:active h3,
+    #projects .work-item:focus h3{
+
+        color:#163f35 !important;
+        transform:none !important;
+    }
+
+    #projects .work-item:hover p,
+    #projects .work-item:active p,
+    #projects .work-item:focus p{
+
+        color:rgba(22,63,53,.72) !important;
+    }
+
+    /* Category label */
+
+    #projects .work-item:hover .work-number,
+    #projects .work-item:active .work-number,
+    #projects .work-item:focus .work-number{
+
+        color:rgba(22,63,53,.62) !important;
+    }
+
+    #projects .work-item:hover .work-number::after,
+    #projects .work-item:active .work-number::after,
+    #projects .work-item:focus .work-number::after{
+
+        width:62px !important;
+        background:currentColor !important;
+    }
+
+    /* Button */
+
+    #projects .work-link:hover,
+    #projects .work-link:active,
+    #projects .work-link:focus{
+
+        background:transparent !important;
+        color:#1f5644 !important;
+        border-color:#1f5644 !important;
+
+        transform:none !important;
+    }
+
+}
 
 
 
