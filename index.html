@@ -7430,20 +7430,23 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 /* =========================================================
-   PROJECTS — RESPONSIVE FIX
-   DESKTOP / TABLET / PHONE
+   PROJECTS — CONSISTENT RESPONSIVE OVERRIDE
 ========================================================= */
 
 
 /* =========================================================
-   LARGE DESKTOP
+   DESKTOP
 ========================================================= */
 
-@media (min-width: 1400px) {
+@media (min-width: 1101px) {
 
   #projects .work-list {
+    display: flex !important;
+
     height: 460px !important;
     min-height: 460px !important;
+
+    overflow: hidden !important;
   }
 
   #projects .work-item,
@@ -7452,49 +7455,6 @@ EDUCATION — ACTIVE OVERRIDES HOVER
   #projects .work-list .work-item:hover {
     height: 460px !important;
     min-height: 460px !important;
-  }
-
-}
-
-
-/* =========================================================
-   STANDARD DESKTOP
-========================================================= */
-
-@media (min-width: 1101px) and (max-width: 1399px) {
-
-  #projects {
-    padding-left: 6vw !important;
-    padding-right: 6vw !important;
-  }
-
-  #projects .work-list {
-    height: 430px !important;
-    min-height: 430px !important;
-
-    margin-top: 65px !important;
-  }
-
-  #projects .work-item,
-  #projects .work-item:first-child,
-  #projects .work-list:hover .work-item:first-child,
-  #projects .work-list .work-item:hover {
-    height: 430px !important;
-    min-height: 430px !important;
-
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-  }
-
-  #projects .work-item h3,
-  #projects .work-item:not(:first-child) h3,
-  #projects .work-list:hover .work-item h3 {
-    font-size: clamp(1.45rem, 2.15vw, 2.5rem) !important;
-  }
-
-  #projects .work-list .work-item:hover h3,
-  #projects .work-item:first-child h3 {
-    font-size: clamp(2rem, 3vw, 3.4rem) !important;
   }
 
 }
@@ -7507,22 +7467,26 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 @media (min-width: 901px) and (max-width: 1100px) {
 
   #projects {
-    padding: 110px 32px 100px !important;
+    padding: 110px 32px 95px !important;
   }
 
   #projects .work-list {
-    height: 400px !important;
-    min-height: 400px !important;
+    display: flex !important;
 
-    margin-top: 58px !important;
+    height: 410px !important;
+    min-height: 410px !important;
+
+    margin-top: 60px !important;
+
+    overflow: hidden !important;
   }
 
   #projects .work-item,
   #projects .work-item:first-child,
   #projects .work-list:hover .work-item:first-child,
   #projects .work-list .work-item:hover {
-    height: 400px !important;
-    min-height: 400px !important;
+    height: 410px !important;
+    min-height: 410px !important;
 
     padding: 24px 18px !important;
   }
@@ -7530,28 +7494,222 @@ EDUCATION — ACTIVE OVERRIDES HOVER
   #projects .work-item:first-child,
   #projects .work-list .work-item:hover,
   #projects .work-list:hover .work-item:first-child:hover {
-    flex: 1.75 1 0 !important;
-  }
-
-  #projects .work-item > div {
-    padding-top: 24px !important;
-    padding-bottom: 18px !important;
+    flex: 1.8 1 0 !important;
   }
 
   #projects .work-item h3,
   #projects .work-item:not(:first-child) h3,
   #projects .work-list:hover .work-item h3 {
-    font-size: clamp(1.25rem, 2.4vw, 2rem) !important;
+    font-size: clamp(1.35rem, 2.3vw, 2.1rem) !important;
   }
 
-  #projects .work-list .work-item:hover h3,
-  #projects .work-item:first-child h3 {
-    font-size: clamp(1.8rem, 3.2vw, 2.8rem) !important;
+  #projects .work-item:first-child h3,
+  #projects .work-list .work-item:hover h3 {
+    font-size: clamp(2rem, 3vw, 3rem) !important;
   }
 
   #projects .work-item p {
     font-size: 0.9rem !important;
-    line-height: 1.5 !important;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET PORTRAIT + PHONE
+   SAME DESIGN — HORIZONTAL SWIPE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  #projects {
+    padding: 105px 20px 85px !important;
+    overflow: hidden !important;
+  }
+
+  #projects .work-header h2 {
+    max-width: 100% !important;
+
+    font-size: clamp(2.8rem, 11vw, 4.8rem) !important;
+    line-height: 0.92 !important;
+  }
+
+  #projects .work-list {
+    width: calc(100% + 20px) !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin-top: 55px !important;
+    padding: 0 20px 16px 0 !important;
+
+    display: flex !important;
+    gap: 14px !important;
+
+    border: 0 !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    scroll-snap-type: x mandatory !important;
+    scroll-padding-left: 0 !important;
+
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  #projects .work-list::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  #projects .work-item,
+  #projects .work-item:first-child,
+  #projects .work-list:hover .work-item:first-child,
+  #projects .work-list .work-item:hover {
+    flex: 0 0 min(78vw, 500px) !important;
+
+    width: auto !important;
+    height: 410px !important;
+    min-height: 410px !important;
+
+    padding: 25px 22px !important;
+
+    display: grid !important;
+    grid-template-rows: auto 1fr auto !important;
+
+    border: 1px solid rgba(246, 251, 248, 0.22) !important;
+
+    background: transparent !important;
+    color: #f6fbf8 !important;
+
+    scroll-snap-align: start !important;
+
+    transform: none !important;
+  }
+
+  #projects .work-item:first-child {
+    background: #f1f7f3 !important;
+    color: #163f35 !important;
+  }
+
+  #projects .work-item > div {
+    padding-top: 30px !important;
+    padding-bottom: 20px !important;
+
+    justify-content: flex-end !important;
+  }
+
+  #projects .work-item h3,
+  #projects .work-item:not(:first-child) h3,
+  #projects .work-list:hover .work-item h3,
+  #projects .work-list .work-item:hover h3,
+  #projects .work-item:first-child h3 {
+    font-size: clamp(2rem, 7vw, 3.2rem) !important;
+    line-height: 0.93 !important;
+
+    transform: none !important;
+  }
+
+  #projects .work-item p,
+  #projects .work-list:hover .work-item:first-child:not(:hover) p,
+  #projects .work-item:hover p {
+    color: rgba(246, 251, 248, 0.68) !important;
+
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  #projects .work-item:first-child p {
+    color: rgba(22, 63, 53, 0.72) !important;
+  }
+
+  #projects .work-number,
+  #projects .work-list:hover .work-item:first-child:not(:hover) .work-number,
+  #projects .work-item:hover .work-number {
+    color: rgba(246, 251, 248, 0.38) !important;
+
+    transform: none !important;
+  }
+
+  #projects .work-item:first-child .work-number {
+    color: #1f5644 !important;
+  }
+
+  #projects .work-link,
+  #projects .work-list:hover .work-item:first-child:not(:hover) .work-link,
+  #projects .work-item:hover .work-link {
+    border-color: #b8ead8 !important;
+    color: #b8ead8 !important;
+
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  #projects .work-item:first-child .work-link {
+    border-color: #1f5644 !important;
+    color: #1f5644 !important;
+  }
+
+  #projects .work-item:active {
+    background: #f1f7f3 !important;
+    color: #163f35 !important;
+  }
+
+  #projects .work-item:active p {
+    color: rgba(22, 63, 53, 0.72) !important;
+  }
+
+  #projects .work-item:active .work-number {
+    color: #1f5644 !important;
+  }
+
+  #projects .work-item:active .work-link {
+    border-color: #1f5644 !important;
+    color: #1f5644 !important;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  #projects {
+    padding: 95px 16px 75px !important;
+  }
+
+  #projects .work-list {
+    width: calc(100% + 16px) !important;
+
+    gap: 12px !important;
+    padding-right: 16px !important;
+  }
+
+  #projects .work-item,
+  #projects .work-item:first-child,
+  #projects .work-list:hover .work-item:first-child,
+  #projects .work-list .work-item:hover {
+    flex-basis: 84vw !important;
+
+    height: 385px !important;
+    min-height: 385px !important;
+
+    padding: 22px 19px !important;
+  }
+
+  #projects .work-item h3,
+  #projects .work-item:not(:first-child) h3,
+  #projects .work-list:hover .work-item h3,
+  #projects .work-list .work-item:hover h3,
+  #projects .work-item:first-child h3 {
+    font-size: clamp(2rem, 9vw, 2.9rem) !important;
+  }
+
+  #projects .work-item p {
+    font-size: 0.88rem !important;
+    line-height: 1.55 !important;
   }
 
   #projects .work-link {
@@ -7563,336 +7721,6 @@ EDUCATION — ACTIVE OVERRIDES HOVER
   }
 
 }
-
-
-/* =========================================================
-   TABLET PORTRAIT
-   TWO-COLUMN GRID — NO HOVER DEPENDENCY
-========================================================= */
-
-@media (min-width: 651px) and (max-width: 900px) {
-
-  #projects {
-    padding: 105px 28px 90px !important;
-  }
-
-  #projects .work-list {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-
-    margin-top: 55px !important;
-    padding: 0 !important;
-
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 0 !important;
-
-    border-top: 1px solid rgba(246, 251, 248, 0.2) !important;
-    border-left: 1px solid rgba(246, 251, 248, 0.2) !important;
-
-    overflow: visible !important;
-  }
-
-  #projects .work-item,
-  #projects .work-item:first-child,
-  #projects .work-list:hover .work-item:first-child,
-  #projects .work-list .work-item:hover {
-    width: auto !important;
-    height: 350px !important;
-    min-height: 350px !important;
-
-    flex: none !important;
-
-    padding: 24px !important;
-
-    display: grid !important;
-    grid-template-rows: auto 1fr auto !important;
-
-    border: 0 !important;
-    border-right: 1px solid rgba(246, 251, 248, 0.2) !important;
-    border-bottom: 1px solid rgba(246, 251, 248, 0.2) !important;
-
-    background: transparent !important;
-    color: #f6fbf8 !important;
-
-    scroll-snap-align: none !important;
-  }
-
-  #projects .work-item > div {
-    padding: 24px 0 18px !important;
-    justify-content: flex-end !important;
-  }
-
-  #projects .work-number,
-  #projects .work-item:first-child .work-number,
-  #projects .work-list:hover .work-item:first-child:not(:hover) .work-number,
-  #projects .work-item:hover .work-number {
-    color: rgba(246, 251, 248, 0.42) !important;
-  }
-
-  #projects .work-item h3,
-  #projects .work-item:not(:first-child) h3,
-  #projects .work-list:hover .work-item h3,
-  #projects .work-list .work-item:hover h3,
-  #projects .work-item:first-child h3 {
-    color: #f6fbf8 !important;
-
-    font-size: clamp(1.8rem, 4.8vw, 2.7rem) !important;
-    line-height: 0.94 !important;
-
-    transform: none !important;
-  }
-
-  #projects .work-item p,
-  #projects .work-item:first-child p,
-  #projects .work-list:hover .work-item:first-child:not(:hover) p,
-  #projects .work-item:hover p {
-    color: rgba(246, 251, 248, 0.7) !important;
-
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  #projects .work-link,
-  #projects .work-item:first-child .work-link,
-  #projects .work-list:hover .work-item:first-child:not(:hover) .work-link,
-  #projects .work-item:hover .work-link {
-    border-color: #b8ead8 !important;
-    color: #b8ead8 !important;
-
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  #projects .work-item:active {
-    background: #f1f7f3 !important;
-    color: #163f35 !important;
-  }
-
-  #projects .work-item:active h3 {
-    color: #163f35 !important;
-  }
-
-  #projects .work-item:active p {
-    color: rgba(22, 63, 53, 0.72) !important;
-  }
-
-  #projects .work-item:active .work-number {
-    color: #1f5644 !important;
-  }
-
-  #projects .work-item:active .work-link {
-    border-color: #1f5644 !important;
-    color: #1f5644 !important;
-  }
-
-}
-
-
-/* =========================================================
-   PHONE
-   CLEAN VERTICAL PROJECT STRIPS
-========================================================= */
-
-@media (max-width: 650px) {
-
-  #projects {
-    padding: 95px 20px 75px !important;
-  }
-
-  #projects .work-header h2 {
-    max-width: 100% !important;
-
-    font-size: clamp(2.7rem, 12vw, 4.2rem) !important;
-    line-height: 0.92 !important;
-  }
-
-  #projects .work-list {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-
-    margin-top: 48px !important;
-    padding: 0 !important;
-
-    display: block !important;
-
-    border-top: 1px solid rgba(246, 251, 248, 0.22) !important;
-
-    overflow: visible !important;
-  }
-
-  #projects .work-item,
-  #projects .work-item:first-child,
-  #projects .work-list:hover .work-item:first-child,
-  #projects .work-list .work-item:hover {
-    width: 100% !important;
-    height: auto !important;
-    min-height: 0 !important;
-
-    flex: none !important;
-
-    padding: 24px 0 !important;
-
-    display: grid !important;
-    grid-template-columns: 42px minmax(0, 1fr) !important;
-    grid-template-rows: auto auto auto !important;
-    column-gap: 14px !important;
-
-    border: 0 !important;
-    border-bottom: 1px solid rgba(246, 251, 248, 0.22) !important;
-
-    background: transparent !important;
-    color: #f6fbf8 !important;
-
-    scroll-snap-align: none !important;
-  }
-
-  #projects .work-number {
-    grid-column: 1 !important;
-    grid-row: 1 / 4 !important;
-
-    padding-top: 4px !important;
-
-    color: rgba(246, 251, 248, 0.38) !important;
-
-    font-size: 0.95rem !important;
-  }
-
-  #projects .work-number::after {
-    display: block !important;
-
-    width: 22px !important;
-
-    margin: 10px 0 0 !important;
-  }
-
-  #projects .work-item > div {
-    grid-column: 2 !important;
-    grid-row: 1 / 3 !important;
-
-    padding: 0 !important;
-    justify-content: flex-start !important;
-  }
-
-  #projects .work-item h3,
-  #projects .work-item:not(:first-child) h3,
-  #projects .work-list:hover .work-item h3,
-  #projects .work-list .work-item:hover h3,
-  #projects .work-item:first-child h3 {
-    margin: 0 !important;
-
-    color: #f6fbf8 !important;
-
-    font-size: clamp(1.8rem, 8.5vw, 2.7rem) !important;
-    line-height: 0.94 !important;
-
-    transform: none !important;
-  }
-
-  #projects .work-item p,
-  #projects .work-item:first-child p,
-  #projects .work-list:hover .work-item:first-child:not(:hover) p,
-  #projects .work-item:hover p {
-    margin-top: 14px !important;
-
-    color: rgba(246, 251, 248, 0.68) !important;
-
-    font-size: 0.9rem !important;
-    line-height: 1.55 !important;
-
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  #projects .work-link,
-  #projects .work-item:first-child .work-link,
-  #projects .work-list:hover .work-item:first-child:not(:hover) .work-link,
-  #projects .work-item:hover .work-link {
-    grid-column: 2 !important;
-    grid-row: 3 !important;
-
-    margin-top: 17px !important;
-    padding: 10px 12px !important;
-
-    border-color: #b8ead8 !important;
-
-    color: #b8ead8 !important;
-
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  #projects .work-link::before {
-    font-size: 0.59rem !important;
-  }
-
-  #projects .work-item:active {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-
-    background: #f1f7f3 !important;
-    color: #163f35 !important;
-  }
-
-  #projects .work-item:active h3 {
-    color: #163f35 !important;
-  }
-
-  #projects .work-item:active p {
-    color: rgba(22, 63, 53, 0.72) !important;
-  }
-
-  #projects .work-item:active .work-number {
-    color: #1f5644 !important;
-  }
-
-  #projects .work-item:active .work-link {
-    border-color: #1f5644 !important;
-    color: #1f5644 !important;
-  }
-
-}
-
-
-/* =========================================================
-   VERY SMALL PHONE
-========================================================= */
-
-@media (max-width: 390px) {
-
-  #projects {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-
-  #projects .work-item,
-  #projects .work-item:first-child,
-  #projects .work-list:hover .work-item:first-child,
-  #projects .work-list .work-item:hover {
-    grid-template-columns: 34px minmax(0, 1fr) !important;
-    column-gap: 10px !important;
-
-    padding-top: 21px !important;
-    padding-bottom: 21px !important;
-  }
-
-  #projects .work-item h3,
-  #projects .work-item:not(:first-child) h3,
-  #projects .work-list:hover .work-item h3,
-  #projects .work-list .work-item:hover h3,
-  #projects .work-item:first-child h3 {
-    font-size: clamp(1.65rem, 8.4vw, 2.25rem) !important;
-  }
-
-  #projects .work-item p {
-    font-size: 0.86rem !important;
-  }
-
-}
-
-
 
 
 
