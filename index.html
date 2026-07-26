@@ -7726,7 +7726,109 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 
+/* ==========================================
+   PHONE — ACTIVE CARD
+========================================== */
 
+@media (max-width:900px){
+
+    #projects .work-item:focus,
+    #projects .work-item:focus-visible,
+    #projects .work-item:active{
+
+        background:#f1f7f3 !important;
+        color:#163f35 !important;
+    }
+
+    #projects .work-item:focus h3,
+    #projects .work-item:focus-visible h3,
+    #projects .work-item:active h3{
+        color:#163f35 !important;
+    }
+
+    #projects .work-item:focus p,
+    #projects .work-item:focus-visible p,
+    #projects .work-item:active p{
+        color:rgba(22,63,53,.72) !important;
+    }
+
+    #projects .work-item:focus .work-number,
+    #projects .work-item:focus-visible .work-number,
+    #projects .work-item:active .work-number{
+        color:#1f5644 !important;
+    }
+
+    #projects .work-item:focus .work-link,
+    #projects .work-item:focus-visible .work-link,
+    #projects .work-item:active .work-link{
+        border-color:#1f5644 !important;
+        color:#1f5644 !important;
+    }
+
+}
+
+    /* ==========================================
+   PROJECTS — NO DEFAULT ACTIVE CARD
+========================================== */
+
+/* Reset first card */
+
+#projects .work-item:first-child,
+#projects .work-list:hover .work-item:first-child:not(:hover){
+    flex:1 1 0 !important;
+
+    background:#1f5644 !important;
+    color:#f6fbf8 !important;
+}
+
+/* First card text */
+
+#projects .work-item:first-child h3,
+#projects .work-list:hover .work-item:first-child:not(:hover) h3{
+    color:#f6fbf8 !important;
+}
+
+#projects .work-item:first-child p,
+#projects .work-list:hover .work-item:first-child:not(:hover) p{
+    color:rgba(246,251,248,.72) !important;
+}
+
+#projects .work-item:first-child .work-number,
+#projects .work-list:hover .work-item:first-child:not(:hover) .work-number{
+    color:rgba(246,251,248,.35) !important;
+}
+
+#projects .work-item:first-child .work-link,
+#projects .work-list:hover .work-item:first-child:not(:hover) .work-link{
+    color:#b8ead8 !important;
+    border-color:#b8ead8 !important;
+}
+
+/* Hover any card */
+
+#projects .work-item:hover{
+    flex:2.2 1 0 !important;
+
+    background:#f1f7f3 !important;
+    color:#163f35 !important;
+}
+
+#projects .work-item:hover h3{
+    color:#163f35 !important;
+}
+
+#projects .work-item:hover p{
+    color:rgba(22,63,53,.72) !important;
+}
+
+#projects .work-item:hover .work-number{
+    color:#1f5644 !important;
+}
+
+#projects .work-item:hover .work-link{
+    color:#1f5644 !important;
+    border-color:#1f5644 !important;
+}
 
 
 
