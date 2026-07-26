@@ -7511,7 +7511,98 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 
+.projects-progress-fill{
+    position:absolute;
+    top:0;
+    left:0;
 
+    width:25%;
+    height:100%;
+
+    background:#f6fbf8;
+
+    transition:
+        left .45s cubic-bezier(.22,1,.36,1),
+        width .45s cubic-bezier(.22,1,.36,1);
+}
+
+    /* =========================================================
+   PROJECTS — LARGER TYPOGRAPHY
+========================================================= */
+
+/* Taller cards */
+
+#projects .work-list{
+    height:520px !important;
+}
+
+#projects .work-item{
+    height:520px !important;
+    padding:36px 36px 32px !important;
+}
+
+
+/* Project number */
+
+#projects .work-number{
+    font-size:1.6rem !important;
+    letter-spacing:.08em !important;
+}
+
+#projects .work-number::after{
+    width:70px !important;
+    margin-left:18px !important;
+}
+
+
+/* Title */
+
+#projects .work-item h3{
+
+    max-width:650px !important;
+
+    font-size:clamp(2.5rem,3vw,3.8rem) !important;
+    line-height:.92 !important;
+}
+
+#projects .work-item:hover h3{
+
+    font-size:clamp(3.6rem,4.5vw,5.6rem) !important;
+}
+
+
+/* Description */
+
+#projects .work-item p{
+
+    margin-top:24px !important;
+
+    max-width:620px !important;
+
+    font-size:1.22rem !important;
+    line-height:1.65 !important;
+}
+
+
+/* View button */
+
+#projects .work-link{
+
+    padding:18px 28px !important;
+
+    font-size:.95rem !important;
+    font-weight:700 !important;
+    letter-spacing:.14em !important;
+
+    text-decoration:none !important;
+}
+
+
+/* More breathing room */
+
+#projects .work-item > div{
+    padding:34px 0 22px !important;
+}
 
 
 
@@ -16353,16 +16444,21 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  function updateProgress(index) {
-    const segmentWidth = 100 / projectItems.length;
+function updateProgress(index) {
 
-    progressFill.style.width = `${segmentWidth}%`;
-    progressFill.style.transform = `translateX(${index * 100}%)`;
+    const total = projectItems.length;
 
-    progressNumbers.forEach((number, numberIndex) => {
-      number.classList.toggle("is-active", numberIndex === index);
+    progressFill.style.width = `${100 / total}%`;
+
+    progressFill.style.left = `${index * (100 / total)}%`;
+
+    progressFill.style.transform = "translateX(0)";
+
+    progressNumbers.forEach((number, i) => {
+        number.classList.toggle("is-active", i === index);
     });
-  }
+
+}
 
   projectItems.forEach((item, index) => {
     item.addEventListener("mouseenter", () => {
