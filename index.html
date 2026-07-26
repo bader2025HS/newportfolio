@@ -11513,6 +11513,96 @@ LANGUAGES — SUBTLE LIFT
 }
 
 
+    .tools-columns{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:56px;
+}
+
+.tool-category h4{
+    margin-bottom:24px;
+    padding-bottom:12px;
+    border-bottom:2px solid rgba(18,56,43,.12);
+
+    font-size:.8rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+}
+
+.tool-link{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:14px 0;
+
+    border-bottom:1px solid rgba(18,56,43,.08);
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:1.25rem;
+    font-weight:600;
+
+    color:#12382b;
+
+    transition:.25s;
+
+}
+
+.tool-link::after{
+
+    content:"↗";
+
+    opacity:0;
+
+    transition:.25s;
+
+}
+
+.tool-link:hover{
+
+    padding-left:10px;
+
+    color:#2d7b61;
+
+}
+
+.tool-link:hover::after{
+
+    opacity:1;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
 
@@ -14674,126 +14764,44 @@ Monitoring & Evaluation Analyst
       </div>
 
 
-      <!-- ==========================================
-      TOOLS
-      ========================================== -->
+      
 
-<!-- ==========================================
-     TOOLS
-========================================== -->
+<div class="tools-columns">
 
-<div class="skills-column skills-tools">
+    <div class="tool-category">
 
-  <div class="tools-header">
-    <h3>Tools</h3>
-  </div>
+        <h4>Data & Visualisation</h4>
 
-
-  <div class="tools-groups">
-
-
-    <!-- DATA & VISUALISATION -->
-
-    <div class="tools-group">
-
-      <div class="tools-group-heading">
-        <span>Data &amp; visualisation</span>
-      </div>
-
-      <div class="tools-group-grid">
-
-        <div class="tool-entry">
-          <strong>Power BI</strong>
-          <small>Dashboards</small>
-        </div>
-
-        <div class="tool-entry">
-          <strong>Excel</strong>
-          <small>Analysis</small>
-        </div>
-
-        <div class="tool-entry">
-          <strong>QGIS</strong>
-          <small>Mapping</small>
-        </div>
-
-        <div class="tool-entry">
-          <strong>Mapbox</strong>
-          <small>Geospatial</small>
-        </div>
-
-      </div>
+        <a class="tool-link">Power BI</a>
+        <a class="tool-link">Excel</a>
+        <a class="tool-link">QGIS</a>
+        <a class="tool-link">Mapbox</a>
 
     </div>
 
+    <div class="tool-category">
 
-    <!-- DESIGN & CONTENT -->
+        <h4>Design & Content</h4>
 
-    <div class="tools-group">
-
-      <div class="tools-group-heading">
-        <span>Design &amp; content</span>
-      </div>
-
-      <div class="tools-group-grid tools-group-grid--three">
-
-        <div class="tool-entry">
-          <strong>Illustrator</strong>
-          <small>Visual design</small>
-        </div>
-
-        <div class="tool-entry">
-          <strong>Canva</strong>
-          <small>Content creation</small>
-        </div>
-
-        <div class="tool-entry">
-          <strong>PlayPlay</strong>
-          <small>Video</small>
-        </div>
-
-      </div>
+        <a class="tool-link">Illustrator</a>
+        <a class="tool-link">Canva</a>
+        <a class="tool-link">PlayPlay</a>
 
     </div>
 
+    <div class="tool-category">
 
-    <!-- PRODUCTIVITY & WEB -->
+        <h4>Productivity & Web</h4>
 
-    <div class="tools-group">
-
-      <div class="tools-group-heading">
-        <span>Productivity &amp; web</span>
-      </div>
-
-      <div class="tools-group-grid">
-
-        <div class="tool-entry">
-          <strong>Word</strong>
-          <small>Editorial</small>
-        </div>
-
-        <div class="tool-entry">
-          <strong>PowerPoint</strong>
-          <small>Presentations</small>
-        </div>
-
-        <div class="tool-entry">
-          <strong>GitHub</strong>
-          <small>Development</small>
-        </div>
-
-        <div class="tool-entry">
-          <strong>HTML / CSS</strong>
-          <small>Web</small>
-        </div>
-
-      </div>
+        <a class="tool-link">Word</a>
+        <a class="tool-link">PowerPoint</a>
+        <a class="tool-link">GitHub</a>
+        <a class="tool-link">HTML / CSS</a>
 
     </div>
-
-  </div>
 
 </div>
+      
 
     </div>
 
