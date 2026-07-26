@@ -7326,46 +7326,73 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 }
 
 /* =========================================================
-   PROJECTS — REMOVE CATEGORY LINE
+   PROJECT TYPE — EDITORIAL TAG
 ========================================================= */
+
+#projects .work-number{
+
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    padding:8px 14px !important;
+
+    border:1.5px solid rgba(246,251,248,.28) !important;
+
+    background:rgba(255,255,255,.05) !important;
+    backdrop-filter:blur(8px);
+
+    color:rgba(246,251,248,.82) !important;
+
+    border-radius:999px !important;
+
+    font-family:"Space Grotesk",sans-serif !important;
+    font-size:.78rem !important;
+    font-weight:700 !important;
+
+    letter-spacing:.14em !important;
+    text-transform:uppercase !important;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        color .3s ease,
+        transform .3s ease !important;
+}
+
+/* Remove old line */
 
 #projects .work-number::after{
     display:none !important;
     content:none !important;
 }
 
-#projects .work-number{
-    display:inline-block !important;
-
-    color:rgba(246,251,248,.55) !important;
-
-    letter-spacing:.18em !important;
-
-    transition:
-        color .3s ease,
-        letter-spacing .3s ease,
-        transform .3s ease !important;
-}
+/* Desktop */
 
 @media (hover:hover) and (pointer:fine){
 
     #projects .work-item:hover .work-number{
-        color:#1f5644 !important;
 
-        letter-spacing:.24em !important;
-        transform:translateX(4px) !important;
+        background:#163f35 !important;
+        border-color:#163f35 !important;
+
+        color:#f6fbf8 !important;
+
+        transform:translateY(-2px) !important;
     }
 
 }
 
+/* Mobile */
+
 @media (max-width:900px){
 
     #projects .work-number{
-        color:rgba(22,63,53,.55) !important;
 
-        letter-spacing:.16em !important;
+        background:rgba(22,63,53,.06) !important;
+        border-color:rgba(22,63,53,.18) !important;
 
-        transform:none !important;
+        color:#163f35 !important;
     }
 
 }
