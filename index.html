@@ -7504,7 +7504,173 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 
-    
+    /* =========================================================
+   PROJECTS — FINAL POLISH OVERRIDE
+========================================================= */
+
+
+/* =========================================================
+   PROJECT TYPE LABELS — STRONGER
+========================================================= */
+
+#projects .work-number{
+    padding:9px 15px !important;
+
+    border:1.5px solid rgba(246,251,248,.32) !important;
+    border-radius:0 !important;
+
+    background:rgba(255,255,255,.06) !important;
+    color:rgba(246,251,248,.9) !important;
+
+    font-size:.82rem !important;
+    letter-spacing:.11em !important;
+}
+
+
+/* Cleaner desktop interaction */
+
+@media (hover:hover) and (pointer:fine){
+
+    #projects .work-item:hover .work-number{
+        background:#163f35 !important;
+        border-color:#163f35 !important;
+        color:#f6fbf8 !important;
+
+        letter-spacing:.14em !important;
+
+        transform:translateY(-2px) !important;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP — MORE REFINED TITLE GROWTH
+========================================================= */
+
+@media (min-width:901px){
+
+    #projects .work-item:hover h3{
+        font-size:clamp(2.7rem,3.55vw,4.4rem) !important;
+        line-height:.92 !important;
+
+        transform:translateY(-2px) !important;
+    }
+
+    /* Slightly smaller for the longer title */
+
+    #projects .work-item:nth-child(3):hover h3{
+        font-size:clamp(2.45rem,3.15vw,3.9rem) !important;
+    }
+
+}
+
+
+/* =========================================================
+   EXPANDED TILE — BETTER INTERNAL SPACING
+========================================================= */
+
+@media (min-width:901px){
+
+    #projects .work-item:hover > div{
+        padding-top:20px !important;
+        padding-bottom:22px !important;
+    }
+
+    #projects .work-item p{
+        margin-top:20px !important;
+    }
+
+}
+
+
+/* =========================================================
+   EXPLORE BUTTON — STRONGER
+========================================================= */
+
+#projects .work-link{
+    padding:14px 20px !important;
+
+    font-size:.76rem !important;
+    letter-spacing:.16em !important;
+}
+
+
+/* Desktop button hover */
+
+@media (hover:hover) and (pointer:fine){
+
+    #projects .work-link:hover{
+        background:#1f5644 !important;
+        border-color:#1f5644 !important;
+        color:#f6fbf8 !important;
+
+        transform:translateY(-2px) !important;
+    }
+
+}
+
+
+/* =========================================================
+   PROGRESS NUMBERS — MORE READABLE
+========================================================= */
+
+#projects .projects-progress-number{
+    color:rgba(246,251,248,.46) !important;
+}
+
+#projects .projects-progress-number.is-active{
+    color:#f6fbf8 !important;
+}
+
+
+/* =========================================================
+   MOBILE — KEEP EVERYTHING STATIC
+========================================================= */
+
+@media (max-width:900px){
+
+    #projects .work-number,
+    #projects .work-item:hover .work-number,
+    #projects .work-item:focus .work-number,
+    #projects .work-item:active .work-number{
+        padding:8px 13px !important;
+
+        border-color:rgba(22,63,53,.22) !important;
+
+        background:rgba(22,63,53,.06) !important;
+        color:#163f35 !important;
+
+        font-size:.76rem !important;
+        letter-spacing:.1em !important;
+
+        transform:none !important;
+    }
+
+    #projects .work-link,
+    #projects .work-link:hover,
+    #projects .work-link:focus,
+    #projects .work-link:active{
+        padding:12px 15px !important;
+
+        background:transparent !important;
+        color:#1f5644 !important;
+
+        font-size:.66rem !important;
+        letter-spacing:.14em !important;
+
+        transform:none !important;
+    }
+
+    #projects .projects-progress-number{
+        color:rgba(246,251,248,.48) !important;
+    }
+
+    #projects .projects-progress-number.is-active{
+        color:#f6fbf8 !important;
+    }
+
+}
 
 
 
