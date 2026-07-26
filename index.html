@@ -7605,7 +7605,29 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 
+/* =========================================================
+   PROJECTS — ALIGN COLLAPSED TITLES
+========================================================= */
 
+@media (min-width: 901px){
+
+  #projects .work-item > div{
+    justify-content: flex-start !important;
+    padding-top: 120px !important;
+  }
+
+  #projects .work-item h3{
+    margin: 0 !important;
+  }
+
+  /* Keep expanded content vertically balanced on hover */
+
+  #projects .work-item:hover > div{
+    justify-content: center !important;
+    padding-top: 34px !important;
+  }
+
+}
 
 
 
