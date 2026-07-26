@@ -11480,6 +11480,240 @@ CONTACT — FIX HOVER CLIPPING
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* ==========================================
+   SKILLS — POLISH OVERRIDE
+========================================== */
+
+/* More breathing room between groups */
+
+#skills .tools-groups{
+    gap:48px !important;
+}
+
+/* Stronger group headings */
+
+#skills .tools-group-heading{
+    margin-bottom:18px !important;
+}
+
+#skills .tools-group-heading h4{
+    font-size:.84rem !important;
+    letter-spacing:.22em !important;
+    color:#236b55 !important;
+}
+
+/* Taller cards */
+
+#skills .tool-entry{
+    min-height:126px !important;
+    padding:22px 20px !important;
+    gap:26px !important;
+}
+
+/* Slightly larger tool names */
+
+#skills .tool-entry strong{
+    font-size:clamp(1.1rem,1.4vw,1.42rem) !important;
+}
+
+/* More legible subtitles */
+
+#skills .tool-entry small{
+    color:rgba(18,56,43,.66) !important;
+    font-size:.68rem !important;
+    letter-spacing:.12em !important;
+}
+
+/* Larger flags */
+
+#skills .language-icon{
+    width:56px !important;
+    height:56px !important;
+    flex:0 0 56px !important;
+}
+
+#skills .language-icon svg{
+    transform:scale(1.15) !important;
+}
+
+/* Better spacing between flag and text */
+
+#skills .language-item{
+    grid-template-columns:56px minmax(0,1fr) auto !important;
+    gap:18px !important;
+}
+
+/* Slightly stronger language names */
+
+#skills .language-content strong{
+    font-size:clamp(1.15rem,1.45vw,1.45rem) !important;
+}
+
+#skills .language-content span{
+    color:rgba(246,251,248,.68) !important;
+}
+
+/* Better alignment of level badges */
+
+#skills .language-level{
+    min-width:78px !important;
+}
+
+/* Tablet */
+
+@media (max-width:900px){
+
+    #skills .tools-groups{
+        gap:36px !important;
+    }
+
+    #skills .tool-entry{
+        min-height:112px !important;
+    }
+
+}
+
+/* Phone */
+
+@media (max-width:650px){
+
+    #skills .language-icon{
+        width:46px !important;
+        height:46px !important;
+        flex:0 0 46px !important;
+    }
+
+    #skills .language-item{
+        grid-template-columns:46px minmax(0,1fr) auto !important;
+        gap:14px !important;
+    }
+
+    #skills .tool-entry{
+        min-height:100px !important;
+        padding:16px 14px !important;
+    }
+
+    #skills .tool-entry small{
+        color:rgba(18,56,43,.62) !important;
+    }
+
+}
+
+
+
+
+    /* ==========================================
+   SKILLS — CATEGORY ACCENTS
+========================================== */
+
+/* Data & Visualisation */
+
+#skills .tools-group:nth-child(1) .tool-entry{
+    background:#f2f9f6 !important;
+}
+
+#skills .tools-group:nth-child(1) .tool-entry:hover{
+    background:#12382b !important;
+}
+
+
+/* Design & Content */
+
+#skills .tools-group:nth-child(2) .tool-entry{
+    background:#f7faf8 !important;
+}
+
+#skills .tools-group:nth-child(2) .tool-entry:hover{
+    background:#12382b !important;
+}
+
+
+/* Productivity & Web */
+
+#skills .tools-group:nth-child(3) .tool-entry{
+    background:#fcfcfa !important;
+}
+
+#skills .tools-group:nth-child(3) .tool-entry:hover{
+    background:#12382b !important;
+}
+
+
+/* Stronger hover */
+
+#skills .tool-entry:hover{
+    transform:translateY(-5px) !important;
+
+    box-shadow:
+        0 18px 36px rgba(18,56,43,.14) !important;
+}
+
+
+/* Category headings */
+
+#skills .tools-group-heading h4{
+    position:relative;
+    display:inline-block;
+
+    padding-left:16px !important;
+}
+
+#skills .tools-group-heading h4::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:50%;
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:#2d7b61;
+
+    transform:translateY(-50%);
+}
+
+/* Different accent for each group */
+
+#skills .tools-group:nth-child(1) .tools-group-heading h4::before{
+    background:#2d7b61;
+}
+
+#skills .tools-group:nth-child(2) .tools-group-heading h4::before{
+    background:#4e9d86;
+}
+
+#skills .tools-group:nth-child(3) .tools-group-heading h4::before{
+    background:#7db9a4;
+}
+
+
+
+
+
+
+
+
     
     
 
