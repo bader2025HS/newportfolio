@@ -7526,87 +7526,60 @@ EDUCATION — ACTIVE OVERRIDES HOVER
         width .45s cubic-bezier(.22,1,.36,1);
 }
 
+
     /* =========================================================
-   PROJECTS — LARGER TYPOGRAPHY
+   PROJECTS PROGRESS — ALIGNMENT FIX
 ========================================================= */
 
-/* Taller cards */
-
-#projects .work-list{
-    height:520px !important;
+#projects .projects-progress{
+    width:min(900px,92%) !important;
+    margin:48px auto 0 !important;
 }
 
-#projects .work-item{
-    height:520px !important;
-    padding:36px 36px 32px !important;
+#projects .projects-progress-track{
+    width:100% !important;
+    margin:0 auto !important;
 }
 
+#projects .projects-progress-numbers{
 
-/* Project number */
+    width:100% !important;
 
-#projects .work-number{
-    font-size:1.6rem !important;
+    display:grid !important;
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+
+    justify-items:center !important;
+    align-items:center !important;
+
+    margin-top:22px !important;
+    padding:0 !important;
+}
+
+#projects .projects-progress-number{
+
+    justify-self:center !important;
+    text-align:center !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    width:auto !important;
+
+    font-family:"Space Grotesk",sans-serif !important;
+    font-size:1.55rem !important;
+    font-weight:700 !important;
     letter-spacing:.08em !important;
 }
 
-#projects .work-number::after{
-    width:70px !important;
-    margin-left:18px !important;
+/* Kill previous alignment rules */
+
+#projects .projects-progress-number:nth-child(1),
+#projects .projects-progress-number:nth-child(2),
+#projects .projects-progress-number:nth-child(3),
+#projects .projects-progress-number:nth-child(4){
+    justify-self:center !important;
+    text-align:center !important;
 }
-
-
-/* Title */
-
-#projects .work-item h3{
-
-    max-width:650px !important;
-
-    font-size:clamp(2.5rem,3vw,3.8rem) !important;
-    line-height:.92 !important;
-}
-
-#projects .work-item:hover h3{
-
-    font-size:clamp(3.6rem,4.5vw,5.6rem) !important;
-}
-
-
-/* Description */
-
-#projects .work-item p{
-
-    margin-top:24px !important;
-
-    max-width:620px !important;
-
-    font-size:1.22rem !important;
-    line-height:1.65 !important;
-}
-
-
-/* View button */
-
-#projects .work-link{
-
-    padding:18px 28px !important;
-
-    font-size:.95rem !important;
-    font-weight:700 !important;
-    letter-spacing:.14em !important;
-
-    text-decoration:none !important;
-}
-
-
-/* More breathing room */
-
-#projects .work-item > div{
-    padding:34px 0 22px !important;
-}
-
-
-
-
 
 
 
