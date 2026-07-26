@@ -6139,14 +6139,12 @@ EDUCATION — ACTIVE OVERRIDES HOVER
     
 
     
-    
-
-    /* ==========================================
-WORK SECTION
+/* ==========================================
+PROJECTS SECTION
 2 COLUMNS — EDITORIAL LAYOUT
 ========================================== */
 
-#work {
+#projects {
   padding: 140px 8vw;
 
   background: #1f5644;
@@ -6158,7 +6156,7 @@ WORK SECTION
 CONTAINER
 ========================================== */
 
-#work .work-container {
+#projects .work-container {
   max-width: 1450px;
   margin: 0 auto;
 }
@@ -6168,7 +6166,7 @@ CONTAINER
 HEADER
 ========================================== */
 
-#work .work-header h2 {
+#projects .work-header h2 {
   max-width: 900px;
 
   margin-top: 18px;
@@ -6178,12 +6176,12 @@ HEADER
 }
 
 
-#work .oversized-label::before {
+#projects .oversized-label::before {
   color: rgba(255, 255, 255, 0.1);
 }
 
 
-#work .oversized-label span {
+#projects .oversized-label span {
   color: #b8ead8;
 }
 
@@ -6192,7 +6190,7 @@ HEADER
 INTRO
 ========================================== */
 
-#work .work-intro {
+#projects .work-intro {
   max-width: 650px;
 
   margin-top: 34px;
@@ -6205,10 +6203,10 @@ INTRO
 
 
 /* ==========================================
-WORK LIST — 2 COLUMNS
+PROJECTS LIST — 2 COLUMNS
 ========================================== */
 
-#work .work-list {
+#projects .work-list {
   margin-top: 90px;
 
   display: grid;
@@ -6222,10 +6220,10 @@ WORK LIST — 2 COLUMNS
 
 
 /* ==========================================
-WORK ITEM
+PROJECT ITEM
 ========================================== */
 
-#work .work-item {
+#projects .work-item {
   position: relative;
 
   min-width: 0;
@@ -6256,7 +6254,7 @@ WORK ITEM
 
 /* Remove old background hover effects */
 
-#work .work-item::before {
+#projects .work-item::before {
   display: none;
 }
 
@@ -6265,7 +6263,7 @@ WORK ITEM
 NUMBER
 ========================================== */
 
-#work .work-number {
+#projects .work-number {
   position: relative;
   z-index: 1;
 
@@ -6289,7 +6287,7 @@ NUMBER
 
 /* Small line below number */
 
-#work .work-number::after {
+#projects .work-number::after {
   content: "";
 
   display: block;
@@ -6311,7 +6309,7 @@ NUMBER
 CONTENT
 ========================================== */
 
-#work .work-item > div {
+#projects .work-item > div {
   position: relative;
   z-index: 1;
 
@@ -6331,7 +6329,7 @@ CONTENT
 TITLE
 ========================================== */
 
-#work .work-item h3 {
+#projects .work-item h3 {
   max-width: 520px;
 
   margin: 0 0 18px;
@@ -6351,7 +6349,7 @@ TITLE
 DESCRIPTION
 ========================================== */
 
-#work .work-item p {
+#projects .work-item p {
   max-width: 520px;
 
   margin: 0;
@@ -6371,7 +6369,7 @@ DESCRIPTION
 ACTION BUTTON
 ========================================== */
 
-#work .work-link {
+#projects .work-link {
   position: relative;
 
   grid-column: 2;
@@ -6416,34 +6414,34 @@ ACTION BUTTON
 
 /* Remove old underline/fill animation */
 
-#work .work-link::after {
+#projects .work-link::after {
   display: none;
 }
 
 
 /* Button labels */
 
-#work .work-item:nth-child(1) .work-link::before {
+#projects .work-item:nth-child(1) .work-link::before {
   content: "READ PAPER";
 }
 
 
-#work .work-item:nth-child(2) .work-link::before {
+#projects .work-item:nth-child(2) .work-link::before {
   content: "SEE BRIEFS";
 }
 
 
-#work .work-item:nth-child(3) .work-link::before {
+#projects .work-item:nth-child(3) .work-link::before {
   content: "READ ARTICLES";
 }
 
 
-#work .work-item:nth-child(4) .work-link::before {
+#projects .work-item:nth-child(4) .work-link::before {
   content: "VIEW VISUALS";
 }
 
 
-#work .work-link::before {
+#projects .work-link::before {
   position: relative;
   z-index: 1;
 
@@ -6456,42 +6454,42 @@ ACTION BUTTON
 HOVER
 ========================================== */
 
-#work .work-item:hover {
+#projects .work-item:hover {
   padding-left: 14px;
   padding-right: 0;
 }
 
 
-#work .work-item:hover .work-number {
+#projects .work-item:hover .work-number {
   color: #b8ead8;
 
   transform: translateX(3px);
 }
 
 
-#work .work-item:hover .work-number::after {
+#projects .work-item:hover .work-number::after {
   width: 42px;
 
   background: #b8ead8;
 }
 
 
-#work .work-item:hover h3 {
+#projects .work-item:hover h3 {
   color: #b8ead8;
 
   transform: translateX(5px);
 }
 
 
-#work .work-item:hover p {
+#projects .work-item:hover p {
   color: rgba(246, 251, 248, 0.82);
 
   transform: translateX(5px);
 }
 
 
-#work .work-item:hover .work-link,
-#work .work-link:hover {
+#projects .work-item:hover .work-link,
+#projects .work-link:hover {
   border-color: #b8ead8;
 
   background: #b8ead8;
@@ -6507,18 +6505,18 @@ TABLET
 
 @media (max-width: 1050px) {
 
-  #work .work-list {
+  #projects .work-list {
     column-gap: 42px;
   }
 
 
-  #work .work-item {
+  #projects .work-item {
     grid-template-columns: 56px minmax(0, 1fr);
     column-gap: 18px;
   }
 
 
-  #work .work-item h3 {
+  #projects .work-item h3 {
     font-size: clamp(1.7rem, 3.4vw, 2.7rem);
   }
 
@@ -6531,12 +6529,12 @@ MOBILE — ONE COLUMN
 
 @media (max-width: 850px) {
 
-  #work {
+  #projects {
     padding: 120px 20px 80px;
   }
 
 
-  #work .work-list {
+  #projects .work-list {
     margin-top: 65px;
 
     grid-template-columns: 1fr;
@@ -6544,7 +6542,7 @@ MOBILE — ONE COLUMN
   }
 
 
-  #work .work-item {
+  #projects .work-item {
     min-height: 260px;
 
     grid-template-columns: 46px minmax(0, 1fr);
@@ -6554,31 +6552,31 @@ MOBILE — ONE COLUMN
   }
 
 
-  #work .work-link {
+  #projects .work-link {
     margin-top: 14px;
     padding: 11px 14px;
   }
 
 
-  #work .work-link::before {
+  #projects .work-link::before {
     font-size: 0.66rem;
   }
 
 
-  #work .work-item:hover {
+  #projects .work-item:hover {
     padding-left: 0;
     padding-right: 0;
   }
 
 
-  #work .work-item:hover .work-number,
-  #work .work-item:hover h3,
-  #work .work-item:hover p {
+  #projects .work-item:hover .work-number,
+  #projects .work-item:hover h3,
+  #projects .work-item:hover p {
     transform: none;
   }
 
 
-  #work .work-item:hover .work-link {
+  #projects .work-item:hover .work-link {
     transform: none;
   }
 
@@ -6591,7 +6589,7 @@ SMALL MOBILE
 
 @media (max-width: 500px) {
 
-  #work .work-item {
+  #projects .work-item {
     min-height: auto;
 
     grid-template-columns: 38px minmax(0, 1fr);
@@ -6601,29 +6599,29 @@ SMALL MOBILE
   }
 
 
-  #work .work-number {
+  #projects .work-number {
     font-size: 0.82rem;
   }
 
 
-  #work .work-item h3 {
+  #projects .work-item h3 {
     font-size: clamp(1.65rem, 8vw, 2.25rem);
   }
 
 
-  #work .work-item p {
+  #projects .work-item p {
     font-size: 0.9rem;
     line-height: 1.55;
   }
 
 
-  #work .work-link {
+  #projects .work-link {
     margin-top: 13px;
     padding: 10px 13px;
   }
 
 
-  #work .work-link::before {
+  #projects .work-link::before {
     font-size: 0.6rem;
   }
 
@@ -6636,7 +6634,7 @@ OVERSIZED LABEL — MOBILE
 
 @media (max-width: 650px) {
 
-  #work .oversized-label {
+  #projects .oversized-label {
     width: 100% !important;
     max-width: 100% !important;
 
@@ -6647,7 +6645,7 @@ OVERSIZED LABEL — MOBILE
   }
 
 
-  #work .oversized-label::before {
+  #projects .oversized-label::before {
     left: -3px !important;
     bottom: -8px !important;
 
@@ -6661,7 +6659,7 @@ OVERSIZED LABEL — MOBILE
   }
 
 
-  #work .oversized-label span {
+  #projects .oversized-label span {
     font-size: 0.68rem !important;
     letter-spacing: 0.17em !important;
   }
@@ -6671,7 +6669,7 @@ OVERSIZED LABEL — MOBILE
 
 @media (max-width: 390px) {
 
-  #work .oversized-label::before {
+  #projects .oversized-label::before {
     font-size: 15vw !important;
   }
 
@@ -6679,62 +6677,62 @@ OVERSIZED LABEL — MOBILE
 
 
 /* ==========================================
-WORK — REMOVE EMPTY SPACE UNDER BUTTON
+PROJECTS — REMOVE EMPTY SPACE UNDER BUTTON
 ========================================== */
 
-#work .work-item {
-    min-height: auto !important;
-    grid-template-rows: auto !important;
-    padding-top: 36px !important;
-    padding-bottom: 36px !important;
+#projects .work-item {
+  min-height: auto !important;
+  grid-template-rows: auto !important;
+  padding-top: 36px !important;
+  padding-bottom: 36px !important;
 }
 
-#work .work-link {
-    align-self: flex-start !important;
-    margin-top: 18px !important;
+#projects .work-link {
+  align-self: flex-start !important;
+  margin-top: 18px !important;
 }
 
 @media (max-width: 850px) {
-    #work .work-item {
-        min-height: auto !important;
-        padding-top: 30px !important;
-        padding-bottom: 30px !important;
-    }
 
-    #work .work-link {
-        margin-top: 16px !important;
-    }
+  #projects .work-item {
+    min-height: auto !important;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+
+  #projects .work-link {
+    margin-top: 16px !important;
+  }
+
 }
-
 
 
 /* ==========================================
-WORK — LARGER NUMBERS
+PROJECTS — LARGER NUMBERS
 ========================================== */
 
-#work .work-number {
-    font-size: 1.3rem !important;   /* was 1rem */
-    font-weight: 700;
-    letter-spacing: 0.06em;
+#projects .work-number {
+  font-size: 1.3rem !important;
+  font-weight: 700;
+  letter-spacing: 0.06em;
 }
 
-#work .work-number::after {
-    width: 28px !important;         /* slightly longer line */
-    margin-top: 14px;
+#projects .work-number::after {
+  width: 28px !important;
+  margin-top: 14px;
 }
 
 @media (max-width: 850px) {
-    #work .work-number {
-        font-size: 1.1rem !important;
-    }
 
-    #work .work-number::after {
-        width: 24px !important;
-    }
+  #projects .work-number {
+    font-size: 1.1rem !important;
+  }
+
+  #projects .work-number::after {
+    width: 24px !important;
+  }
+
 }
-
-
-
 
 
 
@@ -12257,7 +12255,7 @@ LANGUAGE-SPECIFIC HOVER COLORS
     <a href="#education" class="nav-link">Education</a>
     <a href="#skills" class="nav-link">Skills</a>
     <a href="#activities" class="nav-link">Activities</a>
-    <a href="#work" class="nav-link">Work</a>
+    <a href="#projects" class="nav-link">Projects</a>
     <a href="#gallery" class="nav-link">Gallery</a>
     <a href="#contact" class="nav-link">Contact</a>
 
@@ -13650,13 +13648,11 @@ Monitoring & Evaluation Analyst
 
 
     
-    
-
-<section id="work">
+    <section id="projects">
   <div class="work-container">
 
     <div class="work-header">
-      <div class="oversized-label" data-letter="WORK">
+      <div class="oversized-label" data-letter="PROJECTS">
         <span>What I've built?</span>
       </div>
 
@@ -13674,9 +13670,10 @@ Monitoring & Evaluation Analyst
         <span class="work-link">View →</span>
       </a>
 
-      <a href="Fiches pays OIF.pdf" class="work-item"
-        target="_blank"
-   rel="noopener noreferrer">
+      <a href="Fiches pays OIF.pdf"
+         class="work-item"
+         target="_blank"
+         rel="noopener noreferrer">
         <span class="work-number">02</span>
         <div>
           <h3>OIF Country Briefs</h3>
@@ -13706,10 +13703,6 @@ Monitoring & Evaluation Analyst
     </div>
   </div>
 </section>
-
-
-
-
 
 
 
