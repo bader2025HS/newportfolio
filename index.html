@@ -7325,7 +7325,50 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 }
 
+/* =========================================================
+   PROJECTS — REMOVE CATEGORY LINE
+========================================================= */
 
+#projects .work-number::after{
+    display:none !important;
+    content:none !important;
+}
+
+#projects .work-number{
+    display:inline-block !important;
+
+    color:rgba(246,251,248,.55) !important;
+
+    letter-spacing:.18em !important;
+
+    transition:
+        color .3s ease,
+        letter-spacing .3s ease,
+        transform .3s ease !important;
+}
+
+@media (hover:hover) and (pointer:fine){
+
+    #projects .work-item:hover .work-number{
+        color:#1f5644 !important;
+
+        letter-spacing:.24em !important;
+        transform:translateX(4px) !important;
+    }
+
+}
+
+@media (max-width:900px){
+
+    #projects .work-number{
+        color:rgba(22,63,53,.55) !important;
+
+        letter-spacing:.16em !important;
+
+        transform:none !important;
+    }
+
+}
 
 
 
