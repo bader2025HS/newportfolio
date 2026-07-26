@@ -7757,7 +7757,107 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 
+/* =========================================================
+   PROJECTS — TITLE CROPPING + CATEGORY HOVER FIX
+========================================================= */
 
+@media (min-width:901px){
+
+    /* Let collapsed titles wrap cleanly */
+
+    #projects .work-item h3{
+        width:100% !important;
+        max-width:100% !important;
+
+        font-size:clamp(1.85rem,2.15vw,2.8rem) !important;
+        line-height:.96 !important;
+
+        white-space:normal !important;
+        overflow:visible !important;
+        overflow-wrap:normal !important;
+        word-break:normal !important;
+        hyphens:none !important;
+    }
+
+    /* Give the collapsed content slightly safer side spacing */
+
+    #projects .work-item{
+        padding-left:30px !important;
+        padding-right:30px !important;
+    }
+
+    /* Keep the hovered title large, but prevent clipping */
+
+    #projects .work-item:hover h3{
+        width:100% !important;
+        max-width:100% !important;
+
+        font-size:clamp(3rem,4vw,5rem) !important;
+
+        white-space:normal !important;
+        overflow:visible !important;
+    }
+
+    /* Content Writing needs a slightly smaller active title */
+
+    #projects .work-item:nth-child(3):hover h3{
+        font-size:clamp(2.7rem,3.5vw,4.4rem) !important;
+    }
+
+
+    /* =====================================================
+       CATEGORY LABELS — STATIC, CLEAN HOVER
+    ===================================================== */
+
+    #projects .work-number,
+    #projects .work-item:hover .work-number{
+        color:rgba(246,251,248,.52) !important;
+
+        transform:none !important;
+    }
+
+    #projects .work-number::after,
+    #projects .work-item:hover .work-number::after{
+        width:62px !important;
+        max-width:62px !important;
+        height:2px !important;
+
+        background:currentColor !important;
+
+        opacity:.75 !important;
+
+        transform:none !important;
+    }
+
+    /* On the white active tile, only switch to dark green */
+
+    #projects .work-item:hover .work-number{
+        color:rgba(22,63,53,.62) !important;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
