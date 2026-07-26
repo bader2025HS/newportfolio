@@ -13252,7 +13252,102 @@ LANGUAGE-SPECIFIC HOVER COLORS
 }
 
 
+/* ==========================================
+   TOOLS — COMPACT CARD DESIGN
+========================================== */
 
+/* Smaller grid gaps */
+
+#skills .tools-group-grid,
+#skills .tools-group-grid--three{
+    gap:10px !important;
+}
+
+
+/* Compact cards */
+
+#skills .tool-entry{
+
+    min-height:74px !important;
+
+    padding:16px 18px !important;
+
+    justify-content:center !important;
+    align-items:flex-start !important;
+
+    gap:8px !important;
+
+}
+
+
+/* Smaller title */
+
+#skills .tool-entry strong{
+
+    font-size:1.18rem !important;
+    line-height:1 !important;
+    letter-spacing:-0.03em;
+
+}
+
+
+/* Smaller subtitle */
+
+#skills .tool-entry small{
+
+    font-size:.58rem !important;
+    letter-spacing:.15em !important;
+
+    opacity:.7;
+
+}
+
+
+/* Softer hover */
+
+#skills .tool-entry{
+
+    transition:
+        transform .22s ease,
+        background .22s ease,
+        border-color .22s ease,
+        box-shadow .22s ease;
+
+}
+
+#skills .tool-entry:hover{
+
+    transform:translateY(-2px) !important;
+
+    box-shadow:
+        0 8px 18px rgba(18,56,43,.08);
+
+}
+
+
+/* Less space between sections */
+
+#skills .tools-group{
+
+    padding-bottom:24px !important;
+
+}
+
+#skills .tools-group-heading{
+
+    margin-bottom:12px !important;
+
+}
+
+
+/* Category title */
+
+#skills .tools-group-heading span{
+
+    font-size:.76rem !important;
+    letter-spacing:.18em !important;
+
+}
 
 /* ==========================================
    SIMPLE SCROLL REVEAL
