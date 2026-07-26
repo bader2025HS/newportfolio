@@ -7292,7 +7292,95 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 
+/* =========================================================
+   PROJECTS PROGRESS
+========================================================= */
 
+.projects-progress{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+
+    margin-top:38px;
+
+    width:100%;
+}
+
+
+/* ---------- Line ---------- */
+
+.projects-progress-track{
+
+    position:relative;
+
+    width:min(520px,90%);
+    height:1px;
+
+    background:rgba(246,251,248,.18);
+}
+
+.projects-progress-fill{
+
+    position:absolute;
+    inset:0 auto 0 0;
+
+    width:25%;              /* starts on project 01 */
+
+    background:#f6fbf8;
+
+    transition:.45s ease;
+}
+
+
+/* ---------- Numbers ---------- */
+
+.projects-progress-numbers{
+
+    width:min(520px,90%);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.projects-progress-number{
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:.95rem;
+    font-weight:700;
+    letter-spacing:.12em;
+
+    color:rgba(246,251,248,.35);
+
+    transition:.3s ease;
+}
+
+.projects-progress-number.is-active{
+
+    color:#f6fbf8;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:900px){
+
+    .projects-progress{
+
+        margin-top:28px;
+    }
+
+    .projects-progress-track,
+    .projects-progress-numbers{
+
+        width:85vw;
+    }
+
+}
     
 
 
@@ -14259,9 +14347,15 @@ Monitoring & Evaluation Analyst
 </section>
 
 
-    
+
+
+
     <section id="projects">
   <div class="work-container">
+
+    <!-- ==========================================
+         PROJECTS HEADER
+    =========================================== -->
 
     <div class="work-header">
       <div class="oversized-label" data-letter="PROJECTS">
@@ -14271,53 +14365,149 @@ Monitoring & Evaluation Analyst
       <h2>Not just projects. Results.</h2>
     </div>
 
+
+    <!-- ==========================================
+         PROJECT TILES
+    =========================================== -->
+
     <div class="work-list">
 
-      <a href="#" class="work-item">
+      <!-- Project 01 -->
+
+      <article class="work-item" data-project="01">
         <span class="work-number">01</span>
-        <div>
+
+        <div class="work-content">
           <h3>Cox's Bazar Study</h3>
-          <p>Qualitative humanitarian research on camp urbanisation.</p>
-        </div>
-        <span class="work-link">View →</span>
-      </a>
 
-      <a href="Fiches pays OIF.pdf"
-         class="work-item"
-         target="_blank"
-         rel="noopener noreferrer">
+          <p>
+            Qualitative humanitarian research on camp urbanisation.
+          </p>
+        </div>
+
+        <a
+          href="#"
+          class="work-link"
+          aria-label="View Cox's Bazar Study">
+          View →
+        </a>
+      </article>
+
+
+      <!-- Project 02 -->
+
+      <article class="work-item" data-project="02">
         <span class="work-number">02</span>
-        <div>
+
+        <div class="work-content">
           <h3>OIF Country Briefs</h3>
-          <p>Strategic political and socio-economic country notes.</p>
-        </div>
-        <span class="work-link">View →</span>
-      </a>
 
-      <a href="#" class="work-item">
+          <p>
+            Strategic political and socio-economic country notes.
+          </p>
+        </div>
+
+        <a
+          href="Fiches pays OIF.pdf"
+          class="work-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View OIF Country Briefs">
+          View →
+        </a>
+      </article>
+
+
+      <!-- Project 03 -->
+
+      <article class="work-item" data-project="03">
         <span class="work-number">03</span>
-        <div>
-          <h3>Content Writing</h3>
-          <p>Editorial content on sustainability, CSR and transition topics.</p>
-        </div>
-        <span class="work-link">View →</span>
-      </a>
 
-      <a href="#" class="work-item">
-        <span class="work-number">04</span>
-        <div>
-          <h3>Infographics</h3>
-          <p>Visual communication assets, maps and data-based layouts.</p>
+        <div class="work-content">
+          <h3>Content Writing</h3>
+
+          <p>
+            Editorial content on sustainability, CSR and transition topics.
+          </p>
         </div>
-        <span class="work-link">View →</span>
-      </a>
+
+        <a
+          href="#"
+          class="work-link"
+          aria-label="View Content Writing projects">
+          View →
+        </a>
+      </article>
+
+
+      <!-- Project 04 -->
+
+      <article class="work-item" data-project="04">
+        <span class="work-number">04</span>
+
+        <div class="work-content">
+          <h3>Infographics</h3>
+
+          <p>
+            Visual communication assets, maps and data-based layouts.
+          </p>
+        </div>
+
+        <a
+          href="#"
+          class="work-link"
+          aria-label="View Infographics projects">
+          View →
+        </a>
+      </article>
 
     </div>
+
+
+    <!-- ==========================================
+         PROJECTS PROGRESS INDICATOR
+    =========================================== -->
+
+    <div class="projects-progress" aria-hidden="true">
+
+      <div class="projects-progress-track">
+        <span class="projects-progress-fill"></span>
+      </div>
+
+      <div class="projects-progress-numbers">
+
+        <span
+          class="projects-progress-number is-active"
+          data-progress="01">
+          01
+        </span>
+
+        <span
+          class="projects-progress-number"
+          data-progress="02">
+          02
+        </span>
+
+        <span
+          class="projects-progress-number"
+          data-progress="03">
+          03
+        </span>
+
+        <span
+          class="projects-progress-number"
+          data-progress="04">
+          04
+        </span>
+
+      </div>
+
+    </div>
+
   </div>
 </section>
 
-
-
+    
 
 
 
