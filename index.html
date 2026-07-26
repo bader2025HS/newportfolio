@@ -7132,7 +7132,144 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 
+/* =========================================================
+   PROJECTS — FINAL SIZE + MOBILE PROGRESS OVERRIDE
+========================================================= */
 
+
+/* =========================================================
+   DESKTOP — SHORTER TILES
+========================================================= */
+
+@media (min-width:901px){
+
+    #projects .work-list{
+        height:430px !important;
+    }
+
+    #projects .work-item{
+        height:430px !important;
+        padding-top:30px !important;
+        padding-bottom:26px !important;
+    }
+
+    #projects .work-item > div{
+        padding-top:88px !important;
+        padding-bottom:18px !important;
+    }
+
+    #projects .work-item:hover > div{
+        padding-top:24px !important;
+        padding-bottom:18px !important;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET LANDSCAPE — SHORTER TOO
+========================================================= */
+
+@media (min-width:901px) and (max-width:1200px){
+
+    #projects .work-list{
+        height:400px !important;
+    }
+
+    #projects .work-item{
+        height:400px !important;
+    }
+
+    #projects .work-item > div{
+        padding-top:78px !important;
+    }
+
+    #projects .work-item:hover > div{
+        padding-top:20px !important;
+    }
+
+}
+
+
+/* =========================================================
+   PHONE — SHOW PROGRESS AGAIN
+========================================================= */
+
+@media (max-width:900px){
+
+    #projects .projects-progress{
+        width:calc(100% - 8px) !important;
+
+        margin:20px auto 0 !important;
+
+        display:flex !important;
+        flex-direction:column !important;
+        gap:16px !important;
+    }
+
+    #projects .projects-progress-track{
+        width:100% !important;
+        height:3px !important;
+
+        display:block !important;
+
+        background:rgba(246,251,248,.20) !important;
+    }
+
+    #projects .projects-progress-fill{
+        display:block !important;
+
+        height:100% !important;
+
+        background:#f6fbf8 !important;
+    }
+
+    #projects .projects-progress-numbers{
+        width:100% !important;
+
+        display:grid !important;
+        grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+
+        justify-items:center !important;
+        align-items:center !important;
+    }
+
+    #projects .projects-progress-number{
+        display:block !important;
+
+        color:rgba(246,251,248,.34) !important;
+
+        font-size:1rem !important;
+        line-height:1 !important;
+
+        transform:none !important;
+    }
+
+    #projects .projects-progress-number.is-active{
+        color:#f6fbf8 !important;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width:500px){
+
+    #projects .projects-progress{
+        width:100% !important;
+
+        margin-top:16px !important;
+        gap:14px !important;
+    }
+
+    #projects .projects-progress-number{
+        font-size:.9rem !important;
+    }
+
+}
 
 
 
