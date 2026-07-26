@@ -7584,7 +7584,22 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 
+#projects .projects-progress-fill{
+    position:absolute !important;
+    top:0 !important;
+    left:0;
 
+    width:25%;
+    height:100%;
+
+    background:#f6fbf8;
+
+    transform:none !important;
+
+    transition:
+        left .4s cubic-bezier(.22,1,.36,1),
+        width .4s cubic-bezier(.22,1,.36,1);
+}
 
 
 
@@ -16399,39 +16414,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
-  const projectItems = document.querySelectorAll(
-    "#projects .work-item"
-  );
-
+  const workList = document.querySelector("#projects .work-list");
+  const projectItems = [...document.querySelectorAll("#projects .work-item")];
   const progressFill = document.querySelector(
     "#projects .projects-progress-fill"
   );
+  const progressNumbers = [
+    ...document.querySelectorAll("#projects .projects-progress-number")
+  ];
 
-  const progressNumbers = document.querySelectorAll(
-    "#projects .projects-progress-number"
-  );
-
-  if (!projectItems.length || !progressFill || !progressNumbers.length) {
+  if (
+    !workList ||
+    !projectItems.length ||
+    !progressFill ||
+    !progressNumbers.length
+  ) {
     return;
   }
 
-function updateProgress(index) {
+  function updateProgress(index) {
+    const safeIndex = Math.max(
+      0,
+      Math.min(index, projectItems.length - 1)
+    );
 
-    const total = projectItems.length;
+    const segmentWidth = 100 / projectItems.length;
 
-    progressFill.style.width = `${100 / total}%`;
+    progressFill.style.width = `${segmentWidth}%`;
+    progressFill.style.left = `${safeIndex * segmentWidth}%`;
+    progressFill.style.transform = "none";
 
-    progressFill.style.left = `${index * (100 / total)}%`;
-
-    progressFill.style.transform = "translateX(0)";
-
-    progressNumbers.forEach((number, i) => {
-        number.classList.toggle("is-active", i === index);
+    progressNumbers.forEach((number, numberIndex) => {
+      number.classList.toggle(
+        "is-active",
+        numberIndex === safeIndex
+      );
     });
+  }
 
-}
+  /* Desktop hover */
 
   projectItems.forEach((item, index) => {
     item.addEventListener("mouseenter", () => {
@@ -16443,7 +16466,46 @@ function updateProgress(index) {
     });
   });
 
+
+  /* Phone and tablet horizontal scrolling */
+
+  function updateFromScroll() {
+    const listRect = workList.getBoundingClientRect();
+    const listCenter = listRect.left + listRect.width / 2;
+
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+
+    projectItems.forEach((item, index) => {
+      const itemRect = item.getBoundingClientRect();
+      const itemCenter = itemRect.left + itemRect.width / 2;
+      const distance = Math.abs(itemCenter - listCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    updateProgress(closestIndex);
+  }
+
+  let scrollFrame;
+
+  workList.addEventListener(
+    "scroll",
+    () => {
+      cancelAnimationFrame(scrollFrame);
+
+      scrollFrame = requestAnimationFrame(updateFromScroll);
+    },
+    { passive: true }
+  );
+
+  window.addEventListener("resize", updateFromScroll);
+
   updateProgress(0);
+  updateFromScroll();
 });
 </script>
 
