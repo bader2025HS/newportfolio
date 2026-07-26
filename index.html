@@ -7140,7 +7140,324 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 
+/* =========================================================
+   PROJECTS — COMPACT CLEAN OVERRIDE
+========================================================= */
 
+
+/* Remove all decorative section geometry */
+
+#projects::before,
+#projects::after {
+  display: none !important;
+}
+
+
+/* Shorter project area */
+
+#projects .work-list {
+  min-height: 460px !important;
+  height: 460px !important;
+
+  margin-top: 70px !important;
+}
+
+
+/* Shorter panels */
+
+#projects .work-item,
+#projects .work-item:first-child,
+#projects .work-list:hover .work-item:first-child,
+#projects .work-list .work-item:hover {
+  min-height: 460px !important;
+  height: 460px !important;
+
+  padding-top: 28px !important;
+  padding-bottom: 28px !important;
+}
+
+
+/* Remove geometric corner decoration */
+
+#projects .work-item::before,
+#projects .work-item::after {
+  display: none !important;
+}
+
+
+/* Better vertical distribution */
+
+#projects .work-item {
+  grid-template-rows: auto 1fr auto !important;
+}
+
+
+/* Bring content higher and remove large empty area */
+
+#projects .work-item > div {
+  justify-content: flex-end !important;
+
+  padding-top: 35px !important;
+  padding-bottom: 24px !important;
+}
+
+
+/* =========================================================
+   FIX FIRST PROJECT DEFAULT / HOVER BEHAVIOUR
+========================================================= */
+
+/* First project active only when the list is not being hovered */
+
+#projects .work-item:first-child {
+  flex: 2.15 1 0 !important;
+
+  background: #f1f7f3 !important;
+  color: #163f35 !important;
+}
+
+
+/* When hovering anywhere in the list, fully reset first project */
+
+#projects .work-list:hover .work-item:first-child {
+  flex: 1 1 0 !important;
+
+  background: transparent !important;
+  color: #f6fbf8 !important;
+}
+
+
+/* But keep it active when hovering the first project itself */
+
+#projects .work-list:hover .work-item:first-child:hover {
+  flex: 2.15 1 0 !important;
+
+  background: #f1f7f3 !important;
+  color: #163f35 !important;
+}
+
+
+/* Expand whichever project is hovered */
+
+#projects .work-list .work-item:hover {
+  flex: 2.15 1 0 !important;
+
+  background: #f1f7f3 !important;
+  color: #163f35 !important;
+}
+
+
+/* =========================================================
+   FIRST PROJECT TEXT RESET
+========================================================= */
+
+/* Default first-project number */
+
+#projects .work-item:first-child .work-number {
+  color: #1f5644 !important;
+}
+
+
+/* Reset when another project is hovered */
+
+#projects .work-list:hover .work-item:first-child:not(:hover) .work-number {
+  color: rgba(246, 251, 248, 0.36) !important;
+}
+
+
+/* Restore when first project is hovered */
+
+#projects .work-list:hover .work-item:first-child:hover .work-number {
+  color: #1f5644 !important;
+}
+
+
+/* First-project description */
+
+#projects .work-item:first-child p {
+  color: rgba(22, 63, 53, 0.72) !important;
+
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+/* Hide description when another panel is active */
+
+#projects .work-list:hover .work-item:first-child:not(:hover) p {
+  opacity: 0 !important;
+  transform: translateY(12px) !important;
+}
+
+
+/* Restore on first-project hover */
+
+#projects .work-list:hover .work-item:first-child:hover p {
+  color: rgba(22, 63, 53, 0.72) !important;
+
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+/* First-project button */
+
+#projects .work-item:first-child .work-link {
+  border-color: #1f5644 !important;
+  color: #1f5644 !important;
+
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+/* Hide button when another panel is active */
+
+#projects .work-list:hover .work-item:first-child:not(:hover) .work-link {
+  border-color: rgba(184, 234, 216, 0.75) !important;
+  color: #b8ead8 !important;
+
+  opacity: 0 !important;
+  transform: translateY(12px) !important;
+}
+
+
+/* Restore button on first-project hover */
+
+#projects .work-list:hover .work-item:first-child:hover .work-link {
+  border-color: #1f5644 !important;
+  color: #1f5644 !important;
+
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+/* =========================================================
+   TIGHTER TYPOGRAPHY
+========================================================= */
+
+#projects .work-item h3 {
+  line-height: 0.94 !important;
+}
+
+
+#projects .work-item p {
+  margin-top: 18px !important;
+  line-height: 1.55 !important;
+}
+
+
+#projects .work-link {
+  padding: 11px 15px !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  #projects .work-list,
+  #projects .work-item,
+  #projects .work-item:first-child,
+  #projects .work-list:hover .work-item:first-child,
+  #projects .work-list .work-item:hover {
+    min-height: 430px !important;
+    height: 430px !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  #projects .work-list {
+    height: auto !important;
+    min-height: 0 !important;
+
+    margin-top: 60px !important;
+  }
+
+
+  #projects .work-item,
+  #projects .work-item:first-child,
+  #projects .work-list:hover .work-item:first-child,
+  #projects .work-list .work-item:hover {
+    min-height: 410px !important;
+    height: 410px !important;
+
+    padding: 24px 22px !important;
+  }
+
+
+  #projects .work-item > div {
+    padding-top: 30px !important;
+    padding-bottom: 20px !important;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  #projects .work-item,
+  #projects .work-item:first-child,
+  #projects .work-list:hover .work-item:first-child,
+  #projects .work-list .work-item:hover {
+    min-height: 390px !important;
+    height: 390px !important;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
