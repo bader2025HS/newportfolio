@@ -12868,6 +12868,175 @@ body.gallery-lightbox-open{
 }
 
 
+
+
+    /* ==========================================
+   GLOBAL OVERSIZED LABEL — RESTORE ALL SECTIONS
+   Keep this at the very end of the CSS
+========================================== */
+
+section .oversized-label {
+  position: relative !important;
+
+  width: max-content !important;
+  max-width: 100% !important;
+  min-height: 82px !important;
+
+  margin: 0 0 28px !important;
+
+  display: inline-flex !important;
+  align-items: flex-end !important;
+
+  overflow: visible !important;
+
+  font-family: "Space Grotesk", sans-serif !important;
+}
+
+
+/* Large faded background word */
+
+section .oversized-label::before {
+  content: attr(data-letter) !important;
+
+  position: absolute !important;
+  inset: auto !important;
+  left: -8px !important;
+  bottom: -18px !important;
+  z-index: 0 !important;
+
+  display: block !important;
+
+  color: rgba(45, 123, 97, 0.10) !important;
+
+  font-family: "Space Grotesk", sans-serif !important;
+  font-size: 6.5rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.06em !important;
+
+  white-space: nowrap !important;
+
+  transform: none !important;
+  opacity: 1 !important;
+
+  pointer-events: none !important;
+}
+
+
+/* Small foreground label */
+
+section .oversized-label > span {
+  position: relative !important;
+  inset: auto !important;
+  z-index: 2 !important;
+
+  margin: 0 !important;
+
+  display: inline-block !important;
+
+  color: #2d7b61 !important;
+
+  font-family: "Space Grotesk", sans-serif !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+
+  white-space: nowrap !important;
+
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+/* ==========================================
+   DARK SECTION COLOURS
+========================================== */
+
+#projects .oversized-label::before,
+#work .oversized-label::before {
+  color: rgba(255, 255, 255, 0.09) !important;
+}
+
+#projects .oversized-label > span,
+#work .oversized-label > span {
+  color: #b8ead8 !important;
+}
+
+
+/* ==========================================
+   LIGHT SECTION COLOURS
+========================================== */
+
+#about .oversized-label::before,
+#experience .oversized-label::before,
+#education .oversized-label::before,
+#skills .oversized-label::before,
+#activities .oversized-label::before,
+#gallery .oversized-label::before,
+#contact .oversized-label::before {
+  color: rgba(45, 123, 97, 0.10) !important;
+}
+
+#about .oversized-label > span,
+#experience .oversized-label > span,
+#education .oversized-label > span,
+#skills .oversized-label > span,
+#activities .oversized-label > span,
+#gallery .oversized-label > span,
+#contact .oversized-label > span {
+  color: #2d7b61 !important;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+  section .oversized-label {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 62px !important;
+
+    margin-bottom: 20px !important;
+
+    overflow: hidden !important;
+  }
+
+  section .oversized-label::before {
+    left: -3px !important;
+    bottom: -8px !important;
+
+    max-width: 100% !important;
+
+    font-size: clamp(3.2rem, 16vw, 4.7rem) !important;
+    line-height: 0.9 !important;
+    letter-spacing: -0.065em !important;
+  }
+
+  section .oversized-label > span {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.17em !important;
+  }
+
+}
+
+
+/* ==========================================
+   VERY SMALL PHONES
+========================================== */
+
+@media (max-width: 390px) {
+
+  section .oversized-label::before {
+    font-size: 15vw !important;
+  }
+
+}
+
     
   </style>
 </head>
@@ -13801,6 +13970,25 @@ Monitoring & Evaluation Analyst
 <section id="skills">
   <div class="skills-container">
 
+    <!-- ==========================================
+         MAIN SKILLS HEADER
+    ========================================== -->
+
+    <div class="skills-header">
+
+      <div class="oversized-label" data-letter="SKILLS">
+        <span>What I use</span>
+      </div>
+
+      <h2>Tools behind the work.</h2>
+
+    </div>
+
+
+    <!-- ==========================================
+         SPLIT DASHBOARD
+    ========================================== -->
+
     <div class="skills-dashboard">
 
 
@@ -13810,31 +13998,36 @@ Monitoring & Evaluation Analyst
 
       <div class="skills-panel languages-panel">
 
-        <h2 class="skills-title">
+        <h3 class="skills-title">
           Languages
-        </h2>
+        </h3>
 
         <div class="languages-list">
 
-          <!-- Arabic -->
 
           <div class="language-item">
-            <span class="language-icon">ع</span>
+
+            <span class="language-icon" lang="ar">
+              ع
+            </span>
 
             <div class="language-content">
               <strong>Arabic</strong>
-              <span>العربية</span>
+              <span lang="ar">العربية</span>
             </div>
 
             <span class="language-level">
               Native
             </span>
+
           </div>
 
-          <!-- French -->
 
           <div class="language-item">
-            <span class="language-icon">FR</span>
+
+            <span class="language-icon">
+              FR
+            </span>
 
             <div class="language-content">
               <strong>French</strong>
@@ -13844,12 +14037,15 @@ Monitoring & Evaluation Analyst
             <span class="language-level">
               Native
             </span>
+
           </div>
 
-          <!-- English -->
 
           <div class="language-item">
-            <span class="language-icon">EN</span>
+
+            <span class="language-icon">
+              EN
+            </span>
 
             <div class="language-content">
               <strong>English</strong>
@@ -13859,12 +14055,15 @@ Monitoring & Evaluation Analyst
             <span class="language-level">
               C2
             </span>
+
           </div>
 
-          <!-- German -->
 
           <div class="language-item">
-            <span class="language-icon">DE</span>
+
+            <span class="language-icon">
+              DE
+            </span>
 
             <div class="language-content">
               <strong>German</strong>
@@ -13874,36 +14073,43 @@ Monitoring & Evaluation Analyst
             <span class="language-level">
               C1
             </span>
+
           </div>
 
-          <!-- Persian -->
 
           <div class="language-item">
-            <span class="language-icon">ف</span>
+
+            <span class="language-icon" lang="fa">
+              ف
+            </span>
 
             <div class="language-content">
               <strong>Persian</strong>
-              <span>فارسی</span>
+              <span lang="fa">فارسی</span>
             </div>
 
             <span class="language-level">
               A2
             </span>
+
           </div>
 
-          <!-- Japanese -->
 
           <div class="language-item">
-            <span class="language-icon">日</span>
+
+            <span class="language-icon" lang="ja">
+              日
+            </span>
 
             <div class="language-content">
               <strong>Japanese</strong>
-              <span>日本語</span>
+              <span lang="ja">日本語</span>
             </div>
 
             <span class="language-level">
               A2
             </span>
+
           </div>
 
         </div>
@@ -13917,11 +14123,113 @@ Monitoring & Evaluation Analyst
 
       <div class="skills-panel skills-tools">
 
-        <h2 class="skills-title">
+        <h3 class="skills-title">
           Tools
-        </h2>
+        </h3>
 
-        <!-- tools here -->
+        <div class="tools-groups">
+
+
+          <!-- Data and visualisation -->
+
+          <div class="tools-group">
+
+            <div class="tools-group-heading">
+              <h4>Data &amp; visualisation</h4>
+            </div>
+
+            <div class="tools-group-grid">
+
+              <div class="tool-entry">
+                <strong>Power BI</strong>
+                <small>Dashboards</small>
+              </div>
+
+              <div class="tool-entry">
+                <strong>Excel</strong>
+                <small>Analysis</small>
+              </div>
+
+              <div class="tool-entry">
+                <strong>QGIS</strong>
+                <small>Mapping</small>
+              </div>
+
+              <div class="tool-entry">
+                <strong>Mapbox</strong>
+                <small>Geospatial</small>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Design and content -->
+
+          <div class="tools-group">
+
+            <div class="tools-group-heading">
+              <h4>Design &amp; content</h4>
+            </div>
+
+            <div class="tools-group-grid tools-group-grid--three">
+
+              <div class="tool-entry">
+                <strong>Illustrator</strong>
+                <small>Visual design</small>
+              </div>
+
+              <div class="tool-entry">
+                <strong>Canva</strong>
+                <small>Content creation</small>
+              </div>
+
+              <div class="tool-entry">
+                <strong>PlayPlay</strong>
+                <small>Video</small>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Productivity and web -->
+
+          <div class="tools-group">
+
+            <div class="tools-group-heading">
+              <h4>Productivity &amp; web</h4>
+            </div>
+
+            <div class="tools-group-grid">
+
+              <div class="tool-entry">
+                <strong>Word</strong>
+                <small>Editorial</small>
+              </div>
+
+              <div class="tool-entry">
+                <strong>PowerPoint</strong>
+                <small>Presentations</small>
+              </div>
+
+              <div class="tool-entry">
+                <strong>GitHub</strong>
+                <small>Development</small>
+              </div>
+
+              <div class="tool-entry">
+                <strong>HTML / CSS</strong>
+                <small>Web</small>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
 
