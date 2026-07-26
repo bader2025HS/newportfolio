@@ -11799,16 +11799,46 @@ CONTACT — FIX HOVER CLIPPING
 
 
 
-
-/* ==========================================
-   SKILLS — WIDER TOOL CARDS
+    /* ==========================================
+   SKILLS — FIX TOOL GRID OVERFLOW
 ========================================== */
 
 #skills .tools-group-grid,
 #skills .tools-group-grid--three{
-    grid-template-columns:repeat(4, minmax(220px,1fr)) !important;
+    grid-template-columns:repeat(4, minmax(0, 1fr)) !important;
+    gap:14px !important;
 
-    justify-content:start !important;
+    width:100% !important;
+    max-width:100% !important;
+
+    overflow:visible !important;
+}
+
+/* Keep each card inside its column */
+
+#skills .tool-entry{
+    min-width:0 !important;
+    width:100% !important;
+}
+
+/* Keep app names on one line */
+
+#skills .tool-entry strong{
+    white-space:nowrap !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+
+    font-size:clamp(.92rem, 1.08vw, 1.18rem) !important;
+    letter-spacing:-0.04em !important;
+}
+
+/* Keep captions on one line too */
+
+#skills .tool-entry small{
+    white-space:nowrap !important;
+
+    font-size:.58rem !important;
+    letter-spacing:.09em !important;
 }
 
 
