@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfoliooo</title>
+  <title>Portfolio</title>
 
   <link rel="icon" type="image/png" href="favicon-32x32[1].png">
   
@@ -7504,947 +7504,14 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 
-    /* =========================================================
-   PROJECTS — FINAL POLISH OVERRIDE
-========================================================= */
+    
 
 
-/* =========================================================
-   PROJECT TYPE LABELS — STRONGER
-========================================================= */
 
-#projects .work-number{
-    padding:9px 15px !important;
 
-    border:1.5px solid rgba(246,251,248,.32) !important;
-    border-radius:0 !important;
 
-    background:rgba(255,255,255,.06) !important;
-    color:rgba(246,251,248,.9) !important;
 
-    font-size:.82rem !important;
-    letter-spacing:.11em !important;
-}
 
-
-/* Cleaner desktop interaction */
-
-@media (hover:hover) and (pointer:fine){
-
-    #projects .work-item:hover .work-number{
-        background:#163f35 !important;
-        border-color:#163f35 !important;
-        color:#f6fbf8 !important;
-
-        letter-spacing:.14em !important;
-
-        transform:translateY(-2px) !important;
-    }
-
-}
-
-
-/* =========================================================
-   DESKTOP — MORE REFINED TITLE GROWTH
-========================================================= */
-
-@media (min-width:901px){
-
-    #projects .work-item:hover h3{
-        font-size:clamp(2.7rem,3.55vw,4.4rem) !important;
-        line-height:.92 !important;
-
-        transform:translateY(-2px) !important;
-    }
-
-    /* Slightly smaller for the longer title */
-
-    #projects .work-item:nth-child(3):hover h3{
-        font-size:clamp(2.45rem,3.15vw,3.9rem) !important;
-    }
-
-}
-
-
-/* =========================================================
-   EXPANDED TILE — BETTER INTERNAL SPACING
-========================================================= */
-
-@media (min-width:901px){
-
-    #projects .work-item:hover > div{
-        padding-top:20px !important;
-        padding-bottom:22px !important;
-    }
-
-    #projects .work-item p{
-        margin-top:20px !important;
-    }
-
-}
-
-
-/* =========================================================
-   EXPLORE BUTTON — STRONGER
-========================================================= */
-
-#projects .work-link{
-    padding:14px 20px !important;
-
-    font-size:.76rem !important;
-    letter-spacing:.16em !important;
-}
-
-
-/* Desktop button hover */
-
-@media (hover:hover) and (pointer:fine){
-
-    #projects .work-link:hover{
-        background:#1f5644 !important;
-        border-color:#1f5644 !important;
-        color:#f6fbf8 !important;
-
-        transform:translateY(-2px) !important;
-    }
-
-}
-
-
-/* =========================================================
-   PROGRESS NUMBERS — MORE READABLE
-========================================================= */
-
-#projects .projects-progress-number{
-    color:rgba(246,251,248,.46) !important;
-}
-
-#projects .projects-progress-number.is-active{
-    color:#f6fbf8 !important;
-}
-
-
-/* =========================================================
-   MOBILE — KEEP EVERYTHING STATIC
-========================================================= */
-
-@media (max-width:900px){
-
-    #projects .work-number,
-    #projects .work-item:hover .work-number,
-    #projects .work-item:focus .work-number,
-    #projects .work-item:active .work-number{
-        padding:8px 13px !important;
-
-        border-color:rgba(22,63,53,.22) !important;
-
-        background:rgba(22,63,53,.06) !important;
-        color:#163f35 !important;
-
-        font-size:.76rem !important;
-        letter-spacing:.1em !important;
-
-        transform:none !important;
-    }
-
-    #projects .work-link,
-    #projects .work-link:hover,
-    #projects .work-link:focus,
-    #projects .work-link:active{
-        padding:12px 15px !important;
-
-        background:transparent !important;
-        color:#1f5644 !important;
-
-        font-size:.66rem !important;
-        letter-spacing:.14em !important;
-
-        transform:none !important;
-    }
-
-    #projects .projects-progress-number{
-        color:rgba(246,251,248,.48) !important;
-    }
-
-    #projects .projects-progress-number.is-active{
-        color:#f6fbf8 !important;
-    }
-
-}
-
-
-
-
-
-
-/* ==========================================
-   SUSTAINABILITY COMMUNICATIONS CASE STUDY
-========================================== */
-
-.case-study{
-    --case-green:#12382b;
-    --case-green-dark:#0d2d22;
-    --case-green-mid:#1f5644;
-    --case-mint:#8ed4bf;
-    --case-mint-light:#dcefe7;
-    --case-background:#f4f7f4;
-    --case-white:#ffffff;
-    --case-text:#173d31;
-    --case-muted:#60766e;
-    --case-line:rgba(18,56,43,.16);
-
-    width:100%;
-    min-height:100vh;
-
-    margin:0;
-
-    overflow:hidden;
-
-    background:var(--case-background);
-    color:var(--case-text);
-
-    font-family:"Manrope",sans-serif;
-}
-
-
-/* ==========================================
-   HERO
-========================================== */
-
-.case-study-hero{
-    position:relative;
-
-    min-height:92vh;
-
-    padding:
-        clamp(130px,13vw,190px)
-        clamp(28px,7vw,110px)
-        clamp(80px,9vw,130px);
-
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-
-    background:var(--case-green);
-    color:var(--case-white);
-}
-
-.case-study-back{
-    position:absolute;
-
-    top:42px;
-    left:clamp(28px,7vw,110px);
-
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-
-    color:rgba(255,255,255,.68);
-
-    font-size:.78rem;
-    font-weight:700;
-    line-height:1;
-    letter-spacing:.08em;
-    text-decoration:none;
-    text-transform:uppercase;
-
-    transition:
-        color .25s ease,
-        transform .25s ease;
-}
-
-.case-study-back:hover{
-    color:var(--case-white);
-    transform:translateX(-5px);
-}
-
-.case-study-label,
-.case-study-kicker{
-    display:block;
-
-    margin:0 0 22px;
-
-    font-size:.74rem;
-    font-weight:800;
-    line-height:1.2;
-    letter-spacing:.16em;
-    text-transform:uppercase;
-}
-
-.case-study-label{
-    color:var(--case-mint);
-}
-
-.case-study-hero h1{
-    max-width:1200px;
-
-    margin:0;
-
-    font-family:"Space Grotesk",sans-serif;
-    font-size:clamp(4rem,10vw,9rem);
-    font-weight:700;
-    line-height:.86;
-    letter-spacing:-.07em;
-
-    color:var(--case-white);
-}
-
-.case-study-intro{
-    max-width:760px;
-
-    margin:48px 0 0;
-
-    font-size:clamp(1.05rem,1.65vw,1.5rem);
-    font-weight:400;
-    line-height:1.55;
-
-    color:rgba(255,255,255,.72);
-}
-
-.case-study-meta{
-    margin-top:44px;
-
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.case-study-meta span{
-    padding:10px 15px;
-
-    border:1px solid rgba(255,255,255,.28);
-
-    font-size:.68rem;
-    font-weight:800;
-    line-height:1;
-    letter-spacing:.09em;
-    text-transform:uppercase;
-
-    color:var(--case-white);
-}
-
-
-/* ==========================================
-   SHARED SECTION STRUCTURE
-========================================== */
-
-.case-study-overview,
-.case-study-block,
-.case-study-outcome{
-    padding:
-        clamp(82px,10vw,145px)
-        clamp(28px,7vw,110px);
-
-    border-bottom:1px solid var(--case-line);
-}
-
-.case-study-overview{
-    display:grid;
-    grid-template-columns:70px minmax(0,1fr);
-    gap:clamp(28px,5vw,78px);
-
-    background:var(--case-white);
-}
-
-.case-study-heading{
-    margin-bottom:clamp(45px,6vw,82px);
-
-    display:grid;
-    grid-template-columns:70px minmax(0,1fr);
-    gap:clamp(28px,5vw,78px);
-    align-items:start;
-}
-
-.case-study-section-number{
-    width:44px;
-    height:44px;
-
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-
-    flex:0 0 44px;
-
-    background:var(--case-green);
-    color:var(--case-white);
-
-    font-family:"Space Grotesk",sans-serif;
-    font-size:.8rem;
-    font-weight:700;
-    line-height:1;
-}
-
-.case-study-kicker{
-    margin-bottom:18px;
-    color:var(--case-green-mid);
-}
-
-.case-study-overview h2,
-.case-study-heading h2,
-.case-study-outcome h2{
-    max-width:1000px;
-
-    margin:0;
-
-    font-family:"Space Grotesk",sans-serif;
-    font-size:clamp(2.5rem,5.5vw,6rem);
-    font-weight:700;
-    line-height:.95;
-    letter-spacing:-.055em;
-
-    color:var(--case-green);
-}
-
-.case-study-overview > div > p:last-child,
-.case-study-outcome > div > p:last-child{
-    max-width:760px;
-
-    margin:34px 0 0;
-
-    font-size:clamp(1rem,1.35vw,1.25rem);
-    line-height:1.75;
-
-    color:var(--case-muted);
-}
-
-
-/* ==========================================
-   CONTENT BLOCKS
-========================================== */
-
-.case-study-block{
-    background:var(--case-background);
-}
-
-.case-study-block:nth-of-type(even){
-    background:#edf4ef;
-}
-
-
-/* ==========================================
-   ARTICLE CARDS
-========================================== */
-
-.case-study-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:24px;
-}
-
-.case-study-card{
-    min-width:0;
-
-    display:flex;
-    flex-direction:column;
-
-    overflow:hidden;
-
-    background:var(--case-white);
-    border:1px solid var(--case-line);
-
-    transition:
-        transform .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
-}
-
-.case-study-card:hover{
-    transform:translateY(-6px);
-
-    border-color:rgba(18,56,43,.34);
-
-    box-shadow:
-        0 24px 45px rgba(18,56,43,.10);
-}
-
-.case-study-card-image{
-    width:100%;
-    aspect-ratio:16 / 10;
-
-    overflow:hidden;
-
-    background:var(--case-mint-light);
-}
-
-.case-study-card-image img{
-    width:100%;
-    height:100%;
-
-    display:block;
-    object-fit:cover;
-
-    transition:transform .5s ease;
-}
-
-.case-study-card:hover .case-study-card-image img{
-    transform:scale(1.025);
-}
-
-.case-study-card-content{
-    padding:clamp(26px,3vw,42px);
-
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-
-    flex:1;
-}
-
-.case-study-card-content > span,
-.case-study-feature-content > span{
-    margin-bottom:19px;
-
-    font-size:.7rem;
-    font-weight:800;
-    line-height:1.3;
-    letter-spacing:.13em;
-    text-transform:uppercase;
-
-    color:var(--case-green-mid);
-}
-
-.case-study-card h3,
-.case-study-feature h3{
-    margin:0;
-
-    font-family:"Space Grotesk",sans-serif;
-    font-size:clamp(1.7rem,2.6vw,3rem);
-    font-weight:700;
-    line-height:1;
-    letter-spacing:-.045em;
-
-    color:var(--case-green);
-}
-
-.case-study-card p,
-.case-study-feature p{
-    margin:24px 0 0;
-
-    font-size:.98rem;
-    line-height:1.7;
-
-    color:var(--case-muted);
-}
-
-.case-study-card a,
-.case-study-feature a{
-    margin-top:auto;
-    padding-top:32px;
-
-    display:inline-flex;
-    align-items:center;
-
-    color:var(--case-green);
-
-    font-size:.78rem;
-    font-weight:800;
-    line-height:1;
-    letter-spacing:.08em;
-    text-decoration:none;
-    text-transform:uppercase;
-
-    transition:
-        color .25s ease,
-        transform .25s ease;
-}
-
-.case-study-card a:hover,
-.case-study-feature a:hover{
-    color:var(--case-green-mid);
-    transform:translateX(5px);
-}
-
-
-/* ==========================================
-   TEXT-ONLY WEBINAR CARDS
-========================================== */
-
-.case-study-card--text{
-    min-height:390px;
-
-    background:var(--case-green);
-    border-color:var(--case-green);
-}
-
-.case-study-card--text .case-study-card-content > span{
-    color:var(--case-mint);
-}
-
-.case-study-card--text h3{
-    color:var(--case-white);
-}
-
-.case-study-card--text p{
-    color:rgba(255,255,255,.68);
-}
-
-.case-study-card--text a{
-    color:var(--case-white);
-}
-
-.case-study-card--text:hover{
-    border-color:var(--case-mint);
-}
-
-
-/* ==========================================
-   FEATURED VIDEO
-========================================== */
-
-.case-study-feature{
-    display:grid;
-    grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);
-
-    min-height:540px;
-
-    background:var(--case-white);
-    border:1px solid var(--case-line);
-}
-
-.case-study-feature-media{
-    min-height:500px;
-    overflow:hidden;
-
-    background:var(--case-mint-light);
-}
-
-.case-study-feature-media img{
-    width:100%;
-    height:100%;
-
-    display:block;
-    object-fit:cover;
-
-    transition:transform .5s ease;
-}
-
-.case-study-feature:hover .case-study-feature-media img{
-    transform:scale(1.02);
-}
-
-.case-study-feature-content{
-    padding:clamp(38px,5vw,78px);
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:flex-start;
-}
-
-
-/* ==========================================
-   VISUAL GALLERY
-========================================== */
-
-.case-study-gallery{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:18px;
-}
-
-.case-study-gallery figure{
-    position:relative;
-
-    margin:0;
-    aspect-ratio:4 / 5;
-
-    overflow:hidden;
-
-    background:var(--case-white);
-    border:1px solid var(--case-line);
-}
-
-.case-study-gallery img{
-    width:100%;
-    height:100%;
-
-    display:block;
-    object-fit:cover;
-
-    transition:transform .5s ease;
-}
-
-.case-study-gallery figure:hover img{
-    transform:scale(1.025);
-}
-
-
-/* ==========================================
-   OUTCOME
-========================================== */
-
-.case-study-outcome{
-    display:grid;
-    grid-template-columns:70px minmax(0,1fr) auto;
-    gap:clamp(28px,5vw,78px);
-    align-items:end;
-
-    background:var(--case-green);
-    color:var(--case-white);
-
-    border-bottom:0;
-}
-
-.case-study-outcome .case-study-section-number{
-    background:var(--case-mint);
-    color:var(--case-green);
-}
-
-.case-study-outcome .case-study-kicker{
-    color:var(--case-mint);
-}
-
-.case-study-outcome h2{
-    color:var(--case-white);
-}
-
-.case-study-outcome > div > p:last-child{
-    color:rgba(255,255,255,.67);
-}
-
-.case-study-final-link{
-    padding:16px 20px;
-
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-
-    white-space:nowrap;
-
-    background:var(--case-white);
-    border:1px solid var(--case-white);
-
-    color:var(--case-green);
-
-    font-size:.72rem;
-    font-weight:800;
-    letter-spacing:.08em;
-    text-decoration:none;
-    text-transform:uppercase;
-
-    transition:
-        background .25s ease,
-        color .25s ease,
-        border-color .25s ease,
-        transform .25s ease;
-}
-
-.case-study-final-link:hover{
-    background:var(--case-mint);
-    border-color:var(--case-mint);
-
-    transform:translateY(-3px);
-}
-
-
-/* ==========================================
-   TABLET
-========================================== */
-
-@media (max-width:1000px){
-
-    .case-study-hero{
-        min-height:82vh;
-    }
-
-    .case-study-feature{
-        grid-template-columns:1fr;
-    }
-
-    .case-study-feature-media{
-        min-height:0;
-        aspect-ratio:16 / 9;
-    }
-
-    .case-study-gallery{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-    }
-
-    .case-study-outcome{
-        grid-template-columns:60px minmax(0,1fr);
-    }
-
-    .case-study-final-link{
-        grid-column:2;
-
-        justify-self:start;
-
-        margin-top:12px;
-    }
-}
-
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media (max-width:720px){
-
-    .case-study-hero{
-        min-height:760px;
-
-        padding:
-            120px
-            22px
-            66px;
-    }
-
-    .case-study-back{
-        top:30px;
-        left:22px;
-    }
-
-    .case-study-hero h1{
-        font-size:clamp(3.5rem,18vw,5.8rem);
-        line-height:.87;
-    }
-
-    .case-study-intro{
-        margin-top:34px;
-
-        font-size:1rem;
-        line-height:1.62;
-    }
-
-    .case-study-meta{
-        margin-top:32px;
-        gap:8px;
-    }
-
-    .case-study-meta span{
-        padding:8px 10px;
-        font-size:.6rem;
-    }
-
-    .case-study-overview,
-    .case-study-block,
-    .case-study-outcome{
-        padding:
-            72px
-            22px;
-    }
-
-    .case-study-overview,
-    .case-study-heading,
-    .case-study-outcome{
-        grid-template-columns:1fr;
-        gap:25px;
-    }
-
-    .case-study-heading{
-        margin-bottom:40px;
-    }
-
-    .case-study-section-number{
-        width:38px;
-        height:38px;
-
-        font-size:.72rem;
-    }
-
-    .case-study-overview h2,
-    .case-study-heading h2,
-    .case-study-outcome h2{
-        font-size:clamp(2.55rem,13vw,4.2rem);
-        line-height:.94;
-    }
-
-    .case-study-overview > div > p:last-child,
-    .case-study-outcome > div > p:last-child{
-        margin-top:25px;
-
-        font-size:.97rem;
-        line-height:1.7;
-    }
-
-    .case-study-grid{
-        grid-template-columns:1fr;
-        gap:18px;
-    }
-
-    .case-study-card:hover{
-        transform:none;
-        box-shadow:none;
-    }
-
-    .case-study-card:hover .case-study-card-image img{
-        transform:none;
-    }
-
-    .case-study-card-content{
-        padding:27px 23px 30px;
-    }
-
-    .case-study-card h3,
-    .case-study-feature h3{
-        font-size:clamp(1.9rem,9vw,2.7rem);
-        line-height:.98;
-    }
-
-    .case-study-card p,
-    .case-study-feature p{
-        font-size:.94rem;
-    }
-
-    .case-study-card a,
-    .case-study-feature a{
-        padding-top:26px;
-    }
-
-    .case-study-card--text{
-        min-height:350px;
-    }
-
-    .case-study-feature{
-        min-height:0;
-    }
-
-    .case-study-feature-media{
-        aspect-ratio:4 / 3;
-    }
-
-    .case-study-feature-content{
-        padding:32px 23px 36px;
-    }
-
-    .case-study-gallery{
-        grid-template-columns:1fr;
-        gap:15px;
-    }
-
-    .case-study-gallery figure{
-        aspect-ratio:4 / 5;
-    }
-
-    .case-study-gallery figure:hover img{
-        transform:none;
-    }
-
-    .case-study-final-link{
-        grid-column:auto;
-
-        margin-top:10px;
-
-        width:100%;
-        min-height:52px;
-    }
-}
-
-
-/* ==========================================
-   REDUCED MOTION
-========================================== */
-
-@media (prefers-reduced-motion:reduce){
-
-    .case-study *,
-    .case-study *::before,
-    .case-study *::after{
-        scroll-behavior:auto !important;
-        transition:none !important;
-        animation:none !important;
-    }
-}
 
 
 
@@ -15429,7 +14496,8 @@ Monitoring & Evaluation Analyst
 
 
 
-<section id="projects">
+
+    <section id="projects">
   <div class="work-container">
 
     <!-- ==========================================
@@ -15451,30 +14519,29 @@ Monitoring & Evaluation Analyst
 
     <div class="work-list">
 
-      <!-- Project 01 — Sustainability Communications -->
+      <!-- Project 01 -->
 
       <article class="work-item" data-project="01">
-        <span class="work-number">Editorial</span>
+        <span class="work-number">Research</span>
 
         <div class="work-content">
-          <h3>Sustainability Communications</h3>
+          <h3>Cox's Bazar Study</h3>
 
           <p>
-            Articles, videos, webinars and digital content making complex
-            sustainability topics clear, engaging and accessible.
+            Qualitative humanitarian research on camp urbanisation.
           </p>
         </div>
 
         <a
-          href="sustainability-communications.html"
+          href="#"
           class="work-link"
-          aria-label="Explore Sustainability Communications work">
+          aria-label="View Cox's Bazar Study">
           View →
         </a>
       </article>
 
 
-      <!-- Project 02 — OIF Country Briefs -->
+      <!-- Project 02 -->
 
       <article class="work-item" data-project="02">
         <span class="work-number">Analysis</span>
@@ -15483,8 +14550,7 @@ Monitoring & Evaluation Analyst
           <h3>OIF Country Briefs</h3>
 
           <p>
-            Strategic country briefs synthesising political, economic and
-            social developments across the Francophone world.
+            Strategic political and socio-economic country notes.
           </p>
         </div>
 
@@ -15493,38 +14559,35 @@ Monitoring & Evaluation Analyst
           class="work-link"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Open OIF Country Briefs">
+          aria-label="View OIF Country Briefs">
           View →
         </a>
       </article>
 
 
-      <!-- Project 03 — Cox's Bazar Study -->
+      <!-- Project 03 -->
 
       <article class="work-item" data-project="03">
-        <span class="work-number">Research</span>
+        <span class="work-number">Editorial</span>
 
         <div class="work-content">
-          <h3>Cox's Bazar Study</h3>
+          <h3>Content Writing</h3>
 
           <p>
-            Exploring how one of the world's largest refugee camps has
-            evolved into a complex urban environment.
+            Editorial content on sustainability, CSR and transition topics.
           </p>
         </div>
 
         <a
-          href="Cox's Bazar Study.pdf"
+          href="#"
           class="work-link"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open Cox's Bazar Study">
+          aria-label="View Content Writing projects">
           View →
         </a>
       </article>
 
 
-      <!-- Project 04 — Event Branding -->
+      <!-- Project 04 -->
 
       <article class="work-item" data-project="04">
         <span class="work-number">Design</span>
@@ -15533,17 +14596,14 @@ Monitoring & Evaluation Analyst
           <h3>Event Branding</h3>
 
           <p>
-            A collection of three promotional visuals designed for
-            conferences, roundtables and public discussions.
+A collection of three promotional visuals designed for conferences, roundtables and public discussions.
           </p>
         </div>
 
         <a
-          href="ilovepdf_merged.pdf"
+          href="#"
           class="work-link"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Open Event Branding portfolio">
+          aria-label="View Infographics projects">
           View →
         </a>
       </article>
@@ -15593,6 +14653,9 @@ Monitoring & Evaluation Analyst
 
   </div>
 </section>
+
+    
+
 
 
 
