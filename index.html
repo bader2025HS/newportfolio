@@ -7833,7 +7833,268 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 
+/* ==========================================
+   PROJECTS — CONTENT ONLY ON HOVER
+========================================== */
 
+/* Default: all cards collapsed and green */
+
+#projects .work-item,
+#projects .work-item:first-child,
+#projects .work-list:hover .work-item:first-child:not(:hover){
+    flex:1 1 0 !important;
+    background:#1f5644 !important;
+    color:#f6fbf8 !important;
+}
+
+/* Hide description and button by default */
+
+#projects .work-item p,
+#projects .work-item .work-link,
+#projects .work-item:first-child p,
+#projects .work-item:first-child .work-link,
+#projects .work-list:hover .work-item:first-child:not(:hover) p,
+#projects .work-list:hover .work-item:first-child:not(:hover) .work-link{
+    opacity:0 !important;
+    visibility:hidden !important;
+    pointer-events:none !important;
+
+    transform:translateY(12px) !important;
+
+    transition:
+        opacity .25s ease,
+        transform .35s ease,
+        visibility 0s linear .35s !important;
+}
+
+/* Keep collapsed titles compact */
+
+#projects .work-item h3,
+#projects .work-item:first-child h3,
+#projects .work-list:hover .work-item:first-child:not(:hover) h3{
+    font-size:clamp(1.55rem, 2vw, 2.5rem) !important;
+    line-height:.98 !important;
+    color:#f6fbf8 !important;
+}
+
+/* Hovered card */
+
+#projects .work-item:hover{
+    flex:2.2 1 0 !important;
+    background:#f1f7f3 !important;
+    color:#163f35 !important;
+}
+
+/* Larger title when open */
+
+#projects .work-item:hover h3{
+    font-size:clamp(2.4rem, 3.6vw, 4.5rem) !important;
+    line-height:.92 !important;
+    color:#163f35 !important;
+}
+
+/* Reveal description and button only on hover */
+
+#projects .work-item:hover p,
+#projects .work-item:hover .work-link{
+    opacity:1 !important;
+    visibility:visible !important;
+    pointer-events:auto !important;
+
+    transform:translateY(0) !important;
+
+    transition:
+        opacity .3s ease .08s,
+        transform .4s cubic-bezier(.22,1,.36,1) .05s,
+        visibility 0s !important;
+}
+
+#projects .work-item:hover p{
+    color:rgba(22,63,53,.72) !important;
+}
+
+#projects .work-item:hover .work-link{
+    color:#1f5644 !important;
+    border-color:#1f5644 !important;
+}
+
+    /* =========================================================
+   PROJECTS — PHONE FIX
+   Prevent Cox card from being compressed
+========================================================= */
+
+@media (max-width: 900px) {
+
+  /* Horizontal swipe container */
+
+  #projects .work-list {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 14px !important;
+
+    width: calc(100% + 20px) !important;
+    height: auto !important;
+    min-height: 0 !important;
+
+    padding: 0 20px 16px 0 !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  #projects .work-list::-webkit-scrollbar {
+    display: none !important;
+  }
+
+
+  /* Every card gets exactly the same mobile width */
+
+  #projects .work-item,
+  #projects .work-item:first-child,
+  #projects .work-list:hover .work-item,
+  #projects .work-list:hover .work-item:first-child,
+  #projects .work-list:hover .work-item:first-child:not(:hover),
+  #projects .work-item:hover {
+    flex: 0 0 min(82vw, 440px) !important;
+
+    width: min(82vw, 440px) !important;
+    max-width: min(82vw, 440px) !important;
+
+    height: 390px !important;
+    min-height: 390px !important;
+
+    padding: 24px 21px !important;
+
+    background: #1f5644 !important;
+    color: #f6fbf8 !important;
+
+    scroll-snap-align: start !important;
+
+    transform: none !important;
+  }
+
+
+  /* Stable internal layout */
+
+  #projects .work-item > div {
+    min-width: 0 !important;
+    width: 100% !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+
+    padding: 24px 0 18px !important;
+  }
+
+
+  /* Prevent long titles from squeezing the card */
+
+  #projects .work-item h3,
+  #projects .work-item:first-child h3,
+  #projects .work-list:hover .work-item h3,
+  #projects .work-item:hover h3 {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+    line-height: 0.95 !important;
+
+    color: #f6fbf8 !important;
+
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+
+    transform: none !important;
+  }
+
+
+  /* Hidden details before tap */
+
+  #projects .work-item p,
+  #projects .work-item .work-link {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+
+    transform: translateY(10px) !important;
+  }
+
+
+  /* Tap/focus recreates desktop white state */
+
+  #projects .work-item:focus,
+  #projects .work-item:focus-visible,
+  #projects .work-item:active {
+    background: #f1f7f3 !important;
+    color: #163f35 !important;
+  }
+
+  #projects .work-item:focus h3,
+  #projects .work-item:focus-visible h3,
+  #projects .work-item:active h3 {
+    color: #163f35 !important;
+  }
+
+  #projects .work-item:focus p,
+  #projects .work-item:focus-visible p,
+  #projects .work-item:active p,
+  #projects .work-item:focus .work-link,
+  #projects .work-item:focus-visible .work-link,
+  #projects .work-item:active .work-link {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+
+    transform: translateY(0) !important;
+  }
+
+  #projects .work-item:focus p,
+  #projects .work-item:focus-visible p,
+  #projects .work-item:active p {
+    color: rgba(22, 63, 53, 0.72) !important;
+  }
+
+  #projects .work-item:focus .work-number,
+  #projects .work-item:focus-visible .work-number,
+  #projects .work-item:active .work-number {
+    color: #1f5644 !important;
+  }
+
+  #projects .work-item:focus .work-link,
+  #projects .work-item:focus-visible .work-link,
+  #projects .work-item:active .work-link {
+    color: #1f5644 !important;
+    border-color: #1f5644 !important;
+  }
+}
+
+
+/* Smaller phones */
+
+@media (max-width: 500px) {
+
+  #projects .work-item,
+  #projects .work-item:first-child,
+  #projects .work-list:hover .work-item,
+  #projects .work-list:hover .work-item:first-child,
+  #projects .work-list:hover .work-item:first-child:not(:hover),
+  #projects .work-item:hover {
+    flex-basis: 86vw !important;
+
+    width: 86vw !important;
+    max-width: 86vw !important;
+
+    height: 370px !important;
+    min-height: 370px !important;
+  }
+}
 
 
 
