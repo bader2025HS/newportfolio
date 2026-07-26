@@ -11575,7 +11575,201 @@ LANGUAGES — SUBTLE LIFT
 
 
 
+/* ==========================================
+   TOOLS — THREE CATEGORY COLUMNS
+========================================== */
 
+#skills .tools-columns{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+  align-items:start;
+}
+
+
+/* ==========================================
+   CATEGORY COLUMN
+========================================== */
+
+#skills .tool-column{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+}
+
+
+/* Category title */
+
+#skills .tool-column h4{
+  min-height:48px;
+  margin:0 0 16px;
+  padding-bottom:14px;
+
+  border-bottom:1px solid rgba(18,56,43,.16);
+
+  color:#2d7b61;
+
+  font-family:"Space Grotesk",sans-serif;
+  font-size:.8rem;
+  font-weight:800;
+  line-height:1.25;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+
+/* ==========================================
+   TOOL CARDS
+========================================== */
+
+#skills .tool-column .tool-entry{
+  min-width:0;
+  min-height:112px;
+
+  margin-bottom:12px;
+  padding:22px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:flex-start;
+
+  background:#f6fbf8;
+  border:1px solid rgba(18,56,43,.13);
+
+  color:#12382b;
+
+  box-shadow:none;
+
+  transition:
+    background .25s ease,
+    border-color .25s ease,
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+#skills .tool-column .tool-entry:last-child{
+  margin-bottom:0;
+}
+
+
+/* Tool title */
+
+#skills .tool-column .tool-entry strong{
+  color:#12382b;
+
+  font-family:"Space Grotesk",sans-serif;
+  font-size:clamp(1.2rem,1.45vw,1.5rem);
+  font-weight:600;
+  line-height:1;
+  letter-spacing:-.04em;
+
+  transition:color .25s ease;
+}
+
+
+/* Tool description */
+
+#skills .tool-column .tool-entry small{
+  color:rgba(18,56,43,.5);
+
+  font-family:"Manrope",sans-serif;
+  font-size:.64rem;
+  font-weight:700;
+  line-height:1.2;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+
+  transition:color .25s ease;
+}
+
+
+/* ==========================================
+   HOVER
+========================================== */
+
+#skills .tool-column .tool-entry:hover{
+  background:#12382b;
+  border-color:#12382b;
+
+  transform:translateY(-3px);
+
+  box-shadow:0 10px 22px rgba(18,56,43,.1);
+}
+
+#skills .tool-column .tool-entry:hover strong{
+  color:#ffffff;
+}
+
+#skills .tool-column .tool-entry:hover small{
+  color:#8ed4bf;
+}
+
+
+/* ==========================================
+   OPTIONAL — BALANCE THE 3-ITEM COLUMN
+========================================== */
+
+/*
+Design & Content only has three cards.
+This makes its cards slightly taller so the three
+columns finish at a more similar height.
+*/
+
+#skills .tool-column:nth-child(2) .tool-entry{
+  min-height:153px;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:1000px){
+
+  #skills .tools-columns{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  #skills .tool-column:nth-child(2) .tool-entry{
+    min-height:112px;
+  }
+
+}
+
+
+/* ==========================================
+   PHONE
+========================================== */
+
+@media(max-width:650px){
+
+  #skills .tools-columns{
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+
+  #skills .tool-column h4{
+    min-height:0;
+    margin-bottom:12px;
+  }
+
+  #skills .tool-column .tool-entry,
+  #skills .tool-column:nth-child(2) .tool-entry{
+    min-height:92px;
+    margin-bottom:9px;
+    padding:18px;
+  }
+
+  #skills .tool-column .tool-entry strong{
+    font-size:1.2rem;
+  }
+
+  #skills .tool-column .tool-entry:hover{
+    transform:none;
+  }
+
+}
 
 
 
@@ -14768,35 +14962,37 @@ Monitoring & Evaluation Analyst
 
 <div class="tools-columns">
 
-    <div class="tool-category">
+    <div class="tool-column">
 
         <h4>Data & Visualisation</h4>
 
-        <a class="tool-link">Power BI</a>
-        <a class="tool-link">Excel</a>
-        <a class="tool-link">QGIS</a>
-        <a class="tool-link">Mapbox</a>
+        <div class="tool-entry">Power BI</div>
+        <div class="tool-entry">Excel</div>
+        <div class="tool-entry">QGIS</div>
+        <div class="tool-entry">Mapbox</div>
 
     </div>
 
-    <div class="tool-category">
+    <div class="tool-column">
 
         <h4>Design & Content</h4>
 
-        <a class="tool-link">Illustrator</a>
-        <a class="tool-link">Canva</a>
-        <a class="tool-link">PlayPlay</a>
+        <div class="tool-entry">Illustrator</div>
+        <div class="tool-entry">Canva</div>
+        <div class="tool-entry">PlayPlay</div>
+              <div class="tool-entry">PlayPlay</div>
+
 
     </div>
 
-    <div class="tool-category">
+    <div class="tool-column">
 
         <h4>Productivity & Web</h4>
 
-        <a class="tool-link">Word</a>
-        <a class="tool-link">PowerPoint</a>
-        <a class="tool-link">GitHub</a>
-        <a class="tool-link">HTML / CSS</a>
+        <div class="tool-entry">Word</div>
+        <div class="tool-entry">PowerPoint</div>
+        <div class="tool-entry">GitHub</div>
+        <div class="tool-entry">HTML / CSS</div>
 
     </div>
 
