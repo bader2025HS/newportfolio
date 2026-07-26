@@ -7410,7 +7410,128 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 
+/* =========================================================
+   PROJECTS — PROGRESS FIX
+========================================================= */
 
+#projects .projects-progress{
+    width:min(680px, 90%);
+    margin:48px auto 0;
+}
+
+#projects .projects-progress-track{
+    position:relative;
+
+    width:100%;
+    height:1px;
+
+    background:rgba(246,251,248,.16);
+
+    overflow:hidden;
+}
+
+#projects .projects-progress-fill{
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:25%;
+    height:100%;
+
+    background:#f6fbf8;
+
+    transform:translateX(0);
+
+    transition:
+        width .45s cubic-bezier(.22,1,.36,1),
+        transform .45s cubic-bezier(.22,1,.36,1);
+}
+
+#projects .projects-progress-numbers{
+    width:100%;
+
+    margin-top:18px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+#projects .projects-progress-number{
+    color:rgba(246,251,248,.32);
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:.95rem;
+    font-weight:700;
+    letter-spacing:.1em;
+
+    transition:color .3s ease;
+}
+
+#projects .projects-progress-number:nth-child(1){
+    text-align:left;
+}
+
+#projects .projects-progress-number:nth-child(2),
+#projects .projects-progress-number:nth-child(3){
+    text-align:center;
+}
+
+#projects .projects-progress-number:nth-child(4){
+    text-align:right;
+}
+
+#projects .projects-progress-number.is-active{
+    color:#f6fbf8;
+}
+
+
+/* Remove underline from the View button */
+
+#projects .work-link,
+#projects .work-link:link,
+#projects .work-link:visited,
+#projects .work-link:hover,
+#projects .work-link:focus,
+#projects .work-link:active{
+    text-decoration:none !important;
+}
+
+
+/* Mobile: keep progress aligned with cards */
+
+@media (max-width:900px){
+
+    #projects .projects-progress{
+        width:100%;
+        margin-top:30px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
@@ -16210,6 +16331,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+
+
+
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const projectItems = document.querySelectorAll(
+    "#projects .work-item"
+  );
+
+  const progressFill = document.querySelector(
+    "#projects .projects-progress-fill"
+  );
+
+  const progressNumbers = document.querySelectorAll(
+    "#projects .projects-progress-number"
+  );
+
+  if (!projectItems.length || !progressFill || !progressNumbers.length) {
+    return;
+  }
+
+  function updateProgress(index) {
+    const segmentWidth = 100 / projectItems.length;
+
+    progressFill.style.width = `${segmentWidth}%`;
+    progressFill.style.transform = `translateX(${index * 100}%)`;
+
+    progressNumbers.forEach((number, numberIndex) => {
+      number.classList.toggle("is-active", numberIndex === index);
+    });
+  }
+
+  projectItems.forEach((item, index) => {
+    item.addEventListener("mouseenter", () => {
+      updateProgress(index);
+    });
+
+    item.addEventListener("focusin", () => {
+      updateProgress(index);
+    });
+  });
+
+  updateProgress(0);
+});
+</script>
+
+
   
 </body>
 </html>
