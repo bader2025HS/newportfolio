@@ -7630,7 +7630,128 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 }
 
 
+/* =========================================================
+   PROJECTS — STRONGER LINES
+========================================================= */
 
+/* Divider between cards */
+
+#projects .work-list{
+    border-top:2px solid rgba(246,251,248,.14) !important;
+    border-bottom:2px solid rgba(246,251,248,.14) !important;
+}
+
+#projects .work-item{
+    border-right:2px solid rgba(246,251,248,.14) !important;
+}
+
+#projects .work-item:last-child{
+    border-right:none !important;
+}
+
+
+/* Top category line */
+
+#projects .work-number::after{
+
+    height:2px !important;
+    width:62px !important;
+
+    opacity:.85 !important;
+}
+
+
+/* Progress track */
+
+#projects .projects-progress-track{
+
+    height:2px !important;
+
+    background:rgba(246,251,248,.18) !important;
+}
+
+/* Active progress */
+
+#projects .projects-progress-fill{
+
+    height:2px !important;
+
+    background:#f6fbf8 !important;
+}
+
+
+    /* =========================================================
+   PROJECTS — STRONGER CATEGORY LABELS
+========================================================= */
+
+#projects .work-number{
+
+    font-family:"Space Grotesk",sans-serif !important;
+
+    font-size:1rem !important;
+    font-weight:700 !important;
+
+    letter-spacing:.18em !important;
+    text-transform:uppercase !important;
+
+    color:rgba(246,251,248,.55) !important;
+
+    display:flex !important;
+    align-items:center !important;
+    gap:18px !important;
+}
+
+
+/* Category line */
+
+#projects .work-number::after{
+
+    content:"" !important;
+
+    flex:1 !important;
+
+    height:2px !important;
+    max-width:70px !important;
+
+    background:currentColor !important;
+
+    opacity:.9 !important;
+}
+
+
+/* Hover */
+
+#projects .work-item:hover .work-number{
+
+    color:rgba(22,63,53,.75) !important;
+}
+
+#projects .work-item:hover .work-number::after{
+
+    background:currentColor !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:900px){
+
+    #projects .work-number{
+
+        font-size:.85rem !important;
+        letter-spacing:.16em !important;
+
+        gap:14px !important;
+    }
+
+    #projects .work-number::after{
+
+        max-width:48px !important;
+    }
+
+}
 
 
 
