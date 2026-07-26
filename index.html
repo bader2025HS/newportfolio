@@ -6146,8 +6146,6 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 
-
-
 /* =========================================================
    PROJECTS — COMPLETE CLEAN CSS
 ========================================================= */
@@ -6161,16 +6159,13 @@ EDUCATION — ACTIVE OVERRIDES HOVER
     position:relative;
     isolation:isolate;
 
-    padding:130px 7vw 125px;
+    padding:130px 7vw 115px;
 
     background:#1f5644;
     color:#f6fbf8;
 
     overflow:hidden;
 }
-
-
-/* Remove inherited decorative shapes */
 
 #projects::before,
 #projects::after{
@@ -6203,7 +6198,6 @@ EDUCATION — ACTIVE OVERRIDES HOVER
     max-width:1100px;
 }
 
-
 #projects .work-header h2{
     max-width:950px;
 
@@ -6227,11 +6221,9 @@ EDUCATION — ACTIVE OVERRIDES HOVER
     position:relative;
 }
 
-
 #projects .oversized-label::before{
     color:rgba(255,255,255,.09);
 }
-
 
 #projects .oversized-label span{
     color:#b8ead8;
@@ -6239,27 +6231,37 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 /* =========================================================
-   PROJECT PANELS CONTAINER
+   PROJECT LIST — DESKTOP BASE
 ========================================================= */
 
 #projects .work-list{
     width:100%;
-    height:440px;
+    height:520px;
 
-    margin-top:65px;
+    margin-top:64px;
+    margin-bottom:0;
 
     display:flex;
     align-items:stretch;
 
-    border-top:1px solid rgba(246,251,248,.2);
-    border-bottom:1px solid rgba(246,251,248,.2);
+    border-top:2px solid rgba(246,251,248,.15);
+    border-bottom:2px solid rgba(246,251,248,.15);
 
     overflow:hidden;
 }
 
 
+/* Remove old generated progress/index */
+
+#projects .work-list::before,
+#projects .work-list::after{
+    display:none !important;
+    content:none !important;
+}
+
+
 /* =========================================================
-   PROJECT PANEL — DEFAULT STATE
+   PROJECT TILE
 ========================================================= */
 
 #projects .work-item{
@@ -6268,152 +6270,106 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
     flex:1 1 0;
     min-width:0;
-    height:440px;
+    height:520px;
 
-    padding:28px 28px 26px;
+    padding:34px 30px 30px;
 
     display:grid;
     grid-template-rows:auto 1fr auto;
 
-    border-right:1px solid rgba(246,251,248,.2);
+    border-right:2px solid rgba(246,251,248,.15);
 
     background:transparent;
     color:#f6fbf8;
 
-    text-decoration:none;
-
     overflow:hidden;
 
     transition:
-        flex .65s cubic-bezier(.22,1,.36,1),
-        background-color .35s ease,
-        color .35s ease,
-        padding .55s cubic-bezier(.22,1,.36,1);
+        flex .68s cubic-bezier(.22,1,.36,1),
+        padding .58s cubic-bezier(.22,1,.36,1),
+        background-color .38s ease,
+        color .38s ease;
 }
-
 
 #projects .work-item:last-child{
     border-right:0;
 }
 
 
-/* No project is white by default */
+/* Keep actual content above decorative layers */
 
-#projects .work-item:first-child{
-    flex:1 1 0;
-
-    background:transparent;
-    color:#f6fbf8;
+#projects .work-number,
+#projects .work-item > div,
+#projects .work-link{
+    position:relative;
+    z-index:2;
 }
 
 
 /* =========================================================
-   DESKTOP HOVER
-========================================================= */
-
-@media (hover:hover) and (pointer:fine){
-
-    #projects .work-list:hover .work-item{
-        flex:.92 1 0;
-    }
-
-
-    #projects .work-list .work-item:hover{
-        flex:2.15 1 0;
-
-        padding-left:38px;
-        padding-right:38px;
-
-        background:#f1f7f3;
-        color:#163f35;
-    }
-
-}
-
-
-/* =========================================================
-   NUMBER
+   CATEGORY LABEL
+   Research / Analysis / Editorial / Design
 ========================================================= */
 
 #projects .work-number{
-    position:relative;
-    z-index:2;
-
     grid-row:1;
 
     width:max-content;
 
-    color:rgba(246,251,248,.4);
+    display:inline-flex;
+    align-items:center;
+    gap:18px;
+
+    color:rgba(246,251,248,.52);
 
     font-family:"Space Grotesk",sans-serif;
-    font-size:1.18rem;
+    font-size:1rem;
     font-weight:700;
     line-height:1;
-    letter-spacing:.08em;
+    letter-spacing:.18em;
+    text-transform:uppercase;
 
     transition:
         color .35s ease,
+        letter-spacing .45s cubic-bezier(.22,1,.36,1),
         transform .45s cubic-bezier(.22,1,.36,1);
 }
-
 
 #projects .work-number::after{
     content:"";
 
-    display:inline-block;
+    width:62px;
+    height:2px;
 
-    width:36px;
-    height:1px;
-
-    margin-left:14px;
-    vertical-align:middle;
+    display:block;
 
     background:currentColor;
 
-    opacity:.65;
+    opacity:.72;
 
     transform-origin:left center;
 
     transition:
-        width .45s cubic-bezier(.22,1,.36,1),
-        opacity .3s ease;
-}
-
-
-@media (hover:hover) and (pointer:fine){
-
-    #projects .work-item:hover .work-number{
-        color:#1f5644;
-
-        transform:translateX(3px);
-    }
-
-
-    #projects .work-item:hover .work-number::after{
-        width:62px;
-        opacity:1;
-    }
-
+        width .5s cubic-bezier(.22,1,.36,1),
+        opacity .35s ease,
+        transform .5s cubic-bezier(.22,1,.36,1);
 }
 
 
 /* =========================================================
-   CONTENT WRAPPER
+   CONTENT
 ========================================================= */
 
 #projects .work-item > div{
-    position:relative;
-    z-index:2;
-
     grid-row:2;
 
     min-width:0;
 
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    justify-content:flex-start;
 
-    padding:26px 0 18px;
+    padding:120px 0 24px;
 }
 
 
@@ -6423,39 +6379,28 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 #projects .work-item h3{
     width:100%;
-    max-width:500px;
+    max-width:100%;
 
     margin:0;
 
     color:#f6fbf8;
 
     font-family:"Space Grotesk",sans-serif;
-    font-size:clamp(1.55rem,2.15vw,2.65rem);
+    font-size:clamp(1.85rem,2.15vw,2.8rem);
     font-weight:700;
     line-height:.96;
-    letter-spacing:-.055em;
+    letter-spacing:-.05em;
 
+    white-space:normal;
+    overflow:visible;
     overflow-wrap:normal;
     word-break:normal;
+    hyphens:none;
 
     transition:
         color .35s ease,
-        font-size .55s cubic-bezier(.22,1,.36,1),
+        font-size .58s cubic-bezier(.22,1,.36,1),
         transform .5s cubic-bezier(.22,1,.36,1);
-}
-
-
-@media (hover:hover) and (pointer:fine){
-
-    #projects .work-item:hover h3{
-        color:#163f35;
-
-        font-size:clamp(2.5rem,3.5vw,4.4rem);
-        line-height:.92;
-
-        transform:translateY(-3px);
-    }
-
 }
 
 
@@ -6465,41 +6410,24 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 #projects .work-item p{
     width:100%;
-    max-width:540px;
+    max-width:620px;
 
-    margin:18px 0 0;
+    margin:24px 0 0;
 
     color:rgba(22,63,53,.72);
 
-    font-size:1rem;
-    line-height:1.55;
+    font-size:1.15rem;
+    line-height:1.58;
 
     opacity:0;
     visibility:hidden;
 
-    transform:translateY(12px);
+    transform:translateY(14px);
 
     transition:
         opacity .25s ease,
         visibility 0s linear .3s,
-        transform .4s cubic-bezier(.22,1,.36,1);
-}
-
-
-@media (hover:hover) and (pointer:fine){
-
-    #projects .work-item:hover p{
-        opacity:1;
-        visibility:visible;
-
-        transform:translateY(0);
-
-        transition:
-            opacity .3s ease .08s,
-            visibility 0s,
-            transform .45s cubic-bezier(.22,1,.36,1) .03s;
-    }
-
+        transform .45s cubic-bezier(.22,1,.36,1);
 }
 
 
@@ -6508,16 +6436,12 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 ========================================================= */
 
 #projects .work-link{
-    position:relative;
-    z-index:2;
-
     grid-row:3;
     justify-self:start;
 
     width:auto;
-    min-width:0;
 
-    padding:11px 15px;
+    padding:15px 22px;
 
     display:inline-flex;
     align-items:center;
@@ -6529,29 +6453,27 @@ EDUCATION — ACTIVE OVERRIDES HOVER
     color:#1f5644;
 
     font-family:"Space Grotesk",sans-serif;
-    font-size:.68rem;
+    font-size:.82rem;
     font-weight:700;
     line-height:1;
-    letter-spacing:.13em;
+    letter-spacing:.14em;
     text-transform:uppercase;
     white-space:nowrap;
+    text-decoration:none;
 
     opacity:0;
     visibility:hidden;
 
-    transform:translateY(10px);
+    transform:translateY(12px);
 
     transition:
-        background-color .25s ease,
-        border-color .25s ease,
-        color .25s ease,
-        opacity .25s ease,
+        opacity .28s ease,
         visibility 0s linear .3s,
-        transform .4s cubic-bezier(.22,1,.36,1);
+        transform .45s cubic-bezier(.22,1,.36,1),
+        background-color .25s ease,
+        color .25s ease,
+        border-color .25s ease;
 }
-
-
-/* Disable old pseudo-element button labels */
 
 #projects .work-link::before,
 #projects .work-link::after{
@@ -6559,8 +6481,77 @@ EDUCATION — ACTIVE OVERRIDES HOVER
     content:none;
 }
 
+#projects .work-link:link,
+#projects .work-link:visited{
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   DESKTOP HOVER
+========================================================= */
 
 @media (hover:hover) and (pointer:fine){
+
+    #projects .work-list:hover .work-item{
+        flex:.88 1 0;
+    }
+
+    #projects .work-list .work-item:hover{
+        flex:2.15 1 0;
+
+        padding-left:42px;
+        padding-right:42px;
+
+        background:#f1f7f3;
+        color:#163f35;
+    }
+
+
+    /* Move active content into a balanced position */
+
+    #projects .work-item:hover > div{
+        justify-content:center;
+
+        padding-top:34px;
+        padding-bottom:24px;
+    }
+
+
+    /* Active title */
+
+    #projects .work-item:hover h3{
+        color:#163f35;
+
+        font-size:clamp(3rem,4vw,5rem);
+        line-height:.91;
+
+        transform:translateY(-3px);
+    }
+
+    /* Keep Content Writing safely inside its panel */
+
+    #projects .work-item:nth-child(3):hover h3{
+        font-size:clamp(2.65rem,3.45vw,4.35rem);
+    }
+
+
+    /* Description appears */
+
+    #projects .work-item:hover p{
+        opacity:1;
+        visibility:visible;
+
+        transform:translateY(0);
+
+        transition:
+            opacity .32s ease .08s,
+            visibility 0s,
+            transform .45s cubic-bezier(.22,1,.36,1) .03s;
+    }
+
+
+    /* Button appears */
 
     #projects .work-item:hover .work-link{
         opacity:1;
@@ -6569,22 +6560,120 @@ EDUCATION — ACTIVE OVERRIDES HOVER
         transform:translateY(0);
 
         transition:
-            background-color .25s ease,
-            border-color .25s ease,
-            color .25s ease,
             opacity .3s ease .12s,
             visibility 0s,
-            transform .45s cubic-bezier(.22,1,.36,1) .08s;
+            transform .45s cubic-bezier(.22,1,.36,1) .08s,
+            background-color .25s ease,
+            color .25s ease,
+            border-color .25s ease;
     }
 
-
-    #projects .work-item:hover .work-link:hover{
+    #projects .work-link:hover{
         background:#1f5644;
         color:#f6fbf8;
 
         transform:translateY(-2px);
     }
 
+
+    /* Nicer category interaction */
+
+    #projects .work-item:hover .work-number{
+        color:#1f5644;
+
+        letter-spacing:.22em;
+
+        transform:translateX(4px);
+    }
+
+    #projects .work-item:hover .work-number::after{
+        width:84px;
+
+        opacity:1;
+
+        transform:scaleX(1);
+    }
+
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+#projects .projects-progress{
+    width:min(900px,92%);
+
+    margin:18px auto 0;
+
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+}
+
+#projects .projects-progress-track{
+    position:relative;
+
+    width:100%;
+    height:3px;
+
+    background:rgba(246,251,248,.18);
+
+    overflow:hidden;
+}
+
+#projects .projects-progress-fill{
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:25%;
+    height:100%;
+
+    background:#f6fbf8;
+
+    transform:none;
+
+    transition:
+        left .42s cubic-bezier(.22,1,.36,1),
+        width .42s cubic-bezier(.22,1,.36,1);
+}
+
+#projects .projects-progress-numbers{
+    width:100%;
+
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+
+    justify-items:center;
+    align-items:center;
+}
+
+#projects .projects-progress-number{
+    justify-self:center;
+
+    margin:0;
+    padding:0;
+
+    color:rgba(246,251,248,.34);
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:1.45rem;
+    font-weight:700;
+    line-height:1;
+    letter-spacing:.08em;
+    text-align:center;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+#projects .projects-progress-number.is-active{
+    color:#f6fbf8;
+
+    transform:translateY(-1px);
 }
 
 
@@ -6598,59 +6687,75 @@ EDUCATION — ACTIVE OVERRIDES HOVER
         padding:110px 32px 100px;
     }
 
-
     #projects .work-list{
-        height:410px;
+        height:470px;
 
         margin-top:58px;
     }
 
-
     #projects .work-item{
-        height:410px;
+        height:470px;
 
-        padding:25px 20px 23px;
+        padding:30px 22px 27px;
     }
 
-
-    #projects .work-list .work-item:hover{
-        flex:1.85 1 0;
-
-        padding-left:26px;
-        padding-right:26px;
+    #projects .work-item > div{
+        padding-top:105px;
     }
-
 
     #projects .work-item h3{
-        font-size:clamp(1.35rem,2.3vw,2.15rem);
+        font-size:clamp(1.55rem,2.25vw,2.2rem);
     }
 
+    #projects .work-list .work-item:hover{
+        flex:1.95 1 0;
+
+        padding-left:30px;
+        padding-right:30px;
+    }
 
     #projects .work-item:hover h3{
-        font-size:clamp(2.1rem,3.2vw,3.2rem);
+        font-size:clamp(2.55rem,3.5vw,3.8rem);
     }
 
+    #projects .work-item:nth-child(3):hover h3{
+        font-size:clamp(2.35rem,3.15vw,3.4rem);
+    }
 
     #projects .work-item p{
-        font-size:.9rem;
+        font-size:1rem;
+    }
+
+    #projects .work-number{
+        gap:13px;
+
+        font-size:.82rem;
+        letter-spacing:.14em;
+    }
+
+    #projects .work-number::after{
+        width:42px;
+    }
+
+    #projects .work-item:hover .work-number::after{
+        width:58px;
     }
 
 }
 
 
 /* =========================================================
-   TABLET PORTRAIT + PHONE
-   HORIZONTAL SWIPE
+   PHONE + TABLET PORTRAIT
+   WHITE STATIC SWIPE CARDS
 ========================================================= */
 
 @media (max-width:900px){
 
     #projects{
-        padding:105px 20px 85px;
+        padding:105px 20px 82px;
 
         overflow:hidden;
     }
-
 
     #projects .work-header h2{
         max-width:100%;
@@ -6660,12 +6765,15 @@ EDUCATION — ACTIVE OVERRIDES HOVER
     }
 
 
+    /* Horizontal card scroller */
+
     #projects .work-list{
         width:calc(100% + 20px);
         height:auto;
 
         margin-top:52px;
-        padding:0 20px 12px 0;
+        margin-bottom:0;
+        padding:0 20px 0 0;
 
         display:flex;
         flex-wrap:nowrap;
@@ -6677,157 +6785,184 @@ EDUCATION — ACTIVE OVERRIDES HOVER
         overflow-y:hidden;
 
         scroll-snap-type:x mandatory;
-        scroll-padding-left:0;
+        scroll-padding-right:20px;
 
         scrollbar-width:none;
         -webkit-overflow-scrolling:touch;
     }
-
 
     #projects .work-list::-webkit-scrollbar{
         display:none;
     }
 
 
-    /* Equal-width mobile cards — Cox cannot be compressed */
+    /* No line under mobile tiles */
+
+    #projects .work-list::before,
+    #projects .work-list::after{
+        display:none !important;
+        content:none !important;
+    }
+
+
+    /* Static white cards */
 
     #projects .work-item,
     #projects .work-item:first-child,
+    #projects .work-item:hover,
+    #projects .work-item:focus,
+    #projects .work-item:focus-visible,
+    #projects .work-item:active,
     #projects .work-list:hover .work-item,
-    #projects .work-list:hover .work-item:first-child,
     #projects .work-list .work-item:hover{
         flex:0 0 min(82vw,470px);
 
         width:min(82vw,470px);
-        max-width:min(82vw,470px);
         min-width:min(82vw,470px);
+        max-width:min(82vw,470px);
 
-        height:390px;
-        min-height:390px;
+        height:405px;
+        min-height:405px;
 
-        padding:23px 21px 21px;
+        padding:25px 22px 22px;
 
-        border:1px solid rgba(246,251,248,.22);
+        border:1px solid rgba(22,63,53,.18);
 
-        background:transparent;
-        color:#f6fbf8;
+        background:#f1f7f3;
+        color:#163f35;
 
         scroll-snap-align:start;
 
         transform:none;
+        box-shadow:none;
+
+        transition:none;
     }
 
 
-    #projects .work-item > div{
-        justify-content:center;
+    /* Disable decorative corner effects if old CSS exists elsewhere */
 
-        padding:24px 0 16px;
+    #projects .work-item::before,
+    #projects .work-item::after{
+        display:none !important;
+        content:none !important;
     }
 
+
+    /* Static category */
 
     #projects .work-number,
-    #projects .work-item:first-child .work-number,
-    #projects .work-item:hover .work-number{
-        color:rgba(246,251,248,.42);
+    #projects .work-item:hover .work-number,
+    #projects .work-item:focus .work-number,
+    #projects .work-item:active .work-number{
+        color:rgba(22,63,53,.62);
+
+        font-size:.82rem;
+        letter-spacing:.15em;
+
+        gap:14px;
 
         transform:none;
-    }
 
+        transition:none;
+    }
 
     #projects .work-number::after,
-    #projects .work-item:hover .work-number::after{
-        width:42px;
+    #projects .work-item:hover .work-number::after,
+    #projects .work-item:focus .work-number::after,
+    #projects .work-item:active .work-number::after{
+        width:48px;
+        height:2px;
+
+        background:currentColor;
+
+        opacity:.75;
+
+        transform:none;
+
+        transition:none;
     }
 
 
+    /* Static content */
+
+    #projects .work-item > div,
+    #projects .work-item:hover > div{
+        justify-content:center;
+
+        padding:24px 0 18px;
+    }
+
     #projects .work-item h3,
-    #projects .work-item:first-child h3,
-    #projects .work-item:not(:first-child) h3,
-    #projects .work-list:hover .work-item h3,
-    #projects .work-list .work-item:hover h3{
+    #projects .work-item:hover h3,
+    #projects .work-item:focus h3,
+    #projects .work-item:active h3,
+    #projects .work-item:nth-child(3):hover h3{
         width:100%;
         max-width:100%;
 
-        color:#f6fbf8;
+        color:#163f35;
 
         font-size:clamp(2rem,7vw,3.15rem);
         line-height:.94;
 
         transform:none;
 
-        overflow-wrap:normal;
-        word-break:normal;
+        transition:none;
     }
 
-
-    /* Details remain visible on touch devices */
-
     #projects .work-item p,
-    #projects .work-item:first-child p,
-    #projects .work-item:hover p{
-        margin-top:17px;
+    #projects .work-item:hover p,
+    #projects .work-item:focus p,
+    #projects .work-item:active p{
+        margin-top:18px;
 
-        color:rgba(246,251,248,.7);
+        color:rgba(22,63,53,.72);
 
-        font-size:.92rem;
+        font-size:.95rem;
         line-height:1.5;
 
         opacity:1;
         visibility:visible;
 
         transform:none;
+
+        transition:none;
     }
 
 
+    /* Static button: no phone hover effect */
+
     #projects .work-link,
-    #projects .work-item:first-child .work-link,
+    #projects .work-link:hover,
+    #projects .work-link:focus,
+    #projects .work-link:focus-visible,
+    #projects .work-link:active,
     #projects .work-item:hover .work-link{
-        padding:11px 14px;
+        padding:12px 15px;
 
-        border-color:#b8ead8;
+        border:1px solid #1f5644;
 
-        color:#b8ead8;
+        background:transparent;
+        color:#1f5644;
 
-        font-size:.62rem;
+        font-size:.68rem;
+
+        text-decoration:none;
 
         opacity:1;
         visibility:visible;
 
         transform:none;
+
+        transition:none;
     }
 
 
-    /* Brief touch feedback */
+    /* Hide desktop progress completely on phones */
 
-    #projects .work-item:active,
-    #projects .work-item:focus{
-        background:#f1f7f3;
-        color:#163f35;
-    }
-
-
-    #projects .work-item:active h3,
-    #projects .work-item:focus h3{
-        color:#163f35;
-    }
-
-
-    #projects .work-item:active p,
-    #projects .work-item:focus p{
-        color:rgba(22,63,53,.72);
-    }
-
-
-    #projects .work-item:active .work-number,
-    #projects .work-item:focus .work-number{
-        color:#1f5644;
-    }
-
-
-    #projects .work-item:active .work-link,
-    #projects .work-item:focus .work-link{
-        border-color:#1f5644;
-        color:#1f5644;
+    #projects .projects-progress{
+        display:none;
     }
 
 }
@@ -6849,7 +6984,6 @@ EDUCATION — ACTIVE OVERRIDES HOVER
         overflow:hidden;
     }
 
-
     #projects .oversized-label::before{
         left:-3px;
         bottom:-8px;
@@ -6862,7 +6996,6 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
         white-space:nowrap;
     }
-
 
     #projects .oversized-label span{
         font-size:.68rem;
@@ -6879,9 +7012,8 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 @media (max-width:500px){
 
     #projects{
-        padding:92px 16px 72px;
+        padding:92px 16px 70px;
     }
-
 
     #projects .work-list{
         width:calc(100% + 16px);
@@ -6890,58 +7022,51 @@ EDUCATION — ACTIVE OVERRIDES HOVER
         padding-right:16px;
 
         gap:11px;
-    }
 
+        scroll-padding-right:16px;
+    }
 
     #projects .work-item,
     #projects .work-item:first-child,
-    #projects .work-list:hover .work-item,
-    #projects .work-list:hover .work-item:first-child,
-    #projects .work-list .work-item:hover{
+    #projects .work-item:hover,
+    #projects .work-item:focus,
+    #projects .work-item:active,
+    #projects .work-list:hover .work-item{
         flex-basis:85vw;
 
         width:85vw;
-        max-width:85vw;
         min-width:85vw;
+        max-width:85vw;
 
-        height:365px;
-        min-height:365px;
+        height:380px;
+        min-height:380px;
 
-        padding:21px 18px 19px;
+        padding:22px 19px 20px;
     }
-
-
-    #projects .work-item > div{
-        padding:20px 0 14px;
-    }
-
-
-    #projects .work-number{
-        font-size:1rem;
-    }
-
 
     #projects .work-item h3,
-    #projects .work-item:first-child h3,
-    #projects .work-item:not(:first-child) h3,
-    #projects .work-list:hover .work-item h3,
-    #projects .work-list .work-item:hover h3{
-        font-size:clamp(1.9rem,8.7vw,2.75rem);
+    #projects .work-item:hover h3,
+    #projects .work-item:nth-child(3):hover h3{
+        font-size:clamp(1.9rem,8.5vw,2.75rem);
     }
-
 
     #projects .work-item p{
-        margin-top:15px;
-
-        font-size:.86rem;
-        line-height:1.48;
+        font-size:.88rem;
     }
 
+    #projects .work-number{
+        font-size:.76rem;
+        gap:11px;
+    }
+
+    #projects .work-number::after{
+        width:38px;
+    }
 
     #projects .work-link{
-        padding:10px 12px;
+        padding:11px 13px;
 
-        font-size:.58rem;
+        font-size:.62rem;
     }
 
 }
@@ -6955,38 +7080,34 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
     #projects .work-item,
     #projects .work-item:first-child,
-    #projects .work-list:hover .work-item,
-    #projects .work-list:hover .work-item:first-child,
-    #projects .work-list .work-item:hover{
+    #projects .work-item:hover,
+    #projects .work-item:focus,
+    #projects .work-item:active{
         flex-basis:87vw;
 
         width:87vw;
-        max-width:87vw;
         min-width:87vw;
+        max-width:87vw;
 
-        height:350px;
-        min-height:350px;
+        height:365px;
+        min-height:365px;
     }
 
-
     #projects .work-item h3,
-    #projects .work-item:first-child h3,
-    #projects .work-item:not(:first-child) h3,
-    #projects .work-list:hover .work-item h3,
-    #projects .work-list .work-item:hover h3{
-        font-size:clamp(1.75rem,8.5vw,2.45rem);
+    #projects .work-item:hover h3{
+        font-size:clamp(1.75rem,8.3vw,2.4rem);
     }
 
 }
 
 
 /* =========================================================
-   KEYBOARD ACCESSIBILITY
+   ACCESSIBILITY
 ========================================================= */
 
-#projects .work-item:focus-visible{
+#projects .work-link:focus-visible{
     outline:3px solid #b8ead8;
-    outline-offset:-3px;
+    outline-offset:4px;
 }
 
 
@@ -7001,842 +7122,12 @@ EDUCATION — ACTIVE OVERRIDES HOVER
     #projects .work-number::after,
     #projects .work-item h3,
     #projects .work-item p,
-    #projects .work-link{
+    #projects .work-link,
+    #projects .projects-progress-fill{
         transition:none;
     }
 
 }
-
-
-
-
-/* =========================================================
-   PROJECTS — MOBILE FINAL OVERRIDE
-   White cards, no tile interaction, button-only links
-========================================================= */
-
-@media (max-width: 900px){
-
-  /* Allow the last card to remain fully visible */
-
-  #projects{
-    overflow: hidden !important;
-  }
-
-  #projects .work-list{
-    width: calc(100% + 20px) !important;
-
-    margin-top: 52px !important;
-    padding:
-      0
-      20px
-      14px
-      0 !important;
-
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    gap: 13px !important;
-
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-
-    scroll-snap-type: x mandatory !important;
-    scroll-padding-right: 20px !important;
-
-    scrollbar-width: none !important;
-    -webkit-overflow-scrolling: touch !important;
-  }
-
-  #projects .work-list::-webkit-scrollbar{
-    display: none !important;
-  }
-
-
-  /* Every tile is white and has a fixed mobile width */
-
-  #projects .work-item,
-  #projects .work-item:first-child,
-  #projects .work-list:hover .work-item,
-  #projects .work-list:hover .work-item:first-child,
-  #projects .work-list:hover .work-item:first-child:not(:hover),
-  #projects .work-list .work-item:hover,
-  #projects .work-item:focus,
-  #projects .work-item:focus-visible,
-  #projects .work-item:active{
-    flex: 0 0 min(82vw, 470px) !important;
-
-    width: min(82vw, 470px) !important;
-    min-width: min(82vw, 470px) !important;
-    max-width: min(82vw, 470px) !important;
-
-    height: 390px !important;
-    min-height: 390px !important;
-
-    padding: 23px 21px 21px !important;
-
-    background: #f1f7f3 !important;
-    color: #163f35 !important;
-
-    border: 1px solid rgba(22, 63, 53, 0.18) !important;
-
-    scroll-snap-align: start !important;
-
-    transform: none !important;
-  }
-
-
-  /* Remove all tile hover/focus animation */
-
-  #projects .work-item{
-    transition: none !important;
-  }
-
-  #projects .work-item:hover,
-  #projects .work-item:focus,
-  #projects .work-item:focus-visible,
-  #projects .work-item:active{
-    transform: none !important;
-  }
-
-
-  /* Keep the card content static */
-
-  #projects .work-item > div{
-    justify-content: center !important;
-
-    padding: 22px 0 16px !important;
-  }
-
-
-  #projects .work-number,
-  #projects .work-item:first-child .work-number,
-  #projects .work-list:hover .work-item .work-number,
-  #projects .work-item:hover .work-number,
-  #projects .work-item:focus .work-number,
-  #projects .work-item:active .work-number{
-    color: #1f5644 !important;
-
-    transform: none !important;
-  }
-
-
-  #projects .work-number::after,
-  #projects .work-item:hover .work-number::after{
-    width: 42px !important;
-  }
-
-
-  #projects .work-item h3,
-  #projects .work-item:first-child h3,
-  #projects .work-item:not(:first-child) h3,
-  #projects .work-list:hover .work-item h3,
-  #projects .work-list .work-item:hover h3,
-  #projects .work-item:focus h3,
-  #projects .work-item:active h3{
-    width: 100% !important;
-    max-width: 100% !important;
-
-    color: #163f35 !important;
-
-    font-size: clamp(2rem, 7vw, 3.15rem) !important;
-    line-height: 0.94 !important;
-
-    transform: none !important;
-
-    overflow-wrap: normal !important;
-    word-break: normal !important;
-  }
-
-
-  #projects .work-item p,
-  #projects .work-item:first-child p,
-  #projects .work-list:hover .work-item p,
-  #projects .work-item:hover p,
-  #projects .work-item:focus p,
-  #projects .work-item:active p{
-    margin-top: 17px !important;
-
-    color: rgba(22, 63, 53, 0.72) !important;
-
-    font-size: 0.92rem !important;
-    line-height: 1.5 !important;
-
-    opacity: 1 !important;
-    visibility: visible !important;
-
-    transform: none !important;
-  }
-
-
-  /* Button remains the only intended interactive control */
-
-  #projects .work-link,
-  #projects .work-item:first-child .work-link,
-  #projects .work-list:hover .work-item .work-link,
-  #projects .work-item:hover .work-link,
-  #projects .work-item:focus .work-link,
-  #projects .work-item:active .work-link{
-    padding: 11px 14px !important;
-
-    border: 1px solid #1f5644 !important;
-
-    background: transparent !important;
-    color: #1f5644 !important;
-
-    font-size: 0.62rem !important;
-
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-
-    transform: none !important;
-  }
-
-
-  #projects .work-link:hover,
-  #projects .work-link:focus-visible,
-  #projects .work-link:active{
-    background: #1f5644 !important;
-    color: #f6fbf8 !important;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL PHONE
-========================================================= */
-
-@media (max-width: 500px){
-
-  #projects .work-list{
-    width: calc(100% + 16px) !important;
-
-    padding-right: 16px !important;
-    scroll-padding-right: 16px !important;
-
-    gap: 11px !important;
-  }
-
-
-  #projects .work-item,
-  #projects .work-item:first-child,
-  #projects .work-list:hover .work-item,
-  #projects .work-list:hover .work-item:first-child,
-  #projects .work-list .work-item:hover,
-  #projects .work-item:focus,
-  #projects .work-item:active{
-    flex-basis: 85vw !important;
-
-    width: 85vw !important;
-    min-width: 85vw !important;
-    max-width: 85vw !important;
-
-    height: 365px !important;
-    min-height: 365px !important;
-
-    padding: 21px 18px 19px !important;
-  }
-
-
-  #projects .work-item h3,
-  #projects .work-item:first-child h3,
-  #projects .work-item:not(:first-child) h3,
-  #projects .work-list:hover .work-item h3,
-  #projects .work-list .work-item:hover h3{
-    font-size: clamp(1.9rem, 8.7vw, 2.75rem) !important;
-  }
-
-
-  #projects .work-item p{
-    font-size: 0.86rem !important;
-  }
-
-}
-
-
-    /* =========================================================
-   PROJECTS — EDITORIAL INDEX
-========================================================= */
-
-#projects .work-list{
-    position:relative;
-    margin-bottom:74px !important;
-}
-
-#projects .work-list::after{
-
-    content:"01 ──── 02 ──── 03 ──── 04";
-
-    position:absolute;
-
-    left:50%;
-    bottom:-50px;
-
-    transform:translateX(-50%);
-
-    font-family:"Space Grotesk",sans-serif;
-    font-size:1.1rem;
-    font-weight:700;
-    letter-spacing:.08em;
-
-    color:rgba(246,251,248,.42);
-
-    white-space:nowrap;
-
-    pointer-events:none;
-}
-
-
-
-
-
-
-/* =========================================================
-   PROJECTS PROGRESS
-========================================================= */
-
-.projects-progress{
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:18px;
-
-    margin-top:38px;
-
-    width:100%;
-}
-
-
-/* ---------- Line ---------- */
-
-.projects-progress-track{
-
-    position:relative;
-
-    width:min(520px,90%);
-    height:1px;
-
-    background:rgba(246,251,248,.18);
-}
-
-.projects-progress-fill{
-
-    position:absolute;
-    inset:0 auto 0 0;
-
-    width:25%;              /* starts on project 01 */
-
-    background:#f6fbf8;
-
-    transition:.45s ease;
-}
-
-
-/* ---------- Numbers ---------- */
-
-.projects-progress-numbers{
-
-    width:min(520px,90%);
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.projects-progress-number{
-
-    font-family:"Space Grotesk",sans-serif;
-    font-size:.95rem;
-    font-weight:700;
-    letter-spacing:.12em;
-
-    color:rgba(246,251,248,.35);
-
-    transition:.3s ease;
-}
-
-.projects-progress-number.is-active{
-
-    color:#f6fbf8;
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width:900px){
-
-    .projects-progress{
-
-        margin-top:28px;
-    }
-
-    .projects-progress-track,
-    .projects-progress-numbers{
-
-        width:85vw;
-    }
-
-}
-    
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   PROJECTS — PROGRESS FIX
-========================================================= */
-
-#projects .projects-progress{
-    width:min(680px, 90%);
-    margin:48px auto 0;
-}
-
-#projects .projects-progress-track{
-    position:relative;
-
-    width:100%;
-    height:1px;
-
-    background:rgba(246,251,248,.16);
-
-    overflow:hidden;
-}
-
-#projects .projects-progress-fill{
-    position:absolute;
-    top:0;
-    left:0;
-
-    width:25%;
-    height:100%;
-
-    background:#f6fbf8;
-
-    transform:translateX(0);
-
-    transition:
-        width .45s cubic-bezier(.22,1,.36,1),
-        transform .45s cubic-bezier(.22,1,.36,1);
-}
-
-#projects .projects-progress-numbers{
-    width:100%;
-
-    margin-top:18px;
-
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-}
-
-#projects .projects-progress-number{
-    color:rgba(246,251,248,.32);
-
-    font-family:"Space Grotesk",sans-serif;
-    font-size:.95rem;
-    font-weight:700;
-    letter-spacing:.1em;
-
-    transition:color .3s ease;
-}
-
-#projects .projects-progress-number:nth-child(1){
-    text-align:left;
-}
-
-#projects .projects-progress-number:nth-child(2),
-#projects .projects-progress-number:nth-child(3){
-    text-align:center;
-}
-
-#projects .projects-progress-number:nth-child(4){
-    text-align:right;
-}
-
-#projects .projects-progress-number.is-active{
-    color:#f6fbf8;
-}
-
-
-/* Remove underline from the View button */
-
-#projects .work-link,
-#projects .work-link:link,
-#projects .work-link:visited,
-#projects .work-link:hover,
-#projects .work-link:focus,
-#projects .work-link:active{
-    text-decoration:none !important;
-}
-
-
-/* Mobile: keep progress aligned with cards */
-
-@media (max-width:900px){
-
-    #projects .projects-progress{
-        width:100%;
-        margin-top:30px;
-    }
-
-}
-
-
-
-
-.projects-progress-fill{
-    position:absolute;
-    top:0;
-    left:0;
-
-    width:25%;
-    height:100%;
-
-    background:#f6fbf8;
-
-    transition:
-        left .45s cubic-bezier(.22,1,.36,1),
-        width .45s cubic-bezier(.22,1,.36,1);
-}
-
-
-    /* =========================================================
-   PROJECTS PROGRESS — ALIGNMENT FIX
-========================================================= */
-
-#projects .projects-progress{
-    width:min(900px,92%) !important;
-    margin:48px auto 0 !important;
-}
-
-#projects .projects-progress-track{
-    width:100% !important;
-    margin:0 auto !important;
-}
-
-#projects .projects-progress-numbers{
-
-    width:100% !important;
-
-    display:grid !important;
-    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
-
-    justify-items:center !important;
-    align-items:center !important;
-
-    margin-top:22px !important;
-    padding:0 !important;
-}
-
-#projects .projects-progress-number{
-
-    justify-self:center !important;
-    text-align:center !important;
-
-    margin:0 !important;
-    padding:0 !important;
-
-    width:auto !important;
-
-    font-family:"Space Grotesk",sans-serif !important;
-    font-size:1.55rem !important;
-    font-weight:700 !important;
-    letter-spacing:.08em !important;
-}
-
-/* Kill previous alignment rules */
-
-#projects .projects-progress-number:nth-child(1),
-#projects .projects-progress-number:nth-child(2),
-#projects .projects-progress-number:nth-child(3),
-#projects .projects-progress-number:nth-child(4){
-    justify-self:center !important;
-    text-align:center !important;
-}
-
-
-
-
-#projects .projects-progress-fill{
-    position:absolute !important;
-    top:0 !important;
-    left:0;
-
-    width:25%;
-    height:100%;
-
-    background:#f6fbf8;
-
-    transform:none !important;
-
-    transition:
-        left .4s cubic-bezier(.22,1,.36,1),
-        width .4s cubic-bezier(.22,1,.36,1);
-}
-
-
-
-
-
-/* =========================================================
-   PROJECTS — ALIGN COLLAPSED TITLES
-========================================================= */
-
-@media (min-width: 901px){
-
-  #projects .work-item > div{
-    justify-content: flex-start !important;
-    padding-top: 120px !important;
-  }
-
-  #projects .work-item h3{
-    margin: 0 !important;
-  }
-
-  /* Keep expanded content vertically balanced on hover */
-
-  #projects .work-item:hover > div{
-    justify-content: center !important;
-    padding-top: 34px !important;
-  }
-
-}
-
-
-/* =========================================================
-   PROJECTS — STRONGER LINES
-========================================================= */
-
-/* Divider between cards */
-
-#projects .work-list{
-    border-top:2px solid rgba(246,251,248,.14) !important;
-    border-bottom:2px solid rgba(246,251,248,.14) !important;
-}
-
-#projects .work-item{
-    border-right:2px solid rgba(246,251,248,.14) !important;
-}
-
-#projects .work-item:last-child{
-    border-right:none !important;
-}
-
-
-/* Top category line */
-
-#projects .work-number::after{
-
-    height:2px !important;
-    width:62px !important;
-
-    opacity:.85 !important;
-}
-
-
-/* Progress track */
-
-#projects .projects-progress-track{
-
-    height:2px !important;
-
-    background:rgba(246,251,248,.18) !important;
-}
-
-/* Active progress */
-
-#projects .projects-progress-fill{
-
-    height:2px !important;
-
-    background:#f6fbf8 !important;
-}
-
-
-    /* =========================================================
-   PROJECTS — STRONGER CATEGORY LABELS
-========================================================= */
-
-#projects .work-number{
-
-    font-family:"Space Grotesk",sans-serif !important;
-
-    font-size:1rem !important;
-    font-weight:700 !important;
-
-    letter-spacing:.18em !important;
-    text-transform:uppercase !important;
-
-    color:rgba(246,251,248,.55) !important;
-
-    display:flex !important;
-    align-items:center !important;
-    gap:18px !important;
-}
-
-
-/* Category line */
-
-#projects .work-number::after{
-
-    content:"" !important;
-
-    flex:1 !important;
-
-    height:2px !important;
-    max-width:70px !important;
-
-    background:currentColor !important;
-
-    opacity:.9 !important;
-}
-
-
-/* Hover */
-
-#projects .work-item:hover .work-number{
-
-    color:rgba(22,63,53,.75) !important;
-}
-
-#projects .work-item:hover .work-number::after{
-
-    background:currentColor !important;
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width:900px){
-
-    #projects .work-number{
-
-        font-size:.85rem !important;
-        letter-spacing:.16em !important;
-
-        gap:14px !important;
-    }
-
-    #projects .work-number::after{
-
-        max-width:48px !important;
-    }
-
-}
-
-
-
-
-
-/* =========================================================
-   PROJECTS — TITLE CROPPING + CATEGORY HOVER FIX
-========================================================= */
-
-@media (min-width:901px){
-
-    /* Let collapsed titles wrap cleanly */
-
-    #projects .work-item h3{
-        width:100% !important;
-        max-width:100% !important;
-
-        font-size:clamp(1.85rem,2.15vw,2.8rem) !important;
-        line-height:.96 !important;
-
-        white-space:normal !important;
-        overflow:visible !important;
-        overflow-wrap:normal !important;
-        word-break:normal !important;
-        hyphens:none !important;
-    }
-
-    /* Give the collapsed content slightly safer side spacing */
-
-    #projects .work-item{
-        padding-left:30px !important;
-        padding-right:30px !important;
-    }
-
-    /* Keep the hovered title large, but prevent clipping */
-
-    #projects .work-item:hover h3{
-        width:100% !important;
-        max-width:100% !important;
-
-        font-size:clamp(3rem,4vw,5rem) !important;
-
-        white-space:normal !important;
-        overflow:visible !important;
-    }
-
-    /* Content Writing needs a slightly smaller active title */
-
-    #projects .work-item:nth-child(3):hover h3{
-        font-size:clamp(2.7rem,3.5vw,4.4rem) !important;
-    }
-
-
-    /* =====================================================
-       CATEGORY LABELS — STATIC, CLEAN HOVER
-    ===================================================== */
-
-    #projects .work-number,
-    #projects .work-item:hover .work-number{
-        color:rgba(246,251,248,.52) !important;
-
-        transform:none !important;
-    }
-
-    #projects .work-number::after,
-    #projects .work-item:hover .work-number::after{
-        width:62px !important;
-        max-width:62px !important;
-        height:2px !important;
-
-        background:currentColor !important;
-
-        opacity:.75 !important;
-
-        transform:none !important;
-    }
-
-    /* On the white active tile, only switch to dark green */
-
-    #projects .work-item:hover .work-number{
-        color:rgba(22,63,53,.62) !important;
-    }
-
-}
-
 
 
 
