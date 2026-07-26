@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    
-  <title>Portfoliooo</title>
+  <title>Portfolio</title>
 
   <link rel="icon" type="image/png" href="favicon-32x32[1].png">
   
@@ -7010,7 +7010,282 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 
 
+/* =========================================================
+   PROJECTS — MOBILE FINAL OVERRIDE
+   White cards, no tile interaction, button-only links
+========================================================= */
 
+@media (max-width: 900px){
+
+  /* Allow the last card to remain fully visible */
+
+  #projects{
+    overflow: hidden !important;
+  }
+
+  #projects .work-list{
+    width: calc(100% + 20px) !important;
+
+    margin-top: 52px !important;
+    padding:
+      0
+      20px
+      14px
+      0 !important;
+
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 13px !important;
+
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+
+    scroll-snap-type: x mandatory !important;
+    scroll-padding-right: 20px !important;
+
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  #projects .work-list::-webkit-scrollbar{
+    display: none !important;
+  }
+
+
+  /* Every tile is white and has a fixed mobile width */
+
+  #projects .work-item,
+  #projects .work-item:first-child,
+  #projects .work-list:hover .work-item,
+  #projects .work-list:hover .work-item:first-child,
+  #projects .work-list:hover .work-item:first-child:not(:hover),
+  #projects .work-list .work-item:hover,
+  #projects .work-item:focus,
+  #projects .work-item:focus-visible,
+  #projects .work-item:active{
+    flex: 0 0 min(82vw, 470px) !important;
+
+    width: min(82vw, 470px) !important;
+    min-width: min(82vw, 470px) !important;
+    max-width: min(82vw, 470px) !important;
+
+    height: 390px !important;
+    min-height: 390px !important;
+
+    padding: 23px 21px 21px !important;
+
+    background: #f1f7f3 !important;
+    color: #163f35 !important;
+
+    border: 1px solid rgba(22, 63, 53, 0.18) !important;
+
+    scroll-snap-align: start !important;
+
+    transform: none !important;
+  }
+
+
+  /* Remove all tile hover/focus animation */
+
+  #projects .work-item{
+    transition: none !important;
+  }
+
+  #projects .work-item:hover,
+  #projects .work-item:focus,
+  #projects .work-item:focus-visible,
+  #projects .work-item:active{
+    transform: none !important;
+  }
+
+
+  /* Keep the card content static */
+
+  #projects .work-item > div{
+    justify-content: center !important;
+
+    padding: 22px 0 16px !important;
+  }
+
+
+  #projects .work-number,
+  #projects .work-item:first-child .work-number,
+  #projects .work-list:hover .work-item .work-number,
+  #projects .work-item:hover .work-number,
+  #projects .work-item:focus .work-number,
+  #projects .work-item:active .work-number{
+    color: #1f5644 !important;
+
+    transform: none !important;
+  }
+
+
+  #projects .work-number::after,
+  #projects .work-item:hover .work-number::after{
+    width: 42px !important;
+  }
+
+
+  #projects .work-item h3,
+  #projects .work-item:first-child h3,
+  #projects .work-item:not(:first-child) h3,
+  #projects .work-list:hover .work-item h3,
+  #projects .work-list .work-item:hover h3,
+  #projects .work-item:focus h3,
+  #projects .work-item:active h3{
+    width: 100% !important;
+    max-width: 100% !important;
+
+    color: #163f35 !important;
+
+    font-size: clamp(2rem, 7vw, 3.15rem) !important;
+    line-height: 0.94 !important;
+
+    transform: none !important;
+
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
+
+  #projects .work-item p,
+  #projects .work-item:first-child p,
+  #projects .work-list:hover .work-item p,
+  #projects .work-item:hover p,
+  #projects .work-item:focus p,
+  #projects .work-item:active p{
+    margin-top: 17px !important;
+
+    color: rgba(22, 63, 53, 0.72) !important;
+
+    font-size: 0.92rem !important;
+    line-height: 1.5 !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    transform: none !important;
+  }
+
+
+  /* Button remains the only intended interactive control */
+
+  #projects .work-link,
+  #projects .work-item:first-child .work-link,
+  #projects .work-list:hover .work-item .work-link,
+  #projects .work-item:hover .work-link,
+  #projects .work-item:focus .work-link,
+  #projects .work-item:active .work-link{
+    padding: 11px 14px !important;
+
+    border: 1px solid #1f5644 !important;
+
+    background: transparent !important;
+    color: #1f5644 !important;
+
+    font-size: 0.62rem !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+
+    transform: none !important;
+  }
+
+
+  #projects .work-link:hover,
+  #projects .work-link:focus-visible,
+  #projects .work-link:active{
+    background: #1f5644 !important;
+    color: #f6fbf8 !important;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 500px){
+
+  #projects .work-list{
+    width: calc(100% + 16px) !important;
+
+    padding-right: 16px !important;
+    scroll-padding-right: 16px !important;
+
+    gap: 11px !important;
+  }
+
+
+  #projects .work-item,
+  #projects .work-item:first-child,
+  #projects .work-list:hover .work-item,
+  #projects .work-list:hover .work-item:first-child,
+  #projects .work-list .work-item:hover,
+  #projects .work-item:focus,
+  #projects .work-item:active{
+    flex-basis: 85vw !important;
+
+    width: 85vw !important;
+    min-width: 85vw !important;
+    max-width: 85vw !important;
+
+    height: 365px !important;
+    min-height: 365px !important;
+
+    padding: 21px 18px 19px !important;
+  }
+
+
+  #projects .work-item h3,
+  #projects .work-item:first-child h3,
+  #projects .work-item:not(:first-child) h3,
+  #projects .work-list:hover .work-item h3,
+  #projects .work-list .work-item:hover h3{
+    font-size: clamp(1.9rem, 8.7vw, 2.75rem) !important;
+  }
+
+
+  #projects .work-item p{
+    font-size: 0.86rem !important;
+  }
+
+}
+
+
+    /* =========================================================
+   PROJECTS — EDITORIAL INDEX
+========================================================= */
+
+#projects .work-list{
+    position:relative;
+    margin-bottom:74px !important;
+}
+
+#projects .work-list::after{
+
+    content:"01 ──── 02 ──── 03 ──── 04";
+
+    position:absolute;
+
+    left:50%;
+    bottom:-50px;
+
+    transform:translateX(-50%);
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:1.1rem;
+    font-weight:700;
+    letter-spacing:.08em;
+
+    color:rgba(246,251,248,.42);
+
+    white-space:nowrap;
+
+    pointer-events:none;
+}
 
 
 
