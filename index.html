@@ -13006,7 +13006,250 @@ LANGUAGE-SPECIFIC HOVER COLORS
 
 
 
-    
+    /* ==========================================
+   SKILLS — TOOLS REDESIGN OVERRIDE
+========================================== */
+
+/* Header */
+
+#skills .skills-tools h3{
+    margin:0 0 48px;
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(3rem,4vw,4.3rem);
+    font-weight:700;
+    line-height:.92;
+    letter-spacing:-.06em;
+
+    color:#12382b;
+}
+
+
+/* Remove old grid */
+
+#skills .tools-directory{
+    display:flex !important;
+    flex-direction:column;
+
+    gap:38px;
+}
+
+
+/* ==========================================
+   CATEGORY
+========================================== */
+
+#skills .tools-group{
+
+    padding-bottom:34px;
+
+    border-bottom:1px solid rgba(18,56,43,.12);
+
+}
+
+#skills .tools-group:last-child{
+    border-bottom:0;
+}
+
+
+/* Category title */
+
+#skills .tools-group-heading{
+
+    margin-bottom:18px;
+
+}
+
+#skills .tools-group-heading span{
+
+    display:inline-block;
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:.86rem;
+    font-weight:700;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+
+    color:#2d7b61;
+
+}
+
+
+/* ==========================================
+   GRID
+========================================== */
+
+#skills .tools-group-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+
+    gap:14px;
+
+}
+
+#skills .tools-group-grid--three{
+
+    grid-template-columns:repeat(3,minmax(0,1fr));
+
+}
+
+
+/* ==========================================
+   TOOL
+========================================== */
+
+#skills .tool-entry{
+
+    min-height:112px;
+
+    padding:22px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    background:#f6fbf8;
+
+    border:1px solid rgba(18,56,43,.12);
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease,
+        color .25s ease;
+
+}
+
+
+#skills .tool-entry strong{
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:1.55rem;
+    font-weight:600;
+    line-height:1;
+
+    letter-spacing:-.04em;
+
+    color:#12382b;
+
+}
+
+
+#skills .tool-entry small{
+
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+
+    color:rgba(18,56,43,.48);
+
+}
+
+
+/* Hover */
+
+#skills .tool-entry:hover{
+
+    background:#12382b;
+
+    border-color:#12382b;
+
+    transform:translateY(-4px);
+
+}
+
+#skills .tool-entry:hover strong{
+
+    color:#fff;
+
+}
+
+#skills .tool-entry:hover small{
+
+    color:#8ed4bf;
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:1000px){
+
+#skills .tools-group-grid{
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+}
+
+#skills .tools-group-grid--three{
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+}
+
+}
+
+
+/* ==========================================
+   PHONE
+========================================== */
+
+@media(max-width:650px){
+
+#skills .skills-tools h3{
+
+    margin-bottom:34px;
+
+    font-size:2.4rem;
+
+}
+
+#skills .tools-directory{
+
+    gap:30px;
+
+}
+
+#skills .tools-group{
+
+    padding-bottom:26px;
+
+}
+
+#skills .tools-group-grid,
+#skills .tools-group-grid--three{
+
+    grid-template-columns:1fr;
+
+    gap:10px;
+
+}
+
+#skills .tool-entry{
+
+    min-height:88px;
+
+    padding:18px;
+
+}
+
+#skills .tool-entry strong{
+
+    font-size:1.2rem;
+
+}
+
+#skills .tool-entry:hover{
+
+    transform:none;
+
+}
+
+}
 
 
 
@@ -14340,27 +14583,122 @@ Monitoring & Evaluation Analyst
       TOOLS
       ========================================== -->
 
-      <div class="skills-column skills-tools">
-        <div class="tools-directory">
+<!-- ==========================================
+     TOOLS
+========================================== -->
 
-          <div class="tool-entry"><span>Word</span></div>
-          <div class="tool-entry"><span>PowerPoint</span></div>
-          <div class="tool-entry"><span>Excel</span></div>
-          <div class="tool-entry"><span>Power BI</span></div>
-          <div class="tool-entry"><span>Teams</span></div>
-          <div class="tool-entry"><span>SharePoint</span></div>
-          <div class="tool-entry"><span>GitHub</span></div>
-          <div class="tool-entry"><span>Illustrator</span></div>
-          <div class="tool-entry"><span>Google Suite</span></div>
-          <div class="tool-entry"><span>Drive</span></div>
-          <div class="tool-entry"><span>Meet</span></div>
-          <div class="tool-entry"><span>Instagram</span></div>
-          <div class="tool-entry"><span>LinkedIn</span></div>
-          <div class="tool-entry"><span>TikTok</span></div>
+<div class="skills-column skills-tools">
 
+  <div class="tools-header">
+    <h3>Tools</h3>
+  </div>
+
+
+  <div class="tools-groups">
+
+
+    <!-- DATA & VISUALISATION -->
+
+    <div class="tools-group">
+
+      <div class="tools-group-heading">
+        <span>Data &amp; visualisation</span>
+      </div>
+
+      <div class="tools-group-grid">
+
+        <div class="tool-entry">
+          <strong>Power BI</strong>
+          <small>Dashboards</small>
+        </div>
+
+        <div class="tool-entry">
+          <strong>Excel</strong>
+          <small>Analysis</small>
+        </div>
+
+        <div class="tool-entry">
+          <strong>QGIS</strong>
+          <small>Mapping</small>
+        </div>
+
+        <div class="tool-entry">
+          <strong>Mapbox</strong>
+          <small>Geospatial</small>
         </div>
 
       </div>
+
+    </div>
+
+
+    <!-- DESIGN & CONTENT -->
+
+    <div class="tools-group">
+
+      <div class="tools-group-heading">
+        <span>Design &amp; content</span>
+      </div>
+
+      <div class="tools-group-grid tools-group-grid--three">
+
+        <div class="tool-entry">
+          <strong>Illustrator</strong>
+          <small>Visual design</small>
+        </div>
+
+        <div class="tool-entry">
+          <strong>Canva</strong>
+          <small>Content creation</small>
+        </div>
+
+        <div class="tool-entry">
+          <strong>PlayPlay</strong>
+          <small>Video</small>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- PRODUCTIVITY & WEB -->
+
+    <div class="tools-group">
+
+      <div class="tools-group-heading">
+        <span>Productivity &amp; web</span>
+      </div>
+
+      <div class="tools-group-grid">
+
+        <div class="tool-entry">
+          <strong>Word</strong>
+          <small>Editorial</small>
+        </div>
+
+        <div class="tool-entry">
+          <strong>PowerPoint</strong>
+          <small>Presentations</small>
+        </div>
+
+        <div class="tool-entry">
+          <strong>GitHub</strong>
+          <small>Development</small>
+        </div>
+
+        <div class="tool-entry">
+          <strong>HTML / CSS</strong>
+          <small>Web</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
     </div>
 
