@@ -11753,7 +11753,253 @@ CONTACT — FIX HOVER CLIPPING
 
 
 
+/* ==========================================
+   SKILLS — CLEANER FINAL LAYOUT
+========================================== */
 
+
+/* ==========================================
+   REMOVE ALL NUMBERS AND SUBHEADINGS
+========================================== */
+
+#skills .skills-panel-number,
+#skills .skills-panel-header p,
+#skills .tool-group-number {
+  display: none !important;
+}
+
+
+/* Remove the large 06 decoration */
+
+#skills .languages-panel::after {
+  display: none !important;
+  content: none !important;
+}
+
+
+/* ==========================================
+   PANEL HEADERS
+========================================== */
+
+#skills .skills-panel-header {
+  min-height: 0 !important;
+
+  margin-bottom: 52px !important;
+
+  display: block !important;
+}
+
+#skills .skills-panel-header h3 {
+  margin: 0 !important;
+
+  font-size: clamp(2.8rem, 4vw, 4.2rem) !important;
+  line-height: 0.95 !important;
+}
+
+
+/* ==========================================
+   LANGUAGES — 2 COLUMNS / 3 ROWS
+========================================== */
+
+#skills .language-list {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+  gap: 12px !important;
+
+  border-top: 0 !important;
+}
+
+#skills .language-item {
+  min-width: 0 !important;
+  min-height: 118px !important;
+
+  padding: 20px 18px !important;
+
+  display: grid !important;
+  grid-template-columns: 42px minmax(0, 1fr) !important;
+  grid-template-areas:
+    "symbol name"
+    "symbol level" !important;
+
+  align-items: center !important;
+
+  column-gap: 14px !important;
+  row-gap: 10px !important;
+
+  background: rgba(255, 255, 255, 0.035) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+}
+
+
+/* Symbol */
+
+#skills .language-symbol {
+  grid-area: symbol !important;
+
+  width: 40px !important;
+  height: 40px !important;
+}
+
+
+/* Language name */
+
+#skills .language-name {
+  grid-area: name !important;
+
+  gap: 4px !important;
+}
+
+#skills .language-name strong {
+  font-size: 1.08rem !important;
+}
+
+#skills .language-name span {
+  font-size: 0.72rem !important;
+}
+
+
+/* Level */
+
+#skills .language-level {
+  grid-area: level !important;
+
+  justify-self: start !important;
+
+  min-width: 54px !important;
+
+  padding: 7px 10px !important;
+
+  font-size: 0.61rem !important;
+}
+
+
+/* Language hover */
+
+#skills .language-item:hover {
+  padding: 20px 18px !important;
+
+  background: rgba(255, 255, 255, 0.09) !important;
+
+  transform: translateY(-4px) !important;
+}
+
+
+/* ==========================================
+   TOOL CATEGORY HEADERS
+========================================== */
+
+#skills .tool-group-header {
+  margin-bottom: 24px !important;
+
+  display: block !important;
+}
+
+#skills .tool-group h4 {
+  margin: 0 !important;
+
+  font-size: clamp(1rem, 1.35vw, 1.3rem) !important;
+  letter-spacing: 0.1em !important;
+}
+
+
+/* Tools no longer need number indentation */
+
+#skills .tool-list {
+  padding-left: 0 !important;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1050px) {
+
+  #skills .language-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  #skills .language-item {
+    min-height: 88px !important;
+
+    grid-template-columns: 42px minmax(0, 1fr) auto !important;
+    grid-template-areas: "symbol name level" !important;
+  }
+
+  #skills .language-level {
+    justify-self: end !important;
+  }
+
+}
+
+
+/* ==========================================
+   PHONE
+========================================== */
+
+@media (max-width: 650px) {
+
+  #skills .skills-panel-header {
+    margin-bottom: 30px !important;
+  }
+
+  #skills .skills-panel-header h3 {
+    font-size: 2.3rem !important;
+  }
+
+  #skills .language-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 8px !important;
+  }
+
+  #skills .language-item {
+    min-height: 108px !important;
+
+    padding: 14px 12px !important;
+
+    grid-template-columns: 34px minmax(0, 1fr) !important;
+    grid-template-areas:
+      "symbol name"
+      "symbol level" !important;
+
+    column-gap: 10px !important;
+  }
+
+  #skills .language-symbol {
+    width: 32px !important;
+    height: 32px !important;
+
+    font-size: 0.6rem !important;
+  }
+
+  #skills .language-name strong {
+    font-size: 0.9rem !important;
+  }
+
+  #skills .language-name span {
+    font-size: 0.64rem !important;
+  }
+
+  #skills .language-level {
+    justify-self: start !important;
+
+    min-width: 46px !important;
+
+    padding: 6px 7px !important;
+
+    font-size: 0.54rem !important;
+  }
+
+  #skills .language-item:hover {
+    padding: 14px 12px !important;
+
+    transform: none !important;
+  }
+
+}
 
 
 
@@ -14208,7 +14454,6 @@ Monitoring & Evaluation Analyst
 
 
 
-
 <section id="skills">
   <div class="skills-container">
 
@@ -14241,14 +14486,7 @@ Monitoring & Evaluation Analyst
       <article class="skills-panel languages-panel">
 
         <div class="skills-panel-header">
-
-          <span class="skills-panel-number">01</span>
-
-          <div>
-            <p>Communication</p>
-            <h3>Languages</h3>
-          </div>
-
+          <h3>Languages</h3>
         </div>
 
 
@@ -14380,20 +14618,13 @@ Monitoring & Evaluation Analyst
 
 
       <!-- ========================================
-           TOOLKIT
+           TOOLS
       ========================================= -->
 
       <article class="skills-panel toolkit-panel">
 
         <div class="skills-panel-header">
-
-          <span class="skills-panel-number">02</span>
-
-          <div>
-            <p>Technical toolkit</p>
-            <h3>Tools</h3>
-          </div>
-
+          <h3>Tools</h3>
         </div>
 
 
@@ -14405,13 +14636,7 @@ Monitoring & Evaluation Analyst
           <div class="tool-group">
 
             <div class="tool-group-header">
-
-              <span class="tool-group-number">
-                01
-              </span>
-
               <h4>Data &amp; visualisation</h4>
-
             </div>
 
             <div class="tool-list">
@@ -14446,13 +14671,7 @@ Monitoring & Evaluation Analyst
           <div class="tool-group">
 
             <div class="tool-group-header">
-
-              <span class="tool-group-number">
-                02
-              </span>
-
               <h4>Design &amp; content</h4>
-
             </div>
 
             <div class="tool-list">
@@ -14477,18 +14696,12 @@ Monitoring & Evaluation Analyst
           </div>
 
 
-          <!-- Productivity -->
+          <!-- Productivity and web -->
 
           <div class="tool-group">
 
             <div class="tool-group-header">
-
-              <span class="tool-group-number">
-                03
-              </span>
-
               <h4>Productivity &amp; web</h4>
-
             </div>
 
             <div class="tool-list">
