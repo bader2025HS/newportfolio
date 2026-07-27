@@ -12934,7 +12934,107 @@ CONTACT — FIX HOVER CLIPPING
 
 
 
+/* ==========================================
+   TOOLS — SVG ICONS
+========================================== */
 
+#skills .tool-entry{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    gap:16px;
+}
+
+#skills .tool-icon{
+    width:46px;
+    height:46px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:var(--skills-dark);
+
+    transition:
+        transform .3s ease,
+        color .3s ease;
+}
+
+#skills .tool-icon svg{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    fill:currentColor;
+    stroke:currentColor;
+}
+
+#skills .tool-entry strong{
+    margin:0;
+
+    padding:0;
+
+    border:none;
+
+    font-size:1rem;
+    font-weight:700;
+
+    color:var(--skills-dark);
+
+    text-align:center;
+}
+
+#skills .tool-entry:hover .tool-icon{
+    transform:scale(1.12);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
@@ -15747,182 +15847,203 @@ Monitoring & Evaluation Analyst
 </div>
 
 
-      <!-- ========================================
-           TOOLS
-      ========================================= -->
+   <!-- ========================================
+     TOOLS
+========================================= -->
 
-      <div class="skills-panel skills-tools">
+<div class="skills-panel skills-tools">
 
-        <h3 class="skills-title">
-          Tools
-        </h3>
+    <h3 class="skills-title">
+        Tools
+    </h3>
 
-        <div class="tools-groups">
+    <div class="tools-groups">
 
 
-          <!-- ========================================
-               DATA & VISUALISATION
-          ========================================= -->
+        <!-- ========================================
+             DATA & VISUALISATION
+        ========================================= -->
 
-          <div class="tools-group">
+        <div class="tools-group">
 
             <div class="tools-group-heading">
-              <h4>Data &amp; Visualisation</h4>
+                <h4>Data &amp; Visualisation</h4>
             </div>
 
             <div class="tools-group-grid">
 
-              <div class="tool-entry">
-                <strong>Power BI</strong>
-                <small>Dashboards</small>
-              </div>
+                <div class="tool-entry">
+                    <span class="tool-icon">
+<svg fill="#000000" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>powerbi</title> <path d="M13.501 16h-7.498c0 0-0 0-0 0-0.69 0-1.25 0.559-1.25 1.25 0 0 0 0 0 0v0 12.496c0 0 0 0 0 0 0 0.69 0.559 1.25 1.25 1.25 0 0 0 0 0 0h8.747v-13.746c0-0.69-0.559-1.25-1.25-1.25v0zM19.749 8.502h-7.498c0 0-0 0-0 0-0.69 0-1.25 0.559-1.25 1.25 0 0 0 0 0 0v0 5.623h2.499c1.035 0.001 1.873 0.84 1.874 1.874v13.746h5.623v-21.244c0-0.69-0.559-1.25-1.25-1.25v0zM27.247 2.254v27.492c0 0 0 0 0 0 0 0.69-0.559 1.25-1.25 1.25 0 0-0 0-0 0h-4.374v-21.244c-0.001-1.035-0.84-1.873-1.874-1.874h-2.499v-5.623c0-0 0-0 0-0 0-0.69 0.559-1.25 1.25-1.25h7.498c0.69 0 1.25 0.559 1.25 1.25 0 0 0 0 0 0v0z"></path> </g></svg>                   
+                    </span>
+                    <strong>Power BI</strong>
+                </div>
 
-              <div class="tool-entry">
-                <strong>Excel</strong>
-                <small>Analysis</small>
-              </div>
+                <div class="tool-entry">
+                    <span class="tool-icon">
+                        <!-- EXCEL SVG -->
+                    </span>
+                    <strong>Excel</strong>
+                </div>
 
-              <div class="tool-entry">
-                <strong>QGIS</strong>
-                <small>Mapping</small>
-              </div>
+                <div class="tool-entry">
+                    <span class="tool-icon">
+<svg fill="#000000" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M17.172 17.344v4.865l-4.005-4.063v-4.661h4.776l3.802 3.859zM31.688 27.484v4.516h-4.875l-7.635-7.865v-4.734h4.469zM17.25 25.552l4.495 4.495c-1.745 0.589-3.406 0.969-5.766 0.969-9.13 0-15.979-6.693-15.979-15.594 0-8.859 6.849-15.422 15.979-15.422 9.172 0 16.021 6.604 16.021 15.422 0 2.823-0.698 5.432-1.943 7.677l-4.833-4.969c0.214-0.875 0.323-1.771 0.318-2.672 0-5.719-4.193-10.036-9.464-10.036s-9.667 4.318-9.667 10.036c0 5.724 4.443 10.135 9.667 10.135 0.729 0 0.88 0.021 1.172-0.042z"></path> </g></svg>
+                    </span>
+                    <strong>QGIS</strong>
+                </div>
 
-              <div class="tool-entry">
-                <strong>Mapbox</strong>
-                <small>Geospatial</small>
-              </div>
+                <div class="tool-entry">
+                    <span class="tool-icon">
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="512" cy="512" r="512"></circle> <path d="M512 256c-141.39 0-256 114.61-256 256s114.61 256 256 256 256-114.61 256-256-114.61-256-256-256zm121.52 318.78c-87.52 87.54-243.9 59.6-243.9 59.6S361.4 478.3 449.23 390.47c48.67-48.67 129.3-46.65 180.27 4s52.7 131.6 4 180.27zM541.37 406l-25.05 51.55-51.55 25.05 51.55 25.05 25.05 51.55 25.05-51.55L618 482.63l-51.55-25.05z" style="fill:#fff"></path> </g></svg>
+                    </span>
+                    <strong>Mapbox</strong>
+                </div>
 
             </div>
 
-          </div>
+        </div>
 
 
-          <!-- ========================================
-               DESIGN & CONTENT
-          ========================================= -->
+        <!-- ========================================
+             DESIGN & CONTENT
+        ========================================= -->
 
-          <div class="tools-group">
+        <div class="tools-group">
 
             <div class="tools-group-heading">
-              <h4>Design &amp; Content</h4>
+                <h4>Design &amp; Content</h4>
             </div>
 
             <div class="tools-group-grid">
 
-              <div class="tool-entry">
-                <strong>Photoshop</strong>
-                <small>Visual design</small>
-              </div>
+                <div class="tool-entry">
+                    <span class="tool-icon">
+<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 12.1333C2 8.58633 2 6.81283 2.69029 5.45806C3.29749 4.26637 4.26637 3.29749 5.45806 2.69029C6.81283 2 8.58633 2 12.1333 2H19.8667C23.4137 2 25.1872 2 26.5419 2.69029C27.7336 3.29749 28.7025 4.26637 29.3097 5.45806C30 6.81283 30 8.58633 30 12.1333V19.8667C30 23.4137 30 25.1872 29.3097 26.5419C28.7025 27.7336 27.7336 28.7025 26.5419 29.3097C25.1872 30 23.4137 30 19.8667 30H12.1333C8.58633 30 6.81283 30 5.45806 29.3097C4.26637 28.7025 3.29749 27.7336 2.69029 26.5419C2 25.1872 2 23.4137 2 19.8667V12.1333Z" fill="#001E36"></path> <path d="M8 22.5162V10.2034C8 10.1197 8.035 10.0718 8.11667 10.0718C9.3223 10.0718 10.5274 10 11.7333 10C13.6902 10 15.809 10.6691 16.5517 12.7162C16.7267 13.2188 16.82 13.7333 16.82 14.2718C16.82 15.3009 16.5867 16.1504 16.12 16.8205C14.8164 18.6923 12.557 18.6632 10.5317 18.6632V22.5043C10.5475 22.618 10.4506 22.6718 10.3567 22.6718H8.14C8.04667 22.6718 8 22.6239 8 22.5162ZM10.5433 12.3812V16.4017C11.3464 16.4605 12.1867 16.4669 12.9583 16.2103C13.8102 15.9645 14.2767 15.2272 14.2767 14.3436C14.3003 13.5907 13.8901 12.8683 13.1917 12.5966C12.4294 12.2796 11.3662 12.2606 10.5433 12.3812Z" fill="#31A8FF"></path> <path d="M24.0967 15.6074C23.7437 15.4213 23.3677 15.2852 22.979 15.2028C22.4796 15.0853 20.5098 14.6737 20.509 15.7037C20.5265 16.2787 21.4393 16.5604 21.8426 16.7247C23.2585 17.2108 24.8607 18.0797 24.8292 19.8264C24.8725 22.0008 22.7657 22.8701 20.9598 22.8703C20.0197 22.88 19.0403 22.7344 18.1799 22.3308C18.0977 22.2873 18.0449 22.1944 18.0484 22.0996V20.019C18.0391 19.9356 18.1287 19.8627 18.1987 19.9227C19.0417 20.4325 20.0409 20.6801 21.0162 20.6933C21.4467 20.6933 22.2999 20.6516 22.2935 20.019C22.2935 19.412 21.2728 19.1329 20.8659 18.9787C20.2761 18.7682 19.7169 18.4765 19.2036 18.1118C18.4862 17.6001 18.0362 16.7797 18.0484 15.8771C18.0442 13.8297 19.9835 12.9107 21.73 12.9103C22.5464 12.9035 23.4232 12.964 24.1832 13.2956C24.2925 13.3277 24.3151 13.4429 24.3147 13.546V15.4918C24.3216 15.6126 24.1875 15.6537 24.0967 15.6074Z" fill="#31A8FF"></path> </g></svg>
+                    </span>
+                    <strong>Photoshop</strong>
+                </div>
 
-              <div class="tool-entry">
-                <strong>Canva</strong>
-                <small>Content</small>
-              </div>
+                <div class="tool-entry">
+                    <span class="tool-icon">
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><polyline class="a" points="33.563 22.611 31.341 28.5 29.118 22.611"></polyline><path class="a" d="M20.9,26.2777A2.2287,2.2287,0,0,1,18.6774,28.5h0a2.2287,2.2287,0,0,1-2.2222-2.2222V24.8333a2.2287,2.2287,0,0,1,2.2222-2.2222h0A2.2287,2.2287,0,0,1,20.9,24.8333"></path><line class="a" x1="20.8996" y1="28.4999" x2="20.8996" y2="22.6111"></line><path class="a" d="M27.5307,28.5V24.8333a2.2287,2.2287,0,0,0-2.2222-2.2222h0a2.2287,2.2287,0,0,0-2.2222,2.2222V28.5"></path><line class="a" x1="23.0863" y1="24.8333" x2="23.0863" y2="22.6111"></line><path class="a" d="M14.4163,25.5h0a2.9875,2.9875,0,0,1-3,3h0a2.9875,2.9875,0,0,1-3-3v-3a2.9875,2.9875,0,0,1,3-3h0a2.8953,2.8953,0,0,1,2.8889,3h0"></path><path class="a" d="M39.5837,26.2777A2.2287,2.2287,0,0,1,37.3615,28.5h0a2.2287,2.2287,0,0,1-2.2222-2.2222V24.8333a2.2287,2.2287,0,0,1,2.2222-2.2222h0a2.2287,2.2287,0,0,1,2.2222,2.2222"></path><line class="a" x1="39.5837" y1="28.4999" x2="39.5837" y2="22.6111"></line><circle class="a" cx="24" cy="24" r="21.5"></circle></g></svg>
+                    </span>
+                    <strong>Canva</strong>
+                </div>
 
-              <div class="tool-entry">
-                <strong>CapCut</strong>
-                <small>Short video</small>
-              </div>
+                <div class="tool-entry">
+                    <span class="tool-icon">
+<svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M170 42 22 124v14c0 6.627 5.373 12 12 12h78c6.627 0 12-5.373 12-12v-9.5"></path><path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M170 150 22 68V54c0-6.627 5.373-12 12-12h78c6.627 0 12 5.373 12 12v9.5"></path></g></svg>
+                    </span>
+                    <strong>CapCut</strong>
+                </div>
 
-              <div class="tool-entry">
-                <strong>PlayPlay</strong>
-                <small>Corporate</small>
-              </div>
+                <div class="tool-entry">
+                    <span class="tool-icon">
+<svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 260 260" enable-background="new 0 0 260 260" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M99.05,183.5v-107L190,130L99.05,183.5z M130,258C59.42,258,2,200.579,2,130C2,59.42,59.42,2,130,2 c70.579,0,128,57.42,128,128C258,200.579,200.579,258,130,258z M130,28C73.757,28,28,73.757,28,130s45.757,102,102,102 s102-45.757,102-102S186.243,28,130,28z"></path> </g></svg>
+                    </span>
+                    <strong>PlayPlay</strong>
+                </div>
 
             </div>
 
-          </div>
+        </div>
 
 
-          <!-- ========================================
-               PRODUCTIVITY & WEB
-          ========================================= -->
+        <!-- ========================================
+             PRODUCTIVITY & WEB
+        ========================================= -->
 
-          <div class="tools-group">
+        <div class="tools-group">
 
             <div class="tools-group-heading">
-              <h4>Productivity &amp; Web</h4>
+                <h4>Productivity &amp; Web</h4>
             </div>
 
             <div class="tools-group-grid">
 
-              <div class="tool-entry">
-                <strong>Word</strong>
-                <small>Editorial</small>
-              </div>
+                <div class="tool-entry">
+                    <span class="tool-icon">
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>file_type_word2</title><path d="M18.536,2.323V4.868c3.4.019,7.12-.035,10.521.019a.783.783,0,0,1,.912.861c.054,6.266-.013,12.89.032,19.157-.02.4.009,1.118-.053,1.517-.079.509-.306.607-.817.676-.286.039-.764.034-1.045.047-2.792-.014-5.582-.011-8.374-.01l-1.175,0v2.547L2,27.133Q2,16,2,4.873L18.536,2.322" style="fill:#283c82"></path><path d="M18.536,5.822h10.5V26.18h-10.5V23.635h8.27V22.363h-8.27v-1.59h8.27V19.5h-8.27v-1.59h8.27V16.637h-8.27v-1.59h8.27V13.774h-8.27v-1.59h8.27V10.911h-8.27V9.321h8.27V8.048h-8.27V5.822" style="fill:#fff"></path><path d="M8.573,11.443c.6-.035,1.209-.06,1.813-.092.423,2.147.856,4.291,1.314,6.429.359-2.208.757-4.409,1.142-6.613.636-.022,1.272-.057,1.905-.1-.719,3.082-1.349,6.19-2.134,9.254-.531.277-1.326-.013-1.956.032-.423-2.106-.916-4.2-1.295-6.314C8.99,16.1,8.506,18.133,8.08,20.175q-.916-.048-1.839-.111c-.528-2.8-1.148-5.579-1.641-8.385.544-.025,1.091-.048,1.635-.067.328,2.026.7,4.043.986,6.072.448-2.08.907-4.161,1.352-6.241" style="fill:#fff"></path></g></svg>                    </span>
+                    <strong>Word</strong>
+                </div>
 
-              <div class="tool-entry">
-                <strong>PowerPoint</strong>
-                <small>Presentations</small>
-              </div>
+                <div class="tool-entry">
+                    <span class="tool-icon">
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>file_type_powerpoint2</title><path d="M18.536,2.321V5.184c3.4.019,7.357-.035,10.754.016.642,0,.67.568.678,1.064.054,5.942-.013,12.055.032,18-.012.234-.006,1.1-.013,1.346-.022.823-.434.859-1.257.884-.132,0-.52.006-.648.012-3.181-.016-6.362-.009-9.546-.009v3.182L2,27.134Q2,16,2,4.873L18.536,2.322" style="fill:#d33922"></path><path d="M18.536,6.138h10.5v19.4h-10.5V23H26.17V21.725H18.536V20.135H26.17V18.863H18.539c0-.624,0-1.247-.006-1.87a4.467,4.467,0,0,0,3.82-.375,4.352,4.352,0,0,0,1.959-3.474c-1.4-.01-2.793-.006-4.186-.006,0-1.384.016-2.767-.029-4.148-.522.1-1.043.21-1.562.321V6.139" style="fill:#fff"></path><path d="M20.766,8.324a4.476,4.476,0,0,1,4.186,4.167c-1.4.016-2.793.01-4.189.01,0-1.393,0-2.787,0-4.177" style="fill:#d33922"></path><path d="M7.1,10.726c1.727.083,3.82-.684,5.252.611,1.371,1.664,1.008,4.724-1.024,5.719A4.7,4.7,0,0,1,9,17.348c0,1.244-.006,2.488,0,3.731-.63-.054-1.263-.108-1.893-.159-.029-3.4-.035-6.8,0-10.2" style="fill:#fff"></path><path d="M8.993,12.446c.627-.029,1.4-.143,1.826.445a2.308,2.308,0,0,1,.041,2.087c-.363.655-1.183.592-1.816.668-.067-1.066-.06-2.131-.051-3.2" style="fill:#d33922"></path></g></svg>                    </span>
+                    <strong>PowerPoint</strong>
+                </div>
 
-              <div class="tool-entry">
-                <strong>GitHub</strong>
-                <small>Development</small>
-              </div>
+                <div class="tool-entry">
+                    <span class="tool-icon">
+<svg viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>github [#142]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#000000"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" id="github-[#142]"> </path> </g> </g> </g> </g></svg>
+                    </span>
+                    <strong>GitHub</strong>
+                </div>
 
-              <div class="tool-entry">
-                <strong>HTML / CSS</strong>
-                <small>Web</small>
-              </div>
+                <div class="tool-entry">
+                    <span class="tool-icon">
+<svg height="200px" width="200px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#000000;} </style> <g> <path class="st0" d="M256.005,0C114.611,0,0,114.611,0,255.996C0,397.39,114.611,512,256.005,512 C397.39,512,512,397.39,512,255.996C512,114.611,397.39,0,256.005,0z M187.066,203.112c0,0.366-0.157,0.689-0.436,0.916 l-72.053,53.582l72.053,53.608c0.279,0.192,0.436,0.541,0.436,0.89v33.07c0,0.41-0.201,0.776-0.532,0.968 c-0.148,0.079-0.296,0.13-0.471,0.13c-0.192,0-0.392-0.07-0.558-0.2L81.734,268.894c-0.27-0.201-0.445-0.541-0.445-0.898v-20.765 c0-0.366,0.174-0.706,0.445-0.907l103.771-77.18c0.166-0.131,0.366-0.192,0.558-0.192c0.174,0,0.323,0.044,0.471,0.13 c0.332,0.183,0.532,0.55,0.532,0.968V203.112z M238.519,360.404c-0.148,0.445-0.514,0.741-0.951,0.741h-29.006 c-0.331,0-0.628-0.175-0.82-0.472c-0.183-0.278-0.236-0.645-0.131-0.976l65.87-208.118c0.131-0.437,0.514-0.724,0.942-0.724h29.014 c0.314,0,0.628,0.166,0.811,0.454c0.183,0.288,0.236,0.654,0.131,0.994L238.519,360.404z M430.694,267.996 c0,0.357-0.156,0.698-0.436,0.898l-103.771,77.181c-0.166,0.13-0.357,0.2-0.558,0.2c-0.166,0-0.322-0.052-0.471-0.13 c-0.331-0.192-0.532-0.558-0.532-0.968v-33.062c0-0.357,0.157-0.706,0.436-0.898l72.053-53.608l-72.053-53.582 c-0.278-0.209-0.436-0.54-0.436-0.906V170.05c0-0.418,0.201-0.785,0.532-0.968c0.148-0.086,0.305-0.13,0.471-0.13 c0.201,0,0.392,0.061,0.558,0.192l103.771,77.18c0.28,0.201,0.436,0.541,0.436,0.907V267.996z"></path> </g> </g></svg>
+                    </span>
+                    <strong>HTML / CSS</strong>
+                </div>
 
             </div>
 
-          </div>
+        </div>
 
 
-          <!-- ========================================
-               SOFT SKILLS
-          ========================================= -->
+        <!-- ========================================
+             SOFT SKILLS
+        ========================================= -->
 
-          <div class="soft-skills-section">
+        <div class="soft-skills-section">
 
             <div class="tools-group-heading">
-              <h4>Soft Skills</h4>
+                <h4>Soft Skills</h4>
             </div>
 
             <div class="soft-skills-grid">
 
-              <div class="soft-skill">
-                Communication
-              </div>
+                <div class="soft-skill">
+                    Communication
+                </div>
 
-              <div class="soft-skill">
-                Project Management
-              </div>
+                <div class="soft-skill">
+                    Project Management
+                </div>
 
-              <div class="soft-skill">
-                Critical Thinking
-              </div>
+                <div class="soft-skill">
+                    Critical Thinking
+                </div>
 
-              <div class="soft-skill">
-                Problem Solving
-              </div>
+                <div class="soft-skill">
+                    Problem Solving
+                </div>
 
-              <div class="soft-skill">
-                Stakeholder Engagement
-              </div>
+                <div class="soft-skill">
+                    Stakeholder Engagement
+                </div>
 
-              <div class="soft-skill">
-                Cross-cultural Collaboration
-              </div>
+                <div class="soft-skill">
+                    Cross-cultural Collaboration
+                </div>
 
-              <div class="soft-skill">
-                Public Speaking
-              </div>
+                <div class="soft-skill">
+                    Public Speaking
+                </div>
 
-              <div class="soft-skill">
-                Adaptability
-              </div>
+                <div class="soft-skill">
+                    Adaptability
+                </div>
 
             </div>
 
-          </div>
-
-
         </div>
 
-      </div>
+    </div>
+
+</div>
 
 
 
