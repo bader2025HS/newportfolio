@@ -13036,7 +13036,98 @@ CONTACT — FIX HOVER CLIPPING
 
 
 
+/* ==========================================
+   TOOLS — FINAL HOVER OVERRIDE
+========================================== */
 
+#skills .tool-entry{
+    background:#ffffff !important;
+    border:1px solid rgba(18,56,43,.14) !important;
+    color:#12382b !important;
+
+    transform:none !important;
+    box-shadow:none !important;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease !important;
+}
+
+/* Clean, subtle hover */
+
+#skills .tool-entry:hover{
+    background:#ffffff !important;
+    color:#12382b !important;
+
+    border-color:#26745f !important;
+
+    transform:translateY(-4px) !important;
+
+    box-shadow:
+        0 12px 24px rgba(18,56,43,.10) !important;
+}
+
+/* App name always stays dark green */
+
+#skills .tool-entry strong,
+#skills .tool-entry:hover strong{
+    color:#12382b !important;
+    background:transparent !important;
+    border:0 !important;
+}
+
+/* Remove old divider */
+
+#skills .tool-entry::before,
+#skills .tool-entry::after,
+#skills .tool-entry strong::before,
+#skills .tool-entry strong::after{
+    display:none !important;
+    content:none !important;
+}
+
+/* Icon sizing only — NO colour manipulation */
+
+#skills .tool-icon{
+    width:64px !important;
+    height:64px !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    background:transparent !important;
+
+    transform:none !important;
+    filter:none !important;
+    opacity:1 !important;
+    mix-blend-mode:normal !important;
+}
+
+#skills .tool-icon svg{
+    width:100% !important;
+    height:100% !important;
+
+    display:block !important;
+
+    transform:none !important;
+    filter:none !important;
+    opacity:1 !important;
+    mix-blend-mode:normal !important;
+}
+
+/* Hover must never alter the logo */
+
+#skills .tool-entry:hover .tool-icon,
+#skills .tool-entry:hover .tool-icon svg{
+    background:transparent !important;
+
+    transform:none !important;
+    filter:none !important;
+    opacity:1 !important;
+    mix-blend-mode:normal !important;
+}
 
 
 
