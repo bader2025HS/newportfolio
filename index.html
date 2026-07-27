@@ -12462,7 +12462,53 @@ CONTACT — FIX HOVER CLIPPING
 }
 
 
+/* ==========================================
+   SKILLS — DESKTOP TOOL CARD POLISH
+========================================== */
 
+@media (min-width:651px){
+
+    /* Slightly shorter cards */
+
+    #skills .tool-entry{
+        min-height:108px !important;
+
+        padding:24px 22px !important;
+
+        justify-content:flex-start !important;
+
+        gap:14px !important;
+    }
+
+    /* Larger app name */
+
+    #skills .tool-entry strong{
+
+        font-size:clamp(1.2rem,1.55vw,1.5rem) !important;
+        font-weight:700 !important;
+
+        line-height:1.05 !important;
+
+        padding-bottom:12px !important;
+        margin:0 !important;
+    }
+
+    /* Bring caption much closer */
+
+    #skills .tool-entry small{
+
+        margin-top:2px !important;
+
+        font-size:.72rem !important;
+        font-weight:700 !important;
+
+        letter-spacing:.11em !important;
+        line-height:1.1 !important;
+
+        color:rgba(18,56,43,.68) !important;
+    }
+
+}
 
 
 
