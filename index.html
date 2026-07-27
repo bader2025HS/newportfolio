@@ -12801,7 +12801,63 @@ CONTACT — FIX HOVER CLIPPING
 
 
 
+/* ==========================================
+   SKILLS — MATCH BOTH PANEL HEIGHTS
+========================================== */
 
+#skills .skills-dashboard{
+    align-items:stretch !important;
+}
+
+#skills .languages-panel,
+#skills .skills-tools{
+    height:auto !important;
+    min-height:100% !important;
+    align-self:stretch !important;
+}
+
+
+/* Let the tools content fill the full panel height */
+
+#skills .skills-tools{
+    display:flex !important;
+    flex-direction:column !important;
+}
+
+#skills .tools-groups{
+    flex:1 !important;
+
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:space-between !important;
+
+    gap:0 !important;
+}
+
+
+/* Keep each tools category compact but evenly distributed */
+
+#skills .tools-group{
+    margin:0 !important;
+}
+
+#skills .soft-skills-section{
+    margin:0 !important;
+    padding-top:20px !important;
+}
+
+
+/* Restore a little more card height */
+
+#skills .tool-entry{
+    min-height:92px !important;
+    padding:16px 18px !important;
+}
+
+#skills .soft-skill{
+    min-height:52px !important;
+    padding:12px 14px !important;
+}
 
 
 
