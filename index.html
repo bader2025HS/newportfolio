@@ -11999,28 +11999,129 @@ CONTACT — FIX HOVER CLIPPING
 
 
 
+
 /* ==========================================
-   SOFT SKILLS — SLIGHTLY LARGER
+   SKILLS — 6 SOFT SKILLS + MATCHED HEIGHT
 ========================================== */
 
+/* Keep the dashboard columns aligned */
+
+#skills .skills-dashboard{
+    align-items:stretch !important;
+}
+
+#skills .languages-panel,
+#skills .skills-tools{
+    height:auto !important;
+    min-height:0 !important;
+    align-self:stretch !important;
+}
+
+
+/* ==========================================
+   COMPACT TOOL AREA
+========================================== */
+
+#skills .tools-groups{
+    gap:16px !important;
+}
+
+#skills .tools-group-heading{
+    margin-bottom:9px !important;
+}
+
+#skills .tool-entry{
+    min-height:105px !important;
+
+    padding:9px 10px 8px !important;
+
+    justify-content:center !important;
+
+    gap:7px !important;
+}
+
+#skills .tool-icon{
+    width:55px !important;
+    height:55px !important;
+
+    flex:0 0 55px !important;
+
+    margin:0 !important;
+}
+
+#skills .tool-entry strong{
+    margin:0 !important;
+
+    font-size:1rem !important;
+    line-height:1.05 !important;
+}
+
+
+/* ==========================================
+   SOFT SKILLS — 3 COLUMNS × 2 ROWS
+========================================== */
+
+#skills .soft-skills-section{
+    margin:0 !important;
+
+    padding-top:16px !important;
+
+    border-top:1px solid rgba(18,56,43,.14) !important;
+}
+
+#skills .soft-skills-section .tools-group-heading{
+    margin-bottom:10px !important;
+}
+
 #skills .soft-skills-grid{
-    gap:12px !important;
+    display:grid !important;
+
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+
+    gap:9px !important;
 }
 
 #skills .soft-skill{
-    min-height:52px !important;
+    width:100% !important;
+    min-width:0 !important;
+    min-height:56px !important;
 
-    padding:12px 15px !important;
+    padding:11px 14px !important;
 
-    font-size:1rem !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+
+    font-size:.94rem !important;
     font-weight:650 !important;
     line-height:1.15 !important;
 
-    display:flex;
-    align-items:center;
+    overflow-wrap:normal !important;
+    word-break:normal !important;
 }
 
 
+/* ==========================================
+   PHONE
+========================================== */
+
+@media (max-width:650px){
+
+    #skills .soft-skills-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+
+        gap:9px !important;
+    }
+
+    #skills .soft-skill{
+        min-height:52px !important;
+
+        padding:10px 11px !important;
+
+        font-size:.88rem !important;
+    }
+
+}
 
 
 
@@ -15025,16 +15126,9 @@ Monitoring & Evaluation Analyst
                     Stakeholder Engagement
                 </div>
 
-                <div class="soft-skill">
-                    Cross-cultural Collaboration
-                </div>
 
                 <div class="soft-skill">
                     Public Speaking
-                </div>
-
-                <div class="soft-skill">
-                    Adaptability
                 </div>
 
             </div>
