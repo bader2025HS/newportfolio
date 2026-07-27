@@ -12133,7 +12133,45 @@ CONTACT — FIX HOVER CLIPPING
 }
     
 
+/* ==========================================
+   SOFT SKILLS — MORE SPACE BELOW HEADING
+========================================== */
 
+#skills .soft-skills-section .tools-group-heading{
+    margin-bottom:18px !important;
+}
+
+    /* ==========================================
+   PHONE — SOFT SKILLS ACTIVE STATE
+========================================== */
+
+@media (max-width:650px){
+
+    #skills .soft-skill{
+        transition:
+            background-color .25s ease,
+            border-color .25s ease,
+            color .25s ease,
+            transform .25s ease,
+            box-shadow .25s ease;
+    }
+
+    #skills .soft-skill:hover,
+    #skills .soft-skill:active,
+    #skills .soft-skill:focus{
+
+        background:#12382b !important;
+        border-color:#12382b !important;
+
+        color:#ffffff !important;
+
+        transform:translateY(-2px);
+
+        box-shadow:
+            0 10px 22px rgba(18,56,43,.12);
+    }
+
+}
 
 
 
