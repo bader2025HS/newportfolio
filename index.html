@@ -12236,7 +12236,86 @@ CONTACT — FIX HOVER CLIPPING
 
 
 
+/* ==========================================
+   SKILLS — PHONE INTERACTION FIX
+========================================== */
 
+@media (max-width:650px){
+
+    /* ======================================
+       TOOLS — CLICK / HOVER STATE
+    ====================================== */
+
+    #skills .tool-entry:hover,
+    #skills .tool-entry:focus,
+    #skills .tool-entry:active{
+        background:#12382b !important;
+        border-color:#12382b !important;
+
+        transform:none !important;
+        box-shadow:none !important;
+    }
+
+    #skills .tool-entry:hover strong,
+    #skills .tool-entry:focus strong,
+    #skills .tool-entry:active strong{
+        color:#ffffff !important;
+        border-bottom-color:rgba(255,255,255,.18) !important;
+    }
+
+    #skills .tool-entry:hover small,
+    #skills .tool-entry:focus small,
+    #skills .tool-entry:active small{
+        color:#c9f3e6 !important;
+        opacity:1 !important;
+    }
+
+
+    /* ======================================
+       LANGUAGES — REDUCE EMPTY SPACE
+    ====================================== */
+
+    #skills .language-item{
+        min-height:118px !important;
+
+        padding:13px 11px !important;
+
+        grid-template-rows:auto auto !important;
+
+        row-gap:10px !important;
+    }
+
+    #skills .language-item:hover{
+        padding:13px 11px !important;
+    }
+
+    #skills .language-level{
+        padding:7px 8px !important;
+        margin:0 !important;
+
+        align-self:end !important;
+    }
+
+}
+
+
+/* Very small phones */
+
+@media (max-width:390px){
+
+    #skills .language-item{
+        min-height:110px !important;
+
+        padding:12px 9px !important;
+
+        row-gap:8px !important;
+    }
+
+    #skills .language-item:hover{
+        padding:12px 9px !important;
+    }
+
+}
 
 
 
