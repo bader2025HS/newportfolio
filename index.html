@@ -6150,10 +6150,6 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 ========================================================= */
 
 
-/* =========================================================
-   SECTION
-========================================================= */
-
 #projects{
     position:relative;
     isolation:isolate;
@@ -7497,7 +7493,36 @@ EDUCATION — ACTIVE OVERRIDES HOVER
 
 }
 
+/* =========================================================
+   PROJECTS — PREVENT INACTIVE TITLES FROM BEING CROPPED
+========================================================= */
 
+@media (min-width:901px) and (hover:hover) and (pointer:fine){
+
+    /* Do not compress the inactive cards quite as much */
+    #projects .work-list:hover .work-item{
+        flex:1 1 0 !important;
+    }
+
+    /* Keep the active card clearly larger */
+    #projects .work-list .work-item:hover{
+        flex:2 1 0 !important;
+    }
+
+    /* Slightly reduce titles inside inactive cards */
+    #projects .work-list:hover .work-item:not(:hover) h3{
+        font-size:clamp(1.5rem,1.75vw,2.15rem) !important;
+        line-height:.98 !important;
+
+        overflow-wrap:anywhere !important;
+        word-break:normal !important;
+    }
+
+    /* Sustainability Communications needs a little extra help */
+    #projects .work-list:hover .work-item:first-child:not(:hover) h3{
+        font-size:clamp(1.4rem,1.65vw,2rem) !important;
+    }
+}
 
 
 
@@ -15439,7 +15464,7 @@ Feature articles and multimedia pieces making ESG and sustainability topics clea
         <span class="work-number">Analysis</span>
 
         <div class="work-content">
-          <h3>OIF Country Briefs</h3>
+          <h3>Country Briefs</h3>
 
           <p>
 Strategic country notes about the political, economic and social developments across the Francophone world.
