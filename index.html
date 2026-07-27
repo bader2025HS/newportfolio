@@ -11855,7 +11855,78 @@ CONTACT — FIX HOVER CLIPPING
 
 
 
+/* ==========================================
+   SKILLS — REMOVE EXCESS PANEL HEIGHT
+========================================== */
 
+#skills .skills-dashboard{
+    align-items:start !important;
+}
+
+#skills .languages-panel,
+#skills .skills-tools{
+    min-height:0 !important;
+    height:auto !important;
+    align-self:start !important;
+}
+
+
+/* Tools content should use natural height */
+
+#skills .skills-tools{
+    display:block !important;
+}
+
+#skills .tools-groups{
+    display:flex !important;
+    flex-direction:column !important;
+
+    justify-content:flex-start !important;
+
+    gap:18px !important;
+}
+
+
+/* More compact tool cards */
+
+#skills .tool-entry{
+    min-height:120px !important;
+
+    padding:14px 10px !important;
+
+    gap:9px !important;
+}
+
+#skills .tool-icon{
+    width:58px !important;
+    height:58px !important;
+
+    flex-basis:58px !important;
+}
+
+#skills .tool-entry strong{
+    font-size:1rem !important;
+}
+
+
+/* Compact soft skills */
+
+#skills .soft-skills-section{
+    margin-top:0 !important;
+    padding-top:15px !important;
+}
+
+#skills .soft-skills-grid{
+    gap:7px !important;
+}
+
+#skills .soft-skill{
+    min-height:42px !important;
+
+    padding:8px 11px !important;
+
+    font-size:.8rem !important;
+}
 
 
 
