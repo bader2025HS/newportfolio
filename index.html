@@ -12174,10 +12174,8 @@ CONTACT — FIX HOVER CLIPPING
 }
 
 
-
-
 /* ==========================================
-   TOOLS & SOFT SKILLS — EDITORIAL HEADINGS
+   TOOLS & SOFT SKILLS — CLEAN HEADINGS
 ========================================== */
 
 #skills .tools-group-heading{
@@ -12185,57 +12183,53 @@ CONTACT — FIX HOVER CLIPPING
     align-items:center;
     gap:14px;
 
-    margin:0 0 22px;
+    margin:18px 0 !important;
     line-height:1;
 }
 
 #skills .tools-group-heading::before{
     content:"";
+
     width:4px;
     height:18px;
 
-    background:#2d7b61;
-
     flex:0 0 auto;
+
+    background:#2d7b61;
 }
 
 #skills .tools-group-heading::after{
     content:"";
+
     flex:1;
     height:1px;
 
-    background:rgba(18,56,43,.14);
-
     margin-left:4px;
+
+    background:rgba(18,56,43,.14);
 }
 
 
-/* ==========================================
-   CATEGORY SPACING — EQUAL TOP & BOTTOM
-========================================== */
-
-#skills .tools-group-heading{
-    display:flex;
-    align-items:center;
-    gap:14px;
-
-    margin:30px 0 !important;
-    line-height:1;
-}
-
-
-    /* ==========================================
-   REMOVE DIVIDER BEFORE SOFT SKILLS
-========================================== */
+/* Remove old soft-skills separator and extra spacing */
 
 #skills .soft-skills-section{
     border-top:none !important;
     padding-top:0 !important;
-    margin-top:10px !important;
+    margin-top:0 !important;
+}
+
+#skills .soft-skills-section::before{
+    display:none !important;
 }
 
 
+/* Prevent grids from adding extra vertical margins */
 
+#skills .tools-grid,
+#skills .soft-skills-grid{
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+}
 
 
 
