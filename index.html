@@ -12514,11 +12514,204 @@ CONTACT — FIX HOVER CLIPPING
 
 
 
+/* ==========================================
+   SKILLS — MORE COMPACT TOOL CARDS
+========================================== */
+
+#skills .tool-entry{
+
+    min-height:94px !important;
+
+    padding:18px 18px !important;
+
+    gap:10px !important;
+}
+
+/* App name */
+
+#skills .tool-entry strong{
+
+    font-size:clamp(1.05rem,1.35vw,1.28rem) !important;
+
+    padding-bottom:8px !important;
+}
+
+/* Divider */
+
+#skills .tool-entry strong{
+    border-bottom:1px solid rgba(18,56,43,.10) !important;
+}
+
+/* Caption */
+
+#skills .tool-entry small{
+
+    font-size:.66rem !important;
+
+    margin-top:0 !important;
+
+    letter-spacing:.10em !important;
+
+    line-height:1.1 !important;
+}
 
 
 
+/* ==========================================
+   SKILLS — SOFT SKILLS
+========================================== */
+
+#skills .soft-skills-section{
+    width:100%;
+    min-width:0;
+
+    margin-top:8px;
+    padding-top:34px;
+
+    border-top:1px solid rgba(18,56,43,.14);
+}
+
+#skills .soft-skills-section .tools-group-heading{
+    margin-bottom:18px;
+}
+
+#skills .soft-skills-grid{
+    width:100%;
+
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+
+    gap:12px;
+}
+
+#skills .soft-skill{
+    min-width:0;
+    min-height:58px;
+
+    padding:14px 16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+
+    background:rgba(255,255,255,.62);
+
+    border:1px solid rgba(18,56,43,.13);
+
+    color:var(--skills-dark);
+
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(.86rem,1vw,1rem);
+    font-weight:650;
+    line-height:1.15;
+    letter-spacing:-.025em;
+
+    overflow-wrap:anywhere;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+#skills .soft-skill:hover{
+    background:var(--skills-dark);
+    color:#ffffff;
+
+    border-color:var(--skills-dark);
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 22px rgba(18,56,43,.11);
+}
 
 
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:900px){
+
+    #skills .soft-skills-section{
+        margin-top:4px;
+        padding-top:30px;
+    }
+
+    #skills .soft-skills-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+    }
+
+}
+
+
+/* ==========================================
+   PHONE
+========================================== */
+
+@media (max-width:650px){
+
+    #skills .soft-skills-section{
+        margin-top:0 !important;
+        padding-top:28px !important;
+    }
+
+    #skills .soft-skills-section .tools-group-heading{
+        margin-bottom:14px !important;
+    }
+
+    #skills .soft-skills-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+        gap:9px !important;
+    }
+
+    #skills .soft-skill{
+        min-height:54px !important;
+
+        padding:12px 11px !important;
+
+        font-size:.9rem !important;
+        line-height:1.15 !important;
+
+        overflow:hidden !important;
+    }
+
+    #skills .soft-skill:hover,
+    #skills .soft-skill:active,
+    #skills .soft-skill:focus{
+        background:var(--skills-dark) !important;
+        color:#ffffff !important;
+
+        border-color:var(--skills-dark) !important;
+
+        transform:none !important;
+        box-shadow:none !important;
+    }
+
+}
+
+
+/* ==========================================
+   VERY SMALL PHONES
+========================================== */
+
+@media (max-width:390px){
+
+    #skills .soft-skills-grid{
+        gap:8px !important;
+    }
+
+    #skills .soft-skill{
+        min-height:50px !important;
+
+        padding:10px 9px !important;
+
+        font-size:.82rem !important;
+    }
+
+}
 
 
 
@@ -15378,12 +15571,14 @@ Monitoring & Evaluation Analyst
         <div class="tools-groups">
 
 
-          <!-- Data and visualisation -->
+          <!-- ========================================
+               DATA & VISUALISATION
+          ========================================= -->
 
           <div class="tools-group">
 
             <div class="tools-group-heading">
-              <h4>Data &amp; visualisation</h4>
+              <h4>Data &amp; Visualisation</h4>
             </div>
 
             <div class="tools-group-grid">
@@ -15413,15 +15608,17 @@ Monitoring & Evaluation Analyst
           </div>
 
 
-          <!-- Design and content -->
+          <!-- ========================================
+               DESIGN & CONTENT
+          ========================================= -->
 
           <div class="tools-group">
 
             <div class="tools-group-heading">
-              <h4>Design &amp; content</h4>
+              <h4>Design &amp; Content</h4>
             </div>
 
-            <div class="tools-group-grid tools-group-grid--three">
+            <div class="tools-group-grid">
 
               <div class="tool-entry">
                 <strong>Photoshop</strong>
@@ -15433,7 +15630,6 @@ Monitoring & Evaluation Analyst
                 <small>Content</small>
               </div>
 
-              
               <div class="tool-entry">
                 <strong>CapCut</strong>
                 <small>Short video</small>
@@ -15449,12 +15645,14 @@ Monitoring & Evaluation Analyst
           </div>
 
 
-          <!-- Productivity and web -->
+          <!-- ========================================
+               PRODUCTIVITY & WEB
+          ========================================= -->
 
           <div class="tools-group">
 
             <div class="tools-group-heading">
-              <h4>Productivity &amp; web</h4>
+              <h4>Productivity &amp; Web</h4>
             </div>
 
             <div class="tools-group-grid">
@@ -15483,10 +15681,63 @@ Monitoring & Evaluation Analyst
 
           </div>
 
+
+          <!-- ========================================
+               SOFT SKILLS
+          ========================================= -->
+
+          <div class="soft-skills-section">
+
+            <div class="tools-group-heading">
+              <h4>Soft Skills</h4>
+            </div>
+
+            <div class="soft-skills-grid">
+
+              <div class="soft-skill">
+                Communication
+              </div>
+
+              <div class="soft-skill">
+                Project Management
+              </div>
+
+              <div class="soft-skill">
+                Critical Thinking
+              </div>
+
+              <div class="soft-skill">
+                Problem Solving
+              </div>
+
+              <div class="soft-skill">
+                Stakeholder Engagement
+              </div>
+
+              <div class="soft-skill">
+                Cross-cultural Collaboration
+              </div>
+
+              <div class="soft-skill">
+                Public Speaking
+              </div>
+
+              <div class="soft-skill">
+                Adaptability
+              </div>
+
+            </div>
+
+          </div>
+
+
         </div>
 
       </div>
 
+
+
+      
     </div>
 
   </div>
