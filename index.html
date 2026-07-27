@@ -12935,67 +12935,101 @@ CONTACT — FIX HOVER CLIPPING
 
 
 /* ==========================================
-   TOOLS — SVG ICONS
+   TOOLS — CLEAN CARD OVERRIDE
 ========================================== */
 
+/* Card */
+
 #skills .tool-entry{
+    background:#fff !important;
+    border:1px solid rgba(18,56,43,.10) !important;
+
     display:flex;
     flex-direction:column;
-    align-items:center;
     justify-content:center;
-    text-align:center;
+    align-items:center;
 
-    gap:16px;
+    gap:18px;
+
+    transition:
+        transform .28s ease,
+        box-shadow .28s ease,
+        border-color .28s ease,
+        background-color .28s ease;
 }
 
+/* Remove the old divider */
+
+#skills .tool-entry::after,
+#skills .tool-entry strong::after{
+    display:none !important;
+    content:none !important;
+}
+
+#skills .tool-entry hr{
+    display:none !important;
+}
+
+#skills .tool-entry strong{
+    border:none !important;
+    box-shadow:none !important;
+    margin:0 !important;
+    padding:0 !important;
+
+    color:#12382b;
+    transition:color .28s ease;
+}
+
+/* Icon */
+
 #skills .tool-icon{
-    width:46px;
-    height:46px;
+    width:56px;
+    height:56px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    color:var(--skills-dark);
-
-    transition:
-        transform .3s ease,
-        color .3s ease;
+    transition:transform .28s ease;
 }
 
 #skills .tool-icon svg{
     width:100%;
     height:100%;
-
-    display:block;
-
-    fill:currentColor;
-    stroke:currentColor;
 }
 
-#skills .tool-entry strong{
-    margin:0;
+/* Hover */
 
-    padding:0;
+#skills .tool-entry:hover{
 
-    border:none;
+    background:#fff !important;
 
-    font-size:1rem;
-    font-weight:700;
+    border-color:#1f5644 !important;
 
-    color:var(--skills-dark);
+    transform:translateY(-8px);
 
-    text-align:center;
+    box-shadow:
+        0 18px 36px rgba(18,56,43,.12);
 }
 
-#skills .tool-entry:hover .tool-icon{
-    transform:scale(1.12);
+/* Keep SVG colours exactly as they are */
+
+#skills .tool-entry:hover .tool-icon,
+#skills .tool-entry:hover .tool-icon svg,
+#skills .tool-entry:hover .tool-icon svg *{
+
+    color:inherit !important;
+    fill:inherit !important;
+    stroke:inherit !important;
+
+    transform:none !important;
 }
 
+/* Only the text changes */
 
-
-
-
+#skills .tool-entry:hover strong{
+    color:#1f5644;
+}
 
 
 
