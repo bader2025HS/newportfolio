@@ -12432,7 +12432,34 @@ CONTACT — FIX HOVER CLIPPING
 
 }
 
+/* ==========================================
+   SKILLS — PHONE LANGUAGE CARD SPACING
+========================================== */
 
+@media (max-width:650px){
+
+    #skills .language-item{
+        min-height:108px !important;
+        row-gap:14px !important;
+        padding:14px 12px 10px !important; /* less bottom padding */
+    }
+
+    /* More space before the level */
+
+    #skills .language-content{
+        margin-bottom:6px !important;
+    }
+
+    /* Bring the level closer to the bottom */
+
+    #skills .language-level{
+        margin-top:0 !important;
+        padding:7px 8px !important;
+
+        align-self:end !important;
+    }
+
+}
 
 
 
