@@ -5082,7 +5082,91 @@ ABOUT MOBILE — BIGGER STAT ICONS
 
 
 
+/* ==========================================
+   RECOMMENDATIONS — STYLE OVERRIDE
+========================================== */
 
+/* Remove blue accent */
+
+#experience .recommendation-card,
+#experience .recommendation-oif{
+    border-top:none !important;
+}
+
+
+/* Darker card */
+
+#experience .recommendation-card{
+
+    background:#f2f5ef !important;
+    border:1px solid rgba(18,56,43,.14) !important;
+
+    box-shadow:none !important;
+
+    transition:
+        background-color .28s ease,
+        border-color .28s ease,
+        transform .28s ease,
+        box-shadow .28s ease;
+}
+
+
+/* Hover */
+
+#experience .recommendation-card:hover{
+
+    background:#ffffff !important;
+
+    border-color:#12382b !important;
+
+    transform:translateY(-8px) !important;
+
+    box-shadow:
+        0 22px 45px rgba(18,56,43,.10) !important;
+
+}
+
+
+/* Slightly darker quote */
+
+#experience .recommendation-quote p{
+    color:#163d31 !important;
+}
+
+
+/* Softer quote mark */
+
+#experience .recommendation-quote::before{
+    color:rgba(18,56,43,.09) !important;
+}
+
+
+/* Better separator */
+
+#experience .recommendation-signatory{
+    border-top:1px solid rgba(18,56,43,.10) !important;
+}
+
+
+/* Button */
+
+#experience .recommendation-link{
+
+    background:#f8faf7 !important;
+
+    border:1px solid rgba(18,56,43,.35) !important;
+
+    color:#12382b !important;
+}
+
+#experience .recommendation-link:hover{
+
+    background:#12382b !important;
+
+    color:#f8faf7 !important;
+
+    border-color:#12382b !important;
+}
 
 
 
