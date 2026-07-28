@@ -5170,7 +5170,146 @@ ABOUT MOBILE — BIGGER STAT ICONS
 
 
 
+/* ==========================================
+   RECOMMENDATIONS — GREEN HOVER
+========================================== */
 
+/* Static */
+
+#experience .recommendation-card{
+    background:#f2f5ef !important;
+    color:#12382b !important;
+}
+
+/* Quote mark */
+
+#experience .recommendation-quote::before{
+    color:#1f5644 !important;
+    opacity:.18;
+    transition:color .28s ease, opacity .28s ease;
+}
+
+/* Organisation */
+
+#experience .recommendation-source,
+#experience .recommendation-name{
+    color:#12382b !important;
+    transition:color .28s ease;
+}
+
+#experience .recommendation-context,
+#experience .recommendation-position{
+    color:rgba(18,56,43,.62) !important;
+    transition:color .28s ease;
+}
+
+/* Quote */
+
+#experience .recommendation-quote p{
+    color:#12382b !important;
+    transition:color .28s ease;
+}
+
+/* Button */
+
+#experience .recommendation-link{
+    background:transparent !important;
+    color:#12382b !important;
+    border:1px solid rgba(18,56,43,.35) !important;
+
+    transition:
+        background .28s ease,
+        color .28s ease,
+        border-color .28s ease;
+}
+
+
+/* ==========================================
+   HOVER
+========================================== */
+
+#experience .recommendation-card:hover{
+
+    background:#12382b !important;
+
+    border-color:#12382b !important;
+
+    transform:translateY(-8px) !important;
+
+    box-shadow:
+        0 20px 45px rgba(18,56,43,.18) !important;
+}
+
+/* Everything becomes white */
+
+#experience .recommendation-card:hover
+.recommendation-source,
+
+#experience .recommendation-card:hover
+.recommendation-name,
+
+#experience .recommendation-card:hover
+.recommendation-quote p{
+
+    color:#ffffff !important;
+}
+
+#experience .recommendation-card:hover
+.recommendation-context,
+
+#experience .recommendation-card:hover
+.recommendation-position{
+
+    color:rgba(255,255,255,.72) !important;
+}
+
+/* Quote mark */
+
+#experience .recommendation-card:hover
+.recommendation-quote::before{
+
+    color:#8ed4bf !important;
+    opacity:.35;
+}
+
+/* Divider */
+
+#experience .recommendation-card:hover
+.recommendation-signatory{
+
+    border-top-color:rgba(255,255,255,.18) !important;
+}
+
+/* Badge */
+
+#experience .recommendation-card:hover
+.recommendation-document-label{
+
+    color:#ffffff !important;
+    border-color:rgba(255,255,255,.35) !important;
+}
+
+/* Button */
+
+#experience .recommendation-card:hover
+.recommendation-link{
+
+    background:#ffffff !important;
+
+    color:#12382b !important;
+
+    border-color:#ffffff !important;
+}
+
+#experience .recommendation-card:hover
+.recommendation-link:hover{
+
+    background:#8ed4bf !important;
+
+    border-color:#8ed4bf !important;
+
+    color:#12382b !important;
+}
 
 
 
