@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-  <title>Portfoliooo</title>
+  <title>Portfolio</title>
   <link rel="icon" type="image/png" href="favicon-32x32[1].png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -6746,7 +6746,53 @@ article:first-child:hover
 }
 
 
+/* ==========================================
+   RECOMMENDATION DIVIDERS — HOVER
+========================================== */
 
+/* Base divider */
+
+#experience .recommendation-signatory{
+
+    border-top:1px solid rgba(18,56,43,.10) !important;
+
+    transition:
+        border-color .25s ease,
+        border-width .25s ease;
+}
+
+
+/* -------------------------
+   OMAN
+------------------------- */
+
+#experience .recommendations-list article:nth-child(1):hover
+.recommendation-signatory{
+
+    border-top:2px solid #C62828 !important;
+}
+
+
+/* -------------------------
+   BNP
+------------------------- */
+
+#experience .recommendations-list article:nth-child(2):hover
+.recommendation-signatory{
+
+    border-top:2px solid #1f5644 !important;
+}
+
+
+/* -------------------------
+   OIF
+------------------------- */
+
+#experience .recommendations-list article:nth-child(3):hover
+.recommendation-signatory{
+
+    border-top:2px solid #4969A8 !important;
+}
 
 
 
