@@ -6166,7 +6166,68 @@ ABOUT MOBILE — BIGGER STAT ICONS
 
 
 
-    
+    /* ==========================================
+   RECOMMENDATION LOGOS — OVERRIDE
+========================================== */
+
+/* All logos */
+
+#experience .recommendation-logo{
+
+    width:56px !important;
+    height:56px !important;
+    flex:0 0 56px !important;
+
+    object-fit:contain !important;
+    object-position:center !important;
+
+    transition:
+        transform .28s ease;
+}
+
+
+/* More spacing */
+
+#experience .recommendation-organisation{
+
+    gap:22px !important;
+    align-items:center !important;
+}
+
+
+/* Slight hover */
+
+#experience .recommendation-card:hover
+.recommendation-logo{
+
+    transform:scale(1.05);
+}
+
+
+/* ==========================================
+   Embassy logo only
+========================================== */
+
+/* First recommendation card */
+
+#experience .recommendations-list
+article:first-child
+.recommendation-logo{
+
+    width:68px !important;
+    height:68px !important;
+    flex-basis:68px !important;
+}
+
+
+/* Keep it slightly larger on hover */
+
+#experience .recommendations-list
+article:first-child:hover
+.recommendation-logo{
+
+    transform:scale(1.03);
+}
 
 
 
@@ -16436,7 +16497,7 @@ Working across languages in international, academic and professional environment
         <div class="recommendation-organisation">
 
           <img
-            src="oman logo1.png"
+            src="oman fm.png"
             alt="Organisation Internationale de la Francophonie logo"
             class="recommendation-logo"
           >
