@@ -3872,18 +3872,31 @@ ABOUT MOBILE — BIGGER STAT ICONS
 
 
     
-
-/* Refugees icon stays green on mobile tap */
+/* ==========================================
+   REFUGEES ICON — NEVER CHANGE ON MOBILE
+========================================== */
 
 @media (max-width:750px){
 
-    #about .about-stat:first-child:active svg,
-    #about .about-stat:first-child:active svg *,
-    #about .about-stat:first-child:hover svg,
-    #about .about-stat:first-child:hover svg *{
-        color:#1f5644 !important;
-        fill:#1f5644 !important;
-        stroke:#1f5644 !important;
+    #about .about-stat:first-child .about-stat-icon,
+    #about .about-stat:first-child .about-stat-icon svg,
+    #about .about-stat:first-child .about-stat-icon svg *,
+
+    #about .about-stat:first-child:hover .about-stat-icon,
+    #about .about-stat:first-child:hover .about-stat-icon svg,
+    #about .about-stat:first-child:hover .about-stat-icon svg *,
+
+    #about .about-stat:first-child:active .about-stat-icon,
+    #about .about-stat:first-child:active .about-stat-icon svg,
+    #about .about-stat:first-child:active .about-stat-icon svg *,
+
+    #about .about-stat:first-child:focus .about-stat-icon,
+    #about .about-stat:first-child:focus .about-stat-icon svg,
+    #about .about-stat:first-child:focus .about-stat-icon svg *{
+        color:#fff !important;
+        fill:#fff !important;
+        stroke:#fff !important;
+        transform:none !important;
     }
 
 }
