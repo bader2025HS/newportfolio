@@ -3769,7 +3769,106 @@ ABOUT MOBILE — BIGGER STAT ICONS
 
 
 
+/* ==========================================
+   ABOUT — FINAL MOBILE TAP EFFECT
+========================================== */
 
+@media (max-width:750px){
+
+    /* Focus cards */
+
+    #about .about-focus li{
+        -webkit-tap-highlight-color:transparent !important;
+
+        transition:
+            background-color .2s ease,
+            border-color .2s ease,
+            color .2s ease,
+            transform .15s ease !important;
+    }
+
+    #about .about-focus li:active,
+    #about .about-focus li:focus,
+    #about .about-focus li:focus-within{
+        background:#1f5644 !important;
+        border-color:#1f5644 !important;
+        color:#fff !important;
+
+        transform:scale(.96) !important;
+    }
+
+    #about .about-focus li:active .about-focus-icon,
+    #about .about-focus li:focus .about-focus-icon,
+    #about .about-focus li:focus-within .about-focus-icon,
+    #about .about-focus li:active svg,
+    #about .about-focus li:active svg *,
+    #about .about-focus li:focus svg,
+    #about .about-focus li:focus svg *,
+    #about .about-focus li:focus-within svg,
+    #about .about-focus li:focus-within svg *{
+        color:#fff !important;
+        fill:#fff !important;
+        stroke:#fff !important;
+    }
+
+
+    /* Stat cards */
+
+    #about .about-stat{
+        -webkit-tap-highlight-color:transparent !important;
+
+        transition:
+            background-color .2s ease,
+            border-color .2s ease,
+            color .2s ease,
+            transform .15s ease,
+            box-shadow .2s ease !important;
+    }
+
+    #about .about-stat:active,
+    #about .about-stat:focus,
+    #about .about-stat:focus-within{
+        background:#fff !important;
+        border-color:#1f5644 !important;
+        color:#1f5644 !important;
+
+        transform:scale(.975) !important;
+
+        box-shadow:0 8px 18px rgba(18,56,43,.18) !important;
+    }
+
+    #about .about-stat:active .about-stat-number,
+    #about .about-stat:active .about-stat-label,
+    #about .about-stat:active small,
+    #about .about-stat:focus .about-stat-number,
+    #about .about-stat:focus .about-stat-label,
+    #about .about-stat:focus small,
+    #about .about-stat:focus-within .about-stat-number,
+    #about .about-stat:focus-within .about-stat-label,
+    #about .about-stat:focus-within small{
+        color:#1f5644 !important;
+    }
+
+    #about .about-stat:active .about-stat-icon,
+    #about .about-stat:active svg,
+    #about .about-stat:active svg *,
+    #about .about-stat:focus .about-stat-icon,
+    #about .about-stat:focus svg,
+    #about .about-stat:focus svg *,
+    #about .about-stat:focus-within .about-stat-icon,
+    #about .about-stat:focus-within svg,
+    #about .about-stat:focus-within svg *{
+        color:#1f5644 !important;
+        fill:#1f5644 !important;
+        stroke:#1f5644 !important;
+    }
+
+    #about .about-stat:active small,
+    #about .about-stat:focus small,
+    #about .about-stat:focus-within small{
+        border-top-color:rgba(31,86,68,.18) !important;
+    }
+}
 
 
     
