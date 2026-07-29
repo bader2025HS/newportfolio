@@ -15473,6 +15473,48 @@ section .oversized-label > span {
     }
 }
 
+
+    /* ==========================================
+   EXPERIENCE — FINAL HEIGHT FIX
+========================================== */
+
+@media (min-width:751px){
+
+    #experience{
+        min-height:0 !important;
+        height:auto !important;
+
+        padding-bottom:80px !important;
+    }
+
+    #experience .experience-container{
+        min-height:0 !important;
+        height:auto !important;
+    }
+
+    /* This is a nested section, so cancel the
+       global section { min-height:100vh } rule */
+    #experience .experience-recommendations{
+        min-height:0 !important;
+        height:auto !important;
+
+        padding:0 !important;
+
+        margin-top:80px !important;
+        margin-bottom:0 !important;
+    }
+
+    #experience .recommendations-list{
+        min-height:0 !important;
+        height:auto !important;
+
+        margin-bottom:0 !important;
+    }
+
+    #experience .recommendation-card{
+        margin-bottom:0 !important;
+    }
+}
     
     
   </style>
