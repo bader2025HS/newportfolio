@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-  <title>PortfoliOOo</title>
+  <title>Portfolio</title>
   <link rel="icon" type="image/png" href="favicon-32x32[1].png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -3926,7 +3926,43 @@ ABOUT MOBILE — BIGGER STAT ICONS
 }
 
 
+/* ==========================================
+   REFUGEES ICON — ALWAYS WHITE ON MOBILE
+========================================== */
 
+@media (max-width:750px){
+
+    #about .about-stat:first-child .about-stat-icon,
+    #about .about-stat:first-child .about-stat-icon svg,
+    #about .about-stat:first-child .about-stat-icon svg *,
+
+    #about .about-stat:first-child:hover .about-stat-icon,
+    #about .about-stat:first-child:hover .about-stat-icon svg,
+    #about .about-stat:first-child:hover .about-stat-icon svg *,
+
+    #about .about-stat:first-child:active .about-stat-icon,
+    #about .about-stat:first-child:active .about-stat-icon svg,
+    #about .about-stat:first-child:active .about-stat-icon svg *,
+
+    #about .about-stat:first-child:focus .about-stat-icon,
+    #about .about-stat:first-child:focus .about-stat-icon svg,
+    #about .about-stat:first-child:focus .about-stat-icon svg *{
+        color:#fff !important;
+        fill:#fff !important;
+        stroke:#fff !important;
+        transform:none !important;
+    }
+
+    /* Keep invisible/background SVG elements invisible */
+    #about .about-stat:first-child .about-stat-icon svg rect[fill="none"],
+    #about .about-stat:first-child .about-stat-icon svg g[id="invisible_box"] rect,
+    #about .about-stat:first-child .about-stat-icon svg g[id="SVGRepo_bgCarrier"]{
+        fill:none !important;
+        stroke:none !important;
+    }
+}
+
+    
     
 
 
@@ -15382,7 +15418,60 @@ section .oversized-label > span {
     }
 }
 
+/* ==========================================
+   INTRO + EXPERIENCE — REMOVE ZOOM EMPTY SPACE
+========================================== */
 
+@media (min-width:751px){
+
+    /* Intro / hero section */
+    #home,
+    #hero,
+    .hero,
+    .home-section,
+    .hero-section{
+        min-height:0 !important;
+        height:auto !important;
+    }
+
+    #home .hero-container,
+    #home .home-container,
+    #hero .hero-container,
+    .hero .hero-container,
+    .home-section .container,
+    .hero-section .container{
+        min-height:0 !important;
+        height:auto !important;
+    }
+
+    /* Keep a normal amount of spacing below intro content */
+    #home,
+    #hero,
+    .hero,
+    .home-section,
+    .hero-section{
+        padding-bottom:100px !important;
+    }
+
+
+    /* Experience section */
+    #experience{
+        min-height:0 !important;
+        height:auto !important;
+    }
+
+    #experience .experience-container,
+    #experience .experience-wrapper,
+    #experience .experience-layout,
+    #experience .experience-grid{
+        min-height:0 !important;
+        height:auto !important;
+    }
+
+    #experience{
+        padding-bottom:100px !important;
+    }
+}
 
     
     
