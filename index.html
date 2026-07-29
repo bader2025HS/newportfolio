@@ -3526,7 +3526,127 @@ ABOUT MOBILE — BIGGER STAT ICONS
 }
 
 
+/* ==========================================
+   ABOUT — MOBILE COMPACT + TAP EFFECT
+========================================== */
 
+@media (max-width:750px){
+
+    /* ---------- Focus panel ---------- */
+
+    #about .about-focus{
+        padding:16px 12px !important;
+    }
+
+    #about .about-focus > h3{
+        margin-bottom:14px !important;
+    }
+
+    #about .about-focus ul{
+        gap:6px !important;
+    }
+
+    #about .about-focus li{
+        min-height:68px !important;
+        padding:10px 6px !important;
+        gap:6px !important;
+
+        transition:
+            background .2s ease,
+            border-color .2s ease,
+            color .2s ease,
+            transform .2s ease !important;
+    }
+
+    #about .about-focus-icon{
+        width:30px !important;
+        height:30px !important;
+    }
+
+    #about .about-focus-icon svg{
+        width:26px !important;
+        height:26px !important;
+    }
+
+    #about .about-focus li > span:last-child{
+        font-size:.70rem !important;
+        line-height:1.15 !important;
+    }
+
+    /* Tap effect */
+
+    #about .about-focus li:active{
+        background:#1f5644 !important;
+        border-color:#1f5644 !important;
+        color:#fff !important;
+        transform:scale(.97) !important;
+    }
+
+    #about .about-focus li:active svg,
+    #about .about-focus li:active svg *{
+        color:#fff !important;
+        fill:#fff !important;
+        stroke:#fff !important;
+    }
+
+
+    /* ---------- Stats ---------- */
+
+    #about .about-stat{
+        padding:18px 16px !important;
+
+        grid-template-columns:52px minmax(0,1fr) !important;
+        column-gap:14px !important;
+    }
+
+    #about .about-stat-icon{
+        width:52px !important;
+        height:52px !important;
+    }
+
+    #about .about-stat-icon svg{
+        width:44px !important;
+        height:44px !important;
+    }
+
+    #about .about-stat-number{
+        font-size:2.9rem !important;
+    }
+
+    #about .about-stat-label{
+        font-size:.72rem !important;
+    }
+
+    #about .about-stat small{
+        margin-top:6px !important;
+        padding-top:10px !important;
+        font-size:.82rem !important;
+        line-height:1.45 !important;
+    }
+
+    /* Stronger tap effect */
+
+    #about .about-stat:active{
+        transform:scale(.98) !important;
+        box-shadow:0 8px 20px rgba(0,0,0,.15) !important;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
