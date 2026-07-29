@@ -1125,6 +1125,25 @@ section {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
 /* ==========================================
    ABOUT SECTION — COMPLETE CLEAN CSS
 ========================================== */
@@ -3428,7 +3447,94 @@ ABOUT MOBILE — BIGGER STAT ICONS
 
 
 
+/* ==========================================
+   ABOUT — COMPACT DESKTOP OVERRIDE
+========================================== */
 
+@media (min-width:751px){
+
+    /* Focus panel */
+    #about .about-focus{
+        padding:26px 18px !important;
+    }
+
+    #about .about-focus > h3{
+        margin-bottom:18px !important;
+    }
+
+    #about .about-focus ul{
+        gap:10px !important;
+    }
+
+    #about .about-focus li{
+        min-height:88px !important;
+        padding:14px 18px !important;
+
+        grid-template-columns:38px 1fr !important;
+        column-gap:10px !important;
+    }
+
+    #about .about-focus-icon{
+        width:38px !important;
+        height:38px !important;
+    }
+
+    #about .about-focus-icon svg{
+        width:32px !important;
+        height:32px !important;
+    }
+
+    #about .about-focus li > span:last-child{
+        font-size:.92rem !important;
+    }
+
+
+    /* Stats */
+    #about .about-stat{
+        min-height:270px !important;
+        padding:24px 26px !important;
+    }
+
+    #about .about-stat-icon{
+        width:40px !important;
+        height:40px !important;
+        margin-bottom:14px !important;
+    }
+
+    #about .about-stat-icon svg{
+        width:34px !important;
+        height:34px !important;
+    }
+
+    #about .about-stat-number{
+        font-size:clamp(3.3rem,4.4vw,4.5rem) !important;
+    }
+
+    #about .about-stat-line{
+        margin:14px 0 12px !important;
+    }
+
+    #about .about-stat-label{
+        margin-bottom:12px !important;
+        font-size:.88rem !important;
+    }
+
+    #about .about-stat small{
+        font-size:.9rem !important;
+        line-height:1.55 !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
