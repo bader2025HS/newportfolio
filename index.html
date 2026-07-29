@@ -3649,7 +3649,122 @@ ABOUT MOBILE — BIGGER STAT ICONS
 
 
 
+/* ==========================================
+   ABOUT — FINAL MOBILE SIZE + TAP EFFECT
+========================================== */
 
+@media (max-width:750px){
+
+    /* Focus cards */
+
+    #about .about-focus{
+        padding:14px 10px !important;
+    }
+
+    #about .about-focus ul{
+        gap:6px !important;
+    }
+
+    #about .about-focus li{
+        min-height:62px !important;
+        padding:8px 6px !important;
+        gap:5px !important;
+    }
+
+    #about .about-focus-icon{
+        width:24px !important;
+        height:24px !important;
+    }
+
+    #about .about-focus-icon svg{
+        width:22px !important;
+        height:22px !important;
+    }
+
+    #about .about-focus li > span:last-child{
+        font-size:.66rem !important;
+        line-height:1.15 !important;
+    }
+
+    /* Stat cards */
+
+    #about .about-stats-grid{
+        gap:8px !important;
+    }
+
+    #about .about-stat{
+        padding:14px 14px !important;
+
+        grid-template-columns:42px 1fr !important;
+        column-gap:10px !important;
+    }
+
+    #about .about-stat-icon{
+        width:42px !important;
+        height:42px !important;
+    }
+
+    #about .about-stat-icon svg{
+        width:36px !important;
+        height:36px !important;
+    }
+
+    #about .about-stat-number{
+        font-size:2.5rem !important;
+    }
+
+    #about .about-stat-label{
+        font-size:.66rem !important;
+    }
+
+    #about .about-stat small{
+        margin-top:5px !important;
+        padding-top:8px !important;
+
+        font-size:.77rem !important;
+        line-height:1.4 !important;
+    }
+
+    /* Focus tap animation */
+
+    #about .about-focus li{
+        transition:
+            background .2s ease,
+            border-color .2s ease,
+            color .2s ease,
+            transform .15s ease !important;
+    }
+
+    #about .about-focus li:active{
+        background:#1f5644 !important;
+        border-color:#1f5644 !important;
+        color:#fff !important;
+
+        transform:scale(.96) !important;
+    }
+
+    #about .about-focus li:active svg,
+    #about .about-focus li:active svg *{
+        color:#fff !important;
+        fill:#fff !important;
+        stroke:#fff !important;
+    }
+
+    /* Stat tap animation */
+
+    #about .about-stat{
+        transition:
+            transform .15s ease,
+            box-shadow .2s ease,
+            background .2s ease !important;
+    }
+
+    #about .about-stat:active{
+        transform:scale(.975) !important;
+        box-shadow:0 8px 18px rgba(18,56,43,.18) !important;
+    }
+
+}
 
 
 
