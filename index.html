@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-  <title>Portfolio</title>
+  <title>Portfolioooo</title>
   <link rel="icon" type="image/png" href="favicon-32x32[1].png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -6936,7 +6936,41 @@ article:first-child:hover
 }
 
 
+/* ==========================================
+   OMAN CARD — REMOVE HOVER SHAKE
+========================================== */
 
+/* Reserve the 2px frame before hover */
+#experience .recommendations-list article:nth-child(1){
+    border-width:2px !important;
+    border-style:solid !important;
+    border-color:rgba(18,56,43,.10) !important;
+}
+
+/* Hover changes only the frame colour */
+#experience .recommendations-list article:nth-child(1):hover{
+    border-width:2px !important;
+    border-style:solid !important;
+    border-color:#C62828 !important;
+}
+
+
+/* Reserve the 2px divider before hover */
+#experience .recommendations-list article:nth-child(1)
+.recommendation-signatory{
+    border-top-width:2px !important;
+    border-top-style:solid !important;
+    border-top-color:rgba(18,56,43,.10) !important;
+
+    transition:border-color .25s ease !important;
+}
+
+/* Hover changes only the divider colour */
+#experience .recommendations-list article:nth-child(1):hover
+.recommendation-signatory{
+    border-top-width:2px !important;
+    border-top-color:#C62828 !important;
+}
 
 
 
