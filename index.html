@@ -7327,7 +7327,109 @@ article:first-child
     color:inherit !important;
 }
 
+/* ==========================================
+   RECOMMENDATION BUTTONS — FINAL HOVER FIX
+   Put this at the very end of the CSS
+========================================== */
 
+/* Smooth transition — all buttons */
+#experience .recommendations-list .recommendation-link{
+    border:2px solid currentColor !important;
+
+    transition:
+        background-color .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease !important;
+
+    transform:none !important;
+}
+
+#experience .recommendations-list .recommendation-link:hover,
+#experience .recommendations-list .recommendation-link:focus-visible{
+    transform:none !important;
+}
+
+
+/* ==========================================
+   1 — OMAN
+========================================== */
+
+#experience .recommendations-list article:nth-child(1)
+.recommendation-link:hover,
+#experience .recommendations-list article:nth-child(1)
+.recommendation-link:focus-visible{
+
+    background:#ffffff !important;
+    color:#C62828 !important;
+    border-color:#C62828 !important;
+
+    box-shadow:
+        inset 0 -4px 0 #C62828,
+        0 8px 18px rgba(198,40,40,.12) !important;
+}
+
+#experience .recommendations-list article:nth-child(1)
+.recommendation-link:hover span,
+#experience .recommendations-list article:nth-child(1)
+.recommendation-link:focus-visible span{
+
+    color:#C62828 !important;
+}
+
+
+/* ==========================================
+   2 — BNP PARIBAS
+========================================== */
+
+#experience .recommendations-list article:nth-child(2)
+.recommendation-link:hover,
+#experience .recommendations-list article:nth-child(2)
+.recommendation-link:focus-visible{
+
+    background:#ffffff !important;
+    color:#1f5644 !important;
+    border-color:#1f5644 !important;
+
+    box-shadow:
+        inset 0 -4px 0 #1f5644,
+        0 8px 18px rgba(31,86,68,.12) !important;
+}
+
+#experience .recommendations-list article:nth-child(2)
+.recommendation-link:hover span,
+#experience .recommendations-list article:nth-child(2)
+.recommendation-link:focus-visible span{
+
+    color:#1f5644 !important;
+}
+
+
+/* ==========================================
+   3 — OIF
+========================================== */
+
+#experience .recommendations-list article:nth-child(3)
+.recommendation-link:hover,
+#experience .recommendations-list article:nth-child(3)
+.recommendation-link:focus-visible{
+
+    background:#ffffff !important;
+    color:#234A8C !important;
+    border-color:#234A8C !important;
+
+    box-shadow:
+        inset 0 -4px 0 #234A8C,
+        0 8px 18px rgba(35,74,140,.12) !important;
+}
+
+#experience .recommendations-list article:nth-child(3)
+.recommendation-link:hover span,
+#experience .recommendations-list article:nth-child(3)
+.recommendation-link:focus-visible span{
+
+    color:#234A8C !important;
+}
 
 
 
