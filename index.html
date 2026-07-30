@@ -7284,7 +7284,48 @@ article:first-child
 
 
 
+/* ==========================================
+   RECOMMENDATION BUTTON HOVER — OVERRIDE
+========================================== */
 
+.recommendation-link{
+    transition:
+        background-color .28s ease,
+        color .28s ease,
+        border-color .28s ease,
+        transform .28s ease,
+        box-shadow .28s ease !important;
+}
+
+.recommendation-link:hover{
+    background:#ffffff !important;
+    transform:translateY(-2px);
+    box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+
+/* Oman */
+.recommendation-oif .recommendation-link:hover{
+    color:#bf1f1f !important;
+    border-color:#bf1f1f !important;
+}
+
+/* BNP Paribas */
+.recommendation-bnpp .recommendation-link:hover{
+    color:#1f5644 !important;
+    border-color:#1f5644 !important;
+}
+
+/* OIF */
+.recommendation-card:not(.recommendation-oif):not(.recommendation-bnpp)
+.recommendation-link:hover{
+    color:#254f9b !important;
+    border-color:#254f9b !important;
+}
+
+/* Force the text itself to inherit the hover color */
+.recommendation-link:hover span{
+    color:inherit !important;
+}
 
 
 
