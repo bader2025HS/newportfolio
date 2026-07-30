@@ -7232,7 +7232,16 @@ article:first-child
 
 
 
+.recommendation-links{
+    display:flex;
+    gap:12px;
+    width:100%;
+}
 
+.recommendation-links .recommendation-link{
+    flex:1;
+    justify-content:center;
+}
 
     
     
@@ -17539,15 +17548,29 @@ Working across languages in international, academic and professional environment
       </div>
 
 
-      <a
-        href="Recommendation Letter Oman Embassy.pdf"
-        class="recommendation-link"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Read the full OIF recommendation letter in a new tab"
-      >
-        <span>Read full letter</span>
-      </a>
+<div class="recommendation-links">
+
+  <a
+    href="Recommendation Letter Embassy of Oman EN.pdf"
+    class="recommendation-link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Read the English translation of the recommendation letter"
+  >
+    <span>🇬🇧 English Translation</span>
+  </a>
+
+  <a
+    href="Recommendation Letter Oman Embassy.pdf"
+    class="recommendation-link"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Read the original French recommendation letter"
+  >
+    <span>🇫🇷 French Original</span>
+  </a>
+
+</div>
 
     </article>
 
