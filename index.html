@@ -16816,40 +16816,54 @@ section .oversized-label > span {
 
 
 
+/* ==========================================
+   GALLERY — FULL-BLEED MAP DIVIDER
+========================================== */
 
-    /* FULL WIDTH MAP */
-
+/* Make the map span the entire viewport */
 .gallery-map{
-    width:100vw !important;
+    position: relative !important;
 
-    margin-left:calc(50% - 50vw) !important;
-    margin-right:calc(50% - 50vw) !important;
+    width: 100vw !important;
+    max-width: none !important;
 
-    margin-top:70px !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
 
-    height:75vh !important;
-    min-height:650px !important;
+    margin-top: 70px !important;
+    margin-bottom: 80px !important;
 
-    border:none !important;
-    border-radius:0 !important;
+    height: clamp(700px, 80vh, 850px) !important;
 
-    overflow:hidden !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
 
-    background:#ffffff !important;
+    overflow: hidden !important;
+}
+
+/* Remove every rounded corner */
+.gallery-map *,
+#visitedMap,
+#visitedMap.leaflet-container{
+    border-radius: 0 !important;
 }
 
 #visitedMap{
     width:100% !important;
     height:100% !important;
-
-    border-radius:0 !important;
-
-    background:#ffffff !important;
 }
 
-#visitedMap.leaflet-container{
-    background:#ffffff !important;
-    border-radius:0 !important;
+/* Remove any frame around the Leaflet map */
+.leaflet-container{
+    border:none !important;
+    box-shadow:none !important;
+}
+
+/* Optional: slightly larger controls */
+.leaflet-top,
+.leaflet-bottom{
+    margin:22px !important;
 }
 
 
