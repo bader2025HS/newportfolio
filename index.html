@@ -16123,7 +16123,155 @@ body.gallery-lightbox-open{
 
 
 
+/* ==========================================
+   GALLERY LIGHTBOX — DESKTOP FINAL OVERRIDE
+   Controls at screen edges + framed image
+========================================== */
 
+@media (min-width: 651px){
+
+  /* Keep the whole lightbox as the positioning area */
+  .gallery-lightbox.gallery-lightbox-mode{
+    position: fixed !important;
+    inset: 0 !important;
+
+    padding: 42px 120px 55px !important;
+  }
+
+
+  /* Centre the photo area */
+  .gallery-lightbox.gallery-lightbox-mode
+  .gallery-lightbox-inner{
+    width: 100% !important;
+    height: 100% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    position: relative !important;
+  }
+
+
+  /* The wrapper follows the exact image dimensions */
+  .gallery-lightbox.gallery-lightbox-mode
+  .gallery-lightbox-media{
+    position: relative !important;
+
+    width: fit-content !important;
+    height: fit-content !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+
+    padding: 8px !important;
+
+    background: rgba(246, 248, 245, 0.98) !important;
+
+    border: 1px solid rgba(246, 248, 245, 0.9) !important;
+    border-radius: 0 !important;
+
+    box-shadow:
+      0 24px 70px rgba(0, 0, 0, 0.28),
+      0 0 0 1px rgba(255, 255, 255, 0.12) !important;
+  }
+
+
+  /* Image remains fully visible inside the viewport */
+  .gallery-lightbox.gallery-lightbox-mode
+  .gallery-lightbox-image{
+    display: block !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    max-width: calc(100vw - 280px) !important;
+    max-height: calc(100vh - 120px) !important;
+
+    object-fit: contain !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+
+  /* Left arrow at the left screen edge */
+  .gallery-lightbox.gallery-lightbox-mode
+  .gallery-lightbox-prev{
+    position: fixed !important;
+
+    left: 28px !important;
+    right: auto !important;
+    top: 50% !important;
+
+    transform: translateY(-50%) !important;
+  }
+
+
+  /* Right arrow at the right screen edge */
+  .gallery-lightbox.gallery-lightbox-mode
+  .gallery-lightbox-next{
+    position: fixed !important;
+
+    right: 28px !important;
+    left: auto !important;
+    top: 50% !important;
+
+    transform: translateY(-50%) !important;
+  }
+
+
+  /* Close button at the top-right screen edge */
+  .gallery-lightbox.gallery-lightbox-mode
+  .gallery-lightbox-close{
+    position: fixed !important;
+
+    top: 28px !important;
+    right: 28px !important;
+    left: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+  }
+
+
+  /* Cleaner outlined controls */
+  .gallery-lightbox.gallery-lightbox-mode
+  .gallery-lightbox-arrow,
+  .gallery-lightbox.gallery-lightbox-mode
+  .gallery-lightbox-close{
+    border: 1px solid rgba(246, 248, 245, 0.9) !important;
+    border-radius: 0 !important;
+
+    background: rgba(246, 248, 245, 0.96) !important;
+    color: #173b30 !important;
+
+    box-shadow: none !important;
+  }
+
+
+  .gallery-lightbox.gallery-lightbox-mode
+  .gallery-lightbox-arrow:hover,
+  .gallery-lightbox.gallery-lightbox-mode
+  .gallery-lightbox-close:hover{
+    background: #173b30 !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.65) !important;
+  }
+
+
+  /* Keep caption attached to bottom-right of framed photo */
+  .gallery-lightbox.gallery-lightbox-mode
+  .gallery-lightbox-info{
+    right: 8px !important;
+    bottom: 8px !important;
+    left: auto !important;
+
+    transform: none !important;
+
+    z-index: 5 !important;
+  }
+}
 
 
 
@@ -16816,55 +16964,7 @@ section .oversized-label > span {
 
 
 
-/* ==========================================
-   GALLERY — FULL-BLEED MAP DIVIDER
-========================================== */
 
-/* Make the map span the entire viewport */
-.gallery-map{
-    position: relative !important;
-
-    width: 100vw !important;
-    max-width: none !important;
-
-    margin-left: calc(50% - 50vw) !important;
-    margin-right: calc(50% - 50vw) !important;
-
-    margin-top: 70px !important;
-    margin-bottom: 80px !important;
-
-    height: clamp(700px, 80vh, 850px) !important;
-
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-
-    overflow: hidden !important;
-}
-
-/* Remove every rounded corner */
-.gallery-map *,
-#visitedMap,
-#visitedMap.leaflet-container{
-    border-radius: 0 !important;
-}
-
-#visitedMap{
-    width:100% !important;
-    height:100% !important;
-}
-
-/* Remove any frame around the Leaflet map */
-.leaflet-container{
-    border:none !important;
-    box-shadow:none !important;
-}
-
-/* Optional: slightly larger controls */
-.leaflet-top,
-.leaflet-bottom{
-    margin:22px !important;
-}
 
 
     
