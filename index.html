@@ -14979,7 +14979,57 @@ CONTACT — FIX HOVER CLIPPING
 
 
 
+/* ==========================================
+   SKILLS LANGUAGES — FULL-WIDTH ROW HOVER
+========================================== */
 
+@media (min-width: 651px){
+
+    #skills .languages-list{
+        overflow: visible !important;
+    }
+
+    #skills .language-item{
+        position: relative !important;
+        z-index: 0 !important;
+
+        background: transparent !important;
+    }
+
+    /* Full-width hover layer */
+    #skills .language-item::before{
+        content: "";
+
+        position: absolute !important;
+        z-index: -1 !important;
+
+        top: 0 !important;
+        bottom: 0 !important;
+
+        /* Extend across the panel's side padding */
+        left: calc(-1 * clamp(34px, 3.4vw, 54px)) !important;
+        right: calc(-1 * clamp(34px, 3.4vw, 54px)) !important;
+
+        background: rgba(255, 255, 255, 0.065) !important;
+
+        opacity: 0 !important;
+
+        transition: opacity 0.28s ease !important;
+
+        pointer-events: none !important;
+    }
+
+    #skills .language-item:hover{
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+
+        background: transparent !important;
+    }
+
+    #skills .language-item:hover::before{
+        opacity: 1 !important;
+    }
+}
 
 
 
