@@ -17017,6 +17017,72 @@ section .oversized-label > span {
 
 
 
+    /* ==========================================
+   STICKY HERO — NEXT SECTIONS COVER HOME
+========================================== */
+
+/* The first section stays pinned behind the page */
+#home{
+    position: sticky !important;
+    top: 0 !important;
+
+    height: 100vh !important;
+    min-height: 100vh !important;
+
+    z-index: 0 !important;
+
+    overflow: hidden !important;
+}
+
+/* Every section after Home scrolls above it */
+#about,
+#experience,
+#education,
+#skills,
+#activities,
+#projects,
+#work,
+#gallery,
+#contact{
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* Prevent gaps from revealing the hero between sections */
+#about,
+#experience,
+#education,
+#skills,
+#activities,
+#projects,
+#work,
+#gallery,
+#contact{
+    margin-top: 0 !important;
+}
+
+/* Footer must also cover the hero */
+.site-footer{
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px){
+
+    #home{
+        height: 100svh !important;
+        min-height: 100svh !important;
+    }
+}
+
+
+
+
     
   </style>
 </head>
@@ -19448,15 +19514,6 @@ Three promotional graphics developed to engage audiences and promote academic an
 </section>
     
 
-
-
-
-
-
-
-
-
-
 <footer class="site-footer">
 
   <div class="footer-inner">
@@ -19465,9 +19522,13 @@ Three promotional graphics developed to engage audiences and promote academic an
       © 2026 Basile Suliman
     </p>
 
-    <p>
-      Copyright © Made with  by Bader
-    </p>
+<p class="footer-credit">
+  Made with
+  <svg class="footer-heart" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 21s-7-4.4-9.5-8C.6 10.2 2 6.8 5.3 5.8c2-.6 4 .1 5.2 1.9 1.2-1.8 3.2-2.5 5.2-1.9C19 6.8 20.4 10.2 21.5 13 19 16.6 12 21 12 21Z"/>
+  </svg>
+  by <strong>Basile Suliman</strong>
+</p>
 
     <a href="#home">
       Back to top ↑
