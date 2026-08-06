@@ -17200,68 +17200,70 @@ h2,
 
 
 /* ==========================================
-   FOOTER — MOBILE FIX
+   FOOTER — COMPACT MOBILE LAYOUT
 ========================================== */
 
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-  .site-footer {
-    padding: 42px 20px 36px !important;
+  .site-footer{
+    padding:28px 18px !important;
   }
 
-  .footer-inner {
-    width: 100% !important;
+  .footer-inner{
+    display:grid !important;
+    grid-template-columns:1fr auto !important;
+    grid-template-areas:
+      "copyright top"
+      "credit credit";
+    align-items:center !important;
+    gap:14px 18px !important;
 
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    gap: 18px !important;
-
-    text-align: center !important;
+    width:100% !important;
   }
 
-  .footer-inner p,
-  .footer-credit {
-    width: 100% !important;
-
-    margin: 0 !important;
-
-    text-align: center !important;
-
-    font-size: 0.9rem !important;
-    line-height: 1.5 !important;
-
-    white-space: nowrap !important;
+  .footer-inner > p:first-child{
+    grid-area:copyright;
+    margin:0 !important;
+    justify-self:start;
+    text-align:left !important;
   }
 
-  .footer-heart {
-    display: inline-flex !important;
-    vertical-align: middle !important;
+  .footer-credit{
+    grid-area:credit;
+    margin:0 !important;
+    justify-self:start;
+    text-align:left !important;
 
-    margin: 0 4px !important;
-  }
-
-  .footer-heart svg {
-    width: 19px !important;
-    height: 19px !important;
+    display:flex !important;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:4px;
   }
 
   .back-to-top,
-  .footer-back-top {
-    position: static !important;
+  .footer-back-top{
+    grid-area:top;
 
-    width: auto !important;
+    margin:0 !important;
 
-    margin: 8px auto 0 !important;
+    justify-self:end;
+    align-self:center;
 
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    text-align:right !important;
+    white-space:nowrap;
+  }
 
-    font-size: 0.95rem !important;
-    text-align: center !important;
+  .footer-inner p,
+  .footer-credit,
+  .back-to-top,
+  .footer-back-top{
+    font-size:.92rem !important;
+    line-height:1.35 !important;
+  }
+
+  .footer-heart svg{
+    width:18px !important;
+    height:18px !important;
   }
 
 }
