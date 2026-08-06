@@ -17129,7 +17129,73 @@ section .oversized-label > span {
 }
     
 
+/* ==========================================
+   HOME — FULL-SCREEN LANDING SECTION
+   Keep this as the final CSS override
+========================================== */
 
+#home {
+  width: 100% !important;
+
+  /* Fallback + modern mobile viewport units */
+  min-height: 100vh !important;
+  min-height: 100svh !important;
+  min-height: 100dvh !important;
+
+  height: auto !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  background: #1d4738 !important;
+}
+
+#home > .section-inner.hero {
+  width: 100% !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+
+/* Mobile: preserve the full landing screen */
+@media (max-width: 768px) {
+  #home {
+    min-height: 100vh !important;
+    min-height: 100svh !important;
+    min-height: 100dvh !important;
+
+    align-items: center !important;
+  }
+}
+
+    /* ==========================================
+   KEEP SECTION TITLES ON ONE LINE
+========================================== */
+
+h2,
+.section-title,
+.section-heading,
+#about .about-header h2,
+#experience h2,
+#education h2,
+#skills h2,
+#activities h2,
+#work h2,
+#gallery h2,
+#contact h2 {
+    white-space: nowrap !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+    hyphens: none !important;
+}
+
+    @media (max-width: 1200px) {
+    h2,
+    .section-title,
+    .section-heading {
+        font-size: clamp(2.2rem, 4vw, 4.5rem) !important;
+    }
+}
 
 
 
