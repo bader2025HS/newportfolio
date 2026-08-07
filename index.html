@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Basile Suliman | Portfolio</title>
+  <title>Basile Suliman Portfolio</title>
 
   <meta name="description" content="Official portfolio of Basile Suliman. International affairs, diplomacy, sustainability communications, migration, public policy and humanitarian projects.">
 
@@ -17268,6 +17268,146 @@ h2,
 
 }
 
+
+
+    /* ==========================================
+   SECTION TITLES — MOBILE FIX
+   Desktop = one line
+   Mobile = wrap inside screen
+========================================== */
+
+@media (max-width: 768px) {
+
+  h2,
+  .section-title,
+  .section-heading,
+  #about .about-header h2,
+  #experience h2,
+  #education h2,
+  #skills h2,
+  #activities h2,
+  #work h2,
+  #gallery h2,
+  #contact h2 {
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+
+    font-size: clamp(2.4rem, 11vw, 4rem) !important;
+    line-height: 0.95 !important;
+  }
+
+}
+
+
+    /* ==========================================
+   MOBILE — UNIFIED SECTION HEADER ALIGNMENT
+========================================== */
+
+@media (max-width: 768px) {
+
+  /* Same horizontal padding for every section */
+  #about,
+  #experience,
+  #education,
+  #skills,
+  #activities,
+  #work,
+  #gallery,
+  #contact {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+
+  /* All header containers start at same point */
+  #about .about-header,
+  #experience .experience-header,
+  #education .education-header,
+  #skills .skills-header,
+  #activities .activities-header,
+  #work .work-header,
+  #gallery .gallery-header,
+  #contact .contact-header {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+
+  /* Oversized section labels */
+  section .oversized-label {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 0 !important;
+
+    display: flex !important;
+    align-items: flex-end !important;
+
+    text-align: left !important;
+  }
+
+
+  /* Large faded word */
+  section .oversized-label::before {
+    left: 0 !important;
+
+    max-width: 100% !important;
+
+    text-align: left !important;
+  }
+
+
+  /* Small subtitle over oversized word */
+  section .oversized-label > span {
+    left: 0 !important;
+
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+
+    text-align: left !important;
+  }
+
+
+  /* Main section titles */
+  h2,
+  .section-title,
+  .section-heading,
+  #about .about-header h2,
+  #experience h2,
+  #education h2,
+  #skills h2,
+  #activities h2,
+  #work h2,
+  #gallery h2,
+  #contact h2 {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+
+    text-align: left !important;
+
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
+}
     
   </style>
 </head>
