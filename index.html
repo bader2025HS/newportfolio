@@ -17304,16 +17304,21 @@ h2,
 }
 
 
-    /* ==========================================
-   MOBILE — UNIFIED SECTION HEADER ALIGNMENT
+  
+
+
+  /* ==========================================
+   MOBILE — FINAL SECTION HEADER ALIGNMENT
 ========================================== */
 
 @media (max-width: 768px) {
 
-  /* Same horizontal padding for every section */
+  /* ======================================
+     NORMAL SECTIONS
+  ====================================== */
+
   #about,
   #experience,
-  #education,
   #skills,
   #activities,
   #work,
@@ -17324,7 +17329,33 @@ h2,
   }
 
 
-  /* All header containers start at same point */
+  /* ======================================
+     EDUCATION
+     Keep section full-width for timeline
+  ====================================== */
+
+  #education {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Only Education's textual content gets inset */
+  #education .education-container {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+
+  /* ======================================
+     HEADER CONTAINERS
+  ====================================== */
+
   #about .about-header,
   #experience .experience-header,
   #education .education-header,
@@ -17344,7 +17375,10 @@ h2,
   }
 
 
-  /* Oversized section labels */
+  /* ======================================
+     OVERSIZED LABEL
+  ====================================== */
+
   section .oversized-label {
     width: 100% !important;
     max-width: 100% !important;
@@ -17354,27 +17388,15 @@ h2,
 
     padding-left: 0 !important;
 
-    display: flex !important;
-    align-items: flex-end !important;
-
     text-align: left !important;
   }
 
-
-  /* Large faded word */
   section .oversized-label::before {
     left: 0 !important;
-
-    max-width: 100% !important;
-
-    text-align: left !important;
   }
 
-
-  /* Small subtitle over oversized word */
   section .oversized-label > span {
     left: 0 !important;
-
     margin-left: 0 !important;
     padding-left: 0 !important;
 
@@ -17382,13 +17404,16 @@ h2,
   }
 
 
-  /* Main section titles */
+  /* ======================================
+     MAIN SECTION TITLES
+  ====================================== */
+
   h2,
   .section-title,
   .section-heading,
   #about .about-header h2,
   #experience h2,
-  #education h2,
+  #education .education-header h2,
   #skills h2,
   #activities h2,
   #work h2,
@@ -17405,135 +17430,6 @@ h2,
     white-space: normal !important;
     overflow-wrap: normal !important;
     word-break: normal !important;
-  }
-
-}
-
-
-
-    /* ==========================================
-   EDUCATION — MOBILE FULL-WIDTH TIMELINE FIX
-========================================== */
-
-@media (max-width: 768px) {
-
-  /* Section itself has no horizontal padding */
-  #education {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-
-  /* Text/header stays aligned with other sections */
-  #education .education-container {
-    width: 100% !important;
-    max-width: 100% !important;
-
-    margin: 0 !important;
-
-    padding-left: 18px !important;
-    padding-right: 18px !important;
-  }
-
-
-  /* Header starts at same 18px line as other sections */
-  #education .education-header,
-  #education .education-header h2,
-  #education .oversized-label {
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-
-  /* ======================================
-     TIMELINE — TRUE EDGE TO EDGE
-  ====================================== */
-
-  #education .education-timeline {
-    width: 100vw !important;
-    max-width: none !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-top: 80px !important;
-
-    padding-left: 18px !important;
-    padding-right: 18px !important;
-    padding-bottom: 55px !important;
-
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-
-    grid-template-columns: repeat(6, 145px) !important;
-
-    box-sizing: border-box !important;
-  }
-
-
-  /* The horizontal line itself touches BOTH screen edges */
-  #education .edu-line,
-  #education .edu-line-dashed {
-    left: 0 !important;
-    right: auto !important;
-
-    width: max(100vw, 870px) !important;
-
-    margin: 0 !important;
-  }
-
-
-  /* Progress line also begins exactly at screen edge */
-  #education .edu-line-progress {
-    left: 0 !important;
-    margin-left: 0 !important;
-  }
-
-}
-
-
-
-
-    /* ==========================================
-   EDUCATION — MOBILE HEADER POSITION ONLY
-   Timeline remains untouched
-========================================== */
-
-@media (max-width: 768px) {
-
-  #education .education-container {
-    padding-left: 18px !important;
-    padding-right: 18px !important;
-  }
-
-  #education .education-header {
-    width: 100% !important;
-    max-width: 100% !important;
-
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  #education .oversized-label {
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-  }
-
-  #education .education-header h2 {
-    width: 100% !important;
-    max-width: 100% !important;
-
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-
-    text-align: left !important;
-
-    white-space: normal !important;
   }
 
 }
