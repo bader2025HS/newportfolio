@@ -17433,6 +17433,60 @@ h2,
 }
 
 
+
+    /* ==========================================
+   UAE LOGO — BIGGER + NO WHITE BACKGROUND
+   Recommendation card 2
+========================================== */
+
+#experience .recommendations-list article:nth-child(2)
+.recommendation-logo{
+    width:88px !important;
+    height:88px !important;
+
+    object-fit:contain !important;
+
+    background:transparent !important;
+    padding:0 !important;
+    border:none !important;
+
+    transform:none !important;
+}
+
+
+/* If the white box comes from the logo wrapper */
+#experience .recommendations-list article:nth-child(2)
+.recommendation-organisation,
+#experience .recommendations-list article:nth-child(2)
+.recommendation-card-top{
+    background:transparent !important;
+}
+
+
+/* Slightly larger on desktop */
+@media (min-width:769px){
+
+    #experience .recommendations-list article:nth-child(2)
+    .recommendation-logo{
+        width:100px !important;
+        height:100px !important;
+    }
+
+}
+
+
+/* Keep proportion sensible on phones */
+@media (max-width:768px){
+
+    #experience .recommendations-list article:nth-child(2)
+    .recommendation-logo{
+        width:76px !important;
+        height:76px !important;
+    }
+
+}
+    
+
   </style>
 </head>
 
