@@ -17305,7 +17305,132 @@ h2,
 
 
   
+/* ==========================================
+   UAE EMBASSY RECOMMENDATION — FINAL OVERRIDE
+   Card 2
+========================================== */
 
+#experience .recommendations-list article:nth-child(2){
+    --uae-gold:#b79a59;
+    --uae-gold-dark:#8f753d;
+    --uae-gold-light:#d8c38d;
+    --uae-cream:#fbf8f0;
+}
+
+
+/* ------------------------------------------
+   DEFAULT BUTTON
+------------------------------------------ */
+
+#experience .recommendations-list article:nth-child(2)
+.recommendation-link{
+    background:var(--uae-gold) !important;
+    border-color:var(--uae-gold) !important;
+    color:#ffffff !important;
+}
+
+#experience .recommendations-list article:nth-child(2)
+.recommendation-link span{
+    color:#ffffff !important;
+}
+
+
+/* ------------------------------------------
+   CARD HOVER
+------------------------------------------ */
+
+#experience .recommendations-list article:nth-child(2):hover{
+    background:var(--uae-cream) !important;
+
+    border-width:2px !important;
+    border-color:var(--uae-gold) !important;
+
+    box-shadow:
+        0 20px 45px rgba(143,117,61,.14) !important;
+}
+
+
+/* ------------------------------------------
+   ORGANISATION TITLE
+------------------------------------------ */
+
+#experience .recommendations-list article:nth-child(2):hover
+.recommendation-source{
+    color:var(--uae-gold-dark) !important;
+}
+
+
+/* ------------------------------------------
+   KEEP QUOTE TEXT DARK
+------------------------------------------ */
+
+#experience .recommendations-list article:nth-child(2):hover
+.recommendation-quote p,
+#experience .recommendations-list article:nth-child(2):hover
+.recommendation-name,
+#experience .recommendations-list article:nth-child(2):hover
+.recommendation-position{
+    color:#12382b !important;
+}
+
+
+/* ------------------------------------------
+   QUOTATION MARK
+------------------------------------------ */
+
+#experience .recommendations-list article:nth-child(2)
+.recommendation-quote::before{
+    color:var(--uae-gold-light) !important;
+}
+
+#experience .recommendations-list article:nth-child(2):hover
+.recommendation-quote::before{
+    color:var(--uae-gold) !important;
+}
+
+
+/* ------------------------------------------
+   SIGNATORY DIVIDER
+------------------------------------------ */
+
+#experience .recommendations-list article:nth-child(2):hover
+.recommendation-signatory{
+    border-top-color:var(--uae-gold) !important;
+}
+
+
+/* ------------------------------------------
+   BUTTON ON CARD HOVER
+------------------------------------------ */
+
+#experience .recommendations-list article:nth-child(2):hover
+.recommendation-link{
+    background:var(--uae-gold) !important;
+    border-color:var(--uae-gold) !important;
+    color:#ffffff !important;
+}
+
+
+/* ------------------------------------------
+   BUTTON HOVER
+------------------------------------------ */
+
+#experience .recommendations-list article:nth-child(2)
+.recommendation-link:hover,
+#experience .recommendations-list article:nth-child(2)
+.recommendation-link:focus-visible{
+    background:#ffffff !important;
+    color:var(--uae-gold-dark) !important;
+    border-color:var(--uae-gold-dark) !important;
+    box-shadow:none !important;
+}
+
+#experience .recommendations-list article:nth-child(2)
+.recommendation-link:hover span,
+#experience .recommendations-list article:nth-child(2)
+.recommendation-link:focus-visible span{
+    color:var(--uae-gold-dark) !important;
+}
 
 
   </style>
