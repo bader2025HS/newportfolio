@@ -13530,19 +13530,17 @@ CONTACT — FIX HOVER CLIPPING
 }
 
 
-/* ==========================================
-   CONTACT FORM
+
+
+
+    /* ==========================================
+   CONTACT FORM — FIELDS ONLY
 ========================================== */
 
 #contact .contact-form-wrapper {
   width: 100%;
 
-  margin: 70px 0 80px;
-
-  display: grid;
-  grid-template-columns:
-    minmax(280px, 0.7fr)
-    minmax(0, 1.3fr);
+  margin: 65px 0 80px;
 
   border: 1px solid rgba(18, 56, 43, 0.18);
 
@@ -13550,80 +13548,21 @@ CONTACT — FIX HOVER CLIPPING
 }
 
 
-/* ==========================================
-   FORM INTRO
-========================================== */
-
-#contact .contact-form-intro {
-  padding: clamp(35px, 4vw, 60px);
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: flex-start;
-
-  background: #12382b;
-  color: #f6fbf8;
-}
-
-
-#contact .contact-form-eyebrow {
-  margin-bottom: 34px;
-
-  color: #8ed4bf;
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-
-#contact .contact-form-intro h3 {
-  max-width: 430px;
-
-  margin: 0 0 24px;
-
-  color: #ffffff;
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2.3rem, 4vw, 4.4rem);
-  font-weight: 600;
-
-  line-height: 0.98;
-  letter-spacing: -0.055em;
-}
-
-
-#contact .contact-form-intro p {
-  max-width: 410px;
-
-  margin: 0;
-
-  color: rgba(246, 251, 248, 0.72);
-
-  font-size: 0.98rem;
-  line-height: 1.75;
-}
-
-
-/* ==========================================
-   FORM
-========================================== */
-
 #contact .contact-form {
-  min-width: 0;
+  width: 100%;
 
   padding: clamp(35px, 4vw, 60px);
 
   display: flex;
   flex-direction: column;
 
-  gap: 28px;
+  gap: 30px;
 }
 
+
+/* ==========================================
+   ROW
+========================================== */
 
 #contact .contact-form-row {
   width: 100%;
@@ -13631,9 +13570,13 @@ CONTACT — FIX HOVER CLIPPING
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  gap: 22px;
+  gap: 28px;
 }
 
+
+/* ==========================================
+   FIELDS
+========================================== */
 
 #contact .contact-field {
   width: 100%;
@@ -13657,7 +13600,9 @@ CONTACT — FIX HOVER CLIPPING
 }
 
 
-/* INPUTS */
+/* ==========================================
+   INPUT / SELECT / TEXTAREA
+========================================== */
 
 #contact .contact-field input,
 #contact .contact-field select,
@@ -13700,6 +13645,10 @@ CONTACT — FIX HOVER CLIPPING
 }
 
 
+/* ==========================================
+   SELECT
+========================================== */
+
 #contact .contact-field select {
   cursor: pointer;
 
@@ -13723,8 +13672,12 @@ CONTACT — FIX HOVER CLIPPING
 }
 
 
+/* ==========================================
+   MESSAGE
+========================================== */
+
 #contact .contact-field textarea {
-  min-height: 155px;
+  min-height: 170px;
 
   resize: vertical;
 
@@ -13737,7 +13690,7 @@ CONTACT — FIX HOVER CLIPPING
 ========================================== */
 
 #contact .contact-form-bottom {
-  margin-top: 8px;
+  margin-top: 5px;
 
   display: flex;
   align-items: center;
@@ -13791,7 +13744,7 @@ CONTACT — FIX HOVER CLIPPING
 
   transition:
     background 0.3s ease,
-    color 0.3s ease,
+    border-color 0.3s ease,
     transform 0.3s ease;
 }
 
@@ -13818,30 +13771,7 @@ CONTACT — FIX HOVER CLIPPING
 
 
 /* ==========================================
-   TABLET
-========================================== */
-
-@media (max-width: 900px) {
-
-  #contact .contact-form-wrapper {
-    grid-template-columns: 1fr;
-
-    margin: 55px 0 65px;
-  }
-
-  #contact .contact-form-intro h3 {
-    max-width: 600px;
-  }
-
-  #contact .contact-form-intro p {
-    max-width: 650px;
-  }
-
-}
-
-
-/* ==========================================
-   PHONE
+   MOBILE
 ========================================== */
 
 @media (max-width: 650px) {
@@ -13850,24 +13780,8 @@ CONTACT — FIX HOVER CLIPPING
     margin: 42px 0 55px;
   }
 
-  #contact .contact-form-intro {
-    padding: 30px 22px 34px;
-  }
-
-  #contact .contact-form-eyebrow {
-    margin-bottom: 23px;
-
-    font-size: 0.65rem;
-  }
-
-  #contact .contact-form-intro h3 {
-    margin-bottom: 18px;
-
-    font-size: clamp(2.15rem, 11vw, 3rem);
-  }
-
   #contact .contact-form {
-    padding: 30px 22px;
+    padding: 28px 20px;
 
     gap: 25px;
   }
@@ -13893,7 +13807,6 @@ CONTACT — FIX HOVER CLIPPING
   }
 
 }
-
 
 
 
@@ -19884,24 +19797,11 @@ Three promotional graphics developed to engage audiences and promote academic an
 
 
 
-
     <!-- ==========================================
      CONTACT FORM
 ========================================== -->
 
 <div class="contact-form-wrapper">
-
-  <div class="contact-form-intro">
-    <span class="contact-form-eyebrow">GET IN TOUCH</span>
-
-    <h3>Have something in mind?</h3>
-
-    <p>
-      Whether it’s a project, an opportunity or simply a conversation,
-      feel free to send me a message.
-    </p>
-  </div>
-
 
   <form
     class="contact-form"
@@ -19909,7 +19809,6 @@ Three promotional graphics developed to engage audiences and promote academic an
     method="POST"
   >
 
-    <!-- FormSubmit settings -->
     <input
       type="hidden"
       name="_subject"
@@ -19928,8 +19827,6 @@ Three promotional graphics developed to engage audiences and promote academic an
       value="table"
     >
 
-
-    <!-- NAME + EMAIL -->
     <div class="contact-form-row">
 
       <div class="contact-field">
@@ -19944,7 +19841,6 @@ Three promotional graphics developed to engage audiences and promote academic an
           required
         >
       </div>
-
 
       <div class="contact-field">
         <label for="contact-email">Email</label>
@@ -19961,10 +19857,7 @@ Three promotional graphics developed to engage audiences and promote academic an
 
     </div>
 
-
-    <!-- TOPIC -->
     <div class="contact-field">
-
       <label for="contact-topic">Topic</label>
 
       <select
@@ -19972,52 +19865,27 @@ Three promotional graphics developed to engage audiences and promote academic an
         name="Topic"
         required
       >
-        <option value="" disabled selected>
-          Select a topic
-        </option>
-
-        <option value="Professional opportunity">
-          Professional opportunity
-        </option>
-
-        <option value="Project / Collaboration">
-          Project / Collaboration
-        </option>
-
-        <option value="Research">
-          Research
-        </option>
-
-        <option value="Speaking / Event">
-          Speaking / Event
-        </option>
-
-        <option value="Other">
-          Other
-        </option>
-
+        <option value="" disabled selected>Select a topic</option>
+        <option value="Professional opportunity">Professional opportunity</option>
+        <option value="Project / Collaboration">Project / Collaboration</option>
+        <option value="Research">Research</option>
+        <option value="Speaking / Event">Speaking / Event</option>
+        <option value="Other">Other</option>
       </select>
-
     </div>
 
-
-    <!-- MESSAGE -->
     <div class="contact-field contact-message-field">
-
       <label for="contact-message">Message</label>
 
       <textarea
         id="contact-message"
         name="Message"
         rows="7"
-        placeholder="Tell me a little more..."
+        placeholder="Write your message..."
         required
       ></textarea>
-
     </div>
 
-
-    <!-- SUBMIT -->
     <div class="contact-form-bottom">
 
       <p class="contact-form-note">
@@ -20030,10 +19898,7 @@ Three promotional graphics developed to engage audiences and promote academic an
       >
         <span>Send message</span>
 
-        <svg
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
           <path
             d="M5 12h14M13 6l6 6-6 6"
             fill="none"
