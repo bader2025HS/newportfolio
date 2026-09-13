@@ -17860,24 +17860,8 @@ h2,
 
 
 .nav-cv {
-  margin: 0 !important;
-  padding: 0 !important;
-
-  background: transparent !important;
-  border: none !important;
-
-  color: inherit !important;
-
-  font-size: inherit !important;
   font-weight: 700;
-
-  letter-spacing: inherit !important;
-  text-decoration: none !important;
-
-  display: inline-flex !important;
-  align-items: center;
 }
-
     
     
 
@@ -17919,7 +17903,7 @@ h2,
   href="files/cv.pdf"
   target="_blank"
   rel="noopener"
-  class="nav-cv"
+  class="nav-link nav-cv"
 >
   CV
 </a>
@@ -20300,7 +20284,7 @@ Three promotional graphics developed to engage audiences and promote academic an
   <script>
     const navbar = document.querySelector("#navbar");
     const slider = document.querySelector(".slider");
-    const links = document.querySelectorAll(".nav-link");
+    const links = document.querySelectorAll('.nav-link[href^="#"]');
     const sections = document.querySelectorAll("section[id]");
 
     function moveSlider(link) {
