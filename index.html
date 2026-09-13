@@ -13932,134 +13932,6 @@ CONTACT — FIX HOVER CLIPPING
 }
 
 
-/* ==========================================
-   CONTACT — SMOOTHER TRANSITION
-========================================== */
-
-/* Reduce the gap below the form */
-#contact .contact-form-wrapper {
-  margin-bottom: 32px;
-}
-
-/* Bring the contact groups closer */
-#contact .contact-groups {
-  margin-top: 0;
-}
-
-/* Make the first accordion start closer to the form */
-#contact .contact-group:first-child {
-  margin-top: 0;
-}
-
-/* Slightly tighten the accordion rows */
-#contact .contact-group-toggle {
-  padding-top: 28px;
-  padding-bottom: 28px;
-}
-
-/* Optional: soften the visual separation */
-#contact .contact-group {
-  border-top: 1px solid rgba(18, 56, 43, 0.22);
-}
-
-/* Avoid too much empty space on mobile too */
-@media (max-width: 650px) {
-  #contact .contact-form-wrapper {
-    margin-bottom: 24px;
-  }
-
-  #contact .contact-group-toggle {
-    padding-top: 22px;
-    padding-bottom: 22px;
-  }
-}
-
-
-#contact .contact-other-label {
-  margin: 0 0 8px;
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.68rem;
-  font-weight: 700;
-
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-
-  color: rgba(18, 56, 43, 0.55);
-}
-
-
-
-
-/* ==========================================
-   CONTACT GROUPS — CLEAN OVERRIDE
-========================================== */
-
-/* Hide "Other ways to reach me" */
-#contact .contact-other-label {
-  display: none !important;
-}
-
-/* Bring Professional / Social closer to the form */
-#contact .contact-form-wrapper {
-  margin-bottom: 38px !important;
-}
-
-#contact .contact-groups {
-  margin-top: 0 !important;
-  border-top: 1px solid rgba(18, 56, 43, 0.25);
-  border-bottom: 1px solid rgba(18, 56, 43, 0.25);
-}
-
-/* Remove ALL individual group borders */
-#contact .contact-group {
-  border: 0 !important;
-  border-top: 0 !important;
-  border-bottom: 0 !important;
-}
-
-/* Specifically make sure there is no line
-   between Professional and Social */
-#contact .contact-group + .contact-group {
-  border-top: 0 !important;
-}
-
-/* Cleaner spacing */
-#contact .contact-group-toggle {
-  padding: 34px 0 !important;
-  border: 0 !important;
-}
-
-/* Slight breathing room between the two rows,
-   without using a divider */
-#contact .contact-group + .contact-group {
-  margin-top: 8px;
-}
-
-/* Keep headings strong */
-#contact .contact-group-toggle > span:first-child {
-  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
-}
-
-/* Mobile */
-@media (max-width: 650px) {
-
-  #contact .contact-form-wrapper {
-    margin-bottom: 28px !important;
-  }
-
-  #contact .contact-group-toggle {
-    padding: 25px 0 !important;
-  }
-
-  #contact .contact-group + .contact-group {
-    margin-top: 4px;
-  }
-}
-
-
-
-
 
 
 
@@ -20170,11 +20042,7 @@ Three promotional graphics developed to engage audiences and promote academic an
   </form>
 
 </div>
-    
 
-<div class="contact-other-label">
-  Other ways to reach me
-</div>
     
     <div class="contact-groups">
 
