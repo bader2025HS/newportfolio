@@ -17859,39 +17859,44 @@ h2,
 
 
 
-    /* ==========================================
-   NAVIGATION — CV BUTTON
+/* ==========================================
+   NAVIGATION — CV LINK
 ========================================== */
 
 .nav-cv {
-  margin-left: 6px;
+  margin-left: 4px;
 
-  padding: 11px 18px !important;
+  padding: 10px 16px !important;
 
-  background: #12382b !important;
-  color: #ffffff !important;
+  background: transparent !important;
+  color: #12382b !important;
+
+  border-left: 1px solid rgba(18, 56, 43, 0.18);
 
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
 
-  gap: 8px;
+  gap: 7px;
 
   white-space: nowrap;
 
+  text-decoration: none;
+
   transition:
-    background 0.25s ease,
-    transform 0.25s ease !important;
+    color 0.25s ease,
+    background 0.25s ease;
 }
 
 .nav-cv span {
-  font-size: 1rem;
+  font-size: 0.95rem;
 
   transition: transform 0.25s ease;
 }
 
 .nav-cv:hover {
-  background: #1f5644 !important;
+  background: rgba(18, 56, 43, 0.08) !important;
+  color: #12382b !important;
 }
 
 .nav-cv:hover span {
