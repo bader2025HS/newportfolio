@@ -13809,7 +13809,127 @@ CONTACT — FIX HOVER CLIPPING
 }
 
 
+/* ==========================================
+   CONTACT FORM — COMPACT OVERRIDE
+   Name + Email + Topic on same row
+========================================== */
 
+#contact .contact-form-wrapper {
+  margin: 40px 0 55px;
+}
+
+#contact .contact-form {
+  padding: 32px 40px;
+  gap: 22px;
+}
+
+/* Put Name + Email + Topic on the same line */
+#contact .contact-form-row {
+  display: contents;
+}
+
+/* Turn the form itself into a 3-column layout */
+#contact .contact-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 30px;
+  row-gap: 24px;
+}
+
+/* Name + Email come from .contact-form-row */
+#contact .contact-form-row .contact-field {
+  grid-column: auto;
+}
+
+/* Topic is the next field, so it occupies column 3 */
+#contact .contact-form > .contact-field:not(.contact-message-field) {
+  grid-column: auto;
+}
+
+/* Message takes the entire width */
+#contact .contact-message-field {
+  grid-column: 1 / -1;
+}
+
+#contact .contact-field {
+  gap: 7px;
+}
+
+#contact .contact-field input,
+#contact .contact-field select,
+#contact .contact-field textarea {
+  padding: 10px 0;
+}
+
+/* Smaller message area */
+#contact .contact-field textarea {
+  min-height: 95px;
+}
+
+/* Bottom row across full width */
+#contact .contact-form-bottom {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+/* Slightly smaller button */
+#contact .contact-submit {
+  min-width: 175px;
+  padding: 14px 18px;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+  #contact .contact-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Topic gets full width */
+  #contact .contact-form > .contact-field:not(.contact-message-field) {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+  #contact .contact-form-wrapper {
+    margin: 35px 0 45px;
+  }
+
+  #contact .contact-form {
+    grid-template-columns: 1fr;
+    padding: 26px 20px;
+    gap: 22px;
+  }
+
+  #contact .contact-form-row .contact-field,
+  #contact .contact-form > .contact-field,
+  #contact .contact-message-field,
+  #contact .contact-form-bottom {
+    grid-column: 1;
+  }
+
+  #contact .contact-form-bottom {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #contact .contact-submit {
+    width: 100%;
+  }
+
+}
 
 
 
