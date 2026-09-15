@@ -19673,7 +19673,31 @@ h2,
 }
 
 
+/* ==========================================================
+   COUNTRY HOVER — FADE / GREY OUT OTHER COUNTRIES
+========================================================== */
 
+/* Smooth transition for all cards */
+#gallery .gallery-countries .gallery-country-card {
+  filter: grayscale(0) brightness(1);
+  transition:
+    filter 600ms ease,
+    opacity 600ms ease,
+    transform 600ms cubic-bezier(.22,1,.36,1) !important;
+}
+
+/* When hovering the country area, soften every card */
+#gallery .gallery-countries:hover .gallery-country-card {
+  filter: grayscale(.75) brightness(.72);
+  opacity: .65;
+}
+
+/* Keep the card being hovered fully vivid */
+#gallery .gallery-countries:hover .gallery-country-card:hover {
+  filter: grayscale(0) brightness(1);
+  opacity: 1;
+  transform: translateY(-3px) !important;
+}
 
 
 
