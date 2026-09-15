@@ -19632,6 +19632,54 @@ h2,
   color: rgba(255, 255, 255, .82) !important;
 }
 
+    /* ==========================================================
+   MOBILE — OPEN COUNTRY PHOTOS 2 × 2
+========================================================== */
+
+@media (max-width: 650px) {
+
+  #gallery #photoArchive.country-open
+  .gallery-country-view
+  .gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  #gallery #photoArchive.country-open
+  .gallery-country-view
+  .gallery-item.country-visible {
+    display: block !important;
+    width: 100% !important;
+    height: 220px !important;
+    min-width: 0 !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    aspect-ratio: auto !important;
+  }
+
+  #gallery #photoArchive.country-open
+  .gallery-country-view
+  .gallery-item.country-visible img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+    
+
   </style>
 </head>
 
