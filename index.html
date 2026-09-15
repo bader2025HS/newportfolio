@@ -18493,7 +18493,388 @@ h2,
   }
 
 }
-    
+
+
+
+
+    /* ==========================================================
+   GALLERY COUNTRY CARDS — EDITORIAL OVERRIDE
+   Add AFTER the previous gallery CSS
+========================================================== */
+
+
+/* ----------------------------------------------------------
+   GRID — more editorial, less catalogue-like
+---------------------------------------------------------- */
+
+#gallery .gallery-countries {
+  display: grid !important;
+
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  grid-auto-flow: dense;
+
+  gap: 18px !important;
+}
+
+
+/* default = 4 columns */
+#gallery .gallery-country-card {
+  grid-column: span 4;
+
+  position: relative;
+
+  height: 150px !important;
+
+  padding: 30px 34px !important;
+
+  overflow: hidden;
+
+  background: #dfeee8 !important;
+
+  border: 1px solid rgba(18, 56, 43, 0.12) !important;
+
+  transform: none;
+
+  transition:
+    background-color 600ms cubic-bezier(.22, 1, .36, 1),
+    color 600ms cubic-bezier(.22, 1, .36, 1),
+    border-color 600ms cubic-bezier(.22, 1, .36, 1),
+    transform 600ms cubic-bezier(.22, 1, .36, 1) !important;
+}
+
+
+/* ----------------------------------------------------------
+   DIFFERENT SIZES
+   breaks the repetitive 3 × 3 grid
+---------------------------------------------------------- */
+
+/* Jordan */
+#gallery .gallery-country-card:nth-child(1) {
+  grid-column: span 5;
+}
+
+/* Japan */
+#gallery .gallery-country-card:nth-child(2) {
+  grid-column: span 3;
+}
+
+/* Bulgaria */
+#gallery .gallery-country-card:nth-child(3) {
+  grid-column: span 4;
+}
+
+
+/* China */
+#gallery .gallery-country-card:nth-child(4) {
+  grid-column: span 3;
+}
+
+/* India */
+#gallery .gallery-country-card:nth-child(5) {
+  grid-column: span 5;
+}
+
+/* Singapore */
+#gallery .gallery-country-card:nth-child(6) {
+  grid-column: span 4;
+}
+
+
+/* Vietnam */
+#gallery .gallery-country-card:nth-child(7) {
+  grid-column: span 4;
+}
+
+/* Georgia */
+#gallery .gallery-country-card:nth-child(8) {
+  grid-column: span 4;
+}
+
+/* Tunisia */
+#gallery .gallery-country-card:nth-child(9) {
+  grid-column: span 4;
+}
+
+
+/* France */
+#gallery .gallery-country-card:nth-child(10) {
+  grid-column: span 7;
+}
+
+/* Hong Kong */
+#gallery .gallery-country-card:nth-child(11) {
+  grid-column: span 5;
+}
+
+
+/* ----------------------------------------------------------
+   A FEW TALLER CARDS
+---------------------------------------------------------- */
+
+#gallery .gallery-country-card:nth-child(1),
+#gallery .gallery-country-card:nth-child(5),
+#gallery .gallery-country-card:nth-child(10) {
+  height: 175px !important;
+}
+
+
+/* ----------------------------------------------------------
+   VERY SUBTLE INNER LINE
+---------------------------------------------------------- */
+
+#gallery .gallery-country-card::after {
+  content: "" !important;
+
+  display: block !important;
+
+  position: absolute;
+
+  left: 34px;
+  right: 34px;
+  bottom: 0;
+
+  height: 3px;
+
+  background: #12382b;
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition:
+    transform 850ms cubic-bezier(.22, 1, .36, 1);
+
+  pointer-events: none;
+}
+
+
+#gallery .gallery-country-card:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* ----------------------------------------------------------
+   HOVER
+---------------------------------------------------------- */
+
+#gallery .gallery-country-card:hover {
+  background: #12382b !important;
+
+  border-color: #12382b !important;
+
+  color: #fff !important;
+
+  transform: translateY(-5px) !important;
+}
+
+
+/* ----------------------------------------------------------
+   COUNTRY NAME
+---------------------------------------------------------- */
+
+#gallery .country-name {
+  height: 44px !important;
+
+  overflow: hidden;
+}
+
+
+#gallery .country-name-local,
+#gallery .country-name-english {
+  font-size: clamp(1.55rem, 2vw, 2rem) !important;
+
+  font-weight: 600;
+
+  /* MUCH SLOWER */
+  transition:
+    transform 900ms cubic-bezier(.22, 1, .36, 1),
+    opacity 650ms ease !important;
+}
+
+
+/* original name */
+
+#gallery .country-name-local {
+  opacity: 1;
+
+  transform: translateY(-50%);
+}
+
+
+/* English waits slightly lower */
+
+#gallery .country-name-english {
+  opacity: 0;
+
+  transform: translateY(100%);
+}
+
+
+/* local name slowly leaves */
+
+#gallery .gallery-country-card:hover
+.country-name-local {
+  opacity: 0;
+
+  transform: translateY(-155%);
+}
+
+
+/* English slowly enters */
+
+#gallery .gallery-country-card:hover
+.country-name-english {
+  opacity: 1;
+
+  transform: translateY(-50%);
+}
+
+
+/* ----------------------------------------------------------
+   PHOTO COUNT
+---------------------------------------------------------- */
+
+#gallery .gallery-country-card small {
+  margin-top: 3px;
+
+  font-size: .68rem !important;
+
+  letter-spacing: .12em !important;
+
+  opacity: .72;
+
+  transition:
+    opacity 600ms ease,
+    transform 750ms cubic-bezier(.22, 1, .36, 1),
+    color 600ms ease !important;
+}
+
+
+#gallery .gallery-country-card:hover small {
+  opacity: .65;
+
+  transform: translateX(5px);
+
+  color: #fff !important;
+}
+
+
+/* ----------------------------------------------------------
+   CONTENT
+---------------------------------------------------------- */
+
+#gallery .country-card-main {
+  position: relative;
+
+  z-index: 2;
+
+  height: 100%;
+
+  justify-content: center !important;
+}
+
+
+/* ----------------------------------------------------------
+   ADD A VERY SUBTLE DECORATIVE CORNER
+---------------------------------------------------------- */
+
+#gallery .gallery-country-card::before {
+  content: "" !important;
+
+  display: block !important;
+
+  position: absolute;
+
+  width: 72px;
+  height: 72px;
+
+  top: -36px;
+  right: -36px;
+
+  border: 1px solid rgba(18, 56, 43, .13);
+
+  transform: rotate(45deg);
+
+  transition:
+    width 800ms cubic-bezier(.22, 1, .36, 1),
+    height 800ms cubic-bezier(.22, 1, .36, 1),
+    border-color 600ms ease;
+
+  pointer-events: none;
+}
+
+
+#gallery .gallery-country-card:hover::before {
+  width: 105px;
+  height: 105px;
+
+  border-color: rgba(255, 255, 255, .17);
+}
+
+
+/* ----------------------------------------------------------
+   TABLET
+---------------------------------------------------------- */
+
+@media (max-width: 1050px) {
+
+  #gallery .gallery-countries {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 16px !important;
+  }
+
+
+  #gallery .gallery-country-card,
+  #gallery .gallery-country-card:nth-child(n) {
+    grid-column: span 1 !important;
+
+    height: 140px !important;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   MOBILE
+---------------------------------------------------------- */
+
+@media (max-width: 650px) {
+
+  #gallery .gallery-countries {
+    grid-template-columns: 1fr !important;
+
+    gap: 12px !important;
+  }
+
+
+  #gallery .gallery-country-card,
+  #gallery .gallery-country-card:nth-child(n) {
+    grid-column: 1 !important;
+
+    height: 115px !important;
+
+    padding: 23px 24px !important;
+  }
+
+
+  #gallery .gallery-country-card::after {
+    left: 24px;
+    right: 24px;
+  }
+
+
+  #gallery .country-name {
+    height: 36px !important;
+  }
+
+
+  #gallery .country-name-local,
+  #gallery .country-name-english {
+    font-size: 1.5rem !important;
+  }
+
+}
 
   </style>
 </head>
