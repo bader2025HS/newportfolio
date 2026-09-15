@@ -19527,7 +19527,110 @@ h2,
   }
 
 }
-    
+
+
+    /* ==========================================================
+   GALLERY CARDS — NATURAL PHOTO COLOURS
+========================================================== */
+
+#gallery .gallery-country-card,
+#gallery .gallery-country-card:nth-child(n) {
+  /* REMOVE GREEN BLEND */
+  background-color: transparent !important;
+  background-blend-mode: normal !important;
+
+  background-size: cover !important;
+  background-position: center !important;
+
+  border: 0 !important;
+
+  /* keep cards identical */
+  height: 175px !important;
+}
+
+
+/* ==========================================================
+   REMOVE ALL OLD DECORATIVE / GREEN LAYERS
+========================================================== */
+
+#gallery .gallery-country-card::before {
+  content: none !important;
+  display: none !important;
+}
+
+
+/* Neutral dark overlay — NO GREEN */
+
+#gallery .gallery-country-card::after {
+  content: "" !important;
+  display: block !important;
+
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  background: rgba(0, 0, 0, .30) !important;
+
+  transform: none !important;
+
+  pointer-events: none;
+
+  transition:
+    background 700ms cubic-bezier(.22, 1, .36, 1) !important;
+}
+
+
+/* Make photo a little clearer on hover */
+
+#gallery .gallery-country-card:hover::after {
+  background: rgba(0, 0, 0, .18) !important;
+}
+
+
+/* ==========================================================
+   TEXT
+========================================================== */
+
+#gallery .country-card-main {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+
+#gallery .country-name-local,
+#gallery .country-name-english {
+  color: #fff !important;
+
+  text-shadow:
+    0 2px 14px rgba(0, 0, 0, .28);
+
+  transition:
+    transform 900ms cubic-bezier(.22, 1, .36, 1),
+    opacity 650ms ease !important;
+}
+
+
+#gallery .gallery-country-card small {
+  color: rgba(255, 255, 255, .72) !important;
+}
+
+
+/* ==========================================================
+   HOVER — NO GREEN
+========================================================== */
+
+#gallery .gallery-country-card:hover {
+  background-color: transparent !important;
+
+  transform: translateY(-3px) !important;
+}
+
+
+#gallery .gallery-country-card:hover small {
+  color: rgba(255, 255, 255, .82) !important;
+}
 
   </style>
 </head>
