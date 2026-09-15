@@ -17897,17 +17897,15 @@ h2,
 
 
 /* ==========================================================
-   GALLERY COUNTRY ARCHIVE — FINAL
+   GALLERY — COUNTRY ARCHIVE
    SAME WIDTH AS MAP
 ========================================================== */
 
 #gallery .photo-archive{
   width:min(1450px, 84vw) !important;
   max-width:1450px !important;
-
-  margin:55px auto 0 !important;
+  margin:52px auto 0 !important;
   padding:0 !important;
-
   box-sizing:border-box !important;
 }
 
@@ -17917,13 +17915,10 @@ h2,
 ========================================================== */
 
 #gallery .gallery-countries{
-  width:100% !important;
-
   display:grid !important;
   grid-template-columns:repeat(3, minmax(0,1fr)) !important;
-
-  gap:10px !important;
-
+  width:100% !important;
+  gap:12px !important;
   margin:0 !important;
   padding:0 !important;
 }
@@ -17936,70 +17931,188 @@ h2,
 #gallery .gallery-country-card{
   position:relative !important;
 
-  width:100% !important;
-  height:86px !important;
-
-  display:flex !important;
+  display:grid !important;
+  grid-template-columns:38px 1fr auto !important;
   align-items:center !important;
-  justify-content:space-between !important;
 
-  padding:0 22px !important;
+  width:100% !important;
+  height:125px !important;
 
-  background:rgba(220,239,231,.55) !important;
+  margin:0 !important;
+  padding:20px 24px !important;
 
-  border:1px solid rgba(18,56,43,.12) !important;
+  overflow:hidden !important;
+
+  border:1px solid rgba(18,56,43,.13) !important;
   border-radius:0 !important;
 
+  background:#e4f2ec !important;
   color:#12382b !important;
 
-  cursor:pointer;
+  font-family:"Manrope",sans-serif !important;
 
   text-align:left !important;
+  cursor:pointer !important;
+
+  box-sizing:border-box !important;
 
   transition:
-    background .25s ease,
-    border-color .25s ease,
-    transform .25s ease !important;
+    background .3s ease,
+    color .3s ease,
+    border-color .3s ease,
+    transform .3s cubic-bezier(.22,1,.36,1) !important;
 }
 
 
-/* kill any old card effects */
+/* subtle graphic element */
 
-#gallery .gallery-country-card::before,
+#gallery .gallery-country-card::before{
+  content:"" !important;
+
+  position:absolute !important;
+  right:-40px !important;
+  bottom:-65px !important;
+
+  display:block !important;
+
+  width:150px !important;
+  height:150px !important;
+
+  border:1px solid rgba(18,56,43,.08) !important;
+  border-radius:50% !important;
+
+  transition:
+    transform .45s cubic-bezier(.22,1,.36,1),
+    border-color .3s ease !important;
+}
+
+
 #gallery .gallery-country-card::after{
-  display:none !important;
-  content:none !important;
+  content:"" !important;
+
+  position:absolute !important;
+  right:-12px !important;
+  bottom:-37px !important;
+
+  display:block !important;
+
+  width:90px !important;
+  height:90px !important;
+
+  border:1px solid rgba(18,56,43,.07) !important;
+  border-radius:50% !important;
+
+  transition:
+    transform .5s cubic-bezier(.22,1,.36,1),
+    border-color .3s ease !important;
 }
 
 
-/* COUNTRY */
+/* ==========================================================
+   CARD NUMBER
+========================================================== */
 
-#gallery .gallery-country-card > span{
+#gallery .country-index{
+  position:relative !important;
+  z-index:2 !important;
+
+  align-self:start !important;
+
+  padding-top:2px !important;
+
+  color:rgba(18,56,43,.38) !important;
+
+  font-family:"Manrope",sans-serif !important;
+  font-size:.58rem !important;
+  font-weight:700 !important;
+
+  line-height:1 !important;
+  letter-spacing:.14em !important;
+
+  transition:color .3s ease !important;
+}
+
+
+/* ==========================================================
+   COUNTRY NAME + PHOTO COUNT
+========================================================== */
+
+#gallery .country-card-main{
+  position:relative !important;
+  z-index:2 !important;
+
+  display:flex !important;
+  flex-direction:column !important;
+
+  gap:7px !important;
+}
+
+
+#gallery .country-card-main strong{
+  color:inherit !important;
+
   font-family:"Space Grotesk",sans-serif !important;
 
-  font-size:1.15rem !important;
+  font-size:1.45rem !important;
   font-weight:600 !important;
 
   line-height:1 !important;
-  letter-spacing:-.025em !important;
+  letter-spacing:-.04em !important;
 }
 
 
-/* NUMBER */
+#gallery .country-card-main small{
+  color:rgba(18,56,43,.48) !important;
 
-#gallery .gallery-country-card > small{
   font-family:"Manrope",sans-serif !important;
 
-  font-size:.61rem !important;
-  font-weight:700 !important;
+  font-size:.59rem !important;
+  font-weight:650 !important;
 
-  letter-spacing:.14em !important;
+  line-height:1 !important;
+  letter-spacing:.11em !important;
 
-  color:rgba(18,56,43,.42) !important;
+  text-transform:uppercase !important;
+
+  transition:color .3s ease !important;
 }
 
 
-/* HOVER */
+/* ==========================================================
+   VIEW TEXT
+========================================================== */
+
+#gallery .country-open-mark{
+  position:relative !important;
+  z-index:2 !important;
+
+  align-self:end !important;
+
+  color:rgba(18,56,43,.55) !important;
+
+  font-family:"Manrope",sans-serif !important;
+
+  font-size:.59rem !important;
+  font-weight:700 !important;
+
+  letter-spacing:.12em !important;
+
+  text-transform:uppercase !important;
+
+  transform:translateX(5px) !important;
+
+  opacity:0 !important;
+
+  transition:
+    opacity .3s ease,
+    transform .3s ease,
+    color .3s ease !important;
+}
+
+
+/* ==========================================================
+   COUNTRY CARD HOVER
+========================================================== */
 
 #gallery .gallery-country-card:hover{
   background:#12382b !important;
@@ -18007,17 +18120,50 @@ h2,
 
   color:#fff !important;
 
-  transform:translateY(-2px) !important;
+  transform:translateY(-3px) !important;
 }
 
-#gallery .gallery-country-card:hover > small{
-  color:rgba(255,255,255,.55) !important;
+
+#gallery .gallery-country-card:hover::before,
+#gallery .gallery-country-card:hover::after{
+  border-color:rgba(255,255,255,.12) !important;
+  transform:scale(1.12) !important;
+}
+
+
+#gallery .gallery-country-card:hover .country-index{
+  color:rgba(255,255,255,.42) !important;
+}
+
+
+#gallery .gallery-country-card:hover .country-card-main small{
+  color:rgba(255,255,255,.52) !important;
+}
+
+
+#gallery .gallery-country-card:hover .country-open-mark{
+  color:#fff !important;
+
+  opacity:1 !important;
+
+  transform:translateX(0) !important;
+}
+
+
+#gallery .gallery-country-card:focus-visible{
+  outline:2px solid #12382b !important;
+  outline-offset:3px !important;
 }
 
 
 /* ==========================================================
-   COUNTRY VIEW
+   OPEN COUNTRY
 ========================================================== */
+
+#gallery .photo-archive.country-open .gallery-countries{
+  display:none !important;
+}
+
 
 #gallery .gallery-country-view{
   display:none !important;
@@ -18029,46 +18175,63 @@ h2,
   padding:0 !important;
 }
 
+
 #gallery .gallery-country-view.is-active{
   display:block !important;
+
+  animation:galleryCountryIn .4s ease both !important;
 }
 
 
-/* Hide selector when country is open */
+@keyframes galleryCountryIn{
 
-#gallery .photo-archive.country-open .gallery-countries{
-  display:none !important;
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+
+  to{
+    opacity:1;
+    transform:none;
+  }
+
 }
 
 
 /* ==========================================================
-   COUNTRY HEADER
+   SELECTED COUNTRY HEADER
 ========================================================== */
 
 #gallery .gallery-country-header{
-  width:100% !important;
-
   display:flex !important;
   align-items:flex-end !important;
   justify-content:space-between !important;
 
+  width:100% !important;
+
+  gap:30px !important;
+
   margin:0 0 28px !important;
-  padding:0 0 20px !important;
+  padding:0 0 22px !important;
 
   border-bottom:1px solid rgba(18,56,43,.14) !important;
 }
 
 
-/* little PHOTO ARCHIVE label */
+#gallery .gallery-country-heading{
+  min-width:0 !important;
+}
+
 
 #gallery .gallery-country-kicker{
   display:block !important;
 
-  margin:0 0 8px !important;
+  margin:0 0 7px !important;
 
   color:#287d5e !important;
 
   font-family:"Manrope",sans-serif !important;
+
   font-size:.62rem !important;
   font-weight:700 !important;
 
@@ -18076,8 +18239,6 @@ h2,
   text-transform:uppercase !important;
 }
 
-
-/* COUNTRY TITLE */
 
 #gallery #galleryCountryTitle{
   margin:0 !important;
@@ -18087,33 +18248,34 @@ h2,
 
   font-family:"Space Grotesk",sans-serif !important;
 
-  font-size:clamp(2.4rem,3.5vw,4rem) !important;
+  font-size:clamp(2.6rem,4vw,4.3rem) !important;
   font-weight:600 !important;
 
-  line-height:1 !important;
-  letter-spacing:-.05em !important;
+  line-height:.95 !important;
+  letter-spacing:-.055em !important;
 
   text-align:left !important;
 }
 
 
 /* ==========================================================
-   ALL COUNTRIES BUTTON
+   ALL COUNTRIES
 ========================================================== */
 
 #gallery .gallery-back{
   flex:0 0 auto !important;
 
-  padding:10px 15px !important;
+  padding:11px 16px !important;
+
+  border:1px solid rgba(18,56,43,.2) !important;
+  border-radius:0 !important;
 
   background:transparent !important;
   color:#12382b !important;
 
-  border:1px solid rgba(18,56,43,.22) !important;
-  border-radius:0 !important;
-
   font-family:"Manrope",sans-serif !important;
-  font-size:.62rem !important;
+
+  font-size:.61rem !important;
   font-weight:700 !important;
 
   letter-spacing:.12em !important;
@@ -18122,79 +18284,205 @@ h2,
   cursor:pointer !important;
 
   transition:
-    background .2s ease,
-    color .2s ease !important;
+    background .25s ease,
+    color .25s ease,
+    border-color .25s ease !important;
 }
+
 
 #gallery .gallery-back:hover{
   background:#12382b !important;
+  border-color:#12382b !important;
+
   color:#fff !important;
 }
 
 
 /* ==========================================================
-   PHOTO GRID
+   SELECTED COUNTRY — FOUR PHOTO GRID
+
+   IMPORTANT:
+   Overrides your old masonry sizes.
 ========================================================== */
 
 #gallery .gallery-country-view .gallery-grid{
+  display:grid !important;
+
+  grid-template-columns:
+    repeat(4, minmax(0,1fr)) !important;
+
+  grid-auto-rows:auto !important;
+
   width:100% !important;
   max-width:100% !important;
 
+  gap:10px !important;
+
   margin:0 !important;
+  padding:0 !important;
 }
 
 
-/* Hide photos not belonging to selected country */
+/* Hide all countries by default */
 
 #gallery .gallery-country-view .gallery-item{
   display:none !important;
 }
 
-#gallery .gallery-country-view .gallery-item.country-visible{
+
+/* Show selected country */
+
+#gallery .gallery-country-view
+.gallery-item.country-visible{
+  position:relative !important;
+
   display:block !important;
+
+  grid-column:auto !important;
+  grid-row:auto !important;
+
+  width:100% !important;
+  height:330px !important;
+
+  margin:0 !important;
+
+  overflow:hidden !important;
+}
+
+
+/* Kill old large/tall/wide masonry sizing */
+
+#gallery .gallery-country-view
+.gallery-item-large.country-visible,
+
+#gallery .gallery-country-view
+.gallery-item-tall.country-visible,
+
+#gallery .gallery-country-view
+.gallery-item-wide.country-visible,
+
+#gallery .gallery-country-view
+.gallery-item-medium.country-visible,
+
+#gallery .gallery-country-view
+.gallery-item-small.country-visible{
+  grid-column:auto !important;
+  grid-row:auto !important;
+
+  width:100% !important;
+  height:330px !important;
 }
 
 
 /* ==========================================================
-   ONE PHOTO
+   PHOTO
 ========================================================== */
 
-#gallery .gallery-grid.single-country-photo{
-  display:grid !important;
-  grid-template-columns:1fr !important;
-}
-
-#gallery .gallery-grid.single-country-photo
-.gallery-item.country-visible{
-  grid-column:1 !important;
-  grid-row:auto !important;
-
-  width:100% !important;
-}
-
-#gallery .gallery-grid.single-country-photo
+#gallery .gallery-country-view
 .gallery-item.country-visible img{
   display:block !important;
 
   width:100% !important;
-  height:auto !important;
-  max-height:680px !important;
+  height:100% !important;
+
+  max-width:none !important;
+  max-height:none !important;
 
   object-fit:cover !important;
+
+  cursor:pointer !important;
+
+  transition:
+    transform .55s cubic-bezier(.22,1,.36,1),
+    filter .4s ease !important;
+}
+
+
+#gallery .gallery-country-view
+.gallery-item.country-visible:hover img{
+  transform:scale(1.025) !important;
 }
 
 
 /* ==========================================================
-   TWO PHOTOS
+   CAPTIONS
 ========================================================== */
 
+#gallery .gallery-country-view
+.gallery-item figcaption{
+  position:absolute !important;
+
+  left:12px !important;
+  right:auto !important;
+  bottom:12px !important;
+
+  display:inline-flex !important;
+  align-items:center !important;
+
+  width:auto !important;
+  min-width:0 !important;
+  min-height:0 !important;
+
+  gap:9px !important;
+
+  padding:8px 11px !important;
+
+  background:rgba(246,251,248,.94) !important;
+  color:#12382b !important;
+
+  white-space:nowrap !important;
+
+  pointer-events:none !important;
+}
+
+
+#gallery .gallery-country-view
+.gallery-item figcaption span{
+  font-size:.55rem !important;
+  font-weight:700 !important;
+
+  letter-spacing:.1em !important;
+
+  opacity:.48 !important;
+}
+
+
+#gallery .gallery-country-view
+.gallery-item figcaption p{
+  margin:0 !important;
+
+  font-size:.61rem !important;
+  font-weight:650 !important;
+
+  line-height:1 !important;
+
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+
+  max-width:190px !important;
+}
+
+
+/* ==========================================================
+   OVERRIDE OLD 1/2 PHOTO CLASSES
+
+   Your JS can keep adding them. They simply no longer
+   change the layout.
+========================================================== */
+
+#gallery .gallery-grid.single-country-photo,
 #gallery .gallery-grid.two-country-photos{
   display:grid !important;
 
-  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  grid-template-columns:
+    repeat(4, minmax(0,1fr)) !important;
 
-  gap:12px !important;
+  gap:10px !important;
 }
+
+
+#gallery .gallery-grid.single-country-photo
+.gallery-item.country-visible,
 
 #gallery .gallery-grid.two-country-photos
 .gallery-item.country-visible{
@@ -18202,14 +18490,19 @@ h2,
   grid-row:auto !important;
 
   width:100% !important;
+  height:330px !important;
 }
+
+
+#gallery .gallery-grid.single-country-photo
+.gallery-item.country-visible img,
 
 #gallery .gallery-grid.two-country-photos
 .gallery-item.country-visible img{
-  display:block !important;
-
   width:100% !important;
-  height:500px !important;
+  height:100% !important;
+
+  max-height:none !important;
 
   object-fit:cover !important;
 }
@@ -18219,15 +18512,36 @@ h2,
    TABLET
 ========================================================== */
 
-@media(max-width:900px){
+@media(max-width:1050px){
 
   #gallery .photo-archive{
-    width:min(1450px, 90vw) !important;
+    width:min(1450px,90vw) !important;
   }
+
 
   #gallery .gallery-countries{
     grid-template-columns:
       repeat(2,minmax(0,1fr)) !important;
+  }
+
+
+  #gallery .gallery-country-view .gallery-grid,
+  #gallery .gallery-grid.single-country-photo,
+  #gallery .gallery-grid.two-country-photos{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr)) !important;
+  }
+
+
+  #gallery .gallery-country-view
+  .gallery-item.country-visible,
+
+  #gallery .gallery-grid.single-country-photo
+  .gallery-item.country-visible,
+
+  #gallery .gallery-grid.two-country-photos
+  .gallery-item.country-visible{
+    height:360px !important;
   }
 
 }
@@ -18245,21 +18559,34 @@ h2,
     margin-top:38px !important;
   }
 
+
   #gallery .gallery-countries{
     grid-template-columns:1fr !important;
 
-    gap:7px !important;
+    gap:8px !important;
   }
+
 
   #gallery .gallery-country-card{
-    height:72px !important;
+    height:100px !important;
 
-    padding:0 18px !important;
+    grid-template-columns:32px 1fr auto !important;
+
+    padding:18px !important;
   }
 
-  #gallery .gallery-country-card > span{
-    font-size:1.05rem !important;
+
+  #gallery .country-card-main strong{
+    font-size:1.3rem !important;
   }
+
+
+  #gallery .country-open-mark{
+    opacity:.65 !important;
+
+    transform:none !important;
+  }
+
 
   #gallery .gallery-country-header{
     align-items:flex-start !important;
@@ -18267,21 +18594,36 @@ h2,
     gap:20px !important;
   }
 
+
   #gallery #galleryCountryTitle{
-    font-size:2.7rem !important;
+    font-size:2.8rem !important;
   }
 
+
+  #gallery .gallery-country-view .gallery-grid,
+  #gallery .gallery-grid.single-country-photo,
   #gallery .gallery-grid.two-country-photos{
     grid-template-columns:1fr !important;
+
+    gap:9px !important;
   }
 
+
+  #gallery .gallery-country-view
+  .gallery-item.country-visible,
+
+  #gallery .gallery-grid.single-country-photo
+  .gallery-item.country-visible,
+
   #gallery .gallery-grid.two-country-photos
-  .gallery-item.country-visible img{
-    height:auto !important;
-    max-height:520px !important;
+  .gallery-item.country-visible{
+    height:340px !important;
   }
 
 }
+
+
+    
 
   </style>
 </head>
@@ -20141,17 +20483,17 @@ Three promotional graphics developed to engage audiences and promote academic an
     
 
 
-
-
 <section id="gallery">
 
   <div class="gallery-container">
 
-    <!-- ==========================================
-         HEADING — UNCHANGED
-    ========================================== -->
+
+    <!-- =====================================================
+         GALLERY HEADER
+    ====================================================== -->
 
     <div class="gallery-header">
+
       <div class="oversized-label" data-letter="GALLERY">
         <span>Places and moments</span>
       </div>
@@ -20159,99 +20501,341 @@ Three promotional graphics developed to engage audiences and promote academic an
       <h2>
         A world in snapshots.
       </h2>
+
     </div>
 
 
-    <!-- ==========================================
-         MAP — UNCHANGED
-    ========================================== -->
+
+    <!-- =====================================================
+         INTERACTIVE MAP
+         UNCHANGED
+    ====================================================== -->
 
     <div class="gallery-map">
       <div id="visitedMap"></div>
     </div>
 
 
-    <!-- ==========================================
+
+    <!-- =====================================================
          PHOTO ARCHIVE
-    ========================================== -->
+    ====================================================== -->
 
     <div class="photo-archive" id="photoArchive">
 
 
-      <!-- COUNTRY SELECTOR -->
+      <!-- ===================================================
+           COUNTRY SELECTOR
+      ==================================================== -->
 
-      <div class="gallery-countries" id="galleryCountries">
+      <div
+        class="gallery-countries"
+        id="galleryCountries"
+      >
 
-        <button class="gallery-country-card" type="button" data-country="jordan">
-          <span>Jordan</span>
-          <small>01</small>
+
+        <!-- JORDAN -->
+
+        <button
+          class="gallery-country-card"
+          type="button"
+          data-country="jordan"
+        >
+
+          <span class="country-index">
+            01
+          </span>
+
+          <div class="country-card-main">
+            <strong>Jordan</strong>
+            <small>4 photographs</small>
+          </div>
+
+          <span class="country-open-mark">
+            View
+          </span>
+
         </button>
 
-        <button class="gallery-country-card" type="button" data-country="japan">
-          <span>Japan</span>
-          <small>02</small>
+
+
+        <!-- JAPAN -->
+
+        <button
+          class="gallery-country-card"
+          type="button"
+          data-country="japan"
+        >
+
+          <span class="country-index">
+            02
+          </span>
+
+          <div class="country-card-main">
+            <strong>Japan</strong>
+            <small>4 photographs</small>
+          </div>
+
+          <span class="country-open-mark">
+            View
+          </span>
+
         </button>
 
-        <button class="gallery-country-card" type="button" data-country="bulgaria">
-          <span>Bulgaria</span>
-          <small>01</small>
+
+
+        <!-- BULGARIA -->
+
+        <button
+          class="gallery-country-card"
+          type="button"
+          data-country="bulgaria"
+        >
+
+          <span class="country-index">
+            03
+          </span>
+
+          <div class="country-card-main">
+            <strong>Bulgaria</strong>
+            <small>4 photographs</small>
+          </div>
+
+          <span class="country-open-mark">
+            View
+          </span>
+
         </button>
 
-        <button class="gallery-country-card" type="button" data-country="china">
-          <span>China</span>
-          <small>01</small>
+
+
+        <!-- CHINA -->
+
+        <button
+          class="gallery-country-card"
+          type="button"
+          data-country="china"
+        >
+
+          <span class="country-index">
+            04
+          </span>
+
+          <div class="country-card-main">
+            <strong>China</strong>
+            <small>4 photographs</small>
+          </div>
+
+          <span class="country-open-mark">
+            View
+          </span>
+
         </button>
 
-        <button class="gallery-country-card" type="button" data-country="india">
-          <span>India</span>
-          <small>01</small>
+
+
+        <!-- INDIA -->
+
+        <button
+          class="gallery-country-card"
+          type="button"
+          data-country="india"
+        >
+
+          <span class="country-index">
+            05
+          </span>
+
+          <div class="country-card-main">
+            <strong>India</strong>
+            <small>4 photographs</small>
+          </div>
+
+          <span class="country-open-mark">
+            View
+          </span>
+
         </button>
 
-        <button class="gallery-country-card" type="button" data-country="singapore">
-          <span>Singapore</span>
-          <small>01</small>
+
+
+        <!-- SINGAPORE -->
+
+        <button
+          class="gallery-country-card"
+          type="button"
+          data-country="singapore"
+        >
+
+          <span class="country-index">
+            06
+          </span>
+
+          <div class="country-card-main">
+            <strong>Singapore</strong>
+            <small>4 photographs</small>
+          </div>
+
+          <span class="country-open-mark">
+            View
+          </span>
+
         </button>
 
-        <button class="gallery-country-card" type="button" data-country="vietnam">
-          <span>Vietnam</span>
-          <small>01</small>
+
+
+        <!-- VIETNAM -->
+
+        <button
+          class="gallery-country-card"
+          type="button"
+          data-country="vietnam"
+        >
+
+          <span class="country-index">
+            07
+          </span>
+
+          <div class="country-card-main">
+            <strong>Vietnam</strong>
+            <small>4 photographs</small>
+          </div>
+
+          <span class="country-open-mark">
+            View
+          </span>
+
         </button>
 
-        <button class="gallery-country-card" type="button" data-country="georgia">
-          <span>Georgia</span>
-          <small>01</small>
+
+
+        <!-- GEORGIA -->
+
+        <button
+          class="gallery-country-card"
+          type="button"
+          data-country="georgia"
+        >
+
+          <span class="country-index">
+            08
+          </span>
+
+          <div class="country-card-main">
+            <strong>Georgia</strong>
+            <small>4 photographs</small>
+          </div>
+
+          <span class="country-open-mark">
+            View
+          </span>
+
         </button>
 
-        <button class="gallery-country-card" type="button" data-country="tunisia">
-          <span>Tunisia</span>
-          <small>01</small>
+
+
+        <!-- TUNISIA -->
+
+        <button
+          class="gallery-country-card"
+          type="button"
+          data-country="tunisia"
+        >
+
+          <span class="country-index">
+            09
+          </span>
+
+          <div class="country-card-main">
+            <strong>Tunisia</strong>
+            <small>4 photographs</small>
+          </div>
+
+          <span class="country-open-mark">
+            View
+          </span>
+
         </button>
 
-        <button class="gallery-country-card" type="button" data-country="france">
-          <span>France</span>
-          <small>01</small>
+
+
+        <!-- FRANCE -->
+
+        <button
+          class="gallery-country-card"
+          type="button"
+          data-country="france"
+        >
+
+          <span class="country-index">
+            10
+          </span>
+
+          <div class="country-card-main">
+            <strong>France</strong>
+            <small>4 photographs</small>
+          </div>
+
+          <span class="country-open-mark">
+            View
+          </span>
+
         </button>
 
-        <button class="gallery-country-card" type="button" data-country="hong-kong">
-          <span>Hong Kong</span>
-          <small>01</small>
+
+
+        <!-- HONG KONG -->
+
+        <button
+          class="gallery-country-card"
+          type="button"
+          data-country="hong-kong"
+        >
+
+          <span class="country-index">
+            11
+          </span>
+
+          <div class="country-card-main">
+            <strong>Hong Kong</strong>
+            <small>4 photographs</small>
+          </div>
+
+          <span class="country-open-mark">
+            View
+          </span>
+
         </button>
+
 
       </div>
 
 
-      <!-- ==========================================
-           SELECTED COUNTRY
-      ========================================== -->
 
-      <div class="gallery-country-view" id="galleryCountryView">
+      <!-- ===================================================
+           SELECTED COUNTRY VIEW
+      ==================================================== -->
+
+      <div
+        class="gallery-country-view"
+        id="galleryCountryView"
+      >
+
+
+        <!-- COUNTRY HEADER -->
 
         <div class="gallery-country-header">
 
-          <div>
-            <span class="gallery-country-kicker">Photo archive</span>
+          <div class="gallery-country-heading">
+
+            <span class="gallery-country-kicker">
+              Photo archive
+            </span>
+
             <h3 id="galleryCountryTitle"></h3>
+
           </div>
+
 
           <button
             class="gallery-back"
@@ -20264,20 +20848,26 @@ Three promotional graphics developed to engage audiences and promote academic an
         </div>
 
 
-        <!-- ==========================================
-             PHOTOS
-        ========================================== -->
+
+        <!-- =================================================
+             PHOTO GRID
+        ================================================== -->
 
         <div class="gallery-grid">
 
 
-          <!-- JORDAN -->
+          <!-- =================================================
+               JORDAN
+          ================================================== -->
 
           <figure
-            class="gallery-item gallery-item-large"
+            class="gallery-item"
             data-country="jordan"
           >
-            <img src="jordan.jpeg" alt="Baptism Site, Jordan">
+            <img
+              src="jordan.jpeg"
+              alt="Baptism Site, Jordan"
+            >
 
             <figcaption>
               <span>01</span>
@@ -20286,13 +20876,67 @@ Three promotional graphics developed to engage audiences and promote academic an
           </figure>
 
 
-          <!-- JAPAN -->
+          <figure
+            class="gallery-item"
+            data-country="jordan"
+          >
+            <img
+              src="jordan.jpeg"
+              alt="Jordan"
+            >
+
+            <figcaption>
+              <span>02</span>
+              <p>Jordan</p>
+            </figcaption>
+          </figure>
+
 
           <figure
-            class="gallery-item gallery-item-tall"
+            class="gallery-item"
+            data-country="jordan"
+          >
+            <img
+              src="jordan.jpeg"
+              alt="Jordan"
+            >
+
+            <figcaption>
+              <span>03</span>
+              <p>Jordan</p>
+            </figcaption>
+          </figure>
+
+
+          <figure
+            class="gallery-item"
+            data-country="jordan"
+          >
+            <img
+              src="jordan.jpeg"
+              alt="Jordan"
+            >
+
+            <figcaption>
+              <span>04</span>
+              <p>Jordan</p>
+            </figcaption>
+          </figure>
+
+
+
+          <!-- =================================================
+               JAPAN
+          ================================================== -->
+
+          <figure
+            class="gallery-item"
             data-country="japan"
           >
-            <img src="japan.jpeg" alt="Kyoto, Japan">
+            <img
+              src="japan.jpeg"
+              alt="Kyoto, Japan"
+            >
 
             <figcaption>
               <span>01</span>
@@ -20302,10 +20946,13 @@ Three promotional graphics developed to engage audiences and promote academic an
 
 
           <figure
-            class="gallery-item gallery-item-wide"
+            class="gallery-item"
             data-country="japan"
           >
-            <img src="hiroshima.jpeg" alt="Hiroshima, Japan">
+            <img
+              src="hiroshima.jpeg"
+              alt="Hiroshima, Japan"
+            >
 
             <figcaption>
               <span>02</span>
@@ -20314,10 +20961,45 @@ Three promotional graphics developed to engage audiences and promote academic an
           </figure>
 
 
-          <!-- BULGARIA -->
+          <figure
+            class="gallery-item"
+            data-country="japan"
+          >
+            <img
+              src="japan.jpeg"
+              alt="Japan"
+            >
+
+            <figcaption>
+              <span>03</span>
+              <p>Japan</p>
+            </figcaption>
+          </figure>
+
 
           <figure
-            class="gallery-item gallery-item-tall"
+            class="gallery-item"
+            data-country="japan"
+          >
+            <img
+              src="hiroshima.jpeg"
+              alt="Japan"
+            >
+
+            <figcaption>
+              <span>04</span>
+              <p>Japan</p>
+            </figcaption>
+          </figure>
+
+
+
+          <!-- =================================================
+               BULGARIA
+          ================================================== -->
+
+          <figure
+            class="gallery-item"
             data-country="bulgaria"
           >
             <img src="sofia.jpeg" alt="Sofia, Bulgaria">
@@ -20329,124 +21011,253 @@ Three promotional graphics developed to engage audiences and promote academic an
           </figure>
 
 
-          <!-- CHINA -->
+          <figure class="gallery-item" data-country="bulgaria">
+            <img src="sofia.jpeg" alt="Bulgaria">
+            <figcaption><span>02</span><p>Bulgaria</p></figcaption>
+          </figure>
 
-          <figure
-            class="gallery-item gallery-item-medium"
-            data-country="china"
-          >
+          <figure class="gallery-item" data-country="bulgaria">
+            <img src="sofia.jpeg" alt="Bulgaria">
+            <figcaption><span>03</span><p>Bulgaria</p></figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-country="bulgaria">
+            <img src="sofia.jpeg" alt="Bulgaria">
+            <figcaption><span>04</span><p>Bulgaria</p></figcaption>
+          </figure>
+
+
+
+          <!-- =================================================
+               CHINA
+          ================================================== -->
+
+          <figure class="gallery-item" data-country="china">
             <img src="china1.jpeg" alt="Shanghai, China">
-
             <figcaption>
               <span>01</span>
               <p>Shanghai, China - February 2024</p>
             </figcaption>
           </figure>
 
+          <figure class="gallery-item" data-country="china">
+            <img src="china1.jpeg" alt="China">
+            <figcaption><span>02</span><p>China</p></figcaption>
+          </figure>
 
-          <!-- INDIA -->
+          <figure class="gallery-item" data-country="china">
+            <img src="china1.jpeg" alt="China">
+            <figcaption><span>03</span><p>China</p></figcaption>
+          </figure>
 
-          <figure
-            class="gallery-item gallery-item-small"
-            data-country="india"
-          >
+          <figure class="gallery-item" data-country="china">
+            <img src="china1.jpeg" alt="China">
+            <figcaption><span>04</span><p>China</p></figcaption>
+          </figure>
+
+
+
+          <!-- =================================================
+               INDIA
+          ================================================== -->
+
+          <figure class="gallery-item" data-country="india">
             <img src="hampi2.jpeg" alt="Hampi, India">
-
             <figcaption>
               <span>01</span>
               <p>Hampi, India - January 2025</p>
             </figcaption>
           </figure>
 
+          <figure class="gallery-item" data-country="india">
+            <img src="hampi2.jpeg" alt="India">
+            <figcaption><span>02</span><p>India</p></figcaption>
+          </figure>
 
-          <!-- SINGAPORE -->
+          <figure class="gallery-item" data-country="india">
+            <img src="hampi2.jpeg" alt="India">
+            <figcaption><span>03</span><p>India</p></figcaption>
+          </figure>
 
-          <figure
-            class="gallery-item gallery-item-medium"
-            data-country="singapore"
-          >
+          <figure class="gallery-item" data-country="india">
+            <img src="hampi2.jpeg" alt="India">
+            <figcaption><span>04</span><p>India</p></figcaption>
+          </figure>
+
+
+
+          <!-- =================================================
+               SINGAPORE
+          ================================================== -->
+
+          <figure class="gallery-item" data-country="singapore">
             <img src="singapore.jpeg" alt="Singapore">
-
             <figcaption>
               <span>01</span>
               <p>Singapore - March 2024</p>
             </figcaption>
           </figure>
 
+          <figure class="gallery-item" data-country="singapore">
+            <img src="singapore.jpeg" alt="Singapore">
+            <figcaption><span>02</span><p>Singapore</p></figcaption>
+          </figure>
 
-          <!-- VIETNAM -->
+          <figure class="gallery-item" data-country="singapore">
+            <img src="singapore.jpeg" alt="Singapore">
+            <figcaption><span>03</span><p>Singapore</p></figcaption>
+          </figure>
 
-          <figure
-            class="gallery-item gallery-item-small"
-            data-country="vietnam"
-          >
+          <figure class="gallery-item" data-country="singapore">
+            <img src="singapore.jpeg" alt="Singapore">
+            <figcaption><span>04</span><p>Singapore</p></figcaption>
+          </figure>
+
+
+
+          <!-- =================================================
+               VIETNAM
+          ================================================== -->
+
+          <figure class="gallery-item" data-country="vietnam">
             <img src="vietnam.jpeg" alt="Ninh Binh, Vietnam">
-
             <figcaption>
               <span>01</span>
               <p>Ninh Binh, Vietnam - July 2024</p>
             </figcaption>
           </figure>
 
+          <figure class="gallery-item" data-country="vietnam">
+            <img src="vietnam.jpeg" alt="Vietnam">
+            <figcaption><span>02</span><p>Vietnam</p></figcaption>
+          </figure>
 
-          <!-- GEORGIA -->
+          <figure class="gallery-item" data-country="vietnam">
+            <img src="vietnam.jpeg" alt="Vietnam">
+            <figcaption><span>03</span><p>Vietnam</p></figcaption>
+          </figure>
 
-          <figure
-            class="gallery-item gallery-item-wide"
-            data-country="georgia"
-          >
+          <figure class="gallery-item" data-country="vietnam">
+            <img src="vietnam.jpeg" alt="Vietnam">
+            <figcaption><span>04</span><p>Vietnam</p></figcaption>
+          </figure>
+
+
+
+          <!-- =================================================
+               GEORGIA
+          ================================================== -->
+
+          <figure class="gallery-item" data-country="georgia">
             <img src="georgiap1.jpeg" alt="Stepantsminda, Georgia">
-
             <figcaption>
               <span>01</span>
               <p>Stepantsminda, Georgia - February 2025</p>
             </figcaption>
           </figure>
 
+          <figure class="gallery-item" data-country="georgia">
+            <img src="georgiap1.jpeg" alt="Georgia">
+            <figcaption><span>02</span><p>Georgia</p></figcaption>
+          </figure>
 
-          <!-- TUNISIA -->
+          <figure class="gallery-item" data-country="georgia">
+            <img src="georgiap1.jpeg" alt="Georgia">
+            <figcaption><span>03</span><p>Georgia</p></figcaption>
+          </figure>
 
-          <figure
-            class="gallery-item gallery-item-wide"
-            data-country="tunisia"
-          >
+          <figure class="gallery-item" data-country="georgia">
+            <img src="georgiap1.jpeg" alt="Georgia">
+            <figcaption><span>04</span><p>Georgia</p></figcaption>
+          </figure>
+
+
+
+          <!-- =================================================
+               TUNISIA
+          ================================================== -->
+
+          <figure class="gallery-item" data-country="tunisia">
             <img src="eljem.jpeg" alt="El Jem, Tunisia">
-
             <figcaption>
               <span>01</span>
               <p>El Jem, Tunisia - May 2026</p>
             </figcaption>
           </figure>
 
+          <figure class="gallery-item" data-country="tunisia">
+            <img src="eljem.jpeg" alt="Tunisia">
+            <figcaption><span>02</span><p>Tunisia</p></figcaption>
+          </figure>
 
-          <!-- FRANCE -->
+          <figure class="gallery-item" data-country="tunisia">
+            <img src="eljem.jpeg" alt="Tunisia">
+            <figcaption><span>03</span><p>Tunisia</p></figcaption>
+          </figure>
 
-          <figure
-            class="gallery-item gallery-item-wide"
-            data-country="france"
-          >
+          <figure class="gallery-item" data-country="tunisia">
+            <img src="eljem.jpeg" alt="Tunisia">
+            <figcaption><span>04</span><p>Tunisia</p></figcaption>
+          </figure>
+
+
+
+          <!-- =================================================
+               FRANCE
+          ================================================== -->
+
+          <figure class="gallery-item" data-country="france">
             <img src="menton.jpeg" alt="Menton, France">
-
             <figcaption>
               <span>01</span>
               <p>Menton, France - May 2023</p>
             </figcaption>
           </figure>
 
+          <figure class="gallery-item" data-country="france">
+            <img src="menton.jpeg" alt="France">
+            <figcaption><span>02</span><p>France</p></figcaption>
+          </figure>
 
-          <!-- HONG KONG -->
+          <figure class="gallery-item" data-country="france">
+            <img src="menton.jpeg" alt="France">
+            <figcaption><span>03</span><p>France</p></figcaption>
+          </figure>
 
-          <figure
-            class="gallery-item gallery-item-wide"
-            data-country="hong-kong"
-          >
+          <figure class="gallery-item" data-country="france">
+            <img src="menton.jpeg" alt="France">
+            <figcaption><span>04</span><p>France</p></figcaption>
+          </figure>
+
+
+
+          <!-- =================================================
+               HONG KONG
+          ================================================== -->
+
+          <figure class="gallery-item" data-country="hong-kong">
             <img src="hongk.jpeg" alt="Hong Kong">
-
             <figcaption>
               <span>01</span>
               <p>Hong Kong - July 2024</p>
             </figcaption>
           </figure>
+
+          <figure class="gallery-item" data-country="hong-kong">
+            <img src="hongk.jpeg" alt="Hong Kong">
+            <figcaption><span>02</span><p>Hong Kong</p></figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-country="hong-kong">
+            <img src="hongk.jpeg" alt="Hong Kong">
+            <figcaption><span>03</span><p>Hong Kong</p></figcaption>
+          </figure>
+
+          <figure class="gallery-item" data-country="hong-kong">
+            <img src="hongk.jpeg" alt="Hong Kong">
+            <figcaption><span>04</span><p>Hong Kong</p></figcaption>
+          </figure>
+
 
         </div>
 
@@ -20457,9 +21268,10 @@ Three promotional graphics developed to engage audiences and promote academic an
   </div>
 
 
-  <!-- ==========================================
+
+  <!-- =====================================================
        LIGHTBOX
-  ========================================== -->
+  ====================================================== -->
 
   <div
     id="galleryLightbox"
@@ -20482,6 +21294,7 @@ Three promotional graphics developed to engage audiences and promote academic an
         ×
       </button>
 
+
       <button
         class="gallery-lightbox-arrow gallery-lightbox-prev"
         type="button"
@@ -20489,6 +21302,7 @@ Three promotional graphics developed to engage audiences and promote academic an
       >
         ‹
       </button>
+
 
       <div class="gallery-lightbox-media">
 
@@ -20499,11 +21313,15 @@ Three promotional graphics developed to engage audiences and promote academic an
         >
 
         <div class="gallery-lightbox-info">
+
           <p class="gallery-lightbox-caption"></p>
+
           <span class="gallery-lightbox-counter"></span>
+
         </div>
 
       </div>
+
 
       <button
         class="gallery-lightbox-arrow gallery-lightbox-next"
@@ -20518,7 +21336,6 @@ Three promotional graphics developed to engage audiences and promote academic an
   </div>
 
 </section>
-
 
 
 
