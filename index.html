@@ -17890,833 +17890,6 @@ h2,
   transform: translateY(-1px);
 }
     
-
-
-
-
-
-    /* ==========================================================
-   GALLERY — COMPLETE OVERRIDE
-   Country archive + selected photos + responsive layout
-========================================================== */
-
-
-/* ==========================================================
-   PHOTO ARCHIVE
-   Same width/alignment as existing map
-========================================================== */
-
-#gallery .photo-archive{
-  width:min(1450px, 84vw) !important;
-  max-width:1450px !important;
-  min-width:0 !important;
-
-  margin:52px auto 0 !important;
-  padding:0 !important;
-
-  box-sizing:border-box !important;
-}
-
-
-/* ==========================================================
-   COUNTRY SELECTOR
-========================================================== */
-
-#gallery .gallery-countries{
-  display:grid !important;
-
-  grid-template-columns:
-    repeat(3, minmax(0,1fr)) !important;
-
-  width:100% !important;
-  max-width:100% !important;
-
-  gap:12px !important;
-
-  margin:0 !important;
-  padding:0 !important;
-
-  box-sizing:border-box !important;
-}
-
-
-/* ==========================================================
-   COUNTRY CARD
-========================================================== */
-
-#gallery .gallery-country-card{
-  position:relative !important;
-
-  display:flex !important;
-  align-items:center !important;
-
-  width:100% !important;
-  min-width:0 !important;
-
-  height:125px !important;
-
-  margin:0 !important;
-  padding:26px 30px !important;
-
-  overflow:hidden !important;
-
-  border:1px solid rgba(18,56,43,.13) !important;
-  border-radius:0 !important;
-
-  background:#e4f2ec !important;
-  color:#12382b !important;
-
-  text-align:left !important;
-
-  cursor:pointer !important;
-
-  box-sizing:border-box !important;
-
-  transition:
-    background .3s ease,
-    border-color .3s ease,
-    transform .3s cubic-bezier(.22,1,.36,1) !important;
-}
-
-
-/* remove all previous decorative card elements */
-
-#gallery .gallery-country-card::before,
-#gallery .gallery-country-card::after{
-  display:none !important;
-  content:none !important;
-}
-
-
-/* ==========================================================
-   CARD CONTENT
-========================================================== */
-
-#gallery .country-card-main{
-  position:relative !important;
-
-  display:flex !important;
-  flex-direction:column !important;
-
-  width:100% !important;
-  min-width:0 !important;
-
-  gap:9px !important;
-
-  margin:0 !important;
-  padding:0 !important;
-}
-
-
-/* ==========================================================
-   COUNTRY NAME AREA
-========================================================== */
-
-#gallery .country-name{
-  position:relative !important;
-
-  display:block !important;
-
-  width:100% !important;
-  height:36px !important;
-
-  overflow:hidden !important;
-}
-
-
-/* LOCAL + ENGLISH */
-
-#gallery .country-name-local,
-#gallery .country-name-english{
-  position:absolute !important;
-
-  top:50% !important;
-  left:0 !important;
-
-  display:block !important;
-
-  max-width:100% !important;
-
-  margin:0 !important;
-  padding:0 !important;
-
-  color:#12382b !important;
-
-  font-family:
-    "Space Grotesk",
-    "Noto Sans",
-    Arial,
-    sans-serif !important;
-
-  font-size:1.65rem !important;
-  font-weight:600 !important;
-
-  line-height:1 !important;
-  letter-spacing:-.035em !important;
-
-  white-space:nowrap !important;
-
-  transition:
-    transform .4s cubic-bezier(.22,1,.36,1),
-    opacity .3s ease,
-    color .3s ease !important;
-}
-
-
-/* LOCAL NAME — visible initially */
-
-#gallery .country-name-local{
-  opacity:1 !important;
-
-  transform:
-    translateY(-50%) !important;
-}
-
-
-/* ENGLISH — hidden below */
-
-#gallery .country-name-english{
-  opacity:0 !important;
-
-  transform:
-    translateY(75%) !important;
-}
-
-
-/* Arabic local names */
-
-#gallery .country-name-local[dir="rtl"]{
-  direction:rtl !important;
-
-  /*
-    Keep visual position aligned with other country names,
-    despite the RTL text direction.
-  */
-  text-align:left !important;
-}
-
-
-/* ==========================================================
-   PHOTO COUNT
-========================================================== */
-
-#gallery .country-card-main small{
-  display:block !important;
-
-  margin:0 !important;
-  padding:0 !important;
-
-  color:rgba(18,56,43,.46) !important;
-
-  font-family:"Manrope",sans-serif !important;
-
-  font-size:.59rem !important;
-  font-weight:700 !important;
-
-  line-height:1 !important;
-
-  letter-spacing:.12em !important;
-  text-transform:uppercase !important;
-
-  transition:
-    color .3s ease !important;
-}
-
-
-/* ==========================================================
-   REMOVE OLD ELEMENTS
-========================================================== */
-
-#gallery .country-index,
-#gallery .country-open-mark{
-  display:none !important;
-}
-
-
-/* ==========================================================
-   COUNTRY CARD HOVER
-========================================================== */
-
-#gallery .gallery-country-card:hover{
-  background:#12382b !important;
-
-  border-color:#12382b !important;
-
-  color:#fff !important;
-
-  transform:
-    translateY(-3px) !important;
-}
-
-
-/* local language exits upward */
-
-#gallery .gallery-country-card:hover
-.country-name-local{
-  opacity:0 !important;
-
-  color:#fff !important;
-
-  transform:
-    translateY(-160%) !important;
-}
-
-
-/* English name comes upward */
-
-#gallery .gallery-country-card:hover
-.country-name-english{
-  opacity:1 !important;
-
-  color:#fff !important;
-
-  transform:
-    translateY(-50%) !important;
-}
-
-
-#gallery .gallery-country-card:hover
-.country-card-main small{
-  color:
-    rgba(255,255,255,.55) !important;
-}
-
-
-/* keyboard focus */
-
-#gallery .gallery-country-card:focus-visible{
-  outline:2px solid #12382b !important;
-  outline-offset:3px !important;
-}
-
-
-/* ==========================================================
-   COUNTRY VIEW
-========================================================== */
-
-#gallery .gallery-country-view{
-  display:none !important;
-
-  width:100% !important;
-  max-width:100% !important;
-  min-width:0 !important;
-
-  margin:0 !important;
-  padding:0 !important;
-
-  box-sizing:border-box !important;
-}
-
-
-#gallery .gallery-country-view.is-active{
-  display:block !important;
-
-  animation:
-    galleryCountryAppear .4s ease both !important;
-}
-
-
-@keyframes galleryCountryAppear{
-
-  from{
-    opacity:0;
-    transform:translateY(10px);
-  }
-
-  to{
-    opacity:1;
-    transform:none;
-  }
-
-}
-
-
-/* hide country selector when viewing photos */
-
-#gallery .photo-archive.country-open
-.gallery-countries{
-  display:none !important;
-}
-
-
-/* ==========================================================
-   SELECTED COUNTRY HEADER
-========================================================== */
-
-#gallery .gallery-country-header{
-  display:flex !important;
-
-  align-items:flex-end !important;
-  justify-content:space-between !important;
-
-  width:100% !important;
-  max-width:100% !important;
-
-  gap:30px !important;
-
-  margin:0 0 28px !important;
-
-  padding:
-    0
-    0
-    22px !important;
-
-  border-bottom:
-    1px solid rgba(18,56,43,.14) !important;
-
-  box-sizing:border-box !important;
-}
-
-
-#gallery .gallery-country-heading{
-  min-width:0 !important;
-
-  margin:0 !important;
-  padding:0 !important;
-}
-
-
-/* PHOTO ARCHIVE */
-
-#gallery .gallery-country-kicker{
-  display:block !important;
-
-  margin:0 0 8px !important;
-
-  color:#287d5e !important;
-
-  font-family:"Manrope",sans-serif !important;
-
-  font-size:.62rem !important;
-  font-weight:700 !important;
-
-  line-height:1 !important;
-
-  letter-spacing:.16em !important;
-  text-transform:uppercase !important;
-}
-
-
-/* SELECTED COUNTRY NAME */
-
-#gallery #galleryCountryTitle{
-  margin:0 !important;
-  padding:0 !important;
-
-  max-width:100% !important;
-
-  color:#12382b !important;
-
-  font-family:
-    "Space Grotesk",
-    sans-serif !important;
-
-  font-size:
-    clamp(2.6rem,4vw,4.3rem) !important;
-
-  font-weight:600 !important;
-
-  line-height:.95 !important;
-
-  letter-spacing:-.055em !important;
-
-  text-align:left !important;
-}
-
-
-/* ==========================================================
-   ALL COUNTRIES BUTTON
-========================================================== */
-
-#gallery .gallery-back{
-  flex:0 0 auto !important;
-
-  margin:0 !important;
-
-  padding:
-    11px
-    16px !important;
-
-  border:
-    1px solid rgba(18,56,43,.22) !important;
-
-  border-radius:0 !important;
-
-  background:transparent !important;
-
-  color:#12382b !important;
-
-  font-family:"Manrope",sans-serif !important;
-
-  font-size:.61rem !important;
-  font-weight:700 !important;
-
-  line-height:1 !important;
-
-  letter-spacing:.12em !important;
-  text-transform:uppercase !important;
-
-  cursor:pointer !important;
-
-  transition:
-    background .25s ease,
-    color .25s ease,
-    border-color .25s ease !important;
-}
-
-
-#gallery .gallery-back:hover{
-  background:#12382b !important;
-
-  border-color:#12382b !important;
-
-  color:#fff !important;
-}
-
-
-/* ==========================================================
-   PHOTO GRID
-   FOUR PHOTOS ACROSS
-========================================================== */
-
-#gallery .gallery-country-view
-.gallery-grid,
-
-#gallery .gallery-grid.single-country-photo,
-
-#gallery .gallery-grid.two-country-photos{
-  display:grid !important;
-
-  grid-template-columns:
-    repeat(4,minmax(0,1fr)) !important;
-
-  grid-auto-flow:row !important;
-  grid-auto-rows:auto !important;
-
-  width:100% !important;
-  max-width:100% !important;
-
-  gap:10px !important;
-
-  margin:0 !important;
-  padding:0 !important;
-
-  box-sizing:border-box !important;
-}
-
-
-/* ==========================================================
-   HIDE NON-SELECTED PHOTOS
-========================================================== */
-
-#gallery .gallery-country-view
-.gallery-item{
-  display:none !important;
-}
-
-
-/* ==========================================================
-   SELECTED PHOTOS
-========================================================== */
-
-#gallery .gallery-country-view
-.gallery-item.country-visible,
-
-#gallery .gallery-grid.single-country-photo
-.gallery-item.country-visible,
-
-#gallery .gallery-grid.two-country-photos
-.gallery-item.country-visible{
-  position:relative !important;
-
-  display:block !important;
-
-  grid-column:auto !important;
-  grid-row:auto !important;
-
-  width:100% !important;
-  min-width:0 !important;
-
-  height:330px !important;
-
-  margin:0 !important;
-  padding:0 !important;
-
-  overflow:hidden !important;
-
-  box-sizing:border-box !important;
-}
-
-
-/* override your old masonry classes */
-
-#gallery .gallery-country-view
-.gallery-item-large.country-visible,
-
-#gallery .gallery-country-view
-.gallery-item-tall.country-visible,
-
-#gallery .gallery-country-view
-.gallery-item-wide.country-visible,
-
-#gallery .gallery-country-view
-.gallery-item-medium.country-visible,
-
-#gallery .gallery-country-view
-.gallery-item-small.country-visible{
-  grid-column:auto !important;
-  grid-row:auto !important;
-
-  width:100% !important;
-  height:330px !important;
-}
-
-
-/* ==========================================================
-   PHOTO IMAGE
-========================================================== */
-
-#gallery .gallery-country-view
-.gallery-item.country-visible img,
-
-#gallery .gallery-grid.single-country-photo
-.gallery-item.country-visible img,
-
-#gallery .gallery-grid.two-country-photos
-.gallery-item.country-visible img{
-  display:block !important;
-
-  width:100% !important;
-  height:100% !important;
-
-  max-width:none !important;
-  max-height:none !important;
-
-  margin:0 !important;
-
-  object-fit:cover !important;
-
-  cursor:pointer !important;
-
-  transition:
-    transform .55s cubic-bezier(.22,1,.36,1) !important;
-}
-
-
-#gallery .gallery-country-view
-.gallery-item.country-visible:hover img{
-  transform:
-    scale(1.025) !important;
-}
-
-
-/* ==========================================================
-   PHOTO CAPTIONS
-========================================================== */
-
-#gallery .gallery-country-view
-.gallery-item figcaption{
-  position:absolute !important;
-
-  left:12px !important;
-  right:auto !important;
-
-  bottom:12px !important;
-
-  display:inline-flex !important;
-
-  align-items:center !important;
-
-  width:auto !important;
-  min-width:0 !important;
-  min-height:0 !important;
-
-  gap:9px !important;
-
-  margin:0 !important;
-
-  padding:
-    8px
-    11px !important;
-
-  background:
-    rgba(246,251,248,.94) !important;
-
-  color:#12382b !important;
-
-  white-space:nowrap !important;
-
-  pointer-events:none !important;
-}
-
-
-#gallery .gallery-country-view
-.gallery-item figcaption span{
-  margin:0 !important;
-
-  color:#12382b !important;
-
-  font-family:"Manrope",sans-serif !important;
-
-  font-size:.54rem !important;
-  font-weight:700 !important;
-
-  line-height:1 !important;
-
-  letter-spacing:.1em !important;
-
-  opacity:.45 !important;
-}
-
-
-#gallery .gallery-country-view
-.gallery-item figcaption p{
-  max-width:190px !important;
-
-  margin:0 !important;
-
-  overflow:hidden !important;
-
-  color:#12382b !important;
-
-  font-family:"Manrope",sans-serif !important;
-
-  font-size:.60rem !important;
-  font-weight:650 !important;
-
-  line-height:1 !important;
-
-  text-overflow:ellipsis !important;
-
-  white-space:nowrap !important;
-}
-
-
-/* ==========================================================
-   TABLET
-========================================================== */
-
-@media(max-width:1050px){
-
-  #gallery .photo-archive{
-    width:min(1450px,90vw) !important;
-  }
-
-
-  #gallery .gallery-countries{
-    grid-template-columns:
-      repeat(2,minmax(0,1fr)) !important;
-  }
-
-
-  #gallery .gallery-country-view
-  .gallery-grid,
-
-  #gallery .gallery-grid.single-country-photo,
-
-  #gallery .gallery-grid.two-country-photos{
-    grid-template-columns:
-      repeat(2,minmax(0,1fr)) !important;
-  }
-
-
-  #gallery .gallery-country-view
-  .gallery-item.country-visible,
-
-  #gallery .gallery-grid.single-country-photo
-  .gallery-item.country-visible,
-
-  #gallery .gallery-grid.two-country-photos
-  .gallery-item.country-visible{
-    height:360px !important;
-  }
-
-}
-
-
-/* ==========================================================
-   MOBILE
-========================================================== */
-
-@media(max-width:600px){
-
-  #gallery .photo-archive{
-    width:calc(100% - 36px) !important;
-
-    margin-top:38px !important;
-  }
-
-
-  #gallery .gallery-countries{
-    grid-template-columns:1fr !important;
-
-    gap:8px !important;
-  }
-
-
-  #gallery .gallery-country-card{
-    height:105px !important;
-
-    padding:
-      22px !important;
-  }
-
-
-  #gallery .country-name{
-    height:31px !important;
-  }
-
-
-  #gallery .country-name-local,
-  #gallery .country-name-english{
-    font-size:1.45rem !important;
-  }
-
-
-  #gallery .gallery-country-header{
-    align-items:flex-start !important;
-
-    gap:20px !important;
-  }
-
-
-  #gallery #galleryCountryTitle{
-    font-size:2.8rem !important;
-  }
-
-
-  #gallery .gallery-country-view
-  .gallery-grid,
-
-  #gallery .gallery-grid.single-country-photo,
-
-  #gallery .gallery-grid.two-country-photos{
-    grid-template-columns:1fr !important;
-
-    gap:9px !important;
-  }
-
-
-  #gallery .gallery-country-view
-  .gallery-item.country-visible,
-
-  #gallery .gallery-grid.single-country-photo
-  .gallery-item.country-visible,
-
-  #gallery .gallery-grid.two-country-photos
-  .gallery-item.country-visible{
-    height:340px !important;
-  }
-
-
-  #gallery .gallery-country-view
-  .gallery-item figcaption p{
-    max-width:210px !important;
-  }
-
-}
-
-
     
 
   </style>
@@ -20580,147 +19753,197 @@ Three promotional graphics developed to engage audiences and promote academic an
 
 
 
+<section id="gallery">
+  <div class="gallery-container">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="gallery-countries" id="galleryCountries">
-
-  <button class="gallery-country-card" type="button" data-country="jordan">
-    <div class="country-card-main">
-      <div class="country-name">
-        <span class="country-name-local" lang="ar" dir="rtl">الأردن</span>
-        <span class="country-name-english">Jordan</span>
+    <div class="gallery-header">
+      <div class="oversized-label" data-letter="GALLERY">
+        <span>Places and moments</span>
       </div>
-      <small>4 photographs</small>
+
+      <h2>
+       A world in snapshots.
+      </h2>
+      
     </div>
-  </button>
+
+    <!-- FULL-WIDTH MAP -->
+
+    <div class="gallery-map">
+      <div id="visitedMap"></div>
+    </div>
 
 
-  <button class="gallery-country-card" type="button" data-country="japan">
-    <div class="country-card-main">
-      <div class="country-name">
-        <span class="country-name-local" lang="ja">日本</span>
-        <span class="country-name-english">Japan</span>
+    <!-- EDITORIAL PHOTO COLLAGE -->
+
+    <div class="gallery-grid">
+
+      <figure class="gallery-item gallery-item-large">
+        <img src="jordan.jpeg" alt="Gallery image 1">
+        <figcaption>
+          <span>01</span>
+          <p>Baptism Site, Jordan - August 2023</p>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item gallery-item-tall">
+        <img src="japan.jpeg" alt="Gallery image 2">
+        <figcaption>
+          <span>02</span>
+          <p>Kyoto, Japan - January 2024</p>
+        </figcaption>
+      </figure>
+
+       <figure class="gallery-item gallery-item-tall">
+        <img src="sofia.jpeg" alt="Gallery image 6">
+        <figcaption>
+          <span>03</span>
+          <p>Sofia, Bulgaria - May 2025</p>
+        </figcaption>
+      </figure>
+  
+            <figure class="gallery-item gallery-item-medium">
+        <img src="china1.jpeg" alt="Gallery image 5">
+        <figcaption>
+          <span>04</span>
+          <p>Shanghai, China - February 2024</p>
+        </figcaption>
+      </figure>
+
+            <figure class="gallery-item gallery-item-small">
+        <img src="hampi2.jpeg" alt="Gallery image 8">
+        <figcaption>
+          <span>05</span>
+          <p>Hampi. India - January 2025</p>
+        </figcaption>
+      </figure>
+
+            <figure class="gallery-item gallery-item-medium">
+        <img src="singapore.jpeg" alt="Gallery image 7">
+        <figcaption>
+          <span>06</span>
+          <p>Singapore - March 2024</p>
+        </figcaption>
+      </figure>
+      
+      <figure class="gallery-item gallery-item-small">
+        <img src="vietnam.jpeg" alt="Gallery image 3">
+        <figcaption>
+          <span>07</span>
+          <p>Ninh Binh, Vietnam - July 2024</p>
+        </figcaption>
+      </figure>
+
+      <figure class="gallery-item gallery-item-wide">
+        <img src="georgiap1.jpeg" alt="Gallery image 4">
+        <figcaption>
+          <span>08</span>
+          <p>Stepantsminda, Georgia - February 2025</p>
+        </figcaption>
+      </figure>
+
+                  <figure class="gallery-item gallery-item-wide">
+        <img src="hiroshima.jpeg" alt="Gallery image 9">
+        <figcaption>
+          <span>09</span>
+          <p>Hiroshima, Japan - February 2024</p>
+        </figcaption>
+      </figure>
+
+      
+      <figure class="gallery-item gallery-item-wide">
+        <img src="eljem.jpeg" alt="Gallery image 9">
+        <figcaption>
+          <span>10</span>
+          <p>El Jem, Tunisia - May 2026</p>
+        </figcaption>
+      </figure>
+ 
+            <figure class="gallery-item gallery-item-wide">
+        <img src="menton.jpeg" alt="Gallery image 9">
+        <figcaption>
+          <span>11</span>
+          <p>Menton, France - May 2023</p>
+        </figcaption>
+      </figure>
+
+            <figure class="gallery-item gallery-item-wide">
+        <img src="hongk.jpeg" alt="Gallery image 9">
+        <figcaption>
+          <span>12</span>
+          <p>Hong Kong - July 2024</p>
+        </figcaption>
+      </figure>
+
+
+
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================
+     GALLERY LIGHTBOX
+========================================== -->
+
+<div
+  id="galleryLightbox"
+  class="gallery-lightbox"
+  aria-hidden="true"
+>
+  <div
+    class="gallery-lightbox-inner"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Expanded gallery image"
+  >
+
+    <button
+      class="gallery-lightbox-close"
+      type="button"
+      aria-label="Close image"
+    >
+      ×
+    </button>
+
+    <button
+      class="gallery-lightbox-arrow gallery-lightbox-prev"
+      type="button"
+      aria-label="Previous image"
+    >
+      ‹
+    </button>
+
+    <div class="gallery-lightbox-media">
+
+      <img
+        class="gallery-lightbox-image"
+        src=""
+        alt=""
+      >
+
+      <div class="gallery-lightbox-info">
+        <p class="gallery-lightbox-caption"></p>
+        <span class="gallery-lightbox-counter"></span>
       </div>
-      <small>4 photographs</small>
+
     </div>
-  </button>
 
+    <button
+      class="gallery-lightbox-arrow gallery-lightbox-next"
+      type="button"
+      aria-label="Next image"
+    >
+      ›
+    </button>
 
-  <button class="gallery-country-card" type="button" data-country="bulgaria">
-    <div class="country-card-main">
-      <div class="country-name">
-        <span class="country-name-local" lang="bg">България</span>
-        <span class="country-name-english">Bulgaria</span>
-      </div>
-      <small>4 photographs</small>
-    </div>
-  </button>
-
-
-  <button class="gallery-country-card" type="button" data-country="china">
-    <div class="country-card-main">
-      <div class="country-name">
-        <span class="country-name-local" lang="zh">中国</span>
-        <span class="country-name-english">China</span>
-      </div>
-      <small>4 photographs</small>
-    </div>
-  </button>
-
-
-  <button class="gallery-country-card" type="button" data-country="india">
-    <div class="country-card-main">
-      <div class="country-name">
-        <span class="country-name-local" lang="hi">भारत</span>
-        <span class="country-name-english">India</span>
-      </div>
-      <small>4 photographs</small>
-    </div>
-  </button>
-
-
-  <button class="gallery-country-card" type="button" data-country="singapore">
-    <div class="country-card-main">
-      <div class="country-name">
-        <span class="country-name-local">新加坡</span>
-        <span class="country-name-english">Singapore</span>
-      </div>
-      <small>4 photographs</small>
-    </div>
-  </button>
-
-
-  <button class="gallery-country-card" type="button" data-country="vietnam">
-    <div class="country-card-main">
-      <div class="country-name">
-        <span class="country-name-local" lang="vi">Việt Nam</span>
-        <span class="country-name-english">Vietnam</span>
-      </div>
-      <small>4 photographs</small>
-    </div>
-  </button>
-
-
-  <button class="gallery-country-card" type="button" data-country="georgia">
-    <div class="country-card-main">
-      <div class="country-name">
-        <span class="country-name-local" lang="ka">საქართველო</span>
-        <span class="country-name-english">Georgia</span>
-      </div>
-      <small>4 photographs</small>
-    </div>
-  </button>
-
-
-  <button class="gallery-country-card" type="button" data-country="tunisia">
-    <div class="country-card-main">
-      <div class="country-name">
-        <span class="country-name-local" lang="ar" dir="rtl">تونس</span>
-        <span class="country-name-english">Tunisia</span>
-      </div>
-      <small>4 photographs</small>
-    </div>
-  </button>
-
-
-  <button class="gallery-country-card" type="button" data-country="france">
-    <div class="country-card-main">
-      <div class="country-name">
-        <span class="country-name-local" lang="fr">France</span>
-        <span class="country-name-english">France</span>
-      </div>
-      <small>4 photographs</small>
-    </div>
-  </button>
-
-
-  <button class="gallery-country-card" type="button" data-country="hong-kong">
-    <div class="country-card-main">
-      <div class="country-name">
-        <span class="country-name-local" lang="zh-Hant">香港</span>
-        <span class="country-name-english">Hong Kong</span>
-      </div>
-      <small>4 photographs</small>
-    </div>
-  </button>
-
+  </div>
 </div>
+  
+</section>
+
+
 
 
 
@@ -21796,332 +21019,37 @@ document.addEventListener("DOMContentLoaded", () => {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-
-  /* ==========================================================
-     COUNTRY ARCHIVE ELEMENTS
-  ========================================================== */
-
-  const archive =
-    document.getElementById("photoArchive");
-
-  const countries =
-    document.getElementById("galleryCountries");
-
-  const countryView =
-    document.getElementById("galleryCountryView");
-
-  const countryTitle =
-    document.getElementById("galleryCountryTitle");
-
-  const backButton =
-    document.getElementById("galleryBack");
-
-
-  const countryCards = Array.from(
-    document.querySelectorAll(
-      "#gallery .gallery-country-card"
-    )
-  );
-
-
-  const galleryItems = Array.from(
-    document.querySelectorAll(
-      "#gallery .gallery-item[data-country]"
-    )
-  );
-
-
-  const galleryGrid =
-    countryView?.querySelector(
-      ".gallery-grid"
-    );
-
-
-
-  /* ==========================================================
-     OPEN COUNTRY
-  ========================================================== */
-
-  function openCountry(country, englishName) {
-
-    if (
-      !archive ||
-      !countryView ||
-      !galleryGrid
-    ) {
-      return;
-    }
-
-
-    let visibleCount = 0;
-
-
-    galleryItems.forEach(item => {
-
-      const matches =
-        item.dataset.country === country;
-
-
-      item.classList.toggle(
-        "country-visible",
-        matches
-      );
-
-
-      if (matches) {
-        visibleCount++;
-      }
-
-    });
-
-
-
-    /* Remove any previous count-specific state */
-
-    galleryGrid.classList.remove(
-      "single-country-photo",
-      "two-country-photos"
-    );
-
-
-    /*
-      Kept for compatibility with the rest of your CSS/HTML.
-      With your current structure every country has 4 slots,
-      so these normally won't be used.
-    */
-
-    if (visibleCount === 1) {
-
-      galleryGrid.classList.add(
-        "single-country-photo"
-      );
-
-    }
-
-    else if (visibleCount === 2) {
-
-      galleryGrid.classList.add(
-        "two-country-photos"
-      );
-
-    }
-
-
-
-    /* English title in selected-country view */
-
-    if (countryTitle) {
-
-      countryTitle.textContent =
-        englishName;
-
-    }
-
-
-
-    /* Switch from cards to photographs */
-
-    archive.classList.add(
-      "country-open"
-    );
-
-
-    countryView.classList.add(
-      "is-active"
-    );
-
-
-
-    /* Move user to beginning of archive */
-
-    requestAnimationFrame(() => {
-
-      archive.scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-      });
-
-    });
-
-  }
-
-
-
-  /* ==========================================================
-     COUNTRY CARD EVENTS
-  ========================================================== */
-
-  countryCards.forEach(card => {
-
-    card.addEventListener(
-      "click",
-      () => {
-
-        const country =
-          card.dataset.country;
-
-
-        const englishName =
-          card
-            .querySelector(
-              ".country-name-english"
-            )
-            ?.textContent
-            .trim() ||
-          country;
-
-
-        openCountry(
-          country,
-          englishName
-        );
-
-      }
-    );
-
-  });
-
-
-
-  /* ==========================================================
-     BACK TO ALL COUNTRIES
-  ========================================================== */
-
-  backButton?.addEventListener(
-    "click",
-    () => {
-
-      if (
-        !archive ||
-        !countryView
-      ) {
-        return;
-      }
-
-
-      countryView.classList.remove(
-        "is-active"
-      );
-
-
-      archive.classList.remove(
-        "country-open"
-      );
-
-
-      galleryItems.forEach(item => {
-
-        item.classList.remove(
-          "country-visible"
-        );
-
-      });
-
-
-      galleryGrid?.classList.remove(
-        "single-country-photo",
-        "two-country-photos"
-      );
-
-
-      if (countryTitle) {
-        countryTitle.textContent = "";
-      }
-
-
-      requestAnimationFrame(() => {
-
-        countries?.scrollIntoView({
-          behavior:"smooth",
-          block:"start"
-        });
-
-      });
-
-    }
-  );
-
-
-
-  /* ==========================================================
+  /* ==========================================
      IMAGE GROUPS
-  ========================================================== */
+  ========================================== */
 
   const galleryImages = Array.from(
-    document.querySelectorAll(
-      "#gallery .gallery-item img"
-    )
+    document.querySelectorAll("#gallery .gallery-item img")
   );
-
 
   const allFilmImages = Array.from(
-    document.querySelectorAll(
-      ".filmstrip-track .film-frame img"
-    )
+    document.querySelectorAll(".filmstrip-track .film-frame img")
+  );
+
+  /* First half only — ignores duplicated loop images */
+  const filmImages = allFilmImages.slice(
+    0,
+    Math.ceil(allFilmImages.length / 2)
   );
 
 
-  /*
-    Your filmstrip duplicates images to create its infinite loop.
-    Only use the first half inside the lightbox.
-  */
-
-  const filmImages =
-    allFilmImages.slice(
-      0,
-      Math.ceil(
-        allFilmImages.length / 2
-      )
-    );
-
-
-
-  /* ==========================================================
+  /* ==========================================
      LIGHTBOX ELEMENTS
-  ========================================================== */
+  ========================================== */
 
-  const lightbox =
-    document.getElementById(
-      "galleryLightbox"
-    );
+  const lightbox = document.getElementById("galleryLightbox");
+  const lightboxImage = lightbox?.querySelector(".gallery-lightbox-image");
+  const lightboxCaption = lightbox?.querySelector(".gallery-lightbox-caption");
+  const lightboxCounter = lightbox?.querySelector(".gallery-lightbox-counter");
 
-
-  const lightboxImage =
-    lightbox?.querySelector(
-      ".gallery-lightbox-image"
-    );
-
-
-  const lightboxCaption =
-    lightbox?.querySelector(
-      ".gallery-lightbox-caption"
-    );
-
-
-  const lightboxCounter =
-    lightbox?.querySelector(
-      ".gallery-lightbox-counter"
-    );
-
-
-  const closeButton =
-    lightbox?.querySelector(
-      ".gallery-lightbox-close"
-    );
-
-
-  const previousButton =
-    lightbox?.querySelector(
-      ".gallery-lightbox-prev"
-    );
-
-
-  const nextButton =
-    lightbox?.querySelector(
-      ".gallery-lightbox-next"
-    );
-
-
+  const closeButton = lightbox?.querySelector(".gallery-lightbox-close");
+  const previousButton = lightbox?.querySelector(".gallery-lightbox-prev");
+  const nextButton = lightbox?.querySelector(".gallery-lightbox-next");
 
   if (
     !lightbox ||
@@ -22133,602 +21061,256 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-
-  /* ==========================================================
-     ACTIVE LIGHTBOX SET
-  ========================================================== */
+  /* ==========================================
+     ACTIVE IMAGE SET
+  ========================================== */
 
   let activeImages = [];
-
-  let activeType =
-    "gallery";
-
-  let currentIndex =
-    0;
-
-  let lastOpenedImage =
-    null;
+  let activeType = "gallery";
+  let currentIndex = 0;
+  let lastOpenedImage = null;
 
 
-
-  /* ==========================================================
-     GALLERY CAPTIONS
-  ========================================================== */
+  /* ==========================================
+     CAPTIONS
+  ========================================== */
 
   function getGalleryCaption(image) {
-
-    const galleryItem =
-      image.closest(
-        ".gallery-item"
-      );
-
+    const galleryItem = image.closest(".gallery-item");
 
     const location =
-      galleryItem
-        ?.querySelector(
-          "figcaption p"
-        )
-        ?.textContent
-        .trim() || "";
-
+      galleryItem?.querySelector("figcaption p")?.textContent.trim() || "";
 
     const number =
-      galleryItem
-        ?.querySelector(
-          "figcaption span"
-        )
-        ?.textContent
-        .trim() || "";
-
+      galleryItem?.querySelector("figcaption span")?.textContent.trim() || "";
 
     return {
       location,
       number
     };
-
   }
-
 
 
   function getImageCaption(image) {
 
-    if (
-      activeType ===
-      "filmstrip"
-    ) {
-
+    if (activeType === "filmstrip") {
       return image.alt || "";
-
     }
 
+    const caption = getGalleryCaption(image);
 
-    const caption =
-      getGalleryCaption(image);
-
-
-    return (
-      caption.location ||
-      image.alt ||
-      ""
-    );
-
+    return caption.location || image.alt || "";
   }
 
 
-
-  /* ==========================================================
-     UPDATE LIGHTBOX
-  ========================================================== */
+  /* ==========================================
+     LIGHTBOX FUNCTIONS
+  ========================================== */
 
   function updateLightbox() {
+    const image = activeImages[currentIndex];
 
-    const image =
-      activeImages[
-        currentIndex
-      ];
+    if (!image) return;
 
+    const caption = getImageCaption(image);
 
-    if (!image) {
-      return;
-    }
+    lightboxImage.src = image.currentSrc || image.src;
+    lightboxImage.alt = image.alt || caption || "Image";
 
-
-    const caption =
-      getImageCaption(
-        image
-      );
-
-
-    lightboxImage.src =
-      image.currentSrc ||
-      image.src;
-
-
-    lightboxImage.alt =
-      image.alt ||
-      caption ||
-      "Image";
-
-
-    lightboxCaption.textContent =
-      caption;
-
+    lightboxCaption.textContent = caption;
 
     lightboxCounter.textContent =
       `${currentIndex + 1} / ${activeImages.length}`;
-
   }
 
 
+  function openLightbox(images, index, type, clickedImage) {
+    activeImages = images;
+    currentIndex = index;
+    activeType = type;
+    lastOpenedImage = clickedImage;
 
-  /* ==========================================================
-     OPEN LIGHTBOX
-  ========================================================== */
-
-  function openLightbox(
-    images,
-    index,
-    type,
-    clickedImage
-  ) {
-
-    activeImages =
-      images;
-
-
-    currentIndex =
-      index;
-
-
-    activeType =
-      type;
-
-
-    lastOpenedImage =
-      clickedImage;
-
-
-
-    /* Different controls for gallery / activity filmstrip */
-
+    /* Switch control layout depending on image source */
     lightbox.classList.toggle(
       "filmstrip-lightbox",
       type === "filmstrip"
     );
-
 
     lightbox.classList.toggle(
       "gallery-lightbox-mode",
       type === "gallery"
     );
 
-
     updateLightbox();
 
+    lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
 
-    lightbox.classList.add(
-      "is-open"
-    );
-
-
-    lightbox.setAttribute(
-      "aria-hidden",
-      "false"
-    );
-
-
-    document.body.classList.add(
-      "gallery-lightbox-open"
-    );
-
+    document.body.classList.add("gallery-lightbox-open");
 
     closeButton?.focus();
-
   }
 
 
-
-  /* ==========================================================
-     CLOSE LIGHTBOX
-  ========================================================== */
-
   function closeLightbox() {
-
-    lightbox.classList.remove(
-      "is-open"
-    );
-
-
-    lightbox.setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
 
     lightbox.classList.remove(
       "filmstrip-lightbox",
       "gallery-lightbox-mode"
     );
 
-
-    document.body.classList.remove(
-      "gallery-lightbox-open"
-    );
-
+    document.body.classList.remove("gallery-lightbox-open");
 
     lastOpenedImage?.focus();
-
   }
 
-
-
-  /* ==========================================================
-     NEXT IMAGE
-  ========================================================== */
 
   function showNext() {
-
-    if (
-      !activeImages.length
-    ) {
-      return;
-    }
-
+    if (!activeImages.length) return;
 
     currentIndex =
-      (
-        currentIndex + 1
-      ) %
-      activeImages.length;
-
+      (currentIndex + 1) % activeImages.length;
 
     updateLightbox();
-
   }
 
-
-
-  /* ==========================================================
-     PREVIOUS IMAGE
-  ========================================================== */
 
   function showPrevious() {
-
-    if (
-      !activeImages.length
-    ) {
-      return;
-    }
-
+    if (!activeImages.length) return;
 
     currentIndex =
-      (
-        currentIndex -
-        1 +
-        activeImages.length
-      ) %
+      (currentIndex - 1 + activeImages.length) %
       activeImages.length;
 
-
     updateLightbox();
-
   }
 
 
+  /* ==========================================
+     GALLERY IMAGES
+  ========================================== */
 
-  /* ==========================================================
-     GET IMAGES FROM SAME COUNTRY
-  ========================================================== */
+  galleryImages.forEach((image, index) => {
 
-  function getCountryImages(
-    image
-  ) {
-
-    const country =
-      image
-        .closest(
-          ".gallery-item[data-country]"
-        )
-        ?.dataset.country;
-
-
-    if (!country) {
-
-      return galleryImages;
-
-    }
-
-
-    return galleryImages.filter(
-      galleryImage => {
-
-        const item =
-          galleryImage.closest(
-            ".gallery-item[data-country]"
-          );
-
-
-        return (
-          item?.dataset.country ===
-          country
-        );
-
-      }
+    image.setAttribute("tabindex", "0");
+    image.setAttribute("role", "button");
+    image.setAttribute(
+      "aria-label",
+      `Open gallery image ${index + 1}`
     );
 
-  }
-
-
-
-  /* ==========================================================
-     GALLERY IMAGE EVENTS
-  ========================================================== */
-
-  galleryImages.forEach(
-    (image, globalIndex) => {
-
-
-      image.setAttribute(
-        "tabindex",
-        "0"
+    image.addEventListener("click", () => {
+      openLightbox(
+        galleryImages,
+        index,
+        "gallery",
+        image
       );
+    });
 
+    image.addEventListener("keydown", event => {
 
-      image.setAttribute(
-        "role",
-        "button"
-      );
-
-
-      image.setAttribute(
-        "aria-label",
-        `Open gallery image ${globalIndex + 1}`
-      );
-
-
-
-      function openCountryLightbox() {
-
-        const countryImages =
-          getCountryImages(
-            image
-          );
-
-
-        const countryIndex =
-          countryImages.indexOf(
-            image
-          );
-
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
 
         openLightbox(
-          countryImages,
-          countryIndex,
+          galleryImages,
+          index,
           "gallery",
           image
         );
-
       }
 
+    });
+
+  });
 
 
-      image.addEventListener(
-        "click",
-        openCountryLightbox
+  /* ==========================================
+     FILMSTRIP IMAGES
+  ========================================== */
+
+  allFilmImages.forEach(image => {
+
+    image.style.cursor = "pointer";
+
+    image.setAttribute("tabindex", "0");
+    image.setAttribute("role", "button");
+
+    const matchingIndex = filmImages.findIndex(
+      original => original.src === image.src
+    );
+
+    const safeIndex =
+      matchingIndex >= 0 ? matchingIndex : 0;
+
+    image.setAttribute(
+      "aria-label",
+      `Open activity image ${safeIndex + 1}`
+    );
+
+    function openFilmImage() {
+      openLightbox(
+        filmImages,
+        safeIndex,
+        "filmstrip",
+        image
       );
-
-
-
-      image.addEventListener(
-        "keydown",
-        event => {
-
-          if (
-            event.key ===
-            "Enter" ||
-            event.key === " "
-          ) {
-
-            event.preventDefault();
-
-            openCountryLightbox();
-
-          }
-
-        }
-      );
-
     }
-  );
 
+    image.addEventListener("click", openFilmImage);
 
+    image.addEventListener("keydown", event => {
 
-  /* ==========================================================
-     FILMSTRIP IMAGE EVENTS
-  ========================================================== */
-
-  allFilmImages.forEach(
-    image => {
-
-
-      image.style.cursor =
-        "pointer";
-
-
-      image.setAttribute(
-        "tabindex",
-        "0"
-      );
-
-
-      image.setAttribute(
-        "role",
-        "button"
-      );
-
-
-
-      const matchingIndex =
-        filmImages.findIndex(
-          original =>
-            original.src ===
-            image.src
-        );
-
-
-      const safeIndex =
-        matchingIndex >= 0
-          ? matchingIndex
-          : 0;
-
-
-
-      image.setAttribute(
-        "aria-label",
-        `Open activity image ${safeIndex + 1}`
-      );
-
-
-
-      function openFilmImage() {
-
-        openLightbox(
-          filmImages,
-          safeIndex,
-          "filmstrip",
-          image
-        );
-
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openFilmImage();
       }
 
+    });
+
+  });
 
 
-      image.addEventListener(
-        "click",
-        openFilmImage
-      );
+  /* ==========================================
+     LIGHTBOX CONTROLS
+  ========================================== */
+
+  closeButton?.addEventListener("click", closeLightbox);
+  nextButton?.addEventListener("click", showNext);
+  previousButton?.addEventListener("click", showPrevious);
 
 
+  lightbox.addEventListener("click", event => {
 
-      image.addEventListener(
-        "keydown",
-        event => {
-
-          if (
-            event.key ===
-            "Enter" ||
-            event.key === " "
-          ) {
-
-            event.preventDefault();
-
-            openFilmImage();
-
-          }
-
-        }
-      );
-
+    if (event.target === lightbox) {
+      closeLightbox();
     }
-  );
+
+  });
 
 
+  document.addEventListener("keydown", event => {
 
-  /* ==========================================================
-     LIGHTBOX BUTTONS
-  ========================================================== */
-
-  closeButton?.addEventListener(
-    "click",
-    closeLightbox
-  );
-
-
-  nextButton?.addEventListener(
-    "click",
-    showNext
-  );
-
-
-  previousButton?.addEventListener(
-    "click",
-    showPrevious
-  );
-
-
-
-  /* ==========================================================
-     CLICK BACKDROP TO CLOSE
-  ========================================================== */
-
-  lightbox.addEventListener(
-    "click",
-    event => {
-
-      if (
-        event.target ===
-        lightbox
-      ) {
-
-        closeLightbox();
-
-      }
-
+    if (!lightbox.classList.contains("is-open")) {
+      return;
     }
-  );
 
-
-
-  /* ==========================================================
-     KEYBOARD CONTROLS
-  ========================================================== */
-
-  document.addEventListener(
-    "keydown",
-    event => {
-
-
-      if (
-        !lightbox.classList.contains(
-          "is-open"
-        )
-      ) {
-        return;
-      }
-
-
-      if (
-        event.key ===
-        "Escape"
-      ) {
-
-        closeLightbox();
-
-      }
-
-
-      if (
-        event.key ===
-        "ArrowRight"
-      ) {
-
-        showNext();
-
-      }
-
-
-      if (
-        event.key ===
-        "ArrowLeft"
-      ) {
-
-        showPrevious();
-
-      }
-
+    if (event.key === "Escape") {
+      closeLightbox();
     }
-  );
 
+    if (event.key === "ArrowRight") {
+      showNext();
+    }
+
+    if (event.key === "ArrowLeft") {
+      showPrevious();
+    }
+
+  });
 
 });
 </script>
