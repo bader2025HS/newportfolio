@@ -19700,7 +19700,34 @@ h2,
 }
 
 
+/* ==========================================================
+   COUNTRY HOVER — GREY OTHERS ONLY WHEN A CARD IS HOVERED
+========================================================== */
 
+#gallery .gallery-countries .gallery-country-card {
+  filter: grayscale(0) brightness(1) !important;
+  opacity: 1 !important;
+
+  transition:
+    filter 600ms ease,
+    opacity 600ms ease,
+    transform 600ms cubic-bezier(.22,1,.36,1) !important;
+}
+
+/* Grey cards ONLY if an actual country card is hovered */
+#gallery .gallery-countries:has(.gallery-country-card:hover)
+.gallery-country-card:not(:hover) {
+  filter: grayscale(.75) brightness(.72) !important;
+  opacity: .65 !important;
+}
+
+/* Hovered country stays fully coloured */
+#gallery .gallery-countries:has(.gallery-country-card:hover)
+.gallery-country-card:hover {
+  filter: grayscale(0) brightness(1) !important;
+  opacity: 1 !important;
+  transform: translateY(-3px) !important;
+}
 
 
 
