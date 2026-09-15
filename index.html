@@ -17889,7 +17889,511 @@ h2,
 
   transform: translateY(-1px);
 }
-    
+
+
+
+
+
+    /* ==========================================================
+   GALLERY — COUNTRY ARCHIVE OVERRIDE
+   Map + gallery heading remain unchanged
+========================================================== */
+
+
+/* ----------------------------------------------------------
+   PHOTO ARCHIVE
+---------------------------------------------------------- */
+
+#gallery .photo-archive{
+  width:100%;
+  margin-top:64px;
+}
+
+
+/* ----------------------------------------------------------
+   COUNTRY GRID
+---------------------------------------------------------- */
+
+#gallery .gallery-countries{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:14px;
+  width:100%;
+}
+
+
+/* ----------------------------------------------------------
+   COUNTRY CARD
+---------------------------------------------------------- */
+
+#gallery .gallery-country-card{
+  position:relative;
+  display:block;
+
+  width:100%;
+  height:clamp(300px,29vw,430px);
+
+  margin:0;
+  padding:0;
+
+  overflow:hidden;
+
+  border:0;
+  border-radius:0;
+
+  background:#12382b;
+
+  text-align:left;
+  cursor:pointer;
+
+  appearance:none;
+  -webkit-appearance:none;
+
+  isolation:isolate;
+}
+
+
+/* IMAGE */
+
+#gallery .gallery-country-card > img{
+  position:absolute;
+  inset:0;
+
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:saturate(.88);
+
+  transition:
+    transform .65s cubic-bezier(.22,1,.36,1),
+    filter .45s ease;
+}
+
+
+/* DARK PHOTO OVERLAY */
+
+#gallery .gallery-country-card::after{
+  content:"";
+
+  position:absolute;
+  z-index:1;
+  inset:0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(8,38,28,.88) 0%,
+      rgba(8,38,28,.38) 38%,
+      rgba(8,38,28,.05) 72%
+    );
+
+  transition:background .4s ease;
+}
+
+
+/* ----------------------------------------------------------
+   COUNTRY TEXT
+---------------------------------------------------------- */
+
+#gallery .gallery-country-overlay{
+  position:absolute;
+  z-index:2;
+
+  left:28px;
+  right:28px;
+  bottom:26px;
+
+  color:#fff;
+}
+
+
+#gallery .gallery-country-overlay > span{
+  display:block;
+
+  margin:0;
+
+  font-family:"Space Grotesk",sans-serif;
+  font-size:clamp(2rem,3vw,3.5rem);
+  font-weight:600;
+
+  line-height:.95;
+  letter-spacing:-.055em;
+}
+
+
+#gallery .gallery-country-overlay > small{
+  display:block;
+
+  margin-top:11px;
+
+  font-family:"Manrope",sans-serif;
+  font-size:.67rem;
+  font-weight:600;
+
+  line-height:1;
+
+  letter-spacing:.15em;
+  text-transform:uppercase;
+
+  opacity:.68;
+
+  transition:
+    opacity .3s ease,
+    transform .3s ease;
+}
+
+
+/* ----------------------------------------------------------
+   COUNTRY CARD HOVER
+---------------------------------------------------------- */
+
+#gallery .gallery-country-card:hover > img{
+  transform:scale(1.045);
+  filter:saturate(1);
+}
+
+
+#gallery .gallery-country-card:hover::after{
+  background:
+    linear-gradient(
+      to top,
+      rgba(18,56,43,.96) 0%,
+      rgba(18,56,43,.38) 42%,
+      rgba(18,56,43,.04) 76%
+    );
+}
+
+
+#gallery .gallery-country-card:hover
+.gallery-country-overlay > small{
+  opacity:1;
+  transform:translateY(-2px);
+}
+
+
+/* KEYBOARD */
+
+#gallery .gallery-country-card:focus-visible{
+  outline:3px solid #8ed4bf;
+  outline-offset:4px;
+}
+
+
+/* ----------------------------------------------------------
+   COUNTRY VIEW
+---------------------------------------------------------- */
+
+#gallery .gallery-country-view{
+  display:none;
+  width:100%;
+}
+
+
+#gallery .gallery-country-view.is-active{
+  display:block;
+
+  animation:galleryCountryAppear .45s
+    cubic-bezier(.22,1,.36,1) both;
+}
+
+
+@keyframes galleryCountryAppear{
+
+  from{
+    opacity:0;
+    transform:translateY(16px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+
+/* Hide country cards once one is selected */
+
+#gallery .photo-archive.country-open
+.gallery-countries{
+  display:none;
+}
+
+
+/* ----------------------------------------------------------
+   COUNTRY VIEW HEADER
+---------------------------------------------------------- */
+
+#gallery .gallery-country-header{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+
+  width:100%;
+
+  margin-bottom:38px;
+  padding-bottom:24px;
+
+  border-bottom:
+    1px solid rgba(18,56,43,.18);
+}
+
+
+#gallery .gallery-country-heading{
+  text-align:right;
+}
+
+
+#gallery .gallery-country-heading > span{
+  display:block;
+
+  margin-bottom:8px;
+
+  color:#287d5e;
+
+  font-family:"Space Grotesk",sans-serif;
+  font-size:.67rem;
+  font-weight:700;
+
+  letter-spacing:.17em;
+  text-transform:uppercase;
+}
+
+
+#gallery #galleryCountryTitle{
+  margin:0;
+
+  color:#12382b;
+
+  font-family:"Space Grotesk",sans-serif;
+  font-size:clamp(3rem,6vw,6rem);
+  font-weight:600;
+
+  line-height:.88;
+  letter-spacing:-.065em;
+}
+
+
+/* ----------------------------------------------------------
+   BACK BUTTON
+---------------------------------------------------------- */
+
+#gallery .gallery-back{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  min-height:42px;
+
+  padding:0 17px;
+
+  border:
+    1px solid rgba(18,56,43,.28);
+
+  border-radius:0;
+
+  background:transparent;
+
+  color:#12382b;
+
+  font-family:"Manrope",sans-serif;
+  font-size:.68rem;
+  font-weight:700;
+
+  letter-spacing:.11em;
+  text-transform:uppercase;
+
+  cursor:pointer;
+
+  transition:
+    background .25s ease,
+    color .25s ease,
+    border-color .25s ease;
+}
+
+
+#gallery .gallery-back:hover{
+  background:#12382b;
+  border-color:#12382b;
+  color:#fff;
+}
+
+
+/* ----------------------------------------------------------
+   IMPORTANT:
+   HIDE PHOTOS FROM OTHER COUNTRIES
+---------------------------------------------------------- */
+
+#gallery .gallery-country-view
+.gallery-grid
+.gallery-item{
+  display:none !important;
+}
+
+
+#gallery .gallery-country-view
+.gallery-grid
+.gallery-item.country-visible{
+  display:block !important;
+}
+
+
+/* ----------------------------------------------------------
+   WHEN ONLY ONE PHOTO EXISTS
+
+   Prevent a single photo from becoming absurdly huge.
+---------------------------------------------------------- */
+
+#gallery .gallery-grid.single-country-photo{
+  display:grid !important;
+
+  grid-template-columns:
+    minmax(0, 900px) !important;
+
+  justify-content:start;
+
+  gap:0 !important;
+}
+
+
+#gallery .gallery-grid.single-country-photo
+.gallery-item.country-visible{
+  width:100% !important;
+
+  grid-column:auto !important;
+  grid-row:auto !important;
+}
+
+
+/* ----------------------------------------------------------
+   TWO PHOTOS — JAPAN CURRENTLY
+---------------------------------------------------------- */
+
+#gallery .gallery-grid.two-country-photos{
+  display:grid !important;
+
+  grid-template-columns:
+    repeat(2,minmax(0,1fr)) !important;
+
+  gap:14px !important;
+}
+
+
+#gallery .gallery-grid.two-country-photos
+.gallery-item.country-visible{
+  width:100% !important;
+
+  grid-column:auto !important;
+  grid-row:auto !important;
+}
+
+
+/* Make the selected images visually consistent */
+
+#gallery .gallery-country-view
+.gallery-item.country-visible{
+  position:relative;
+  overflow:hidden;
+}
+
+
+#gallery .gallery-country-view
+.gallery-item.country-visible > img{
+  width:100%;
+  height:100%;
+  min-height:430px;
+
+  object-fit:cover;
+}
+
+
+/* ----------------------------------------------------------
+   TABLET
+---------------------------------------------------------- */
+
+@media(max-width:1000px){
+
+  #gallery .gallery-countries{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+  #gallery .gallery-country-card{
+    height:360px;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   MOBILE
+---------------------------------------------------------- */
+
+@media(max-width:650px){
+
+  #gallery .photo-archive{
+    margin-top:42px;
+  }
+
+
+  #gallery .gallery-countries{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+
+  #gallery .gallery-country-card{
+    height:300px;
+  }
+
+
+  #gallery .gallery-country-overlay{
+    left:21px;
+    right:21px;
+    bottom:21px;
+  }
+
+
+  #gallery .gallery-country-overlay > span{
+    font-size:2.5rem;
+  }
+
+
+  #gallery .gallery-country-header{
+    align-items:flex-start;
+    flex-direction:column-reverse;
+
+    gap:24px;
+
+    margin-bottom:25px;
+  }
+
+
+  #gallery .gallery-country-heading{
+    text-align:left;
+  }
+
+
+  #gallery #galleryCountryTitle{
+    font-size:3.7rem;
+  }
+
+
+  #gallery .gallery-grid.two-country-photos{
+    grid-template-columns:1fr !important;
+  }
+
+
+  #gallery .gallery-country-view
+  .gallery-item.country-visible > img{
+    min-height:340px;
+  }
+
+}
     
 
   </style>
@@ -19754,6 +20258,7 @@ Three promotional graphics developed to engage audiences and promote academic an
 
 
 <section id="gallery">
+
   <div class="gallery-container">
 
     <div class="gallery-header">
@@ -19767,182 +20272,417 @@ Three promotional graphics developed to engage audiences and promote academic an
       
     </div>
 
-    <!-- FULL-WIDTH MAP -->
+
+    <!-- FULL-WIDTH MAP — UNCHANGED -->
 
     <div class="gallery-map">
       <div id="visitedMap"></div>
     </div>
 
 
-    <!-- EDITORIAL PHOTO COLLAGE -->
+    <!-- ==========================================
+         COUNTRY PHOTO ARCHIVE
+    ========================================== -->
 
-    <div class="gallery-grid">
-
-      <figure class="gallery-item gallery-item-large">
-        <img src="jordan.jpeg" alt="Gallery image 1">
-        <figcaption>
-          <span>01</span>
-          <p>Baptism Site, Jordan - August 2023</p>
-        </figcaption>
-      </figure>
-
-      <figure class="gallery-item gallery-item-tall">
-        <img src="japan.jpeg" alt="Gallery image 2">
-        <figcaption>
-          <span>02</span>
-          <p>Kyoto, Japan - January 2024</p>
-        </figcaption>
-      </figure>
-
-       <figure class="gallery-item gallery-item-tall">
-        <img src="sofia.jpeg" alt="Gallery image 6">
-        <figcaption>
-          <span>03</span>
-          <p>Sofia, Bulgaria - May 2025</p>
-        </figcaption>
-      </figure>
-  
-            <figure class="gallery-item gallery-item-medium">
-        <img src="china1.jpeg" alt="Gallery image 5">
-        <figcaption>
-          <span>04</span>
-          <p>Shanghai, China - February 2024</p>
-        </figcaption>
-      </figure>
-
-            <figure class="gallery-item gallery-item-small">
-        <img src="hampi2.jpeg" alt="Gallery image 8">
-        <figcaption>
-          <span>05</span>
-          <p>Hampi. India - January 2025</p>
-        </figcaption>
-      </figure>
-
-            <figure class="gallery-item gallery-item-medium">
-        <img src="singapore.jpeg" alt="Gallery image 7">
-        <figcaption>
-          <span>06</span>
-          <p>Singapore - March 2024</p>
-        </figcaption>
-      </figure>
-      
-      <figure class="gallery-item gallery-item-small">
-        <img src="vietnam.jpeg" alt="Gallery image 3">
-        <figcaption>
-          <span>07</span>
-          <p>Ninh Binh, Vietnam - July 2024</p>
-        </figcaption>
-      </figure>
-
-      <figure class="gallery-item gallery-item-wide">
-        <img src="georgiap1.jpeg" alt="Gallery image 4">
-        <figcaption>
-          <span>08</span>
-          <p>Stepantsminda, Georgia - February 2025</p>
-        </figcaption>
-      </figure>
-
-                  <figure class="gallery-item gallery-item-wide">
-        <img src="hiroshima.jpeg" alt="Gallery image 9">
-        <figcaption>
-          <span>09</span>
-          <p>Hiroshima, Japan - February 2024</p>
-        </figcaption>
-      </figure>
-
-      
-      <figure class="gallery-item gallery-item-wide">
-        <img src="eljem.jpeg" alt="Gallery image 9">
-        <figcaption>
-          <span>10</span>
-          <p>El Jem, Tunisia - May 2026</p>
-        </figcaption>
-      </figure>
- 
-            <figure class="gallery-item gallery-item-wide">
-        <img src="menton.jpeg" alt="Gallery image 9">
-        <figcaption>
-          <span>11</span>
-          <p>Menton, France - May 2023</p>
-        </figcaption>
-      </figure>
-
-            <figure class="gallery-item gallery-item-wide">
-        <img src="hongk.jpeg" alt="Gallery image 9">
-        <figcaption>
-          <span>12</span>
-          <p>Hong Kong - July 2024</p>
-        </figcaption>
-      </figure>
+    <div class="photo-archive" id="photoArchive">
 
 
+      <!-- COUNTRY CARDS -->
+
+      <div class="gallery-countries" id="galleryCountries">
 
 
-    </div>
+        <button class="gallery-country-card" type="button" data-country="jordan">
+          <img src="jordan.jpeg" alt="Jordan">
+          <div class="gallery-country-overlay">
+            <span>Jordan</span>
+            <small>01 photograph</small>
+          </div>
+        </button>
 
-  </div>
+
+        <button class="gallery-country-card" type="button" data-country="japan">
+          <img src="japan.jpeg" alt="Japan">
+          <div class="gallery-country-overlay">
+            <span>Japan</span>
+            <small>02 photographs</small>
+          </div>
+        </button>
 
 
-  <!-- ==========================================
-     GALLERY LIGHTBOX
-========================================== -->
+        <button class="gallery-country-card" type="button" data-country="bulgaria">
+          <img src="sofia.jpeg" alt="Bulgaria">
+          <div class="gallery-country-overlay">
+            <span>Bulgaria</span>
+            <small>01 photograph</small>
+          </div>
+        </button>
 
-<div
-  id="galleryLightbox"
-  class="gallery-lightbox"
-  aria-hidden="true"
->
-  <div
-    class="gallery-lightbox-inner"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Expanded gallery image"
-  >
 
-    <button
-      class="gallery-lightbox-close"
-      type="button"
-      aria-label="Close image"
-    >
-      ×
-    </button>
+        <button class="gallery-country-card" type="button" data-country="china">
+          <img src="china1.jpeg" alt="China">
+          <div class="gallery-country-overlay">
+            <span>China</span>
+            <small>01 photograph</small>
+          </div>
+        </button>
 
-    <button
-      class="gallery-lightbox-arrow gallery-lightbox-prev"
-      type="button"
-      aria-label="Previous image"
-    >
-      ‹
-    </button>
 
-    <div class="gallery-lightbox-media">
+        <button class="gallery-country-card" type="button" data-country="india">
+          <img src="hampi2.jpeg" alt="India">
+          <div class="gallery-country-overlay">
+            <span>India</span>
+            <small>01 photograph</small>
+          </div>
+        </button>
 
-      <img
-        class="gallery-lightbox-image"
-        src=""
-        alt=""
-      >
 
-      <div class="gallery-lightbox-info">
-        <p class="gallery-lightbox-caption"></p>
-        <span class="gallery-lightbox-counter"></span>
+        <button class="gallery-country-card" type="button" data-country="singapore">
+          <img src="singapore.jpeg" alt="Singapore">
+          <div class="gallery-country-overlay">
+            <span>Singapore</span>
+            <small>01 photograph</small>
+          </div>
+        </button>
+
+
+        <button class="gallery-country-card" type="button" data-country="vietnam">
+          <img src="vietnam.jpeg" alt="Vietnam">
+          <div class="gallery-country-overlay">
+            <span>Vietnam</span>
+            <small>01 photograph</small>
+          </div>
+        </button>
+
+
+        <button class="gallery-country-card" type="button" data-country="georgia">
+          <img src="georgiap1.jpeg" alt="Georgia">
+          <div class="gallery-country-overlay">
+            <span>Georgia</span>
+            <small>01 photograph</small>
+          </div>
+        </button>
+
+
+        <button class="gallery-country-card" type="button" data-country="tunisia">
+          <img src="eljem.jpeg" alt="Tunisia">
+          <div class="gallery-country-overlay">
+            <span>Tunisia</span>
+            <small>01 photograph</small>
+          </div>
+        </button>
+
+
+        <button class="gallery-country-card" type="button" data-country="france">
+          <img src="menton.jpeg" alt="France">
+          <div class="gallery-country-overlay">
+            <span>France</span>
+            <small>01 photograph</small>
+          </div>
+        </button>
+
+
+        <button class="gallery-country-card" type="button" data-country="hong-kong">
+          <img src="hongk.jpeg" alt="Hong Kong">
+          <div class="gallery-country-overlay">
+            <span>Hong Kong</span>
+            <small>01 photograph</small>
+          </div>
+        </button>
+
+      </div>
+
+
+
+      <!-- ==========================================
+           COUNTRY PHOTOS
+      ========================================== -->
+
+      <div class="gallery-country-view" id="galleryCountryView">
+
+        <div class="gallery-country-header">
+
+          <button
+            class="gallery-back"
+            id="galleryBack"
+            type="button"
+          >
+            All countries
+          </button>
+
+          <div class="gallery-country-heading">
+            <span>Photo archive</span>
+            <h3 id="galleryCountryTitle"></h3>
+          </div>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+
+          <!-- JORDAN -->
+
+          <figure
+            class="gallery-item gallery-item-large"
+            data-country="jordan"
+          >
+            <img src="jordan.jpeg" alt="Gallery image 1">
+
+            <figcaption>
+              <span>01</span>
+              <p>Baptism Site, Jordan - August 2023</p>
+            </figcaption>
+          </figure>
+
+
+
+          <!-- JAPAN -->
+
+          <figure
+            class="gallery-item gallery-item-tall"
+            data-country="japan"
+          >
+            <img src="japan.jpeg" alt="Gallery image 2">
+
+            <figcaption>
+              <span>01</span>
+              <p>Kyoto, Japan - January 2024</p>
+            </figcaption>
+          </figure>
+
+
+          <figure
+            class="gallery-item gallery-item-wide"
+            data-country="japan"
+          >
+            <img src="hiroshima.jpeg" alt="Gallery image 9">
+
+            <figcaption>
+              <span>02</span>
+              <p>Hiroshima, Japan - February 2024</p>
+            </figcaption>
+          </figure>
+
+
+
+          <!-- BULGARIA -->
+
+          <figure
+            class="gallery-item gallery-item-tall"
+            data-country="bulgaria"
+          >
+            <img src="sofia.jpeg" alt="Gallery image 6">
+
+            <figcaption>
+              <span>01</span>
+              <p>Sofia, Bulgaria - May 2025</p>
+            </figcaption>
+          </figure>
+
+
+
+          <!-- CHINA -->
+
+          <figure
+            class="gallery-item gallery-item-medium"
+            data-country="china"
+          >
+            <img src="china1.jpeg" alt="Gallery image 5">
+
+            <figcaption>
+              <span>01</span>
+              <p>Shanghai, China - February 2024</p>
+            </figcaption>
+          </figure>
+
+
+
+          <!-- INDIA -->
+
+          <figure
+            class="gallery-item gallery-item-small"
+            data-country="india"
+          >
+            <img src="hampi2.jpeg" alt="Gallery image 8">
+
+            <figcaption>
+              <span>01</span>
+              <p>Hampi, India - January 2025</p>
+            </figcaption>
+          </figure>
+
+
+
+          <!-- SINGAPORE -->
+
+          <figure
+            class="gallery-item gallery-item-medium"
+            data-country="singapore"
+          >
+            <img src="singapore.jpeg" alt="Gallery image 7">
+
+            <figcaption>
+              <span>01</span>
+              <p>Singapore - March 2024</p>
+            </figcaption>
+          </figure>
+
+
+
+          <!-- VIETNAM -->
+
+          <figure
+            class="gallery-item gallery-item-small"
+            data-country="vietnam"
+          >
+            <img src="vietnam.jpeg" alt="Gallery image 3">
+
+            <figcaption>
+              <span>01</span>
+              <p>Ninh Binh, Vietnam - July 2024</p>
+            </figcaption>
+          </figure>
+
+
+
+          <!-- GEORGIA -->
+
+          <figure
+            class="gallery-item gallery-item-wide"
+            data-country="georgia"
+          >
+            <img src="georgiap1.jpeg" alt="Gallery image 4">
+
+            <figcaption>
+              <span>01</span>
+              <p>Stepantsminda, Georgia - February 2025</p>
+            </figcaption>
+          </figure>
+
+
+
+          <!-- TUNISIA -->
+
+          <figure
+            class="gallery-item gallery-item-wide"
+            data-country="tunisia"
+          >
+            <img src="eljem.jpeg" alt="Gallery image 9">
+
+            <figcaption>
+              <span>01</span>
+              <p>El Jem, Tunisia - May 2026</p>
+            </figcaption>
+          </figure>
+
+
+
+          <!-- FRANCE -->
+
+          <figure
+            class="gallery-item gallery-item-wide"
+            data-country="france"
+          >
+            <img src="menton.jpeg" alt="Gallery image 9">
+
+            <figcaption>
+              <span>01</span>
+              <p>Menton, France - May 2023</p>
+            </figcaption>
+          </figure>
+
+
+
+          <!-- HONG KONG -->
+
+          <figure
+            class="gallery-item gallery-item-wide"
+            data-country="hong-kong"
+          >
+            <img src="hongk.jpeg" alt="Gallery image 9">
+
+            <figcaption>
+              <span>01</span>
+              <p>Hong Kong - July 2024</p>
+            </figcaption>
+          </figure>
+
+        </div>
+
       </div>
 
     </div>
 
-    <button
-      class="gallery-lightbox-arrow gallery-lightbox-next"
-      type="button"
-      aria-label="Next image"
+  </div>
+
+
+
+  <!-- ==========================================
+       GALLERY LIGHTBOX
+       YOUR EXISTING LIGHTBOX — UNCHANGED
+  ========================================== -->
+
+  <div
+    id="galleryLightbox"
+    class="gallery-lightbox"
+    aria-hidden="true"
+  >
+
+    <div
+      class="gallery-lightbox-inner"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Expanded gallery image"
     >
-      ›
-    </button>
+
+      <button
+        class="gallery-lightbox-close"
+        type="button"
+        aria-label="Close image"
+      >
+        ×
+      </button>
+
+
+      <button
+        class="gallery-lightbox-arrow gallery-lightbox-prev"
+        type="button"
+        aria-label="Previous image"
+      >
+        ‹
+      </button>
+
+
+      <div class="gallery-lightbox-media">
+
+        <img
+          class="gallery-lightbox-image"
+          src=""
+          alt=""
+        >
+
+        <div class="gallery-lightbox-info">
+          <p class="gallery-lightbox-caption"></p>
+          <span class="gallery-lightbox-counter"></span>
+        </div>
+
+      </div>
+
+
+      <button
+        class="gallery-lightbox-arrow gallery-lightbox-next"
+        type="button"
+        aria-label="Next image"
+      >
+        ›
+      </button>
+
+    </div>
 
   </div>
-</div>
-  
-</section>
 
+</section>
 
 
 
@@ -21016,40 +21756,251 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
+
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* ==========================================
+     COUNTRY GALLERY
+  ========================================== */
+
+  const archive = document.getElementById("photoArchive");
+  const countries = document.getElementById("galleryCountries");
+  const countryView = document.getElementById("galleryCountryView");
+  const countryTitle = document.getElementById("galleryCountryTitle");
+  const backButton = document.getElementById("galleryBack");
+
+  const countryCards = Array.from(
+    document.querySelectorAll("#gallery .gallery-country-card")
+  );
+
+  const galleryItems = Array.from(
+    document.querySelectorAll(
+      "#gallery .gallery-item[data-country]"
+    )
+  );
+
+  const galleryGrid =
+    countryView?.querySelector(".gallery-grid");
+
+
+  /* ==========================================
+     OPEN COUNTRY
+  ========================================== */
+
+  function openCountry(country, name) {
+
+    if (!archive || !countryView || !galleryGrid) return;
+
+    let visibleCount = 0;
+
+    galleryItems.forEach(item => {
+
+      const matches =
+        item.dataset.country === country;
+
+      item.classList.toggle(
+        "country-visible",
+        matches
+      );
+
+      if (matches) {
+        visibleCount++;
+      }
+
+    });
+
+
+    /* Reset photo-count layouts */
+
+    galleryGrid.classList.remove(
+      "single-country-photo",
+      "two-country-photos"
+    );
+
+
+    if (visibleCount === 1) {
+      galleryGrid.classList.add(
+        "single-country-photo"
+      );
+    }
+
+
+    if (visibleCount === 2) {
+      galleryGrid.classList.add(
+        "two-country-photos"
+      );
+    }
+
+
+    /* Country title */
+
+    if (countryTitle) {
+      countryTitle.textContent = name;
+    }
+
+
+    /* Switch view */
+
+    archive.classList.add("country-open");
+    countryView.classList.add("is-active");
+
+
+    /* Scroll to selected gallery */
+
+    requestAnimationFrame(() => {
+
+      countryView.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    });
+
+  }
+
+
+  /* ==========================================
+     COUNTRY CARD CLICKS
+  ========================================== */
+
+  countryCards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+      const country = card.dataset.country;
+
+      const name =
+        card
+          .querySelector(
+            ".gallery-country-overlay > span"
+          )
+          ?.textContent
+          .trim() || country;
+
+      openCountry(
+        country,
+        name
+      );
+
+    });
+
+  });
+
+
+  /* ==========================================
+     BACK TO COUNTRIES
+  ========================================== */
+
+  backButton?.addEventListener("click", () => {
+
+    if (!archive || !countryView) return;
+
+    countryView.classList.remove("is-active");
+    archive.classList.remove("country-open");
+
+
+    galleryItems.forEach(item => {
+
+      item.classList.remove(
+        "country-visible"
+      );
+
+    });
+
+
+    galleryGrid?.classList.remove(
+      "single-country-photo",
+      "two-country-photos"
+    );
+
+
+    requestAnimationFrame(() => {
+
+      countries?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    });
+
+  });
+
+
 
   /* ==========================================
      IMAGE GROUPS
   ========================================== */
 
   const galleryImages = Array.from(
-    document.querySelectorAll("#gallery .gallery-item img")
+    document.querySelectorAll(
+      "#gallery .gallery-item img"
+    )
   );
+
 
   const allFilmImages = Array.from(
-    document.querySelectorAll(".filmstrip-track .film-frame img")
+    document.querySelectorAll(
+      ".filmstrip-track .film-frame img"
+    )
   );
 
+
   /* First half only — ignores duplicated loop images */
+
   const filmImages = allFilmImages.slice(
     0,
     Math.ceil(allFilmImages.length / 2)
   );
 
 
+
   /* ==========================================
      LIGHTBOX ELEMENTS
   ========================================== */
 
-  const lightbox = document.getElementById("galleryLightbox");
-  const lightboxImage = lightbox?.querySelector(".gallery-lightbox-image");
-  const lightboxCaption = lightbox?.querySelector(".gallery-lightbox-caption");
-  const lightboxCounter = lightbox?.querySelector(".gallery-lightbox-counter");
+  const lightbox =
+    document.getElementById(
+      "galleryLightbox"
+    );
 
-  const closeButton = lightbox?.querySelector(".gallery-lightbox-close");
-  const previousButton = lightbox?.querySelector(".gallery-lightbox-prev");
-  const nextButton = lightbox?.querySelector(".gallery-lightbox-next");
+
+  const lightboxImage =
+    lightbox?.querySelector(
+      ".gallery-lightbox-image"
+    );
+
+
+  const lightboxCaption =
+    lightbox?.querySelector(
+      ".gallery-lightbox-caption"
+    );
+
+
+  const lightboxCounter =
+    lightbox?.querySelector(
+      ".gallery-lightbox-counter"
+    );
+
+
+  const closeButton =
+    lightbox?.querySelector(
+      ".gallery-lightbox-close"
+    );
+
+
+  const previousButton =
+    lightbox?.querySelector(
+      ".gallery-lightbox-prev"
+    );
+
+
+  const nextButton =
+    lightbox?.querySelector(
+      ".gallery-lightbox-next"
+    );
+
 
   if (
     !lightbox ||
@@ -21059,6 +22010,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ) {
     return;
   }
+
 
 
   /* ==========================================
@@ -21071,23 +22023,36 @@ document.addEventListener("DOMContentLoaded", () => {
   let lastOpenedImage = null;
 
 
+
   /* ==========================================
      CAPTIONS
   ========================================== */
 
   function getGalleryCaption(image) {
-    const galleryItem = image.closest(".gallery-item");
+
+    const galleryItem =
+      image.closest(".gallery-item");
+
 
     const location =
-      galleryItem?.querySelector("figcaption p")?.textContent.trim() || "";
+      galleryItem
+        ?.querySelector("figcaption p")
+        ?.textContent
+        .trim() || "";
+
 
     const number =
-      galleryItem?.querySelector("figcaption span")?.textContent.trim() || "";
+      galleryItem
+        ?.querySelector("figcaption span")
+        ?.textContent
+        .trim() || "";
+
 
     return {
       location,
       number
     };
+
   }
 
 
@@ -21097,10 +22062,19 @@ document.addEventListener("DOMContentLoaded", () => {
       return image.alt || "";
     }
 
-    const caption = getGalleryCaption(image);
 
-    return caption.location || image.alt || "";
+    const caption =
+      getGalleryCaption(image);
+
+
+    return (
+      caption.location ||
+      image.alt ||
+      ""
+    );
+
   }
+
 
 
   /* ==========================================
@@ -21108,124 +22082,280 @@ document.addEventListener("DOMContentLoaded", () => {
   ========================================== */
 
   function updateLightbox() {
-    const image = activeImages[currentIndex];
+
+    const image =
+      activeImages[currentIndex];
+
 
     if (!image) return;
 
-    const caption = getImageCaption(image);
 
-    lightboxImage.src = image.currentSrc || image.src;
-    lightboxImage.alt = image.alt || caption || "Image";
+    const caption =
+      getImageCaption(image);
 
-    lightboxCaption.textContent = caption;
+
+    lightboxImage.src =
+      image.currentSrc ||
+      image.src;
+
+
+    lightboxImage.alt =
+      image.alt ||
+      caption ||
+      "Image";
+
+
+    lightboxCaption.textContent =
+      caption;
+
 
     lightboxCounter.textContent =
       `${currentIndex + 1} / ${activeImages.length}`;
+
   }
 
 
-  function openLightbox(images, index, type, clickedImage) {
+
+  function openLightbox(
+    images,
+    index,
+    type,
+    clickedImage
+  ) {
+
     activeImages = images;
+
     currentIndex = index;
+
     activeType = type;
-    lastOpenedImage = clickedImage;
+
+    lastOpenedImage =
+      clickedImage;
+
 
     /* Switch control layout depending on image source */
+
     lightbox.classList.toggle(
       "filmstrip-lightbox",
       type === "filmstrip"
     );
+
 
     lightbox.classList.toggle(
       "gallery-lightbox-mode",
       type === "gallery"
     );
 
+
     updateLightbox();
 
-    lightbox.classList.add("is-open");
-    lightbox.setAttribute("aria-hidden", "false");
 
-    document.body.classList.add("gallery-lightbox-open");
+    lightbox.classList.add(
+      "is-open"
+    );
+
+
+    lightbox.setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+
+    document.body.classList.add(
+      "gallery-lightbox-open"
+    );
+
 
     closeButton?.focus();
+
   }
 
 
+
   function closeLightbox() {
-    lightbox.classList.remove("is-open");
-    lightbox.setAttribute("aria-hidden", "true");
+
+    lightbox.classList.remove(
+      "is-open"
+    );
+
+
+    lightbox.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
 
     lightbox.classList.remove(
       "filmstrip-lightbox",
       "gallery-lightbox-mode"
     );
 
-    document.body.classList.remove("gallery-lightbox-open");
+
+    document.body.classList.remove(
+      "gallery-lightbox-open"
+    );
+
 
     lastOpenedImage?.focus();
+
   }
+
 
 
   function showNext() {
+
     if (!activeImages.length) return;
 
+
     currentIndex =
-      (currentIndex + 1) % activeImages.length;
+      (currentIndex + 1) %
+      activeImages.length;
+
 
     updateLightbox();
+
   }
+
 
 
   function showPrevious() {
+
     if (!activeImages.length) return;
 
+
     currentIndex =
-      (currentIndex - 1 + activeImages.length) %
+      (
+        currentIndex -
+        1 +
+        activeImages.length
+      ) %
       activeImages.length;
 
+
     updateLightbox();
+
   }
+
+
+
+  /* ==========================================
+     GET PHOTOS FROM SAME COUNTRY
+  ========================================== */
+
+  function getCountryImages(image) {
+
+    const item =
+      image.closest(
+        ".gallery-item[data-country]"
+      );
+
+
+    const country =
+      item?.dataset.country;
+
+
+    if (!country) {
+      return galleryImages;
+    }
+
+
+    return galleryImages.filter(
+      galleryImage => {
+
+        const galleryItem =
+          galleryImage.closest(
+            ".gallery-item[data-country]"
+          );
+
+
+        return (
+          galleryItem?.dataset.country ===
+          country
+        );
+
+      }
+    );
+
+  }
+
 
 
   /* ==========================================
      GALLERY IMAGES
   ========================================== */
 
-  galleryImages.forEach((image, index) => {
+  galleryImages.forEach(
+    (image, globalIndex) => {
 
-    image.setAttribute("tabindex", "0");
-    image.setAttribute("role", "button");
-    image.setAttribute(
-      "aria-label",
-      `Open gallery image ${index + 1}`
-    );
-
-    image.addEventListener("click", () => {
-      openLightbox(
-        galleryImages,
-        index,
-        "gallery",
-        image
+      image.setAttribute(
+        "tabindex",
+        "0"
       );
-    });
 
-    image.addEventListener("keydown", event => {
 
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
+      image.setAttribute(
+        "role",
+        "button"
+      );
+
+
+      image.setAttribute(
+        "aria-label",
+        `Open gallery image ${globalIndex + 1}`
+      );
+
+
+
+      function openCountryLightbox() {
+
+        const countryImages =
+          getCountryImages(image);
+
+
+        const countryIndex =
+          countryImages.indexOf(
+            image
+          );
+
 
         openLightbox(
-          galleryImages,
-          index,
+          countryImages,
+          countryIndex,
           "gallery",
           image
         );
+
       }
 
-    });
 
-  });
+
+      image.addEventListener(
+        "click",
+        openCountryLightbox
+      );
+
+
+      image.addEventListener(
+        "keydown",
+        event => {
+
+          if (
+            event.key === "Enter" ||
+            event.key === " "
+          ) {
+
+            event.preventDefault();
+
+            openCountryLightbox();
+
+          }
+
+        }
+      );
+
+    }
+  );
+
 
 
   /* ==========================================
@@ -21234,89 +22364,176 @@ document.addEventListener("DOMContentLoaded", () => {
 
   allFilmImages.forEach(image => {
 
-    image.style.cursor = "pointer";
+    image.style.cursor =
+      "pointer";
 
-    image.setAttribute("tabindex", "0");
-    image.setAttribute("role", "button");
 
-    const matchingIndex = filmImages.findIndex(
-      original => original.src === image.src
+    image.setAttribute(
+      "tabindex",
+      "0"
     );
 
+
+    image.setAttribute(
+      "role",
+      "button"
+    );
+
+
+    const matchingIndex =
+      filmImages.findIndex(
+        original =>
+          original.src === image.src
+      );
+
+
     const safeIndex =
-      matchingIndex >= 0 ? matchingIndex : 0;
+      matchingIndex >= 0
+        ? matchingIndex
+        : 0;
+
 
     image.setAttribute(
       "aria-label",
       `Open activity image ${safeIndex + 1}`
     );
 
+
+
     function openFilmImage() {
+
       openLightbox(
         filmImages,
         safeIndex,
         "filmstrip",
         image
       );
+
     }
 
-    image.addEventListener("click", openFilmImage);
 
-    image.addEventListener("keydown", event => {
+    image.addEventListener(
+      "click",
+      openFilmImage
+    );
 
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        openFilmImage();
+
+    image.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+
+          event.preventDefault();
+
+          openFilmImage();
+
+        }
+
       }
-
-    });
+    );
 
   });
+
 
 
   /* ==========================================
      LIGHTBOX CONTROLS
   ========================================== */
 
-  closeButton?.addEventListener("click", closeLightbox);
-  nextButton?.addEventListener("click", showNext);
-  previousButton?.addEventListener("click", showPrevious);
+  closeButton?.addEventListener(
+    "click",
+    closeLightbox
+  );
 
 
-  lightbox.addEventListener("click", event => {
+  nextButton?.addEventListener(
+    "click",
+    showNext
+  );
 
-    if (event.target === lightbox) {
-      closeLightbox();
+
+  previousButton?.addEventListener(
+    "click",
+    showPrevious
+  );
+
+
+
+  lightbox.addEventListener(
+    "click",
+    event => {
+
+      if (
+        event.target === lightbox
+      ) {
+
+        closeLightbox();
+
+      }
+
     }
+  );
 
-  });
 
 
-  document.addEventListener("keydown", event => {
+  document.addEventListener(
+    "keydown",
+    event => {
 
-    if (!lightbox.classList.contains("is-open")) {
-      return;
+      if (
+        !lightbox.classList.contains(
+          "is-open"
+        )
+      ) {
+        return;
+      }
+
+
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+
+
+      if (event.key === "ArrowRight") {
+        showNext();
+      }
+
+
+      if (event.key === "ArrowLeft") {
+        showPrevious();
+      }
+
     }
-
-    if (event.key === "Escape") {
-      closeLightbox();
-    }
-
-    if (event.key === "ArrowRight") {
-      showNext();
-    }
-
-    if (event.key === "ArrowLeft") {
-      showPrevious();
-    }
-
-  });
+  );
 
 });
 </script>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
