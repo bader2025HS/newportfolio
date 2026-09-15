@@ -18876,6 +18876,410 @@ h2,
 
 }
 
+
+
+
+    /* ==========================================================
+   GALLERY COUNTRY CARDS — PHOTO BACKGROUND VERSION
+   Add AFTER previous gallery CSS
+========================================================== */
+
+
+/* ----------------------------------------------------------
+   REGULAR GRID — ALL CARDS IDENTICAL
+---------------------------------------------------------- */
+
+#gallery .gallery-countries {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+
+  gap: 18px !important;
+}
+
+
+/* reset ALL previous asymmetric spans */
+
+#gallery .gallery-country-card,
+#gallery .gallery-country-card:nth-child(n) {
+  grid-column: auto !important;
+  grid-row: auto !important;
+
+  position: relative;
+
+  width: 100% !important;
+  height: 175px !important;
+
+  padding: 30px 32px !important;
+
+  overflow: hidden;
+
+  border: 0 !important;
+
+  background-color: #12382b !important;
+  background-position: center !important;
+  background-size: cover !important;
+
+  color: #fff !important;
+
+  transform: none !important;
+
+  isolation: isolate;
+
+  transition:
+    transform 600ms cubic-bezier(.22, 1, .36, 1) !important;
+}
+
+
+/* ==========================================================
+   COUNTRY PHOTOS
+========================================================== */
+
+/* Jordan */
+#gallery .gallery-country-card[data-country="jordan"] {
+  background-image: url("jordan.jpeg") !important;
+}
+
+/* Japan */
+#gallery .gallery-country-card[data-country="japan"] {
+  background-image: url("japan.jpeg") !important;
+}
+
+/* Bulgaria */
+#gallery .gallery-country-card[data-country="bulgaria"] {
+  background-image: url("sofia.jpeg") !important;
+}
+
+/* China */
+#gallery .gallery-country-card[data-country="china"] {
+  background-image: url("china1.jpeg") !important;
+}
+
+/* India */
+#gallery .gallery-country-card[data-country="india"] {
+  background-image: url("hampi2.jpeg") !important;
+}
+
+/* Singapore */
+#gallery .gallery-country-card[data-country="singapore"] {
+  background-image: url("singapore.jpeg") !important;
+}
+
+/* Vietnam */
+#gallery .gallery-country-card[data-country="vietnam"] {
+  background-image: url("vietnam.jpeg") !important;
+}
+
+/* Georgia */
+#gallery .gallery-country-card[data-country="georgia"] {
+  background-image: url("georgiap1.jpeg") !important;
+}
+
+/* Tunisia */
+#gallery .gallery-country-card[data-country="tunisia"] {
+  background-image: url("eljem.jpeg") !important;
+}
+
+/* France */
+#gallery .gallery-country-card[data-country="france"] {
+  background-image: url("menton.jpeg") !important;
+}
+
+/* Hong Kong */
+#gallery .gallery-country-card[data-country="hong-kong"] {
+  background-image: url("hongk.jpeg") !important;
+}
+
+
+/* ==========================================================
+   BLUR + GREEN OVERLAY
+
+   backdrop-filter blurs the actual background photograph
+   without blurring the text.
+========================================================== */
+
+#gallery .gallery-country-card::before {
+  content: "" !important;
+  display: block !important;
+
+  position: absolute;
+
+  /* extend outside edges so blur doesn't create pale borders */
+  inset: -12px;
+
+  z-index: 0;
+
+  background: rgba(10, 48, 37, .44);
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+  pointer-events: none;
+
+  transition:
+    background 800ms cubic-bezier(.22, 1, .36, 1),
+    backdrop-filter 800ms cubic-bezier(.22, 1, .36, 1);
+}
+
+
+/* subtle dark gradient for text readability */
+
+#gallery .gallery-country-card::after {
+  content: "" !important;
+  display: block !important;
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 40, 30, .52) 0%,
+      rgba(7, 40, 30, .26) 58%,
+      rgba(7, 40, 30, .10) 100%
+    );
+
+  transform: none !important;
+
+  height: auto !important;
+
+  pointer-events: none;
+
+  transition:
+    background 800ms cubic-bezier(.22, 1, .36, 1);
+}
+
+
+/* ==========================================================
+   CARD CONTENT ABOVE PHOTO
+========================================================== */
+
+#gallery .country-card-main {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: flex-start;
+
+  gap: 10px;
+}
+
+
+/* ==========================================================
+   COUNTRY NAME
+========================================================== */
+
+#gallery .country-name {
+  position: relative;
+
+  width: 100%;
+  height: 44px !important;
+
+  overflow: hidden;
+}
+
+
+#gallery .country-name-local,
+#gallery .country-name-english {
+  position: absolute;
+
+  top: 50%;
+  left: 0;
+
+  width: 100%;
+
+  color: #fff !important;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.6rem, 2vw, 2rem) !important;
+  font-weight: 600;
+
+  line-height: 1;
+
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .2);
+
+  /* KEEP THE SLOWER TRANSITION */
+  transition:
+    transform 900ms cubic-bezier(.22, 1, .36, 1),
+    opacity 650ms ease !important;
+}
+
+
+/* original language */
+
+#gallery .country-name-local {
+  opacity: 1;
+
+  transform: translateY(-50%);
+}
+
+
+/* English hidden below */
+
+#gallery .country-name-english {
+  opacity: 0;
+
+  transform: translateY(100%);
+}
+
+
+/* local name leaves */
+
+#gallery .gallery-country-card:hover
+.country-name-local {
+  opacity: 0;
+
+  transform: translateY(-155%);
+}
+
+
+/* English enters */
+
+#gallery .gallery-country-card:hover
+.country-name-english {
+  opacity: 1;
+
+  transform: translateY(-50%);
+}
+
+
+/* ==========================================================
+   PHOTO COUNT
+========================================================== */
+
+#gallery .gallery-country-card small {
+  position: relative;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, .72) !important;
+
+  font-size: .68rem !important;
+  font-weight: 700;
+
+  letter-spacing: .12em !important;
+
+  text-shadow: 0 1px 10px rgba(0, 0, 0, .2);
+
+  transition:
+    color 600ms ease,
+    transform 800ms cubic-bezier(.22, 1, .36, 1),
+    opacity 600ms ease !important;
+}
+
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+#gallery .gallery-country-card:hover {
+  transform: translateY(-4px) !important;
+}
+
+
+/* photograph becomes slightly clearer */
+
+#gallery .gallery-country-card:hover::before {
+  background: rgba(10, 48, 37, .30);
+
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+}
+
+
+#gallery .gallery-country-card:hover::after {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 40, 30, .48) 0%,
+      rgba(7, 40, 30, .18) 65%,
+      rgba(7, 40, 30, .04) 100%
+    );
+}
+
+
+#gallery .gallery-country-card:hover small {
+  color: rgba(255, 255, 255, .78) !important;
+
+  transform: translateX(5px);
+}
+
+
+/* ==========================================================
+   FOCUS
+========================================================== */
+
+#gallery .gallery-country-card:focus-visible {
+  outline: 2px solid #2d7b61;
+  outline-offset: 4px;
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1050px) {
+
+  #gallery .gallery-countries {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 16px !important;
+  }
+
+
+  #gallery .gallery-country-card,
+  #gallery .gallery-country-card:nth-child(n) {
+    height: 165px !important;
+  }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 650px) {
+
+  #gallery .gallery-countries {
+    grid-template-columns: 1fr !important;
+
+    gap: 13px !important;
+  }
+
+
+  #gallery .gallery-country-card,
+  #gallery .gallery-country-card:nth-child(n) {
+    height: 140px !important;
+
+    padding: 24px !important;
+  }
+
+
+  #gallery .country-name {
+    height: 38px !important;
+  }
+
+
+  #gallery .country-name-local,
+  #gallery .country-name-english {
+    font-size: 1.55rem !important;
+  }
+
+}
+
+    
+
   </style>
 </head>
 
